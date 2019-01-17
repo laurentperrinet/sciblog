@@ -1,0 +1,59 @@
+.. title: keyboard
+.. slug: 2008-08-29-keyboard
+.. date: 2008-08-29 13:36:57
+.. type: text
+.. tags: macos, sciblog
+
+
+Touches spéciales (unix) sur clavier Mac francais
+-------------------------------------------------
+
+Merci a `http://busy.lab.free.fr/mac/ <http://busy.lab.free.fr/mac/>`__ !
+
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| backslash                |   ``\``       | shift + option + /                                                          |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| pipe, or                 |   ``|``       | shift + option + L                                                          |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| tidle                    |   ``~``       | option + N                                                                  |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| simple quote             |   ``'``       | 4 key, that's to say a regular ' on any keyboard I guess.                   |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| opening brace            |   ``{``       | option + (                                                                  |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| closing brace            |   ``}``       | option + )                                                                  |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| opening square bracket   |   ``[``       | shift + option + (                                                          |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+| closing square bracket   |   ``]``       | shift + option + )                                                          |
++--------------------------+---------------+-----------------------------------------------------------------------------+
+
+.. TEASER_END
+
+Apple also got the habit to give it's own special names to some keys:
+
+-  ctrl is called, well, *control*. So far, so good.
+-  the alt key (with a funy sign under it) is called *option*.
+-  the key with a funny sharp and the Apple logo **⌘** is called
+   *command* (for we are supposed to be so creative Apple users I
+   think), or sometimes more logically *apple*.
+
+keyboard shortcuts
+------------------
+
+-  in Finder (and most other applications)
+
+   -  ⌃⌘Z to zoom the window
+   -  ⌘ + \` to switch between your windows
+   -  ⇧⌘[ and ⇧⌘] to switch tabs
+   -  ⌃⌘D to show the dictionary
+
+-  in Firefox:
+
+   -  Fn + Alt + Left arrow gets you to the home page.
+   -  Command + L : link bar
+   -  Command + K: search box
+   -  Ctrl + Tab: Next Tab
+
+-  see `Mac OS X keyboard
+   shortcuts <http://docs.info.apple.com/article.html?artnum=75459>`__

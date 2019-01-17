@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>scripting MoinMoin to get, change or rename pages | Scientific logbook</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="http://blog.invibe.net/posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2011-07-05-Publications-2006-2010.html" title="Publications 2006-2010" type="text/html">
+<link rel="next" href="2011-07-07-using-a-versioning-system.html" title="using a versioning system" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="scripting MoinMoin to get, change or rename pages">
+<meta property="og:url" content="http://blog.invibe.net/posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html">
+<meta property="og:description" content="MoinMoin is hugely useful for day to day use. Scripting is even
+better. Here, I show how to get, edit and rename pages on your wiki.
+To avoid bad surprise, this is based on a copy of the remote server">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-07-06T13:36:57+02:00">
+<meta property="article:tag" content="moinmoin">
+<meta property="article:tag" content="sciblog">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://blog.invibe.net/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://blog.invibe.net/">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="http://invibe.net" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">scripting MoinMoin to get, change or rename pages</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2011-07-06T13:36:57+02:00" itemprop="datePublished" title="2011-07-06 13:36">2011-07-06 13:36</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html#disqus_thread" data-disqus-identifier="cache/posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<ul class="simple">
+<li>MoinMoin is hugely useful for day to day use. Scripting is even
+better. Here, I show how to get, edit and rename pages on your wiki.
+To avoid bad surprise, this is based on a copy of the remote server
+using a local server with a <tt class="docutils literal">wikiconfig.py</tt> script.</li>
+</ul>
+<!-- TEASER_END --><ul>
+<li>
+<p class="first">it heavily uses examples shown in
+<a class="reference external" href="http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29">http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29</a></p>
+</li>
+<li>
+<p class="first">first define the server and import the library</p>
+<pre class="literal-block">
+1 wikiurl = "http://localhost:8080"
+2 username, password = 'YourName', 'yur)s3cr3t-pwd'
+3
+4 import xmlrpclib
+</pre>
+</li>
+<li>
+<p class="first">let's try to read a page</p>
+<pre class="literal-block">
+ 1     pagename = u'NewsEvents' # not protected
+ 2     pagename = u'Publications/Perrinet06ciotat' # protected
+ 3     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+ 4     auth_token = homewiki.getAuthToken(username, password)
+ 5     mc = xmlrpclib.MultiCall(homewiki)
+ 6     mc.applyAuthToken(auth_token)
+ 7     mc.getPage(pagename)
+ 8     result = mc()
+ 9     success, raw = tuple(result)
+10     if isinstance(result, tuple) and tuple(result)[0] == "SUCCESS":
+11         print "reading page '%s' : %s" % (pagename, tuple(result)[0])
+12     else:
+13         print tuple(result)[0]
+</pre>
+</li>
+<li>
+<p class="first">and now to write another one</p>
+<pre class="literal-block">
+ 1     pagename = u'TestingPage'
+ 2     text = """
+ 3     This is a line of TEXT
+ 4
+ 5 AND     This is another line of text
+ 6
+ 7     """
+ 8     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+ 9     auth_token = homewiki.getAuthToken(username, password)
+10     mc = xmlrpclib.MultiCall(homewiki)
+11     mc.applyAuthToken(auth_token)
+12     mc.putPage(pagename, text)
+13     result = mc()
+14     if isinstance(result, tuple) and tuple(result)[0] == "SUCCESS":
+15         print "page '%s' created: %s" % (pagename, tuple(result)[0])
+16     else:
+17         print 'You did not change the page content, not saved!'
+</pre>
+</li>
+<li>
+<p class="first">so we may now read a page, replace some text and write it</p>
+<pre class="literal-block">
+ 1     old, new = 'Category', 'Tag'
+ 2
+ 3     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+ 4     auth_token = homewiki.getAuthToken(username, password)
+ 5     mc = xmlrpclib.MultiCall(homewiki)
+ 6     mc.applyAuthToken(auth_token)
+ 7     mc.getPage(pagename)
+ 8     result = mc()
+ 9     if tuple(result)[0] == "SUCCESS":
+10         print "page '%s' to modify: %s" % (pagename, tuple(result)[0])
+11         raw = tuple(result)[1]
+12         if raw.find(old)&gt;-1:
+13             raw = raw.replace(old, new)
+14 #            print raw
+15             mc.putPage(pagename, raw)
+16             result = mc()
+17             print result[0]
+18         else:
+19             print 'not modified'
+20     else:
+21         print tuple(result)[0]
+</pre>
+</li>
+<li>
+<p class="first">let's now do that on the whole website</p>
+<pre class="literal-block">
+ 1     old, new = '^= reference =$', '^== reference ==$'
+ 2     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+ 3     auth_token = homewiki.getAuthToken(username, password)
+ 4     mc = xmlrpclib.MultiCall(homewiki)
+ 5     mc.applyAuthToken(auth_token)
+ 6     mc.getAllPages()#opts={'include_system':False, 'include_underlay':False})
+ 7     result = mc()
+ 8     pagelist = tuple(result)[1]
+ 9     for pagename in pagelist:
+10         homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+11         auth_token = homewiki.getAuthToken(username, password)
+12         mc = xmlrpclib.MultiCall(homewiki)
+13         mc.applyAuthToken(auth_token)
+14         mc.getPage(pagename)
+15         try:
+16             result = mc()
+17             if tuple(result)[0] == "SUCCESS":
+18                 raw = tuple(result)[1]
+19                 if raw.find(old)&gt;-1:
+20                     raw = raw.replace(old, new)
+21                     mc.applyAuthToken(auth_token)
+22                     mc.putPage(pagename, raw)
+23                     result = mc()
+24                     print ":-) page '%s' modified: %s" % (pagename, tuple(result)[0])
+25             else:
+26                 print tuple(result)[0]
+27         except:
+28             print 'failed', pagename
+</pre>
+</li>
+<li>
+<p class="first">let's now rename one page</p>
+<pre class="literal-block">
+1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+2     auth_token = homewiki.getAuthToken(username, password)
+3     mc = xmlrpclib.MultiCall(homewiki)
+4     mc.applyAuthToken(auth_token)
+5     mc.renamePage(u'TestingPage', u'TestPage2')
+6     result = mc()
+7     print result[0]
+</pre>
+</li>
+<li>
+<p class="first">and now some more pages (here to reflect changes in the links)</p>
+<pre class="literal-block">
+ 1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+ 2     auth_token = homewiki.getAuthToken(username, password)
+ 3     mc = xmlrpclib.MultiCall(homewiki)
+ 4     old, new = 'Category', 'Tag'
+ 5     for pagename in homewiki.getAllPages():
+ 6         if pagename.find(old)&gt;-1:
+ 7             mc = xmlrpclib.MultiCall(homewiki)
+ 8             mc.applyAuthToken(auth_token)
+ 9             mc.renamePage(pagename, pagename.replace(old, new))
+10             result = mc()
+11             print ":-) page '%s' modified: %s" % (pagename, tuple(result)[0])
+</pre>
+</li>
+</ul>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/moinmoin.html" rel="tag">moinmoin</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2011-07-05-Publications-2006-2010.html" rel="prev" title="Publications 2006-2010">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2011-07-07-using-a-versioning-system.html" rel="next" title="using a versioning system">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="invibe",
+            disqus_url="http://blog.invibe.net/posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html",
+        disqus_title="scripting MoinMoin to get, change or rename pages",
+        disqus_identifier="cache/posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

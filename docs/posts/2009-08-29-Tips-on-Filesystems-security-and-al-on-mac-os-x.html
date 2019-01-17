@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tips on Filesystems, security and al on mac os x | Scientific logbook</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="http://blog.invibe.net/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2009-08-26-Creating-Proceedings-%28almost%29-automatically-using-python-and-latex.html" title="Creating Proceedings (almost) automatically using python and latex" type="text/html">
+<link rel="next" href="2009-11-01-floating-point-magic.html" title="floating point magic" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Tips on Filesystems, security and al on mac os x">
+<meta property="og:url" content="http://blog.invibe.net/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">
+<meta property="og:description" content="mount with AFP sharepoints from the command line (thanks to this
+hint) :
+
+# mount_afp [-i] [-o options] afp_url node
+mkdir /Volumes/truc
+mount_afp afp://user:PASSWORD@server/truc /Volumes/truc
+umount ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2009-08-29T13:36:57+02:00">
+<meta property="article:tag" content="macos">
+<meta property="article:tag" content="sciblog">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://blog.invibe.net/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://blog.invibe.net/">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="http://invibe.net" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Tips on Filesystems, security and al on mac os x</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2009-08-29T13:36:57+02:00" itemprop="datePublished" title="2009-08-29 13:36">2009-08-29 13:36</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html#disqus_thread" data-disqus-identifier="cache/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<ul>
+<li>
+<p class="first">mount with AFP sharepoints from the command line (thanks to this
+<a class="reference external" href="http://plumblossom.org/macclt.html">hint</a>) :</p>
+<pre class="literal-block">
+# mount_afp [-i] [-o options] afp_url node
+mkdir /Volumes/truc
+mount_afp afp://user:PASSWORD@server/truc /Volumes/truc
+umount /Volumes/truc
+rmdir /Volumes/truc
+</pre>
+</li>
+</ul>
+<!-- TEASER_END --><div class="section" id="finder-nags-when-changing-a-file-s-extension">
+<h2>finder nags when changing a file's extension</h2>
+<ul>
+<li>
+<p class="first">read the default value (should be 0)</p>
+<pre class="literal-block">
+defaults read com.apple.finder FXEnableExtensionChangeWarning
+</pre>
+</li>
+<li>
+<p class="first">change it:</p>
+<pre class="literal-block">
+defaults write com.apple.finder FXEnableExtensionChangeWarning False
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="make-spell-check-show-only-desired-languages">
+<h2>Make spell check show only desired languages</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.macosxhints.com/article.php?story=20090512175846504">http://www.macosxhints.com/article.php?story=20090512175846504</a></li>
+</ul>
+</div>
+<div class="section" id="hfs">
+<h2>HFS+</h2>
+<ul>
+<li>
+<p class="first"><a class="reference external" href="http://www.kernelthread.com/mac/osx/arch_fs.html">Mac OS X
+Filesystems</a></p>
+</li>
+<li>
+<p class="first">One feature of HFS volumes is that fle are referred to as links: for
+instance you can read a PDF file while changing the name at the same
+time. No problem!</p>
+</li>
+<li>
+<p class="first">Safely remove '._' files created by HFS(+)</p>
+<pre class="literal-block">
+find . -name '._*' -print0 | xargs -0 rm
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="spotlight">
+<h2>Spotlight</h2>
+<ul>
+<li>
+<p class="first">to remove the remaining index files on the volume using the command:
+`` sudo mdutil -E /Volumes/volume_name `` utilitaires CLI :</p>
+<pre class="literal-block">
+sudo mdutil --help
+mdutil: unrecognized option `--help'
+usage: mdutil -pE volume ...
+        mdutil can be used to manage the metadata stores used by Spotlight.
+        -p              publish metadata for the provided volumes.
+        -i (on|off)     set indexing status for the provided volumes.
+        -E              erase the master copy of the metadata stores for the provided volumes.
+        -s              print indexing status for the provided volumes.
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="system-security">
+<h2>System &amp; Security</h2>
+<ul>
+<li>
+<p class="first"><a class="reference external" href="http://www.macgeekery.com/tips/security/basic_mac_os_x_security">http://www.macgeekery.com/tips/security/basic_mac_os_x_security</a></p>
+</li>
+<li>
+<p class="first">Synthesis of unauthorized accesses to your machine:</p>
+<pre class="literal-block">
+sudo grep "failed to auth" /var/log/secure.log | sed 's/^.*user \(.*\) for.*$/\1/' | sort | uniq -c
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="nmap">
+<h2>nmap</h2>
+<ul>
+<li>
+<p class="first">to scan for open ports on a remote machine :</p>
+<pre class="literal-block">
+sudo nmap -T3 -vv -sS -p 1-65535 -P0 google.com
+Starting nmap 3.81 ( http://www.insecure.org/nmap/ ) at 2006-04-05 16:32 CEST
+Initiating SYN Stealth Scan against google.com [65535 ports] at 16:32
+Discovered open port 80/tcp on google.com
+SYN Stealth Scan Timing: About 2.18% done; ETC: 16:55 (0:22:26 remaining)
+</pre>
+</li>
+<li>
+<p class="first">to scan for open ports on your local network (see <a class="reference external" href="https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073">https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073</a> ):</p>
+<pre class="literal-block">
+nmap -sP 192.168.1.*
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="dash-board">
+<h2>Dash board</h2>
+<ul>
+<li>
+<p class="first">Don't use Dashboard? No particular reason to leave it running,
+consuming memory. Following
+<a class="reference external" href="http://www.macosxhints.com/article.php?story=20050723123302403">http://www.macosxhints.com/article.php?story=20050723123302403</a>,
+you can turn Dashboard off by doing:</p>
+<pre class="literal-block">
+defaults write com.apple.dashboard mcx-disabled -boolean YES
+killall Dock
+</pre>
+</li>
+<li>
+<p class="first">Unsurprisingly, you change YES to NO to re-enable Dashboard:</p>
+<pre class="literal-block">
+defaults write com.apple.dashboard mcx-disabled -boolean NO
+killall Dock
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="unix-x11">
+<h2>Unix - X11</h2>
+<ul>
+<li>
+<p class="first"><a class="reference external" href="http://xquartz.macosforge.org/">http://xquartz.macosforge.org/</a></p>
+</li>
+<li>
+<p class="first">install quickly
+<a class="reference external" href="http://trac.macosforge.org/projects/xquartz">http://trac.macosforge.org/projects/xquartz</a>
+:</p>
+<pre class="literal-block">
+wget http://xquartz.macosforge.org/downloads/X11-2.4.0.dmg
+sudo installer -pkg X11-2.4.0.pkg  -target /
+rm  X11-2.4.0.pkg
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="change-login-window-on-snow-leopard">
+<h2>Change login window on (Snow) Leopard</h2>
+<ul>
+<li>
+<p class="first">disrupted by the look of the plasma flames? think it looks like a
+cheap star trek sundae? check
+<a class="reference external" href="http://paulstamatiou.com/2007/10/31/how-to-change-leopards-login-wallpaper">http://paulstamatiou.com/2007/10/31/how-to-change-leopards-login-wallpaper</a>
+:</p>
+<pre class="literal-block">
+cd /System/Library/CoreServices
+sudo rm DefaultDesktop.jpg
+#sudo mv DefaultDesktop.jpg DefaultDesktop_old.jpg # if you want to keep the Aurora stuff (it stills around, do a 'locate Aurora'
+sudo ln -s /Library/Desktop\ Pictures/Nature/Stones.jpg DefaultDesktop.jpg
+</pre>
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/macos.html" rel="tag">macos</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2009-08-26-Creating-Proceedings-%28almost%29-automatically-using-python-and-latex.html" rel="prev" title="Creating Proceedings (almost) automatically using python and latex">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2009-11-01-floating-point-magic.html" rel="next" title="floating point magic">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="invibe",
+            disqus_url="http://blog.invibe.net/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html",
+        disqus_title="Tips on Filesystems, security and al on mac os x",
+        disqus_identifier="cache/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.. title: wma to MP3
+.. slug: 2010-11-07-wma-to-MP3
+.. date: 2010-11-07 13:36:57
+.. type: text
+.. tags: sciblog
+
+.. TEASER_END
+.. warning::
+
+  This post is certainly obsolete...
+
+
+
+-  `http://seismic.ocean.dal.ca/~leblanc/pwp\_wiki/static/upload/audio\_conv.py <http://seismic.ocean.dal.ca/~leblanc/pwp_wiki/static/upload/audio_conv.py>`__
+-  Mplayer has changed the syntax for pcm (wav) output. The pcm -aofile
+   <filename> options has changed to -ao pcm:file=<filename> which
+   doesn't like dos filenames (c:\\bla\\...). so I'm using a real hack
+   to make a tempfile in the current directory (for windows only, \*nix
+   works normally). This script uses the syntax for the newer version of
+   Mplayer, if you need the older syntax comment out the current method
+   near line 286 and uncomment the one above it. This should be pretty
+   clear when looking at the code.
+
+
+
+
+::
+
+    ./audio_conv.py -h
+    ./audio_conv.py  -i "*.wma" -r --to-mp3 --dry-run
+    ./audio_conv.py  -i "*.wma" -r --to-mp3
+    ./audio_conv.py  -i "*.wma" -r --to-mp3 --normalize --delete

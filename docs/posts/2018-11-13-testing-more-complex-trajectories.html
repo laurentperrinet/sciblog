@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embedding a trajectory in noise | Scientific logbook</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="http://blog.invibe.net/posts/2018-11-13-testing-more-complex-trajectories.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2018-11-11-rainbow-effect.html" title="Rainbow effect" type="text/html">
+<link rel="next" href="2018-11-14-regex-an-iso8601-date.html" title="Using regex to filter an ISO8601 date" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Embedding a trajectory in noise">
+<meta property="og:url" content="http://blog.invibe.net/posts/2018-11-13-testing-more-complex-trajectories.html">
+<meta property="og:description" content="MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories. Following a previous post, we design a trajectory embedded in noise.
+
+
+
+
+
+
+
+
+
+
+
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-11-13T11:43:46+02:00">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="motionclouds">
+<meta property="article:tag" content="trajectory">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://blog.invibe.net/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://blog.invibe.net/">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2018-11-13-testing-more-complex-trajectories.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="http://invibe.net" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Embedding a trajectory in noise</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2018-11-13T11:43:46+02:00" itemprop="datePublished" title="2018-11-13 11:43">2018-11-13 11:43</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="2018-11-13-testing-more-complex-trajectories.html#disqus_thread" data-disqus-identifier="cache/posts/2018-11-13-testing-more-complex-trajectories.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="2018-11-13-testing-more-complex-trajectories.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories. Following a <a href="https://blog.invibe.net/posts/2018-01-16-testing-more-complex-trajectories.html">previous post</a>, we design a trajectory embedded in noise.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center><table style="width:100%">
+<tr>
+<td><video controls autoplay loop src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult.mp4" width="100%/"></video></td>
+<td><video controls autoplay loop src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_reversed.mp4" width="100%/"></video></td>
+</tr>
+<tr>
+<td><video controls autoplay loop src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled.mp4" width="100%/"></video></td>
+<td><video controls autoplay loop src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled_reversed.mp4" width="100%/"></video></td>
+</tr>
+</table></center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can you spot the motion ? from left to right or reversed ?</p>
+<p>(For a more controlled test, imagine you fixate on the top left corner of each movie.)</p>
+<p>(Upper row is coherent, lower row uncoherent / Left is <code>-&gt;</code> Right column is <code>&lt;-</code>)</p>
+<!-- TEASER_END -->
+
+<p>Let's start with the classical Motion Cloud:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'trajectory'</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2018-11-13-testing-more-complex'</span>
+<span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some default parameters for the textons used here:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">2.</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First defining a dense,stationary noise with an horizontal drift:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_dense'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/site-packages/vispy/visuals/isocurve.py:22: UserWarning: VisPy is not yet compatible with matplotlib 2.2+
+  warnings.warn("VisPy is not yet compatible with matplotlib 2.2+")
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Failed to generate the visualisation: Could not import backend "Pyglet":
+list index out of range
+Failed to generate the cube: Could not import backend "Pyglet":
+list index out of range
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-11-13-testing-more-complex/trajectory_dense.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-11-13-testing-more-complex/trajectory_dense.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-11-13-testing-more-complex/trajectory_dense_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The information is distributed densely in space and time.</p>
+<h3 id="one-definition-of-a-trajectory">one definition of a trajectory<a class="anchor-link" href="2018-11-13-testing-more-complex-trajectories.html#one-definition-of-a-trajectory">¶</a>
+</h3>
+<p>It is also possible to show the impulse response ("texton") corresponding to this particular texture (be patient to see a full period):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_impulse'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">impulse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Failed to generate the visualisation: Could not import backend "Pyglet":
+list index out of range
+Failed to generate the cube: Could not import backend "Pyglet":
+list index out of range
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-11-13-testing-more-complex/trajectory_impulse.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-11-13-testing-more-complex/trajectory_impulse.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-11-13-testing-more-complex/trajectory_impulse_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To generate a trajectory, we should just convolve this impulse response to a trajectory defined as a binary profile in space and time:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_straight'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">fx</span><span class="o">+.</span><span class="mi">5</span><span class="p">,</span> <span class="n">fy</span><span class="o">+.</span><span class="mi">5</span><span class="p">,</span> <span class="n">ft</span><span class="o">+.</span><span class="mi">5</span> <span class="c1"># trick to use fourier coordinates to get spatial coordinates</span>
+<span class="n">width_y</span><span class="p">,</span> <span class="n">width_x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span>
+<span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="o">.</span><span class="mi">375</span><span class="p">,</span> <span class="o">.</span><span class="mi">625</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span> <span class="c1">#np.random.rand() * (1 - opts['V_X'] * (t1-t0)) # makes sure the trajectory does not wrap across the border</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+<span class="n">events</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_y</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">opts</span><span class="p">[</span><span class="s1">'V_X'</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t0</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">width_x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="n">t0</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="n">t1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'X-axis'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Failed to generate the visualisation: Could not import backend "Pyglet":
+list index out of range
+Failed to generate the cube: Could not import backend "Pyglet":
+list index out of range
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-11-13-testing-more-complex/trajectory_straight.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-11-13-testing-more-complex/trajectory_straight.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-11-13-testing-more-complex/trajectory_straight_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To replicate the work from Watamaniuk, McKee and colleagues, we replicate the same motion but where we keep the motion energy while shuffling the coherence:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_shuffled'</span>
+<span class="n">N_folds</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">N_traj</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">t1</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span> <span class="o">//</span> <span class="n">N_folds</span>
+<span class="n">N_start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t0</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">folding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">N_folds</span><span class="p">)</span>
+<span class="n">events_shuffled</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i_fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_folds</span><span class="p">):</span>
+    <span class="n">S0</span><span class="p">,</span> <span class="n">S1</span> <span class="o">=</span> <span class="p">(</span><span class="n">N_start</span><span class="o">+</span><span class="n">folding</span><span class="p">[</span><span class="n">i_fold</span><span class="p">]</span><span class="o">*</span><span class="n">N_traj</span><span class="p">),</span> <span class="p">(</span><span class="n">N_start</span><span class="o">+</span><span class="p">(</span><span class="n">folding</span><span class="p">[</span><span class="n">i_fold</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">N_traj</span><span class="p">)</span>
+    <span class="n">N0</span><span class="p">,</span> <span class="n">N1</span> <span class="o">=</span> <span class="p">(</span><span class="n">N_start</span><span class="o">+</span><span class="n">i_fold</span><span class="o">*</span><span class="n">N_traj</span><span class="p">),</span> <span class="p">(</span><span class="n">N_start</span><span class="o">+</span><span class="p">(</span><span class="n">i_fold</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">N_traj</span><span class="p">)</span>
+    <span class="n">nx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">)</span>
+    <span class="n">ny</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">)</span>
+    <span class="n">events_shuffled</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">S0</span><span class="p">:</span><span class="n">S1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">events</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">N0</span><span class="p">:</span><span class="n">N1</span><span class="p">],</span> <span class="n">nx</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">ny</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">events_shuffled</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'X-axis'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events_shuffled</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Failed to generate the visualisation: Could not import backend "Pyglet":
+list index out of range
+Failed to generate the cube: Could not import backend "Pyglet":
+list index out of range
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-11-13-testing-more-complex/trajectory_shuffled.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-11-13-testing-more-complex/trajectory_shuffled.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-11-13-testing-more-complex/trajectory_shuffled_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="addition-of-a-the-trajectory-to-the-incoherent-noise">addition of a the trajectory to the incoherent noise<a class="anchor-link" href="2018-11-13-testing-more-complex-trajectories.html#addition-of-a-the-trajectory-to-the-incoherent-noise">¶</a>
+</h3>
+<p>It is now possible to add this trajectory to any kind of background, such as a background texture of the same "texton" but with a null average motion:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">do_linear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">do_linear</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rho</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">movie2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">movie1</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mf">2.</span><span class="o">*</span><span class="n">movie2</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">movie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie2</span><span class="p">)</span>
+        <span class="n">movie</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">movie1</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="n">movie</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">movie2</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">return</span> <span class="o">.</span><span class="mi">5</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">movie</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>a more memory-efficient version of the above:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">do_linear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">do_linear</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rho</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">movie2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">movie1</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mf">2.</span><span class="o">*</span><span class="n">movie2</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">movie</span> <span class="o">=</span> <span class="n">movie1</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie2</span><span class="p">))</span> <span class="o">+</span> <span class="n">movie2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="o">.</span><span class="mi">5</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">movie</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">movie_coh</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events</span><span class="p">))</span>
+<span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mc0</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+<span class="n">movie_unc</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay'</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="o">.</span><span class="mi">9</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh</span><span class="p">,</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult'</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh</span><span class="p">,</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Though it is difficult to find the coherent pattern in a single frame, one detects it thanks to its coherent motion.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_shuffled'</span>
+<span class="n">movie_coh_shuffled</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events_shuffled</span><span class="p">))</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="o">.</span><span class="mi">9</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh_shuffled</span><span class="p">,</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay_shuffled.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult_shuffled'</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh_shuffled</span><span class="p">,</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="trying-out-different-directions">trying out different directions<a class="anchor-link" href="2018-11-13-testing-more-complex-trajectories.html#trying-out-different-directions">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult_reversed'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_reversed.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult_shuffled_reversed'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie_coh_shuffled</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">movie_unc</span><span class="p">,</span> <span class="n">rho_coh</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled_reversed.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2018-11-13-testing-more-complex-trajectories.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<span class="o">%</span><span class="k">version_information</span> numpy, matplotlib, MotionClouds
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.6.5 64bit [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]</td>
+</tr>
+<tr>
+<td>IPython</td>
+<td>7.1.1</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Darwin 18.2.0 x86_64 i386 64bit</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td>1.15.4</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.0.2</td>
+</tr>
+<tr>
+<td>MotionClouds</td>
+<td>20180606</td>
+</tr>
+<tr><td colspan="2">Thu Nov 22 10:32:03 2018 CET</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>!rm -fr {mc.figpath}/*_overlay_*!ls -l {mc.figpath}/*</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../categories/motionclouds.html" rel="tag">motionclouds</a></li>
+            <li><a class="tag p-category" href="../categories/trajectory.html" rel="tag">trajectory</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2018-11-11-rainbow-effect.html" rel="prev" title="Rainbow effect">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2018-11-14-regex-an-iso8601-date.html" rel="next" title="Using regex to filter an ISO8601 date">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="invibe",
+            disqus_url="http://blog.invibe.net/posts/2018-11-13-testing-more-complex-trajectories.html",
+        disqus_title="Embedding a trajectory in noise",
+        disqus_identifier="cache/posts/2018-11-13-testing-more-complex-trajectories.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

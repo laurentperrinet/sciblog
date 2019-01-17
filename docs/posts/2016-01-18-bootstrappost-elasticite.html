@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bootstraping posts for élasticité | Scientific logbook</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="http://blog.invibe.net/posts/2016-01-18-bootstrappost-elasticite.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2015-12-11-reproducing-olshausens-classical-sparsenet-part-3.html" title="Reproducing Olshausen's classical SparseNet (part 3)" type="text/html">
+<link rel="next" href="2016-01-19-elasticite-trames-V1.html" title="élasticité trames V1" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="bootstraping posts for élasticité">
+<meta property="og:url" content="http://blog.invibe.net/posts/2016-01-18-bootstrappost-elasticite.html">
+<meta property="og:description" content="L'installation Elasticité dynamique agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-01-18T14:03:08+02:00">
+<meta property="article:tag" content="elasticite">
+<meta property="article:tag" content="notebook">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://blog.invibe.net/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://blog.invibe.net/">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2016-01-18-bootstrappost-elasticite.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="http://invibe.net" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">bootstraping posts for élasticité</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-18T14:03:08+02:00" itemprop="datePublished" title="2016-01-18 14:03">2016-01-18 14:03</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="2016-01-18-bootstrappost-elasticite.html#disqus_thread" data-disqus-identifier="cache/posts/2016-01-18-bootstrappost-elasticite.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="2016-01-18-bootstrappost-elasticite.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
+<p>.. media:: <a href="http://vimeo.com/150813922">http://vimeo.com/150813922</a></p>
+<p>Ce meta-post gère la publication sur <a href="http://blog.invibe.net">http://blog.invibe.net</a>.</p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="elasticité">elasticité<a class="anchor-link" href="2016-01-18-bootstrappost-elasticite.html#elasticit%C3%A9">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -l ~/cloud_nas/science/2016-01-13_elasticite_github/posts/*ipynb
+<span class="o">!</span>ls -l ~/cloud_nas/science/2016-01-13_elasticite_github/files/figures/elasticite/
+<span class="o">~/</span><span class="n">pool</span><span class="o">/</span><span class="n">libs</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">invibe</span><span class="o">/</span>
+<span class="o">%</span><span class="k">pwd</span>
+
+<span class="o">!</span>mkdir ./files/2015-10-14_elasticite/
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-rw-r--r--  1 laurentperrinet  staff  36129843 Jan 18 11:58 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2014-06-25-animation-in-a-notebook.ipynb
+-rw-r--r--  1 laurentperrinet  staff    807480 Jan 18 11:57 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2014-06-25-grille-hexagonale.ipynb
+-rw-r--r--  1 laurentperrinet  staff     12060 Jan 18 12:10 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-02-26-elastic-grids-of-edges.ipynb
+-rw-r--r--  1 laurentperrinet  staff      6947 Jan 18 12:09 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-04-10_elastic-force.ipynb
+-rw-r--r--  1 laurentperrinet  staff     21338 Jan 18 12:15 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-04-30_trame-sensorielle.ipynb
+-rw-r--r--  1 laurentperrinet  staff   4825595 Jan 18 12:10 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-09-30 élasticité, vapory and reflections.ipynb
+-rw-r--r--  1 laurentperrinet  staff  18112801 Jan 18 12:19 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-10-14 élasticité, Fresnel.ipynb
+-rw-r--r--  1 laurentperrinet  staff   6408085 Jan 18 12:13 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-10-14 élasticité, control scenario.ipynb
+-rw-r--r--  1 laurentperrinet  staff    203774 Jan 18 12:20 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-10-27 élasticité expansion-réaction diffusion.ipynb
+-rw-r--r--  1 laurentperrinet  staff   1053931 Jan 18 11:57 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-10-27 élasticité expansion.ipynb
+-rw-r--r--  1 laurentperrinet  staff      9487 Jan 18 11:56 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-10-27 élasticité rapsberry pyserial.ipynb
+-rw-r--r--  1 laurentperrinet  staff  13553362 Jan 18 11:53 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-02 élasticité expansion en miroir - exploration paramètres.ipynb
+-rw-r--r--  1 laurentperrinet  staff   1388423 Jan 18 11:51 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-02 élasticité expansion en miroir - principes.ipynb
+-rw-r--r--  1 laurentperrinet  staff    344400 Jan 18 11:50 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-17 élasticité expansion en miroir - dynamique d'un point focal.ipynb
+-rw-r--r--  1 laurentperrinet  staff   2513600 Jan 18 11:48 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-26 élasticité - scénario vague.ipynb
+-rw-r--r--  1 laurentperrinet  staff    498855 Jan 18 11:41 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-27 élasticité, geometrie.ipynb
+-rw-r--r--  1 laurentperrinet  staff   2731038 Jan 18 11:54 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-11-29 élasticité - scénario onde.ipynb
+-rw-r--r--  1 laurentperrinet  staff    438236 Jan 18 11:00 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2015-12-05 élasticité - scénario final montage.ipynb
+ls: /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/files/figures/elasticite/: No such file or directory
+mkdir: ./files/2015-10-14_elasticite/: File exists
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp ~/cloud_nas/science/2016-01-13_elasticite_github/files/2015-10-14_elasticite/* ~/pool/libs/blog/invibe/files/2015-10-14_elasticite/
+<span class="o">!</span>cp ~/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb ~/pool/libs/blog/invibe/posts/
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">nikola</span> <span class="k">import</span> <span class="n">utils</span>
+
+<span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"/Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb"</span><span class="p">):</span>
+    <span class="n">ROOT</span><span class="p">,</span> <span class="n">FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">FILE_SHORT</span> <span class="o">=</span> <span class="n">FILE</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">DATE</span> <span class="o">=</span> <span class="n">FILE_SHORT</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="n">FILE_SHORT</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span>
+    <span class="n">SLUG</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">slugify</span><span class="p">(</span><span class="n">FILE_SHORT</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'~/pool/libs/blog/invibe/posts/'</span> <span class="o">+</span> <span class="n">FILE</span><span class="p">,</span> <span class="s1">'~/pool/libs/blog/invibe/posts/'</span> <span class="o">+</span> <span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'~/pool/libs/blog/invibe/posts/'</span> <span class="o">+</span> <span class="n">FILE</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">'python'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'elasticite'</span><span class="p">,</span> <span class="s1">'notebook'</span><span class="p">])</span>
+    <span class="n">TIME</span> <span class="o">=</span> <span class="s2">"14:03:08 UTC+02:00"</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. type: text</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">    </span>
+<span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+         
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">FILE</span><span class="p">,</span> <span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.meta'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>posts/2014-06-25-animation-in-a-notebook.ipynb posts/2014-06-25-animation-in-a-notebook.ipynb
+posts/2014-06-25-grille-hexagonale.ipynb posts/2014-06-25-grille-hexagonale.ipynb
+posts/2015-02-26-elastic-grids-of-edges.ipynb posts/2015-02-26-elastic-grids-of-edges.ipynb
+posts/2015-04-10_elastic-force.ipynb posts/2015-04-10_elastic-force.ipynb
+posts/2015-04-30_trame-sensorielle.ipynb posts/2015-04-30_trame-sensorielle.ipynb
+posts/2015-09-30 élasticité, vapory and reflections.ipynb posts/2015-09-30-elasticite-vapory-and-reflections.ipynb
+posts/2015-10-14 élasticité, control scenario.ipynb posts/2015-10-14-elasticite-control-scenario.ipynb
+posts/2015-10-14 élasticité, Fresnel.ipynb posts/2015-10-14-elasticite-fresnel.ipynb
+posts/2015-10-27 élasticité expansion-réaction diffusion.ipynb posts/2015-10-27-elasticite-expansion-reaction-diffusion.ipynb
+posts/2015-10-27 élasticité expansion.ipynb posts/2015-10-27-elasticite-expansion.ipynb
+posts/2015-10-27 élasticité rapsberry pyserial.ipynb posts/2015-10-27-elasticite-rapsberry-pyserial.ipynb
+posts/2015-11-02 élasticité expansion en miroir - exploration paramètres.ipynb posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.ipynb
+posts/2015-11-02 élasticité expansion en miroir - principes.ipynb posts/2015-11-02-elasticite-expansion-en-miroir-principes.ipynb
+posts/2015-11-17 élasticité expansion en miroir - dynamique d'un point focal.ipynb posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.ipynb
+posts/2015-11-26 élasticité - scénario vague.ipynb posts/2015-11-26-elasticite-scenario-vague.ipynb
+posts/2015-11-27 élasticité, geometrie.ipynb posts/2015-11-27-elasticite-geometrie.ipynb
+posts/2015-11-29 élasticité - scénario onde.ipynb posts/2015-11-29-elasticite-scenario-onde.ipynb
+posts/2015-12-05 élasticité - scénario final montage.ipynb posts/2015-12-05-elasticite-scenario-final-montage.ipynb
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="deploying-changes">deploying changes<a class="anchor-link" href="2016-01-18-bootstrappost-elasticite.html#deploying-changes">¶</a>
+</h2>
+</div>
+</div>
+</div>%cd ~/pool/libs/blog/invibe/
+!nikola clean
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>!rm posts/__temp__.mp4!ls -R files
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola build
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola deploy
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-yellow-intense-fg ansi-bold">[2016-01-18T11:47:14Z] WARNING: ShimWarning: /usr/local/lib/python3.5/site-packages/IPython/nbconvert.py:13: The `IPython.nbconvert` package has been deprecated. You should import from ipython_nbconvert instead.</span>
+<span class="ansi-yellow-intense-fg ansi-bold">[2016-01-18T11:47:14Z] WARNING: ShimWarning: /usr/local/lib/python3.5/site-packages/IPython/nbformat.py:13: The `IPython.nbformat` package has been deprecated. You should import from nbformat instead.</span>
+<span class="ansi-yellow-intense-fg ansi-bold">[2016-01-18T11:47:14Z] WARNING: ShimWarning: /usr/local/lib/python3.5/site-packages/IPython/config.py:13: The `IPython.config` package has been deprecated. You should import from traitlets.config instead.</span>
+Scanning posts........done!
+<span class="ansi-white-fg">[2016-01-18T11:47:31Z] INFO: deploy: =&gt; preset 'default'</span>
+<span class="ansi-white-fg">[2016-01-18T11:47:31Z] INFO: deploy: ==&gt; git add .</span>
+<span class="ansi-white-fg">[2016-01-18T11:47:31Z] INFO: deploy: ==&gt; git commit --dry-run -am 'Test' |grep -q -v 'nothing to commit' &amp;&amp; git commit -am 'Update'; git push</span>
+[master 9181fe0] Update
+ 2 files changed, 1644 insertions(+), 146 deletions(-)
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 26.54 KiB | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To https://laurentperrinet@bitbucket.org/laurentperrinet/invibe.git
+   0d5a474..9181fe0  master -&gt; master
+<span class="ansi-white-fg">[2016-01-18T11:47:34Z] INFO: deploy: ==&gt; sh deploy.sh</span>
+Removing old file `archive.html'
+Transferring file `archive.html'
+Removing old file `index-1.html'
+Transferring file `index-1.html'
+Removing old file `index-10.html'
+Transferring file `index-10.html'
+Removing old file `index-11.html'
+Transferring file `index-11.html'
+Removing old file `index-12.html'
+Transferring file `index-12.html'
+Removing old file `index-13.html'
+Transferring file `index-13.html'
+Removing old file `index-14.html'
+Transferring file `index-14.html'
+Removing old file `index-15.html'
+Transferring file `index-15.html'
+Removing old file `index-16.html'
+Transferring file `index-16.html'
+Removing old file `index-17.html'
+Transferring file `index-17.html'
+Removing old file `index-18.html'
+Transferring file `index-18.html'
+Removing old file `index-19.html'
+Transferring file `index-19.html'
+Removing old file `index-2.html'
+Transferring file `index-2.html'
+Removing old file `index-3.html'
+Transferring file `index-3.html'
+Removing old file `index-4.html'
+Transferring file `index-4.html'
+Removing old file `index-5.html'
+Transferring file `index-5.html'
+Removing old file `index-6.html'
+Transferring file `index-6.html'
+Removing old file `index-7.html'
+Transferring file `index-7.html'
+Removing old file `index-8.html'
+Transferring file `index-8.html'
+Removing old file `index-9.html'
+Transferring file `index-9.html'
+Removing old file `index.html'
+Transferring file `index.html'
+Removing old file `robots.txt'
+Transferring file `robots.txt'
+Removing old file `rss.xml'
+Transferring file `rss.xml'
+Removing old file `sitemap.xml'
+Transferring file `sitemap.xml'
+Removing old file `sitemapindex.xml'
+Transferring file `sitemapindex.xml'
+Removing old file `assets/css/all-nocdn.css'
+Transferring file `assets/css/all-nocdn.css'
+Removing old file `assets/css/all.css'
+Transferring file `assets/css/all.css'
+Removing old file `assets/css/code.css'
+Transferring file `assets/css/code.css'
+Removing old file `assets/js/all-nocdn.js'
+Transferring file `assets/js/all-nocdn.js'
+Removing old file `assets/js/all.js'
+Transferring file `assets/js/all.js'
+Removing old file `assets/js/tag_cloud_data.json'
+Transferring file `assets/js/tag_cloud_data.json'
+Transferring file `assets/js/colorbox-i18n/jquery.colorbox-pt-BR.js'
+Removing old file `assets/js/colorbox-i18n/jquery.colorbox-pt-br.js'
+Removing old file `categories/anr-balav1.html'
+Transferring file `categories/anr-balav1.html'
+Removing old file `categories/anr-balav1.xml'
+Transferring file `categories/anr-balav1.xml'
+Removing old file `categories/anr-speed.html'
+Transferring file `categories/anr-speed.html'
+Removing old file `categories/anr-speed.xml'
+Transferring file `categories/anr-speed.xml'
+Removing old file `categories/bibcloud.html'
+Transferring file `categories/bibcloud.html'
+Removing old file `categories/bibcloud.xml'
+Transferring file `categories/bibcloud.xml'
+Removing old file `categories/bicv.html'
+Transferring file `categories/bicv.html'
+Removing old file `categories/bicv.xml'
+Transferring file `categories/bicv.xml'
+Removing old file `categories/blog.html'
+Transferring file `categories/blog.html'
+Removing old file `categories/blog.xml'
+Transferring file `categories/blog.xml'
+Removing old file `categories/brainscales.html'
+Transferring file `categories/brainscales.html'
+Removing old file `categories/brainscales.xml'
+Transferring file `categories/brainscales.xml'
+Removing old file `categories/cloud.html'
+Transferring file `categories/cloud.html'
+Removing old file `categories/cloud.xml'
+Transferring file `categories/cloud.xml'
+Removing old file `categories/cnrs.html'
+Transferring file `categories/cnrs.html'
+Removing old file `categories/cnrs.xml'
+Transferring file `categories/cnrs.xml'
+Removing old file `categories/computationalneuroscience.html'
+Transferring file `categories/computationalneuroscience.html'
+Removing old file `categories/computationalneuroscience.xml'
+Transferring file `categories/computationalneuroscience.xml'
+Removing old file `categories/computing.html'
+Transferring file `categories/computing.html'
+Removing old file `categories/computing.xml'
+Transferring file `categories/computing.xml'
+Removing old file `categories/craac.html'
+Transferring file `categories/craac.html'
+Removing old file `categories/craac.xml'
+Transferring file `categories/craac.xml'
+Removing old file `categories/demo.html'
+Transferring file `categories/demo.html'
+Removing old file `categories/demo.xml'
+Transferring file `categories/demo.xml'
+Removing old file `categories/elasticite-1.html'
+Transferring file `categories/elasticite-1.html'
+Removing old file `categories/elasticite.html'
+Transferring file `categories/elasticite.html'
+Removing old file `categories/elasticite.xml'
+Transferring file `categories/elasticite.xml'
+Removing old file `categories/facets.html'
+Transferring file `categories/facets.html'
+Removing old file `categories/facets.xml'
+Transferring file `categories/facets.xml'
+Removing old file `categories/find.html'
+Transferring file `categories/find.html'
+Removing old file `categories/find.xml'
+Transferring file `categories/find.xml'
+Removing old file `categories/gizeh.html'
+Transferring file `categories/gizeh.html'
+Removing old file `categories/gizeh.xml'
+Transferring file `categories/gizeh.xml'
+Removing old file `categories/hardlink.html'
+Transferring file `categories/hardlink.html'
+Removing old file `categories/hardlink.xml'
+Transferring file `categories/hardlink.xml'
+Removing old file `categories/holoviews.html'
+Transferring file `categories/holoviews.html'
+Removing old file `categories/holoviews.xml'
+Transferring file `categories/holoviews.xml'
+Removing old file `categories/homebrew.html'
+Transferring file `categories/homebrew.html'
+Removing old file `categories/homebrew.xml'
+Transferring file `categories/homebrew.xml'
+Removing old file `categories/index.html'
+Transferring file `categories/index.html'
+Removing old file `categories/info.html'
+Transferring file `categories/info.html'
+Removing old file `categories/info.xml'
+Transferring file `categories/info.xml'
+Removing old file `categories/int.html'
+Transferring file `categories/int.html'
+Removing old file `categories/int.xml'
+Transferring file `categories/int.xml'
+Removing old file `categories/interactive.html'
+Transferring file `categories/interactive.html'
+Removing old file `categories/interactive.xml'
+Transferring file `categories/interactive.xml'
+Removing old file `categories/ipython-1.html'
+Transferring file `categories/ipython-1.html'
+Removing old file `categories/ipython.html'
+Transferring file `categories/ipython.html'
+Removing old file `categories/ipython.xml'
+Transferring file `categories/ipython.xml'
+Removing old file `categories/latex-1.html'
+Transferring file `categories/latex-1.html'
+Removing old file `categories/latex.html'
+Transferring file `categories/latex.html'
+Removing old file `categories/latex.xml'
+Transferring file `categories/latex.xml'
+Removing old file `categories/macos-1.html'
+Transferring file `categories/macos-1.html'
+Removing old file `categories/macos-2.html'
+Transferring file `categories/macos-2.html'
+Removing old file `categories/macos-3.html'
+Transferring file `categories/macos-3.html'
+Removing old file `categories/macos.html'
+Transferring file `categories/macos.html'
+Removing old file `categories/macos.xml'
+Transferring file `categories/macos.xml'
+Removing old file `categories/matching-pursuit.html'
+Transferring file `categories/matching-pursuit.html'
+Removing old file `categories/matching-pursuit.xml'
+Transferring file `categories/matching-pursuit.xml'
+Removing old file `categories/moinmoin.html'
+Transferring file `categories/moinmoin.html'
+Removing old file `categories/moinmoin.xml'
+Transferring file `categories/moinmoin.xml'
+Removing old file `categories/motion-detection.html'
+Transferring file `categories/motion-detection.html'
+Removing old file `categories/motion-detection.xml'
+Transferring file `categories/motion-detection.xml'
+Removing old file `categories/motionclouds.html'
+Transferring file `categories/motionclouds.html'
+Removing old file `categories/motionclouds.xml'
+Transferring file `categories/motionclouds.xml'
+Removing old file `categories/moviepy.html'
+Transferring file `categories/moviepy.html'
+Removing old file `categories/moviepy.xml'
+Transferring file `categories/moviepy.xml'
+Removing old file `categories/mytracks.html'
+Transferring file `categories/mytracks.html'
+Removing old file `categories/mytracks.xml'
+Transferring file `categories/mytracks.xml'
+Removing old file `categories/natural-scenes.html'
+Transferring file `categories/natural-scenes.html'
+Removing old file `categories/natural-scenes.xml'
+Transferring file `categories/natural-scenes.xml'
+Removing old file `categories/neuralensemble.html'
+Transferring file `categories/neuralensemble.html'
+Removing old file `categories/neuralensemble.xml'
+Transferring file `categories/neuralensemble.xml'
+Removing old file `categories/nikola.html'
+Transferring file `categories/nikola.html'
+Removing old file `categories/nikola.xml'
+Transferring file `categories/nikola.xml'
+Removing old file `categories/notebook-1.html'
+Transferring file `categories/notebook-1.html'
+Removing old file `categories/notebook.html'
+Transferring file `categories/notebook.html'
+Removing old file `categories/notebook.xml'
+Transferring file `categories/notebook.xml'
+Removing old file `categories/oss.html'
+Transferring file `categories/oss.html'
+Removing old file `categories/oss.xml'
+Transferring file `categories/oss.xml'
+Removing old file `categories/plot.html'
+Transferring file `categories/plot.html'
+Removing old file `categories/plot.xml'
+Transferring file `categories/plot.xml'
+Removing old file `categories/povray.html'
+Transferring file `categories/povray.html'
+Removing old file `categories/povray.xml'
+Transferring file `categories/povray.xml'
+Removing old file `categories/probability.html'
+Transferring file `categories/probability.html'
+Removing old file `categories/probability.xml'
+Transferring file `categories/probability.xml'
+Removing old file `categories/pynn.html'
+Transferring file `categories/pynn.html'
+Removing old file `categories/pynn.xml'
+Transferring file `categories/pynn.xml'
+Removing old file `categories/python-1.html'
+Transferring file `categories/python-1.html'
+Removing old file `categories/python-2.html'
+Transferring file `categories/python-2.html'
+Removing old file `categories/python-3.html'
+Transferring file `categories/python-3.html'
+Removing old file `categories/python-4.html'
+Transferring file `categories/python-4.html'
+Removing old file `categories/python.html'
+Transferring file `categories/python.html'
+Removing old file `categories/python.xml'
+Transferring file `categories/python.xml'
+Removing old file `categories/ring-model.html'
+Transferring file `categories/ring-model.html'
+Removing old file `categories/ring-model.xml'
+Transferring file `categories/ring-model.xml'
+Removing old file `categories/rsync.html'
+Transferring file `categories/rsync.html'
+Removing old file `categories/rsync.xml'
+Transferring file `categories/rsync.xml'
+Removing old file `categories/sciblog-1.html'
+Transferring file `categories/sciblog-1.html'
+Removing old file `categories/sciblog-10.html'
+Transferring file `categories/sciblog-10.html'
+Removing old file `categories/sciblog-11.html'
+Transferring file `categories/sciblog-11.html'
+Removing old file `categories/sciblog-12.html'
+Transferring file `categories/sciblog-12.html'
+Removing old file `categories/sciblog-2.html'
+Transferring file `categories/sciblog-2.html'
+Removing old file `categories/sciblog-3.html'
+Transferring file `categories/sciblog-3.html'
+Removing old file `categories/sciblog-4.html'
+Transferring file `categories/sciblog-4.html'
+Removing old file `categories/sciblog-5.html'
+Transferring file `categories/sciblog-5.html'
+Removing old file `categories/sciblog-6.html'
+Transferring file `categories/sciblog-6.html'
+Removing old file `categories/sciblog-7.html'
+Transferring file `categories/sciblog-7.html'
+Removing old file `categories/sciblog-8.html'
+Transferring file `categories/sciblog-8.html'
+Removing old file `categories/sciblog-9.html'
+Transferring file `categories/sciblog-9.html'
+Removing old file `categories/sciblog.html'
+Transferring file `categories/sciblog.html'
+Removing old file `categories/sciblog.xml'
+Transferring file `categories/sciblog.xml'
+Removing old file `categories/slip.html'
+Transferring file `categories/slip.html'
+Removing old file `categories/slip.xml'
+Transferring file `categories/slip.xml'
+Removing old file `categories/sparseedges.html'
+Transferring file `categories/sparseedges.html'
+Removing old file `categories/sparseedges.xml'
+Transferring file `categories/sparseedges.xml'
+Removing old file `categories/ssh.html'
+Transferring file `categories/ssh.html'
+Removing old file `categories/ssh.xml'
+Transferring file `categories/ssh.xml'
+Removing old file `categories/stackoverflow.html'
+Transferring file `categories/stackoverflow.html'
+Removing old file `categories/stackoverflow.xml'
+Transferring file `categories/stackoverflow.xml'
+Removing old file `categories/talks.html'
+Transferring file `categories/talks.html'
+Removing old file `categories/talks.xml'
+Transferring file `categories/talks.xml'
+Removing old file `categories/tikz.html'
+Transferring file `categories/tikz.html'
+Removing old file `categories/tikz.xml'
+Transferring file `categories/tikz.xml'
+Removing old file `categories/tropique.html'
+Transferring file `categories/tropique.html'
+Removing old file `categories/tropique.xml'
+Transferring file `categories/tropique.xml'
+Removing old file `categories/ubuntu.html'
+Transferring file `categories/ubuntu.html'
+Removing old file `categories/ubuntu.xml'
+Transferring file `categories/ubuntu.xml'
+Removing old file `categories/using.html'
+Transferring file `categories/using.html'
+Removing old file `categories/using.xml'
+Transferring file `categories/using.xml'
+Removing old file `categories/vim.html'
+Transferring file `categories/vim.html'
+Removing old file `categories/vim.xml'
+Transferring file `categories/vim.xml'
+Removing old file `categories/vispy.html'
+Transferring file `categories/vispy.html'
+Removing old file `categories/vispy.xml'
+Transferring file `categories/vispy.xml'
+Removing old file `categories/year07.html'
+Transferring file `categories/year07.html'
+Removing old file `categories/year07.xml'
+Transferring file `categories/year07.xml'
+Removing old file `categories/year08.html'
+Transferring file `categories/year08.html'
+Removing old file `categories/year08.xml'
+Transferring file `categories/year08.xml'
+Removing old file `categories/year09.html'
+Transferring file `categories/year09.html'
+Removing old file `categories/year09.xml'
+Transferring file `categories/year09.xml'
+Removing old file `categories/year10.html'
+Transferring file `categories/year10.html'
+Removing old file `categories/year10.xml'
+Transferring file `categories/year10.xml'
+Removing old file `categories/year12.html'
+Transferring file `categories/year12.html'
+Removing old file `categories/year12.xml'
+Transferring file `categories/year12.xml'
+Removing old file `files/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html'
+Transferring file `files/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html'
+Removing old file `files/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp.slides.html'
+Transferring file `files/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp.slides.html'
+Removing old file `files/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp_final.slides.html'
+Transferring file `files/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp_final.slides.html'
+Removing old file `files/2015-10-14_elasticite/VISUEL_104.jpg'
+Transferring file `files/2015-10-14_elasticite/VISUEL_104.jpg'
+Removing old file `files/2015-10-14_elasticite/VISUEL_104.png'
+Transferring file `files/2015-10-14_elasticite/VISUEL_104.png'
+Removing old file `files/2015-10-14_elasticite/crabe.png'
+Transferring file `files/2015-10-14_elasticite/crabe.png'
+Removing old file `files/2015-10-14_elasticite/elastic_fresnel.mp4'
+Transferring file `files/2015-10-14_elasticite/elastic_fresnel.mp4'
+Removing old file `files/2015-10-14_elasticite/elastic_fresnel_gauche.mp4'
+Transferring file `files/2015-10-14_elasticite/elastic_fresnel_gauche.mp4'
+Removing old file `files/2015-10-14_elasticite/elastic_fresnel_lateral.mp4'
+Transferring file `files/2015-10-14_elasticite/elastic_fresnel_lateral.mp4'
+Removing old file `files/2015-10-14_elasticite/elastic_fresnel_pasapas.mp4'
+Transferring file `files/2015-10-14_elasticite/elastic_fresnel_pasapas.mp4'
+Removing old file `files/2015-10-14_elasticite/elastic_fresnel_rot.mp4'
+Transferring file `files/2015-10-14_elasticite/elastic_fresnel_rot.mp4'
+Removing old file `files/2015-10-14_elasticite/elasticite_test.mp4'
+Transferring file `files/2015-10-14_elasticite/elasticite_test.mp4'
+Removing old file `files/2015-10-14_elasticite/fresnel.mp4'
+Transferring file `files/2015-10-14_elasticite/fresnel.mp4'
+Removing old file `files/2015-10-14_elasticite/geom.png'
+Transferring file `files/2015-10-14_elasticite/geom.png'
+Removing old file `files/2015-10-14_elasticite/lames_contraintes.mp4'
+Transferring file `files/2015-10-14_elasticite/lames_contraintes.mp4'
+Removing old file `files/2015-10-14_elasticite/lames_oscillantes.mp4'
+Transferring file `files/2015-10-14_elasticite/lames_oscillantes.mp4'
+Removing old file `files/2015-10-14_elasticite/lames_oscillantes_fps5.mp4'
+Transferring file `files/2015-10-14_elasticite/lames_oscillantes_fps5.mp4'
+Removing old file `files/2015-10-14_elasticite/line_contraint.mp4'
+Transferring file `files/2015-10-14_elasticite/line_contraint.mp4'
+Removing old file `files/2015-10-14_elasticite/master.png'
+Transferring file `files/2015-10-14_elasticite/master.png'
+Removing old file `files/2015-10-14_elasticite/mirror.png'
+Transferring file `files/2015-10-14_elasticite/mirror.png'
+Removing old file `files/2015-10-14_elasticite/onde.png'
+Transferring file `files/2015-10-14_elasticite/onde.png'
+Removing old file `files/2015-10-14_elasticite/onde.mp4'
+Transferring file `files/2015-10-14_elasticite/onde.mp4'
+Removing old file `files/2015-10-14_elasticite/onde_impulse.mp4'
+Transferring file `files/2015-10-14_elasticite/onde_impulse.mp4'
+Removing old file `files/2015-10-14_elasticite/reaction-diffusion.mp4'
+Transferring file `files/2015-10-14_elasticite/reaction-diffusion.mp4'
+Removing old file `files/2015-10-14_elasticite/waves_impulse.png'
+Transferring file `files/2015-10-14_elasticite/waves_impulse.png'
+Removing old file `files/2015-10-14_elasticite/waves_impulse.mp4'
+Transferring file `files/2015-10-14_elasticite/waves_impulse.mp4'
+Removing old file `files/2015-10-14_elasticite/waves_impulse_cube.png'
+Transferring file `files/2015-10-14_elasticite/waves_impulse_cube.png'
+Removing old file `files/2015-10-14_elasticite/waves_low.png'
+Transferring file `files/2015-10-14_elasticite/waves_low.png'
+Removing old file `files/2015-10-14_elasticite/waves_low.mp4'
+Transferring file `files/2015-10-14_elasticite/waves_low.mp4'
+Removing old file `files/2015-10-14_elasticite/waves_low_cube.png'
+Transferring file `files/2015-10-14_elasticite/waves_low_cube.png'
+Removing old file `galleries/index.html'
+Transferring file `galleries/index.html'
+Removing old file `galleries/rss.xml'
+Transferring file `galleries/rss.xml'
+Removing old file `listings/import_moinmoinpages.py.html'
+Transferring file `listings/import_moinmoinpages.py.html'
+Removing old file `listings/index.html'
+Transferring file `listings/index.html'
+Removing old file `listings/install-nikola.sh.html'
+Transferring file `listings/install-nikola.sh.html'
+Removing old file `posts/05-10-29-craac.html'
+Transferring file `posts/05-10-29-craac.html'
+Removing old file `posts/06-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html'
+Transferring file `posts/06-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html'
+Removing old file `posts/06-11-30-Post-doctoral-Position-in-Computational-Neuroscience-Functional-Large-scale-Models-of-Visual-Motion-Perception-.html'
+Transferring file `posts/06-11-30-Post-doctoral-Position-in-Computational-Neuroscience-Functional-Large-scale-Models-of-Visual-Motion-Perception-.html'
+Removing old file `posts/07-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html'
+Transferring file `posts/07-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html'
+Removing old file `posts/08-08-29-keyboard.html'
+Transferring file `posts/08-08-29-keyboard.html'
+Removing old file `posts/08-11-20-Impact-Factor.html'
+Transferring file `posts/08-11-20-Impact-Factor.html'
+Removing old file `posts/08-12-05-duplicate-files.html'
+Transferring file `posts/08-12-05-duplicate-files.html'
+Removing old file `posts/09-08-19-Installation-TeX.html'
+Transferring file `posts/09-08-19-Installation-TeX.html'
+Removing old file `posts/09-08-20-some-LaTeX-tips-drafts-links-margins-pdflatex.html'
+Transferring file `posts/09-08-20-some-LaTeX-tips-drafts-links-margins-pdflatex.html'
+Removing old file `posts/09-08-21-setting-graphics-path.html'
+Transferring file `posts/09-08-21-setting-graphics-path.html'
+Removing old file `posts/09-08-23-List-Of-Symbols.html'
+Transferring file `posts/09-08-23-List-Of-Symbols.html'
+Removing old file `posts/09-08-26-Creating-Proceedings-(almost)-automatically-using-python-and-latex.html'
+Transferring file `posts/09-08-26-Creating-Proceedings-(almost)-automatically-using-python-and-latex.html'
+Removing old file `posts/09-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html'
+Transferring file `posts/09-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html'
+Removing old file `posts/09-11-01-floating-point-magic.html'
+Transferring file `posts/09-11-01-floating-point-magic.html'
+Removing old file `posts/09-11-15-MoinMoin-howto-install-a-new-theme.html'
+Transferring file `posts/09-11-15-MoinMoin-howto-install-a-new-theme.html'
+Removing old file `posts/09-11-22-some-unix-tips.html'
+Transferring file `posts/09-11-22-some-unix-tips.html'
+Removing old file `posts/09-11-26-inkscape-native.html'
+Transferring file `posts/09-11-26-inkscape-native.html'
+Removing old file `posts/09-12-02-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2008-2009.html'
+Transferring file `posts/09-12-02-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2008-2009.html'
+Removing old file `posts/09-12-06-convert-a-bitmap-image-to-a-vectorized-PDF-using-mkbitmap-and-potrace.html'
+Transferring file `posts/09-12-06-convert-a-bitmap-image-to-a-vectorized-PDF-using-mkbitmap-and-potrace.html'
+Removing old file `posts/09-12-09-Journal-Club-The-good-the-bad-and-the-NOISE.html'
+Transferring file `posts/09-12-09-Journal-Club-The-good-the-bad-and-the-NOISE.html'
+Removing old file `posts/09-12-11-which-or-that.html'
+Transferring file `posts/09-12-11-which-or-that.html'
+Removing old file `posts/09-12-19-contributing-to-the-python-community.html'
+Transferring file `posts/09-12-19-contributing-to-the-python-community.html'
+Removing old file `posts/10-01-27-The-original-eve.html'
+Transferring file `posts/10-01-27-The-original-eve.html'
+Removing old file `posts/10-02-03-quelques-blogs-francais-de-science.html'
+Transferring file `posts/10-02-03-quelques-blogs-francais-de-science.html'
+Removing old file `posts/10-02-11-Neuroinformatique-et-neurosciences-computationnelles.html'
+Transferring file `posts/10-02-11-Neuroinformatique-et-neurosciences-computationnelles.html'
+Removing old file `posts/10-03-15-securing-the-server.html'
+Transferring file `posts/10-03-15-securing-the-server.html'
+Removing old file `posts/10-04-07-using-grin.html'
+Transferring file `posts/10-04-07-using-grin.html'
+Removing old file `posts/10-04-08-Comment-creer-et-manipuler-les-donnees-scientifiques-autour-de-Numpy.html'
+Transferring file `posts/10-04-08-Comment-creer-et-manipuler-les-donnees-scientifiques-autour-de-Numpy.html'
+Removing old file `posts/10-04-24-Richard-Dawkins-on-our-queer-universe.html'
+Transferring file `posts/10-04-24-Richard-Dawkins-on-our-queer-universe.html'
+Removing old file `posts/10-04-25-bibdesk-+-citeulike.html'
+Transferring file `posts/10-04-25-bibdesk-+-citeulike.html'
+Removing old file `posts/10-04-26-replacing-text-in-files.html'
+Transferring file `posts/10-04-26-replacing-text-in-files.html'
+Removing old file `posts/10-04-28-reStructuredText-rst-cheatsheet.html'
+Transferring file `posts/10-04-28-reStructuredText-rst-cheatsheet.html'
+Removing old file `posts/10-05-22-sanitize-a-bibtex-file-using-bibtool.html'
+Transferring file `posts/10-05-22-sanitize-a-bibtex-file-using-bibtool.html'
+Removing old file `posts/10-05-23-Haim-Cohen-Tu-Ne-Laisseras-Point-Pleurer.html'
+Transferring file `posts/10-05-23-Haim-Cohen-Tu-Ne-Laisseras-Point-Pleurer.html'
+Removing old file `posts/10-06-24-installing-SUMATRA.html'
+Transferring file `posts/10-06-24-installing-SUMATRA.html'
+Removing old file `posts/10-07-08-latex-within-moinmoin.html'
+Transferring file `posts/10-07-08-latex-within-moinmoin.html'
+Removing old file `posts/10-08-03-compiling-OpenCV-on-MacOSX-106.html'
+Transferring file `posts/10-08-03-compiling-OpenCV-on-MacOSX-106.html'
+Removing old file `posts/10-08-05-Pinna-illusion.html'
+Transferring file `posts/10-08-05-Pinna-illusion.html'
+Removing old file `posts/10-08-07-distributed-computing.html'
+Transferring file `posts/10-08-07-distributed-computing.html'
+Removing old file `posts/10-08-09-running-embarassingly-parallel-simulations-on-a-multicore-machine-using-bash-loops.html'
+Transferring file `posts/10-08-09-running-embarassingly-parallel-simulations-on-a-multicore-machine-using-bash-loops.html'
+Removing old file `posts/10-08-11-getting-the-PID-from-matlab.html'
+Transferring file `posts/10-08-11-getting-the-PID-from-matlab.html'
+Removing old file `posts/10-08-29-System-Updates.html'
+Transferring file `posts/10-08-29-System-Updates.html'
+Removing old file `posts/10-08-30-Terminalapp-shortcuts.html'
+Transferring file `posts/10-08-30-Terminalapp-shortcuts.html'
+Removing old file `posts/10-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html'
+Transferring file `posts/10-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html'
+Removing old file `posts/10-09-03-A-neurocentric-approach-to-Bayesian-inference.html'
+Transferring file `posts/10-09-03-A-neurocentric-approach-to-Bayesian-inference.html'
+Removing old file `posts/10-09-09-Journee-de-lIFR-131-Sciences-du-Cerveau-et-de-la-Cognition.html'
+Transferring file `posts/10-09-09-Journee-de-lIFR-131-Sciences-du-Cerveau-et-de-la-Cognition.html'
+Removing old file `posts/10-09-27-bundling-using-py2app.html'
+Transferring file `posts/10-09-27-bundling-using-py2app.html'
+Removing old file `posts/10-10-05-gmail-Exchange-ActiveSync.html'
+Transferring file `posts/10-10-05-gmail-Exchange-ActiveSync.html'
+Removing old file `posts/10-10-06-Emergence.html'
+Transferring file `posts/10-10-06-Emergence.html'
+Removing old file `posts/10-10-09-nous.html'
+Transferring file `posts/10-10-09-nous.html'
+Removing old file `posts/10-10-15-Completely-disable-quarantine-of-downloaded-files.html'
+Transferring file `posts/10-10-15-Completely-disable-quarantine-of-downloaded-files.html'
+Removing old file `posts/10-10-20-Master-M2-Sciences.html'
+Transferring file `posts/10-10-20-Master-M2-Sciences.html'
+Removing old file `posts/10-10-27-Master-M2-Sciences.html'
+Transferring file `posts/10-10-27-Master-M2-Sciences.html'
+Removing old file `posts/10-10-27-installing-python-and-its-components.html'
+Transferring file `posts/10-10-27-installing-python-and-its-components.html'
+Removing old file `posts/10-10-31-Marseille-bookmarks-and-tips.html'
+Transferring file `posts/10-10-31-Marseille-bookmarks-and-tips.html'
+Removing old file `posts/10-11-03-rsync-to-an-alternate-ssh-port.html'
+Transferring file `posts/10-11-03-rsync-to-an-alternate-ssh-port.html'
+Removing old file `posts/10-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html'
+Transferring file `posts/10-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html'
+Removing old file `posts/10-11-07-wma-to-MP3.html'
+Transferring file `posts/10-11-07-wma-to-MP3.html'
+Removing old file `posts/10-11-09-Instinct-Paradise-journee-IMERA-du-9-nov-2010.html'
+Transferring file `posts/10-11-09-Instinct-Paradise-journee-IMERA-du-9-nov-2010.html'
+Removing old file `posts/10-11-15-Password-less-logins-with-OpenSSH.html'
+Transferring file `posts/10-11-15-Password-less-logins-with-OpenSSH.html'
+Removing old file `posts/10-11-27-ignoring-a-folder-in-SVN.html'
+Transferring file `posts/10-11-27-ignoring-a-folder-in-SVN.html'
+Removing old file `posts/10-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html'
+Transferring file `posts/10-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html'
+Removing old file `posts/10-12-20-Caps-Lock-what-a-useless-key.html'
+Transferring file `posts/10-12-20-Caps-Lock-what-a-useless-key.html'
+Removing old file `posts/10-12-27-how-to-find-stuff.html'
+Transferring file `posts/10-12-27-how-to-find-stuff.html'
+Removing old file `posts/11-01-18-ubuntu-starting-sshd-at-boot.html'
+Transferring file `posts/11-01-18-ubuntu-starting-sshd-at-boot.html'
+Removing old file `posts/11-01-19-inverting-colors-in-MacOsX.html'
+Transferring file `posts/11-01-19-inverting-colors-in-MacOsX.html'
+Removing old file `posts/11-01-25-Finder-Shortcuts-in-MacOsX.html'
+Transferring file `posts/11-01-25-Finder-Shortcuts-in-MacOsX.html'
+Removing old file `posts/11-01-26-python-in-user-space.html'
+Transferring file `posts/11-01-26-python-in-user-space.html'
+Removing old file `posts/11-01-29-handling-processes-in-bash.html'
+Transferring file `posts/11-01-29-handling-processes-in-bash.html'
+Removing old file `posts/11-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html'
+Transferring file `posts/11-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html'
+Removing old file `posts/11-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html'
+Transferring file `posts/11-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html'
+Removing old file `posts/11-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html'
+Transferring file `posts/11-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html'
+Removing old file `posts/11-03-09-Ermentrout-Double-or-Nothing-Phosphenes-and-the-periodic-driving-of-cortex-.html'
+Transferring file `posts/11-03-09-Ermentrout-Double-or-Nothing-Phosphenes-and-the-periodic-driving-of-cortex-.html'
+Removing old file `posts/11-03-10-SpikeStream-&amp;-Nemo.html'
+Transferring file `posts/11-03-10-SpikeStream-&amp;-Nemo.html'
+Removing old file `posts/11-05-04-HomeBrew-compiling-a-python-toolchain.html'
+Transferring file `posts/11-05-04-HomeBrew-compiling-a-python-toolchain.html'
+Removing old file `posts/11-07-05-Publications-2006-2010.html'
+Transferring file `posts/11-07-05-Publications-2006-2010.html'
+Removing old file `posts/11-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html'
+Transferring file `posts/11-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html'
+Removing old file `posts/11-07-07-using-a-versioning-system.html'
+Transferring file `posts/11-07-07-using-a-versioning-system.html'
+Removing old file `posts/11-07-08-mercurial-&amp;-LaTeX.html'
+Transferring file `posts/11-07-08-mercurial-&amp;-LaTeX.html'
+Removing old file `posts/11-07-10-mounting-filesystems-using-SSH.html'
+Transferring file `posts/11-07-10-mounting-filesystems-using-SSH.html'
+Removing old file `posts/11-07-25-computational-and-theoretical-neuroscience.html'
+Transferring file `posts/11-07-25-computational-and-theoretical-neuroscience.html'
+Removing old file `posts/12-01-07-installing-MoinMoin-on-a-OVH-server.html'
+Transferring file `posts/12-01-07-installing-MoinMoin-on-a-OVH-server.html'
+Removing old file `posts/12-01-18-Compiling-pyglet-on-MacOsX.html'
+Transferring file `posts/12-01-18-Compiling-pyglet-on-MacOsX.html'
+Removing old file `posts/12-02-08-installing-Dovecot-on-debian.html'
+Transferring file `posts/12-02-08-installing-Dovecot-on-debian.html'
+Removing old file `posts/12-02-16-Tropique-intervention-Enghien.html'
+Transferring file `posts/12-02-16-Tropique-intervention-Enghien.html'
+Removing old file `posts/12-02-17-parametrer-le-mail-a-lINT.html'
+Transferring file `posts/12-02-17-parametrer-le-mail-a-lINT.html'
+Removing old file `posts/12-02-22-access-spawn.html'
+Transferring file `posts/12-02-22-access-spawn.html'
+Removing old file `posts/12-03-05-Completely-disable-quarantine-of-downloaded-files.html'
+Transferring file `posts/12-03-05-Completely-disable-quarantine-of-downloaded-files.html'
+Removing old file `posts/12-03-10-view-pdf-online-on-firefox-in-macosx.html'
+Transferring file `posts/12-03-10-view-pdf-online-on-firefox-in-macosx.html'
+Removing old file `posts/12-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html'
+Transferring file `posts/12-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html'
+Removing old file `posts/12-03-12-Doing-a-red-lined-article-file-from-two-versions-of-a-paper-in-LaTeX.html'
+Transferring file `posts/12-03-12-Doing-a-red-lined-article-file-from-two-versions-of-a-paper-in-LaTeX.html'
+Removing old file `posts/12-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html'
+Transferring file `posts/12-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html'
+Removing old file `posts/12-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html'
+Transferring file `posts/12-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html'
+Removing old file `posts/12-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html'
+Transferring file `posts/12-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html'
+Removing old file `posts/12-03-22-how-to-leave-iphoto.html'
+Transferring file `posts/12-03-22-how-to-leave-iphoto.html'
+Removing old file `posts/12-03-24-Type-your-paths-directly.html'
+Transferring file `posts/12-03-24-Type-your-paths-directly.html'
+Removing old file `posts/12-03-25-going-back-to-simplicity-duckduckgo.html'
+Transferring file `posts/12-03-25-going-back-to-simplicity-duckduckgo.html'
+Removing old file `posts/12-04-05-managing-defaults-on-MacOsX.html'
+Transferring file `posts/12-04-05-managing-defaults-on-MacOsX.html'
+Removing old file `posts/12-04-17-transition-from-movie15sty-to-media9sty.html'
+Transferring file `posts/12-04-17-transition-from-movie15sty-to-media9sty.html'
+Removing old file `posts/12-04-22-Converting-FLAC-to-AAC-(or-MP3-to-OGG-etc).html'
+Transferring file `posts/12-04-22-Converting-FLAC-to-AAC-(or-MP3-to-OGG-etc).html'
+Removing old file `posts/12-04-30-rotating-a-video-using-ffmpeg.html'
+Transferring file `posts/12-04-30-rotating-a-video-using-ffmpeg.html'
+Removing old file `posts/12-06-12-racourci-pour-acceder-a-une-page-INIST.html'
+Transferring file `posts/12-06-12-racourci-pour-acceder-a-une-page-INIST.html'
+Removing old file `posts/12-07-10-using-and-re-using-metadata-in-LaTeX.html'
+Transferring file `posts/12-07-10-using-and-re-using-metadata-in-LaTeX.html'
+Removing old file `posts/12-07-24-Make-PDF-files-searchable-and-copyable.html'
+Transferring file `posts/12-07-24-Make-PDF-files-searchable-and-copyable.html'
+Removing old file `posts/12-08-19-Istvan-Orosz.html'
+Transferring file `posts/12-08-19-Istvan-Orosz.html'
+Removing old file `posts/12-08-27-installing-Dovecot-on-QNAP.html'
+Transferring file `posts/12-08-27-installing-Dovecot-on-QNAP.html'
+Removing old file `posts/12-09-04-connecting-a-linux-client-to-a-QNAPs-LDAP-server.html'
+Transferring file `posts/12-09-04-connecting-a-linux-client-to-a-QNAPs-LDAP-server.html'
+Removing old file `posts/12-09-09-installing-linux-on-imac-hardware.html'
+Transferring file `posts/12-09-09-installing-linux-on-imac-hardware.html'
+Removing old file `posts/12-09-30-discover-ports-on-MacOSX.html'
+Transferring file `posts/12-09-30-discover-ports-on-MacOSX.html'
+Removing old file `posts/12-11-07-craac-2012.html'
+Transferring file `posts/12-11-07-craac-2012.html'
+Removing old file `posts/12-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html'
+Transferring file `posts/12-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html'
+Removing old file `posts/13-01-16-WP4-report-NeuroTools-support-for-the-synthesis-of-random-textured-dynamical-stimuli.html'
+Transferring file `posts/13-01-16-WP4-report-NeuroTools-support-for-the-synthesis-of-random-textured-dynamical-stimuli.html'
+Removing old file `posts/13-01-31-(re)moving-lots-of-file-containing-a-similar-pattern.html'
+Transferring file `posts/13-01-31-(re)moving-lots-of-file-containing-a-similar-pattern.html'
+Removing old file `posts/13-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html'
+Transferring file `posts/13-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html'
+Removing old file `posts/13-02-04-WP5-Year-2-report-contribution-of-CNRS-INT-(Institut-de-Neurosciences-de-la-Timone).html'
+Transferring file `posts/13-02-04-WP5-Year-2-report-contribution-of-CNRS-INT-(Institut-de-Neurosciences-de-la-Timone).html'
+Removing old file `posts/13-02-20-removing-files-based-on-their-date.html'
+Transferring file `posts/13-02-20-removing-files-based-on-their-date.html'
+Removing old file `posts/13-03-06-setting-some-conventions-common-in-Bibdesk-(to-work-with-bibtex-citeUlike).html'
+Transferring file `posts/13-03-06-setting-some-conventions-common-in-Bibdesk-(to-work-with-bibtex-citeUlike).html'
+Removing old file `posts/13-03-13-shortcut-to-put-the-display-to-sleep.html'
+Transferring file `posts/13-03-13-shortcut-to-put-the-display-to-sleep.html'
+Removing old file `posts/13-03-23-upgrading-owncloud-to-500.html'
+Transferring file `posts/13-03-23-upgrading-owncloud-to-500.html'
+Removing old file `posts/13-03-25-using-tabs-in-vim.html'
+Transferring file `posts/13-03-25-using-tabs-in-vim.html'
+Removing old file `posts/13-05-14-dropping-owncloud.html'
+Transferring file `posts/13-05-14-dropping-owncloud.html'
+Removing old file `posts/13-06-12-updating-to-mactex-(texlive-for-mac)-version-2013.html'
+Transferring file `posts/13-06-12-updating-to-mactex-(texlive-for-mac)-version-2013.html'
+Removing old file `posts/13-07-08-Useful-numbers.html'
+Transferring file `posts/13-07-08-Useful-numbers.html'
+Removing old file `posts/13-10-26-Meshnet.html'
+Transferring file `posts/13-10-26-Meshnet.html'
+Removing old file `posts/13-11-04-SparkleShare-on-a-QNAP.html'
+Transferring file `posts/13-11-04-SparkleShare-on-a-QNAP.html'
+Removing old file `posts/13-11-08-homebrew-cask-(level-0)-contributing-a-new-cask.html'
+Transferring file `posts/13-11-08-homebrew-cask-(level-0)-contributing-a-new-cask.html'
+Removing old file `posts/13-11-09-homebrew-cask-(level-1)-correcting-a-pull-request.html'
+Transferring file `posts/13-11-09-homebrew-cask-(level-1)-correcting-a-pull-request.html'
+Removing old file `posts/13-11-12-craac.html'
+Transferring file `posts/13-11-12-craac.html'
+Removing old file `posts/14-01-01-How-Airplanes-Fly-A-Physical-Description-of-Lift.html'
+Transferring file `posts/14-01-01-How-Airplanes-Fly-A-Physical-Description-of-Lift.html'
+Transferring file `posts/14-01-04_bootstrapping-nikola.html'
+Transferring file `posts/14-01-15_vim-folding-commands.html'
+Transferring file `posts/14-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html'
+Transferring file `posts/14-05-15_vim-moving-around.rst.html'
+Transferring file `posts/14-09-23_vimperator.html'
+Transferring file `posts/14-11-12-homebrew-cask-updating-a-cask.html'
+Transferring file `posts/14-12-04-parametrer-le-mail-a-lINT.html'
+Transferring file `posts/14-12-07-can-we-live-without-google-and-co.html'
+Transferring file `posts/14-12-18-can-we-live-without-google-and-co.html'
+Removing old file `posts/14-12-29-bib-cloud.html'
+Transferring file `posts/14-12-29-bib-cloud.html'
+Removing old file `posts/14-12-29-todotxt.html'
+Transferring file `posts/14-12-29-todotxt.html'
+Transferring file `posts/2014-01-14_trying-out-ipython-blogging.html'
+Transferring file `posts/2014-01-14_trying-out-ipython-blogging.ipynb'
+Transferring file `posts/2014-02-11 Converting MoinMoin pages to Nikola.html'
+Transferring file `posts/2014-02-11 Converting MoinMoin pages to Nikola.ipynb'
+Transferring file `posts/2014-02-15-converting-moinmoin-pages-to-nikola.html'
+Transferring file `posts/2014-02-15-converting-moinmoin-pages-to-nikola.ipynb'
+Transferring file `posts/2014-02-28_batch-removing-files-on-a-ftp-server.html'
+Transferring file `posts/2014-02-28_batch-removing-files-on-a-ftp-server.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-1.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-2.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-3.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-4.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-5.ipynb'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html'
+Transferring file `posts/2014-06-18-stage-m1-chloe-pasturel-week-6.ipynb'
+Transferring file `posts/2014-06-25-animation-in-a-notebook.html'
+Removing old file `posts/2014-06-25-animation-in-a-notebook.ipynb'
+Transferring file `posts/2014-06-25-animation-in-a-notebook.ipynb'
+Transferring file `posts/2014-06-25-grille-hexagonale.html'
+Removing old file `posts/2014-06-25-grille-hexagonale.ipynb'
+Transferring file `posts/2014-06-25-grille-hexagonale.ipynb'
+Transferring file `posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html'
+Transferring file `posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb'
+Transferring file `posts/2014-10-08_moving-from-mayavi-to-matplotlib.html'
+Transferring file `posts/2014-10-15-setting-options-in-holoviews.html'
+Transferring file `posts/2014-10-15-setting-options-in-holoviews.ipynb'
+Transferring file `posts/2014-10-15-trying-to-include-javascript-in-a-notebook.html'
+Transferring file `posts/2014-10-15-trying-to-include-javascript-in-a-notebook.ipynb'
+Transferring file `posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html'
+Transferring file `posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.ipynb'
+Transferring file `posts/2014-10-20-animation-in-a-notebook-using-holoviews.html'
+Transferring file `posts/2014-10-20-animation-in-a-notebook-using-holoviews.ipynb'
+Transferring file `posts/2014-10-20-chi-distribution.html'
+Transferring file `posts/2014-10-20-chi-distribution.ipynb'
+Transferring file `posts/2014-10-21-statistics-of-time-varying-images.html'
+Transferring file `posts/2014-10-21-statistics-of-time-varying-images.ipynb'
+Transferring file `posts/2014-11-15-reading-kml-my-tracks-files-in-ipython.html'
+Transferring file `posts/2014-11-15-reading-kml-my-tracks-files-in-ipython.ipynb'
+Transferring file `posts/2014-11-22-reading-kml-my-tracks-files-in-ipython.html'
+Transferring file `posts/2014-11-22-reading-kml-my-tracks-files-in-ipython.ipynb'
+Transferring file `posts/2014-12-09-polar-bar-plots.html'
+Transferring file `posts/2014-12-09-polar-bar-plots.ipynb'
+Removing old file `posts/2015-01-07-the-right-imports-in-a-notebook.html'
+Transferring file `posts/2015-01-07-the-right-imports-in-a-notebook.html'
+Removing old file `posts/2015-01-16-rendering-3d-scenes-in-python.html'
+Transferring file `posts/2015-01-16-rendering-3d-scenes-in-python.html'
+Removing old file `posts/2015-01-20-using-tikzmagic.html'
+Transferring file `posts/2015-01-20-using-tikzmagic.html'
+Removing old file `posts/2015-02-16-homebrew-cask-updating-a-cask.html'
+Transferring file `posts/2015-02-16-homebrew-cask-updating-a-cask.html'
+Removing old file `posts/2015-02-17-creating-an-animation-using-gizeh-+-moviepy.html'
+Transferring file `posts/2015-02-17-creating-an-animation-using-gizeh-+-moviepy.html'
+Removing old file `posts/2015-02-19_tiling-motion-clouds.html'
+Transferring file `posts/2015-02-19_tiling-motion-clouds.html'
+Removing old file `posts/2015-02-25-saving-files-in-holoviews.html'
+Transferring file `posts/2015-02-25-saving-files-in-holoviews.html'
+Removing old file `posts/2015-02-26-elastic-grids-of-edges.html'
+Transferring file `posts/2015-02-26-elastic-grids-of-edges.html'
+Removing old file `posts/2015-02-26-elastic-grids-of-edges.ipynb'
+Transferring file `posts/2015-02-26-elastic-grids-of-edges.ipynb'
+Removing old file `posts/2015-03-17-homebrew-cask-updating-a-cask.html'
+Transferring file `posts/2015-03-17-homebrew-cask-updating-a-cask.html'
+Removing old file `posts/2015-04-01-homebrew-cask-updating-a-cask.html'
+Transferring file `posts/2015-04-01-homebrew-cask-updating-a-cask.html'
+Removing old file `posts/2015-04-10_elastic-force.html'
+Transferring file `posts/2015-04-10_elastic-force.html'
+Removing old file `posts/2015-04-10_elastic-force.ipynb'
+Transferring file `posts/2015-04-10_elastic-force.ipynb'
+Removing old file `posts/2015-04-26-moviepy-and-python3.html'
+Transferring file `posts/2015-04-26-moviepy-and-python3.html'
+Removing old file `posts/2015-04-29-moving-from-mayavi-to-vispy.html'
+Transferring file `posts/2015-04-29-moving-from-mayavi-to-vispy.html'
+Removing old file `posts/2015-04-30_trame-sensorielle.html'
+Transferring file `posts/2015-04-30_trame-sensorielle.html'
+Removing old file `posts/2015-04-30_trame-sensorielle.ipynb'
+Transferring file `posts/2015-04-30_trame-sensorielle.ipynb'
+Removing old file `posts/2015-05-05-reproducing-olshausens-classical-sparsenet.html'
+Transferring file `posts/2015-05-05-reproducing-olshausens-classical-sparsenet.html'
+Removing old file `posts/2015-05-06-reproducing-olshausens-classical-sparsenet-part-2.html'
+Transferring file `posts/2015-05-06-reproducing-olshausens-classical-sparsenet-part-2.html'
+Removing old file `posts/2015-05-12-extending-olshausens-classical-sparsenet.html'
+Transferring file `posts/2015-05-12-extending-olshausens-classical-sparsenet.html'
+Removing old file `posts/2015-05-21-a-simple-pre-processing-filter-for-image-processing.html'
+Transferring file `posts/2015-05-21-a-simple-pre-processing-filter-for-image-processing.html'
+Removing old file `posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html'
+Transferring file `posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html'
+Removing old file `posts/2015-05-28-a-simpler-e-mail-client-diving-into-mutt.html'
+Transferring file `posts/2015-05-28-a-simpler-e-mail-client-diving-into-mutt.html'
+Removing old file `posts/2015-06-12-homebrew-cask-updating-mactex.html'
+Transferring file `posts/2015-06-12-homebrew-cask-updating-mactex.html'
+Removing old file `posts/2015-09-30-elasticite-vapory-and-reflections.html'
+Transferring file `posts/2015-09-30-elasticite-vapory-and-reflections.html'
+Removing old file `posts/2015-09-30-elasticite-vapory-and-reflections.ipynb'
+Transferring file `posts/2015-09-30-elasticite-vapory-and-reflections.ipynb'
+Removing old file `posts/2015-10-14-elasticite-control-scenario.html'
+Transferring file `posts/2015-10-14-elasticite-control-scenario.html'
+Removing old file `posts/2015-10-14-elasticite-control-scenario.ipynb'
+Transferring file `posts/2015-10-14-elasticite-control-scenario.ipynb'
+Removing old file `posts/2015-10-14-elasticite-fresnel.html'
+Transferring file `posts/2015-10-14-elasticite-fresnel.html'
+Removing old file `posts/2015-10-14-elasticite-fresnel.ipynb'
+Transferring file `posts/2015-10-14-elasticite-fresnel.ipynb'
+Removing old file `posts/2015-10-27-elasticite-expansion-reaction-diffusion.html'
+Transferring file `posts/2015-10-27-elasticite-expansion-reaction-diffusion.html'
+Removing old file `posts/2015-10-27-elasticite-expansion.html'
+Transferring file `posts/2015-10-27-elasticite-expansion.html'
+Removing old file `posts/2015-10-27-elasticite-expansion.ipynb'
+Transferring file `posts/2015-10-27-elasticite-expansion.ipynb'
+Removing old file `posts/2015-10-27-elasticite-rapsberry-pyserial.html'
+Transferring file `posts/2015-10-27-elasticite-rapsberry-pyserial.html'
+Removing old file `posts/2015-10-27-elasticite-rapsberry-pyserial.ipynb'
+Transferring file `posts/2015-10-27-elasticite-rapsberry-pyserial.ipynb'
+Removing old file `posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.html'
+Transferring file `posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.html'
+Removing old file `posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.ipynb'
+Transferring file `posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.ipynb'
+Removing old file `posts/2015-11-02-elasticite-expansion-en-miroir-principes.html'
+Transferring file `posts/2015-11-02-elasticite-expansion-en-miroir-principes.html'
+Removing old file `posts/2015-11-02-elasticite-expansion-en-miroir-principes.ipynb'
+Transferring file `posts/2015-11-02-elasticite-expansion-en-miroir-principes.ipynb'
+Removing old file `posts/2015-11-02_multiprocessing.html'
+Transferring file `posts/2015-11-02_multiprocessing.html'
+Removing old file `posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.html'
+Transferring file `posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.html'
+Removing old file `posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.ipynb'
+Transferring file `posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.ipynb'
+Removing old file `posts/2015-11-26-elasticite-scenario-vague.html'
+Transferring file `posts/2015-11-26-elasticite-scenario-vague.html'
+Removing old file `posts/2015-11-26-elasticite-scenario-vague.ipynb'
+Transferring file `posts/2015-11-26-elasticite-scenario-vague.ipynb'
+Removing old file `posts/2015-11-27-elasticite-geometrie.html'
+Transferring file `posts/2015-11-27-elasticite-geometrie.html'
+Removing old file `posts/2015-11-27-elasticite-geometrie.ipynb'
+Transferring file `posts/2015-11-27-elasticite-geometrie.ipynb'
+Removing old file `posts/2015-11-29-elasticite-scenario-onde.html'
+Transferring file `posts/2015-11-29-elasticite-scenario-onde.html'
+Removing old file `posts/2015-11-29-elasticite-scenario-onde.ipynb'
+Transferring file `posts/2015-11-29-elasticite-scenario-onde.ipynb'
+Removing old file `posts/2015-12-05-elasticite-scenario-final-montage.html'
+Transferring file `posts/2015-12-05-elasticite-scenario-final-montage.html'
+Removing old file `posts/2015-12-08-homebrew-cask-updating-a-cask.html'
+Transferring file `posts/2015-12-08-homebrew-cask-updating-a-cask.html'
+Removing old file `posts/2015-12-11-reproducing-olshausens-classical-sparsenet-part-3.html'
+Transferring file `posts/2015-12-11-reproducing-olshausens-classical-sparsenet-part-3.html'
+Removing old file `posts/2015-12-11-reproducing-olshausens-classical-sparsenet-part-4.html'
+Transferring file `posts/2015-12-11-reproducing-olshausens-classical-sparsenet-part-4.html'
+Transferring file `stories/a-study-in-scarlet.html'
+Transferring file `stories/a-study-in-scarlet.txt'
+Transferring file `stories/bootstrap-demo.html'
+Transferring file `stories/bootstrap-demo.rst'
+Transferring file `stories/charts.html'
+Transferring file `stories/charts.txt'
+Transferring file `stories/creating-a-theme.html'
+Transferring file `stories/creating-a-theme.rst'
+Transferring file `stories/extending.html'
+Transferring file `stories/extending.txt'
+Transferring file `stories/handbook.html'
+Transferring file `stories/handbook.rst'
+Transferring file `stories/internals.html'
+Transferring file `stories/internals.txt'
+Transferring file `stories/quickref.html'
+Transferring file `stories/quickref.rst'
+Transferring file `stories/quickstart.html'
+Transferring file `stories/quickstart.rst'
+Transferring file `stories/social_buttons.html'
+Transferring file `stories/social_buttons.txt'
+Transferring file `stories/theming.html'
+Transferring file `stories/theming.rst'
+Transferring file `stories/upgrading-to-v6.html'
+Transferring file `stories/upgrading-to-v6.txt'
+<span class="ansi-white-fg">[2016-01-18T11:50:53Z] INFO: deploy: Successful deployment</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+	<span class="ansi-green-fg">modified:   "2016-01-18_bootstrapPost-\303\251lasticit\303\251.ipynb"</span>
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open http://blog.invibe.net
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/elasticite.html" rel="tag">elasticite</a></li>
+            <li><a class="tag p-category" href="../categories/notebook.html" rel="tag">notebook</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2015-12-11-reproducing-olshausens-classical-sparsenet-part-3.html" rel="prev" title="Reproducing Olshausen's classical SparseNet (part 3)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2016-01-19-elasticite-trames-V1.html" rel="next" title="élasticité trames V1">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="invibe",
+            disqus_url="http://blog.invibe.net/posts/2016-01-18-bootstrappost-elasticite.html",
+        disqus_title="bootstraping posts for \u00e9lasticit\u00e9",
+        disqus_identifier="cache/posts/2016-01-18-bootstrappost-elasticite.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

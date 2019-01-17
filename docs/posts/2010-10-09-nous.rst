@@ -1,0 +1,12 @@
+.. title: nous
+.. slug: 2010-10-09-nous
+.. date: 2010-10-09 13:36:57
+.. type: text
+.. tags: sciblog
+
+-  ﻿\ `http://en.wikipedia.org/wiki/Nous <http://en.wikipedia.org/wiki/Nous>`__
+-  Nous (pronounced /ˈnuːs/, Greek: νοῦς or νόος) is a philosophical
+   term for mind or intellect. Outside of a philosophical context, it is
+   used, in coloquial English, to denote "common sense," with a
+   different pronunciation (/naʊs/), and sometimes a different spelling
+   (nouse or nowse).

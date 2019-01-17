@@ -1,0 +1,4 @@
+Sitemap: http://blog.invibe.net/sitemapindex.xml
+
+User-Agent: *
+Host: blog.invibe.net

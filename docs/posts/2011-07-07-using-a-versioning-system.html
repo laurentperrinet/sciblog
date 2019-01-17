@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>using a versioning system | Scientific logbook</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="http://blog.invibe.net/posts/2011-07-07-using-a-versioning-system.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html" title="scripting MoinMoin to get, change or rename pages" type="text/html">
+<link rel="next" href="2011-07-08-mercurial-%26-LaTeX.html" title="mercurial &amp; LaTeX" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="using a versioning system">
+<meta property="og:url" content="http://blog.invibe.net/posts/2011-07-07-using-a-versioning-system.html">
+<meta property="og:description" content="Warning
+This post is certainly obsolete...
+
+
+using SubVersion (SVN)
+
+Version Control is an
+everyday tool to handle your important source files. It is useful:
+
+to grab the latest source code from open ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-07-07T13:36:57+02:00">
+<meta property="article:tag" content="macos">
+<meta property="article:tag" content="sciblog">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://blog.invibe.net/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://blog.invibe.net/">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2011-07-07-using-a-versioning-system.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="http://invibe.net" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">using a versioning system</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2011-07-07T13:36:57+02:00" itemprop="datePublished" title="2011-07-07 13:36">2011-07-07 13:36</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="2011-07-07-using-a-versioning-system.html#disqus_thread" data-disqus-identifier="cache/posts/2011-07-07-using-a-versioning-system.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="2011-07-07-using-a-versioning-system.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- TEASER_END -->
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This post is certainly obsolete...</p>
+</div>
+<div class="section" id="using-subversion-svn">
+<h2>using SubVersion (SVN)</h2>
+<!-- TEASER_END -->
+<p><a class="reference external" href="http://software-carpentry.org/version.html">Version Control</a> is an
+everyday tool to handle your important source files. It is useful:</p>
+<ul class="simple">
+<li>to grab the latest source code from open source projects and to
+always keep up-to-date,</li>
+<li>to share a bunch of files (a set of latex source code, python
+scripts, ...) allowing to work on different computers with different
+persons,</li>
+<li>to keep track of revisions from your project.</li>
+</ul>
+<div class="section" id="svn-getting-help">
+<h3>SVN: Getting help</h3>
+<ul class="simple">
+<li>Versions are kept in a central repository (the <strong>SVN server</strong>) while
+you work with local <strong>working copies</strong> using your SVN client.</li>
+<li>Help for svn can be found in the big <a class="reference external" href="http://svnbook.red-bean.com/nightly/en/index.html">svn
+book</a>. Other
+ressources:<ul>
+<li>cf.
+<a class="reference external" href="http://svnbook.red-bean.com/nightly/en/svn-book.html">http://svnbook.red-bean.com/nightly/en/svn-book.html</a>
+</li>
+<li><a class="reference external" href="http://www.sujee.net/geeky/svn.html">http://www.sujee.net/geeky/svn.html</a></li>
+<li><a class="reference external" href="http://www.abbeyworkshop.com/howto/misc/svn01/">http://www.abbeyworkshop.com/howto/misc/svn01/</a></li>
+</ul>
+</li>
+<li>Many solutions exist to integrate SVN to your file manager<ul>
+<li>On MacOsX, integrate SVN to the
+<tt class="docutils literal">Finder.app</tt> using <a class="reference external" href="http://scplugin.tigris.org/">SCPlugin</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="svn-2-minutes-guide-using-the-commandline">
+<h3>SVN: 2 minutes guide using the commandline</h3>
+<ul>
+<li>
+<p class="first">to just access a remote repository and make a local working copy
+("checking-out") in a local <tt class="docutils literal">my_projects</tt> folder, do</p>
+<pre class="literal-block">
+cd my_projects/
+svn checkout svn+ssh://myname@svnserver/path/to/svn/project my_localcopy
+</pre>
+<p>this basically copies the current version of the remote copy to your
+local computer as the folder <tt class="docutils literal">my_localcopy</tt>. Then, you just need to
+issue <tt class="docutils literal">svnup</tt> in this folder to stay up-to-date.</p>
+</li>
+<li>
+<p class="first">to create from scratch your own folder in an existing repository (,
+do</p>
+<pre class="literal-block">
+cd my_projects/
+svn add new_project
+svn ci new_project -m'Committing my modifications'
+</pre>
+<p>. Then you just need to issue the
+<tt class="docutils literal">svncinew_project<span class="pre">-m'Committing</span>mymodifications'</tt> command to
+commit new modifications to the server. Don't forget to
+<tt class="docutils literal">svnaddnewfiles</tt> or to <tt class="docutils literal">svnrmobsolete_files</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="random-svn-tips">
+<h3>random SVN tips</h3>
+<ul>
+<li>
+<p class="first">roll-back to a previous version (e.g. 3421) of a file <tt class="docutils literal">myfile</tt>:</p>
+<pre class="literal-block">
+svn up -r 3421 myfile
+</pre>
+</li>
+<li>
+<p class="first">Create a repository</p>
+<ul>
+<li>
+<p class="first">use the database backend</p>
+<pre class="literal-block">
+svnadmin create /ih/funk/svn/projects
+</pre>
+</li>
+</ul>
+</li>
+<li>
+<p class="first">use the filesystem backend</p>
+<pre class="literal-block">
+svnadmin create --fs-type=fsfs PATH
+</pre>
+</li>
+<li>
+<p class="first">Import a revision</p>
+<pre class="literal-block">
+svn import -m "Initial import" Eccos file:///ih/funk/svn/projects
+</pre>
+</li>
+<li>
+<p class="first">Check out a revision</p>
+<pre class="literal-block">
+svn co file:///ih/funk/svn/projects
+</pre>
+</li>
+<li>
+<p class="first">Dump a repository</p>
+<pre class="literal-block">
+ svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; dump.gz
+ svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+Eccosdump%Y-%m-%d_%H:%M:%S.gz"`
+svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+projects_dump%Y-%m-%d_%H:%M:%S.gz"`
+</pre>
+</li>
+<li>
+<p class="first">Load contents of a dump into a repository</p>
+<pre class="literal-block">
+gunzip -c dump.gz | svnadmin load /data/svn/projects
+</pre>
+</li>
+<li>
+<p class="first">Import from an existing directory, no need to check it out again</p>
+<ul>
+<li>
+<p class="first">It should work, but you could also check it out right into /etc.
+Something</p>
+<p>like this:</p>
+<pre class="literal-block">
+$ svnadmin create /var/svnrepos/admin
+$ svn mkdir -m "initial setup" file:///var/svnrepos/admin/trunk
+c:&gt; svn mkdir -m "initial setup" file:///c:/fhs/svn_repos/trunk
+$ cd /etc
+$ svn co file:///var/svnrepos/admin/trunk .
+$ svn add passwd group
+$ svn commit -m "start loading it in"
+
+I tested the 'svn co' into '.' just now. Works great.
+</pre>
+</li>
+</ul>
+</li>
+<li>
+<p class="first">svn propset</p>
+<pre class="literal-block">
+svn propset svn:keywords "LastChangedDate LastChangedRevision Id Author" weather.txt
+svn propset svn:keywords "LastChangedDate LastChangedRevision Id" slides.tex
+</pre>
+</li>
+<li>
+<p class="first">Before an update you could use the following to get the log messages
+of the changes:</p>
+<pre class="literal-block">
+svn log -rBASE:HEAD
+</pre>
+</li>
+<li>
+<p class="first">Upgrade to a new subversion version</p>
+<pre class="literal-block">
+$ mv repos repos.tmp
+$ svnadmin create repos
+$ svnadmin-old dump repos.tmp | svnadmin load repos
+$ # copy over any hook scripts and stuff from repos.tmp to repos
+</pre>
+</li>
+<li>
+<p class="first">Checkout from a repository over ssh</p>
+<pre class="literal-block">
+svn co svn+ssh://felix/home/reichr/svn_repos/XSteveData/trunk data
+</pre>
+</li>
+<li>
+<p class="first">Change the path of the repository for a working copy</p>
+<pre class="literal-block">
+svn switch --relocate file:///original/path/to/repos file:///new/path
+</pre>
+<p><img alt="alert" src="http://invibe.net/moin_static196/moniker/img/alert.png"> WARNING: this will not work if
+<tt class="docutils literal"><span class="pre">file:///original/path/to/repos</span></tt> is not <em>exactly</em> the original URL.
+BE sure to check before with <tt class="docutils literal">svninfo</tt>.</p>
+</li>
+<li>
+<p class="first">Network a repository via svn+ssh:</p>
+<ul>
+<li>
+<p class="first">create the repository on the repository host:</p>
+<pre class="literal-block">
+svnadmin create rp1  -- this is located at /home/svtest/rp1
+</pre>
+</li>
+<li>
+<p class="first">Import data to the repository:</p>
+<pre class="literal-block">
+svn import -m"Initial import" svn+ssh://svtest@host/rp1/trunk
+</pre>
+</li>
+<li>
+<p class="first">Checkout the project:</p>
+<pre class="literal-block">
+svn co svn+ssh://svtest@host/home/svtest/rp1/trunk p1
+</pre>
+</li>
+</ul>
+</li>
+<li>
+<p class="first">Generate a patch to undo some local changes and redo them later: What
+usually happens to me is that I've changed N files in M different &gt;
+directories distributed all over the filesystem, and I want to check
+in N-1 of them. If I need to commit all but one file, I do this:</p>
+<pre class="literal-block">
+% svn diff path/to/file_not_committing &gt; /tmp/patch.txt
+% svn revert path/to/file_not_committing
+% svn ci -m "committing all the stuff i wanted to"
+% patch -p0 &lt; /tmp/patch.txt
+</pre>
+<p>Revert is your friend. Learn it, use it, looooooooooove it.</p>
+</li>
+<li>
+<p class="first">Revert to a previous version</p>
+<pre class="literal-block">
+svn co project
+&lt;edit foo.c, adding bugs&gt;
+svn ci foo.c (commits to r348)
+&lt;realize terrible error&gt;
+svn merge -r348:347 foo.c
+svn ci foo.c (commits 349)
+</pre>
+<p>note the ordering of the revision numbers in the merge command. what
+this really says is "make a diff between revision 348 and 347, and
+apply it immediately to foo.c" if you are trying to revert a
+directory tree with moves or deletes in it, and are getting arcane
+errors, try the --ignore-ancestry flag.</p>
+</li>
+<li>
+<p class="first">Edit the commit/log messages after the commit Read chapter 7,
+regarding unversioned properties attached to revisions. You want to
+change the svn:log property:</p>
+<pre class="literal-block">
+$ svn propedit -r N --revprop svn:log URL
+</pre>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="an-alternative-git">
+<h2>an alternative : Git</h2>
+<ul class="simple">
+<li>The place to
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">begin</a>.</li>
+<li>From the SVN world:
+<a class="reference external" href="http://git-scm.com/course/svn.html">http://git-scm.com/course/svn.html</a>
+</li>
+<li>
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday</a>'s
+git.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%">
+<col width="55%">
+</colgroup>
+<tbody valign="top">
+<tr>
+<td>git clone <em>url</em>
+</td>
+<td>svn checkout <em>url</em>
+</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>svn up</td>
+</tr>
+<tr>
+<td>git commit</td>
+<td>svn commit</td>
+</tr>
+<tr>
+<td>git push <em>url</em>
+</td>
+<td><em>(no such a thing)</em></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p class="first">to set-up</p>
+<pre class="literal-block">
+git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="using-git-with-svn">
+<h2>using Git with SVN</h2>
+<ul>
+<li>
+<p class="first">install git-svn and use</p>
+<pre class="literal-block">
+git svn fetch
+</pre>
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/macos.html" rel="tag">macos</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html" rel="prev" title="scripting MoinMoin to get, change or rename pages">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2011-07-08-mercurial-%26-LaTeX.html" rel="next" title="mercurial &amp; LaTeX">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="invibe",
+            disqus_url="http://blog.invibe.net/posts/2011-07-07-using-a-versioning-system.html",
+        disqus_title="using a versioning system",
+        disqus_identifier="cache/posts/2011-07-07-using-a-versioning-system.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
