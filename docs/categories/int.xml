@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about int)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/int.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 18 Jan 2019 18:46:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>paramétrer l'e-mail à l'INT</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-12-04-parametrer-le-mail-a-lINT.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;ul class="simple"&gt;
+&lt;li&gt;paramétrer un nouveau compte avec son adresse
+&lt;a class="reference external" href="mailto:lolo.toto@univ-amu.fr"&gt;lolo.toto@univ-amu.fr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;indiquer les parametres:&lt;ol class="arabic"&gt;
+&lt;li&gt;en entrant, serveur IMAP &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;imap.univ-amu.fr&lt;/span&gt;&lt;/tt&gt; avec SSL (port 993) et l'authentification est par mot de passe&lt;/li&gt;
+&lt;li&gt;en sortant, serveur SMTP &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;smtp.univ-amu.fr&lt;/span&gt;&lt;/tt&gt; en STARTTLS, port 587 et  l'authentification est par mot de passe&lt;/li&gt;
+&lt;li&gt;attention, en entrant et en sortant, comme identifiant, l'identifiant univ-amu (de la forme &lt;tt class="docutils literal"&gt;toto.l&lt;/tt&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><category>int</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-12-04-parametrer-le-mail-a-lINT.html</guid><pubDate>Thu, 04 Dec 2014 12:36:57 GMT</pubDate></item><item><title>transferring (lots of) files to a remote server + saving space</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I have recently been asked how to transfer lots of file from a backup server to a local disk. The context is that&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the backup is an archive to be put on an external hard drive and then in a closet for future use,&lt;/li&gt;
+&lt;li&gt;the transfer line is not quite reliable and transfers may stop (for instance if it is mounted as a samba / windows / applefile share)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>hardlink</category><category>int</category><category>rsync</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html</guid><pubDate>Mon, 07 Jul 2014 08:31:28 GMT</pubDate></item><item><title>SSH says 'Read from socket failed: Operation timed out'</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;While SSH is rock solid, we stumbled on a strange bug while trying to establish a connection:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ ssh &lt;a class="reference external" href="mailto:myname@myserver.fr"&gt;myname@myserver.fr&lt;/a&gt; -vvv&lt;/p&gt;
+&lt;p&gt;OpenSSH_6.2p2, OSSLShim 0.9.8r 8 Dec 2011&lt;/p&gt;
+&lt;p&gt;(...)&lt;/p&gt;
+&lt;p&gt;Read from socket failed: Operation timed out&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nothing worked. The usual check of keys, encodings, permissions gave nothing.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>ssh</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html</guid><pubDate>Mon, 10 Feb 2014 13:38:18 GMT</pubDate></item><item><title>setting the umask to define default permissions for created files</title><link>https://laurentperrinet.github.io/sciblog/posts/2012-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;the parameter to use is umask
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Umask"&gt;https://en.wikipedia.org/wiki/Umask&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html</guid><pubDate>Wed, 28 Nov 2012 12:36:57 GMT</pubDate></item><item><title>racourci pour accéder à une page INIST</title><link>https://laurentperrinet.github.io/sciblog/posts/2012-06-12-racourci-pour-acceder-a-une-page-INIST.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;dans un journal qui nécessite un abonnement pour accéder au contenu,
+il faut passer par le serveur de l'INIST.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-06-12-racourci-pour-acceder-a-une-page-INIST.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-06-12-racourci-pour-acceder-a-une-page-INIST.html</guid><pubDate>Tue, 12 Jun 2012 11:36:57 GMT</pubDate></item><item><title>Stop Bonjour from broadcasting ssh and sftp</title><link>https://laurentperrinet.github.io/sciblog/posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="100%"&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;largely a copy-and-paste from &lt;a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844"&gt;http://hints.macworld.com/article.php?story=20070622210507844&lt;/a&gt; ; Jun 25, '07 07:30:00AM • Contributed by: delight1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;After doing a backup, edit the following file:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo vim /System/Library/LaunchDaemons/ssh.plist
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>macos</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html</guid><pubDate>Sun, 11 Mar 2012 12:36:57 GMT</pubDate></item><item><title>access spawn</title><link>https://laurentperrinet.github.io/sciblog/posts/2012-02-22-access-spawn.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Finder / Pomme-K / &lt;a class="reference external" href="smb://10.164.0.66"&gt;smb://10.164.0.66&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-02-22-access-spawn.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-02-22-access-spawn.html</guid><pubDate>Wed, 22 Feb 2012 12:36:57 GMT</pubDate></item><item><title>paramétrer l'e-mail à l'INT</title><link>https://laurentperrinet.github.io/sciblog/posts/2012-02-17-parametrer-le-mail-a-lINT.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;paramétrer un nouveau compte avec son adresse
+&lt;a class="reference external" href="mailto:lolo.toto@univ-amu.fr"&gt;lolo.toto@univ-amu.fr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-02-17-parametrer-le-mail-a-lINT.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>int</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-02-17-parametrer-le-mail-a-lINT.html</guid><pubDate>Fri, 17 Feb 2012 12:36:57 GMT</pubDate></item></channel></rss>

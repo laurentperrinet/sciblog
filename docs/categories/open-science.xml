@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about open-science)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/open-science.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 18 Jan 2019 18:48:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extending datasets in pyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://pytorch.org"&gt;PyTorch&lt;/a&gt; is a great library for machine learning. You can in a few lines of codes retrieve a dataset, define your model, add a cost function and then train your model. It's quite magic to copy and paste code from the internet and get the &lt;a href="https://github.com/pytorch/examples/tree/master/mnist"&gt;LeNet network&lt;/a&gt; working in a few seconds to achieve more than 98% accuracy.&lt;/p&gt;
+&lt;p&gt;However, it can be tedious sometimes to extend existing objects and here, I will manipulate some ways to define the right dataset for your application. In particular I will modify the call to a standard dataset (&lt;a href="https://pytorch.org/docs/stable/torchvision/datasets.html#mnist"&gt;MNIST&lt;/a&gt;) to place the characters at random places in a large image.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>deep-learning</category><category>ipython</category><category>learning</category><category>machine-learning</category><category>neural</category><category>numpy</category><category>open-science</category><category>python</category><category>pytorch</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html</guid><pubDate>Fri, 07 Sep 2018 10:27:10 GMT</pubDate></item><item><title>generating an unique seed for a given filename</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-06-13-generating-an-unique-seed-for-a-given-filename.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;When creating large simulations, you may sometimes create unique identifiers for each of it. This is useful to cache intermediate results for instance. This is the main function of &lt;a href="https://en.wikipedia.org/wiki/Hash_function"&gt;hashes&lt;/a&gt;. We will here create a simple one-liner function to generate one.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-06-13-generating-an-unique-seed-for-a-given-filename.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ipython</category><category>numpy</category><category>open-science</category><category>psychophysics</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-06-13-generating-an-unique-seed-for-a-given-filename.html</guid><pubDate>Wed, 13 Jun 2018 11:02:57 GMT</pubDate></item><item><title>predictive-coding of variable motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-12-21-predictive-coding-of-variable-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In some recent modeling work:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 &lt;a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet12pred"&gt;http://invibe.net/LaurentPerrinet/Publications/Perrinet12pred&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;we study the role of transport in modifying our perception of motion. Here, we test what happens when we change the amount of noise in the stimulus.&lt;/p&gt;
+&lt;p&gt;In this script the predictive coding is done using the &lt;code&gt;MotionParticles&lt;/code&gt; package and for a &lt;a href="https://laurentperrinet.github.io/sciblog/posts/motion%20texture"&gt;http://motionclouds.invibe.net/&lt;/a&gt; within a disk aperture.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-12-21-predictive-coding-of-variable-motion.html"&gt;Read more…&lt;/a&gt; (12 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motion</category><category>neural</category><category>open-science</category><category>predictive coding</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-12-21-predictive-coding-of-variable-motion.html</guid><pubDate>Thu, 21 Dec 2017 05:58:24 GMT</pubDate></item><item><title>accessing the data from a pupil recording</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-12-13-accessing-the-data-from-a-pupil-recording.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I am experimenting with the &lt;a href="https://pupil-labs.com/"&gt;pupil eyetracker&lt;/a&gt; and could set it up (almost) smoothly on a macOS. There is an excellent documentation, and my first goal was to just record raw data and extract eye position.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTML&lt;/span&gt;
+&lt;span class="n"&gt;HTML&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;center&amp;gt;&amp;lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width=61.8%/&amp;gt;&amp;lt;/center&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width="61.8%/"&gt;&lt;/video&gt;&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This video shows the world view (cranio-centric, from a head-mounted camera fixed on the frame) with overlaid the position of the (right) eye while I am configuring a text box. You see the eye fixating on the screen then jumping somewhere else on the screen (saccades) or on the keyboard / hands. Note that the screen itself shows the world view, such that this generates an self-reccurrent pattern.&lt;/p&gt;
+&lt;p&gt;For this, I could use the capture script and I will demonstrate here how to extract the raw data in a few lines of python code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-12-13-accessing-the-data-from-a-pupil-recording.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motion</category><category>open-science</category><category>psychophysics</category><category>pupil</category><category>saccades</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-12-13-accessing-the-data-from-a-pupil-recording.html</guid><pubDate>Wed, 13 Dec 2017 12:22:34 GMT</pubDate></item><item><title>MEUL with a non-parametric homeostasis</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-11-07-meul-with-a-non-parametric-homeostasis.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this notebook, we will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  &lt;a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl"&gt;http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl&lt;/a&gt; ). Compared to other posts, such as this &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html"&gt;previous post&lt;/a&gt;, we improve the code to not depend on any parameter (namely the &lt;code&gt;C&lt;/code&gt;parameter of the rescaling function). For that, we will use a non-parametric approach based on the use of cumulative histograms.&lt;/p&gt;
+&lt;p&gt;This is joint work with &lt;a href="http://invibe.net/LaurentPerrinet/VictorBoutin"&gt;Victor Boutin&lt;/a&gt; and &lt;a href="http://invibe.net/LaurentPerrinet/AngeloFrancisioni"&gt;Angelo Francisioni&lt;/a&gt;. See also the other posts on &lt;a href="https://laurentperrinet.github.io/sciblog/categories/learning.html"&gt;unsupervised learning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-11-07-meul-with-a-non-parametric-homeostasis.html"&gt;Read more…&lt;/a&gt; (47 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bicv</category><category>learning</category><category>neural</category><category>open-science</category><category>SHL_scripts</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-11-07-meul-with-a-non-parametric-homeostasis.html</guid><pubDate>Tue, 07 Nov 2017 14:13:04 GMT</pubDate></item><item><title>Designing a A0 poster using matplotlib</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Poster-GDR-Vision"&gt;Poster GDR Vision&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html#Poster-GDR-Vision"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This poster was presented in Lille at a vision workshop, check out &lt;a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet17gdr"&gt;http://invibe.net/LaurentPerrinet/Publications/Perrinet17gdr&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Apart the content (which is in French) which recaps some previous work inbetween art and science, this post demonstrates how to generate a A0 poster &lt;em&gt;programmatically&lt;/em&gt;. In particular, we will use matplotlib and some quickly forged functions to ease up the formatting.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html"&gt;Read more…&lt;/a&gt; (20 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>elasticite</category><category>ipython</category><category>Matching Pursuit</category><category>open-science</category><category>outreach</category><category>python</category><category>trames</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html</guid><pubDate>Wed, 25 Oct 2017 12:05:23 GMT</pubDate></item><item><title>The fastest 2D convolution in the world</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-09-20-the-fastest-2d-convolution-in-the-world.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Convolutions are essential components of any neural networks, image processing, computer vision ... but these are also a bottleneck in terms of computations... I will here benchmark different solutions using &lt;code&gt;numpy&lt;/code&gt;, &lt;code&gt;scipy&lt;/code&gt; or &lt;code&gt;pytorch&lt;/code&gt;. This is work-in-progress, so that any suggestion is welcome, for instance on &lt;a href="https://dsp.stackexchange.com/questions/43953/looking-for-fastest-2d-convolution-in-python-on-a-cpu"&gt;StackExchange&lt;/a&gt; or in the comments below this post.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-09-20-the-fastest-2d-convolution-in-the-world.html"&gt;Read more…&lt;/a&gt; (13 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>ipython</category><category>learning</category><category>neural</category><category>numpy</category><category>open-science</category><category>outreach</category><category>python</category><category>tensorflow</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-09-20-the-fastest-2d-convolution-in-the-world.html</guid><pubDate>Wed, 20 Sep 2017 09:13:10 GMT</pubDate></item><item><title>Le jeu de l'urne</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-06-15-le-jeu-de-lurne.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;figure&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/posts/files/2015-12-08_cours_neurocomp/figures/questions.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena!), nous avons inventé ensemble un jeu: &lt;em&gt;le jeu de l'urne&lt;/em&gt;. Le principe est simple: il faut deviner la couleur de la balle qu'on tire d'une urne contenant autant de balles rouges que noires - et ceci le plus tôt possible. Plus précisément, les règles sont:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On a un ensemble de balles, la motié sont rouges, l'autre moitié noires (c'est donc un nombre pair de balles qu'on appelera $N$, disons $N=8$). &lt;/li&gt;
+&lt;li&gt;Elles sont dans une urne opaque et donc on ne peut pas les voir à moins de les tirer une par une (sans remise dans l'urne). On peut tirer autant de balles qu'on veut pour les observer.&lt;/li&gt;
+&lt;li&gt;Le but est de deviner la balle qu'on va tirer. Si on gagne (on a bien prédit la couleur), alors on gagne autant de points que le nombre de balles qui étaient dans l'urne au moment de la décision. Sinon on perd autant de points que l'on en aurait gagné! &lt;/li&gt;
+&lt;li&gt;à long terme, la stratégie du jeu est de décider le meilleur moment où on est prêt à deviner la couleur de la balle qu'on va prendre et ainsi de gagner le plus de points possibles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nous avons d'abord créé ce jeu grâce au language de programmation &lt;a href="//scratch.mit.edu"&gt;Scratch&lt;/a&gt; sur &lt;a href="https://scratch.mit.edu/projects/165806365/"&gt;https://scratch.mit.edu/projects/165806365/&lt;/a&gt;:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/165806365/?autostart=false" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Ici, nous allons essayer de l'analyser plus finement.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-06-15-le-jeu-de-lurne.html"&gt;Read more…&lt;/a&gt; (37 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>learning</category><category>open-science</category><category>outreach</category><category>psychophysics</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-06-15-le-jeu-de-lurne.html</guid><pubDate>Thu, 15 Jun 2017 14:42:44 GMT</pubDate></item><item><title>testing COMPs-fastPcum_scripted</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum_scripted.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this notebook, we will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  &lt;a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl"&gt;http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl&lt;/a&gt; ). Compared to the &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html"&gt;previous post&lt;/a&gt;, we integrated the faster code to &lt;a href="https://github.com/bicv/SHL_scripts"&gt;https://github.com/bicv/SHL_scripts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See also the other posts on &lt;a href="https://laurentperrinet.github.io/sciblog/categories/learning.html"&gt;unsupervised learning&lt;/a&gt;,&lt;/p&gt;
+&lt;p&gt;This is joint work with &lt;a href="http://invibe.net/LaurentPerrinet/VictorBoutin"&gt;Victor Boutin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum_scripted.html"&gt;Read more…&lt;/a&gt; (10 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bicv</category><category>learning</category><category>neural</category><category>open-science</category><category>SHL_scripts</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum_scripted.html</guid><pubDate>Tue, 23 May 2017 14:13:15 GMT</pubDate></item><item><title>testing COMPs-fastPcum</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this notebook, we will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  &lt;a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl"&gt;http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl&lt;/a&gt; ). Compared to the &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-pcum.html"&gt;previous post&lt;/a&gt;, we optimize the code to be faster.&lt;/p&gt;
+&lt;p&gt;See also the other posts on &lt;a href="https://laurentperrinet.github.io/sciblog/categories/learning.html"&gt;unsupervised learning&lt;/a&gt;,&lt;/p&gt;
+&lt;p&gt;This is joint work with &lt;a href="http://invibe.net/LaurentPerrinet/VictorBoutin"&gt;Victor Boutin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html"&gt;Read more…&lt;/a&gt; (52 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bicv</category><category>learning</category><category>neural</category><category>open-science</category><category>SHL_scripts</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html</guid><pubDate>Tue, 23 May 2017 14:13:04 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about code)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/code.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 18 Jan 2019 18:48:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Feature vs global motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As we see a visual scene, there is contribution of the motion of each of the objects that constitute the visual scene into detecting its global motion.
+In particular, it is debatable to know which weight individual features, such as small objects in the foreground, have into this computation compared to a dense texture-like stimulus, as that of the background for instance.&lt;/p&gt;
+&lt;p&gt;Here, we design a a stimulus where we control independently these two aspects of motions to titrate their relative contribution to the detection of motion.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Can you spot the motion ? Is it more going to the upper left or to the upper right?&lt;/p&gt;
+&lt;p&gt;(For a more controlled test, imagine you fixate on the center of the movie.)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</guid><pubDate>Thu, 29 Nov 2018 09:43:46 GMT</pubDate></item><item><title>Embedding a trajectory in noise</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories. Following a &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html"&gt;previous post&lt;/a&gt;, we design a trajectory embedded in noise.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;center&gt;&lt;table style="width:100%"&gt;&lt;tr&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_difficult.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_reversed.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_difficult_shuffled_reversed.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Can you spot the motion ? from left to right or reversed ?&lt;/p&gt;
+&lt;p&gt;(For a more controlled test, imagine you fixate on the top left corner of each movie.)&lt;/p&gt;
+&lt;p&gt;(Upper row is coherent, lower row uncoherent / Left is &lt;code&gt;-&amp;gt;&lt;/code&gt; Right column is &lt;code&gt;&amp;lt;-&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html"&gt;Read more…&lt;/a&gt; (12 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html</guid><pubDate>Tue, 13 Nov 2018 09:43:46 GMT</pubDate></item><item><title>Testing more complex trajectories</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html</guid><pubDate>Tue, 16 Jan 2018 09:43:46 GMT</pubDate></item><item><title>A change in the definition of spatial frequency bandwidth?</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Since the beginning, we have used a definition of bandwidth in the spatial frequency domain which was quite standard (see &lt;a href="http://www.motionclouds.invibe.net/files/MotionClouds_Supplementary.pdf"&gt;supp material&lt;/a&gt; for instance):&lt;/p&gt;
+$$
+\mathcal{E}(f; sf_0, B_{sf}) \propto \frac {1}{f} \cdot \exp \left( -.5 \frac {\log( \frac{f}{sf_0} ) ^2} {\log( 1 + \frac {B_sf}{sf_0} )^2 } \right)
+$$&lt;p&gt;This is implemented in the folowing &lt;a href="https://github.com/NeuralEnsemble/MotionClouds/blob/79939f447c45c8a400d93735cca4fe498193be59/MotionClouds/MotionClouds.py#L206"&gt;code&lt;/a&gt; which reads:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;f_radius&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f_radius&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sf_0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;sf_0&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;B_sf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sf_0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However the one implemented in the code looks different (thanks to &lt;a href="http://invibe.net/LaurentPerrinet/KianaMansourPour"&gt;Kiana&lt;/a&gt; for spotting this!), so that one can think that the code is using:&lt;/p&gt;
+$$
+\mathcal{E}(f; sf_0, B_{sf}) \propto \frac {1}{f} \cdot \exp \left( -.5 \frac {\log( \frac{f}{sf_0} ) ^2} {\log(( 1 + \frac {B_sf}{sf_0} )^2 ) } \right)
+$$&lt;p&gt;The difference is minimal, yet very important for a correct definition of the bandwidth!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html</guid><pubDate>Tue, 23 May 2017 09:43:46 GMT</pubDate></item></channel></rss>
