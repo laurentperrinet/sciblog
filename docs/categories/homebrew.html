@@ -4,17 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about homebrew | Scientific logbook</title>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/categories/homebrew.html">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <script type="text/x-mathjax-config">
@@ -28,7 +24,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag homebrew" hreflang="en" href="homebrew.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -72,7 +68,7 @@ MathJax.Hub.Config({
 <a href="index.html" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
-<a href="http://invibe.net" class="nav-link">About my research</a>
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
                 </li>
 <li class="nav-item">
 <a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
@@ -93,375 +89,47 @@ MathJax.Hub.Config({
         <!--Body content-->
         
         
-    
-    <header><h1>Posts about homebrew</h1>
+<article class="tagpage"><header><h1>Posts about homebrew</h1>
         <div class="metadata">
             
+                <p class="feedlink">
+                        
+            <a href="homebrew.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
-            
+                </p>
 
         </div>
-    </header><div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" class="u-url">homebrew cask : creating a new cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2016-11-04T09:36:57+01:00" itemprop="datePublished" title="2016-11-04 09:36">2016-11-04 09:36</time></a>
-            </p>
-                        <p class="commentline">
         
-    <a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2016-11-04-homebrew-cask-creating-a-cask.html">Comments</a>
 
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>A new version of <a class="reference external" href="https://nteract.io/">https://nteract.io/</a> is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a> by creating a new cask for this application.  I will base things on this <a class="reference external" href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html">previous contribution</a> where I was simply editing an existing cask.</p>
-<ul>
+    </header><ul class="postlist">
 <li>
-<p class="first">getting the token</p>
-<blockquote>
-<pre class="literal-block">
-"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'
-</pre>
-</blockquote>
+<time class="listdate" datetime="2016-11-04T09:36:57+01:00" title="2016-11-04 09:36">2016-11-04 09:36</time><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" class="listtitle">homebrew cask : creating a new cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
-github_user='laurentperrinet'
-project='nteract'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2015-12-08T13:36:57+01:00" title="2015-12-08 13:36">2015-12-08 13:36</time><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-12-08T13:36:57+01:00" itemprop="datePublished" title="2015-12-08 13:36">2015-12-08 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-12-08-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2015-06-12T13:36:57+02:00" title="2015-06-12 13:36">2015-06-12 13:36</time><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" class="listtitle">homebrew cask : updating mactex</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2015-04-01T13:36:57+02:00" title="2015-04-01 13:36">2015-04-01 13:36</time><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2015-03-17T13:36:57+01:00" title="2015-03-17 13:36">2015-03-17 13:36</time><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" class="u-url">homebrew cask : updating mactex</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-06-12T13:36:57+02:00" itemprop="datePublished" title="2015-06-12 13:36">2015-06-12 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html#disqus_thread" data-disqus-identifier="cache/posts/2015-06-12-homebrew-cask-updating-mactex.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2015-02-16T13:36:57+01:00" title="2015-02-16 13:36">2015-02-16 13:36</time><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">I will base the steps I use on this <a class="reference external" href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2014-11-12T13:36:57+01:00" title="2014-11-12 13:36">2014-11-12 13:36</time><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='mactex'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2013-11-09T13:36:57+01:00" title="2013-11-09 13:36">2013-11-09 13:36</time><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" class="listtitle">homebrew cask (level 1): correcting a pull request</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-04-01T13:36:57+02:00" itemprop="datePublished" title="2015-04-01 13:36">2015-04-01 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-04-01-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of psychopy is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2013-11-08T13:36:57+01:00" title="2013-11-08 13:36">2013-11-08 13:36</time><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" class="listtitle">homebrew cask (level 0): contributing a new cask</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='psychopy'
-git remote -v
-</pre>
-</blockquote>
-</li>
-</ul>
-<p class="more"><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-03-17T13:36:57+01:00" itemprop="datePublished" title="2015-03-17 13:36">2015-03-17 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-03-17-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
-</li>
-</ul>
-<p class="more"><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-02-16T13:36:57+01:00" itemprop="datePublished" title="2015-02-16 13:36">2015-02-16 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-02-16-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">my contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
-</li>
-</ul>
-<p class="more"><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-12T13:36:57+01:00" itemprop="datePublished" title="2014-11-12 13:36">2014-11-12 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2014-11-12-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li><dl class="first docutils">
-<dt>I will base things on <a class="reference external" href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,</dt>
-<dd>
-<p class="first last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
-</dd>
-</dl></li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
-</li>
-</ul>
-<p class="more"><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" class="u-url">homebrew cask (level 1): correcting a pull request</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-09T13:36:57+01:00" itemprop="datePublished" title="2013-11-09 13:36">2013-11-09 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#disqus_thread" data-disqus-identifier="cache/posts/2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">I mistyped <a class="reference external" href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,
-so I have to modify my pull request</p>
-</li>
-<li>
-<p class="first">set-up variables</p>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/phinze-cask
-github_user='meduz'
-project='texshop'
-git remote -v
-</pre>
-</li>
-</ul>
-<p class="more"><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" class="u-url">homebrew cask (level 0): contributing a new cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-08T13:36:57+01:00" itemprop="datePublished" title="2013-11-08 13:36">2013-11-08 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
-administration of Mac applications distributed as
-binaries</a>. Something I
-always needed, hoped to get with the app store, frowned when
-openoffice or vlc were absent, and here they are!</li>
-<li>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
-use</a>
-(it is also a script to install them)</li>
-</ul>
-<p class="more"><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article>
-</div>
-    
-
-    
-        
-       <script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+        </ul></article><!--End of body content--><footer id="footer">
             Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
 Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
@@ -471,7 +139,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
 </div>
 
 
-            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+        <script src="../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>

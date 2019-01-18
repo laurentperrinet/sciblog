@@ -1,4 +1,4 @@
 Sitemap: https://laurentperrinet.github.io/sciblog/sitemapindex.xml
 
 User-Agent: *
-Host: blog.invibe.net
+Host: laurentperrinet.github.io

@@ -4,17 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about macos | Scientific logbook</title>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/categories/macos.html">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <script type="text/x-mathjax-config">
@@ -28,7 +24,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag macos" hreflang="en" href="macos.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -72,7 +68,7 @@ MathJax.Hub.Config({
 <a href="index.html" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
-<a href="http://invibe.net" class="nav-link">About my research</a>
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
                 </li>
 <li class="nav-item">
 <a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
@@ -93,1236 +89,137 @@ MathJax.Hub.Config({
         <!--Body content-->
         
         
-    
-    <header><h1>Posts about macos</h1>
+<article class="tagpage"><header><h1>Posts about macos</h1>
         <div class="metadata">
             
+                <p class="feedlink">
+                        
+            <a href="macos.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
-            
+                </p>
 
         </div>
-    </header><div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" class="u-url">homebrew cask : creating a new cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2016-11-04T09:36:57+01:00" itemprop="datePublished" title="2016-11-04 09:36">2016-11-04 09:36</time></a>
-            </p>
-                        <p class="commentline">
         
-    <a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2016-11-04-homebrew-cask-creating-a-cask.html">Comments</a>
 
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>A new version of <a class="reference external" href="https://nteract.io/">https://nteract.io/</a> is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a> by creating a new cask for this application.  I will base things on this <a class="reference external" href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html">previous contribution</a> where I was simply editing an existing cask.</p>
-<ul>
+    </header><ul class="postlist">
 <li>
-<p class="first">getting the token</p>
-<blockquote>
-<pre class="literal-block">
-"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'
-</pre>
-</blockquote>
+<time class="listdate" datetime="2016-11-04T09:36:57+01:00" title="2016-11-04 09:36">2016-11-04 09:36</time><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html" class="listtitle">homebrew cask : creating a new cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
-github_user='laurentperrinet'
-project='nteract'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2015-12-08T13:36:57+01:00" title="2015-12-08 13:36">2015-12-08 13:36</time><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2016-11-04-homebrew-cask-creating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-12-08T13:36:57+01:00" itemprop="datePublished" title="2015-12-08 13:36">2015-12-08 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-12-08-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2015-06-12T13:36:57+02:00" title="2015-06-12 13:36">2015-06-12 13:36</time><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" class="listtitle">homebrew cask : updating mactex</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2015-04-01T13:36:57+02:00" title="2015-04-01 13:36">2015-04-01 13:36</time><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2015-03-17T13:36:57+01:00" title="2015-03-17 13:36">2015-03-17 13:36</time><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-12-08-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" class="u-url">homebrew cask : updating mactex</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-06-12T13:36:57+02:00" itemprop="datePublished" title="2015-06-12 13:36">2015-06-12 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html#disqus_thread" data-disqus-identifier="cache/posts/2015-06-12-homebrew-cask-updating-mactex.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2015-02-16T13:36:57+01:00" title="2015-02-16 13:36">2015-02-16 13:36</time><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">I will base the steps I use on this <a class="reference external" href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2014-11-12T13:36:57+01:00" title="2014-11-12 13:36">2014-11-12 13:36</time><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" class="listtitle">homebrew cask : updating an existing cask</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='mactex'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2013-11-09T13:36:57+01:00" title="2013-11-09 13:36">2013-11-09 13:36</time><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" class="listtitle">homebrew cask (level 1): correcting a pull request</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-06-12-homebrew-cask-updating-mactex.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-04-01T13:36:57+02:00" itemprop="datePublished" title="2015-04-01 13:36">2015-04-01 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-04-01-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of psychopy is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2013-11-08T13:36:57+01:00" title="2013-11-08 13:36">2013-11-08 13:36</time><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" class="listtitle">homebrew cask (level 0): contributing a new cask</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2013-03-13T13:36:57+01:00" title="2013-03-13 13:36">2013-03-13 13:36</time><a href="../posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html" class="listtitle">Completely disable quarantine of downloaded files</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='psychopy'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2013-03-13T13:36:57+01:00" title="2013-03-13 13:36">2013-03-13 13:36</time><a href="../posts/2013-03-13-shortcut-to-put-the-display-to-sleep.html" class="listtitle">shortcut to put the display to sleep</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-04-01-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-03-17T13:36:57+01:00" itemprop="datePublished" title="2015-03-17 13:36">2015-03-17 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-03-17-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2013-02-02T13:36:57+01:00" title="2013-02-02 13:36">2013-02-02 13:36</time><a href="../posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html" class="listtitle">How To Change Your Time Machine Backup Interval</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
+            <li>
+<time class="listdate" datetime="2012-09-30T13:36:57+02:00" title="2012-09-30 13:36">2012-09-30 13:36</time><a href="../posts/2012-09-30-discover-ports-on-MacOSX.html" class="listtitle">discover ports on MacOSX</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2012-03-24T13:36:57+01:00" title="2012-03-24 13:36">2012-03-24 13:36</time><a href="../posts/2012-03-24-Type-your-paths-directly.html" class="listtitle">Type your paths directly</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-03-17-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-02-16T13:36:57+01:00" itemprop="datePublished" title="2015-02-16 13:36">2015-02-16 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2015-02-16-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2012-03-22T13:36:57+01:00" title="2012-03-22 13:36">2012-03-22 13:36</time><a href="../posts/2012-03-22-how-to-leave-iphoto.html" class="listtitle">how to leave iphoto</a><a></a>
 </li>
-<li>
-<p class="first">I will base things on <a class="reference external" href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">my contribution</a></p>
+            <li>
+<time class="listdate" datetime="2012-03-21T13:36:57+01:00" title="2012-03-21 13:36">2012-03-21 13:36</time><a href="../posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html" class="listtitle">installing Dovecot on MacOsX using HomeBrew</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2012-03-16T13:36:57+01:00" title="2012-03-16 13:36">2012-03-16 13:36</time><a href="../posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html" class="listtitle">Creating a bootable Debian USB flash drive on MacOsX</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2015-02-16-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" class="u-url">homebrew cask : updating an existing cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-12T13:36:57+01:00" itemprop="datePublished" title="2014-11-12 13:36">2014-11-12 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2014-11-12-homebrew-cask-updating-a-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
+            <li>
+<time class="listdate" datetime="2012-03-13T13:36:57+01:00" title="2012-03-13 13:36">2012-03-13 13:36</time><a href="../posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html" class="listtitle">Moving Time Machine to a New Hard Drive</a><a></a>
 </li>
-<li><dl class="first docutils">
-<dt>I will base things on <a class="reference external" href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,</dt>
-<dd>
-<p class="first last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
-</dd>
-</dl></li>
-<li>
-<p class="first">set-up variables</p>
-<blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
-github_user='meduz'
-project='owncloud'
-git remote -v
-</pre>
-</blockquote>
+            <li>
+<time class="listdate" datetime="2012-03-11T13:36:57+01:00" title="2012-03-11 13:36">2012-03-11 13:36</time><a href="../posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html" class="listtitle">Stop Bonjour from broadcasting ssh and sftp</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2014-11-12-homebrew-cask-updating-a-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" class="u-url">homebrew cask (level 1): correcting a pull request</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-09T13:36:57+01:00" itemprop="datePublished" title="2013-11-09 13:36">2013-11-09 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#disqus_thread" data-disqus-identifier="cache/posts/2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">I mistyped <a class="reference external" href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,
-so I have to modify my pull request</p>
+            <li>
+<time class="listdate" datetime="2012-03-05T13:36:57+01:00" title="2012-03-05 13:36">2012-03-05 13:36</time><a href="../posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html" class="listtitle">Completely disable quarantine of downloaded files</a><a></a>
 </li>
-<li>
-<p class="first">set-up variables</p>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/phinze-cask
-github_user='meduz'
-project='texshop'
-git remote -v
-</pre>
+            <li>
+<time class="listdate" datetime="2012-01-18T13:36:57+01:00" title="2012-01-18 13:36">2012-01-18 13:36</time><a href="../posts/2012-01-18-Compiling-pyglet-on-MacOsX.html" class="listtitle">Compiling pyglet on MacOsX</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" class="u-url">homebrew cask (level 0): contributing a new cask</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-08T13:36:57+01:00" itemprop="datePublished" title="2013-11-08 13:36">2013-11-08 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#disqus_thread" data-disqus-identifier="cache/posts/2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
-administration of Mac applications distributed as
-binaries</a>. Something I
-always needed, hoped to get with the app store, frowned when
-openoffice or vlc were absent, and here they are!</li>
-<li>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
-use</a>
-(it is also a script to install them)</li>
-</ul>
-<p class="more"><a href="../posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html" class="u-url">Completely disable quarantine of downloaded files</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-03-13T13:36:57+01:00" itemprop="datePublished" title="2013-03-13 13:36">2013-03-13 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html#disqus_thread" data-disqus-identifier="cache/posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>Starting in Leopard (I believe) when you open a file downloaded from the web, OS X asks if you really mean it. While it is intended to stop maliciousness, it is only a source of aggravation for me. While there are some hints here on working around it, it turns out that you can disable it completely using a Terminal command:</p>
-<blockquote>
-defaults write com.apple.LaunchServices LSQuarantine -bool NO</blockquote>
-<p class="more"><a href="../posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-03-13-shortcut-to-put-the-display-to-sleep.html" class="u-url">shortcut to put the display to sleep</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-03-13-shortcut-to-put-the-display-to-sleep.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-03-13T13:36:57+01:00" itemprop="datePublished" title="2013-03-13 13:36">2013-03-13 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-03-13-shortcut-to-put-the-display-to-sleep.html#disqus_thread" data-disqus-identifier="cache/posts/2013-03-13-shortcut-to-put-the-display-to-sleep.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <ul class="simple">
-<li>⇧⌃⏏ (shift+control+eject)</li>
-</ul>
-</div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html" class="u-url">How To Change Your Time Machine Backup Interval</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html" rel="bookmark">
-            <time class="published dt-published" datetime="2013-02-02T13:36:57+01:00" itemprop="datePublished" title="2013-02-02 13:36">2013-02-02 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html#disqus_thread" data-disqus-identifier="cache/posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>tl;dr `` sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist ``</td>
-</tr></tbody>
-</table>
-<ul class="simple">
-<li>summarizing the instructions in
-<a class="reference external" href="http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05">http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05</a>
-:</li>
-</ul>
-<p class="more"><a href="../posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-09-30-discover-ports-on-MacOSX.html" class="u-url">discover ports on MacOSX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-09-30-discover-ports-on-MacOSX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-09-30T13:36:57+02:00" itemprop="datePublished" title="2012-09-30 13:36">2012-09-30 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-09-30-discover-ports-on-MacOSX.html#disqus_thread" data-disqus-identifier="cache/posts/2012-09-30-discover-ports-on-MacOSX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>the network utility GUI is useful, but you may get the same results
-via the command line:</li>
-</ul>
-<p class="more"><a href="../posts/2012-09-30-discover-ports-on-MacOSX.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-24-Type-your-paths-directly.html" class="u-url">Type your paths directly</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-24-Type-your-paths-directly.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-24T13:36:57+01:00" itemprop="datePublished" title="2012-03-24 13:36">2012-03-24 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-24-Type-your-paths-directly.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-24-Type-your-paths-directly.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <ul>
-<li>
-<p class="first">from
-<a class="reference external" href="http://apple.blogoverflow.com/2012/03/open-and-save-like-a-pro-secrets-of-opensave-dialogs/">http://apple.blogoverflow.com/2012/03/open-and-save-like-a-pro-secrets-of-opensave-dialogs/</a>
-:</p>
-<pre class="literal-block">
-Let’s move on to a more advanced feature: the Go to Folder dialog. Like in Finder, you can access a prompt for typing a path by pressing ⇧+⌘+G. If you love the keyboard, you’ll love this dialog; frequently, the fastest way to get to where you want to go is by typing its path. This is especially true because the Go to Folder dialog features tab autocompletion: type the beginning of the name of a file or folder and hit tab to fill in the rest of the name automatically. My favorite part about the Go to Folder dialog is that it appears automatically whenever you begin typing a path (/ or ~). When saving, the desired filename can even be included in the path.
-</pre>
+            <li>
+<time class="listdate" datetime="2011-07-10T13:36:57+02:00" title="2011-07-10 13:36">2011-07-10 13:36</time><a href="../posts/2011-07-10-mounting-filesystems-using-SSH.html" class="listtitle">mounting filesystems using SSH</a><a></a>
 </li>
-</ul>
-</div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-22-how-to-leave-iphoto.html" class="u-url">how to leave iphoto</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-22-how-to-leave-iphoto.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-22T13:36:57+01:00" itemprop="datePublished" title="2012-03-22 13:36">2012-03-22 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-22-how-to-leave-iphoto.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-22-how-to-leave-iphoto.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>iphoto.app is certainly a nice tool, but it is also<ol class="arabic">
-<li>slow, unresponsive and locks you in some ugly closed-source
-format.</li>
-<li>also, try to look in forums when you want to share pictures on
-different {computers / OSs / iphoto versions / places / users} =
-nightmare!</li>
-<li>on top of that, the *cloud stuff is intellectually just very
-corrupted...</li>
-<li>what decided me to drop it entirely was a sudden corruption of the
-library. It took 2 days to recover my files and re-rotate
-correctly all pictures...</li>
-<li>last nail in the coffin was the fact that libraries are not
-backward compatible : you have to upgrade to the new <em>product</em>.</li>
-</ol>
+            <li>
+<time class="listdate" datetime="2011-07-07T13:36:57+02:00" title="2011-07-07 13:36">2011-07-07 13:36</time><a href="../posts/2011-07-07-using-a-versioning-system.html" class="listtitle">using a versioning system</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2012-03-22-how-to-leave-iphoto.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html" class="u-url">installing Dovecot on MacOsX using HomeBrew</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-21T13:36:57+01:00" itemprop="datePublished" title="2012-03-21 13:36">2012-03-21 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>master howto:
-<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a>
+            <li>
+<time class="listdate" datetime="2011-02-22T13:36:57+01:00" title="2011-02-22 13:36">2011-02-22 13:36</time><a href="../posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html" class="listtitle">Change User ID and Group ID in Snow Leopard</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html" class="u-url">Creating a bootable Debian USB flash drive on MacOsX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-16T13:36:57+01:00" itemprop="datePublished" title="2012-03-16 13:36">2012-03-16 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>largely adapted from
-<a class="reference external" href="https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX">https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX</a>
+            <li>
+<time class="listdate" datetime="2011-02-09T13:36:57+01:00" title="2011-02-09 13:36">2011-02-09 13:36</time><a href="../posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html" class="listtitle">pmset: selecting the sleep mode in Mac Os X</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html" class="u-url">Moving Time Machine to a New Hard Drive</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-13T13:36:57+01:00" itemprop="datePublished" title="2012-03-13 13:36">2012-03-13 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>There exist some solution to move a time machine data folder to a new
-drive by making a clone of the drive. My problem is that I already
-have data on the new drive and that this data can difficultly be
-moved.</li>
-</ul>
-<p class="more"><a href="../posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html" class="u-url">Stop Bonjour from broadcasting ssh and sftp</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-11T13:36:57+01:00" itemprop="datePublished" title="2012-03-11 13:36">2012-03-11 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>largely a copy-and-paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844">http://hints.macworld.com/article.php?story=20070622210507844</a> ; Jun 25, '07 07:30:00AM • Contributed by: delight1</td>
-</tr></tbody>
-</table>
-<ul>
-<li>
-<p class="first">After doing a backup, edit the following file:</p>
-<pre class="literal-block">
-sudo vim /System/Library/LaunchDaemons/ssh.plist
-</pre>
+            <li>
+<time class="listdate" datetime="2011-01-25T13:36:57+01:00" title="2011-01-25 13:36">2011-01-25 13:36</time><a href="../posts/2011-01-25-Finder-Shortcuts-in-MacOsX.html" class="listtitle">Finder Shortcuts in MacOsX</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html" class="u-url">Completely disable quarantine of downloaded files</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-03-05T13:36:57+01:00" itemprop="datePublished" title="2012-03-05 13:36">2012-03-05 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html#disqus_thread" data-disqus-identifier="cache/posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>copy and paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20091208050655947">http://hints.macworld.com/article.php?story=20091208050655947</a>
-</td>
-</tr></tbody>
-</table>
-<p>Starting in Leopard when you open a file downloaded from the web, OS X
-asks if you really mean it. While it is intended to stop maliciousness,
-it is only a source of aggravation for me. While there are some hints
-here on working around it, it turns out that you can disable it
-completely using a Terminal command:</p>
-<p class="more"><a href="../posts/2012-03-05-Completely-disable-quarantine-of-downloaded-files.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2012-01-18-Compiling-pyglet-on-MacOsX.html" class="u-url">Compiling pyglet on MacOsX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2012-01-18-Compiling-pyglet-on-MacOsX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2012-01-18T13:36:57+01:00" itemprop="datePublished" title="2012-01-18 13:36">2012-01-18 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2012-01-18-Compiling-pyglet-on-MacOsX.html#disqus_thread" data-disqus-identifier="cache/posts/2012-01-18-Compiling-pyglet-on-MacOsX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>you may get errors if trying to install pyglet using the traditional
-way, using <tt class="docutils literal">pip</tt> for instance (was my case on MacOs X Lion 10.7.0 +
-python 64bits from EPD or homebrew). in cause is the carbon code that
-has been abandonned in the 64bits libraries that come with the OS</li>
-</ul>
-<p class="more"><a href="../posts/2012-01-18-Compiling-pyglet-on-MacOsX.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-07-10-mounting-filesystems-using-SSH.html" class="u-url">mounting filesystems using SSH</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-07-10-mounting-filesystems-using-SSH.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-07-10T13:36:57+02:00" itemprop="datePublished" title="2011-07-10 13:36">2011-07-10 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-07-10-mounting-filesystems-using-SSH.html#disqus_thread" data-disqus-identifier="cache/posts/2011-07-10-mounting-filesystems-using-SSH.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="section" id="install-on-ubuntu">
-<h2>install on ubuntu</h2>
-<p class="more"><a href="../posts/2011-07-10-mounting-filesystems-using-SSH.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-07-07-using-a-versioning-system.html" class="u-url">using a versioning system</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-07-07-using-a-versioning-system.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-07-07T13:36:57+02:00" itemprop="datePublished" title="2011-07-07 13:36">2011-07-07 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-07-07-using-a-versioning-system.html#disqus_thread" data-disqus-identifier="cache/posts/2011-07-07-using-a-versioning-system.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <p class="more"><a href="../posts/2011-07-07-using-a-versioning-system.html">Read more…</a></p>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html" class="u-url">Change User ID and Group ID in Snow Leopard</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-02-22T13:36:57+01:00" itemprop="datePublished" title="2011-02-22 13:36">2011-02-22 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html#disqus_thread" data-disqus-identifier="cache/posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>find source and traget UID / GID using the <tt class="docutils literal">id</tt> command on unix and
-<tt class="docutils literal">dscllocalhostread/Local/Default/Users/lup</tt> in MacOsX</li>
-</ul>
-<p class="more"><a href="../posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html" class="u-url">pmset: selecting the sleep mode in Mac Os X</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-02-09T13:36:57+01:00" itemprop="datePublished" title="2011-02-09 13:36">2011-02-09 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html#disqus_thread" data-disqus-identifier="cache/posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
-</div>
-<ul class="simple">
-<li>from
-<a class="reference external" href="http://www.fscklog.com/2008/02/schnellschlaf-s.html">http://www.fscklog.com/2008/02/schnellschlaf-s.html</a>:</li>
-</ul>
-<p>To select one of the different sleep modes of the Mac use the
-command-line tool <tt class="docutils literal">pmset</tt>:</p>
-<p class="more"><a href="../posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-01-25-Finder-Shortcuts-in-MacOsX.html" class="u-url">Finder Shortcuts in MacOsX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-01-25-Finder-Shortcuts-in-MacOsX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-01-25T13:36:57+01:00" itemprop="datePublished" title="2011-01-25 13:36">2011-01-25 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-01-25-Finder-Shortcuts-in-MacOsX.html#disqus_thread" data-disqus-identifier="cache/posts/2011-01-25-Finder-Shortcuts-in-MacOsX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <ul class="simple">
-<li>⇧⌘C: Computer</li>
-<li>⇧⌘H: Home</li>
-<li>⇧⌘D: Desktop</li>
-<li>⇧⌘K: Network</li>
-<li>⌥⌘L: Downloads</li>
-<li>⇧⌘A: Applications</li>
-<li>⇧⌘O: Documents</li>
-<li>⇧⌘U: Utilities</li>
-</ul>
-</div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2011-01-19-inverting-colors-in-MacOsX.html" class="u-url">inverting colors in MacOsX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2011-01-19-inverting-colors-in-MacOsX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-01-19T13:36:57+01:00" itemprop="datePublished" title="2011-01-19 13:36">2011-01-19 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2011-01-19-inverting-colors-in-MacOsX.html#disqus_thread" data-disqus-identifier="cache/posts/2011-01-19-inverting-colors-in-MacOsX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>during a presentation, a figure may reveal more readable if you
-invert colors and luminance: black gets white and reverse, red
-becomes cyan and so on.</li>
-</ul>
-<p class="more"><a href="../posts/2011-01-19-inverting-colors-in-MacOsX.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-12-20-Caps-Lock-what-a-useless-key.html" class="u-url">Caps Lock, what a useless key</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-12-20-Caps-Lock-what-a-useless-key.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-12-20T13:36:57+01:00" itemprop="datePublished" title="2010-12-20 13:36">2010-12-20 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-12-20-Caps-Lock-what-a-useless-key.html#disqus_thread" data-disqus-identifier="cache/posts/2010-12-20-Caps-Lock-what-a-useless-key.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p><a class="reference external" href="http://mkaz.com/archives/86/disable-caps-lock-on-mac-os-x/"><img alt="http://mkaz.com/archives/86/disable-caps-lock-on-mac-os-x/" src="http://mkaz.com/img/capslock.png"></a></p>
-<ol class="arabic simple">
-<li>[Ubuntu / gnome] You should be disable it do this with
-<tt class="docutils literal"><span class="pre">System-&gt;Preferences-&gt;Keyboard-&gt;Layouts-&gt;</span><span class="pre">Options...-&gt;CapsLock</span>keybehavior</tt>
+            <li>
+<time class="listdate" datetime="2011-01-19T13:36:57+01:00" title="2011-01-19 13:36">2011-01-19 13:36</time><a href="../posts/2011-01-19-inverting-colors-in-MacOsX.html" class="listtitle">inverting colors in MacOsX</a><a></a>
 </li>
-<li>[MacosX] Open <tt class="docutils literal">SystemPreferences</tt>, select the <tt class="docutils literal">Keyboard</tt> pane.
-Within here, click the <tt class="docutils literal">ModifierKeys…</tt> button at the bottom. To
-disable the Caps Lock key, pull down the associated menu and select
-<tt class="docutils literal">NoAction</tt>.</li>
-</ol>
-<p class="more"><a href="../posts/2010-12-20-Caps-Lock-what-a-useless-key.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html" class="u-url">installing Dovecot on MacOsX using MacPorts</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-11-04T13:36:57+01:00" itemprop="datePublished" title="2010-11-04 13:36">2010-11-04 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html#disqus_thread" data-disqus-identifier="cache/posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <p class="more"><a href="../posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html">Read more…</a></p>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-10-27-installing-python-and-its-components.html" class="u-url">installing python and its components</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-10-27-installing-python-and-its-components.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-10-27T13:36:57+02:00" itemprop="datePublished" title="2010-10-27 13:36">2010-10-27 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-10-27-installing-python-and-its-components.html#disqus_thread" data-disqus-identifier="cache/posts/2010-10-27-installing-python-and-its-components.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>Python is often pre-installed on your system or easy to download.
-More difficult is to get the essential packages (numpy, scipy,
-matplotlib, ipython) and their dependencies installed. Here, I list
-some of the possibilities.</li>
-</ul>
-<p class="more"><a href="../posts/2010-10-27-installing-python-and-its-components.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-09-27-bundling-using-py2app.html" class="u-url">bundling using py2app</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-09-27-bundling-using-py2app.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-09-27T13:36:57+02:00" itemprop="datePublished" title="2010-09-27 13:36">2010-09-27 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-09-27-bundling-using-py2app.html#disqus_thread" data-disqus-identifier="cache/posts/2010-09-27-bundling-using-py2app.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <p class="more"><a href="../posts/2010-09-27-bundling-using-py2app.html">Read more…</a></p>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html" class="u-url">managing packages on MacOsX : testing HomeBrew</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-08-31T13:36:57+02:00" itemprop="datePublished" title="2010-08-31 13:36">2010-08-31 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html#disqus_thread" data-disqus-identifier="cache/posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>a newcomer after fink and MacPorts:
-<a class="reference external" href="http://wiki.github.com/mxcl/homebrew/">http://wiki.github.com/mxcl/homebrew/</a>
+            <li>
+<time class="listdate" datetime="2010-12-20T13:36:57+01:00" title="2010-12-20 13:36">2010-12-20 13:36</time><a href="../posts/2010-12-20-Caps-Lock-what-a-useless-key.html" class="listtitle">Caps Lock, what a useless key</a><a></a>
 </li>
-<li>advertised
-<a class="reference external" href="http://www.engineyard.com/blog/2010/homebrew-os-xs-missing-package-manager/">here</a>
+            <li>
+<time class="listdate" datetime="2010-11-04T13:36:57+01:00" title="2010-11-04 13:36">2010-11-04 13:36</time><a href="../posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html" class="listtitle">installing Dovecot on MacOsX using MacPorts</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-08-30-Terminalapp-shortcuts.html" class="u-url">Terminal.app shortcuts</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-08-30-Terminalapp-shortcuts.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-08-30T13:36:57+02:00" itemprop="datePublished" title="2010-08-30 13:36">2010-08-30 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-08-30-Terminalapp-shortcuts.html#disqus_thread" data-disqus-identifier="cache/posts/2010-08-30-Terminalapp-shortcuts.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <ul>
-<li>
-<p class="first">from
-<a class="reference external" href="http://superuser.com/questions/52483/terminal-tips-and-tricks-for-mac-os-x">http://superuser.com/questions/52483/terminal-tips-and-tricks-for-mac-os-x</a></p>
-<pre class="literal-block">
-To make Ctrl← and Ctrl→  useful again, that is going a word forward or backward like they usually do on Linux, you must make Terminal.app send the right string to the shell. In the preferences, go to the Settings tab and select your default profile. Go to Keyboard and set control cursor left and control cursor right to send string \033b and \033f respectively.
-
-While your're at it, you can also fix Home (\033[H), End (\033[F), Page Up (\033[5~) and Page Down (\033[6~) so that they send those keys to the shell instead of scrolling the buffer.
-</pre>
+            <li>
+<time class="listdate" datetime="2010-10-27T13:36:57+02:00" title="2010-10-27 13:36">2010-10-27 13:36</time><a href="../posts/2010-10-27-installing-python-and-its-components.html" class="listtitle">installing python and its components</a><a></a>
 </li>
-</ul>
-</div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-08-29-System-Updates.html" class="u-url">System Updates</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-08-29-System-Updates.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-08-29T13:36:57+02:00" itemprop="datePublished" title="2010-08-29 13:36">2010-08-29 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-08-29-System-Updates.html#disqus_thread" data-disqus-identifier="cache/posts/2010-08-29-System-Updates.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">install a package</p>
-<pre class="literal-block">
-sudo installer -pkg &lt;chemin d’accès au paquet&gt; -target /
-</pre>
+            <li>
+<time class="listdate" datetime="2010-09-27T13:36:57+02:00" title="2010-09-27 13:36">2010-09-27 13:36</time><a href="../posts/2010-09-27-bundling-using-py2app.html" class="listtitle">bundling using py2app</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2010-08-29-System-Updates.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html" class="u-url">compiling OpenCV on MacOSX 10.6</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-08-03T13:36:57+02:00" itemprop="datePublished" title="2010-08-03 13:36">2010-08-03 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html#disqus_thread" data-disqus-identifier="cache/posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="section" id="using-macports">
-<h2>using macports</h2>
-<ul>
-<li>
-<p class="first">it works now with macports:</p>
-<pre class="literal-block">
-sudo port install -u opencv +python26 +tbb
-</pre>
+            <li>
+<time class="listdate" datetime="2010-08-31T13:36:57+02:00" title="2010-08-31 13:36">2010-08-31 13:36</time><a href="../posts/2010-08-31-managing-packages-on-MacOsX-testing-HomeBrew.html" class="listtitle">managing packages on MacOsX : testing HomeBrew</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2010-03-15-securing-the-server.html" class="u-url">securing the server</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2010-03-15-securing-the-server.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-03-15T13:36:57+01:00" itemprop="datePublished" title="2010-03-15 13:36">2010-03-15 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2010-03-15-securing-the-server.html#disqus_thread" data-disqus-identifier="cache/posts/2010-03-15-securing-the-server.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <ul class="simple"><li>SSH (Secure Shell) is installed on most systems (here
-<a class="reference external" href="http://invibe.net/LaurentPerrinet/GnuLinuxUbuntu">GnuLinuxUbuntu</a> and MacOsX) so
-don't panic about compilations (try Putty on Windows). Try a simple
-<tt class="docutils literal">ssh<span class="pre">-V</span></tt> to check version or <tt class="docutils literal">whichssh</tt> to locate the binary.<p class="more"><a href="../posts/2010-03-15-securing-the-server.html">Read more…</a></p>
-</li></ul>
-</div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2009-11-26-inkscape-native.html" class="u-url">inkscape native</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2009-11-26-inkscape-native.html" rel="bookmark">
-            <time class="published dt-published" datetime="2009-11-26T13:36:57+01:00" itemprop="datePublished" title="2009-11-26 13:36">2009-11-26 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2009-11-26-inkscape-native.html#disqus_thread" data-disqus-identifier="cache/posts/2009-11-26-inkscape-native.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>trying out
-<a class="reference external" href="http://wiki.inkscape.org/wiki/index.php/CompilingMacOsX#Building_Aqua_November_2009">http://wiki.inkscape.org/wiki/index.php/CompilingMacOsX#Building_Aqua_November_2009</a>
+            <li>
+<time class="listdate" datetime="2010-08-30T13:36:57+02:00" title="2010-08-30 13:36">2010-08-30 13:36</time><a href="../posts/2010-08-30-Terminalapp-shortcuts.html" class="listtitle">Terminal.app shortcuts</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2009-11-26-inkscape-native.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html" class="u-url">Tips on Filesystems, security and al on mac os x</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html" rel="bookmark">
-            <time class="published dt-published" datetime="2009-08-29T13:36:57+02:00" itemprop="datePublished" title="2009-08-29 13:36">2009-08-29 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html#disqus_thread" data-disqus-identifier="cache/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul>
-<li>
-<p class="first">mount with AFP sharepoints from the command line (thanks to this
-<a class="reference external" href="http://plumblossom.org/macclt.html">hint</a>) :</p>
-<pre class="literal-block">
-# mount_afp [-i] [-o options] afp_url node
-mkdir /Volumes/truc
-mount_afp afp://user:PASSWORD@server/truc /Volumes/truc
-umount /Volumes/truc
-rmdir /Volumes/truc
-</pre>
+            <li>
+<time class="listdate" datetime="2010-08-29T13:36:57+02:00" title="2010-08-29 13:36">2010-08-29 13:36</time><a href="../posts/2010-08-29-System-Updates.html" class="listtitle">System Updates</a><a></a>
 </li>
-</ul>
-<p class="more"><a href="../posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2008-08-29-keyboard.html" class="u-url">keyboard</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2008-08-29-keyboard.html" rel="bookmark">
-            <time class="published dt-published" datetime="2008-08-29T13:36:57+02:00" itemprop="datePublished" title="2008-08-29 13:36">2008-08-29 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2008-08-29-keyboard.html#disqus_thread" data-disqus-identifier="cache/posts/2008-08-29-keyboard.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="section" id="touches-speciales-unix-sur-clavier-mac-francais">
-<h2>Touches spéciales (unix) sur clavier Mac francais</h2>
-<p>Merci a <a class="reference external" href="http://busy.lab.free.fr/mac/">http://busy.lab.free.fr/mac/</a> !</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%">
-<col width="13%">
-<col width="65%">
-</colgroup>
-<tbody valign="top">
-<tr>
-<td>backslash</td>
-<td><tt class="docutils literal">\</tt></td>
-<td>shift + option + /</td>
-</tr>
-<tr>
-<td>pipe, or</td>
-<td><tt class="docutils literal">|</tt></td>
-<td>shift + option + L</td>
-</tr>
-<tr>
-<td>tidle</td>
-<td><tt class="docutils literal">~</tt></td>
-<td>option + N</td>
-</tr>
-<tr>
-<td>simple quote</td>
-<td><tt class="docutils literal">'</tt></td>
-<td>4 key, that's to say a regular ' on any keyboard I guess.</td>
-</tr>
-<tr>
-<td>opening brace</td>
-<td><tt class="docutils literal">{</tt></td>
-<td>option + (</td>
-</tr>
-<tr>
-<td>closing brace</td>
-<td><tt class="docutils literal">}</tt></td>
-<td>option + )</td>
-</tr>
-<tr>
-<td>opening square bracket</td>
-<td><tt class="docutils literal">[</tt></td>
-<td>shift + option + (</td>
-</tr>
-<tr>
-<td>closing square bracket</td>
-<td><tt class="docutils literal">]</tt></td>
-<td>shift + option + )</td>
-</tr>
-</tbody>
-</table>
-<p class="more"><a href="../posts/2008-08-29-keyboard.html">Read more…</a></p>
-</div>
-                </div>
-            </article>
-</div>
-    
-
-    
-        
-       <script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            <li>
+<time class="listdate" datetime="2010-08-03T13:36:57+02:00" title="2010-08-03 13:36">2010-08-03 13:36</time><a href="../posts/2010-08-03-compiling-OpenCV-on-MacOSX-106.html" class="listtitle">compiling OpenCV on MacOSX 10.6</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2010-03-15T13:36:57+01:00" title="2010-03-15 13:36">2010-03-15 13:36</time><a href="../posts/2010-03-15-securing-the-server.html" class="listtitle">securing the server</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2009-11-26T13:36:57+01:00" title="2009-11-26 13:36">2009-11-26 13:36</time><a href="../posts/2009-11-26-inkscape-native.html" class="listtitle">inkscape native</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2009-08-29T13:36:57+02:00" title="2009-08-29 13:36">2009-08-29 13:36</time><a href="../posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html" class="listtitle">Tips on Filesystems, security and al on mac os x</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2008-08-29T13:36:57+02:00" title="2008-08-29 13:36">2008-08-29 13:36</time><a href="../posts/2008-08-29-keyboard.html" class="listtitle">keyboard</a><a></a>
+</li>
+        </ul></article><!--End of body content--><footer id="footer">
             Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
 Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
@@ -1332,7 +229,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
 </div>
 
 
-            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+        <script src="../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>

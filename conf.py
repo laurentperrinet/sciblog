@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Laurent Perrinet"
 BLOG_TITLE = "Scientific logbook"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "https://laurentperrinet.github.io/sciblog"
+SITE_URL = "https://laurentperrinet.github.io/sciblog/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
@@ -1327,3 +1327,10 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
+# Compiler to process LESS files.
+LESS_COMPILER = 'lessc'
+
+# A list of options to pass to the LESS compiler.
+# Final command is: LESS_COMPILER LESS_OPTIONS file.less
+LESS_OPTIONS = []

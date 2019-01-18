@@ -4,17 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about LogGabor | Scientific logbook</title>
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/bootblog.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/categories/loggabor.html">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <script type="text/x-mathjax-config">
@@ -28,7 +24,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag LogGabor" hreflang="en" href="loggabor.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -72,7 +68,7 @@ MathJax.Hub.Config({
 <a href="index.html" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
-<a href="http://invibe.net" class="nav-link">About my research</a>
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
                 </li>
 <li class="nav-item">
 <a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
@@ -93,584 +89,65 @@ MathJax.Hub.Config({
         <!--Body content-->
         
         
-    
-    <header><h1>Posts about LogGabor</h1>
+<article class="tagpage"><header><h1>Posts about LogGabor</h1>
         <div class="metadata">
             
+                <p class="feedlink">
+                        
+            <a href="loggabor.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
-            
+                </p>
 
         </div>
-    </header><div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html" class="u-url">Statistics of the natural input to a ring model</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html" rel="bookmark">
-            <time class="published dt-published" datetime="2018-11-05T15:41:07+01:00" itemprop="datePublished" title="2018-11-05 15:41">2018-11-05 15:41</time></a>
-            </p>
-                        <p class="commentline">
         
-    <a href="../posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html#disqus_thread" data-disqus-identifier="cache/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html">Comments</a>
 
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What does the input to a population of neurons in the primary visual cortex look like? In this post, we will try to have a feeling of the structure and statistics of the natural input to such a "ring" model.</p>
-<p>This notebook explores this question using a retina-like temporal filtering and oriented Gabor-like filters. It produces this polar plot of the instantaneous energy in the different orientations for a natural movie :</p>
-<p><br></p>
-<p></p>
-<center><video controls autoplay loop src="../files/2018-11-05_Ring_input.mp4" width="61.8%/"></video></center>
-<br><p>One observes different striking features in the structure of this input to populations of V1 neurons:</p>
-<ul>
-<li>input is sparse: often, a few orientations dominate - the shape of these components (bandwidth) seem to be similar,</li>
-<li>there are many "switches": at some moments, the representations flips to another. This is due to cuts in the movie (changes from one scene to the other for instance). In a more realistic setting where we would add eye movements, these switches should also happen during saccades (but is there any knowledge of the occurence of the switch by the visual system?),</li>
-<li>between switches, there is some coherence in amplitude (a component will slowly change its energy) but also in time (a component is more likely to have a ghradually changing oriantation, for instance when the scene rotates).</li>
-</ul>
-<p>This structure is specific to the structure of natural images and to the way they transform (translations, rotations, zooms due to the motion and deformation of visual objects). This is certainly incorporated as a "prior" information in the structure of the visual cortex. As to know how and where this is implemented is an open scientific question.</p>
-<p>This is joint work with <a href="http://invibe.net/LaurentPerrinet/HugoLadret">Hugo Ladret</a>.
-</p>
-<p class="more"><a href="../posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2017-10-06-improving-calls-to-the-loggabor-library.html" class="u-url">Improving calls to the LogGabor library</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2017-10-06-improving-calls-to-the-loggabor-library.html" rel="bookmark">
-            <time class="published dt-published" datetime="2017-10-06T11:04:04+02:00" itemprop="datePublished" title="2017-10-06 11:04">2017-10-06 11:04</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2017-10-06-improving-calls-to-the-loggabor-library.html#disqus_thread" data-disqus-identifier="cache/posts/2017-10-06-improving-calls-to-the-loggabor-library.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To code image as edges, for instance in the <code>SparseEdges</code> <a href="https://github.com/bicv/SparseEdges">sparse coding scheme</a>, we use a model of edges in images. A good model for these edges are <a href="https://en.wikipedia.org/wiki/Log_Gabor_filter#Bi-dimensional_Log-Gabor_filter">bidimensional Log Gabor filter</a>. This is implemented for instance in the <code>LogGabor</code> library. The library was designed to be precise, but not particularly for efficiency. In order to improve its speed, we demonstrate here the use of a cache to avoid redundant computations.</p>
-<p class="more"><a href="../posts/2017-10-06-improving-calls-to-the-loggabor-library.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html" class="u-url">Predictive coding of motion in an aperture</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html" rel="bookmark">
-            <time class="published dt-published" datetime="2016-07-16T07:58:24+02:00" itemprop="datePublished" title="2016-07-16 07:58">2016-07-16 07:58</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html#disqus_thread" data-disqus-identifier="cache/posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>After reading the paper <a href="../posts/Motion%20Direction%20Biases%20and%20Decoding%20in%20Human%20Visual%20Cortex">http://www.jneurosci.org/content/34/37/12601.full</a> by  Helena X. Wang, Elisha P. Merriam, Jeremy Freeman, and David J. Heeger (The Journal of Neuroscience, 10 September 2014, 34(37): 12601-12615; doi: 10.1523/JNEUROSCI.1034-14.2014), I was interested to test the hypothesis they raise in the discussion section :</p>
-<blockquote>
-<p>The aperture-inward bias in V1–V3 may reflect spatial interactions between visual motion signals along the path of motion (Raemaekers et al., 2009; Schellekens et al., 2013). Neural responses might have been suppressed when the stimulus could be predicted from the responses of neighboring neurons nearer the location of motion origin, a form of predictive coding (Rao and Ballard, 1999; Lee and Mumford, 2003). Under this hypothesis, spatial interactions between neurons depend on both stimulus motion direction and the neuron's relative RF locations, but the neurons themselves need not be direction selective. Perhaps consistent with this hypothesis, psychophysical sensitivity is enhanced at locations further along the path of motion than at motion origin (van Doorn and Koenderink, 1984; Verghese et al., 1999).</p>
-</blockquote>
-<p>Concerning the origins of aperture-inward bias, I want to test an alternative possibility. In some recent modeling work:</p>
-<blockquote>
-<p>Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 <a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet12pred">http://invibe.net/LaurentPerrinet/Publications/Perrinet12pred</a></p>
-</blockquote>
-<p>I was surprised to observe a similar behavior: the trailing edge was exhibiting a stronger activation (i. e. higher precision revealed by a lower variance in this probabilistic model) while I would have thought intuitively the leading edge would be more informative. In retrospect, it made sense in a motion-based prediction algorithm as information from the leading edge may propagate in more directions (135° for a 45° bar) than in the trailing edge (45°, that is a factor of 3 here). While we made this prediction we did not have any evidence for it.</p>
-<p>In this script the predictive coding is done using the <code>MotionParticles</code> package and for a <a href="../posts/motion%20texture">http://motionclouds.invibe.net/</a> within a disk aperture.</p>
-<p class="more"><a href="../posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-11-29-elasticite-scenario-onde.html" class="u-url">élasticité - scénario onde</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-11-29-elasticite-scenario-onde.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-11-29T14:03:08+02:00" itemprop="datePublished" title="2015-11-29 14:03">2015-11-29 14:03</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-11-29-elasticite-scenario-onde.html#disqus_thread" data-disqus-identifier="cache/posts/2015-11-29-elasticite-scenario-onde.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
-<p>Ce post crée des ondes se propageant sur la série de lames.</p>
-<p class="more"><a href="../posts/2015-11-29-elasticite-scenario-onde.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-11-26-elasticite-scenario-vague.html" class="u-url">élasticité - scénario vague</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-11-26-elasticite-scenario-vague.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-11-26T14:03:08+02:00" itemprop="datePublished" title="2015-11-26 14:03">2015-11-26 14:03</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-11-26-elasticite-scenario-vague.html#disqus_thread" data-disqus-identifier="cache/posts/2015-11-26-elasticite-scenario-vague.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
-<p>Ce post implémente une configuration implémentant une vague de propagation.</p>
-<p class="more"><a href="../posts/2015-11-26-elasticite-scenario-vague.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html" class="u-url">A hitchhiker guide to Matching Pursuit</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-05-22T10:59:33+02:00" itemprop="datePublished" title="2015-05-22 10:59">2015-05-22 10:59</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html#disqus_thread" data-disqus-identifier="cache/posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The Matching Pursuit algorithm is popular in signal processing and applies well to digital images.</p>
-<p>I have contributed a <a href="https://github.com/bicv/SparseEdges">python implementation</a> and we will show here how we may use that for extracting a sparse set of edges from an image.</p>
-<p><br></p>
-<p></p>
-<center><video controls autoplay loop src="../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/MPtutorial_rec.mp4" width="61.8%/"></video></center>
-<br><ul>
-<li>this will be exposed in the following book chapter (see also <a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet15bicv">http://invibe.net/LaurentPerrinet/Publications/Perrinet15bicv</a> ), to be published by the end of this year:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nc">@inbook</span><span class="p">{</span><span class="nl">Perrinet15bicv</span><span class="p">,</span>
-    <span class="na">title</span> <span class="p">=</span> <span class="s">{Sparse models}</span><span class="p">,</span>
-    <span class="na">author</span> <span class="p">=</span> <span class="s">{Perrinet, Laurent U.}</span><span class="p">,</span>
-    <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Biologically-inspired Computer Vision}</span><span class="p">,</span>
-    <span class="na">chapter</span> <span class="p">=</span> <span class="s">{13}</span><span class="p">,</span>
-    <span class="na">editor</span> <span class="p">=</span> <span class="s">{Keil, Matthias and Crist\'{o}bal, Gabriel and Perrinet, Laurent U.}</span><span class="p">,</span>
-    <span class="na">publisher</span> <span class="p">=</span> <span class="s">{Wiley, New-York}</span><span class="p">,</span>
-    <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
-<span class="p">}</span>
-</pre></div>
-<p class="more"><a href="../posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-04-30-trame-sensorielle.html" class="u-url">trame-sensorielle</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-04-30-trame-sensorielle.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-04-30T14:03:08+02:00" itemprop="datePublished" title="2015-04-30 14:03">2015-04-30 14:03</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-04-30-trame-sensorielle.html#disqus_thread" data-disqus-identifier="cache/posts/2015-04-30-trame-sensorielle.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
-<p>Ce post utilise une image naturelle comme entrée d'une "trame sensorielle".</p>
-<p class="more"><a href="../posts/2015-04-30-trame-sensorielle.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2015-02-19-tiling-motion-clouds.html" class="u-url">Tiling Motion Clouds</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2015-02-19-tiling-motion-clouds.html" rel="bookmark">
-            <time class="published dt-published" datetime="2015-02-19T14:48:08+02:00" itemprop="datePublished" title="2015-02-19 14:48">2015-02-19 14:48</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2015-02-19-tiling-motion-clouds.html#disqus_thread" data-disqus-identifier="cache/posts/2015-02-19-tiling-motion-clouds.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Script done in collaboration with <a href="http://invibe.net/LaurentPerrinet/JeanSpezia">Jean Spezia</a>.
-</p>
-<p class="more"><a href="../posts/2015-02-19-tiling-motion-clouds.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html" class="u-url">[Stage M1] Chloé Pasturel : week 6</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T12:58:58+02:00" itemprop="datePublished" title="2014-06-18 12:58">2014-06-18 12:58</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Nous allons simuler un ring avec en entrée une courbe représentant des stimuli "naturels"</p>
-<ul>
-<li>simulations center-surround</li>
-<li>synthèse </li>
-<li>écriture poster en latex</li>
-</ul>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html" class="u-url">[Stage M1] Chloé Pasturel : week 5</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:20:52+02:00" itemprop="datePublished" title="2014-06-18 11:20">2014-06-18 11:20</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loi-de-Von-mises-:">Loi de Von mises :<a class="anchor-link" href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html#Loi-de-Von-mises-:">¶</a>
-</h3>
-<p>La densité est définie sur $[0, 2\pi[$ par
-$ f(x) = \frac {e^{\kappa cos(\theta - m)}}{2 \pi I_{0}(\kappa)} ~$<br>
-avec  $~ \kappa = \frac {1}{\sigma^{2}} $</p>
-<p>L'orientation est définie sur $[0, \pi[$ par un remplaçant de la variable $~ (\theta_d - m) ~$ par $~ 2(\theta_o - m)$</p>
-<p>nous obtenons alors la densité pour $\theta_o$:
-$ f(x) = \frac{1}{2 \pi I_{0}(\kappa)} \cdot {e^{\frac{cos(2(\theta - m))}{\sigma^{2}}}}$
-et 
-$~ p = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- 2 \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$</p>
-<p>car avec le changement de variable :
-$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_{1}))^{2}} {2\sigma_{1}^{2}}} $
-et
-$\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_2))^{2}} {2\sigma_{2}^{2}}} $</p>
-<p>donc $\varepsilon(x) \cdot \gamma(x) = \frac {1}{2\pi \sigma_{1} \sigma_{2}} \cdot e^{-2(\frac {(x-m_{1})^{2}}{\sigma_{1}^{2}} + \frac{(x-m_{2})^{2}}{\sigma_{2}^{2}})} = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- 2 \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$</p>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html" class="u-url">[Stage M1] Chloé Pasturel : week 4</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:20:50+02:00" itemprop="datePublished" title="2014-06-18 11:20">2014-06-18 11:20</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>simulations avec différents MCs</li>
-<li>ring avec représentation de la vitesse angulaire</li>
-</ul>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html" class="u-url">[Stage M1] Chloé Pasturel : week 3</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:20:47+02:00" itemprop="datePublished" title="2014-06-18 11:20">2014-06-18 11:20</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Travail sur les Motion Clouds et observation des différents changement de paramètre particulièrement B_sf</p>
-<ul>
-<li>introduction aux motions clouds: installation et display dans un notebook</li>
-<li>synthèse de clouds avec différents theta </li>
-<li>synthèse avec différents B_theta  (V=0)</li>
-<li>utilisation du trick dans <a href="http://motionclouds.invibe.net/posts/smooth-transition-between-mcs.html">http://motionclouds.invibe.net/posts/smooth-transition-between-mcs.html</a> pour créer un stimulus pour lequel l'orientation tourne de 0 à 2*pi</li>
-<li>proposer une façon simple de passer de ce signal à une entré pour le ring (un peu de maths? un MC est une texture définie en fourier, une cellule simple fait une convolution dans l'espace, donc une multiplication dans Fourier: on pourrait avoir la sortie linéaire du neurone de V1 directement ...)</li>
-</ul>
-<p><a href="http://neuralensemble.github.io/MotionClouds/">http://neuralensemble.github.io/MotionClouds/</a></p>
-<p><a href="http://invibe.net/LaurentPerrinet/TagMotionClouds">http://invibe.net/LaurentPerrinet/TagMotionClouds</a></p>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html" class="u-url">[Stage M1] Chloé Pasturel : week 2</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:20:45+02:00" itemprop="datePublished" title="2014-06-18 11:20">2014-06-18 11:20</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Simulation d'un ring model grâce au programme brian et observation des conséquences du changement de différents paramêtres</p>
-<ul>
-<li>simulation d'un ring par l'intermédiaire de brian <a href="http://briansimulator.org/">http://briansimulator.org/</a>
+    </header><ul class="postlist">
+<li>
+<time class="listdate" datetime="2018-11-05T15:41:07+01:00" title="2018-11-05 15:41">2018-11-05 15:41</time><a href="../posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html" class="listtitle">Statistics of the natural input to a ring model</a><a></a>
 </li>
-<li>courbe de sélectivité en fonction des parametres</li>
-<li>courbe de sélectivité à différents contrastes</li>
-</ul>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html" class="u-url">[Stage M1] Chloé Pasturel : plan du stage</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:10:30+02:00" itemprop="datePublished" title="2014-06-18 11:10">2014-06-18 11:10</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Modele-d'une-entrée-naturelle-à-un-modèle-de-selectivité-à-l'orientation">Modele d'une entrée naturelle à un modèle de selectivité à l'orientation<a class="anchor-link" href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html#Modele-d'une-entr%C3%A9e-naturelle-%C3%A0-un-mod%C3%A8le-de-selectivit%C3%A9-%C3%A0-l'orientation">¶</a>
-</h2>
-<p>Stage M1 de Chloé Pasturel, encadrée par Laurent Perrinet (INT, CNRS)</p>
-<h3 id="Contexte-du-stage">Contexte du stage<a class="anchor-link" href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html#Contexte-du-stage">¶</a>
-</h3>
-<p>(importé depuis <a href="http://invibe.net/LaurentPerrinet/TagAnrBalaV1">http://invibe.net/LaurentPerrinet/TagAnrBalaV1</a> )</p>
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html">Read more…</a></p>
-</div>
-</div>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html" class="u-url">[Stage M1] Chloé Pasturel : week 1</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html" rel="bookmark">
-            <time class="published dt-published" datetime="2014-06-18T11:10:05+02:00" itemprop="datePublished" title="2014-06-18 11:10">2014-06-18 11:10</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html#disqus_thread" data-disqus-identifier="cache/posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>définition du sujet - lecture Hansel</li>
-<li>mise en place du python notebook</li>
-<li>demos de brian</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="installation-des-outils">installation des outils<a class="anchor-link" href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html#installation-des-outils">¶</a>
-</h3>
-<ol>
-<li>virtual box</li>
-<li>VM ubuntu</li>
-<li>&lt;&lt;&lt; guest additions + clone </li>
-<li>neurodebian</li>
-</ol>
-<pre><code>    wget -O- http://neuro.debian.net/lists/trusty.de-md.full | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
-    sudo apt-key adv --recv-keys --keyserver pgp.mit.edu 2649A5A9
-    sudo apt-get update</code></pre>
-<ol>
-<li>install on ubuntu</li>
-</ol>
-<pre><code>sudo apt-get install aptitude
-sudo aptitude install ipython-notebook
-sudo aptitude install python-matplotlib
-sudo aptitude install python-brian 
-sudo aptitude install texlive-full
-
-
-sudo aptitude install python-pynn 
-pip install --user neurotools</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-                </div>
-            </article>
-</div>
-    
-
-    
-        
-       <script>var disqus_shortname="invibe";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-    },
-    displayAlign: 'center', // Change this to 'center' to center equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--End of body content--><footer id="footer">
+            <li>
+<time class="listdate" datetime="2017-10-06T11:04:04+02:00" title="2017-10-06 11:04">2017-10-06 11:04</time><a href="../posts/2017-10-06-improving-calls-to-the-loggabor-library.html" class="listtitle">Improving calls to the LogGabor library</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2016-07-16T07:58:24+02:00" title="2016-07-16 07:58">2016-07-16 07:58</time><a href="../posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html" class="listtitle">Predictive coding of motion in an aperture</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2015-11-29T14:03:08+02:00" title="2015-11-29 14:03">2015-11-29 14:03</time><a href="../posts/2015-11-29-elasticite-scenario-onde.html" class="listtitle">élasticité - scénario onde</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2015-11-26T14:03:08+02:00" title="2015-11-26 14:03">2015-11-26 14:03</time><a href="../posts/2015-11-26-elasticite-scenario-vague.html" class="listtitle">élasticité - scénario vague</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2015-05-22T10:59:33+02:00" title="2015-05-22 10:59">2015-05-22 10:59</time><a href="../posts/2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html" class="listtitle">A hitchhiker guide to Matching Pursuit</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2015-04-30T14:03:08+02:00" title="2015-04-30 14:03">2015-04-30 14:03</time><a href="../posts/2015-04-30-trame-sensorielle.html" class="listtitle">trame-sensorielle</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2015-02-19T14:48:08+02:00" title="2015-02-19 14:48">2015-02-19 14:48</time><a href="../posts/2015-02-19-tiling-motion-clouds.html" class="listtitle">Tiling Motion Clouds</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T12:58:58+02:00" title="2014-06-18 12:58">2014-06-18 12:58</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html" class="listtitle">[Stage M1] Chloé Pasturel : week 6</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:20:52+02:00" title="2014-06-18 11:20">2014-06-18 11:20</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html" class="listtitle">[Stage M1] Chloé Pasturel : week 5</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:20:50+02:00" title="2014-06-18 11:20">2014-06-18 11:20</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html" class="listtitle">[Stage M1] Chloé Pasturel : week 4</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:20:47+02:00" title="2014-06-18 11:20">2014-06-18 11:20</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html" class="listtitle">[Stage M1] Chloé Pasturel : week 3</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:20:45+02:00" title="2014-06-18 11:20">2014-06-18 11:20</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html" class="listtitle">[Stage M1] Chloé Pasturel : week 2</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:10:30+02:00" title="2014-06-18 11:10">2014-06-18 11:10</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html" class="listtitle">[Stage M1] Chloé Pasturel : plan du stage</a><a></a>
+</li>
+            <li>
+<time class="listdate" datetime="2014-06-18T11:10:05+02:00" title="2014-06-18 11:10">2014-06-18 11:10</time><a href="../posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html" class="listtitle">[Stage M1] Chloé Pasturel : week 1</a><a></a>
+</li>
+        </ul></article><!--End of body content--><footer id="footer">
             Contents © 2019 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
 Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
@@ -680,7 +157,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
 </div>
 
 
-            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.min.js"></script><!-- fancy dates --><script>
+        <script src="../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>
