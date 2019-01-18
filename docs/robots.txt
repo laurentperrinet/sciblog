@@ -1,4 +1,4 @@
-Sitemap: http://blog.invibe.net/sitemapindex.xml
+Sitemap: https://laurentperrinet.github.io/sciblog/sitemapindex.xml
 
 User-Agent: *
 Host: blog.invibe.net

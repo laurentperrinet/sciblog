@@ -36,33 +36,55 @@ Do not hesitate to comment!
 #
 # Currently supported languages are:
 #
-# en     English
-# bg     Bulgarian
-# ca     Catalan
-# cs     Czech [ALTERNATIVELY cz]
-# de     German
-# el     Greek [NOT gr]
-# eo     Esperanto
-# es     Spanish
-# et     Estonian
-# eu     Basque
-# fa     Persian
-# fi     Finnish
-# fr     French
-# hi     Hindi
-# hr     Croatian
-# it     Italian
-# ja     Japanese [NOT jp]
-# nb     Norwegian Bokmål
-# nl     Dutch
-# pl     Polish
-# pt_br  Portuguese (Brasil)
-# ru     Russian
-# sk     Slovak
-# sl     Slovene
-# tr     Turkish [NOT tr_TR]
-# ur     Urdu
-# zh_cn  Chinese (Simplified)
+# en        English
+# ar        Arabic
+# az        Azerbaijani
+# bg        Bulgarian
+# bs        Bosnian
+# ca        Catalan
+# cs        Czech [ALTERNATIVELY cz]
+# da        Danish
+# de        German
+# el        Greek [NOT gr]
+# eo        Esperanto
+# es        Spanish
+# et        Estonian
+# eu        Basque
+# fa        Persian
+# fi        Finnish
+# fr        French
+# gl        Galician
+# he        Hebrew
+# hi        Hindi
+# hr        Croatian
+# hu        Hungarian
+# id        Indonesian
+# it        Italian
+# ja        Japanese [NOT jp]
+# ko        Korean
+# lt        Lithuanian
+# ml        Malayalam
+# nb        Norwegian (Bokmål)
+# nl        Dutch
+# pa        Punjabi
+# pl        Polish
+# pt        Portuguese
+# pt_br     Portuguese (Brazil)
+# ru        Russian
+# sk        Slovak
+# sl        Slovene
+# sq        Albanian
+# sr        Serbian (Cyrillic)
+# sr_latin  Serbian (Latin)
+# sv        Swedish
+# te        Telugu
+# th        Thai
+# tr        Turkish [NOT tr_TR]
+# uk        Ukrainian
+# ur        Urdu
+# vi        Vietnamese
+# zh_cn     Chinese (Simplified)
+# zh_tw     Chinese (Traditional)
 #
 # If you want to use Nikola with a non-supported language you have to provide
 # a module containing the necessary translations
@@ -92,13 +114,22 @@ TRANSLATIONS = {
 
 TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
+# Links for the sidebar / navigation bar.  (translatable)
+# This is a dict.  The keys are languages, and values are tuples.
+#
+# For regular links:
+#     ('https://getnikola.com/', 'Nikola Homepage')
+#
+# For submenus:
+#     (
+#         (
+#             ('https://apple.com/', 'Apple'),
+#             ('https://orange.com/', 'Orange'),
+#         ),
+#         'Fruits'
+#     )
 #
 # Name of the theme to use.
-# THEME = "zen-ipython"
-# THEME = "bootstrap3-gradients-jinja"
-# THEME = "lolo"
-# THEME = "bootstrap3-jinja"
-#THEME = "maupassant"
 THEME = "bootblog4"
 
 if THEME is "zen-ipython":
@@ -112,7 +143,7 @@ if THEME is "zen-ipython":
             ('/archive.html', 'Archives', 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags', 'icon-tags'),
     #         ('/rss.xml', 'RSS'),#, 'icon-rss'),
-            ('http://invibe.net', 'About my research', 'icon-user'),
+            ('https://laurentperrinet.github.io', 'About my research', 'icon-user'),
             ('https://twitter.com/laurentperrinet', 'Twitter', 'icon-twitter'),
             ('https://github.com/laurentperrinet', 'Github', 'icon-github'),
         )
@@ -124,12 +155,17 @@ else:
             ('/archive.html', 'Archives'),#,, 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags'),#,, 'icon-tags'),
     #         ('/rss.xml', 'RSS'),#, 'icon-rss'),
-            ('http://invibe.net', 'About my research'),#,,, 'icon-user'),
+            ('http://laurentperrinet.github.io', 'About my research'),#,,, 'icon-user'),
             ('https://twitter.com/laurentperrinet', 'Twitter'),#,, 'icon-twitter'),
             ('https://github.com/laurentperrinet', 'Github'),#,, 'icon-github'),
         )
     }
 
+# Theme configuration. Fully theme-dependent. (translatable)
+# Examples below are for bootblog4.
+# bootblog4 supports: featured_large featured_small featured_on_mobile
+#                     featured_large_image_on_mobile featured_strip_html sidebar
+# bootstrap4 supports: navbar_light (defaults to False)
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
@@ -221,9 +257,7 @@ PAGES = (
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-#     'rest_html5': ('.rst', '.txt',),
-#     'rest': ('.rst4',),
-    'rest': ('.rst', '.txt'),
+    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
@@ -282,8 +316,17 @@ COMPILERS = {
 # Final locations are:
 # output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
-# output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
+# output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
+# (translatable)
 TAG_PATH = "categories"
+
+# By default, the list of tags is stored in
+#     output / TRANSLATION[lang] / TAG_PATH / index.html
+# (see explanation for TAG_PATH). This location can be changed to
+#     output / TRANSLATION[lang] / TAGS_INDEX_PATH
+# with an arbitrary relative path TAGS_INDEX_PATH.
+# (translatable)
+# TAGS_INDEX_PATH = "tags.html"
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
@@ -439,7 +482,23 @@ HIDDEN_CATEGORIES = []
 
 # If AUTHOR_PAGES_ARE_INDEXES is set to True, each author's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-TAG_PAGES_ARE_INDEXES = True
+# AUTHOR_PAGES_ARE_INDEXES = False
+
+# Set descriptions for author pages to make them more interesting. The
+# default is no description. The value is used in the meta description
+# and displayed underneath the author list or index page’s title.
+# AUTHOR_PAGES_DESCRIPTIONS = {
+#    DEFAULT_LANG: {
+#        "Juanjo Conti": "Python coder and writer.",
+#        "Roberto Alsina": "Nikola father."
+#    },
+# }
+
+
+# If you do not want to display an author publicly, you can mark it as hidden.
+# The author will not be displayed on the author list page and posts.
+# Tag pages will still be generated.
+HIDDEN_AUTHORS = ['Guest']
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
@@ -456,6 +515,13 @@ FRONT_INDEX_HEADER = {
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
 CREATE_SINGLE_ARCHIVE = True
+# Create year, month, and day archives each with a (long) list of posts
+# (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
+# CREATE_FULL_ARCHIVES = False
+# If monthly archives or full archives are created, adds also one archive per day
+# CREATE_DAILY_ARCHIVE = False
+# Create previous, up, next navigation links for archives
+# CREATE_ARCHIVE_NAVIGATION = False
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -537,7 +603,7 @@ DEPLOY_COMMANDS = {
 # For more details, read the manual:
 # https://getnikola.com/handbook.html#deploying-to-github
 # You will need to configure the deployment branch on GitHub.
-GITHUB_SOURCE_BRANCH = 'src'
+GITHUB_SOURCE_BRANCH = '.'
 GITHUB_DEPLOY_BRANCH = 'master'
 
 # The name of the remote where you wish to push to, using github_deploy.
@@ -619,7 +685,7 @@ OUTPUT_FOLDER = 'docs'
 # side optimization for very high traffic sites or low memory servers.
 # GZIP_FILES = False
 # File extensions that will be compressed
-# GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.xml')
+# GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.atom', '.xml')
 # Use an external gzip command? None means no.
 # Example: GZIP_COMMAND = "pigz -k {filename}"
 # GZIP_COMMAND = None
@@ -627,20 +693,6 @@ OUTPUT_FOLDER = 'docs'
 # files compressed by this option! OR make sure that a ranged request does not
 # return partial content of another representation for these resources. Do not
 # use this feature if you do not understand what this means.
-
-# Compiler to process LESS files.
-LESS_COMPILER = 'lessc'
-
-# A list of options to pass to the LESS compiler.
-# Final command is: LESS_COMPILER LESS_OPTIONS file.less
-LESS_OPTIONS = []
-
-# Compiler to process Sass files.
-# SASS_COMPILER = 'sass'
-
-# A list of options to pass to the Sass compiler.
-# Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss
-# SASS_OPTIONS = []
 
 # #############################################################################
 # Image Gallery Options
@@ -721,13 +773,8 @@ LESS_OPTIONS = []
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 
 IMAGE_FOLDERS = {'images': 'images'}
-THUMBNAIL_SIZE = 180
-MAX_IMAGE_SIZE = 1280
-USE_FILENAME_AS_TITLE = True
-EXTRA_IMAGE_EXTENSIONS = []
-#
-# If set to False, it will sort by filename instead. Defaults to True
-GALLERY_SORT_BY_DATE = True
+# IMAGE_THUMBNAIL_SIZE = 400
+# IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 
 # #############################################################################
 # HTML fragments and diverse things that are used by the templates
@@ -1017,7 +1064,7 @@ MathJax.Hub.Config({
 # """
 
 # Do you want to customize the nbconversion of your IPython notebook?
-IPYNB_CONFIG = {}
+# IPYNB_CONFIG = {}
 # With the following example configuration you can use a custom jinja template
 # called `toggle.tpl` which has to be located in your site/blog main folder:
 # IPYNB_CONFIG = {'Exporter':{'template_file': 'toggle'}}
@@ -1090,9 +1137,8 @@ INDEX_DISPLAY_POST_COUNT = 200
 # Strip HTML from Atom and RSS feed summaries and content. Defaults to False.
 # FEED_PLAIN = False
 
-# By default, Nikola generates RSS files for the website and for tags.
-# Set this to False to disable all that.
-GENERATE_RSS = False
+# Number of posts in Atom and RSS feeds.
+# FEED_LENGTH = 10
 
 # RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,
 # the base.tmpl will use the feed Nikola generates. However, you may want to
