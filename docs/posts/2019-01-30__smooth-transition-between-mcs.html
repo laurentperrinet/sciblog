@@ -155,7 +155,8 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 
 <span class="n">B_theta</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">B_V</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span> <span class="o">=</span> <span class="mi">128</span>
 
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
 
@@ -211,14 +212,14 @@ MathJax.Hub.Config({
 <span class="n">name_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">123456</span>
-<span class="n">B_sfs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span> 
+<span class="n">B_sfs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span> 
 
 <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">B_sf</span> <span class="ow">in</span> <span class="n">B_sfs</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">B_sf</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># Grating</span>
         <span class="n">im_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">*</span><span class="p">(</span><span class="n">fx</span> <span class="o">-</span> <span class="o">.</span><span class="mi">25</span><span class="o">*</span><span class="n">ft</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">)))</span>
     <span class="k">else</span><span class="p">:</span> <span class="c1"># Motion Cloud</span>
-        <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im_new</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'energy'</span><span class="p">)</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="n">im_new</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
@@ -275,11 +276,13 @@ MathJax.Hub.Config({
 <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Grating"</span><span class="p">,</span> <span class="s2">"MC Narrow"</span><span class="p">,</span> <span class="s2">"MC Broad"</span><span class="p">]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+
+<span class="n">txt_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
     <span class="c1"># Generate a text clip. You can customize the font, color, etc.</span>
-    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="o">**</span><span class="n">txt_opts</span><span class="p">)</span>
     <span class="c1"># Say that you want it to appear 10s at the center of the screen</span>
-    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_start</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_start</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">+=</span> <span class="n">clip</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">duration</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
     <span class="n">clip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">txt_clip</span><span class="p">)</span>
 
@@ -316,7 +319,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:   1%|          | 3/576 [00:00&lt;00:21, 26.41it/s, now=None]</pre>
+<pre>t:   1%|          | 28/2304 [00:00&lt;00:08, 258.17it/s, now=None]</pre>
 </div>
 </div>
 
@@ -339,7 +342,7 @@ Moviepy - Writing video ../files/2019-01-30_Ravello19_text.mp4
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre></pre>
+<pre>                                                                 </pre>
 </div>
 </div>
 
@@ -352,6 +355,16 @@ Moviepy - Writing video ../files/2019-01-30_Ravello19_text.mp4
 <pre>Moviepy - Done !
 Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre></pre>
 </div>
 </div>
 
@@ -426,7 +439,7 @@ Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
 <td>MotionClouds</td>
 <td>20180606</td>
 </tr>
-<tr><td colspan="2">Thu Jan 31 11:56:24 2019 CET</td></tr>
+<tr><td colspan="2">Thu Jan 31 12:21:58 2019 CET</td></tr>
 </table>
 </div>
 
