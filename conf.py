@@ -594,6 +594,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 DEPLOY_COMMANDS = {
      'default': [
+         "git add posts/* docs/* files/*",
          "git commit -am' updating site'",
          "git push",
      ]

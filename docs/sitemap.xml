@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2019-01-18T18:48:00Z</lastmod>
+  <lastmod>2019-01-31T10:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html</loc>
@@ -119,11 +119,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2019-01-18T18:48:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -283,7 +283,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-detection.html</loc>
-  <lastmod>2019-01-18T18:42:00Z</lastmod>
+  <lastmod>2019-01-31T10:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-particles.html</loc>
@@ -295,7 +295,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -375,7 +375,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.html</loc>
-  <lastmod>2019-01-18T18:42:00Z</lastmod>
+  <lastmod>2019-01-31T10:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/public.html</loc>
@@ -396,6 +396,10 @@
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
   <lastmod>2019-01-18T18:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
+  <lastmod>2019-01-31T10:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.html</loc>
@@ -623,7 +627,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -1647,15 +1651,19 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-13-sparse-coding-using-fista.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</loc>
-  <lastmod>2019-01-18T18:45:00Z</lastmod>
+  <lastmod>2019-01-19T15:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</loc>
+  <lastmod>2019-01-31T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/</loc>
