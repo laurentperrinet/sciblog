@@ -18,7 +18,7 @@ articles
 #. `Publications/Montagnini07 <https://invibe.net/LaurentPerrinet/Publications/Montagnini07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 #. `Publications/Perrinet06 <https://invibe.net/LaurentPerrinet/Publications/Perrinet06?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 #. `Publications/Perrinet07neurocomp <https://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Perrinet10shl <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Perrinet10shl <https://laurentperrinet.github.io/publication/perrinet-10-shl?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 #. `Publications/Voges10neurocomp <https://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 #. `SciBlog/2011-07-05 <https://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 #. `TagFacets <https://invibe.net/LaurentPerrinet/TagFacets?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
@@ -199,7 +199,7 @@ references of full articles
 
 -  Laurent U. Perrinet. Role of homeostasis in learning sparse
    representations,
-   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-10-shl>`__
    . *Neural Computation*, **22**\ (7):1812--36, 2010
 
    Neurons in the input layer of primary visual cortex in primates
@@ -438,7 +438,7 @@ references of articles and proceedings
 
 -  Laurent U. Perrinet. Role of homeostasis in learning sparse
    representations,
-   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-10-shl>`__
    . *Neural Computation*, **22**\ (7):1812--36, 2010
 
    Neurons in the input layer of primary visual cortex in primates
@@ -1242,4 +1242,4 @@ references of articles and proceedings
 
 
 
-.. |FigureDeux_tumb.png| image:: https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?action=AttachFile&do=get&target=FigureDeux_tumb.png
+.. |FigureDeux_tumb.png| image:: https://laurentperrinet.github.io/publication/perrinet-10-shl?action=AttachFile&do=get&target=FigureDeux_tumb.png

@@ -145,7 +145,7 @@ MathJax.Hub.Config({
 </blockquote>
 <p>Concerning the origins of aperture-inward bias, I want to test an alternative possibility. In some recent modeling work:</p>
 <blockquote>
-<p>Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 <a href="https://invibe.net/LaurentPerrinet/Publications/Perrinet12pred">https://invibe.net/LaurentPerrinet/Publications/Perrinet12pred</a></p>
+<p>Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 <a href="https://laurentperrinet.github.io/publication/perrinet-12-pred">https://laurentperrinet.github.io/publication/perrinet-12-pred</a></p>
 </blockquote>
 <p>I was surprised to observe a similar behavior: the trailing edge was exhibiting a stronger activation (i. e. higher precision revealed by a lower variance in this probabilistic model) while I would have thought intuitively the leading edge would be more informative. In retrospect, it made sense in a motion-based prediction algorithm as information from the leading edge may propagate in more directions (135° for a 45° bar) than in the trailing edge (45°, that is a factor of 3 here). While we made this prediction we did not have any evidence for it.</p>
 <p>In this script the predictive coding is done using the <code>MotionParticles</code> package and for a <a href="motion%20texture">http://motionclouds.invibe.net/</a> within a disk aperture.</p>
@@ -366,7 +366,7 @@ or matplotlib.backends is imported for the first time.
 </h3>
 <p>We now use this image and look at what happens when running the algorithm decribed in:</p>
 <blockquote>
-<p>Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 <a href="https://invibe.net/LaurentPerrinet/Publications/Perrinet12pred">https://invibe.net/LaurentPerrinet/Publications/Perrinet12pred</a></p>
+<p>Laurent Perrinet, Guillaume S. Masson. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation, 24(10):2726--50, 2012 <a href="https://laurentperrinet.github.io/publication/perrinet-12-pred">https://laurentperrinet.github.io/publication/perrinet-12-pred</a></p>
 </blockquote>
 <p>This uses the <code>MotionParticles</code> package available upon request (meaning, there are bits of code that need some clean-up...). Note here that we also look at what happens when modifying latencies - but we will see this does not change results.</p>
 

@@ -8,7 +8,7 @@
 .. warning::
 
   The position has been filled
-  
+
 We are currently inviting applications for a postdoctoral position in
 computational neuroscience to study functional, large-scale models of
 visual motion perception. The post is for up to 3 years in the `DyVA
@@ -28,7 +28,7 @@ understanding on the neural computations underlying the perception of
 motion. We are particularly interested in the dynamics of motion
 integration, focusing on responses to complex motion stimuli in areas V1
 and V5/MT. Our theoretical approaches span from `statistical
-inference <https://invibe.net/LaurentPerrinet/Publications/Perrinet06fens>`__ to `adaptive
+inference <https://laurentperrinet.github.io/publication/perrinet-06-fens>`__ to `adaptive
 distributed representations <https://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__
 to provide insights into these parallel, dynamical processes. We use
 state-of-the-art simulation software to validate these results thanks to

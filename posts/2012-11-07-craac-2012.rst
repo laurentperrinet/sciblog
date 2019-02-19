@@ -237,7 +237,7 @@ Durée
 
 Intervention(s)
 
-`http://www.incm.cnrs-mrs.fr/LaurentPerrinet/Presentations/11-07-02\_NeuroMedTalk <http://www.incm.cnrs-mrs.fr/LaurentPerrinet/Presentations/11-07-02_NeuroMedTalk>`__
+`https://invibe.net/LaurentPerrinet/Presentations/11-07-02\_NeuroMedTalk <https://invibe.net/LaurentPerrinet/Presentations/11-07-02_NeuroMedTalk>`__
 
 Manifestation
 
@@ -335,7 +335,7 @@ Intervention(s)
 Manifestation
 
 From Mathematical Image Analysis to Neurogeometry of the Brain
-`http://www.incm.cnrs-mrs.fr/LaurentPerrinet/Presentations/10-12-17\_TaucTalk <http://www.incm.cnrs-mrs.fr/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
+`https://invibe.net/LaurentPerrinet/Presentations/10-12-17\_TaucTalk <https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
 
 Type de manifestation
 
@@ -382,7 +382,7 @@ Intervention(s)
 Manifestation
 
 Society for Neuroscience -
-`https://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn <https://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn>`__
+`https://laurentperrinet.github.io/publication/perrinet-11-sfn <https://laurentperrinet.github.io/publication/perrinet-11-sfn>`__
 
 Type de manifestation
 
