@@ -158,7 +158,7 @@ Rattachement à(aux) activité(s) de recherche de l'unité UMR7289
 +--------------------------------------------------------------------------------------------+----------------------------+
 | Intitulé d'activité                                                                        | Date fin du rattachement   |
 +--------------------------------------------------------------------------------------------+----------------------------+
-| Inférence et Comportement visuel - `InViBe <http://invibe.net/LaurentPerrinet/InViBe>`__   |                            |
+| Inférence et Comportement visuel - `InViBe <https://invibe.net/LaurentPerrinet/InViBe>`__   |                            |
 +--------------------------------------------------------------------------------------------+----------------------------+
 
 Mots clés des sections/CID du Comité national
@@ -382,7 +382,7 @@ Intervention(s)
 Manifestation
 
 Society for Neuroscience -
-`http://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn <http://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn>`__
+`https://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn <https://invibe.net/LaurentPerrinet/Publications/Perrinet11sfn>`__
 
 Type de manifestation
 
@@ -423,7 +423,7 @@ Intervention(s)
 
 | Demo 1, Task4: Implementation of models showing emergence of cortical
 | fields and maps,
-| `http://invibe.net/LaurentPerrinet/Presentations/11-10-05\_BrainScalesESS <http://invibe.net/LaurentPerrinet/Presentations/11-10-05_BrainScalesESS>`__
+| `https://invibe.net/LaurentPerrinet/Presentations/11-10-05\_BrainScalesESS <https://invibe.net/LaurentPerrinet/Presentations/11-10-05_BrainScalesESS>`__
 | par Laurent Perrinet
 |  Communication orale
 
@@ -507,7 +507,7 @@ Type de document
 
 Informations complémentaires
 
-Conférence `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__ 2011
+Conférence `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ 2011
 
 Type d'intervention
 
@@ -637,7 +637,7 @@ Allemagne ( Europe )
 
 Unité partenaire
 
-`NeuroInformatics <http://invibe.net/LaurentPerrinet/NeuroInformatics>`__
+`NeuroInformatics <https://invibe.net/LaurentPerrinet/NeuroInformatics>`__
 
 Intitulé
 
@@ -654,7 +654,7 @@ Nature de l'activité
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
 | Unité partenaire          | Karl Friston                                                                                                        |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-| Intitulé                  | `FreeMove <http://invibe.net/LaurentPerrinet/FreeMove>`__, a free-energy approach to eye movements                  |
+| Intitulé                  | `FreeMove <https://invibe.net/LaurentPerrinet/FreeMove>`__, a free-energy approach to eye movements                  |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
 | Cadre de la coopération   | AUTRE - projet de MAD accepté scientifiquement, refusé administrativement. Remplacé par une mission longue durée.   |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -755,7 +755,7 @@ Total
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Animation scientifique                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| \* Projet artistique en collaboration avec Etienne Rey de la friche Belle de Mai dans le cadre de Marseille Provence capitale européenne de la culture 2013 \* écriture d'articles de vulgarisation pour interstices (INRIA), docSciences (CRDP) et de traduction en arabe pour le projet `NeuroMed <http://invibe.net/LaurentPerrinet/NeuroMed>`__ \* Participation au réseau `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__.fr \* Animation d'un réseau marseillais des `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__ \* Enseignement au master Bio-Phy à Luminy  |
+| \* Projet artistique en collaboration avec Etienne Rey de la friche Belle de Mai dans le cadre de Marseille Provence capitale européenne de la culture 2013 \* écriture d'articles de vulgarisation pour interstices (INRIA), docSciences (CRDP) et de traduction en arabe pour le projet `NeuroMed <https://invibe.net/LaurentPerrinet/NeuroMed>`__ \* Participation au réseau `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__.fr \* Animation d'un réseau marseillais des `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ \* Enseignement au master Bio-Phy à Luminy  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enseignement

@@ -216,7 +216,7 @@ def url2rst(URL):
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences'</span>
 <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2010-10-20'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
 <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">'Master M2 Sciences'</span><span class="p">,</span> <span class="s1">'Talks, ComputationalNeuroscience, sciblog'</span>
 <span class="c1">#convert(URL, DATE, TIME, TITLE, TAGS, doit=False)</span>
@@ -232,7 +232,7 @@ def url2rst(URL):
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://invibe.net/LaurentPerrinet/Presentations/10-10-27_M2_MasterSciences'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/Presentations/10-10-27_M2_MasterSciences'</span>
 <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2010-10-27'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
 <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">'Master M2 Sciences'</span><span class="p">,</span> <span class="s1">'Talks, ComputationalNeuroscience, sciblog'</span>
 <span class="c1">#convert(URL, DATE, TIME, TITLE, TAGS, doit=False)</span>
@@ -277,7 +277,7 @@ def url2rst(URL):
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2009-08-20'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
-<span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
 <span class="n">RAW</span> <span class="o">=</span> <span class="n">url2raw</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
 <span class="c1">#print RAW</span>
 </pre></div>
@@ -472,13 +472,13 @@ some LaTeX tips- drafts - links - margins - pdflatex
     <span class="k">if</span> <span class="n">i_line</span> <span class="o">&gt;</span><span class="mi">2</span> <span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">'`Tag'</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">line_old</span><span class="o">==</span><span class="s1">''</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">==</span><span class="s1">'------'</span><span class="p">):</span>
-                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'http://invibe.net/moin_static196/'</span><span class="p">)</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'https://invibe.net/moin_static196/'</span><span class="p">)</span>
                 <span class="n">pagerst_</span> <span class="o">+=</span> <span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span> <span class="s1">'stripping title :'</span><span class="p">,</span> <span class="n">line</span>
     <span class="n">line_old</span> <span class="o">=</span> <span class="n">line</span>
 <span class="nb">print</span> <span class="n">pagerst_</span>
-<span class="c1">#http://invibe.net/moin_static196/moniker/img/angry.png</span>
+<span class="c1">#https://invibe.net/moin_static196/moniker/img/angry.png</span>
 </pre></div>
 
     </div>
@@ -614,7 +614,7 @@ using pdfLaTeX
 
 
 
-.. |X-(| image:: http://invibe.net/moin_static196/moniker/img/angry.png
+.. |X-(| image:: https://invibe.net/moin_static196/moniker/img/angry.png
 
 
 </pre>
@@ -683,7 +683,7 @@ using pdfLaTeX
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convertSciBlog</span><span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="o">=</span><span class="s1">'13:36:57'</span><span class="p">,</span> <span class="n">doit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
     <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="n">extract</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
     <span class="c1">#print URL, TITLE, TAGS</span>
     <span class="n">pagerst</span> <span class="o">=</span> <span class="n">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
@@ -695,8 +695,8 @@ using pdfLaTeX
         <span class="k">if</span> <span class="n">finished_title</span> <span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">'`Tag'</span><span class="p">:</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">line_old</span><span class="o">==</span><span class="s1">''</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">==</span><span class="s1">'------'</span><span class="p">):</span>
-                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'http://invibe.net/moin_static196/'</span><span class="p">)</span>
-                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&lt;/LaurentPerrinet/'</span><span class="p">,</span> <span class="s1">'&lt;http://invibe.net/LaurentPerrinet/'</span><span class="p">)</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'https://invibe.net/moin_static196/'</span><span class="p">)</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&lt;/LaurentPerrinet/'</span><span class="p">,</span> <span class="s1">'&lt;https://invibe.net/LaurentPerrinet/'</span><span class="p">)</span>
                     <span class="k">if</span> <span class="s1">'SciBlog'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> <span class="nb">print</span> <span class="s1">'Warning '</span><span class="p">,</span> <span class="n">line</span>
                     <span class="n">pagerst_parsed</span> <span class="o">+=</span> <span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
         <span class="k">else</span><span class="p">:</span>
@@ -752,7 +752,7 @@ using pdfLaTeX
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATE</span> <span class="o">=</span> <span class="s1">'2010-10-06'</span>
-<span class="n">URL</span> <span class="o">=</span> <span class="s1">'http://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
 <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="n">extract</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
 <span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
 <span class="nb">print</span> <span class="n">TIMEDTITLE</span><span class="p">,</span> <span class="n">TAGS</span>
@@ -1093,8 +1093,8 @@ stripping title : --------------
 stripping title : 
 stripping title : Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model
 stripping title : ===========================================================================================
-Warning     PDF &lt;http://invibe.net/LaurentPerrinet/SciBlog/2007-10-22?action=AttachFile&amp;do=view&amp;target=Meeting_V1WorkshopMarseille_2007.pdf&gt;`__
-Warning  `Marseille\_November2006 &lt;http://invibe.net/LaurentPerrinet/SciBlog/2006-11-20&gt;`__ ).
+Warning     PDF &lt;https://invibe.net/LaurentPerrinet/SciBlog/2007-10-22?action=AttachFile&amp;do=view&amp;target=Meeting_V1WorkshopMarseille_2007.pdf&gt;`__
+Warning  `Marseille\_November2006 &lt;https://invibe.net/LaurentPerrinet/SciBlog/2006-11-20&gt;`__ ).
 07-10-22 Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model facets, sciblog
 stripping title : keyboard
 stripping title : ========
@@ -1103,7 +1103,7 @@ stripping title : --------------
 stripping title : 
 stripping title : Impact Factor
 stripping title : =============
-Warning     paper &lt;http://invibe.net/LaurentPerrinet/SciBlog/2008-11-20?action=AttachFile&amp;do=get&amp;target=TaylorPerakakisTrachana2008.pdf&gt;`__
+Warning     paper &lt;https://invibe.net/LaurentPerrinet/SciBlog/2008-11-20?action=AttachFile&amp;do=get&amp;target=TaylorPerakakisTrachana2008.pdf&gt;`__
 08-11-20 Impact Factor sciblog
 stripping title : --------------
 stripping title : 
@@ -1125,15 +1125,15 @@ stripping title : ===============
 09-08-23 List Of Symbols latex
 stripping title : Creating Proceedings (almost) automatically using python and latex
 stripping title : ==================================================================
-Warning  `Makefile &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
-Warning     `body.py &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.py&gt;`__
-Warning     `body.tex &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
-Warning     `neurocomp08proceedings.tex &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.tex&gt;`__:
-Warning        `Makefile &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
-Warning        `titlepage.tex &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=titlepage.tex&gt;`__:
-Warning        `body.tex &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
-Warning     `Makefile &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
-Warning     `voilà! &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.pdf&gt;`__
+Warning  `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning     `body.py &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.py&gt;`__
+Warning     `body.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
+Warning     `neurocomp08proceedings.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.tex&gt;`__:
+Warning        `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning        `titlepage.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=titlepage.tex&gt;`__:
+Warning        `body.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
+Warning     `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning     `voilà! &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.pdf&gt;`__
 09-08-26 Creating Proceedings (almost) automatically using python and latex latex
 stripping title : Tips on Filesystems, security and al on mac os x
 stripping title : ================================================
@@ -1173,7 +1173,7 @@ stripping title : --------------
 stripping title : 
 stripping title : Journal Club : The good, the bad and the NOISE
 stripping title : ==============================================
-Warning     (63Mo) &lt;http://invibe.net/LaurentPerrinet/SciBlog/2009-12-09?action=AttachFile&amp;do=get&amp;target=09-12-10_journal_club_noise.pdf&gt;`__
+Warning     (63Mo) &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-12-09?action=AttachFile&amp;do=get&amp;target=09-12-10_journal_club_noise.pdf&gt;`__
 09-12-09 Journal Club : The good, the bad and the NOISE motionclouds, sciblog
 stripping title : --------------
 stripping title : 
@@ -1283,7 +1283,7 @@ stripping title : --------------
 stripping title : 
 stripping title : Journée de l'IFR 131 -Sciences du Cerveau et de la Cognition
 stripping title : ============================================================
-Warning     présentation &lt;http://invibe.net/LaurentPerrinet/SciBlog/2010-09-09?action=AttachFile&amp;do=view&amp;target=10-09-09_journee_IFR_noise.pdf&gt;`__
+Warning     présentation &lt;https://invibe.net/LaurentPerrinet/SciBlog/2010-09-09?action=AttachFile&amp;do=view&amp;target=10-09-09_journee_IFR_noise.pdf&gt;`__
 No old file 10-09-09-Journée-de-l'IFR-131-Sciences-du-Cerveau-et-de-la-Cognition.rst
 10-09-09 Journée de l'IFR 131 -Sciences du Cerveau et de la Cognition sciblog
 stripping title : --------------
@@ -1308,7 +1308,7 @@ stripping title : ====
 10-10-09 nous sciblog
 stripping title : installing python and its components
 stripping title : ====================================
-Warning     `TagSciBlog &lt;http://invibe.net/LaurentPerrinet/TagSciBlog&gt;`__
+Warning     `TagSciBlog &lt;https://invibe.net/LaurentPerrinet/TagSciBlog&gt;`__
 10-10-27 installing python and its components macos, sciblog
 stripping title : --------------
 stripping title : 
@@ -1418,7 +1418,7 @@ stripping title : ======================================
 11-05-04 HomeBrew: compiling a python toolchain sciblog
 stripping title : Publications 2006-2010
 stripping title : ======================
-Warning  #. `SciBlog/2011-07-05 &lt;http://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29&gt;`__
+Warning  #. `SciBlog/2011-07-05 &lt;https://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29&gt;`__
 11-07-05 Publications 2006-2010 publications2006-2009, year09, year08, publications2006-2010, year10), sciblog, year07
 stripping title : --------------
 stripping title : 
@@ -1671,13 +1671,13 @@ stripping title : --------------
 stripping title : 
 stripping title : homebrew cask (level 0): contributing a new cask
 stripping title : ================================================
-Warning     `mistyped &lt;http://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__ something...
+Warning     `mistyped &lt;https://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__ something...
 13-11-08 homebrew cask (level 0): contributing a new cask macos, sciblog
 stripping title : --------------
 stripping title : 
 stripping title : homebrew cask (level 1): correcting a pull request
 stripping title : ==================================================
-Warning  -  I mistyped `my contribution &lt;http://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__,
+Warning  -  I mistyped `my contribution &lt;https://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__,
 13-11-09 homebrew cask (level 1): correcting a pull request macos, sciblog
 stripping title : --------------
 stripping title : 

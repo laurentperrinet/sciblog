@@ -28,4 +28,4 @@
 -  compile with ``mex getpid.c ``
 -  use in matlab as ``pid = getpid()``
 -  this is part of the package in
-   `SparseHebbianLearning <http://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__
+   `SparseHebbianLearning <https://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__

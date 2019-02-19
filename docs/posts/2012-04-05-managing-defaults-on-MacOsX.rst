@@ -93,4 +93,4 @@
 
 
 
-.. |{2}| image:: http://invibe.net/moin_static196/moniker/img/prio2.png
+.. |{2}| image:: https://invibe.net/moin_static196/moniker/img/prio2.png

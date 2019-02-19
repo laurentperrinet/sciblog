@@ -26,7 +26,7 @@ meta = dict(
     #reveal_path = 'file://' + home + '/quantic/RTC/ipython_slides/reveal.js/',
     theme='night',
     author='Laurent U Perrinet, INT',
-    author_link='<a href="http://invibe.net">Laurent U Perrinet, INT</a>',
+    author_link='<a href="https://laurentperrinet.github.io">Laurent U Perrinet, INT</a>',
     title="Les illusions visuelles, un révélateur du fonctionnement de notre cerveau" ,
     short_title="Qu’est ce qu’une image?",
     conference="Tous connectés, Bibliothèque de Méjanes",

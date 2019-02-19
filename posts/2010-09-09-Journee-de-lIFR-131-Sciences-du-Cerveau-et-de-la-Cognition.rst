@@ -9,4 +9,4 @@ Aujourd'hui avait lieu la journée de l'IFR, pendant laquelle nous sommes
 intervenu avec F.\_X. Alario et A. Montagnini sur le thème de la
 variabilité comportementale.
 
--  `Ma présentation <http://invibe.net/LaurentPerrinet/MotionClouds?action=AttachFile&do=view&target=10-09-09_journee_IFR_noise.pdf>`__
+-  `Ma présentation <https://invibe.net/LaurentPerrinet/MotionClouds?action=AttachFile&do=view&target=10-09-09_journee_IFR_noise.pdf>`__

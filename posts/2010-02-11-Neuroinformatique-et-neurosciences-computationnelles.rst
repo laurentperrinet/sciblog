@@ -649,4 +649,4 @@ dépendra de l’ambition scientifique des institutions concernées).
 
 
 
-.. |(./)| image:: http://invibe.net/moin_static196/moniker/img/checkmark.png
+.. |(./)| image:: https://invibe.net/moin_static196/moniker/img/checkmark.png

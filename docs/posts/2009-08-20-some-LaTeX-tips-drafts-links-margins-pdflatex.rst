@@ -124,4 +124,4 @@ using pdfLaTeX
 
 
 
-.. |X-(| image:: http://invibe.net/moin_static196/moniker/img/angry.png
+.. |X-(| image:: https://invibe.net/moin_static196/moniker/img/angry.png

@@ -88,4 +88,4 @@ automating the process sshfs (mac and ubuntu)
 
 
 
-.. |(!)| image:: http://invibe.net/moin_static196/moniker/img/idea.png
+.. |(!)| image:: https://invibe.net/moin_static196/moniker/img/idea.png

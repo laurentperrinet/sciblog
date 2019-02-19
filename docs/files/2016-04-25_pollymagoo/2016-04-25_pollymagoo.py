@@ -24,7 +24,7 @@ meta = dict(
     reveal_path = 'http://lab.hakim.se/reveal-js/', #/css/reveal.css file://' + home + '/pool/libs/numbers/ipython_slides/reveal.js/',
     theme='night',
     author='Laurent U Perrinet, INT',
-    author_link='<a href="http://invibe.net">Laurent U Perrinet, INT</a>',
+    author_link='<a href="https://laurentperrinet.github.io">Laurent U Perrinet, INT</a>',
     title="""Qu’est ce qu’une image?""",
     short_title="Qu’est ce qu’une image?",
     conference="Cinésciences au collège Clair Soleil",

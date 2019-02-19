@@ -491,7 +491,7 @@ Allemagne ( Europe )
 
 Unité partenaire
 
-`NeuroInformatics <http://invibe.net/LaurentPerrinet/NeuroInformatics>`__
+`NeuroInformatics <https://invibe.net/LaurentPerrinet/NeuroInformatics>`__
 
 Intitulé
 
@@ -594,7 +594,7 @@ Total
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Animation scientifique                                                                                                                                                                                                                                                                          |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__.fr Animation d'un réseau marseillais des `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__   |
+| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__.fr Animation d'un réseau marseillais des `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  **Enseignement**

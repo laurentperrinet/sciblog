@@ -8,20 +8,20 @@
 articles
 --------
 
-#. `Publications/Barthelemy07 <http://invibe.net/LaurentPerrinet/Publications/Barthelemy07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Cessac07 <http://invibe.net/LaurentPerrinet/Publications/Cessac07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Daucé10 <http://invibe.net/LaurentPerrinet/Publications/Dauc%C3%A910?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Davison08 <http://invibe.net/LaurentPerrinet/Publications/Davison08?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Fischer07 <http://invibe.net/LaurentPerrinet/Publications/Fischer07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Fischer07cv <http://invibe.net/LaurentPerrinet/Publications/Fischer07cv?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Kremkow10jcns <http://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Montagnini07 <http://invibe.net/LaurentPerrinet/Publications/Montagnini07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Perrinet06 <http://invibe.net/LaurentPerrinet/Publications/Perrinet06?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Perrinet07neurocomp <http://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Perrinet10shl <http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `Publications/Voges10neurocomp <http://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `SciBlog/2011-07-05 <http://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
-#. `TagFacets <http://invibe.net/LaurentPerrinet/TagFacets?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Barthelemy07 <https://invibe.net/LaurentPerrinet/Publications/Barthelemy07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Cessac07 <https://invibe.net/LaurentPerrinet/Publications/Cessac07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Daucé10 <https://invibe.net/LaurentPerrinet/Publications/Dauc%C3%A910?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Davison08 <https://invibe.net/LaurentPerrinet/Publications/Davison08?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Fischer07 <https://invibe.net/LaurentPerrinet/Publications/Fischer07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Fischer07cv <https://invibe.net/LaurentPerrinet/Publications/Fischer07cv?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Kremkow10jcns <https://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Montagnini07 <https://invibe.net/LaurentPerrinet/Publications/Montagnini07?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Perrinet06 <https://invibe.net/LaurentPerrinet/Publications/Perrinet06?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Perrinet07neurocomp <https://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Perrinet10shl <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `Publications/Voges10neurocomp <https://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `SciBlog/2011-07-05 <https://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
+#. `TagFacets <https://invibe.net/LaurentPerrinet/TagFacets?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29>`__
 
 
 
@@ -32,13 +32,13 @@ references of full articles
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet06,>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet06,>`__
    . pages 163--225.
 
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
    Masson. Dynamics of distributed 1D and 2D motion representations for
    short-latency ocular following,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Barthelemy07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Barthelemy07>`__
    `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
    `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
@@ -46,7 +46,7 @@ references of full articles
 
 -  Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, Eric Castet,
    Guillaume S. Masson. Bayesian modeling of dynamic motion integration,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Montagnini07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Montagnini07>`__
    . *Journal of Physiology (Paris)*, **101**\ (1-3):64-77, 2007
 
    The quality of the representation of an object's motion is limited by
@@ -70,7 +70,7 @@ references of full articles
 
 -  Laurent Perrinet, Guillaume S. Masson. Modeling spatial integration
    in the ocular following response using a probabilistic framework,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp>`__
    . *Journal of Physiology (Paris)*, 2007
 
    The machinery behind the visual perception of motion and the
@@ -101,7 +101,7 @@ references of full articles
 -  B. Cessac, E. Daucé, Laurent U. Perrinet, M. Samuelides. *Topics in
    Dynamical Neural Networks: From Large Scale Neural Networks to Motor
    Control and Vision,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Cessac07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Cessac07>`__
    `URL2 <http://www.springerlink.com/content/q00921n9886h/?p=03c19c7c204d4fa78b850f88b97da2f7π=0>`__
    .* Springer Berlin / Heidelberg, 2007.
 
@@ -139,7 +139,7 @@ references of full articles
 -  Sylvain Fischer, Rafael Redondo, Laurent Perrinet, Gabriel
    Crist\\'obal. Sparse approximation of images inspired from the
    functional architecture of the primary visual areas,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Fischer07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Fischer07>`__
    `URL2 <http://www.hindawi.com/GetArticle.aspx?doi=10.1155/2007/90727&e=cta>`__
    . *EURASIP Journal on Advances in Signal Processing, special issue on
    Image Perception*, :Article ID 90727, 16 pages, 2007
@@ -147,13 +147,13 @@ references of full articles
 
 -  Sylvain Fischer, Filip Sroubek, Laurent U. Perrinet, Rafael Redondo,
    Gabriel Crist\\'obal. Self-invertible 2D log-Gabor wavelets,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Fischer07cv>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Fischer07cv>`__
    . *Int. Journal of Computional Vision*, 2007
 
 
 -  Nicole Voges, Laurent Perrinet. Phase space analysis of networks
    based on biologically realistic parameters,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp>`__
    . *Journal of Physiology (Paris)*, **104**\ (1-2):51--60, 2010
 
    We study cortical network dynamics for a more realistic network
@@ -177,7 +177,7 @@ references of full articles
 
 -  Emmanuel Daucé, Laurent Perrinet. Computational Neuroscience, from
    Multiple Levels to Multi-level,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Daucé10>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Daucé10>`__ .
    *Journal of Physiology (Paris)*, **104**\ (1--2):1--4, 2010
 
    Despite the long and fruitful history of neuroscience, a global,
@@ -199,7 +199,7 @@ references of full articles
 
 -  Laurent U. Perrinet. Role of homeostasis in learning sparse
    representations,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
    . *Neural Computation*, **22**\ (7):1812--36, 2010
 
    Neurons in the input layer of primary visual cortex in primates
@@ -234,7 +234,7 @@ references of articles and proceedings
    Pecevski, Laurent Perrinet, Michael Schmuker, Eilif Muller, Andrew P
    Davison. NeuralEnsemble: Towards a meta-environment for network
    modeling and data analysis,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Yger09gns>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Yger09gns>`__ .
    In *Eighth Göttingen Meeting of the German Neuroscience Society*,
    pages T26-4C. 2009
    NeuralEnsemble (http://neuralensemble.org) is a multilateral effort
@@ -269,7 +269,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent Perrinet. Phase space analysis of networks
    based on biologically realistic parameters,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Voges10neurocomp>`__
    . *Journal of Physiology (Paris)*, **104**\ (1-2):51--60, 2010
 
    We study cortical network dynamics for a more realistic network
@@ -293,7 +293,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent Perrinet. Dynamics of cortical networks
    including long-range patchy connections,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Voges09gns>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Voges09gns>`__ .
    In *Eighth Göttingen Meeting of the German Neuroscience Society*,
    pages T26-3C. 2009
    Most studies of cortical network dynamics are either based on purely
@@ -333,7 +333,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent U. Perrinet. Dynamical state spaces of cortical
    networks representing various horizontal connectivities,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Voges09cosyne>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Voges09cosyne>`__
    . In *Proceedings of COSYNE*, 2009
 
    Most studies of cortical network dynamics are either based on purely
@@ -389,7 +389,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent Perrinet. Recurrent cortical networks with
    realistic horizontal connectivities show complex dynamics,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Voges09cns>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Voges09cns>`__ .
    In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages T26-3C + 10(Suppl 1):P176.
    2009
@@ -438,7 +438,7 @@ references of articles and proceedings
 
 -  Laurent U. Perrinet. Role of homeostasis in learning sparse
    representations,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl>`__
    . *Neural Computation*, **22**\ (7):1812--36, 2010
 
    Neurons in the input layer of primary visual cortex in primates
@@ -468,19 +468,19 @@ references of articles and proceedings
 
 -  Laurent Perrinet, Guillaume S. Masson. Dynamical emergence of a
    neural solution for motion integration,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne>`__
    . In *Proceedings of AREADNE*, 2010
 
 
 -  Laurent Perrinet. Qui créera le premier calculateur intelligent?,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet10DocSciences>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet10DocSciences>`__
    . *DocSciences*, (13), 2010
 
 -  Laurent Perrinet, Alexandre Reynaud, Frédéric Chavane, Guillaume S.
    Masson. Inferring monkey ocular following responses from V1
    population dynamics using a probabilistic model of motion
    integration,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet09vss>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet09vss>`__
    . In *Vision Science Society*, 2009
 
    Short presentation of a large moving pattern elicits an ocular
@@ -513,7 +513,7 @@ references of articles and proceedings
 -  Laurent Perrinet, Nicole Voges, Jens Kremkow, Guillaume S. Masson.
    Decoding center-surround interactions in population of neurons for
    the ocular following response ,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet09cosyne>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet09cosyne>`__
    . In *Proceedings of COSYNE*, 2009
 
    Short presentation of a large moving pattern elicits an Ocular
@@ -582,14 +582,14 @@ references of articles and proceedings
 -  Laurent Perrinet, Guillaume S. Masson. Decoding the population
    dynamics underlying ocular following response using a probabilistic
    framework,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet09cns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet09cns>`__
    . In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18--23 July 2009*, pages 10(Suppl 1):P359. 2009
 
 
 -  Laurent Perrinet. Adaptive Sparse Spike Coding : applications of
    Neuroscience to the compression of natural images,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet08spie>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet08spie>`__
    . In *Optical and Digital Image Processing Conference 7000 -
    Proceedings of SPIE Volume 7000, 7 - 11 April 2008*, pages 15 - S4.
    2008
@@ -619,27 +619,27 @@ references of articles and proceedings
 -  Laurent Perrinet, Guillaume S. Masson. Modeling spatial integration
    in the ocular following response to center-surround stimulation using
    a probabilistic framework,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet08cosyne_motion>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet08cosyne_motion>`__
    . In *Proceedings of COSYNE, 2008*, 2008,
 
 
 -  Laurent Perrinet. What adaptive code for efficient spiking
    representations? A model for the formation of receptive fields of
    simple cells.,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet08cosyne_learning>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet08cosyne_learning>`__
    . In *Proceedings of COSYNE*, 2008
 
 
 -  Laurent Perrinet, Guillaume S. Masson. Decoding the population
    dynamics underlying ocular following responseusing a probabilistic
    framework,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet08areadne>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet08areadne>`__
    . In *Proceedings of AREADNE*, 2008
 
 
 -  Laurent Perrinet, Guillaume S. Masson. Modeling spatial integration
    in the ocular following response using a probabilistic framework,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet07neurocomp>`__
    . *Journal of Physiology (Paris)*, 2007
 
    The machinery behind the visual perception of motion and the
@@ -689,7 +689,7 @@ references of articles and proceedings
    implementation close to the concept of neural assemblies from Hebb
    [3]). We present here results of simulation of this network with
    small natural images (available at
-   http://invibe.net/LaurentPerrinet/SparseHebbianLearning) and compare
+   https://invibe.net/LaurentPerrinet/SparseHebbianLearning) and compare
    it to the Sparsenet solution. Extending it to realistic images and to
    the NEST simulator http://www.nest-initiative.org/, we show that this
    learning algorithm based on the properties of neural computations
@@ -784,7 +784,7 @@ references of articles and proceedings
 
 -  Laurent Perrinet. An efficiency razor for model selection and
    adaptation in the primary visual cortex,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet06cns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet06cns>`__
    . In *Fifteenth Annual Computational Neuroscience Meeting*, 2006
 
    We describe the theoretical formulation of a learning algorithm in a
@@ -800,7 +800,7 @@ references of articles and proceedings
    the architecture and nature of neural computations (Perrinet, 2006).
    We present here results of a simulation of this network of small
    natural images (available at
-   http://invibe.net/LaurentPerrinet/SparseHebbianLearning ) and compare
+   https://invibe.net/LaurentPerrinet/SparseHebbianLearning ) and compare
    it to the Sparsenet solution. We show that this solution based on
    neural computations produces an adaptive algorithm for efficient
    representations in V1.
@@ -813,12 +813,12 @@ references of articles and proceedings
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Perrinet06,>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Perrinet06,>`__
    . pages 163--225.
 
 -  Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, Eric Castet,
    Guillaume S. Masson. Bayesian modeling of dynamic motion integration,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Montagnini07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Montagnini07>`__
    . *Journal of Physiology (Paris)*, **101**\ (1-3):64-77, 2007
 
    The quality of the representation of an object's motion is limited by
@@ -843,7 +843,7 @@ references of articles and proceedings
 -  Khaled Masmoudi, Marc Antonini, Pierre Kornprobst, Laurent Perrinet.
    A novel bio-inspired static image compression scheme for noisy data
    transmission over low-bandwidth channels,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Masmoudi10>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Masmoudi10>`__ .
    In *ICASSP 2010, Paper #2894*, 2010
 
 
@@ -876,7 +876,7 @@ references of articles and proceedings
 -  Jens Kremkow. Correlating Excitation and Inhibition in Visual
    Cortical Circuits: Functional Consequences and Biological
    Feasibility,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow09thesis>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow09thesis>`__
    . 2009
    The primary visual cortex (V1) is one of the most studied cortical
    area in the brain. Together with the retina and the lateral
@@ -909,7 +909,7 @@ references of articles and proceedings
    Functional consequences of correlated excitation and inhibition on
    single neuron integration and signal propagation through synfire
    chains,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow09gns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow09gns>`__
    . In *Eighth Göttingen Meeting of the German Neuroscience Society*,
    pages T26-6B. 2009
    Neurons receive a large number of excitatory and inhibitory synaptic
@@ -954,7 +954,7 @@ references of articles and proceedings
 -  Jens Kremkow, Laurent Perrinet, Cyril Monier, Yves Fregnac, Guillaume
    S. Masson, Ad Aertsen. Control of the temporal interplay between
    excitation and inhibition by the statistics of visual input,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow09cnstalk>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow09cnstalk>`__
    `URL2 <http://www.biomedcentral.com/1471-2202/10/S1/O21>`__ . In
    *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages Oral presentation, 10(Suppl
@@ -965,7 +965,7 @@ references of articles and proceedings
    cortico-cortical interactions during motion integration in early
    visual cortex: A spiking neuron model of an optical imaging study in
    the awake monkey,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow09cns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow09cns>`__
    `URL2 <http://www.biomedcentral.com/1471-2202/10/S1/P176>`__ . In
    *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages 10(Suppl 1):P176. 2009
@@ -975,7 +975,7 @@ references of articles and proceedings
    Marre, Cyril Monier, Yves Fregnac, Guillaume Masson, Ad Aertsen.
    Control of the temporal interplay between excitation and inhibition
    by the statistics of visual input: a V1 network modelling study,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow08sfn>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow08sfn>`__
    . In *Proceedings of the Society for Neuroscience conference*, 2008
 
    In the primary visual cortex (V1), single cell responses to simple
@@ -1024,7 +1024,7 @@ references of articles and proceedings
 -  Jens Kremkow, Laurent Perrinet, Arvind Kumar, Ad Aertsen, Guillaume
    Masson. Synchrony in thalamic inputs enhances propagation of activity
    through cortical layers,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Kremkow07cns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Kremkow07cns>`__
    `URL2 <http://www.biomedcentral.com/1471-2202/8/S2/P180>`__ . In
    *Sixteenth Annual Computational Neuroscience Meeting: CNS\*2007,
    Toronto, Canada. 7--12 July 2007*, 2007
@@ -1076,18 +1076,18 @@ references of articles and proceedings
 
 -  Mina Aliakbari Khoei, Laurent Perrinet, Guillaume S. Masson.
    Dynamical emergence of a neural solution for motion integration,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Khoei10tauc>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Khoei10tauc>`__
    . In *Proceedings of Tauc*, 2010
 
 -  Sylvain Fischer, Filip Sroubek, Laurent U. Perrinet, Rafael Redondo,
    Gabriel Crist\\'obal. Self-invertible 2D log-Gabor wavelets,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Fischer07cv>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Fischer07cv>`__
    . *Int. Journal of Computional Vision*, 2007
 
 -  Sylvain Fischer, Rafael Redondo, Laurent Perrinet, Gabriel
    Crist\\'obal. Sparse approximation of images inspired from the
    functional architecture of the primary visual areas,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Fischer07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Fischer07>`__
    `URL2 <http://www.hindawi.com/GetArticle.aspx?doi=10.1155/2007/90727&e=cta>`__
    . *EURASIP Journal on Advances in Signal Processing, special issue on
    Image Perception*, :Article ID 90727, 16 pages, 2007
@@ -1126,7 +1126,7 @@ references of articles and proceedings
 
 -  Andrew Davison, Pierre Yger, Jens Kremkow, Laurent Perrinet, Eilif
    Muller. PyNN: towards a universal neural simulator API in Python,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Davison07cns>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Davison07cns>`__
    `URL2 <http://www.biomedcentral.com/1471-2202/8/S2/P2>`__ . In
    *Sixteenth Annual Computational Neuroscience Meeting: CNS\*2007,
    Toronto, Canada. 7--12 July 2007*, 2007
@@ -1164,7 +1164,7 @@ references of articles and proceedings
 
 -  Emmanuel Daucé, Laurent Perrinet. Computational Neuroscience, from
    Multiple Levels to Multi-level,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Daucé10>`__ .
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Daucé10>`__ .
    *Journal of Physiology (Paris)*, **104**\ (1--2):1--4, 2010
 
    Despite the long and fruitful history of neuroscience, a global,
@@ -1185,7 +1185,7 @@ references of articles and proceedings
 -  B. Cessac, E. Daucé, Laurent U. Perrinet, M. Samuelides. *Topics in
    Dynamical Neural Networks: From Large Scale Neural Networks to Motor
    Control and Vision,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Cessac07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Cessac07>`__
    `URL2 <http://www.springerlink.com/content/q00921n9886h/?p=03c19c7c204d4fa78b850f88b97da2f7π=0>`__
    .* Springer Berlin / Heidelberg, 2007.
 
@@ -1234,7 +1234,7 @@ references of articles and proceedings
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
    Masson. Dynamics of distributed 1D and 2D motion representations for
    short-latency ocular following,
-   `URL <http://invibe.net/LaurentPerrinet/Publications/Barthelemy07>`__
+   `URL <https://invibe.net/LaurentPerrinet/Publications/Barthelemy07>`__
    `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
    `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
@@ -1242,4 +1242,4 @@ references of articles and proceedings
 
 
 
-.. |FigureDeux_tumb.png| image:: http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?action=AttachFile&do=get&target=FigureDeux_tumb.png
+.. |FigureDeux_tumb.png| image:: https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl?action=AttachFile&do=get&target=FigureDeux_tumb.png

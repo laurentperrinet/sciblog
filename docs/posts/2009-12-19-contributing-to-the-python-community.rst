@@ -8,7 +8,7 @@
 (or "would be hard to give as much as I took :-)" )
 
 -  NumPy Doc Editor :
-   `LaurentPerrinet <http://invibe.net/LaurentPerrinet/LaurentPerrinet>`__
+   `LaurentPerrinet <https://invibe.net/LaurentPerrinet/LaurentPerrinet>`__
 
    -  `http://docs.scipy.org/numpy/Front%20Page/ <http://docs.scipy.org/numpy/Front%20Page/>`__
    -  `http://docs.scipy.org/scipy <http://docs.scipy.org/scipy>`__
@@ -27,7 +27,7 @@
 
 -  moin
    `http://master19.moinmo.in/HelpOnImages <http://master19.moinmo.in/HelpOnImages>`__
-   `LaurentPerrinet <http://invibe.net/LaurentPerrinet/LaurentPerrinet>`__
+   `LaurentPerrinet <https://invibe.net/LaurentPerrinet/LaurentPerrinet>`__
 
 
 

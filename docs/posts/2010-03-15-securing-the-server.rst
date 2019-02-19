@@ -6,7 +6,7 @@
 
 
 -  SSH (Secure Shell) is installed on most systems (here
-   `GnuLinuxUbuntu <http://invibe.net/LaurentPerrinet/GnuLinuxUbuntu>`__ and MacOsX) so
+   `GnuLinuxUbuntu <https://invibe.net/LaurentPerrinet/GnuLinuxUbuntu>`__ and MacOsX) so
    don't panic about compilations (try Putty on Windows). Try a simple
    ``ssh -V`` to check version or ``which ssh`` to locate the binary.
 

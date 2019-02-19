@@ -28,8 +28,8 @@ understanding on the neural computations underlying the perception of
 motion. We are particularly interested in the dynamics of motion
 integration, focusing on responses to complex motion stimuli in areas V1
 and V5/MT. Our theoretical approaches span from `statistical
-inference <http://invibe.net/LaurentPerrinet/Publications/Perrinet06fens>`__ to `adaptive
-distributed representations <http://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__
+inference <https://invibe.net/LaurentPerrinet/Publications/Perrinet06fens>`__ to `adaptive
+distributed representations <https://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__
 to provide insights into these parallel, dynamical processes. We use
 state-of-the-art simulation software to validate these results thanks to
 our computer facilities, with the goal of transferring this technology
@@ -89,7 +89,7 @@ full social coverage included.
 Interested candidates should send their application materials - cover
 letter, CV, statement of research interests and research experience (no
 .doc file, please) or informal enquiries to Dr. `Laurent
-Perrinet <http://invibe.net/LaurentPerrinet/ContactInformation>`__ (
+Perrinet <https://invibe.net/LaurentPerrinet/ContactInformation>`__ (
 `mailto:Laurent.Perrinet@incm.cnrs-mrs.fr <mailto:Laurent.Perrinet@incm.cnrs-mrs.fr>`__
 ).
 
@@ -100,4 +100,4 @@ Perrinet <http://invibe.net/LaurentPerrinet/ContactInformation>`__ (
 
 
 
-.. |alert| image:: http://invibe.net/moin_static196/moniker/img/alert.png
+.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

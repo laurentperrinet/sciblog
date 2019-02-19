@@ -184,13 +184,13 @@ lecture**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Référence                                                                                                                                                                                                                                                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, and Guillaume S. Masson. Pursuing motion illusions: a realistic oculomotor framework for bayesian inference. Vision Research, (In press), 2010. `http://invibe.net/LaurentPerrinet/Publications/Bogadhi10 <http://invibe.net/LaurentPerrinet/Publications/Bogadhi10>`__                          |
+| Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, and Guillaume S. Masson. Pursuing motion illusions: a realistic oculomotor framework for bayesian inference. Vision Research, (In press), 2010. `https://invibe.net/LaurentPerrinet/Publications/Bogadhi10 <https://invibe.net/LaurentPerrinet/Publications/Bogadhi10>`__                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Emmanuel Daucé and Laurent Perrinet. Computational neuroscience, from multiple levels to multi-level. Journal of Physiology (Paris), 104(1-2):1-4, 2010. `http://invibe.net/LaurentPerrinet/Publications/Daucé10 <http://invibe.net/LaurentPerrinet/Publications/Daucé10>`__                                                                                                |
+| Emmanuel Daucé and Laurent Perrinet. Computational neuroscience, from multiple levels to multi-level. Journal of Physiology (Paris), 104(1-2):1-4, 2010. `https://invibe.net/LaurentPerrinet/Publications/Daucé10 <https://invibe.net/LaurentPerrinet/Publications/Daucé10>`__                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Jens Kremkow, Laurent U. Perrinet, Guillaume S. Masson, and Ad Aertsen. Functional consequences of correlated excitatory and inhibitory conductances in cortical networks. Journal of Computational Neuroscience, 28(3):579-94, jun 2010. `http://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns <http://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns>`__   |
+| Jens Kremkow, Laurent U. Perrinet, Guillaume S. Masson, and Ad Aertsen. Functional consequences of correlated excitatory and inhibitory conductances in cortical networks. Journal of Computational Neuroscience, 28(3):579-94, jun 2010. `https://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns <https://invibe.net/LaurentPerrinet/Publications/Kremkow10jcns>`__   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Khaled Masmoudi, Marc Antonini, Pierre Kornprobst, and Laurent Perrinet. A novel bio-inspired static image compression scheme for noisy data transmission over low-bandwidth channels. In ICASSP 2010, Paper #2894, 2010. `http://invibe.net/LaurentPerrinet/Publications/Masmoudi10 <http://invibe.net/LaurentPerrinet/Publications/Masmoudi10>`__                         |
+| Khaled Masmoudi, Marc Antonini, Pierre Kornprobst, and Laurent Perrinet. A novel bio-inspired static image compression scheme for noisy data transmission over low-bandwidth channels. In ICASSP 2010, Paper #2894, 2010. `https://invibe.net/LaurentPerrinet/Publications/Masmoudi10 <https://invibe.net/LaurentPerrinet/Publications/Masmoudi10>`__                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Laurent Perrinet. Role of homeostasis in learning sparse representations. Neural Computation 2010 22 7 1812-36                                                                                                                                                                                                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,12 +231,12 @@ Durée
 
 Intervention(s)
 
-| Dynamical emergence of a neural solution for motion integration. In Proceedings of AREADNE, 2010  `http://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne <http://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne>`__ par Laurent Perrinet and Guillaume S. Masson.
+| Dynamical emergence of a neural solution for motion integration. In Proceedings of AREADNE, 2010  `https://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne <https://invibe.net/LaurentPerrinet/Publications/Perrinet10areadne>`__ par Laurent Perrinet and Guillaume S. Masson.
 |  Affiche/poster
 
 Manifestation
 
-FACETS `CodeJam <http://invibe.net/LaurentPerrinet/CodeJam>`__ Workshop #4
+FACETS `CodeJam <https://invibe.net/LaurentPerrinet/CodeJam>`__ Workshop #4
 
 Type de manifestation
 
@@ -252,7 +252,7 @@ Durée
 
 Intervention(s)
 
-| Hooking together the pieces to build a neuroscience demo `http://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4 <http://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4>`__ par Laurent Perrinet
+| Hooking together the pieces to build a neuroscience demo `https://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4 <https://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4>`__ par Laurent Perrinet
 |  Communication orale
 
 Manifestation
@@ -276,13 +276,13 @@ Intervention(s)
 
 Models of low-level vision: linking probabilistic models and neural
 masses.
-`http://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets <http://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets>`__
+`https://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets <https://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets>`__
 par Laurent Perrinet and Guillaume S. Masson.
 
 Manifestation
 
 From Mathematical Image Analysis to Neurogeometry of the Brain
-`http://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk <http://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
+`https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk <https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
 
 Type de manifestation
 
@@ -298,9 +298,9 @@ Durée
 
 Manifestation
 
-Second `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__ Marseille Workshop
+Second `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ Marseille Workshop
 "Computational Neuroscience: From Representations to Behavior"
-`http://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop <http://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop>`__
+`https://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop <https://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop>`__
 
 Type de manifestation
 
@@ -316,7 +316,7 @@ Durée
 
 Intervention(s)
 
-| Introduction à la journée `http://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop <http://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop>`__ par Laurent Perrinet
+| Introduction à la journée `https://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop <https://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop>`__ par Laurent Perrinet
 |  Communication orale
 
 Manifestation
@@ -416,7 +416,7 @@ Type de document
 
 Informations complémentaires
 
-Conférence `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__ 2010
+Conférence `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ 2010
 
 Type d'intervention
 
@@ -526,7 +526,7 @@ Allemagne ( Europe )
 
 Unité partenaire
 
-`NeuroInformatics <http://invibe.net/LaurentPerrinet/NeuroInformatics>`__
+`NeuroInformatics <https://invibe.net/LaurentPerrinet/NeuroInformatics>`__
 
 Intitulé
 
@@ -629,7 +629,7 @@ Total
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                   Animation scientifique                                                                                                                                                                                                                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__.fr Animation d'un réseau marseillais des `NeuroComp <http://invibe.net/LaurentPerrinet/NeuroComp>`__ Encadrement projet Master BIM à Luminy   |
+| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__.fr Animation d'un réseau marseillais des `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ Encadrement projet Master BIM à Luminy   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Enseignement**
@@ -666,7 +666,7 @@ France
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Informations complémentaires sur les enseignements dispensés en formation initiale                                                                                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  **(1)** `http://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences <http://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences>`__    |
+|  **(1)** `https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences <https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences>`__    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Valorisation et partenariat**
@@ -684,7 +684,7 @@ Type de participation
 Conférence/débat public
 
 Diffraction monochromatique, spectre audiographique
-`http://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParalleles <http://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParallèles>`__
+`https://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParalleles <https://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParallèles>`__
 ponctuelle
 
 Exposition
@@ -696,7 +696,7 @@ Conseil scientifique
 Presse écrite
 
 Qui créera le premier calculateur intelligent?
-`DocSciences <http://invibe.net/LaurentPerrinet/DocSciences>`__, (13), 2010.
+`DocSciences <https://invibe.net/LaurentPerrinet/DocSciences>`__, (13), 2010.
 
 Participation ponctuelle
 

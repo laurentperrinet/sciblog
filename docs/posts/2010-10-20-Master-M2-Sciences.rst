@@ -18,7 +18,7 @@ Laurent Perrinet
 | |https://crac.dsi.cnrs.fr/image/logo_cnrs.gif|    | Laurent Perrinet - Team `InViBe </LaurentPerrinet/InViBe>`__, `Institut de Neurosciences de la Timone <http://www.int.univ-amu.fr/PERRINET-Laurent>`__ (UMR 7289)   |
 |                                                   |  CNRS - Aix-Marseille Université                                                                                                                                    |
 |                                                   |  *Researcher*                                                                                                                                                       |
-|                                                   |  `http://invibe.net/LaurentPerrinet <http://invibe.net/LaurentPerrinet>`__                                                                                          |
+|                                                   |  `https://invibe.net/LaurentPerrinet <https://invibe.net/LaurentPerrinet>`__                                                                                          |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -137,7 +137,7 @@ Suivi d'objet: l'exemple de l'Occular Following Response
 | `Figure </LaurentPerrinet/Figures/Perrinet07neurocomp/FigureZero>`__ **Stimuli used for testing OFR.** *(Left) Grating in a disk aperture with varying contrast and*\ (Middle)*with varying diameters.*\ (Right) Barberpole.   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|http://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png|
+|https://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png|
 
 |Figures/Perrinet04tauc/FigureUn/inverse.png|
 
@@ -223,7 +223,7 @@ Naka-Rushton
 intégration d'informations indépendantes
 ========================================
 
-|http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png|
+|https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png|
 
 -  $\\mathcal{N} (\\vec{V}_
    \\bf n
@@ -293,7 +293,7 @@ intégration d'informations indépendantes
 intégration spatio-temporelle
 =============================
 
-|http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png|
+|https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png|
 
 -  intégration sur la surface d'un disque:
 
@@ -427,28 +427,28 @@ Des points à retenir
 .. |http://www.ecs.syr.edu/faculty/fawcett/handouts/webpages/pictures/turingMachine.gif| image:: http://www.ecs.syr.edu/faculty/fawcett/handouts/webpages/pictures/turingMachine.gif
 .. |http://upload.wikimedia.org/wikipedia/commons/c/c2/SnowflakesWilsonBentley.jpg| image:: http://upload.wikimedia.org/wikipedia/commons/c/c2/SnowflakesWilsonBentley.jpg
 .. |http://parasol.tamu.edu/~neilien/research/neurons.jpg| image:: http://parasol.tamu.edu/~neilien/research/neurons.jpg
-.. |alert| image:: http://invibe.net/moin_static196/moniker/img/alert.png
+.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png
 .. |http://upload.wikimedia.org/wikipedia/commons/7/75/Duck_of_Vaucanson.jpg| image:: http://upload.wikimedia.org/wikipedia/commons/7/75/Duck_of_Vaucanson.jpg
 .. |http://longstreet.typepad.com/.a/6a00d83542d51e69e20120a5d6fc90970c-500wi| image:: http://longstreet.typepad.com/.a/6a00d83542d51e69e20120a5d6fc90970c-500wi
 .. |http://people.csail.mit.edu/koen/wholeBrainAtlasMesh.gif| image:: http://people.csail.mit.edu/koen/wholeBrainAtlasMesh.gif
-.. |grating_contrast| image:: http://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=grating_contrast.gif
-.. |grating_size| image:: http://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=grating_size.gif
-.. |full_field_barberpole| image:: http://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=full_field_barberpole.gif
-.. |http://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png| image:: http://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png
-.. |Figures/Perrinet04tauc/FigureUn/inverse.png| image:: http://invibe.net//Figures/Perrinet04tauc/FigureUn?action=AttachFile&do=get&target=inverse.png
-.. |model_simple.png| image:: http://invibe.net//Presentations/10-10-20_M2_MasterSciences/050_ProbabilisticModels?action=AttachFile&do=get&target=model_simple.png
-.. |../050_ProbabilisticModels/model_simple.png| image:: http://invibe.net//Presentations/10-10-20_M2_MasterSciences/050_ProbabilisticModels?action=AttachFile&do=get&target=model_simple.png
-.. |naka_rushton.png| image:: http://invibe.net//Presentations/10-10-20_M2_MasterSciences/055_ProbabilisticModelsForMotionPerception?action=AttachFile&do=get&target=naka_rushton.png
-.. |http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png| image:: http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png
-.. |http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png| image:: http://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png
-.. |Animation of the formation of RFs during aSSC learning| image:: http://invibe.net//SparseHebbianLearning?action=AttachFile&do=get&target=ssc.gif
-.. |Figures/Perrinet03ieee/FigureZero/v1_tiger.gif| image:: http://invibe.net//Figures/Perrinet03ieee/FigureZero?action=AttachFile&do=get&target=v1_tiger.gif
+.. |grating_contrast| image:: https://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=grating_contrast.gif
+.. |grating_size| image:: https://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=grating_size.gif
+.. |full_field_barberpole| image:: https://invibe.net//Figures/Perrinet07neurocomp/FigureZero?action=AttachFile&do=get&target=full_field_barberpole.gif
+.. |https://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png| image:: https://invibe.net/LaurentPerrinet/Figures/Perrinet07neurocomp/FigureUn?action=AttachFile&do=get&target=summary.png
+.. |Figures/Perrinet04tauc/FigureUn/inverse.png| image:: https://invibe.net//Figures/Perrinet04tauc/FigureUn?action=AttachFile&do=get&target=inverse.png
+.. |model_simple.png| image:: https://invibe.net//Presentations/10-10-20_M2_MasterSciences/050_ProbabilisticModels?action=AttachFile&do=get&target=model_simple.png
+.. |../050_ProbabilisticModels/model_simple.png| image:: https://invibe.net//Presentations/10-10-20_M2_MasterSciences/050_ProbabilisticModels?action=AttachFile&do=get&target=model_simple.png
+.. |naka_rushton.png| image:: https://invibe.net//Presentations/10-10-20_M2_MasterSciences/055_ProbabilisticModelsForMotionPerception?action=AttachFile&do=get&target=naka_rushton.png
+.. |https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png| image:: https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureDeux?action=AttachFile&do=get&target=model_rog.png
+.. |https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png| image:: https://invibe.net/LaurentPerrinet/Figures/Perrinet08areadne/FigureTrois?action=AttachFile&do=get&target=fit_BRF.png
+.. |Animation of the formation of RFs during aSSC learning| image:: https://invibe.net//SparseHebbianLearning?action=AttachFile&do=get&target=ssc.gif
+.. |Figures/Perrinet03ieee/FigureZero/v1_tiger.gif| image:: https://invibe.net//Figures/Perrinet03ieee/FigureZero?action=AttachFile&do=get&target=v1_tiger.gif
 .. |http://topographica.org/Tutorials/images/oo_or_map.png| image:: http://topographica.org/Tutorials/images/oo_or_map.png
 .. |http://upload.wikimedia.org/wikipedia/en/3/3f/LinDynSysTraceDet.jpg| image:: http://upload.wikimedia.org/wikipedia/en/3/3f/LinDynSysTraceDet.jpg
 .. |http://upload.wikimedia.org/wikipedia/en/5/55/LinearFields.png| image:: http://upload.wikimedia.org/wikipedia/en/5/55/LinearFields.png
-.. |Figures/Voges10neurocomp/FigureTrois| image:: http://invibe.net//Figures/Voges10neurocomp/FigureTrois?action=AttachFile&do=get&target=Voges10Fig3.jpg
-   :target: http://invibe.net/LaurentPerrinet/Figures/Voges10neurocomp/FigureTrois
-.. |Figures/Voges09cosyne/FigureModel| image:: http://invibe.net//Figures/Voges09cosyne/FigureModel?action=AttachFile&do=get&target=nicole.jpg
-   :target: http://invibe.net/LaurentPerrinet/Figures/Voges09cosyne/FigureModel
-.. |Figures/Kremkow10jcns/FigureTrois| image:: http://invibe.net//Figures/Kremkow10jcns/FigureTrois?action=AttachFile&do=get&target=KremkowFig3.png
-   :target: http://invibe.net/LaurentPerrinet/Figures/Kremkow10jcns/FigureTrois
+.. |Figures/Voges10neurocomp/FigureTrois| image:: https://invibe.net//Figures/Voges10neurocomp/FigureTrois?action=AttachFile&do=get&target=Voges10Fig3.jpg
+   :target: https://invibe.net/LaurentPerrinet/Figures/Voges10neurocomp/FigureTrois
+.. |Figures/Voges09cosyne/FigureModel| image:: https://invibe.net//Figures/Voges09cosyne/FigureModel?action=AttachFile&do=get&target=nicole.jpg
+   :target: https://invibe.net/LaurentPerrinet/Figures/Voges09cosyne/FigureModel
+.. |Figures/Kremkow10jcns/FigureTrois| image:: https://invibe.net//Figures/Kremkow10jcns/FigureTrois?action=AttachFile&do=get&target=KremkowFig3.png
+   :target: https://invibe.net/LaurentPerrinet/Figures/Kremkow10jcns/FigureTrois

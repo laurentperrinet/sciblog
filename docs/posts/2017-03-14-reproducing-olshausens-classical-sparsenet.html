@@ -150,7 +150,7 @@ MathJax.Hub.Config({
 <ul>
 <li>
 <p>following this failed <a href="https://github.com/scikit-learn/scikit-learn/pull/4693">PR to sklearn</a> that was argued in <a href="https://laurentperrinet.github.io/sciblog/posts/2015-05-05-reproducing-olshausens-classical-sparsenet.html">this post</a>  (and following) the goal of this notebooks is to illustrate the simpler code implemented in the <a href="https://github.com/bicv/SHL_scripts">SHL scripts</a></p>
-<p>This is joint work with <a href="http://invibe.net/LaurentPerrinet/VictorBoutin">Victor Boutin</a>.</p>
+<p>This is joint work with <a href="https://invibe.net/LaurentPerrinet/VictorBoutin">Victor Boutin</a>.</p>
 </li>
 </ul>
 <!-- TEASER_END -->
@@ -244,7 +244,7 @@ MathJax.Hub.Config({
 <p>In this notebook, we have replicated the classical SparseNet algorithm of Olshausen on a  set of natural images. However, the dictionaries are qualitatively not the same as the one from the original paper, and this is certainly due to the lack of control in the competition during the learning phase.</p>
 <p>What differ in this implementation from the original algorithm is mainly the way that the norm of the filters is controlled. Here, <code>sklearn</code> simply assumes that $ || V_k ||_2 = 1$,  $\forall k$ (with $0 &lt;= k &lt; n_{components}$). We will see that this may be a problem.</p>
 <p>Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-15-reproducing-olshausens-classical-sparsenet-part-2.html">in a new notebook</a>.</p>
-<p>In <a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-17-extending-olshausens-classical-sparsenet.html">an extension</a>, we will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  <a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl">http://invibe.net/LaurentPerrinet/Publications/Perrinet10shl</a> ).</p>
+<p>In <a href="https://laurentperrinet.github.io/sciblog/posts/2017-03-17-extending-olshausens-classical-sparsenet.html">an extension</a>, we will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  <a href="https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl">https://invibe.net/LaurentPerrinet/Publications/Perrinet10shl</a> ).</p>
 
 </div>
 </div>

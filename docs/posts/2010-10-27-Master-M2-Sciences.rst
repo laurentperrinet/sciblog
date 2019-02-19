@@ -235,4 +235,4 @@ références
 
    -  `http://matplotlib.sourceforge.net/ <http://matplotlib.sourceforge.net/>`__
 
-.. |alert| image:: http://invibe.net/moin_static196/moniker/img/alert.png
+.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

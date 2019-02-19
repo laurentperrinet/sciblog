@@ -57,4 +57,4 @@
 
 
 
-.. |:-)| image:: http://invibe.net/moin_static196/moniker/img/smile.png
+.. |:-)| image:: https://invibe.net/moin_static196/moniker/img/smile.png

@@ -59,7 +59,7 @@ conferences will be in English.
 
  - 9h00-9h30 Reception and coffee
 
- - 9h30-10h00 `Laurent Perrinet <http://invibe.net/LaurentPerrinet>`_ Institut de Neurosciences Cognitives de la Méditerranée, CNRS and Université de la Méditerranée - Marseille **«Presentation of the Workshop and Topic»**
+ - 9h30-10h00 `Laurent Perrinet <https://invibe.net/LaurentPerrinet>`_ Institut de Neurosciences Cognitives de la Méditerranée, CNRS and Université de la Méditerranée - Marseille **«Presentation of the Workshop and Topic»**
 
  - 10h00-11h00 `Gabriel Peyré <http://www.ceremade.dauphine.fr/~peyre/>`_ CNRS and Université Paris-Dauphine `'''«Sparse Geometric Processing of Natural Images»''' <http://www.ceremade.dauphine.fr/~peyre/talks/2010-05-20-neurosciences-marseilles.pdf>`__
 

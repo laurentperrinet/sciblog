@@ -5,7 +5,7 @@
 .. tags: sciblog, brainscales
 
 
-In the context of `BrainScales <http://invibe.net/LaurentPerrinet/BrainScales>`__, we
+In the context of `BrainScales <https://invibe.net/LaurentPerrinet/BrainScales>`__, we
 have developed a library to synthesize stimuli targeted at the
 characterization of motion perception. This process took the following
 steps:
@@ -15,7 +15,7 @@ steps:
 
 
 -  creation of the library using python and linked with the development
-   of `NeuroTools <http://invibe.net/LaurentPerrinet/NeuroTools>`__,
+   of `NeuroTools <https://invibe.net/LaurentPerrinet/NeuroTools>`__,
 -  documentation of this library along with a mathematical description,
    published in the Journal of Neurophysiology, while this stimuli were
    at the basis of a paper published in Nature Neuroscience (both

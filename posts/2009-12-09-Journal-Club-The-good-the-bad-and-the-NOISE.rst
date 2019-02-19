@@ -6,7 +6,7 @@
 
 
 -  I describe here different forms of
-   `MotionClouds <http://invibe.net/LaurentPerrinet/MotionClouds>`__
+   `MotionClouds <https://invibe.net/LaurentPerrinet/MotionClouds>`__
 
    .. TEASER_END
 
@@ -14,6 +14,6 @@
    detection <http://www.cvs.rochester.edu/knill_lab/publications/schrater_nn.pdf>`__,
    towards *Frozen noise in the icicle model*
 -  get the supporting `PDF
-   (63Mo) <http://invibe.net/LaurentPerrinet/MotionClouds?action=AttachFile&do=get&target=09-12-10_journal_club_noise.pdf>`__
+   (63Mo) <https://invibe.net/LaurentPerrinet/MotionClouds?action=AttachFile&do=get&target=09-12-10_journal_club_noise.pdf>`__
    (to open with a video capable reader, like the one from Adobe REader
    ver. > 7.0)
