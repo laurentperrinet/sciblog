@@ -324,7 +324,7 @@ Durée
 Intervention(s)
 
 | Neural codes for adaptive sparse representations of natural images.
-| `https://invibe.net/LaurentPerrinet/Publications/Perrinet07mipm <https://invibe.net/LaurentPerrinet/Publications/Perrinet07mipm>`__
+| `https://laurentperrinet.github.io/publication/perrinet-07-mipm <https://laurentperrinet.github.io/publication/perrinet-07-mipm>`__
 | par Laurent Perrinet
 |  Communication orale
 
