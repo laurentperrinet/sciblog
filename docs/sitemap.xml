@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2019-02-20T13:50:00Z</lastmod>
+  <lastmod>2019-02-26T23:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html</loc>
@@ -27,15 +27,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2016-04-25_pollymagoo/</loc>
-  <lastmod>2019-01-19T06:43:00Z</lastmod>
+  <lastmod>2019-02-19T22:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2016-04-28_mejanes/</loc>
-  <lastmod>2019-01-19T06:46:00Z</lastmod>
+  <lastmod>2019-02-19T22:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2016-07-07_EDP-proba/</loc>
-  <lastmod>2019-01-19T06:54:00Z</lastmod>
+  <lastmod>2019-02-20T02:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2016-09-26_Perrinet16journalClub/2016-09-26_Perrinet16journalClub.slides.html</loc>
@@ -119,11 +119,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2019-02-26T21:41:00Z</lastmod>
+  <lastmod>2019-03-14T12:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2019-02-20T13:33:00Z</lastmod>
+  <lastmod>2019-02-26T23:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -295,7 +295,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2019-02-26T21:39:00Z</lastmod>
+  <lastmod>2019-03-14T12:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -531,15 +531,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-25_pollymagoo/</loc>
-  <lastmod>2019-01-18T02:16:00Z</lastmod>
+  <lastmod>2019-02-19T22:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-28_mejanes/</loc>
-  <lastmod>2019-01-18T02:16:00Z</lastmod>
+  <lastmod>2019-02-19T22:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-07-07_EDP-proba/</loc>
-  <lastmod>2019-01-18T02:30:00Z</lastmod>
+  <lastmod>2019-02-19T23:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-09-26_Perrinet16journalClub/2016-09-26_Perrinet16journalClub.slides.html</loc>
@@ -623,7 +623,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/galleries/</loc>
-  <lastmod>2019-02-01T18:02:00Z</lastmod>
+  <lastmod>2019-02-26T21:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
@@ -631,7 +631,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
-  <lastmod>2019-02-20T13:33:00Z</lastmod>
+  <lastmod>2019-02-26T21:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/import_moinmoinpages.py.html</loc>
@@ -1519,7 +1519,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html</loc>
-  <lastmod>2019-02-26T21:42:00Z</lastmod>
+  <lastmod>2019-03-14T12:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html</loc>
@@ -1655,11 +1655,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-13-sparse-coding-using-fista.html</loc>
-  <lastmod>2019-02-26T21:41:00Z</lastmod>
+  <lastmod>2019-03-14T12:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</loc>
-  <lastmod>2019-02-26T21:41:00Z</lastmod>
+  <lastmod>2019-03-14T12:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</loc>
@@ -1667,7 +1667,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/</loc>
-  <lastmod>2019-02-01T18:06:00Z</lastmod>
+  <lastmod>2019-02-26T22:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>
