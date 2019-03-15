@@ -140,11 +140,17 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sometimes, you need to pick up the $N$-th  extremal values in a mutli-dimensional matrix.</p>
-<p>Let's suppose it is represented as a <code>nd-array</code> (here, I further suppose you are using the numpy library from the python language). Finding extremal values is easy with <code>argsort</code> but this function operated on 1d vectors...  Juggling around indices is sometimes not such an easy task, but luckily, we have the <code>unravel_index</code> function.</p>
-<p>Let's unwrap an easy solution combining these functions:</p>
-<!-- TEASER_END -->
+<p>Let's suppose it is represented as a <code>nd-array</code> (here, I further suppose you are using the numpy library from the python language). Finding extremal values is easy with <code>argmax</code>,  <code>argmin</code> or <code>argsort</code> but this function operated on 1d vectors...  Juggling around indices is sometimes not such an easy task, but luckily, we have the <code>unravel_index</code> function.</p>
 
-<p>Let's first initialize the notebook:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For those in a hurry, one quick application is that given an <code>np.ndarray</code>, it's eeasy to get the index of the maximal value in that array :</p>
 
 </div>
 </div>
@@ -154,7 +160,71 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s">'input ndarray'</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s">'index of maximal value = '</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s">' and we verify that '</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">'='</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>input ndarray [[[ 4  3]
+  [19  7]
+  [ 1 13]]
+
+ [[ 6 12]
+  [14  0]
+  [16 11]]
+
+ [[15 17]
+  [20 22]
+  [ 9  5]]
+
+ [[ 8 18]
+  [23 21]
+  [10  2]]]
+index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's unwrap how we found such an easy solution...</p>
+<!-- TEASER_END -->
+
+<p>Let's first initialize the notebook with all we need, <code>numpy</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
     </div>
@@ -167,18 +237,17 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's first a dummy 3-D array:</p>
+<p>To work out on "real-like" data, let's first define a dummy 3-D array:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
@@ -197,21 +266,21 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[[20  6]
-  [23 18]
-  [ 0  5]]
+<pre>[[[19 17]
+  [ 8 16]
+  [11  7]]
 
- [[10  3]
-  [13  1]
-  [11  8]]
+ [[ 3 10]
+  [23  1]
+  [ 0 15]]
 
- [[21  7]
-  [22 14]
-  [19 12]]
+ [[12 13]
+  [ 9 20]
+  [ 4 18]]
 
- [[17  9]
-  [ 2 15]
-  [16  4]]]
+ [[ 2 21]
+  [22  6]
+  [ 5 14]]]
 </pre>
 </div>
 </div>
@@ -225,17 +294,18 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Which we can represent as a 1-d array (a vector):</p>
+<p>We wish to find the indices of the sorted values of this matrix. For this, we will use the <code>np.argsort</code> function which operates on 1-D vectors.</p>
+<p>Indeed, we can represent as a 1-d array (a vector):</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -252,7 +322,7 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[20  6 23 18  0  5 10  3 13  1 11  8 21  7 22 14 19 12 17  9  2 15 16  4]
+<pre>[19 17  8 16 11  7  3 10 23  1  0 15 12 13  9 20  4 18  2 21 22  6  5 14]
 </pre>
 </div>
 </div>
@@ -273,10 +343,10 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()))</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -293,7 +363,7 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 4  9 20  7 23  5  1 13 11 19  6 10 17  8 15 21 22 18  3 16  0 12 14  2]
+<pre>[10  9 18  6 16 22 21  5  2 14  7  4 12 13 23 11  3  1 17  0 15 19 20  8]
 </pre>
 </div>
 </div>
@@ -314,10 +384,10 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())])</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())])</span>
 </pre></div>
 
     </div>
@@ -348,17 +418,17 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To go back to the <code>nd-array</code>, we use the <code>unraval_index</code> function:</p>
+<p>To go back to the coordinates of the initial <code>np.ndarray</code>, we use the <code>unraval_index</code> function:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -375,10 +445,10 @@ Let's suppose it is represented as a nd-array (here, I further suppose you are u
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on built-in function unravel_index in module numpy.core.multiarray:
+<pre>Help on built-in function unravel_index in module numpy:
 
 unravel_index(...)
-    unravel_index(indices, dims, order='C')
+    unravel_index(indices, shape, order='C')
     
     Converts a flat index or array of flat indices into a tuple
     of coordinate arrays.
@@ -387,10 +457,14 @@ unravel_index(...)
     ----------
     indices : array_like
         An integer array whose elements are indices into the flattened
-        version of an array of dimensions ``dims``. Before version 1.6.0,
+        version of an array of dimensions ``shape``. Before version 1.6.0,
         this function accepted just one index value.
-    dims : tuple of ints
+    shape : tuple of ints
         The shape of the array to use for unraveling ``indices``.
+    
+        .. versionchanged:: 1.16.0
+            Renamed from ``dims`` to ``shape``.
+    
     order : {'C', 'F'}, optional
         Determines whether the indices should be viewed as indexing in
         row-major (C-style) or column-major (Fortran-style) order.
@@ -427,10 +501,10 @@ unravel_index(...)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -447,10 +521,10 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(array([0, 1, 3, 1, 3, 0, 0, 2, 1, 3, 1, 1, 2, 1, 2, 3, 3, 3, 0, 2, 0, 2, 2,
-       0]), array([2, 1, 1, 0, 2, 2, 0, 0, 2, 0, 0, 2, 2, 1, 1, 1, 2, 0, 1, 2, 0, 0, 1,
-       1]), array([0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0,
-       0]))
+<pre>(array([1, 1, 3, 1, 2, 3, 3, 0, 0, 2, 1, 0, 2, 2, 3, 1, 0, 0, 2, 0, 2, 3,
+       3, 1]), array([2, 1, 0, 0, 2, 2, 1, 2, 1, 1, 0, 2, 0, 0, 2, 2, 1, 0, 2, 0, 1, 0,
+       1, 1]), array([0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1,
+       0, 0]))
 </pre>
 </div>
 </div>
@@ -464,17 +538,17 @@ unravel_index(...)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Such that we can now sort the whole array from the lowest to highest index:</p>
+<p>Such that we can now sort the whole array from the lowest to highest index. We verify that:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)])</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -505,17 +579,17 @@ unravel_index(...)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now pick just the <code>datapoints</code> extremal values of interest :</p>
+<p>Some applications: We can now pick just the <code>datapoints</code> extremal values of interest :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datapoints</span> <span class="o">=</span> <span class="mi">10</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">datapoints</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
@@ -533,7 +607,7 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(array([0, 1, 3, 1, 3, 0, 0, 2, 1, 3]), array([2, 1, 1, 0, 2, 2, 0, 0, 2, 0]), array([0, 1, 0, 1, 1, 1, 1, 1, 1, 1]))
+<pre>(array([1, 1, 3, 1, 2, 3, 3, 0, 0, 2]), array([2, 1, 0, 0, 2, 2, 1, 2, 1, 1]), array([0, 1, 0, 0, 0, 0, 1, 1, 0, 0]))
 </pre>
 </div>
 </div>
@@ -554,10 +628,10 @@ unravel_index(...)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
@@ -575,21 +649,21 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[[ 0.43933303  0.35481207]
-  [ 0.04459993  0.65894333]
-  [ 0.68128816  0.6476884 ]]
+<pre>[[[0.06834601 0.60352804]
+  [0.60561573 0.77685711]
+  [0.19118084 0.2985651 ]]
 
- [[ 0.45980888  0.79537777]
-  [ 0.85516965  0.95558241]
-  [ 0.26402052  0.25199538]]
+ [[0.91722699 0.99373095]
+  [0.50057943 0.50154522]
+  [0.39299099 0.43339377]]
 
- [[ 0.75092699  0.88245315]
-  [ 0.39587322  0.69577732]
-  [ 0.97255091  0.26780385]]
+ [[0.97056531 0.00931049]
+  [0.95539077 0.44781701]
+  [0.87493581 0.93165374]]
 
- [[ 0.45577996  0.49798838]
-  [ 0.36976289  0.32772751]
-  [ 0.28368218  0.85828921]]]
+ [[0.0136503  0.41497518]
+  [0.46685109 0.86126145]
+  [0.60488443 0.1447974 ]]]
 </pre>
 </div>
 </div>
@@ -610,10 +684,10 @@ unravel_index(...)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -630,7 +704,7 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(array([0, 1, 1, 2, 3, 3, 0, 3, 2, 0]), array([1, 2, 2, 2, 2, 1, 0, 1, 1, 0]), array([0, 1, 0, 1, 0, 1, 1, 0, 0, 0]))
+<pre>(array([2, 3, 0, 3, 0, 0, 1, 3, 1, 2]), array([0, 0, 0, 2, 2, 2, 2, 0, 2, 1]), array([1, 0, 0, 1, 0, 1, 0, 1, 1, 1]))
 </pre>
 </div>
 </div>
@@ -651,10 +725,10 @@ unravel_index(...)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)])</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -671,8 +745,8 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 0.04459993  0.25199538  0.26402052  0.26780385  0.28368218  0.32772751
-  0.35481207  0.36976289  0.39587322  0.43933303]
+<pre>[0.00931049 0.0136503  0.06834601 0.1447974  0.19118084 0.2985651
+ 0.39299099 0.41497518 0.43339377 0.44781701]
 </pre>
 </div>
 </div>
@@ -693,10 +767,10 @@ unravel_index(...)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[:</span><span class="n">datapoints</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -713,7 +787,49 @@ unravel_index(...)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(array([2, 1, 2, 3, 1, 1, 2, 2, 0, 0]), array([2, 1, 0, 2, 1, 0, 0, 1, 2, 1]), array([0, 1, 1, 1, 0, 1, 0, 1, 0, 1]))
+<pre>(array([1, 2, 2, 2, 1, 2, 3, 0, 0, 3]), array([0, 0, 1, 2, 0, 2, 1, 1, 1, 2]), array([1, 0, 0, 1, 0, 0, 1, 1, 0, 0]))
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another application: Get the index of the maximal value of an array :</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s">'index of maximal value = '</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s">' and we verify that '</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">'='</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>index of maximal value =  (1, 0, 1)  and we verify that  0.9937309474909091 = 0.9937309474909091
 </pre>
 </div>
 </div>
