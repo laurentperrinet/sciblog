@@ -119,11 +119,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2019-03-15T09:34:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2019-02-26T23:00:00Z</lastmod>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -172,6 +172,10 @@
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/code.html</loc>
   <lastmod>2019-02-26T21:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/compounds.html</loc>
+  <lastmod>2019-03-29T11:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/computationalneuroscience.html</loc>
@@ -283,7 +287,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-detection.html</loc>
-  <lastmod>2019-02-26T21:39:00Z</lastmod>
+  <lastmod>2019-03-29T11:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-particles.html</loc>
@@ -295,7 +299,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2019-03-14T12:47:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -375,7 +379,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.html</loc>
-  <lastmod>2019-02-26T21:39:00Z</lastmod>
+  <lastmod>2019-03-29T11:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/public.html</loc>
@@ -399,7 +403,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
-  <lastmod>2019-02-26T21:39:00Z</lastmod>
+  <lastmod>2019-03-29T11:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.html</loc>
@@ -432,6 +436,10 @@
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparseedges.html</loc>
   <lastmod>2019-02-26T21:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/speed.html</loc>
+  <lastmod>2019-03-29T11:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ssh.html</loc>
@@ -627,7 +635,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2019-02-26T21:41:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -1575,7 +1583,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-03-27-extending-olshausens-classical-sparsenet.html</loc>
-  <lastmod>2019-02-26T21:42:00Z</lastmod>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-03-29-testing-comps-fastpcum.html</loc>
@@ -1590,8 +1598,12 @@
   <lastmod>2019-02-26T21:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2017-04-10-manipulating-speed-in-motion-clouds.html</loc>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html</loc>
-  <lastmod>2019-02-26T21:42:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-06-15-le-jeu-de-lurne.html</loc>
@@ -1655,11 +1667,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-13-sparse-coding-using-fista.html</loc>
-  <lastmod>2019-03-15T09:35:00Z</lastmod>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</loc>
-  <lastmod>2019-03-15T09:34:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</loc>

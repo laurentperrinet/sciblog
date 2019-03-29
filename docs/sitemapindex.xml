@@ -54,6 +54,10 @@
   <lastmod>2019-02-26T21:43:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/compounds.xml</loc>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/computationalneuroscience.xml</loc>
   <lastmod>2019-02-26T21:42:00Z</lastmod>
  </sitemap>
@@ -159,7 +163,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-detection.xml</loc>
-  <lastmod>2019-02-26T21:43:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-particles.xml</loc>
@@ -171,7 +175,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.xml</loc>
-  <lastmod>2019-03-14T12:47:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
@@ -251,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.xml</loc>
-  <lastmod>2019-02-26T21:43:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/public.xml</loc>
@@ -275,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.xml</loc>
-  <lastmod>2019-02-26T21:43:00Z</lastmod>
+  <lastmod>2019-03-29T11:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.xml</loc>
@@ -308,6 +312,10 @@
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparseedges.xml</loc>
   <lastmod>2019-02-26T21:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/speed.xml</loc>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ssh.xml</loc>
@@ -395,10 +403,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2019-03-15T09:35:00Z</lastmod>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2019-03-15T09:35:00Z</lastmod>
+  <lastmod>2019-03-29T11:25:00Z</lastmod>
  </sitemap>
 </sitemapindex>
