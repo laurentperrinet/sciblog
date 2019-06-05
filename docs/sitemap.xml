@@ -119,7 +119,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2019-06-05T19:00:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -199,7 +199,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/elasticite.html</loc>
-  <lastmod>2019-06-05T18:46:00Z</lastmod>
+  <lastmod>2019-06-05T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/experiment.html</loc>
@@ -331,7 +331,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/notebook.html</loc>
-  <lastmod>2019-06-05T18:46:00Z</lastmod>
+  <lastmod>2019-06-05T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.html</loc>
@@ -395,7 +395,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2019-06-05T18:46:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
@@ -635,7 +635,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2019-06-05T19:00:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -1447,7 +1447,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.html</loc>
-  <lastmod>2019-06-05T18:46:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-02-elasticite-expansion-en-miroir-principes.html</loc>
@@ -1458,8 +1458,12 @@
   <lastmod>2019-02-26T21:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.html</loc>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-26-elasticite-scenario-vague.html</loc>
-  <lastmod>2019-06-05T18:46:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-27-elasticite-geometrie.html</loc>
@@ -1663,11 +1667,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-13-sparse-coding-using-fista.html</loc>
-  <lastmod>2019-06-05T19:00:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</loc>
-  <lastmod>2019-06-05T19:00:00Z</lastmod>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</loc>
