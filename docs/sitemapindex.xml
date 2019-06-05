@@ -79,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/elasticite.xml</loc>
-  <lastmod>2019-02-26T21:43:00Z</lastmod>
+  <lastmod>2019-06-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/experiment.xml</loc>
@@ -207,7 +207,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/notebook.xml</loc>
-  <lastmod>2019-02-26T21:43:00Z</lastmod>
+  <lastmod>2019-06-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.xml</loc>
@@ -271,7 +271,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2019-04-02T15:09:00Z</lastmod>
+  <lastmod>2019-06-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -403,10 +403,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2019-04-03T10:43:00Z</lastmod>
+  <lastmod>2019-06-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2019-04-03T10:43:00Z</lastmod>
+  <lastmod>2019-06-05T18:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>
