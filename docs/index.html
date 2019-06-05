@@ -32,7 +32,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2019-01-30__smooth-transition-between-mcs.html" type="text/html">
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2019-05-28_MainenSejnowski1995.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -194,7 +194,38 @@ this will be exposed in the following book chapter (see also https://laurentperr
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-01-30__smooth-transition-between-mcs.html" class="u-url">Generating textures with different complexities</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-05-28_MainenSejnowski1995.html" class="u-url">Mainen &amp; Sejnowski, 1995</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2019-05-28_MainenSejnowski1995.html" rel="bookmark">
+            <time class="published dt-published" datetime="2019-05-28T10:06:52+02:00" itemprop="datePublished" title="2019-05-28 10:06">2019-05-28 10:06</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2019-05-28_MainenSejnowski1995.html#disqus_thread" data-disqus-identifier="cache/posts/2019-05-28_MainenSejnowski1995.html">Comments</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this notebook, we will go from the learning numpy and matplotlib to our first neural simulator. As a case study, we will use the work from <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.299.8560&amp;rep=rep1&amp;type=pdf">Mainen &amp; Sejnowski (1995)</a>. The rest of this post is in french.</p>
+<p>Le but ici de cette première tache est de créer un "raster plot" qui montre la reproducibilité d'un train de spike avec des répétitions du même stimulus. E, particulier, nous allons essayer de répliquer la figure 1 de <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.299.8560&amp;rep=rep1&amp;type=pdf">Mainen &amp; Sejnowski (1995)</a>.</p>
+<p>Ce notebook a été élaboré lors d'un TP dans le cadre de la <a href="https://licencesh.hypotheses.org/">licence Sciences &amp; Humanités</a>.
+</p>
+<p class="more"><a href="posts/2019-05-28_MainenSejnowski1995.html">Read more…</a></p>
+</div>
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-01-30__smooth-transition-between-mcs.html" class="u-url">Generating textures with different complexities</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
@@ -2001,12 +2032,12 @@ Solution: ImageMagick.</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s">'input ndarray'</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'input ndarray'</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">()),</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s">'index of maximal value = '</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s">' and we verify that '</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s">'='</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'index of maximal value = '</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s1">' and we verify that '</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -4165,9 +4196,13 @@ git remote -v
 <p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
 </li>
 <li><dl class="first docutils">
-<dt>I will base things on <a class="reference external" href="posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,</dt>
+<dt>I will base things on <a href="posts/2014-11-12-homebrew-cask-updating-a-cask.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,</dt>
 <dd>
-<p class="first last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
+<div class="first system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 4); <em><a href="posts/2014-11-12-homebrew-cask-updating-a-cask.html#id2">backlink</a></em></p>
+<p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
+</div>
+<p class="last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
 </dd>
 </dl></li>
 <li>
@@ -5743,13 +5778,13 @@ npm install -g less
 </div>
 <p>I have managed to install Nikola, and build a site using it using this code:</p>
 <p><a class="reference external" href="listings/install-nikola.sh.html">install-nikola.sh</a>  <a class="reference external" href="listings/install-nikola.sh">(Source)</a></p>
-<pre class="code bash"><a name="rest_code_6c2a7394239e4526906c85dade4713ce-1"></a>git clone git://github.com/getnikola/nikola.git
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-2"></a><span class="nb">cd</span> nikola
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-3"></a>pip install -r requirements-full.txt
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-4"></a>pip install .
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-5"></a>nikola init --demo invibe
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-6"></a>nikola build
-<a name="rest_code_6c2a7394239e4526906c85dade4713ce-7"></a>nikola serve
+<pre class="code bash"><a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-1"></a>git clone git://github.com/getnikola/nikola.git
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-2"></a><span class="nb">cd</span> nikola
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-3"></a>pip install -r requirements-full.txt
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-4"></a>pip install .
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-5"></a>nikola init --demo invibe
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-6"></a>nikola build
+<a name="rest_code_07bc9c44f2d94af1bec62c3d4b0bf11d-7"></a>nikola serve
 </pre>
 <p>Pretty simple, congratulations to the developpers!</p>
 <p>More info:</p>
@@ -5808,8 +5843,12 @@ npm install -g less
                     <div>
 <ul>
 <li>
-<p class="first">I mistyped <a class="reference external" href="posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">my contribution</a>,
+<p class="first">I mistyped <a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,
 so I have to modify my pull request</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 2); <em><a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id2">backlink</a></em></p>
+<p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
+</div>
 </li>
 <li>
 <p class="first">set-up variables</p>
