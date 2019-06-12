@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2019-05-28T12:03:00Z</lastmod>
+  <lastmod>2019-06-06T10:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html</loc>
@@ -119,11 +119,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2019-05-28T12:10:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2019-05-28T12:03:00Z</lastmod>
+  <lastmod>2019-06-06T10:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -135,7 +135,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/area-v1.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/art.html</loc>
@@ -155,11 +155,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2019-05-28T12:08:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/cloud.html</loc>
@@ -191,15 +191,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/deep-learning.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/demo.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/elasticite.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-12T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/experiment.html</loc>
@@ -223,11 +223,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/holoviews.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/homebrew.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/illusion.html</loc>
@@ -243,11 +243,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/interactive.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ipython.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/latex.html</loc>
@@ -255,7 +255,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/learning.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/loggabor.html</loc>
@@ -263,11 +263,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/machine-learning.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/matching-pursuit.html</loc>
@@ -287,7 +287,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-detection.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion-particles.html</loc>
@@ -299,7 +299,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -315,7 +315,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neural.html</loc>
-  <lastmod>2019-05-28T12:04:00Z</lastmod>
+  <lastmod>2019-06-12T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neuralensemble.html</loc>
@@ -327,15 +327,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/nikola.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/notebook.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-12T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/obv1.html</loc>
@@ -343,7 +343,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2019-05-28T12:08:00Z</lastmod>
+  <lastmod>2019-06-12T14:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -363,7 +363,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/povray.html</loc>
@@ -379,7 +379,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/public.html</loc>
@@ -391,15 +391,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pynn.html</loc>
-  <lastmod>2019-05-28T12:06:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
-  <lastmod>2019-05-28T11:59:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
@@ -419,7 +419,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shl_scripts.html</loc>
@@ -635,7 +635,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -759,7 +759,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2010-04-08-Comment-creer-et-manipuler-les-donnees-scientifiques-autour-de-Numpy.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2010-04-24-Richard-Dawkins-on-our-queer-universe.html</loc>
@@ -1103,7 +1103,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-02-04-WP5-Year-2-report-contribution-of-CNRS-INT-%28Institut-de-Neurosciences-de-la-Timone%29.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-02-20-removing-files-based-on-their-date.html</loc>
@@ -1147,11 +1147,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-12-craac.html</loc>
@@ -1163,7 +1163,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-01-04-bootstrapping-nikola.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-01-14-trying-out-ipython-blogging.html</loc>
@@ -1283,11 +1283,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-11-10_reverse-phi-and-asymmetry-of-on-and-off-responses.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-11-12-homebrew-cask-updating-a-cask.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-11-15-reading-kml-my-tracks-files-in-ipython.html</loc>
@@ -1355,7 +1355,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-02-25-saving-files-in-holoviews.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-02-26-elastic-grids-of-edges.html</loc>
@@ -1447,7 +1447,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-02-elasticite-expansion-en-miroir-exploration-parametres.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-02-elasticite-expansion-en-miroir-principes.html</loc>
@@ -1458,8 +1458,12 @@
   <lastmod>2019-05-28T12:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-17-elasticite-expansion-en-miroir-dynamique-dun-point-focal.html</loc>
+  <lastmod>2019-06-05T19:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-26-elasticite-scenario-vague.html</loc>
-  <lastmod>2019-05-28T12:01:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2015-11-27-elasticite-geometrie.html</loc>
@@ -1523,7 +1527,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html</loc>
-  <lastmod>2019-05-28T12:03:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-07-16-predictive-coding-of-motion-in-an-aperture.html</loc>
@@ -1547,7 +1551,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html</loc>
-  <lastmod>2019-05-28T12:03:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2016-11-24-using-generators-in-python.html</loc>
@@ -1639,7 +1643,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html</loc>
@@ -1663,11 +1667,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-13-sparse-coding-using-fista.html</loc>
-  <lastmod>2019-05-28T12:10:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</loc>
-  <lastmod>2019-05-28T12:10:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</loc>
@@ -1675,11 +1679,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2019-05-28_MainenSejnowski1995.html</loc>
-  <lastmod>2019-05-28T12:06:00Z</lastmod>
+  <lastmod>2019-06-12T14:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T10:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>
@@ -1691,15 +1695,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/charts.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/creating-a-theme.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/extending.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/internals.html</loc>
@@ -1715,7 +1719,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/social_buttons.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/theming.html</loc>
@@ -1723,6 +1727,6 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/upgrading-to-v6.html</loc>
-  <lastmod>2019-05-28T12:02:00Z</lastmod>
+  <lastmod>2019-06-06T07:26:00Z</lastmod>
  </url>
 </urlset>
