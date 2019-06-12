@@ -79,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/elasticite.xml</loc>
-  <lastmod>2019-06-12T15:27:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/experiment.xml</loc>
@@ -155,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/math.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/matlab.xml</loc>
@@ -195,7 +195,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neural.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neuralensemble.xml</loc>
@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/notebook.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.xml</loc>
@@ -231,7 +231,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/orientation.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/oss.xml</loc>
@@ -275,7 +275,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2019-06-12T15:27:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -311,7 +311,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparse.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparseedges.xml</loc>
@@ -367,7 +367,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/v1.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vim.xml</loc>
@@ -407,10 +407,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2019-06-12T19:16:00Z</lastmod>
+  <lastmod>2019-06-12T20:52:00Z</lastmod>
  </sitemap>
 </sitemapindex>
