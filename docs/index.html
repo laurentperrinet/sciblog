@@ -482,7 +482,7 @@ I discovered it is possible to do that in the <a class="reference external" href
 <li>between switches, there is some coherence in amplitude (a component will slowly change its energy) but also in time (a component is more likely to have a ghradually changing oriantation, for instance when the scene rotates).</li>
 </ul>
 <p>This structure is specific to the structure of natural images and to the way they transform (translations, rotations, zooms due to the motion and deformation of visual objects). This is certainly incorporated as a "prior" information in the structure of the visual cortex. As to know how and where this is implemented is an open scientific question.</p>
-<p>This is joint work with <a href="https://invibe.net/LaurentPerrinet/HugoLadret">Hugo Ladret</a>.
+<p>This is joint work with <a href="https://laurentperrinet.github.io/authors/hugo-ladret">Hugo Ladret</a>.
 </p>
 <p class="more"><a href="posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html">Read more…</a></p>
 </div>
@@ -971,7 +971,7 @@ $$
 $$<p>This is implemented in the folowing <a href="https://github.com/NeuralEnsemble/MotionClouds/blob/79939f447c45c8a400d93735cca4fe498193be59/MotionClouds/MotionClouds.py#L206">code</a> which reads:</p>
 <div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">f_radius</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">f_radius</span><span class="o">/</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sf_0</span><span class="o">+</span><span class="n">B_sf</span><span class="p">)</span><span class="o">/</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
-<p>However the one implemented in the code looks different (thanks to <a href="https://invibe.net/LaurentPerrinet/KianaMansourPour">Kiana</a> for spotting this!), so that one can think that the code is using:</p>
+<p>However the one implemented in the code looks different (thanks to <a href="https://laurentperrinet.github.io/authors/kiana-mansour-pour/">Kiana</a> for spotting this!), so that one can think that the code is using:</p>
 $$
 \mathcal{E}(f; sf_0, B_{sf}) \propto \frac {1}{f} \cdot \exp \left( -.5 \frac {\log( \frac{f}{sf_0} ) ^2} {\log(( 1 + \frac {B_sf}{sf_0} )^2 ) } \right)
 $$<p>The difference is minimal, yet very important for a correct definition of the bandwidth!</p>
