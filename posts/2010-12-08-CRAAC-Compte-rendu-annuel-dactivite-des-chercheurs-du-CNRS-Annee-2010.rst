@@ -184,13 +184,11 @@ lecture**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Référence                                                                                                                                                                                                                                                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, and Guillaume S. Masson. Pursuing motion illusions: a realistic oculomotor framework for bayesian inference. Vision Research, (In press), 2010. `https://invibe.net/LaurentPerrinet/Publications/Bogadhi10 <https://invibe.net/LaurentPerrinet/Publications/Bogadhi10>`__                          |
+| Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, and Guillaume S. Masson. Pursuing motion illusions: a realistic oculomotor framework for bayesian inference. Vision Research, (In press), 2010. `https://laurentperrinet.github.io/publication/bogadhi-10 <https://laurentperrinet.github.io/publication/bogadhi-10>`__                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Emmanuel Daucé and Laurent Perrinet. Computational neuroscience, from multiple levels to multi-level. Journal of Physiology (Paris), 104(1-2):1-4, 2010. `https://invibe.net/LaurentPerrinet/Publications/Daucé10 <https://invibe.net/LaurentPerrinet/Publications/Daucé10>`__                                                                                                |
+| Emmanuel Daucé and Laurent Perrinet. Computational neuroscience, from multiple levels to multi-level. Journal of Physiology (Paris), 104(1-2):1-4, 2010. `https://laurentperrinet.github.io/publication/dauce-10 <https://laurentperrinet.github.io/publication/dauce-10>`__                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Jens Kremkow, Laurent U. Perrinet, Guillaume S. Masson, and Ad Aertsen. Functional consequences of correlated excitatory and inhibitory conductances in cortical networks. Journal of Computational Neuroscience, 28(3):579-94, jun 2010. `https://laurentperrinet.github.io/publication/kremkow-10jcns <https://laurentperrinet.github.io/publication/kremkow-10jcns>`__   |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Khaled Masmoudi, Marc Antonini, Pierre Kornprobst, and Laurent Perrinet. A novel bio-inspired static image compression scheme for noisy data transmission over low-bandwidth channels. In ICASSP 2010, Paper #2894, 2010. `https://invibe.net/LaurentPerrinet/Publications/Masmoudi10 <https://invibe.net/LaurentPerrinet/Publications/Masmoudi10>`__                         |
+| Jens Kremkow, Laurent U. Perrinet, Guillaume S. Masson, and Ad Aertsen. Functional consequences of correlated excitatory and inhibitory conductances in cortical networks. Journal of Computational Neuroscience, 28(3):579-94, jun 2010. `https://laurentperrinet.github.io/publication/kremkow-10-jcns <https://laurentperrinet.github.io/publication/kremkow-10jcns>`__   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Laurent Perrinet. Role of homeostasis in learning sparse representations. Neural Computation 2010 22 7 1812-36                                                                                                                                                                                                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -282,7 +280,7 @@ par Laurent Perrinet and Guillaume S. Masson.
 Manifestation
 
 From Mathematical Image Analysis to Neurogeometry of the Brain
-`https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk <https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
+`https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk <https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk>`__
 
 Type de manifestation
 
@@ -684,7 +682,7 @@ Type de participation
 Conférence/débat public
 
 Diffraction monochromatique, spectre audiographique
-`https://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParalleles <https://invibe.net/LaurentPerrinet/Presentations/10-04-14_OndesParallèles>`__
+`https://laurentperrinet.github.io/talk/2010-04-14-ondes-paralleles/ <https://laurentperrinet.github.io/talk/2010-04-14-ondes-paralleles>`__
 ponctuelle
 
 Exposition

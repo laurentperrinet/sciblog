@@ -53,8 +53,7 @@ method 2 : plistbuddy
 
        sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
 
--  this method use the `PlistBuddy <https://invibe.net/LaurentPerrinet/PlistBuddy>`__
-   method to read / write the file. this utility can be used
+-  this method uses the PlistBuddy method to read / write the file. this utility can be used
    interactively
 
    ::

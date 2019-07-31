@@ -94,5 +94,5 @@ networks implementing motion detection.
 
 
 
-.. |Role of motion-based prediction in motion extrapolation| image:: https://invibe.net/LaurentPerrinet/Publications/Khoei13jpp?action=AttachFile&do=get&target=khoei13jpp_RMSE-Blank.png
-   :target: /LaurentPerrinet/MotionPerception
+.. |Role of motion-based prediction in motion extrapolation| image:: https://laurentperrinet.github.io/publication/khoei-13-jpp/figure1.jpg
+   :target: https://laurentperrinet.github.io/publication/khoei-13-jpp/

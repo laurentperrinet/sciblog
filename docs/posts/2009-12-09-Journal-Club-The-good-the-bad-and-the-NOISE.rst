@@ -6,7 +6,7 @@
 
 
 -  I describe here different forms of
-   `MotionClouds <https://invibe.net/LaurentPerrinet/MotionClouds>`__
+   `MotionClouds <http://www.motionclouds.invibe.net/>`__
 
    .. TEASER_END
 

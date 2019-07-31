@@ -335,7 +335,7 @@ Intervention(s)
 Manifestation
 
 From Mathematical Image Analysis to Neurogeometry of the Brain
-`https://invibe.net/LaurentPerrinet/Presentations/10-12-17\_TaucTalk <https://invibe.net/LaurentPerrinet/Presentations/10-12-17_TaucTalk>`__
+`https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk <https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk>`__
 
 Type de manifestation
 
@@ -423,7 +423,7 @@ Intervention(s)
 
 | Demo 1, Task4: Implementation of models showing emergence of cortical
 | fields and maps,
-| `https://invibe.net/LaurentPerrinet/Presentations/11-10-05\_BrainScalesESS <https://invibe.net/LaurentPerrinet/Presentations/11-10-05_BrainScalesESS>`__
+| `https://laurentperrinet.github.io/talk/2011-10-05-brain-scales-ess/ <https://laurentperrinet.github.io/talk/2011-10-05-brain-scales-ess/>`__
 | par Laurent Perrinet
 |  Communication orale
 

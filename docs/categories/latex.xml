@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 12 Jun 2019 15:28:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Tikzmagic</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-01-20-using-tikzmagic.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 30 Jul 2019 09:54:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Tikzmagic</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-01-20-using-tikzmagic.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;TIKZ is a great language for producing vector graphics. It is however a bit tedious to go over the whole $\LaTeX$-like compilation when you get used to an ipython notebooks work-flow.&lt;/p&gt;
@@ -54,8 +54,7 @@ versions of your manuscript and issue&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2010-07-08-latex-within-moinmoin.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>latex</category><category>moinmoin</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2010-07-08-latex-within-moinmoin.html</guid><pubDate>Thu, 08 Jul 2010 11:36:57 GMT</pubDate></item><item><title>Creating Proceedings (almost) automatically using python and latex</title><link>https://laurentperrinet.github.io/sciblog/posts/2009-08-26-Creating-Proceedings-%28almost%29-automatically-using-python-and-latex.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;In order to produce proceedings for the
 &lt;a class="reference external" href="http://2008.neurocomp.fr"&gt;NeuroComp08&lt;/a&gt; that we organized, I used a
-combination of &lt;a class="reference external" href="https://invibe.net/LaurentPerrinet/UsingLaTeX"&gt;LaTeX&lt;/a&gt; and
-&lt;a class="reference external" href="https://invibe.net/LaurentPerrinet/ScientificPython"&gt;Python&lt;/a&gt; to generate a
+combination of LaTeX  and Python to generate a
 &lt;a class="reference external" href="http://2008.neurocomp.fr/neurocomp08proceedings.pdf"&gt;PDF&lt;/a&gt; from our
 preprint server based on &lt;a class="reference external" href="http://www.confmaster.net/"&gt;ConfMaster&lt;/a&gt;.
 This was due to the lack of an appropriate tool for this system and the

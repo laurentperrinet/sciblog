@@ -7,8 +7,7 @@
 
 In order to produce proceedings for the
 `NeuroComp08 <http://2008.neurocomp.fr>`__ that we organized, I used a
-combination of `LaTeX <https://invibe.net/LaurentPerrinet/UsingLaTeX>`__ and
-`Python <https://invibe.net/LaurentPerrinet/ScientificPython>`__ to generate a
+combination of LaTeX  and Python to generate a
 `PDF <http://2008.neurocomp.fr/neurocomp08proceedings.pdf>`__ from our
 preprint server based on `ConfMaster <http://www.confmaster.net/>`__.
 This was due to the lack of an appropriate tool for this system and the
