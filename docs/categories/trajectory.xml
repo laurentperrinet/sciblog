@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 12 Jun 2019 15:27:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Feature vs global motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 09 Sep 2019 07:16:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Feature vs global motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;As we see a visual scene, there is contribution of the motion of each of the objects that constitute the visual scene into detecting its global motion.
@@ -46,6 +46,7 @@ In particular, it is debatable to know which weight individual features, such as
 &lt;p&gt;Can you spot the motion ? from left to right or reversed ?&lt;/p&gt;
 &lt;p&gt;(For a more controlled test, imagine you fixate on the top left corner of each movie.)&lt;/p&gt;
 &lt;p&gt;(Upper row is coherent, lower row uncoherent / Left is &lt;code&gt;-&amp;gt;&lt;/code&gt; Right column is &lt;code&gt;&amp;lt;-&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;TODO: use a biomimetic camouflage such as in this &lt;a href="https://twitter.com/CoenCagli_Lab/status/1168565787818385408"&gt;video&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html"&gt;Read more…&lt;/a&gt; (12 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html</guid><pubDate>Tue, 13 Nov 2018 09:43:46 GMT</pubDate></item><item><title>Testing more complex trajectories</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
