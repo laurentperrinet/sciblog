@@ -25,7 +25,7 @@ MathJax.Hub.Config({
     }
 });
 </script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
-<link rel="prev" href="2018-12-23-origins-of-the-von-mises-distribution.html" title="2018-12-23 Origins of the Von Mises distribution" type="text/html">
+<link rel="prev" href="2018-12-23-origins-of-the-von-mises-distribution.html" title="Origins of the Von Mises distribution" type="text/html">
 <link rel="next" href="2019-05-28_MainenSejnowski1995.html" title="Mainen &amp; Sejnowski, 1995" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Generating textures with different complexities">
@@ -249,7 +249,7 @@ MathJax.Hub.Config({
 <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
     <span class="c1"># Generate a text clip. You can customize the font, color, etc.</span>
     <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="o">**</span><span class="n">txt_opts</span><span class="p">)</span>
-    <span class="c1"># Say that you want it to appear 10s at the center of the screen</span>
+    <span class="c1"># Say that you want it to appear 3s at the center of the screen</span>
     <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_start</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">+=</span> <span class="n">clip</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">duration</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
     <span class="n">clip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">txt_clip</span><span class="p">)</span>
@@ -427,7 +427,7 @@ Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="2018-12-23-origins-of-the-von-mises-distribution.html" rel="prev" title="2018-12-23 Origins of the Von Mises distribution">Previous post</a>
+                <a href="2018-12-23-origins-of-the-von-mises-distribution.html" rel="prev" title="Origins of the Von Mises distribution">Previous post</a>
             </li>
             <li class="next">
                 <a href="2019-05-28_MainenSejnowski1995.html" rel="next" title="Mainen &amp; Sejnowski, 1995">Next post</a>
