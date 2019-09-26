@@ -94,8 +94,16 @@
   <lastmod>2019-06-12T15:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/free-energy.xml</loc>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/gizeh.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/grand-public.xml</loc>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/hardlink.xml</loc>
@@ -123,11 +131,11 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/interactive.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ipython.xml</loc>
-  <lastmod>2019-06-12T15:27:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/latex.xml</loc>
@@ -183,7 +191,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/mytracks.xml</loc>
@@ -195,7 +203,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neural.xml</loc>
-  <lastmod>2019-07-30T09:33:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neuralensemble.xml</loc>
@@ -239,11 +247,11 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/outreach.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.xml</loc>
-  <lastmod>2019-06-12T15:28:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/povray.xml</loc>
@@ -275,7 +283,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2019-07-30T09:29:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -379,7 +387,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.xml</loc>
-  <lastmod>2019-07-29T21:25:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.xml</loc>
@@ -411,10 +419,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2019-09-16T09:03:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2019-09-16T09:03:00Z</lastmod>
+  <lastmod>2019-09-26T17:34:00Z</lastmod>
  </sitemap>
 </sitemapindex>
