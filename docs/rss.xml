@@ -9,94 +9,14 @@ Do not hesitate to comment!
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 27 Sep 2019 10:09:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2019-10-07 Neurostories: videos of my talk</title><link>https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 30 Sep 2019 10:44:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2019-10-07 Neurostories: videos of my talk</title><link>https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="page-in-construction,-please-do-not-look-if-you-are-not-adventureous-!!"&gt;page in construction, please do not look if you are not adventureous !!&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html#page-in-construction,-please-do-not-look-if-you-are-not-adventureous-!!"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Blah blah blah&lt;/p&gt;
-&lt;p&gt;Emphasis, aka italics, with &lt;em&gt;asterisks&lt;/em&gt; or &lt;em&gt;underscores&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Strong emphasis, aka bold, with &lt;strong&gt;asterisks&lt;/strong&gt; or &lt;strong&gt;underscores&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Combined emphasis with &lt;strong&gt;asterisks and &lt;em&gt;underscores&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Strikethrough uses two tildes. &lt;del&gt;Scratch this.&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.google.com"&gt;I'm an inline-style link&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.google.com" title="Google's Homepage"&gt;I'm an inline-style link with title&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.mozilla.org"&gt;I'm a reference-style link&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/blob/master/LICENSE"&gt;I'm a relative reference to a repository file&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://slashdot.org"&gt;You can use numbers for reference-style link definitions&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Or leave it empty and use the &lt;a href="http://www.reddit.com"&gt;link text itself&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;URLs and URLs in angle brackets will automatically get turned into links. 
-&lt;a href="http://www.example.com"&gt;http://www.example.com&lt;/a&gt; or &lt;a href="http://www.example.com"&gt;http://www.example.com&lt;/a&gt; and sometimes 
-example.com (but not on Github, for example).&lt;/p&gt;
-&lt;p&gt;Some text to show that the reference links can follow later.&lt;/p&gt;
-&lt;p&gt;Here's our logo (hover to see the title text):&lt;/p&gt;
-&lt;p&gt;Inline-style: 
-&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1"&gt;&lt;/p&gt;
-&lt;p&gt;Reference-style: 
-&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2"&gt;&lt;/p&gt;
-&lt;p&gt;Inline &lt;code&gt;code&lt;/code&gt; has &lt;code&gt;back-ticks around&lt;/code&gt; it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"JavaScript syntax highlighting"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Python syntax highlighting"&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="page-in-construction,-please-do-not-look-if-you-are-not-adventureous-!!"&gt;page in construction, please do not look if you are not adventureous !!&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html#page-in-construction,-please-do-not-look-if-you-are-not-adventureous-!!"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;a href="https://laurentperrinet.github.io/post/2019-10-07_neurostories"&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2019-09-30_clock.mp4" width="61.8%/"&gt;&lt;/video&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;br&gt;
 
-&lt;pre&gt;&lt;code&gt;No language indicated, so no syntax highlighting. 
-But let's throw in a &amp;lt;b&amp;gt;tag&amp;lt;/b&amp;gt;.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Colons can be used to align columns.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;Tables&lt;/th&gt;
-&lt;th style="text-align:center"&gt;Are&lt;/th&gt;
-&lt;th style="text-align:right"&gt;Cool&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;col 3 is&lt;/td&gt;
-&lt;td style="text-align:center"&gt;right-aligned&lt;/td&gt;
-&lt;td style="text-align:right"&gt;$1600&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;col 2 is&lt;/td&gt;
-&lt;td style="text-align:center"&gt;centered&lt;/td&gt;
-&lt;td style="text-align:right"&gt;$12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;zebra stripes&lt;/td&gt;
-&lt;td style="text-align:center"&gt;are neat&lt;/td&gt;
-&lt;td style="text-align:right"&gt;$1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;Markdown&lt;/th&gt;
-&lt;th&gt;Less&lt;/th&gt;
-&lt;th&gt;Pretty&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;Still&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;renders&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;nicely&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;blockquote&gt;&lt;p&gt;Blockquotes are very handy in email to emulate reply text.
-This line is part of the same quote.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Quote break.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can &lt;em&gt;put&lt;/em&gt; &lt;strong&gt;Markdown&lt;/strong&gt; into a blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
+
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html"&gt;Read more…&lt;/a&gt; (8 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Free Energy</category><category>grand-public</category><category>moviepy</category><category>neural</category><category>outreach</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2019-10-07-neurostories-videos-of-my-talk.html</guid><pubDate>Thu, 26 Sep 2019 14:29:36 GMT</pubDate></item><item><title>Video abstract for "An Adaptive Homeostatic Algorithm for the Unsupervised Learning of Visual Features"</title><link>https://laurentperrinet.github.io/sciblog/posts/2019-09-11_video-abstract-vision.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
