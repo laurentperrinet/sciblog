@@ -231,7 +231,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.xml</loc>
-  <lastmod>2019-07-30T09:33:00Z</lastmod>
+  <lastmod>2019-11-19T13:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.xml</loc>
@@ -308,6 +308,10 @@
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.xml</loc>
   <lastmod>2019-07-30T09:29:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/shell.xml</loc>
+  <lastmod>2019-11-19T13:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shl_scripts.xml</loc>
@@ -419,10 +423,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
+  <lastmod>2019-11-19T13:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2019-11-14T09:51:00Z</lastmod>
+  <lastmod>2019-11-19T13:55:00Z</lastmod>
  </sitemap>
 </sitemapindex>

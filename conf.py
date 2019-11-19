@@ -226,6 +226,7 @@ TIMEZONE = "Europe/Paris"
 POSTS = (
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.rst4", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
@@ -233,7 +234,8 @@ POSTS = (
 PAGES = (
     ("stories/*.ipynb", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
-    ("stories/*.rst", "stories", "story.tmpl"),
+    ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.md", "stories", "story.tmpl"),
     ("stories/*.html", "stories", "story.tmpl"),
 )
 
