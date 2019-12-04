@@ -32,7 +32,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html" type="text/html">
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -195,7 +195,59 @@ this will be exposed in the following book chapter (see also https://laurentperr
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html" class="u-url">2019-11-19 converting a bunch of files in a few lines</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html" class="u-url">2019-11-28 role of gamma correction in Sparse coding</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html" rel="bookmark">
+            <time class="published dt-published" datetime="2019-11-28T12:46:24+01:00" itemprop="datePublished" title="2019-11-28 12:46">2019-11-28 12:46</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html#disqus_thread" data-disqus-identifier="cache/posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html">Comments</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have previously shown a <a href="https://github.com/bicv/SparseEdges">python implementation</a> which allows for the extraction a sparse set of edges from an image:</p>
+<p><br></p>
+<p></p>
+<center><video controls autoplay loop src="files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/MPtutorial_rec.mp4" width="61.8%/"></video></center>
+<br><ul>
+<li>this is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nc">@inbook</span><span class="p">{</span><span class="nl">Perrinet15bicv</span><span class="p">,</span>
+    <span class="na">title</span> <span class="p">=</span> <span class="s">{Sparse models}</span><span class="p">,</span>
+    <span class="na">author</span> <span class="p">=</span> <span class="s">{Perrinet, Laurent U.}</span><span class="p">,</span>
+    <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Biologically-inspired Computer Vision}</span><span class="p">,</span>
+    <span class="na">chapter</span> <span class="p">=</span> <span class="s">{13}</span><span class="p">,</span>
+    <span class="na">editor</span> <span class="p">=</span> <span class="s">{Keil, Matthias and Crist\'{o}bal, Gabriel and Perrinet, Laurent U.}</span><span class="p">,</span>
+    <span class="na">publisher</span> <span class="p">=</span> <span class="s">{Wiley, New-York}</span><span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
+<span class="p">}</span>
+</pre></div>
+<ul>
+<li>
+<p>We were using the raw luminance as the input to the algorithm. What happens if you use <a href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction</a>?</p>
+</li>
+<li>
+<p>Results : for this particular image, we checked that using the luminance ($\gamma \approx 1$) is the correct choice. This may not be the case for other types of images which would justify an image-by-image local gain control.</p>
+</li>
+</ul>
+<p class="more"><a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html">Read more…</a></p>
+</div>
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html" class="u-url">2019-11-19 converting a bunch of files in a few lines</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
@@ -7880,30 +7932,6 @@ disable the Caps Lock key, pull down the associated menu and select
 <tt class="docutils literal">NoAction</tt>.</li>
 </ol>
 <p class="more"><a href="posts/2010-12-20-Caps-Lock-what-a-useless-key.html">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2010-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html" class="u-url">CRAAC: Compte rendu annuel d'activité des chercheurs du CNRS. Année 2010</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/2010-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html" rel="bookmark">
-            <time class="published dt-published" datetime="2010-12-08T13:36:57+01:00" itemprop="datePublished" title="2010-12-08 13:36">2010-12-08 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="posts/2010-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html#disqus_thread" data-disqus-identifier="cache/posts/2010-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>2010-12-08 10:56:10</p>
-<p><img alt="https://crac.dsi.cnrs.fr/image/logo_cnrs.gif" src="https://crac.dsi.cnrs.fr/image/logo_cnrs.gif"></p>
-<p><strong>Compte rendu annuel d'activité des chercheurs du CNRS Année 2009 - 2010</strong></p>
-<p class="more"><a href="posts/2010-12-08-CRAAC-Compte-rendu-annuel-dactivite-des-chercheurs-du-CNRS-Annee-2010.html">Read more…</a></p>
 </div>
                 </div>
             </article>
