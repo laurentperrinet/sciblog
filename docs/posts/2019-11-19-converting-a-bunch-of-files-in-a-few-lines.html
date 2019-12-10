@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2019-11-19 converting a bunch of files in a few lines | Scientific logbook</title>
+<title>Converting a bunch of files in a few lines | Scientific logbook</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -25,10 +25,10 @@ MathJax.Hub.Config({
     }
 });
 </script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
-<link rel="prev" href="2019-10-07-neurostories-videos-of-my-talk.html" title="2019-10-07 Neurostories: creating videos of the flash-lag effect" type="text/html">
-<link rel="next" href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" title="2019-11-28 role of gamma correction in Sparse coding" type="text/html">
+<link rel="prev" href="2019-10-07-neurostories-videos-of-my-talk.html" title="Neurostories: creating videos of the flash-lag effect" type="text/html">
+<link rel="next" href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" title="Role of gamma correction in Sparse coding" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
-<meta property="og:title" content="2019-11-19 converting a bunch of files in a few lines">
+<meta property="og:title" content="Converting a bunch of files in a few lines">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html">
 <meta property="og:description" content="You may have a bunch of files that you want to convert from one format to another: images, videos, music, text, ... How do you convert them while using ZSH as your shell language in a single line?
 I w">
@@ -108,7 +108,7 @@ I w">
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">2019-11-19 converting a bunch of files in a few lines</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Converting a bunch of files in a few lines</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -143,7 +143,7 @@ I w">
 
 <h2>converting files</h2>
 <p>Encoding in 128kB/s :</p>
-<pre class="code literal-block"><span></span>$ <span class="nv">f</span> <span class="nv">flac</span> <span class="o">-</span><span class="k">exec</span>  <span class="nv">sh</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">'</span><span class="s">opusenc --bitrate 128 "$0" "${0%.flac}.opus"</span><span class="s1">'</span> {} \<span class="c1">;</span>
+<pre class="code literal-block"><span></span>$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
 </pre>
 
 
@@ -159,10 +159,10 @@ I w">
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="2019-10-07-neurostories-videos-of-my-talk.html" rel="prev" title="2019-10-07 Neurostories: creating videos of the flash-lag effect">Previous post</a>
+                <a href="2019-10-07-neurostories-videos-of-my-talk.html" rel="prev" title="Neurostories: creating videos of the flash-lag effect">Previous post</a>
             </li>
             <li class="next">
-                <a href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" rel="next" title="2019-11-28 role of gamma correction in Sparse coding">Next post</a>
+                <a href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" rel="next" title="Role of gamma correction in Sparse coding">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -171,7 +171,7 @@ I w">
         <script>
         var disqus_shortname ="invibe",
             disqus_url="https://laurentperrinet.github.io/sciblog/posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html",
-        disqus_title="2019-11-19 converting a bunch of files in a few lines",
+        disqus_title="Converting a bunch of files in a few lines",
         disqus_identifier="cache/posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html",
         disqus_config = function () {
             this.language = "en";
