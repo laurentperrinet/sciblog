@@ -139,9 +139,18 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I have previously shown a <a href="https://github.com/bicv/SparseEdges">python implementation</a> which allows for the extraction a sparse set of edges from an image. We were using the raw luminance as the input to the algorithm. What happens if you use <a href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction</a>?</p>
-<p><img src="../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma.png" alt="frida on gamma"></p>
+<p><img src="../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma.png" alt="albert on gamma"></p>
 <ul>
-<li>this is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</li>
+<li>Results : for this particular image, we checked that using the luminance ($\gamma \approx 1$) is the correct choice. The outcome is that <em>gamma correction may improve coding, but only slightly</em>. In the figure below, we plot as a function of gamma the final energy of the error and the perceptually relevant measure of <a href="https://scikit-image.org/docs/dev/auto_examples/transform/plot_ssim.html">structural simailarity</a> :</li>
+</ul>
+<p><img src="../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma_results.png" alt="albert on gamma"></p>
+<ul>
+<li>
+<p>This may not be the case for other types of images which would justify an image-by-image local gain control.</p>
+</li>
+<li>
+<p>more information on sparse coding is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</p>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="nc">@inbook</span><span class="p">{</span><span class="nl">Perrinet15bicv</span><span class="p">,</span>
     <span class="na">title</span> <span class="p">=</span> <span class="s">{Sparse models}</span><span class="p">,</span>
@@ -153,9 +162,6 @@ MathJax.Hub.Config({
     <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
 <span class="p">}</span>
 </pre></div>
-<ul>
-<li>Results : for this particular image, we checked that using the luminance ($\gamma \approx 1$) is the correct choice. This may not be the case for other types of images which would justify an image-by-image local gain control.</li>
-</ul>
 <!-- TEASER_END -->
 </div>
 </div>
@@ -384,7 +390,7 @@ Default parameters:  {'verbose': 0, 'N_image': None, 'seed': 42, 'N_X': 256, 'N_
 
 <span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">SHOW</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'preproc'</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">do_full</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">do_full</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'norm'</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">**</span><span class="n">gamma</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'out'</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
@@ -492,16 +498,16 @@ Default parameters:  {'verbose': 0, 'N_image': None, 'seed': 42, 'N_X': 256, 'N_
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>image shape= 256 256 (256, 256)
-in 0.3079660564791832 5.864053365488982e-07 0.9932001735409042
-before process 4.036569908189014e-08 -0.3711893295814118 0.680914061819952
-preproc 4.036569908189014e-08 -0.3711893295814118 0.680914061819952
-in norm 4.036569908189014e-08 -0.3711893295814118 0.680914061819952
-decenter 0.3711893699471109 0.0 1.0521033914013638
-max out 0.352806932266134 0.0 1.0
-norm 0.352806932266134 0.0 1.0
-out 0.352806932266134 0.0 1.0
-before mask 0.352806932266134 0.0 1.0
-after mask 0.3646051922340162 0.0010278417099531256 0.943463368763109
+in 0.30796605647918324 5.864053365489166e-07 0.9932001735409044
+before process 4.036569908189014e-08 -0.37118932958141226 0.680914061819952
+preproc 4.036569908189014e-08 -0.37118932958141226 0.680914061819952
+in norm 4.036569908189014e-08 -0.37118932958141226 0.680914061819952
+decenter 0.3711893699471114 0.0 1.0521033914013642
+max out 0.35280693226613435 0.0 1.0
+norm 0.35280693226613435 0.0 1.0
+out 0.35280693226613435 0.0 1.0
+before mask 0.35280693226613435 0.0 1.0
+after mask 0.3646051922340167 0.0010278417099531256 0.9434633687631087
 </pre>
 </div>
 </div>
@@ -556,7 +562,7 @@ after mask 0.3646051922340162 0.0010278417099531256 0.943463368763109
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">'gamma=</span><span class="si">{gamma:.3f}</span><span class="s1">'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">pe</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="s1">'gamma.png'</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">pe</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="s1">'gamma.png'</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -566,37 +572,6 @@ after mask 0.3646051922340162 0.0010278417099531256 0.943463368763109
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -641,37 +616,6 @@ max out 0.3857848522125549 0.0 1.0
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -723,7 +667,7 @@ max out 0.3857848522125549 0.0 1.0
     <span class="nb">print</span><span class="p">(</span><span class="s1">'processing '</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
     <span class="n">matname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">pe</span><span class="o">.</span><span class="n">matpath</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'.npy'</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">image_original</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="n">white</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">whitening</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     
@@ -772,54 +716,12 @@ max out 0.3857848522125549 0.0 1.0
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>processing  MP_gamma_0.5
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.5999859221040427 0.0 1.0
 processing  MP_gamma_0.6666666666666666
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.5139223026658271 0.0 1.0
 processing  MP_gamma_0.8333333333333333
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.44359218358910735 0.0 1.0
 processing  MP_gamma_1.0
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.3857848522125549 0.0 1.0
 processing  MP_gamma_1.1666666666666665
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.33798641012229613 0.0 1.0
 processing  MP_gamma_1.3333333333333333
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.2982218426890797 0.0 1.0
 processing  MP_gamma_1.5
-preproc 0.3646051922340162 0.0010278417099531256 0.943463368763109
-in norm 0.3646051922340162 0.0010278417099531256 0.943463368763109
-decenter 0.36357735052406304 0.0 0.9424355270531559
-max out 0.3857848522125549 0.0 1.0
-norm 0.3857848522125549 0.0 1.0
-out 0.26493422415596224 0.0 1.0
 </pre>
 </div>
 </div>
@@ -850,7 +752,7 @@ out 0.26493422415596224 0.0 1.0
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">white_rec</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">reconstruct</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-<span class="n">image_rec</span> <span class="o">=</span> <span class="n">deprocess</span><span class="p">(</span><span class="n">white_rec</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span>
+<span class="n">image_rec</span> <span class="o">=</span> <span class="n">deprocess</span><span class="p">(</span><span class="n">white_rec</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">fig_width_pt</span> <span class="o">=</span> <span class="mf">318.670</span>  <span class="c1"># Get this from LaTeX using \showthe\columnwidth</span>
 <span class="n">inches_per_pt</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">72.27</span>               <span class="c1"># Convert pt to inches</span>
@@ -877,12 +779,12 @@ out 0.26493422415596224 0.0 1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>in norm 0.00022461749341232302 -0.4647099710904494 0.4574831970958212
-decenter 0.46493458858386183 0.0 0.9221931681862706
-max out 0.50416182273208 0.0 1.0
-in norm 0.50416182273208 0.0 1.0
-decenter 0.50416182273208 0.0 1.0
-max out 0.50416182273208 0.0 1.0
+<pre>in norm 0.00022461749341232302 -0.4647099710904495 0.4574831970958215
+decenter 0.46493458858386183 0.0 0.922193168186271
+max out 0.5041618227320798 0.0 1.0
+in norm 0.5041618227320798 0.0 1.0
+decenter 0.5041618227320798 0.0 1.0
+max out 0.5041618227320798 0.0 1.0
 </pre>
 </div>
 </div>
@@ -937,7 +839,7 @@ max out 0.50416182273208 0.0 1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>remaining energy  =  22.368278352416795 %
+<pre>remaining energy  =  22.36827835241678 %
 </pre>
 </div>
 </div>
@@ -961,7 +863,7 @@ max out 0.50416182273208 0.0 1.0
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image_rec</span> <span class="o">=</span> <span class="n">deprocess</span><span class="p">(</span><span class="n">white_rec</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image_rec</span> <span class="o">=</span> <span class="n">deprocess</span><span class="p">(</span><span class="n">white_rec</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">show_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">image_rec</span><span class="p">);</span>
 </pre></div>
 
@@ -979,12 +881,12 @@ max out 0.50416182273208 0.0 1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>in norm 0.00022461749341232302 -0.4647099710904494 0.4574831970958212
-decenter 0.46493458858386183 0.0 0.9221931681862706
-max out 0.50416182273208 0.0 1.0
-in norm 0.50416182273208 0.0 1.0
-decenter 0.50416182273208 0.0 1.0
-max out 0.50416182273208 0.0 1.0
+<pre>in norm 0.00022461749341232302 -0.4647099710904495 0.4574831970958215
+decenter 0.46493458858386183 0.0 0.922193168186271
+max out 0.5041618227320798 0.0 1.0
+in norm 0.5041618227320798 0.0 1.0
+decenter 0.5041618227320798 0.0 1.0
+max out 0.5041618227320798 0.0 1.0
 </pre>
 </div>
 </div>
@@ -1132,6 +1034,7 @@ max out 0.50416182273208 0.0 1.0
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'gammas'</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'SSIM'</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">pe</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="s1">'gamma_results.png'</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1141,19 +1044,6 @@ max out 0.50416182273208 0.0 1.0
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Text(0, 0.5, 'SSIM')</pre>
-</div>
-
-</div>
 
 <div class="output_area">
 
@@ -1187,7 +1077,7 @@ max out 0.50416182273208 0.0 1.0
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> -l ../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#%ls -l ../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/</span>
 <span class="c1">#%rm ../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/MP_gamma*</span>
 <span class="c1">#%rm ../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/MP_gamma*MSE*</span>
 <span class="c1">#%rm ../files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/MP_gamma*SSIM*</span>
@@ -1195,53 +1085,6 @@ max out 0.50416182273208 0.0 1.0
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>total 3552
--rw-r--r--  1 laurentperrinet  staff   10602 Jun 26  2018 6370387703_5e718ea681_q_d.jpg
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 12:18 MP_gamma_0.5.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 12:21 MP_gamma_0.5_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 12:21 MP_gamma_0.5_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 12:50 MP_gamma_0.6666666666666666.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 12:53 MP_gamma_0.6666666666666666_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 12:53 MP_gamma_0.6666666666666666_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 13:22 MP_gamma_0.8333333333333333.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 13:24 MP_gamma_0.8333333333333333_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 13:24 MP_gamma_0.8333333333333333_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 13:52 MP_gamma_1.0.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 13:54 MP_gamma_1.0_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 13:54 MP_gamma_1.0_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 14:22 MP_gamma_1.1666666666666665.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 14:25 MP_gamma_1.1666666666666665_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 14:25 MP_gamma_1.1666666666666665_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 14:53 MP_gamma_1.3333333333333333.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 14:56 MP_gamma_1.3333333333333333_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 14:56 MP_gamma_1.3333333333333333_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   49280 Dec  6 15:24 MP_gamma_1.5.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 15:27 MP_gamma_1.5_MSE.npy
--rw-r--r--  1 laurentperrinet  staff     640 Dec  6 15:27 MP_gamma_1.5_SSIM.npy
--rw-r--r--  1 laurentperrinet  staff   98432 Feb 21  2017 MPtutorial.npy
--rw-r--r--  1 laurentperrinet  staff   16512 Feb 21  2017 MPtutorial_MSE.npy
--rw-r--r--  1 laurentperrinet  staff   98432 Jun 18  2018 MPtutorial_lena.npy
--rw-r--r--  1 laurentperrinet  staff  145757 Jun 26  2018 MPtutorial_rec.gif
--rw-r--r--  1 laurentperrinet  staff   84303 Jun 26  2018 MPtutorial_rec.mp4
--rw-r--r--  1 laurentperrinet  staff  682799 Dec 10 17:02 gamma.png
--rw-r--r--  1 laurentperrinet  staff   68859 Jun 26  2018 lena256.png
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1269,7 +1112,7 @@ max out 0.50416182273208 0.0 1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2019-12-10T17:02:55+01:00
+<pre>2019-12-11T09:24:22+01:00
 
 CPython 3.7.5
 IPython 7.10.1
@@ -1280,15 +1123,15 @@ LogGabor 20191113
 SparseEdges 20191118
 matplotlib 3.1.2
 
-compiler   : Clang 11.0.0 (clang-1100.0.33.8)
+compiler   : Clang 10.0.0 (clang-1000.11.45.5)
 system     : Darwin
-release    : 19.0.0
+release    : 17.7.0
 machine    : x86_64
 processor  : i386
-CPU cores  : 36
+CPU cores  : 8
 interpreter: 64bit
-host name  : fortytwo
-Git hash   : cdffd323fbe042fd38e38609fb7f8dc93c3c116b
+host name  : ada
+Git hash   : f8ee2674d8bcdb4362506b8a7bafbbcd4897f6dd
 Git repo   : https://github.com/laurentperrinet/sciblog.git
 Git branch : master
 </pre>

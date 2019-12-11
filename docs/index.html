@@ -218,9 +218,18 @@ this will be exposed in the following book chapter (see also https://laurentperr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I have previously shown a <a href="https://github.com/bicv/SparseEdges">python implementation</a> which allows for the extraction a sparse set of edges from an image. We were using the raw luminance as the input to the algorithm. What happens if you use <a href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction</a>?</p>
-<p><img src="files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma.png" alt="frida on gamma"></p>
+<p><img src="files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma.png" alt="albert on gamma"></p>
 <ul>
-<li>this is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</li>
+<li>Results : for this particular image, we checked that using the luminance ($\gamma \approx 1$) is the correct choice. The outcome is that <em>gamma correction may improve coding, but only slightly</em>. In the figure below, we plot as a function of gamma the final energy of the error and the perceptually relevant measure of <a href="https://scikit-image.org/docs/dev/auto_examples/transform/plot_ssim.html">structural simailarity</a> :</li>
+</ul>
+<p><img src="files/2015-05-22-a-hitchhiker-guide-to-matching-pursuit/gamma_results.png" alt="albert on gamma"></p>
+<ul>
+<li>
+<p>This may not be the case for other types of images which would justify an image-by-image local gain control.</p>
+</li>
+<li>
+<p>more information on sparse coding is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</p>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="nc">@inbook</span><span class="p">{</span><span class="nl">Perrinet15bicv</span><span class="p">,</span>
     <span class="na">title</span> <span class="p">=</span> <span class="s">{Sparse models}</span><span class="p">,</span>
@@ -232,9 +241,6 @@ this will be exposed in the following book chapter (see also https://laurentperr
     <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
 <span class="p">}</span>
 </pre></div>
-<ul>
-<li>Results : for this particular image, we checked that using the luminance ($\gamma \approx 1$) is the correct choice. This may not be the case for other types of images which would justify an image-by-image local gain control.</li>
-</ul>
 <p class="more"><a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html">Read more…</a></p>
 </div>
 </div>
