@@ -167,7 +167,7 @@ In">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
@@ -193,18 +193,300 @@ In">
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="the-simplest-approach">the simplest approach<a class="anchor-link" href="2019-10-07-neurostories-videos-of-my-talk.html#the-simplest-approach">¶</a>
+</h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">"Laurent Perrinet INT - CNRS"</span>
+<span class="n">__licence__</span> <span class="o">=</span> <span class="s1">'BSD licence'</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'😎 Welcome to the script generating the movies 😎'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">]</span>
+<span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/'</span>
+<span class="k">def</span> <span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
+<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+
+<span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">fps</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">def</span> <span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="p">,</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*.</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">stop</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*.</span><span class="mi">8</span><span class="p">,</span> <span class="n">do_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">duration_flash</span> <span class="o">=</span> <span class="o">.</span><span class="mi">05</span><span class="p">,</span>
+                <span class="n">fps</span> <span class="o">=</span> <span class="n">fps</span><span class="p">,</span>
+                <span class="n">W</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">):</span>
+    <span class="n">flash</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">lx</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="o">-</span><span class="n">r</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">duration</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">duration_flash</span><span class="p">:</span> <span class="n">flash</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">do_stop</span> <span class="ow">and</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="n">duration</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">flash</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+                <span class="n">rect</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">lx</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="o">+</span><span class="n">r</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rect</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">lx</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">duration</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="o">+</span><span class="n">r</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+            <span class="n">rect</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">surface</span><span class="o">.</span><span class="n">get_npimage</span><span class="p">()</span>
+
+    <span class="n">clip</span> <span class="o">=</span> <span class="n">mpy</span><span class="o">.</span><span class="n">VideoClip</span><span class="p">(</span><span class="n">make_frame</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">clip</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="n">path2</span><span class="p">(</span><span class="n">figname</span><span class="p">),</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">clip</span>
+
+<span class="n">figname</span> <span class="o">=</span> <span class="s1">'2019-09-30_flash_lag.mp4'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path2</span><span class="p">(</span><span class="n">figname</span><span class="p">)):</span> <span class="n">clip</span> <span class="o">=</span> <span class="n">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">)</span>
+<span class="n">clip</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">autoplay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>t:   1%|          | 2/200 [01:57&lt;3:14:28, 58.93s/it, now=None]
+t:   0%|          | 0/200 [00:00&lt;?, ?it/s, now=None]
+t:   2%|▏         | 3/200 [00:00&lt;00:08, 22.69it/s, now=None]</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>😎 Welcome to the script generating the movies 😎
+Moviepy - Building video __temp__.mp4.
+Moviepy - Writing video __temp__.mp4
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>
+t:   4%|▍         | 8/200 [00:00&lt;00:07, 26.84it/s, now=None]
+t:   7%|▋         | 14/200 [00:00&lt;00:05, 31.63it/s, now=None]
+t:  10%|▉         | 19/200 [00:00&lt;00:05, 34.93it/s, now=None]
+t:  12%|█▏        | 23/200 [00:00&lt;00:05, 35.35it/s, now=None]
+t:  14%|█▍        | 29/200 [00:00&lt;00:04, 39.06it/s, now=None]
+t:  18%|█▊        | 35/200 [00:00&lt;00:03, 43.12it/s, now=None]
+t:  20%|██        | 41/200 [00:00&lt;00:03, 45.15it/s, now=None]
+t:  24%|██▎       | 47/200 [00:01&lt;00:03, 47.30it/s, now=None]
+t:  26%|██▋       | 53/200 [00:01&lt;00:03, 48.98it/s, now=None]
+t:  30%|██▉       | 59/200 [00:01&lt;00:02, 50.11it/s, now=None]
+t:  32%|███▎      | 65/200 [00:01&lt;00:02, 51.94it/s, now=None]
+t:  36%|███▌      | 71/200 [00:01&lt;00:02, 53.20it/s, now=None]
+t:  38%|███▊      | 77/200 [00:01&lt;00:02, 53.93it/s, now=None]
+t:  42%|████▏     | 83/200 [00:01&lt;00:02, 47.30it/s, now=None]
+t:  44%|████▍     | 88/200 [00:01&lt;00:02, 47.37it/s, now=None]
+t:  47%|████▋     | 94/200 [00:01&lt;00:02, 49.70it/s, now=None]
+t:  50%|█████     | 100/200 [00:02&lt;00:02, 49.31it/s, now=None]
+t:  53%|█████▎    | 106/200 [00:02&lt;00:01, 50.82it/s, now=None]
+t:  56%|█████▌    | 112/200 [00:02&lt;00:01, 50.66it/s, now=None]
+t:  59%|█████▉    | 118/200 [00:02&lt;00:01, 48.55it/s, now=None]
+t:  62%|██████▏   | 124/200 [00:02&lt;00:01, 50.11it/s, now=None]
+t:  65%|██████▌   | 130/200 [00:02&lt;00:01, 51.09it/s, now=None]
+t:  68%|██████▊   | 136/200 [00:02&lt;00:01, 52.38it/s, now=None]
+t:  71%|███████   | 142/200 [00:02&lt;00:01, 44.64it/s, now=None]
+t:  74%|███████▎  | 147/200 [00:03&lt;00:01, 45.01it/s, now=None]
+t:  76%|███████▌  | 152/200 [00:03&lt;00:01, 42.93it/s, now=None]
+t:  78%|███████▊  | 157/200 [00:03&lt;00:00, 43.66it/s, now=None]
+t:  81%|████████  | 162/200 [00:03&lt;00:00, 40.97it/s, now=None]
+t:  84%|████████▎ | 167/200 [00:03&lt;00:00, 42.95it/s, now=None]
+t:  86%|████████▋ | 173/200 [00:03&lt;00:00, 45.76it/s, now=None]
+t:  90%|████████▉ | 179/200 [00:03&lt;00:00, 47.93it/s, now=None]
+t:  92%|█████████▏| 184/200 [00:03&lt;00:00, 47.31it/s, now=None]
+t:  94%|█████████▍| 189/200 [00:03&lt;00:00, 45.34it/s, now=None]
+t:  97%|█████████▋| 194/200 [00:04&lt;00:00, 43.51it/s, now=None]
+t: 100%|█████████▉| 199/200 [00:04&lt;00:00, 41.22it/s, now=None]
+t:   1%|          | 2/200 [02:02&lt;3:21:40, 61.11s/it, now=None]</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Moviepy - Done !
+Moviepy - video ready __temp__.mp4
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div align="middle"><video width="1000" autoplay="True" loop="True" src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAIFRtZGF0AAACVQYF//9R3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1NyByMjkzNSA1NDVkZTJmIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxOCAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTAgcmVmPTEgZGVibG9jaz0wOjA6MCBhbmFseXNlPTA6MCBtZT1kaWEgc3VibWU9MCBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0wIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MCBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0wIHRocmVhZHM9MTkgbG9va2FoZWFkX3RocmVhZHM9MyBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0wIHdlaWdodHA9MCBrZXlpbnQ9MjUwIGtleWludF9taW49MjUgc2NlbmVjdXQ9MCBpbnRyYV9yZWZyZXNoPTAgcmM9Y3JmIG1idHJlZT0wIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTAAgAAABxxliIQ6JigACQPJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJydddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeAAAAAdBmiBaABK3AAAAB0GaQFoAErcAAAAHQZpgagAStwAAAAdBmoBqABK3AAAAB0GaoGoAErcAAAAHQZrAagAStwAAAAdBmuBqABK3AAAAB0GbAGoAErcAAAAHQZsgagAStwAAAAdBm0BqABK3AAAAB0GbYGoAErcAAAAHQZuAagAStwAAAAdBm6BqABK3AAAAB0GbwGoAErcAAAAHQZvgagAStwAAAAdBmgBqABK3AAAAB0GaIGoAErcAAAAHQZpAagAStwAAAAdBmmBqABK3AAAAB0GagGoAErcAAAAHQZqg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" controls>Sorry, seems like your browser doesn't support HTML5 audio/video</video></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'2019-09-30_flash_lag_stop.mp4'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path2</span><span class="p">(</span><span class="n">figname</span><span class="p">)):</span> <span class="n">clip</span> <span class="o">=</span> <span class="n">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">do_stop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">clip</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">autoplay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>t:   1%|          | 2/200 [02:02&lt;3:21:49, 61.16s/it, now=None]
+t:   0%|          | 0/200 [00:00&lt;?, ?it/s, now=None]</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Moviepy - Building video __temp__.mp4.
+Moviepy - Writing video __temp__.mp4
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>
+t:   3%|▎         | 6/200 [00:00&lt;00:03, 54.32it/s, now=None]
+t:   6%|▌         | 11/200 [00:00&lt;00:03, 50.12it/s, now=None]
+t:   8%|▊         | 16/200 [00:00&lt;00:03, 49.47it/s, now=None]
+t:  11%|█         | 22/200 [00:00&lt;00:03, 50.08it/s, now=None]
+t:  14%|█▎        | 27/200 [00:00&lt;00:03, 47.90it/s, now=None]
+t:  16%|█▌        | 31/200 [00:00&lt;00:03, 42.94it/s, now=None]
+t:  18%|█▊        | 36/200 [00:00&lt;00:03, 44.81it/s, now=None]
+t:  21%|██        | 42/200 [00:00&lt;00:03, 46.58it/s, now=None]
+t:  24%|██▍       | 48/200 [00:01&lt;00:03, 48.18it/s, now=None]
+t:  26%|██▋       | 53/200 [00:01&lt;00:03, 48.48it/s, now=None]
+t:  30%|██▉       | 59/200 [00:01&lt;00:02, 49.61it/s, now=None]
+t:  32%|███▏      | 64/200 [00:01&lt;00:02, 48.95it/s, now=None]
+t:  34%|███▍      | 69/200 [00:01&lt;00:02, 48.81it/s, now=None]
+t:  38%|███▊      | 75/200 [00:01&lt;00:02, 51.06it/s, now=None]
+t:  40%|████      | 81/200 [00:01&lt;00:02, 52.37it/s, now=None]
+t:  44%|████▎     | 87/200 [00:01&lt;00:02, 52.94it/s, now=None]
+t:  46%|████▋     | 93/200 [00:01&lt;00:01, 53.90it/s, now=None]
+t:  50%|████▉     | 99/200 [00:01&lt;00:01, 54.12it/s, now=None]
+t:  52%|█████▎    | 105/200 [00:02&lt;00:01, 54.39it/s, now=None]
+t:  56%|█████▌    | 111/200 [00:02&lt;00:01, 49.86it/s, now=None]
+t:  58%|█████▊    | 117/200 [00:02&lt;00:01, 48.46it/s, now=None]
+t:  62%|██████▏   | 123/200 [00:02&lt;00:01, 50.53it/s, now=None]
+t:  64%|██████▍   | 129/200 [00:02&lt;00:01, 52.45it/s, now=None]
+t:  68%|██████▊   | 135/200 [00:02&lt;00:01, 53.66it/s, now=None]
+t:  70%|███████   | 141/200 [00:02&lt;00:01, 54.30it/s, now=None]
+t:  74%|███████▎  | 147/200 [00:02&lt;00:00, 54.64it/s, now=None]
+t:  76%|███████▋  | 153/200 [00:03&lt;00:00, 54.69it/s, now=None]
+t:  80%|███████▉  | 159/200 [00:03&lt;00:00, 53.48it/s, now=None]
+t:  82%|████████▎ | 165/200 [00:03&lt;00:00, 53.24it/s, now=None]
+t:  86%|████████▌ | 171/200 [00:03&lt;00:00, 53.47it/s, now=None]
+t:  88%|████████▊ | 177/200 [00:03&lt;00:00, 53.54it/s, now=None]
+t:  92%|█████████▏| 183/200 [00:03&lt;00:00, 47.85it/s, now=None]
+t:  94%|█████████▍| 189/200 [00:03&lt;00:00, 49.30it/s, now=None]
+t:  98%|█████████▊| 195/200 [00:03&lt;00:00, 50.26it/s, now=None]
+t:   1%|          | 2/200 [02:06&lt;3:28:27, 63.17s/it, now=None]</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Moviepy - Done !
+Moviepy - video ready __temp__.mp4
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div align="middle"><video width="1000" autoplay="True" loop="True" src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAIFRtZGF0AAACVQYF//9R3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1NyByMjkzNSA1NDVkZTJmIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxOCAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTAgcmVmPTEgZGVibG9jaz0wOjA6MCBhbmFseXNlPTA6MCBtZT1kaWEgc3VibWU9MCBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0wIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MCBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0wIHRocmVhZHM9MTkgbG9va2FoZWFkX3RocmVhZHM9MyBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0wIHdlaWdodHA9MCBrZXlpbnQ9MjUwIGtleWludF9taW49MjUgc2NlbmVjdXQ9MCBpbnRyYV9yZWZyZXNoPTAgcmM9Y3JmIG1idHJlZT0wIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTAAgAAABxxliIQ6JigACQPJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJydddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeAAAAAdBmiBaABK3AAAAB0GaQFoAErcAAAAHQZpgagAStwAAAAdBmoBqABK3AAAAB0GaoGoAErcAAAAHQZrAagAStwAAAAdBmuBqABK3AAAAB0GbAGoAErcAAAAHQZsgagAStwAAAAdBm0BqABK3AAAAB0GbYGoAErcAAAAHQZuAagAStwAAAAdBm6BqABK3AAAAB0GbwGoAErcAAAAHQZvgagAStwAAAAdBmgBqABK3AAAAB0GaIGoAErcAAAAHQZpAagAStwAAAAdBmmBqABK3AAAAB0GagGoAErcAAAAHQZqg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" controls>Sorry, seems like your browser doesn't support HTML5 audio/video</video></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="a-more-complex-approach">a more complex approach<a class="anchor-link" href="2019-10-07-neurostories-videos-of-my-talk.html#a-more-complex-approach">¶</a>
+</h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -1095,6 +1377,8 @@ Moviepy - video ready __temp__.mp4
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!youtube-dl https://www.youtube.com/watch\?v\=v30b5IAgwQw</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="s2">"20151115-Breaking Glass in Ultra Slow Motion _ 30000 FPS-v30b5IAgwQw.mp4"</span>
+
+<span class="c1"># TODO: import movie, reduce size and then montage it with its reversed-time version</span>
 </pre></div>
 
     </div>
@@ -1114,13 +1398,31 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm __temp__.mp4
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm __temp__.mp4 debug.log
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>rm: debug.log: No such file or directory
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
