@@ -138,7 +138,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This video shows different <a href="http://motionclouds.invibe.net/">MotionClouds</a> with different complexities, from a crystal-like Grating to textures with an incresing span of spatial frequencies (resp "Mc Narrow" and "MC Broad"). This is to illustrate the different stimuli used in this <a href="https://laurentperrinet.github.io/publication/ravello-19">paper on the chracterization of speed-selectivity in the retina</a> available @ <a href="https://www.nature.com/articles/s41598-018-36861-8">https://www.nature.com/articles/s41598-018-36861-8</a> .</p>
+<p>This video shows different <a href="https://neuralensemble.github.io/MotionClouds/">MotionClouds</a> with different complexities, from a crystal-like Grating to textures with an incresing span of spatial frequencies (resp "Mc Narrow" and "MC Broad"). This is to illustrate the different stimuli used in this <a href="https://laurentperrinet.github.io/publication/ravello-19">paper on the chracterization of speed-selectivity in the retina</a> available @ <a href="https://www.nature.com/articles/s41598-018-36861-8">https://www.nature.com/articles/s41598-018-36861-8</a> .</p>
 <p><br></p>
 <p></p>
 <center><video controls autoplay loop src="../files/2019-01-30_Ravello19_text.mp4" width="61.8%/"></video></center>
@@ -151,7 +151,7 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#initialize</span>
+<div class=" highlight hl-ipython3"><pre><span class="c">#initialize</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
@@ -162,7 +162,7 @@ MathJax.Hub.Config({
 
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
 
-<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s">'../files/'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -176,8 +176,8 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'2019-01-30_Ravello19'</span>
-<span class="n">vext</span> <span class="o">=</span> <span class="s1">'.mp4'</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">'2019-01-30_Ravello19'</span>
+<span class="n">vext</span> <span class="o">=</span> <span class="s">'.mp4'</span>
 <span class="n">name_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">123456</span>
@@ -185,11 +185,11 @@ MathJax.Hub.Config({
 
 <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">B_sf</span> <span class="ow">in</span> <span class="n">B_sfs</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">B_sf</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># Grating</span>
+    <span class="k">if</span> <span class="n">B_sf</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c"># Grating</span>
         <span class="n">im_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">*</span><span class="p">(</span><span class="n">fx</span> <span class="o">-</span> <span class="o">.</span><span class="mi">25</span><span class="o">*</span><span class="n">ft</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">)))</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># Motion Cloud</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c"># Motion Cloud</span>
         <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
-    <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im_new</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'energy'</span><span class="p">)</span>
+    <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im_new</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">'energy'</span><span class="p">)</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="n">im_new</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">im</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
@@ -238,28 +238,28 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="k">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">TextClip</span><span class="p">,</span> <span class="n">CompositeVideoClip</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="k">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">TextClip</span><span class="p">,</span> <span class="n">CompositeVideoClip</span>
 
 <span class="n">clip</span> <span class="o">=</span> <span class="p">[</span><span class="n">VideoFileClip</span><span class="p">(</span><span class="n">name_</span> <span class="o">+</span> <span class="n">vext</span><span class="p">)]</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Grating"</span><span class="p">,</span> <span class="s2">"MC Narrow"</span><span class="p">,</span> <span class="s2">"MC Broad"</span><span class="p">]</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Grating"</span><span class="p">,</span> <span class="s">"MC Narrow"</span><span class="p">,</span> <span class="s">"MC Broad"</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'blue'</span><span class="p">,</span> <span class="s">'green'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span>
 
-<span class="n">txt_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">txt_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s">"Amiri-Bold"</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
-    <span class="c1"># Generate a text clip. You can customize the font, color, etc.</span>
+    <span class="c"># Generate a text clip. You can customize the font, color, etc.</span>
     <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="o">**</span><span class="n">txt_opts</span><span class="p">)</span>
-    <span class="c1"># Say that you want it to appear 3s at the center of the screen</span>
-    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_start</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s1">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="c"># Say that you want it to appear 3s at the center of the screen</span>
+    <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">txt_clip</span><span class="o">.</span><span class="n">set_start</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="s">'center'</span><span class="p">)</span><span class="o">.</span><span class="n">set_duration</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">+=</span> <span class="n">clip</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">duration</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
     <span class="n">clip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">txt_clip</span><span class="p">)</span>
 
-<span class="c1"># Overlay the text clip on the first video clip</span>
+<span class="c"># Overlay the text clip on the first video clip</span>
 <span class="n">video</span> <span class="o">=</span> <span class="n">CompositeVideoClip</span><span class="p">(</span><span class="n">clip</span><span class="p">)</span>
 
-<span class="c1"># Write the result to a file (many options available !)</span>
-<span class="n">video</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="n">name_</span> <span class="o">+</span> <span class="s1">'_text'</span> <span class="o">+</span> <span class="n">vext</span><span class="p">)</span>
+<span class="c"># Write the result to a file (many options available !)</span>
+<span class="n">video</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="n">name_</span> <span class="o">+</span> <span class="s">'_text'</span> <span class="o">+</span> <span class="n">vext</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -356,7 +356,7 @@ Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
 
