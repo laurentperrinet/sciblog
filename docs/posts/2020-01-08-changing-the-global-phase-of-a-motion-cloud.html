@@ -136,11 +136,11 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to define parameterized moving textures. In <a href="https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html">that other post</a>, we defined a simple code to generate static images using a simple code. Can we generate a series of images while chanigning the phase <em>globally</em>?</p>
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to define parameterized moving textures. In <a href="https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html">that other post</a>, we defined a simple code to generate static images using a simple code. Can we generate a series of images while changing the phase <em>globally</em>?</p>
 <p><img src="../files/2020-01-08-MC_phase.gif" alt="2020-01-08-MC_phase"></p>
 <!-- TEASER_END -->
 
-<p>There are multiple solutions, and the simplest is perhaps to generate a movie that does not move. This means that the mean velocity $(V_X, V_Y)$ is null $=(0, 0)$ but also that there is no noise in the definition of the speed plane. This is defined by $B_V=0$, that is, that all the energy is concentrated on the spped plane:</p>
+<p>Let's first generate a static motion cloud:</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To globally change the phase of the gabors in the texture, a "trick" is to multiply this envelope by a rotation in the complew plane (that is, by multiplying by $\exp(i\cdot\phi)$), <em>globally</em> on all points of the Fourier space, and keep the same seed:</p>
+<p>To globally change the phase of the gabors in the texture, a "trick" is to multiply this same envelope (such that we keep it). If we keep the same seed, we keep the same phase scrambling. Then, we perform for each coefficient in the fourier space a rotation in the complex plane (that is, by multiplying by $\exp(i\cdot\phi)$). We perform this <em>globally</em> on all points of the Fourier space:</p>
 
 </div>
 </div>
@@ -340,7 +340,17 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>now trying to generate an animation:</p>
+<p>Notice that white features become black with a multiplication of $\exp(i\cdot\pi)=-1$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For fun, let us now try to generate an animation:</p>
 
 </div>
 </div>
@@ -366,10 +376,30 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
         <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MCphase_</span><span class="si">{i_phase}</span><span class="s2">.png"</span><span class="p">))</span>
 <span class="n">optimize</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gifname</span><span class="p">))</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2000</span><span class="p">);</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;IPython.core.display.Image object&gt;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -379,6 +409,7 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Note, that doing a smooth variation of phase produces slight movements of the features, at the scale of each texton.</p>
 <h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2020-01-08-changing-the-global-phase-of-a-motion-cloud.html#some-book-keeping-for-the-notebook">¶</a>
 </h3>
 </div>
@@ -407,17 +438,17 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2020-01-08T22:23:34+01:00
+<pre>2020-01-09T12:25:14+01:00
 
 CPython 3.7.6
 IPython 7.11.1
 
-compiler   : Clang 10.0.0 (clang-1000.11.45.5)
+compiler   : Clang 11.0.0 (clang-1100.0.33.16)
 system     : Darwin
-release    : 17.7.0
+release    : 19.2.0
 machine    : x86_64
 processor  : i386
-CPU cores  : 8
+CPU cores  : 36
 interpreter: 64bit
 </pre>
 </div>
@@ -432,8 +463,8 @@ interpreter: 64bit
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
-<span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, sympy, pillow, imageio
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span> -i -h -m -v -p MotionClouds,numpy,SLIP,LogGabor,SparseEdges,matplotlib,scipy,pillow,imageio  -r -g -b
 </pre></div>
 
     </div>
@@ -446,56 +477,40 @@ interpreter: 64bit
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The watermark extension is already loaded. To reload it, use:
+  %reload_ext watermark
+2020-01-09T12:25:14+01:00
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
-<tr>
-<th>Software</th>
-<th>Version</th>
-</tr>
-<tr>
-<td>Python</td>
-<td>3.7.6 64bit [Clang 10.0.0 (clang-1000.11.45.5)]</td>
-</tr>
-<tr>
-<td>IPython</td>
-<td>7.11.1</td>
-</tr>
-<tr>
-<td>OS</td>
-<td>Darwin 17.7.0 x86_64 i386 64bit</td>
-</tr>
-<tr>
-<td>numpy</td>
-<td>1.18.0</td>
-</tr>
-<tr>
-<td>scipy</td>
-<td>1.4.1</td>
-</tr>
-<tr>
-<td>matplotlib</td>
-<td>3.1.2</td>
-</tr>
-<tr>
-<td>sympy</td>
-<td>1.5</td>
-</tr>
-<tr>
-<td>pillow</td>
-<td>7.0.0</td>
-</tr>
-<tr>
-<td>imageio</td>
-<td>2.6.1</td>
-</tr>
-<tr><td colspan="2">Wed Jan 08 22:23:35 2020 CET</td></tr>
-</table>
+CPython 3.7.6
+IPython 7.11.1
+
+MotionClouds 20180606
+numpy 1.18.0
+SLIP 20191113
+LogGabor not installed
+SparseEdges not installed
+matplotlib 3.1.2
+scipy 1.4.1
+pillow not installed
+imageio 2.6.1
+
+compiler   : Clang 11.0.0 (clang-1100.0.33.16)
+system     : Darwin
+release    : 19.2.0
+machine    : x86_64
+processor  : i386
+CPU cores  : 36
+interpreter: 64bit
+host name  : fortytwo
+Git hash   : 02885abd803705f5780ae8b437acfdbab1fa8977
+Git repo   : https://github.com/laurentperrinet/sciblog.git
+Git branch : master
+</pre>
 </div>
-
 </div>
 
 </div>
