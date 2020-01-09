@@ -156,7 +156,7 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -323,7 +323,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="k">import</span> <span class="n">convolve2d</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>
 <span class="k">def</span> <span class="nf">test_scipy</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prefetching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">prefetching</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i_N</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -436,7 +436,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">n_M</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="k">import</span> <span class="n">fftconvolve</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">fftconvolve</span>
 <span class="k">def</span> <span class="nf">test_scipy_fft</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prefetching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">prefetching</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i_N</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -561,7 +561,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <p>This shows the advantage of using the Fourier transform to perform the convolution. There is also a slight advantage in using prefetching. However, this solution imposes to have periodic bounds for the borders.</p>
 <h2 id="using-directly-numpy">using directly numpy<a class="anchor-link" href="2017-09-20-the-fastest-2d-convolution-in-the-world.html#using-directly-numpy">¶</a>
 </h2>
-<p>Instead of loading <code>scipy</code> (or more reasonably just the subset that loads the fftpack), one can simply use <code>numpy</code> (see this comment by <a href="http://disq.us/url?impression=edac85da-e7ec-11e8-a90d-002590853080&amp;thread=6169151214&amp;forum=2777256&amp;url=http%3A%2F%2Fblog.invibe.net%2Fposts%2F2017-09-20-the-fastest-2d-convolution-in-the-world.html%23comment-4194226955%3A2r-QLLbJUDTFTgvUvpSD8uYz2O4&amp;variant=active&amp;experiment=digests&amp;behavior=click&amp;post=4194226955&amp;type=notification.post.moderator&amp;event=email">FonderPrism</a>).</p>
+<p>Instead of loading <code>scipy</code> (or more reasonably just the subset that loads the fftpack), one can simply use <code>numpy</code> (see this comment by <a href="http://disq.us/url?impression=edac85da-e7ec-11e8-a90d-002590853080&amp;thread=6169151214&amp;forum=2777256&amp;url=http%3A%2F%2Flaurentperrinet.github.io%2Fsciblog%2Fposts%2F2017-09-20-the-fastest-2d-convolution-in-the-world.html%23comment-4194226955%3A2r-QLLbJUDTFTgvUvpSD8uYz2O4&amp;variant=active&amp;experiment=digests&amp;behavior=click&amp;post=4194226955&amp;type=notification.post.moderator&amp;event=email">FonderPrism</a>).</p>
 <p>The idea is to simply load the appropriate library which is documented @
 <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft2.html">https://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft2.html</a> :</p>
 
@@ -574,7 +574,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">n_M</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">numpy.fft</span>  <span class="k">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span>
+<span class="kn">from</span> <span class="nn">numpy.fft</span>  <span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span>
 <span class="k">def</span> <span class="nf">np_fftconvolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">ifft2</span><span class="p">(</span><span class="n">fft2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">fft2</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)))</span>
 </pre></div>
@@ -713,7 +713,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">n_M</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">numpy.fft</span>  <span class="k">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span>
+<span class="kn">from</span> <span class="nn">numpy.fft</span>  <span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span>
 <span class="k">def</span> <span class="nf">test_numpy_fft_opt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">prefetching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">prefetching</span><span class="p">:</span>
         <span class="n">f_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
@@ -849,7 +849,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="k">import</span> <span class="n">convolve</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">convolve</span>
 <span class="c1"># help(convolve)</span>
 </pre></div>
 
@@ -863,7 +863,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="k">import</span> <span class="n">convolve</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">convolve</span>
 <span class="k">def</span> <span class="nf">test_ndimage</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prefetching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">prefetching</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i_N</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -987,7 +987,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
-<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="k">import</span> <span class="n">correlate</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">correlate</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">correlate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 </pre></div>
 
@@ -1033,7 +1033,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="k">import</span> <span class="n">match_template</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">match_template</span>
 <span class="k">def</span> <span class="nf">test_skimage</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prefetching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">prefetching</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i_N</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -1162,8 +1162,8 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">numba</span>
 <span class="c1">#from numba.utils import IS_PY3</span>
-<span class="kn">from</span> <span class="nn">numba.decorators</span> <span class="k">import</span> <span class="n">jit</span>
-<span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">double</span>
+<span class="kn">from</span> <span class="nn">numba.decorators</span> <span class="kn">import</span> <span class="n">jit</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">double</span>
 <span class="c1">#from numba import double, jit</span>
 
 <span class="n">nd4type</span> <span class="o">=</span> <span class="n">numba</span><span class="o">.</span><span class="n">double</span><span class="p">[:,:,:,:]</span>
@@ -1435,7 +1435,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch.nn.functional</span> <span class="k">import</span> <span class="n">conv2d</span>
+<span class="kn">from</span> <span class="nn">torch.nn.functional</span> <span class="kn">import</span> <span class="n">conv2d</span>
 
 <span class="n">filters</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -1738,7 +1738,7 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 <div class="prompt input_prompt">In [56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">Timer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sp</span><span class="p">,</span> <span class="n">sk</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">npo</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="n">n_Ns</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -2420,7 +2420,7 @@ L 74.478125 82.510938
 <div class="prompt input_prompt">In [58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">Timer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sp</span><span class="p">,</span> <span class="n">sk</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">npo</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="n">Ns</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -3127,7 +3127,7 @@ L 80.378125 82.510938
 <div class="prompt input_prompt">In [59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">Timer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sp</span><span class="p">,</span> <span class="n">sk</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">npo</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="n">n_Ms</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -3800,7 +3800,7 @@ L 74.478125 82.510938
 <div class="prompt input_prompt">In [60]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">Timer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">sp</span><span class="p">,</span> <span class="n">sk</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">npo</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="n">Ms</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>

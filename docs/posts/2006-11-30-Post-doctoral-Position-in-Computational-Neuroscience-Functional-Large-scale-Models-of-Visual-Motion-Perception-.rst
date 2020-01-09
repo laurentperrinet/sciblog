@@ -29,7 +29,7 @@ motion. We are particularly interested in the dynamics of motion
 integration, focusing on responses to complex motion stimuli in areas V1
 and V5/MT. Our theoretical approaches span from `statistical
 inference <https://laurentperrinet.github.io/publication/perrinet-06-fens>`__ to `adaptive
-distributed representations <https://invibe.net/LaurentPerrinet/SparseHebbianLearning>`__
+distributed representations <https://laurentperrinet.github.io/publication/perrinet-19-hulk>`__
 to provide insights into these parallel, dynamical processes. We use
 state-of-the-art simulation software to validate these results thanks to
 our computer facilities, with the goal of transferring this technology

@@ -211,7 +211,7 @@ This notebook tries to reproduce the learning strategy specified in the framewor
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="k">import</span> <span class="n">SHL</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="kn">import</span> <span class="n">SHL</span>
 <span class="n">database</span> <span class="o">=</span> <span class="s1">'/Users/lolo/pool/science/BICV/SHL_scripts/database/'</span>
 <span class="n">DEBUG_DOWNSCALE</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span>
 <span class="n">DEBUG_DOWNSCALE</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
@@ -18667,16 +18667,16 @@ Q 12.25 36.234375 12.25 26.859375
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="k">import</span> <span class="n">SHL</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="kn">import</span> <span class="n">SHL</span>
 <span class="c1">###############################################################################</span>
 <span class="c1"># Extract noisy patches and reconstruct them using the dictionary</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Extracting noisy patches... '</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="c1"># taking Lena as the test image...</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">extract_patches_2d</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">reconstruct_from_patches_2d</span>
-<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">lena</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">extract_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">reconstruct_from_patches_2d</span>
+<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">lena</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">lena_im</span> <span class="o">=</span> <span class="n">lena</span><span class="p">()</span> <span class="o">/</span> <span class="mf">256.0</span>
 
@@ -20086,11 +20086,11 @@ Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/post
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">lena</span>
+<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">lena</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">MiniBatchDictionaryLearning</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">extract_patches_2d</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">reconstruct_from_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">MiniBatchDictionaryLearning</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">extract_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">reconstruct_from_patches_2d</span>
 
 <span class="c1">###############################################################################</span>
 <span class="c1"># Load Lena image and extract patches</span>
@@ -20235,9 +20235,9 @@ Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/post
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">OrthogonalMatchingPursuit</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">OrthogonalMatchingPursuitCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_sparse_coded_signal</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">OrthogonalMatchingPursuit</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">OrthogonalMatchingPursuitCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_sparse_coded_signal</span>
 
 <span class="n">n_components</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">100</span>
 <span class="n">n_nonzero_coefs</span> <span class="o">=</span> <span class="mi">17</span>
@@ -20348,9 +20348,9 @@ Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/post
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">MiniBatchKMeans</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">extract_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">MiniBatchKMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">extract_patches_2d</span>
 
 <span class="n">faces</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_olivetti_faces</span><span class="p">()</span>
 
@@ -20479,7 +20479,7 @@ Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/post
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="k">import</span> <span class="n">SHL</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">shl_scripts</span> <span class="kn">import</span> <span class="n">SHL</span>
 
 <span class="k">for</span> <span class="n">eta</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="p">(</span><span class="n">DEBUG_DOWNSCALE</span><span class="p">)</span><span class="o">**.</span><span class="mi">3</span><span class="p">),</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">shl</span> <span class="o">=</span> <span class="n">SHL</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span> <span class="n">DEBUG_DOWNSCALE</span><span class="o">=</span><span class="n">DEBUG_DOWNSCALE</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">eta_homeo</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
@@ -20507,7 +20507,7 @@ Let's now try to do that <a href="https://laurentperrinet.github.io/sciblog/post
 <li>
 <p>all comments and bug corrections should be submitted to Laurent Perrinet at Laurent.Perrinet@univ-amu.fr</p>
 </li>
-<li>find out updates on <a href="https://invibe.net/LaurentPerrinet/SparseHebbianLearning">https://invibe.net/LaurentPerrinet/SparseHebbianLearning</a> and <a href="https://github.com/bicv/SHL_scripts">https://github.com/bicv/SHL_scripts</a>
+<li>find out updates on <a href="https://laurentperrinet.github.io/publication/perrinet-19-hulk">https://laurentperrinet.github.io/publication/perrinet-19-hulk</a> and <a href="https://github.com/bicv/SHL_scripts">https://github.com/bicv/SHL_scripts</a>
 </li>
 </ul>
 </div>

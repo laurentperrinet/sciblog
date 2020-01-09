@@ -151,7 +151,7 @@ synthèse de clouds ">
 <li>proposer une façon simple de passer de ce signal à une entré pour le ring (un peu de maths? un MC est une texture définie en fourier, une cellule simple fait une convolution dans l'espace, donc une multiplication dans Fourier: on pourrait avoir la sortie linéaire du neurone de V1 directement ...)</li>
 </ul>
 <p><a href="http://neuralensemble.github.io/MotionClouds/">http://neuralensemble.github.io/MotionClouds/</a></p>
-<p><a href="https://invibe.net/LaurentPerrinet/TagMotionClouds">https://invibe.net/LaurentPerrinet/TagMotionClouds</a></p>
+<p><a href="https://neuralensemble.github.io/MotionClouds">https://neuralensemble.github.io/MotionClouds</a></p>
 <!-- TEASER_END -->
 </div>
 </div>
@@ -161,16 +161,16 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">//</span><span class="n">ds</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">//</span><span class="n">ds</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="n">ds</span><span class="p">)</span>
-<span class="n">figpath</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s">'../files/2014-06-18-stage-m1-chloe-pasturel-week-3/'</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">'B_theta'</span>
+<span class="n">figpath</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2014-06-18-stage-m1-chloe-pasturel-week-3/'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'B_theta'</span>
 <span class="n">theta</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
 <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">10</span>
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -204,9 +204,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">B_theta</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">B_theta</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">mc2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -221,9 +221,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># Demonstration of studying the role of speed bandwidth using MotionClouds.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Demonstration of studying the role of speed bandwidth using MotionClouds.</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s">'B_V'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'B_V'</span>
 
 <span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">12234565</span>
@@ -231,7 +231,7 @@ synthèse de clouds ">
 <span class="n">B_V_</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V_</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
 
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -246,9 +246,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">B_V_</span> <span class="o">=</span> <span class="mf">20.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">B_V_</span> <span class="o">=</span> <span class="mf">20.</span>
 <span class="n">mc2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V_</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -263,9 +263,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># Demonstration of studying the role of horizontal speed component using MotionClouds.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Demonstration of studying the role of horizontal speed component using MotionClouds.</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s">'V_X'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'V_X'</span>
 
 <span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
 <span class="n">B_V</span> <span class="o">=</span> <span class="mf">10.</span>
@@ -273,7 +273,7 @@ synthèse de clouds ">
 
 <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span>
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -288,9 +288,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">V_X</span><span class="o">=</span><span class="mf">8.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V_X</span><span class="o">=</span><span class="mf">8.</span>
 <span class="n">mc2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">8.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -305,9 +305,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># Demonstration of studying the role of vertical speed component using MotionClouds.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Demonstration of studying the role of vertical speed component using MotionClouds.</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s">'V_Y'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'V_Y'</span>
 
 <span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
 <span class="n">B_V</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -316,7 +316,7 @@ synthèse de clouds ">
 <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span>
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">V_Y</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
 
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_Y</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_Y</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -331,7 +331,7 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">V_Y</span><span class="o">=</span><span class="mf">8.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V_Y</span><span class="o">=</span><span class="mf">8.</span>
 <span class="n">mc2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">V_Y</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
@@ -347,9 +347,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s">'B_theta-smooth'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'B_theta-smooth'</span>
 
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
 
@@ -376,9 +376,9 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">'B_theta-smoother'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'B_theta-smoother'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">smooth</span> <span class="o">=</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">ft</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c"># smoothly progress from 0. to 1.</span>
+    <span class="n">smooth</span> <span class="o">=</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">ft</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1"># smoothly progress from 0. to 1.</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">)</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i_</span><span class="p">,</span> <span class="n">B_theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">):</span>
@@ -399,7 +399,7 @@ synthèse de clouds ">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">guess_my_orientation</span><span class="p">(</span><span class="n">N_B_theta</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">guess_my_orientation</span><span class="p">(</span><span class="n">N_B_theta</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
     <span class="n">seed</span> <span class="o">=</span> <span class="mi">123456</span>
@@ -407,9 +407,9 @@ synthèse de clouds ">
     <span class="n">B_theta_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">B_theta_</span><span class="p">,</span> <span class="n">B_theta_</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">name_</span> <span class="o">=</span> <span class="s">'guess_theta_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="s1">'guess_theta_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">):</span>
-        <span class="n">smooth</span> <span class="o">=</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">ft</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c"># smoothly progress from 0. to 1.</span>
+        <span class="n">smooth</span> <span class="o">=</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">ft</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">ft</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1"># smoothly progress from 0. to 1.</span>
         <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">)</span>
         <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">i_</span><span class="p">,</span> <span class="n">B_theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">):</span>
@@ -419,7 +419,7 @@ synthèse de clouds ">
         <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">name_</span>
     
-<span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span><span class="c">#, 1973, 2016]:</span>
+<span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span><span class="c1">#, 1973, 2016]:</span>
     <span class="n">name_</span> <span class="o">=</span> <span class="n">guess_my_orientation</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>

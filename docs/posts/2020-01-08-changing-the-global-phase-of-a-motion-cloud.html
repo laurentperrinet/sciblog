@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2020-01-08 changing the global phase of a Motion Cloud | Scientific logbook</title>
+<title>Changing the global phase of a Motion Cloud | Scientific logbook</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -27,7 +27,7 @@ MathJax.Hub.Config({
 </script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" title="Role of gamma correction in Sparse coding" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
-<meta property="og:title" content="2020-01-08 changing the global phase of a Motion Cloud">
+<meta property="og:title" content="Changing the global phase of a Motion Cloud">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html">
 <meta property="og:description" content="Motion Clouds were defined in the origin to define parameterized moving textures. In that other post, we defined a simple code to generate static images using a simple code. Can we generate a series o">
 <meta property="og:type" content="article">
@@ -107,7 +107,7 @@ MathJax.Hub.Config({
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">2020-01-08 changing the global phase of a Motion Cloud</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Changing the global phase of a Motion Cloud</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -150,10 +150,10 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">'phase'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'phase'</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">())</span>
@@ -234,7 +234,7 @@ MathJax.Hub.Config({
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">help</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -291,23 +291,23 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">N_phase</span> <span class="o">=</span> <span class="mi">4</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_phase</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">21</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">/</span><span class="n">N_phase</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i_ax</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="k">False</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">i_ax</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)):</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phase</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span>
 
     <span class="n">axs</span><span class="p">[</span><span class="n">i_ax</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">())</span>
-    <span class="n">axs</span><span class="p">[</span><span class="n">i_ax</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s">r'$\phi=%.1f$°'</span> <span class="o">%</span> <span class="p">(</span><span class="n">phase</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">'white'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i_ax</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'$\phi=</span><span class="si">%.1f</span><span class="s1">$°'</span> <span class="o">%</span> <span class="p">(</span><span class="n">phase</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="n">i_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
     <span class="n">axs</span><span class="p">[</span><span class="n">i_ax</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-<span class="c">#plt.tight_layout()</span>
+<span class="c1">#plt.tight_layout()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span> <span class="o">=</span> <span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">wspace</span> <span class="o">=</span> <span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
 
-<span class="c">#import os</span>
-<span class="c">#fig.savefig(os.path.join('../figs', 'orientation_tuning.png'))</span>
+<span class="c1">#import os</span>
+<span class="c1">#fig.savefig(os.path.join('../figs', 'orientation_tuning.png'))</span>
 </pre></div>
 
     </div>
@@ -350,22 +350,22 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">imageio</span>
-<span class="kn">from</span> <span class="nn">pygifsicle</span> <span class="k">import</span> <span class="n">optimize</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<span class="kn">from</span> <span class="nn">pygifsicle</span> <span class="kn">import</span> <span class="n">optimize</span>
 <span class="n">N_phase</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="n">fps</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
 
-<span class="n">template</span> <span class="o">=</span> <span class="s">"/tmp/MCphase_{}.png"</span>
-<span class="k">for</span> <span class="n">i_phase</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="k">False</span><span class="p">)):</span>
+<span class="n">template</span> <span class="o">=</span> <span class="s2">"/tmp/MCphase_</span><span class="si">{}</span><span class="s2">.png"</span>
+<span class="k">for</span> <span class="n">i_phase</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)):</span>
     <span class="n">im</span> <span class="o">=</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phase</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="n">imageio</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">f</span><span class="s">"/tmp/MCphase_{i_phase}.png"</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+    <span class="n">imageio</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MCphase_</span><span class="si">{i_phase}</span><span class="s2">.png"</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
 
-<span class="n">gifname</span> <span class="o">=</span> <span class="s">'../files/2020-01-08-MC_phase.gif'</span>
-<span class="k">with</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'I'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<span class="n">gifname</span> <span class="o">=</span> <span class="s1">'../files/2020-01-08-MC_phase.gif'</span>
+<span class="k">with</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'I'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i_phase</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_phase</span><span class="p">):</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="s">"/tmp/MCphase_{i_phase}.png"</span><span class="p">))</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MCphase_</span><span class="si">{i_phase}</span><span class="s2">.png"</span><span class="p">))</span>
 <span class="n">optimize</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gifname</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2000</span><span class="p">);</span>
 </pre></div>
 
@@ -389,7 +389,7 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> watermark
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
 <span class="o">%</span><span class="k">watermark</span>
 </pre></div>
 
@@ -432,7 +432,7 @@ interpreter: 64bit
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, sympy, pillow, imageio
 </pre></div>
 
@@ -504,16 +504,74 @@ interpreter: 64bit
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre>%%bash
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nb">cd</span> ..
 nikola build <span class="p">;</span> nikola deploy
-<span class="nb">cd </span>posts
+<span class="nb">cd</span> posts
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master 21a4944]  updating site
+ 9 files changed, 708 insertions(+), 432 deletions(-)
+ rewrite posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.ipynb (84%)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Scanning posts...........done!
+.  render_posts:timeline_changes
+.  render_posts:cache/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html
+.  render_sources:docs/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.ipynb
+.  render_sources:docs/posts/2018-12-13-sparse-coding-using-fista.ipynb
+.  render_taxonomies:docs/categories/orientation.html
+.  render_taxonomies:docs/categories/psychophysics.html
+.  render_taxonomies:docs/index.html
+.  render_taxonomies:docs/categories/motionclouds.html
+.  render_taxonomies:docs/archive.html
+.  render_taxonomies:docs/categories/psychophysics.xml
+.  render_pages:docs/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html
+.  render_pages:docs/posts/2018-12-13-sparse-coding-using-fista.html
+.  render_taxonomies:docs/categories/motionclouds.xml
+.  render_taxonomies:docs/categories/orientation.xml
+.  render_taxonomies:docs/rss.xml
+.  sitemap:docs/sitemap.xml
+.  sitemap:docs/sitemapindex.xml
+Scanning posts...........done!
+[2020-01-08T21:27:04Z] NOTICE: deploy: Deleted 1 posts due to DEPLOY_* settings
+[2020-01-08T21:27:04Z] INFO: deploy: =&gt; preset 'default'
+[2020-01-08T21:27:04Z] INFO: deploy: ==&gt; git add posts/* docs/* files/*
+[2020-01-08T21:27:04Z] INFO: deploy: ==&gt; git commit -am' updating site'
+[2020-01-08T21:27:04Z] INFO: deploy: ==&gt; git push
+To https://github.com/laurentperrinet/sciblog.git
+ ! [remote rejected] master -&gt; master (cannot lock ref 'refs/heads/master': is at 4c054aef8527ecd579f7f2c8d3039c7ede15fad8 but expected d51d8c71b3f64b040696d8d049555da6ea4da792)
+error: failed to push some refs to 'https://github.com/laurentperrinet/sciblog.git'
+[2020-01-08T22:26:42Z] ERROR: deploy: Failed deployment -- command git push returned 1
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -536,7 +594,7 @@ nikola build <span class="p">;</span> nikola deploy
         <script>
         var disqus_shortname ="invibe",
             disqus_url="https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html",
-        disqus_title="2020-01-08 changing the global phase of a Motion Cloud",
+        disqus_title="Changing the global phase of a Motion Cloud",
         disqus_identifier="cache/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html",
         disqus_config = function () {
             this.language = "en";

@@ -141,43 +141,35 @@ http:/">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>I need the pid to know if one of the many simulations I run are still
-running. There's no native solution in matlab to my knowledge.</li>
+<li><p>I need the pid to know if one of the many simulations I run are still
+running. There's no native solution in matlab to my knowledge.</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
+<li><p>using hint @
+<a class="reference external" href="http://www.mathworks.cn/matlabcentral/newsreader/view_thread/268529">http://www.mathworks.cn/matlabcentral/newsreader/view_thread/268529</a></p></li>
 <li>
-<p class="first">using hint @
-<a class="reference external" href="http://www.mathworks.cn/matlabcentral/newsreader/view_thread/268529">http://www.mathworks.cn/matlabcentral/newsreader/view_thread/268529</a></p>
-</li>
-<li>
-<p class="first">create <tt class="docutils literal">getpid.c</tt> with</p>
-<pre class="literal-block">
-1 #include "mex.h"
+<p>create <code class="docutils literal">getpid.c</code> with</p>
+<pre class="literal-block">1 #include "mex.h"
 2 #include &lt;unistd.h&gt;
 3 mexFunction(int nlhs, mxArray *plhs[ ], int nrhs, const mxArray *prhs[ ])
 4 {
 5   plhs[0] = mxCreateDoubleScalar((double) getpid());
-6 }
-</pre>
+6 }</pre>
 </li>
 <li>
-<p class="first">compile with <a href="2010-08-11-getting-the-PID-from-matlab.html#id1"><span class="problematic" id="id2">``</span></a>mex getpid.c ``</p>
+<p>compile with <a href="2010-08-11-getting-the-PID-from-matlab.html#id1"><span class="problematic" id="id2">``</span></a>mex getpid.c ``</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 22); <em><a href="2010-08-11-getting-the-PID-from-matlab.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 22); <em><a href="2010-08-11-getting-the-PID-from-matlab.html#id2">backlink</a></em></p>
 <p>Inline literal start-string without end-string.</p>
 </div>
 </li>
-<li>
-<p class="first">use in matlab as <tt class="docutils literal">pid=getpid()</tt></p>
-</li>
-<li>
-<p class="first">this is part of the package in
-<a class="reference external" href="https://invibe.net/LaurentPerrinet/SparseHebbianLearning">SparseHebbianLearning</a></p>
-</li>
+<li><p>use in matlab as <code class="docutils literal"><span class="pre">pid = getpid()</span></code></p></li>
+<li><p>this is part of the package in
+<a class="reference external" href="https://laurentperrinet.github.io/publication/perrinet-19-hulk">SparseHebbianLearning</a></p></li>
 </ul>
 </div>
     </div>

@@ -689,7 +689,7 @@ references of articles and proceedings
    implementation close to the concept of neural assemblies from Hebb
    [3]). We present here results of simulation of this network with
    small natural images (available at
-   https://invibe.net/LaurentPerrinet/SparseHebbianLearning) and compare
+   https://laurentperrinet.github.io/publication/perrinet-19-hulk) and compare
    it to the Sparsenet solution. Extending it to realistic images and to
    the NEST simulator http://www.nest-initiative.org/, we show that this
    learning algorithm based on the properties of neural computations
@@ -800,7 +800,7 @@ references of articles and proceedings
    the architecture and nature of neural computations (Perrinet, 2006).
    We present here results of a simulation of this network of small
    natural images (available at
-   https://invibe.net/LaurentPerrinet/SparseHebbianLearning ) and compare
+   https://laurentperrinet.github.io/publication/perrinet-19-hulk ) and compare
    it to the Sparsenet solution. We show that this solution based on
    neural computations produces an adaptive algorithm for efficient
    representations in V1.
