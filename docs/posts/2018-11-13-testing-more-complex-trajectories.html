@@ -603,7 +603,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [43]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">do_linear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -626,7 +626,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [44]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
@@ -644,7 +644,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [45]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay'</span>
@@ -680,7 +680,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [35]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult'</span>
@@ -889,11 +889,11 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
-<span class="o">%</span><span class="k">version_information</span> numpy, matplotlib, MotionClouds
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span>
 </pre></div>
 
     </div>
@@ -906,50 +906,85 @@ MathJax.Hub.Config({
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2020-01-14T11:23:54+01:00
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
-<tr>
-<th>Software</th>
-<th>Version</th>
-</tr>
-<tr>
-<td>Python</td>
-<td>3.7.6 64bit [Clang 11.0.0 (clang-1100.0.33.16)]</td>
-</tr>
-<tr>
-<td>IPython</td>
-<td>7.11.1</td>
-</tr>
-<tr>
-<td>OS</td>
-<td>Darwin 19.2.0 x86_64 i386 64bit</td>
-</tr>
-<tr>
-<td>numpy</td>
-<td>1.19.0.dev0+624d34c</td>
-</tr>
-<tr>
-<td>matplotlib</td>
-<td>3.1.2</td>
-</tr>
-<tr>
-<td>MotionClouds</td>
-<td>20180606</td>
-</tr>
-<tr><td colspan="2">Tue Jan 14 10:42:46 2020 CET</td></tr>
-</table>
+CPython 3.7.6
+IPython 7.11.1
+
+compiler   : Clang 11.0.0 (clang-1100.0.33.16)
+system     : Darwin
+release    : 19.2.0
+machine    : x86_64
+processor  : i386
+CPU cores  : 36
+interpreter: 64bit
+</pre>
 </div>
-
 </div>
 
 </div>
 </div>
 
-</div>!rm -fr {mc.figpath}/*_overlay_*!ls -l {mc.figpath}/*</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span> -i -h -m -v -p MotionClouds,numpy,pillow,imageio  -r -g -b
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The watermark extension is already loaded. To reload it, use:
+  %reload_ext watermark
+2020-01-14T11:23:55+01:00
+
+CPython 3.7.6
+IPython 7.11.1
+
+MotionClouds 20180606
+numpy 1.19.0.dev0+624d34c
+pillow not installed
+imageio 2.6.1
+
+compiler   : Clang 11.0.0 (clang-1100.0.33.16)
+system     : Darwin
+release    : 19.2.0
+machine    : x86_64
+processor  : i386
+CPU cores  : 36
+interpreter: 64bit
+host name  : fortytwo
+Git hash   : 7a9632c08197e479802f7b890ae18179d347a12e
+Git repo   : https://github.com/laurentperrinet/sciblog.git
+Git branch : master
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/code.html" rel="tag">code</a></li>
