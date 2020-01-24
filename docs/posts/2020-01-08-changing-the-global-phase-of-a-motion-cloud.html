@@ -365,15 +365,14 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 <span class="n">N_phase</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="n">fps</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
 
-<span class="n">template</span> <span class="o">=</span> <span class="s2">"/tmp/MCphase_</span><span class="si">{}</span><span class="s2">.png"</span>
 <span class="k">for</span> <span class="n">i_phase</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)):</span>
     <span class="n">im</span> <span class="o">=</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phase</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="n">imageio</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MCphase_</span><span class="si">{i_phase}</span><span class="s2">.png"</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+    <span class="n">imageio</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MC_phase_</span><span class="si">{i_phase:02d}</span><span class="s2">.png"</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
 
 <span class="n">gifname</span> <span class="o">=</span> <span class="s1">'../files/2020-01-08-MC_phase.gif'</span>
 <span class="k">with</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'I'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i_phase</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_phase</span><span class="p">):</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MCphase_</span><span class="si">{i_phase}</span><span class="s2">.png"</span><span class="p">))</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/MC_phase_</span><span class="si">{i_phase:02d}</span><span class="s2">.png"</span><span class="p">))</span>
 <span class="n">optimize</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gifname</span><span class="p">))</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
@@ -409,6 +408,256 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>For even more fun, let us now try to generate an animation of this process, but now for a natural scene:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_phase</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">fps</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://external-content.duckduckgo.com/iu/?u=http%3A</span><span class="si">%2F%2F</span><span class="s1">www.trbimg.com</span><span class="si">%2F</span><span class="s1">img-57c7186a</span><span class="si">%2F</span><span class="s1">turbine</span><span class="si">%2F</span><span class="s1">mc-paul-stanley-kiss-allentown-fair-20160831&amp;f=1&amp;nofb=1'</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1365, 2048, 3)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1365, 2048)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(682, 1024)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">SLIP</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">slip</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/default_param.py'</span><span class="p">)</span>
+<span class="n">slip</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">slip</span><span class="o">.</span><span class="n">whitening</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Fz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phase</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftn</span><span class="p">(</span><span class="n">Fz</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phase</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.08385036684021319, 1.0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i_phase</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_phase</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)):</span>
+    <span class="c1"># print(i_phase, phase, f"/tmp/NI_phase_{i_phase:02d}.png")</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftn</span><span class="p">(</span><span class="n">Fz</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phase</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">slip</span><span class="o">.</span><span class="n">dewhitening</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">imageio</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/NI_phase_</span><span class="si">{i_phase:02d}</span><span class="s2">.png"</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+
+<span class="n">gifname</span> <span class="o">=</span> <span class="s1">'../files/2020-01-08-NI_phase.gif'</span>
+<span class="k">with</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'I'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i_phase</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_phase</span><span class="p">):</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/tmp/NI_phase_</span><span class="si">{i_phase:02d}</span><span class="s2">.png"</span><span class="p">))</span>
+<span class="n">optimize</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gifname</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;IPython.core.display.Image object&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Note, that doing a smooth variation of phase produces slight movements of the features, at the scale of each texton.</p>
 <h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2020-01-08-changing-the-global-phase-of-a-motion-cloud.html#some-book-keeping-for-the-notebook">¶</a>
 </h3>
@@ -417,7 +666,7 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
@@ -438,7 +687,7 @@ random_cloud(envelope, seed=None, impulse=False, events=None, do_amp=True)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2020-01-09T12:25:14+01:00
+<pre>2020-01-24T10:44:40+01:00
 
 CPython 3.7.6
 IPython 7.11.1
@@ -460,7 +709,7 @@ interpreter: 64bit
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
@@ -483,16 +732,16 @@ interpreter: 64bit
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The watermark extension is already loaded. To reload it, use:
   %reload_ext watermark
-2020-01-09T12:25:14+01:00
+2020-01-24T10:44:40+01:00
 
 CPython 3.7.6
 IPython 7.11.1
 
 MotionClouds 20180606
-numpy 1.18.0
+numpy 1.18.1
 SLIP 20191113
-LogGabor not installed
-SparseEdges not installed
+LogGabor 20191113
+SparseEdges 20191118
 matplotlib 3.1.2
 scipy 1.4.1
 pillow not installed
@@ -506,7 +755,7 @@ processor  : i386
 CPU cores  : 36
 interpreter: 64bit
 host name  : fortytwo
-Git hash   : 02885abd803705f5780ae8b437acfdbab1fa8977
+Git hash   : 4b39487945ba8245818b63440741c0aded62d451
 Git repo   : https://github.com/laurentperrinet/sciblog.git
 Git branch : master
 </pre>
