@@ -37,6 +37,7 @@ Do not hesitate to comment!
 # Currently supported languages are:
 #
 # en        English
+# af        Afrikaans
 # ar        Arabic
 # az        Azerbaijani
 # bg        Bulgarian
@@ -53,11 +54,13 @@ Do not hesitate to comment!
 # fa        Persian
 # fi        Finnish
 # fr        French
+# fur       Friulian
 # gl        Galician
 # he        Hebrew
 # hi        Hindi
 # hr        Croatian
 # hu        Hungarian
+# ia        Interlingua
 # id        Indonesian
 # it        Italian
 # ja        Japanese [NOT jp]
@@ -132,6 +135,10 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 # Name of the theme to use.
 THEME = "bootblog4"
 
+# Primary color of your theme. This will be used to customize your theme.
+# Must be a HEX value.
+THEME_COLOR = '#5670d4'
+
 if THEME is "zen-ipython":
     # Links for the sidebar / navigation bar.
     # You should provide a key-value pair for each used language.
@@ -142,7 +149,7 @@ if THEME is "zen-ipython":
             ('/index.html', 'Home', 'icon-home'),
             ('/archive.html', 'Archives', 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags', 'icon-tags'),
-    #         ('/rss.xml', 'RSS'),#, 'icon-rss'),
+            ('/rss.xml', 'RSS'),#, 'icon-rss'),
             ('https://laurentperrinet.github.io', 'About my research', 'icon-user'),
             ('https://twitter.com/laurentperrinet', 'Twitter', 'icon-twitter'),
             ('https://github.com/laurentperrinet', 'Github', 'icon-github'),
@@ -154,7 +161,7 @@ else:
             ('/index.html', 'Home'),#,, 'icon-home'),
             ('/archive.html', 'Archives'),#,, 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags'),#,, 'icon-tags'),
-    #         ('/rss.xml', 'RSS'),#, 'icon-rss'),
+            ('/rss.xml', 'RSS'),#, 'icon-rss'),
             ('http://laurentperrinet.github.io', 'About my research'),#,,, 'icon-user'),
             ('https://twitter.com/laurentperrinet', 'Twitter'),#,, 'icon-twitter'),
             ('https://github.com/laurentperrinet', 'Github'),#,, 'icon-github'),
@@ -183,7 +190,59 @@ THEME_CONFIG = {
         'sidebar': ''
     }
 }
+
+# POSTS and PAGES contains (wildcard, destination, template) tuples.
+# (translatable)
+#
+# The wildcard is used to generate a list of source files
+# (whatever/thing.rst, for example).
+#
+# That fragment could have an associated metadata file (whatever/thing.meta),
+# and optionally translated files (example for Spanish, with code "es"):
+#     whatever/thing.es.rst and whatever/thing.es.meta
+#
+#     This assumes you use the default TRANSLATIONS_PATTERN.
+#
+# From those files, a set of HTML fragment files will be generated:
+# cache/whatever/thing.html (and maybe cache/whatever/thing.html.es)
+#
+# These files are combined with the template to produce rendered
+# pages, which will be placed at
+# output/TRANSLATIONS[lang]/destination/pagename.html
+#
+# where "pagename" is the "slug" specified in the metadata file.
+# The page might also be placed in /destination/pagename/index.html
+# if PRETTY_URLS are enabled.
+#
+# The difference between POSTS and PAGES is that POSTS are added
+# to feeds, indexes, tag lists and archives and are considered part
+# of a blog, while PAGES are just independent HTML pages.
+#
+# Finally, note that destination can be translated, i.e. you can
+# specify a different translation folder per language. Example:
+#     PAGES = (
+#         ("pages/*.rst", {"en": "pages", "de": "seiten"}, "page.tmpl"),
+#         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
+#     )
+
+POSTS = (
+         ("posts/*.ipynb", "posts", "post.tmpl"),
+         ("posts/*.txt", "posts", "post.tmpl"),
+         ("posts/*.md", "posts", "post.tmpl"),
+         ("posts/*.rst", "posts", "post.tmpl"),
+         ("posts/*.rst4", "posts", "post.tmpl"),
+         ("posts/*.html", "posts", "post.tmpl"),
+         )
+PAGES = (
+         ("stories/*.ipynb", "stories", "story.tmpl"),
+         ("stories/*.txt", "stories", "story.tmpl"),
+         ("stories/*.txt", "stories", "story.tmpl"),
+         ("stories/*.md", "stories", "story.tmpl"),
+         ("stories/*.html", "stories", "story.tmpl"),
+         )
+
 WRITE_TAG_CLOUD = True
+
 
 # Below this point, everything is optional
 
@@ -223,22 +282,6 @@ TIMEZONE = "Europe/Paris"
 # For example, to use British instead of US English: LOCALES = {'en': 'en_GB'}
 # LOCALES = {}
 
-POSTS = (
-    ("posts/*.ipynb", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.rst4", "posts", "post.tmpl"),
-    ("posts/*.html", "posts", "post.tmpl"),
-)
-PAGES = (
-    ("stories/*.ipynb", "stories", "story.tmpl"),
-    ("stories/*.txt", "stories", "story.tmpl"),
-    ("stories/*.txt", "stories", "story.tmpl"),
-    ("stories/*.md", "stories", "story.tmpl"),
-    ("stories/*.html", "stories", "story.tmpl"),
-)
-
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of {source: relative destination}.
 # Default is:
@@ -254,6 +297,8 @@ FILES_FOLDERS = {'files': 'files'}
 # A mapping of languages to file-extensions that represent that language.
 # Feel free to add or delete extensions to any list, but don't add any new
 # compilers unless you write the interface for it yourself.
+#
+# The default compiler for `new_post` is the first entry in the POSTS tuple.
 #
 # 'rest' is reStructuredText
 # 'markdown' is Markdown
@@ -276,6 +321,11 @@ COMPILERS = {
     # with many of the others.
     # "pandoc": ('.rst', '.md', '.txt'),
 }
+
+# Enable reST directives that insert the contents of external files such
+# as "include" and "raw." This maps directly to the docutils file_insertion_enabled
+# config. See: http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
+# REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
 # Set to False for two-file posts, with separate metadata.
@@ -339,7 +389,7 @@ TAG_PATH = "categories"
 # and displayed underneath the tag list or index page’s title.
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging about blogging.",
+#        "blogging": "Meta-blog posts about blogging.",
 #        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
 #    },
 # }
@@ -412,7 +462,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # and displayed underneath the category list or index page’s title.
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging about blogging.",
+#        "blogging": "Meta-blog posts about blogging.",
 #        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
 #    },
 # }
@@ -529,6 +579,7 @@ CREATE_SINGLE_ARCHIVE = True
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / index.html
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / DAY / index.html
+# (translatable)
 # ARCHIVE_PATH = ""
 # ARCHIVE_FILENAME = "archive.html"
 
@@ -837,13 +888,14 @@ IMAGE_FOLDERS = {'images': 'images'}
 # META_GENERATOR_TAG = True
 
 # Color scheme to be used for code blocks. If your theme provides
-# "assets/css/code.css" this is ignored. Leave empty to disable.
+# "assets/css/code.css" this is ignored. Set to None to disable.
 # Can be any of:
 # algol, algol_nu, autumn, borland, bw, colorful, default, emacs, friendly,
 # fruity, igor, lovelace, manni, monokai, murphy, native, paraiso-dark,
 # paraiso-light, pastie, perldoc, rrt, tango, trac, vim, vs, xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
+#
 # CODE_COLOR_SCHEME = 'default'
 
 # FAVICONS contains (name, file, size) tuples.
@@ -932,7 +984,7 @@ RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
-#   disqus, facebook, intensedebate, isso, livefyre, muut
+#   disqus, facebook, intensedebate, isso, muut, commento
 # You can leave this option blank to disable comments.
 COMMENT_SYSTEM = "disqus"
 # And you also need to add your COMMENT_SYSTEM_ID which
@@ -1054,7 +1106,7 @@ MathJax.Hub.Config({
 # feature yet, it's faster and the output looks better.
 # USE_KATEX = False
 
-# KaTeX auto-render settings. If you want support for the $.$ syntax (wihch may
+# KaTeX auto-render settings. If you want support for the $.$ syntax (which may
 # conflict with running text!), just use this config:
 # KATEX_AUTO_RENDER = """
 # delimiters: [
@@ -1070,14 +1122,15 @@ MathJax.Hub.Config({
 # IPYNB_CONFIG = {}
 # With the following example configuration you can use a custom jinja template
 # called `toggle.tpl` which has to be located in your site/blog main folder:
-# IPYNB_CONFIG = {'Exporter':{'template_file': 'toggle'}}
+# IPYNB_CONFIG = {'Exporter': {'template_file': 'toggle'}}
 
 # What Markdown extensions to enable?
 # You will also get gist, nikola and podcast because those are
 # done in the code, hope you don't mind ;-)
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
-# The default is ['fenced_code', 'codehilite']
+# Defaults are markdown.extensions.(fenced_code|codehilite|extra)
+# markdown.extensions.meta is required for Markdown metadata.
 MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
@@ -1234,10 +1287,40 @@ SEARCH_FORM = """
 # (Note the '.*\/' in the beginning -- matches source paths relative to conf.py)
 # FILE_METADATA_REGEXP = None
 
-# If you hate "Filenames with Capital Letters and Spaces.md", you should
-# set this to true.
+# Should titles fetched from file metadata be unslugified (made prettier?)
 FILE_METADATA_UNSLUGIFY_TITLES = True
 USE_TAG_METADATA = False
+# If enabled, extract metadata from docinfo fields in reST documents.
+# If your text files start with a level 1 heading, it will be treated as the
+# document title and will be removed from the text.
+# USE_REST_DOCINFO_METADATA = False
+
+# If enabled, hide docinfo fields in reST document output
+# HIDE_REST_DOCINFO = False
+
+# Map metadata from other formats to Nikola names.
+# Supported formats: yaml, toml, rest_docinfo, markdown_metadata
+# METADATA_MAPPING = {}
+#
+# Example for Pelican compatibility:
+# METADATA_MAPPING = {
+#     "rest_docinfo": {"summary": "description", "modified": "updated"},
+#     "markdown_metadata": {"summary": "description", "modified": "updated"}
+# }
+# Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
+
+# Map metadata between types/values. (Runs after METADATA_MAPPING.)
+# Supported formats: nikola, yaml, toml, rest_docinfo, markdown_metadata
+# The value on the right should be a dict of callables.
+# METADATA_VALUE_MAPPING = {}
+# Examples:
+# METADATA_VALUE_MAPPING = {
+#     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
+#     "nikola": {
+#         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
+#         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
+#      }
+# }
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
@@ -1245,10 +1328,6 @@ USE_TAG_METADATA = False
 # Nikola supports Twitter Card summaries, but they are disabled by default.
 # They make it possible for you to attach media to Tweets that link
 # to your content.
-#
-# IMPORTANT:
-# Please note, that you need to opt-in for using Twitter Cards!
-# To do this please visit https://cards-dev.twitter.com/validator
 #
 # Uncomment and modify to following lines to match your accounts.
 # Images displayed come from the `previewimage` meta tag.
@@ -1330,10 +1409,3 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
-
-# Compiler to process LESS files.
-LESS_COMPILER = 'lessc'
-
-# A list of options to pass to the LESS compiler.
-# Final command is: LESS_COMPILER LESS_OPTIONS file.less
-LESS_OPTIONS = []
