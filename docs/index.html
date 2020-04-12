@@ -218,12 +218,12 @@ this will be exposed in the following book chapter (see also https://laurentperr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The goal here is to compare methods which fit data with psychometric curves using logistic regression. Indeed, after (long) experiments where for instance you collected sequences of keypresses, it is important to infer at best the parameters of the underlying processes: was the observer biased, was she more precise?</p>
+<p>The goal here is to compare methods which fit data with psychometric curves using logistic regression. Indeed, after (long) experiments where for instance you collected sequences of keypresses, it is important to infer at best the parameters of the underlying processes: was the observer biased, or more precise?</p>
 <p>While I was <em>forevever</em> using <a href="https://scikit-learn.org/stable/index.html">sklearn</a> or <a href="https://lmfit.github.io/lmfit-py/">lmfit</a> (that is, scipy's <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">minimize</a>) and praised these beautifully crafted methods, I sometimes lacked some flexibility in the definition of the model. This notebook was done in collaboration with <a href="https://github.com/jennafradin">Jenna Fradin</a>, master student in the lab.</p>
 <blockquote>
 <p>tl; dr = Do not trust the coefficients extracted by a fit without validating for <em>methodological</em> biases.</p>
 </blockquote>
-<p>One part of flexibility I missed is taking care of the lapse rate, that is the frequency with which you just <em>miss the key</em>.</p>
+<p>One part of flexibility I missed is taking care of the <em>lapse rate</em>, that is the frequency with which you just <em>miss the key</em>. In a psychology experiment, you often see a fast sequence of trials for which you have to make a perceptual deccision, for instance press the Left or Right arrows. Sometimes you know the answer you should have done, but press the wrong eror. This error of distraction is always low (in the order of 5% to 10%) but could potentially change the results of the experiments. This is one of the aspects we will evaluate here.</p>
 <p>In this notebook, I define a fitting method using <a href="https://pytorch.org/">pytorch</a> which fits in a few lines of code :</p>
 
 </div>
@@ -254,7 +254,7 @@ this will be exposed in the following book chapter (see also https://laurentperr
         <span class="n">out</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">((</span><span class="n">theta</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">theta0</span> <span class="p">)</span><span class="o">/</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_wt</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">out</span>
 
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.005</span>
 <span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.999</span>
 <span class="n">betas</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span><span class="p">)</span>
 <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span>
