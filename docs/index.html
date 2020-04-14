@@ -76,6 +76,9 @@ MathJax.Hub.Config({
 <a href="categories/index.html" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
+<a href="rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
 <a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
                 </li>
 <li class="nav-item">
@@ -267,7 +270,7 @@ this will be exposed in the following book chapter (see also https://laurentperr
     <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>  <span class="c1"># gamma=gamma,</span>
     <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
     <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
 
     <span class="n">Theta</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">theta</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>

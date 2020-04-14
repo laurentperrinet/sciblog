@@ -1409,3 +1409,8 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+# Compiler to process LESS files.
+LESS_COMPILER = 'lessc'
+# A list of options to pass to the LESS compiler.
+# Final command is: LESS_COMPILER LESS_OPTIONS file.less
+LESS_OPTIONS = []
