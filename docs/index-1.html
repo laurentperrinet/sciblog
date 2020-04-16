@@ -107,7 +107,41 @@ MathJax.Hub.Config({
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2010-12-27-how-to-find-stuff.html" class="u-url">how to find stuff</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2011-01-18-ubuntu-starting-sshd-at-boot.html" class="u-url">ubuntu : starting sshd at boot</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2011-01-18-ubuntu-starting-sshd-at-boot.html" rel="bookmark">
+            <time class="published dt-published" datetime="2011-01-18T13:36:57+01:00" itemprop="datePublished" title="2011-01-18 13:36">2011-01-18 13:36</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2011-01-18-ubuntu-starting-sshd-at-boot.html#disqus_thread" data-disqus-identifier="cache/posts/2011-01-18-ubuntu-starting-sshd-at-boot.html">Comments</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<ul>
+<li>
+<p class="first">ssh server installed but not starting at boot (I certainly messed up
+something):</p>
+<pre class="literal-block">
+$ ls -l /etc/init.d/*ssh*
+-rwxr-xr-x 1 root root 3704 2010-09-14 19:20 /etc/init.d/ssh
+$ ls -l /etc/rc2.d/*ssh*
+ls: cannot access /etc/rc2.d/*ssh*: No such file or directory
+$ ls -l /etc/rc1.d/*ssh*
+</pre>
+</li>
+</ul>
+<p class="more"><a href="posts/2011-01-18-ubuntu-starting-sshd-at-boot.html">Read more…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2010-12-27-how-to-find-stuff.html" class="u-url">how to find stuff</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet

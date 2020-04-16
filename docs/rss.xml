@@ -9,7 +9,11 @@ Do not hesitate to comment!
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 15 Apr 2020 14:57:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2020-04-08 fitting a psychometric curve using pyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-04-08-fitting-a-psychometric-curve-using-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 16 Apr 2020 08:55:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2020-04-16 creating an hexagonal grid</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-04-16-creating-an-hexagonal-grid.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A quick note as to how to create an hexagonal grid.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2020-04-16-creating-an-hexagonal-grid.html"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>numpy</category><category>open-science</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2020-04-16-creating-an-hexagonal-grid.html</guid><pubDate>Thu, 16 Apr 2020 08:38:47 GMT</pubDate></item><item><title>2020-04-08 fitting a psychometric curve using pyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-04-08-fitting-a-psychometric-curve-using-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The goal here is to compare methods which fit data with psychometric curves using logistic regression. Indeed, after (long) experiments where for instance you collected sequences of keypresses, it is important to infer at best the parameters of the underlying processes: was the observer biased, or more precise?&lt;/p&gt;
@@ -178,26 +182,4 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The goal here is to check if the &lt;a href="https://en.wikipedia.org/wiki/Von_Mises_distribution"&gt;Von Mises distribution&lt;/a&gt; is the &lt;em&gt;a priori&lt;/em&gt; choice to make when handling polar coordinates.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>math</category><category>neural</category><category>orientation</category><category>sparse</category><category>v1</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</guid><pubDate>Sun, 23 Dec 2018 19:31:22 GMT</pubDate></item><item><title>Feature vs global motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;As we see a visual scene, there is contribution of the motion of each of the objects that constitute the visual scene into detecting its global motion.
-In particular, it is debatable to know which weight individual features, such as small objects in the foreground, have into this computation compared to a dense texture-like stimulus, as that of the background for instance.&lt;/p&gt;
-&lt;p&gt;Here, we design a a stimulus where we control independently these two aspects of motions to titrate their relative contribution to the detection of motion.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/center&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Can you spot the motion ? Is it more going to the upper left or to the upper right?&lt;/p&gt;
-&lt;p&gt;(For a more controlled test, imagine you fixate on the center of the movie.)&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</guid><pubDate>Thu, 29 Nov 2018 09:43:46 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>math</category><category>neural</category><category>orientation</category><category>sparse</category><category>v1</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-12-23-origins-of-the-von-mises-distribution.html</guid><pubDate>Sun, 23 Dec 2018 19:31:22 GMT</pubDate></item></channel></rss>
