@@ -1,0 +1,793 @@
+.. title: craac 2012
+.. slug: 2012-11-07-craac-2012
+.. date: 2012-11-07 13:36:57
+.. type: text
+.. tags: sciblog
+
+
++---------------------------------------------------+--------------------------------------------------------------------------+
+| |https://crac.dsi.cnrs.fr/image/logo_cnrs.gif|    | Compte rendu annuel d'activité des chercheurs du CNRSAnnée 2011 - 2012   |
++---------------------------------------------------+--------------------------------------------------------------------------+
+
+
+.. TEASER_END
+
+
+Identité
+--------
+
+
+Nom (nom de jeune fille)
+
+PERRINET
+
+Prénom
+
+Laurent
+
+Date de naissance
+
+23/02/1973
+
+Grade
+
+CR1
+
+N° d'agent
+
+00024609
+
+Téléphone
+
+04 91 32 40 44
+
+Télécopie
+
+04 91 32 40 56
+
+Adresse électronique
+
+`laurent.perrinet@univ-amu.fr <mailto:laurent.perrinet@univ-amu.fr>`__
+
+Section(s) du Comité National
+
+7
+
+Département scientifique
+
+Institut des sciences biologiques
+
+Délégation régionale
+
+Provence et Corse
+
+Affectation
+-----------
+
+
+Intitulé de l'unité
+
+Institut des Neurosciences de la Timone
+
+Code unité
+
+UMR7289
+
+Directeur
+
+Guillaume MASSON
+
+Adresse électronique du directeur
+
+`guillaume.masson@univ-amu.fr <mailto:guillaume.masson@univ-amu.fr>`__
+
+Adresse
+
+INT - 27 boulevard Jean Moulin
+
+13385 MARSEILLE CEDEX 05
+
+France
+
+Téléphone
+
+04 91 32 40 10
+
+Télécopie
+
+Délégation
+
+Provence et Corse
+
+Site Web
+
+Distinction(s)
+--------------
+
+
+Qualification
+-------------
+
+
+Habilitation à diriger des recherches
+
+non
+
+Doctorat d'Etat
+
+non
+
+Doctorat
+
+oui
+
+Année d'obtention
+
+2003
+
+Qualification "Maître de conférences"
+
+non
+
+Qualification "Professeur"
+
+non
+
+Période d'inactivité
+--------------------
+
+
++----+
++----+
+
+Mobilité(s) antérieure(s)
+-------------------------
+
+
++-----------------+-----------------------------+-----------------+-----------------+
+| Autre demande   | Au sein de mission longue   | Du 01/11/2010   | Au 31/01/2012   |
++-----------------+-----------------------------+-----------------+-----------------+
+
+Activités de recherche développées
+----------------------------------
+
+
+Rattachement à(aux) activité(s) de recherche de l'unité UMR7289
+---------------------------------------------------------------
+
++--------------------------------------------------------------------------------------------+----------------------------+
+| Intitulé d'activité                                                                        | Date fin du rattachement   |
++--------------------------------------------------------------------------------------------+----------------------------+
+| Inférence et Comportement visuel - `InViBe <https://invibe.net/LaurentPerrinet/InViBe>`__   |                            |
++--------------------------------------------------------------------------------------------+----------------------------+
+
+Mots clés des sections/CID du Comité national
+---------------------------------------------
+
+
++----------------------------------------------------------------------------------------+
+| Section 26 : Modélisation des processus cognitifs et neurosciences computationnelles   |
++----------------------------------------------------------------------------------------+
+
+Points forts de vos activités de recherche et /ou informations complémentaires
+------------------------------------------------------------------------------
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Mon objectif de recherche est d’étendre la compréhension des modèles des facultés cognitives sous la forme de réseaux de neurones impulsionnels qui réalisent des algorithmes de perception visuelle. En effet, les brèves impulsions du potentiel de membrane se propageant au fil des neurones sont une caractéristique universelle des systèmes nerveux et permettent de construire des modèles événementiels efficaces de traitement dynamique de l’information. Dans un but fonctionnel, je désire notamment implanter dans ces modèles des stratégies d’inférence grâce à des mécanismes d’apprentissage auto-organisés fixant les relations spatio-temporelles entre les neurones. Dans le cadre du projet BrainScaleS, nous envisageons la création de nouveaux types d'algorithmes basés sur ces recherches.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Publication(s), parue(s) ou sous presse, dans des revues à comité de lecture
+----------------------------------------------------------------------------
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Référence                                                                                                                                                                                                                                                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, and Guillaume S. Masson. Pursuing motion illusions: a realistic oculomotor framework for bayesian inference. Vision Research, 51(8):867-80, 2011.                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Claudio Simoncini, Laurent U. Perrinet, Anna Montagnini, Pascal Mamassian, Guillaume S. Masson. More is not always better: dissociation between perception and action explained by adaptive gain control. Nature Neuroscience, 2012.                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Guillaume S. Masson and Laurent U. Perrinet. The behavioral receptive field underlying motion integration for primate tracking eye movements. Neuroscience and biobehavioral reviews, March 2011. `http://www.ncbi.nlm.nih.gov/pubmed/21421006 <http://www.ncbi.nlm.nih.gov/pubmed/21421006>`__   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Guillaume S. Masson, Laurent U. Perrinet. The behavioral receptive field underlying motion integration for primate tracking eye movements. Neuroscience and biobehavioral reviews, 2012.                                                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Karl Friston, Rick A. Adams, Laurent Perrinet, Michael Breakspear. Perceptions as Hypotheses: Saccades as Experiments, URL . Frontiers in Psychology, 3, 2012                                                                                                                                     |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Laurent Perrinet. Qui créera le premier calculateur intelligent? Interstices, 2011. `http://interstices.info/jcms/i\_62190/qui-creera-le-premier-ordinateur-intelligent <http://interstices.info/jcms/i_62190/qui-creera-le-premier-ordinateur-intelligent>`__                                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Laurent U Perrinet et al. Motion-based prediction is sufficient to solve the aperture problem. Neural Computation 2012 24 10 2726-50                                                                                                                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Laurent U. Perrinet, Rick A. Adams, Karl Friston. Active Inference, tracking eye movements and oculomotor delays. Submitted.                                                                                                                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| N. Voges, L. Perrinet. Complex dynamics in recurrent cortical networks based on spatially realistic connectivities . Frontiers in Computational Neuroscience, 6, 2012                                                                                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Paula Sanz Leon et al. Motion clouds: model-based stimulus synthesis of natural-like random textures for the study of motion perception. Journal of Neurophysiology 2012 107 11 3217-26                                                                                                           |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Rick A. Adams, Laurent U. Perrinet, Karl Friston. Smooth Pursuit and Visual Occlusion: Active Inference and Oculomotor Control in Schizophrenia, URL . PLoS ONE, 7(10):e47502+, 2012                                                                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Publication(s), parue(s) ou sous presse, dans des revues sans comité de lecture
+-------------------------------------------------------------------------------
+
+
+Ouvrage(s) ou chapitre(s) d'ouvrage(s), paru(s) ou sous presse
+--------------------------------------------------------------
+
+
+Participation à des manifestations scientifiques
+------------------------------------------------
+
+
+Manifestation
+
+Atelier Neurosciences Computationnelles, 2-3 Juillet 2011
+
+Type de manifestation
+
+Workshop ( national )
+
+Lieu
+
+Khemisset, Maroc ( Maroc )
+
+Durée
+
+2 (jour(s))
+
+Intervention(s)
+
+`https://invibe.net/LaurentPerrinet/Presentations/11-07-02\_NeuroMedTalk <https://invibe.net/LaurentPerrinet/Presentations/11-07-02_NeuroMedTalk>`__
+
+Manifestation
+
+BCCN
+
+Type de manifestation
+
+Conférence ( national )
+
+Lieu
+
+Heidelberg ( Allemagne )
+
+Durée
+
+3 (jour(s))
+
+Intervention(s)
+
+| Nicole Voges and Laurent Perrinet. Variations of horizontal cortical
+| network structures and their corresponding state space dynamics. 2011.
+| par Voges
+|  Affiche/poster
+
+Manifestation
+
+CNS\*2011
+
+Type de manifestation
+
+Conférence ( international )
+
+Lieu
+
+Berlin ( Allemagne )
+
+Durée
+
+5 (jour(s))
+
+Intervention(s)
+
+| Mina A. Khoei, Laurent Perrinet, and Guillaume S. Masson. Motion-based
+| predictive coding is sufficient to solve the aperture problem. par Khoei
+|  Affiche/poster
+
+Manifestation
+
+ECVP
+
+Type de manifestation
+
+Conférence ( international )
+
+Lieu
+
+Stockholm ( Suède )
+
+Durée
+
+5 (jour(s))
+
+Intervention(s)
+
+| Mina A. Khoei, Laurent U. Perrinet, Amarender R. Bogadhi, Anna
+| Montagnini, and Guillaume S. Masson. Role of motion inertia in dynamic
+| motion integration for smooth pursuit. In Ricardo Carmona and al. par
+| Khoei
+|  Affiche/poster
+
+Manifestation
+
+ERMITES 2011 Décomposition Parcimonieuse, Abstraction et Structuration
+pour l'Analyse de Scènes Complexes
+
+Type de manifestation
+
+Workshop ( international )
+
+Lieu
+
+Porquerolles ( FRANCE )
+
+Durée
+
+3 (jour(s))
+
+Intervention(s)
+
+| Edge statistics in natural images versus laboratory animal
+| environments: implications for understanding lateral connectivity in V1
+| par Perrinet
+|  Communication orale
+
+Manifestation
+
+From Mathematical Image Analysis to Neurogeometry of the Brain
+`https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk <https://laurentperrinet.github.io/talk/2010-12-17-tauc-talk>`__
+
+Type de manifestation
+
+Conférence ( international )
+
+Lieu
+
+Paris ( FRANCE )
+
+Durée
+
+2 (jour(s))
+
+Intervention(s)
+
+| Mina Aliakbari Khoei, Laurent Perrinet, and Guillaume S. Masson.
+| Dynamical emergence of a neural solution for motion integration. In
+| Proceedings of Tauc, 2010 par Khoei
+|  Affiche/poster
+
+Manifestation
+
+Société des Neurosciences
+
+Type de manifestation
+
+Conférence ( national )
+
+Lieu
+
+Marseille ( FRANCE )
+
+Durée
+
+4 (jour(s))
+
+Intervention(s)
+
+| Mina A. Khoei, Laurent Perrinet, and Guillaume S. Masson. Dynamical
+| solution for aperture problem using motion-based predictive coding. In
+| 10th meeting of the Société des Neurosciences par Khoei
+|  Affiche/poster
+
+Manifestation
+
+Society for Neuroscience -
+`https://laurentperrinet.github.io/publication/perrinet-11-sfn <https://laurentperrinet.github.io/publication/perrinet-11-sfn>`__
+
+Type de manifestation
+
+Conférence ( international )
+
+Lieu
+
+Washington ( Etats-Unis )
+
+Durée
+
+6 (jour(s))
+
+Intervention(s)
+
+| Laurent Perrinet, David Fitzpatrick, and James A. Bednar. Edge
+| statistics in natural images versus laboratory animal environments:
+| implications for understanding lateral connectivity in V1. par perrinet
+|  Communication orale
+
+Manifestation
+
+Using the ESS + Neuromorphic hardware Workshop, 5th Oktober, 2011
+
+Type de manifestation
+
+Workshop ( international )
+
+Lieu
+
+TU Dresden, Germany, 2011 ( Allemagne )
+
+Durée
+
+4 (jour(s))
+
+Intervention(s)
+
+| Demo 1, Task4: Implementation of models showing emergence of cortical
+| fields and maps,
+| `https://laurentperrinet.github.io/talk/2011-10-05-brain-scales-ess/ <https://laurentperrinet.github.io/talk/2011-10-05-brain-scales-ess/>`__
+| par Laurent Perrinet
+|  Communication orale
+
+Manifestation
+
+Vision Science Society
+
+Type de manifestation
+
+Conférence ( international )
+
+Lieu
+
+Naples ( Etats-Unis )
+
+Durée
+
+6 (jour(s))
+
+Intervention(s)
+
+Measuring speed of moving textures: Different pooling of motion
+information for human ocular following and perception. par Claudio
+Simoncini, Anna Montagnini, Laurent U. Perrinet, Guillaume S. Masson.
+
+Activité éditoriale
+-------------------
+
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Revues
+
+Informations complémentaires
+
+IEEE TIP
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Revues
+
+Informations complémentaires
+
+Evolving Systems
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Autres
+
+Informations complémentaires
+
+Neural Computation
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Informations complémentaires
+
+Journal of Physiology (Paris)
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Informations complémentaires
+
+Conférence `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ 2011
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Informations complémentaires
+
+Neurocomputing
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Revues
+
+Informations complémentaires
+
+PLoS Computational Biology
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Revues
+
+Informations complémentaires
+
+Neural Networks
+
+Type d'intervention
+
+Rapporteur/Relecteur dans des revues
+
+Type de document
+
+Revues
+
+Informations complémentaires
+
+Circuits, Systems and Signal Processing
+
+Séjour(s) dans d'autres laboratoires
+------------------------------------
+
+
+Objet
+
+Collaboration avec Karl Friston sur les modèles de Free energy.
+
+Organisme
+
+University College of London
+
+Pays
+
+Royaume-Uni
+
+Unité
+
+Wellcome Trust Centre for Neuroimaging / FIL
+
+Durée annuelle
+
+365 (j)
+
+Mission(s) sur le terrain
+-------------------------
+
+
+Formation personnelle
+---------------------
+
+
+Collaborations
+--------------
+
+
+Organisme partenaire
+
+INRIA
+
+Pays
+
+FRANCE ( Europe )
+
+Unité partenaire
+
+Odyssee
+
+Intitulé
+
+Sophia
+
+Cadre de la coopération
+
+AUTRE - FACETS
+
+Nature de l'activité
+
++---------------------------+-----------------------------+
+| Organisme partenaire      | University Freiburg         |
++---------------------------+-----------------------------+
+| Pays                      | Allemagne ( Europe )        |
++---------------------------+-----------------------------+
+| Unité partenaire          | BrainScaleS                 |
++---------------------------+-----------------------------+
+| Intitulé                  | BrainScaleS                 |
++---------------------------+-----------------------------+
+| Cadre de la coopération   | AUTRE - BrainScaleS         |
++---------------------------+-----------------------------+
+| Nature de l'activité      | Participation à un réseau   |
++---------------------------+-----------------------------+
+
+Organisme partenaire
+
+University Ulm
+
+Pays
+
+Allemagne ( Europe )
+
+Unité partenaire
+
+`NeuroInformatics <https://invibe.net/LaurentPerrinet/NeuroInformatics>`__
+
+Intitulé
+
+Perception of Motion
+
+Cadre de la coopération
+
+Nature de l'activité
+
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Organisme partenaire      | Wellcome Trust Centre for Neuroimaging                                                                              |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Pays                      | Royaume-Uni ( Europe )                                                                                              |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Unité partenaire          | Karl Friston                                                                                                        |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Intitulé                  | `FreeMove <https://invibe.net/LaurentPerrinet/FreeMove>`__, a free-energy approach to eye movements                  |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Cadre de la coopération   | AUTRE - projet de MAD accepté scientifiquement, refusé administrativement. Remplacé par une mission longue durée.   |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Nature de l'activité      | mission longue durée                                                                                                |
++---------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+Encadrement et animation scientifique
+-------------------------------------
+
+
+Chercheurs
+
+CNRS
+
+Enseignement supérieur
+
+Autres EPST
+
+Autres
+
+Total
+
+0
+
+0
+
+0
+
+| 1
+|  Thésarde en CDD sur contrat FACETS-ITN
+
+1
+
+Doctorants
+
+Thèse
+
+Doctorants étrangers
+
+Doctorants ayant soutenu une thèse
+
+Total
+
+Direction
+
+Codirection
+
+1
+
+2
+
+1
+
+0
+
+3
+
+IT
+
+Stagiaires
+
+IT CNRS
+
+IT non CNRS
+
+Total
+
+Master 2
+
+Licence, master 1
+
+Ecole d'ingénieur
+
+IUT
+
+Autre
+
+Total
+
+0
+
+0
+
+0
+
+2
+
+0
+
+0
+
+0
+
+1
+
+3
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Animation scientifique                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| \* Projet artistique en collaboration avec Etienne Rey de la friche Belle de Mai dans le cadre de Marseille Provence capitale européenne de la culture 2013 \* écriture d'articles de vulgarisation pour interstices (INRIA), docSciences (CRDP) et de traduction en arabe pour le projet `NeuroMed <https://invibe.net/LaurentPerrinet/NeuroMed>`__ \* Participation au réseau `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__.fr \* Animation d'un réseau marseillais des `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ \* Enseignement au master Bio-Phy à Luminy  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enseignement
+------------
+
+
+Valorisation et partenariat
+---------------------------
+
+
+Vulgarisation
+-------------
+
+
++----------------------+----------------------------------------------------------------------------------------+----------------------------+
+| Type d'information   | Intitulé                                                                               | Type de participation      |
++----------------------+----------------------------------------------------------------------------------------+----------------------------+
+| Exposition           | projet "TROPIQUE", label "Marseille-Provence capitale européenne de la culture 2013"   | Conseil scientifique       |
++----------------------+----------------------------------------------------------------------------------------+----------------------------+
+| Presse écrite        | Qui créera le premier calculateur intelligent? Interstices, 2011.                      | Participation ponctuelle   |
++----------------------+----------------------------------------------------------------------------------------+----------------------------+
+
+Administration de la recherche
+------------------------------
+
+
+-  Management et gestion
+
++-----------------------------------------------+
+| Membre CLAS GLM de Marseille-Joseph Aiguier   |
++-----------------------------------------------+
+
+
+
+.. |https://crac.dsi.cnrs.fr/image/logo_cnrs.gif| image:: https://crac.dsi.cnrs.fr/image/logo_cnrs.gif

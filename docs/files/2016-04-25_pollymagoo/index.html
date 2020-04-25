@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" >
+
+<meta name="description" content="Qu’est ce qu’une image?">
+<meta name="author" content="Laurent U Perrinet, INT">
+
+<meta name="apple-mobile-web-app-capable" content="yes" >
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>Qu’est ce qu’une image? - Cinésciences au collège Clair Soleil</title>
+
+
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/night.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/css/zenburn.css">
+
+        
+
+
+    <!-- Printing and PDF exports -->
+    <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="{reveal_path}lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Loading the mathjax macro -->
+    <!-- Load mathjax -->
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$']],
+                displayMath: [ ['$$','$$'] ],
+                //processEscapes: true,
+                processEnvironments: true
+            },
+            // Center justify equations in code and markdown cells. Elsewhere
+            // we use CSS to left justify single line equations in code cells.
+            displayAlign: 'center',
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}},
+                linebreaks: { automatic: true }
+            }
+        });
+        </script>
+        <!-- End of mathjax configuration -->
+
+        <!-- Get Font-awesome from cdn -->
+        <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"> -->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+        <section>
+<h2 class="title">Qu’est ce qu’une image?</h2>
+<h3><a href="https://laurentperrinet.github.io">Laurent U Perrinet, INT</a></h3>
+<img src="figures/troislogos.png" width=61%/>
+
+
+
+<h3>Cinésciences au collège Clair Soleil</h3>
+        
+            <aside class="notes">
+             <ul>
+<li>(AUTHOR) Hello, I am Laurent Perrinet from the Institute of Neurosciences of
+la Timone in Marseille, a joint unit from the CNRS and the AMU</li>
+<li>(OBJECTIVE) in this short talk, I will be focus in highlighting
+some key challenges in modelizing visual perception and</li>
+<li>(ACKNO) this endeavour involves different techniques and tools ...
+From the head on, I wish to thanks people who collaborated  and in particular ..
+  mostly funded by the ANR bala V1
+(hansel wreeiswijk nowak) + ANR TRAJECTORY (o marrre bruno cessac palacios )</li>
+<li>LONDON (Jim Bednar, Friston)
+great thanks to Stéphane for proposing me to present this work</li>
+<li>(SHOW TITLE) I am interested in the link
+between the neural code and the structure of the world.
+in particular, for vision, I am researching
+the relation between the
+functional (in terms of the inferential processes leading to  behaviour)
+organization (anatomy and activity)
+of low-level visual areas (V1) and the structures of natural scenes,
+that is of the images that hit the retina and which are
+relevant to visual perception in general.</li>
+</ul>
+<p>so what is visual perception?</p>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/1-ouchi.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/Dynamo-4.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/PinnaAsolo.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/ouchi.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/spiral.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/pinna.jpg "  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/Dynamo-on.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/Dynamo-off.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/funny-perfectly-timed-photos-17__700.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/optical-illusions-part-2-63.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=900.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=900 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/prior-optical-illusions-part-2-68.jpg"  height=900 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>it is the set of cognitive processes that allow to make sense from the visual inputs</p>
+<ul>
+<li>illusions visuelles:  Anamorphose par Felice Varini "vingt-trois disques évidés plus douze moitiés et quatre quarts" Exposition:
+"DYNAMO" Grand Palais, Paris 2013 Photo: André Morin</li>
+<li>on peut apprendre rapidement qu'il ne faut pas croire tout ce qu'on voit
+(surtout si c'est sur internet)</li>
+<li>priors</li>
+</ul>
+            </aside>
+            
+</section>
+        <section data-background="figures/tsonga.jpg"> 
+            <aside class="notes">
+             <p>Problem statement: optimal motor control under axonal delays. The central
+nervous system has to contend with axonal delays, both at the sensory and the
+motor levels. For instance, in the human visuo-oculomotor system, it takes
+approximately $ au_s=50~ms$ for the retinal image to reach the visual areas
+implicated in motion detection, and a further $ au_m=40~ms $ to reach the
+oculomotor muscles.</p>
+            </aside>
+            
+</section>
+        <section data-background="figures/figure-tsonga.png"> 
+            <aside class="notes">
+             <ul>
+<li>... As a consequence, for a tennis player trying to intercept a
+ball at a speed of $20~m.s^{-1}$, the sensed physical position is $1~m$ behind
+the true position (as represented here by $ au_s \cdot ec{V}$), while the
+position at the moment of emitting the motor command will be $.8~m$ ahead of
+its execution ($    au_m \cdot ec{V}$).  * Note that while the actual position
+of the ball when its image formed on the photoreceptors of the retina hits
+visual read is approximately at $45$ degrees of eccentricity (red dotted line),
+the player's gaze is directed to the ball at its <strong>present</strong> position (red
+line), in anticipatory fashion. Optimal control directs action (future motion
+of the eye) to the expected position (red dashed line) of the ball in the
+future --- and the racket (black dashed line) to the expected position of the
+ball when motor commands reach the periphery (muscles).</li>
+</ul>
+            </aside>
+            
+</section>
+        <section>
+    <video controls src="figures/flash_lag.webm" autoplay=1 loop=1 width=99%/>
+
+            <aside class="notes">
+             <p>Indeed, in a standard empirical variant of the FLE, a first stimulus moves
+continuously across the screen along the central horizontal axis.  As this
+moving stimulus reaches the center of the screen, a second stimulus is flashed
+nearby and in perfect vertical alignment with it.  Despite the fact that the
+respective horizontal positions of each stimulus are physically identical when
+the flash occurs, the moving stimulus is most often perceived \emph{ahead} of
+the flashed one (see Figure~
+ef{fig:FLE-cartoon}).</p>
+            </aside>
+            
+</section>
+        <section>
+            <h2>Experimental results</h2>
+            <ol>
+            
+        <div align="center">
+            <table border="0" VALIGN="center" bgcolor=black height=800.0 />
+            
+            <tr style="vertical-align:middle">
+            
+                <td height=800 width="100%" style="text-align:center; vertical-align:middle" bgcolor="black" />
+                <p>
+                    <img data-src="figures/ExperimentalResult_3.png"  height=800 />
+                </p>
+                </td>
+                
+                        </tr>
+                        
+                        </table>
+                        </div>
+                        
+            <aside class="notes">
+             <p>The first step was to analyze the raw data:</p>
+<ol>
+<li>
+<p>The results for the shortest trajectory shows a typical profile for which
+the firing rate increases as the bar reaches the receptive field.</p>
+</li>
+<li>
+<p>The results are different for the medium trajectory and the firing rate
+increases before the bar reaches the receptive field.</p>
+</li>
+<li>
+<p>We get a similar behaviour for the longest trajectory and the firing rate
+increases well before the bar reaches the receptive field.</p>
+</li>
+</ol>
+<p>As a consequence, there seem to be some "priming" (to not say anticipation)
+appears to be present in the response to indivual cells..</p>
+<ol>
+<li>These results are observed in different cells (such as is shown here),
+animals, and modalities (VSDI + LFP)</li>
+</ol>
+<p>... can we decode the dynamics at the level of the population?</p>
+            </aside>
+            
+</section>
+        
+        </div>
+    </div>
+
+    <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+    <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+        
+	<script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+
+        
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1600,
+                height: 1000,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.0,
+        
+
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Push each slide change to the browser history
+                //history: false,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Bounds for smallest/largest possible scale to apply to content
+                // minScale: 0.2,
+                // maxScale: 1.5,
+
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Loop the presentation
+                //loop: false,
+
+                // Change the presentation direction to be RTL
+                //rtl: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                //autoSlide: 0,
+
+                // Enable slide navigation via mouse wheel
+                //mouseWheel: false,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '/Users/laurentperrinet/cloud_nas/2015_RTC/2014-04-17_HDR/figures/p4100011.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '3200px 2000px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+                // This slide transition gives best results:
+                transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Transition speed
+                transitionSpeed: 'slow', // default/fast/slow
+
+                // Transition style for full page backgrounds
+                backgroundTransition: 'none', // default/linear/none
+
+                // Theme
+                theme: 'black', // available themes are in /css/theme
+
+        
+                math: {
+                    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
+
+                // Optional reveal.js plugins
+                dependencies: [
+                        { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true },
+                        { src: 'http://lab.hakim.se/reveal-js/plugin/math/math.js', async: true }
+        
+                ]
+        });
+        </script>
+    </body>
+</html>
+        
