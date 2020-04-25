@@ -7,115 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2020-01-25T10:13:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/PerrinetEtAl12neurocomp-intro.slides.html</loc>
-  <lastmod>2019-02-19T15:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/PerrinetTaouali12neurocomp.slides.html</loc>
-  <lastmod>2019-02-19T15:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp.slides.html</loc>
-  <lastmod>2019-02-19T15:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2015-12-08_cours_neurocomp/TaoualiPerrinet12neurocomp_final.slides.html</loc>
-  <lastmod>2019-02-19T15:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-04-25_pollymagoo/</loc>
-  <lastmod>2019-02-26T18:38:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-04-28_mejanes/</loc>
-  <lastmod>2019-04-16T20:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-07-07_EDP-proba/</loc>
-  <lastmod>2019-02-26T18:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-09-26_Perrinet16journalClub/2016-09-26_Perrinet16journalClub.slides.html</loc>
-  <lastmod>2020-01-08T20:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-10-13_LAW.html</loc>
-  <lastmod>2019-02-19T22:05:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-10-26_FillatreBarlaudPerrinet16EUVIP_talk.html</loc>
-  <lastmod>2019-02-19T15:31:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-10-26_Perrinet16EUVIP_talk.html</loc>
-  <lastmod>2019-02-19T15:31:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2016-11-03_SIGMA.html</loc>
-  <lastmod>2019-02-19T15:34:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-01-18_LACONEU.html</loc>
-  <lastmod>2019-02-19T22:05:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-01-19_LACONEU.html</loc>
-  <lastmod>2019-02-19T15:41:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-01-20_LACONEU.html</loc>
-  <lastmod>2019-02-19T22:07:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-02-17_JournalClub.html</loc>
-  <lastmod>2019-02-19T22:05:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-03-06_cours-NeuroComp.html</loc>
-  <lastmod>2019-02-19T15:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-03-13_NeuroComp_FEP.html</loc>
-  <lastmod>2019-02-19T22:03:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-03-24_pollymagoo.html</loc>
-  <lastmod>2019-02-19T15:36:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-06-27_Telluride_short.html</loc>
-  <lastmod>2019-02-19T22:06:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-06-28_Telluride.html</loc>
-  <lastmod>2019-02-19T22:06:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-06-30_Telluride.html</loc>
-  <lastmod>2019-02-19T22:03:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2017-11-15_ColloqueMaster.html</loc>
-  <lastmod>2019-02-19T22:06:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2018-01-25_meetup-neuronautes.html</loc>
-  <lastmod>2019-01-17T21:35:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2018-02-01_BCP_INVIBE_fest.html</loc>
-  <lastmod>2019-02-19T15:29:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2018-03-26_cours-NeuroComp_FEP.html</loc>
-  <lastmod>2019-02-19T22:03:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/2018-10-11_BioMorphisme.html</loc>
-  <lastmod>2019-02-19T15:41:00Z</lastmod>
+  <lastmod>2020-04-25T06:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
@@ -636,10 +528,6 @@
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2018-02-01_BCP_INVIBE_fest.html</loc>
   <lastmod>2020-01-09T10:18:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/files/2018-03-26_cours-NeuroComp_FEP.html</loc>
-  <lastmod>2019-02-19T22:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2018-10-11_BioMorphisme.html</loc>
@@ -1722,24 +1610,12 @@
   <lastmod>2020-04-16T08:55:00Z</lastmod>
  </url>
  <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/</loc>
-  <lastmod>2020-01-17T14:25:00Z</lastmod>
- </url>
- <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>
   <lastmod>2020-04-12T07:53:00Z</lastmod>
  </url>
  <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/bootstrap-demo.html</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
- </url>
- <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/charts.html</loc>
   <lastmod>2020-04-12T07:53:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/creating-a-theme.html</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/extending.html</loc>
@@ -1750,20 +1626,8 @@
   <lastmod>2020-04-12T07:51:00Z</lastmod>
  </url>
  <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/quickref.html</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/quickstart.html</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
- </url>
- <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/social_buttons.html</loc>
   <lastmod>2020-04-12T07:53:00Z</lastmod>
- </url>
- <url>
-  <loc>https://laurentperrinet.github.io/sciblog/stories/theming.html</loc>
-  <lastmod>2019-11-14T09:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/upgrading-to-v6.html</loc>
