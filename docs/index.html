@@ -612,6 +612,35 @@ this will be exposed in the following book chapter (see also https://laurentperr
 </div>
 </div>
                 </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2018-12-13-sparse-coding-using-fista.html" class="u-url">2018-12-13 Sparse coding using (F)ISTA</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2018-12-13-sparse-coding-using-fista.html" rel="bookmark">
+            <time class="published dt-published" datetime="2018-12-13T10:53:03+01:00" itemprop="datePublished" title="2018-12-13 10:53">2018-12-13 10:53</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2018-12-13-sparse-coding-using-fista.html#disqus_thread" data-disqus-identifier="cache/posts/2018-12-13-sparse-coding-using-fista.html">Comments</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post we would try to show how one could infer the sparse representation of an image knowing an appropriate generative model for its synthesis. We will start by a linear inversion (pseudo-inverse deconvolution), and then move to a gradient descent algorithm. Finally, we will implement a convolutional version of the iterative shrinkage thresholding algorithm (ISTA) and its fast version, the FISTA.</p>
+<p>For computational efficiency, all convolutions will be implemented by a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Tansform</a>, so that a standard convolution will be mathematically exactly similar. We will benchmark this on a realistic image size of $512 \times 512$ giving some timing results on a standard laptop.</p>
+<p class="more"><a href="posts/2018-12-13-sparse-coding-using-fista.html">Read more…</a></p>
+</div>
+</div>
+</div>
+                </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2018-11-29-feature-vs-global-motion.html" class="u-url">Feature vs global motion</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -8001,32 +8030,6 @@ python setup.py install --home=$HOME/Python2.6
 <li>⇧⌘U: Utilities</li>
 </ul>
 </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2011-01-19-inverting-colors-in-MacOsX.html" class="u-url">inverting colors in MacOsX</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/2011-01-19-inverting-colors-in-MacOsX.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-01-19T13:36:57+01:00" itemprop="datePublished" title="2011-01-19 13:36">2011-01-19 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="posts/2011-01-19-inverting-colors-in-MacOsX.html#disqus_thread" data-disqus-identifier="cache/posts/2011-01-19-inverting-colors-in-MacOsX.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<ul class="simple">
-<li>during a presentation, a figure may reveal more readable if you
-invert colors and luminance: black gets white and reverse, red
-becomes cyan and so on.</li>
-</ul>
-<p class="more"><a href="posts/2011-01-19-inverting-colors-in-MacOsX.html">Read more…</a></p>
-</div>
-                </div>
             </article>
 </div>
     
