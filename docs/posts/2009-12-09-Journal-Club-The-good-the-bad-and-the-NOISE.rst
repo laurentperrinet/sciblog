@@ -13,6 +13,3 @@
 -  We start with `Mechanisms of visual motion
    detection <http://www.cvs.rochester.edu/knill_lab/publications/schrater_nn.pdf>`__,
    towards *Frozen noise in the icicle model*
--  get the supporting `PDF (63Mo) <files/2009-12-10_journal_club_noise.pdf>`__
-   (to open with a video capable reader, like the one from Adobe Reader
-   ver. > 7.0)
