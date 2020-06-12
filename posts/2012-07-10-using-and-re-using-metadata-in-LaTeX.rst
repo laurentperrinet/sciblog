@@ -20,7 +20,7 @@ Introduire des metas / Include meta keywords
        \hypersetup{%
          pdftitle={my title},%
          pdfsubject={short description},%
-         pdfauthor={Laurent Perrinet <Laurent.Perrinet@univ-amu.fr.fr>, INT/CNRS, 31, ch. Joseph Aiguier, 13402 Marseille Cedex 20, France; https://invibe.net/LaurentPerrinet},%
+         pdfauthor={Laurent Perrinet <Laurent.Perrinet@univ-amu.fr.fr>, INT/CNRS, 31, ch. Joseph Aiguier, 13402 Marseille Cedex 20, France; https://laurentperrinet.github.io},%
          pdfkeywords={Neuronal representation, ....},%
        }
 
@@ -55,7 +55,7 @@ complete example
        %-------definitions-----
        \newcommand{\Author}{Laurent Perrinet}
        \newcommand{\Address}{INT}
-       \newcommand{\Website}{https://invibe.net/LaurentPerrinet}
+       \newcommand{\Website}{https://laurentperrinet.github.io}
        \newcommand{\Email}{Laurent.Perrinet@incm.cnrs-mrs.fr}
        \newcommand{\Title}{My title}
        \newcommand{\Keywords}{my first keyword, my first keyword, more keywords.}

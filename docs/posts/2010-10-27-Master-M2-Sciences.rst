@@ -16,7 +16,7 @@ Travaux pratiques : modèle bayesien de détection du mouvement d'objets
 
 -  Le 27/10/2010, de 14h00 à 17h00 dans la salle formation de l'INCM
    (bâtiment N du GLM, 31, chemin Joseph Aiguier 13402 Marseille cedex).
--  |alert| me prévenir si vous n'avez pas un ordinateur portable
+-  me prévenir si vous n'avez pas un ordinateur portable
    personnel!
 
 principe du TP
@@ -234,5 +234,3 @@ références
 -  Python
 
    -  `http://matplotlib.sourceforge.net/ <http://matplotlib.sourceforge.net/>`__
-
-.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

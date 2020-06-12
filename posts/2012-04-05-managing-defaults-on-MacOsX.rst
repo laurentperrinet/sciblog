@@ -89,8 +89,4 @@
 
        git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
 
--  |{2}| TODO: make default changes for a french keyboard
-
-
-
-.. |{2}| image:: https://invibe.net/moin_static196/moniker/img/prio2.png
+-  TODO: make default changes for a french keyboard

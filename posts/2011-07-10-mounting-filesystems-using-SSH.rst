@@ -43,7 +43,7 @@ install on macosx
    `http://code.google.com/p/macfuse <http://code.google.com/p/macfuse>`__
 #. follow
    `http://code.google.com/p/macfuse/wiki/MACFUSE\_FS\_SSHFS <http://code.google.com/p/macfuse/wiki/MACFUSE_FS_SSHFS>`__
-#. |(!)| on a 64 bits system, you have to install a proper version,
+#. on a 64 bits system, you have to install a proper version,
    follow
    `http://superuser.com/questions/75332/is-truecrypt-macfuse-supported-on-snow-leopard-with-64-bit-kernel <http://superuser.com/questions/75332/is-truecrypt-macfuse-supported-on-snow-leopard-with-64-bit-kernel>`__
 
@@ -85,7 +85,3 @@ automating the process sshfs (mac and ubuntu)
 
        fusermount -u  ~/spawn
        rmdir ~/spawn
-
-
-
-.. |(!)| image:: https://invibe.net/moin_static196/moniker/img/idea.png

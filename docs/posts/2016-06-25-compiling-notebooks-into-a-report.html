@@ -359,7 +359,7 @@ This is summarized in this script:</li>
 \<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Institute</span><span class="p">}{</span><span class="n">Institut</span> <span class="n">de</span> <span class="n">Neurosciences</span> <span class="n">de</span> <span class="n">la</span> <span class="n">Timone</span><span class="p">}</span><span class="o">%</span>
 \<span class="n">newcommand</span><span class="p">{</span>\<span class="n">InstituteUMR</span><span class="p">}{</span><span class="n">UMR</span> <span class="mi">7289</span><span class="p">,</span> <span class="n">CNRS</span> <span class="o">/</span> <span class="n">Aix</span><span class="o">-</span><span class="n">Marseille</span> <span class="n">Université</span><span class="p">}</span><span class="o">%</span>
 \<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Address</span><span class="p">}{</span><span class="mi">27</span><span class="p">,</span> <span class="n">Bd</span><span class="o">.</span> <span class="n">Jean</span> <span class="n">Moulin</span><span class="p">,</span> <span class="mi">13385</span> <span class="n">Marseille</span> <span class="n">Cedex</span> <span class="mi">5</span><span class="p">,</span> <span class="n">France</span><span class="p">}</span> 
-\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Website</span><span class="p">}{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">invibe</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">LaurentPerrinet</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Website</span><span class="p">}{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">URL</span><span class="o">/</span><span class="n">LaurentPerrinet</span><span class="p">}</span>
 \<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Email</span><span class="p">}{</span><span class="n">Laurent</span><span class="o">.</span><span class="n">Perrinet</span><span class="nd">@univ</span><span class="o">-</span><span class="n">amu</span><span class="o">.</span><span class="n">fr</span><span class="p">}</span> 
                    
 <span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">packages</span> <span class="o">*</span><span class="p">))</span>
@@ -1363,9 +1363,9 @@ fig.tight_layout()
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbconvert</span>
 <span class="c1">#help(nbconvert.LatexExporter)</span>
 <span class="c1">#nbconvert.exporters.export_latex(nb)</span>
-<span class="kn">from</span> <span class="nn">traitlets.config</span> <span class="k">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">traitlets.config</span> <span class="kn">import</span> <span class="n">Config</span>
 <span class="c1"># 1. Import the exporter</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="k">import</span> <span class="n">PDFExporter</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">PDFExporter</span>
 <span class="c1"># 2. Instantiate the exporter. We use the `basic` template for now; we'll get into</span>
 <span class="c1"># later about how to customize the exporter further.</span>
 <span class="n">latex_exporter</span> <span class="o">=</span> <span class="n">PDFExporter</span><span class="p">()</span>

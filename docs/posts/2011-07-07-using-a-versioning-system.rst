@@ -181,7 +181,7 @@ random SVN tips
 
         svn switch --relocate file:///original/path/to/repos file:///new/path
 
-   |alert| WARNING: this will not work if
+   WARNING: this will not work if
    ``file:///original/path/to/repos`` is not *exactly* the original URL.
    BE sure to check before with ``svn info``.
 
@@ -282,7 +282,3 @@ using Git with SVN
    ::
 
        git svn fetch
-
-
-
-.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

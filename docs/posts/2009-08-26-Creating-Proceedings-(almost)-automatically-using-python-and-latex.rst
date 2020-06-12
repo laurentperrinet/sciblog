@@ -13,7 +13,7 @@ preprint server based on `ConfMaster <http://www.confmaster.net/>`__.
 This was due to the lack of an appropriate tool for this system and the
 need to be flexible to any change made in last minute by the authors. I
 used the following steps (these are summarized in the included
-`Makefile <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=Makefile>`__
+`Makefile`
 file at the bottom that allowed to rebuild everything when any small
 change in these steps were done).
 
@@ -30,10 +30,10 @@ change in these steps were done).
    all accents was to translate everything to a good old latex-type of
    encoding.
 #. the following script
-   `body.py <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=body.py>`__
+   `body.py`
    generated a link between the CSV and the folder of PDFs, but also
    generated index terms in the resulting
-   `body.tex <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=body.tex>`__
+   `body.tex`
    file for the creation of the authors and keywords tables:
 
    #. extracting the information
@@ -246,7 +246,7 @@ change in these steps were done).
 
 #. once this file is created, you may include it in a traditional
    proceedings latex file
-   `neurocomp08proceedings.tex <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=neurocomp08proceedings.tex>`__:
+   `neurocomp08proceedings.tex`:
 
    #. Defining the classes: In particular, we use ``pdfpages`` and
       ``multind``.
@@ -298,7 +298,7 @@ change in these steps were done).
 
    #. Begin the document by including the cover as a one-page PDF
       (converted from a SVG in the
-      `Makefile <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=Makefile>`__
+      `Makefile`
       below)
 
       ::
@@ -310,8 +310,7 @@ change in these steps were done).
           \includepdfset{pages=-,pagecommand=\thispagestyle{fancy}}
           \newpage
 
-   #. Including a page with the `BibTex <https://invibe.net/LaurentPerrinet/BibTex>`__
-      entry and the ISBN number (using macro file ``ean13.tex``)
+   #. Including a page with the BibTex entry and the ISBN number (using macro file ``ean13.tex``)
 
       ::
 
@@ -349,7 +348,7 @@ change in these steps were done).
           \setlength{\parindent}{1em}
 
    #. Some verbose introduction, see also
-      `titlepage.tex <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=titlepage.tex>`__:
+      `titlepage.tex`:
 
       ::
 
@@ -392,7 +391,7 @@ change in these steps were done).
           \newpage
 
    #. Including the above generated
-      `body.tex <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=body.tex>`__
+      `body.tex`
       file
 
       ::
@@ -425,7 +424,7 @@ change in these steps were done).
           \end{document}
 
 #. A
-   `Makefile <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=Makefile>`__
+   `Makefile`
    eased debugging and flow control:
 
    ::
@@ -465,5 +464,4 @@ change in these steps were done).
                        $(latexfile).aux $(latexfile).toc  body.tex keyword.ilg author.ilg \
                        $(latexfile).ind author.idx keyword.idx author.ind keyword.ind
 
-#. and
-   `voilà! <https://invibe.net/LaurentPerrinet/NeuroComp08?action=AttachFile&do=view&target=neurocomp08proceedings.pdf>`__
+#. and voilà!

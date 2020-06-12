@@ -96,7 +96,3 @@ symbols
 
     \caption{Relation Symbols}\label{rel}
     \end{table}
-
-
-
-.. |(!)| image:: https://invibe.net/moin_static196/moniker/img/idea.png

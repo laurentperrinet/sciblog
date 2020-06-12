@@ -5,8 +5,6 @@
 .. tags: pynn, neuralensemble, facets, sciblog
 
 
--  |(!)| This page `as a
-   PDF <https://invibe.net/LaurentPerrinet/SciBlog/2007-10-22?action=AttachFile&do=view&target=Meeting_V1WorkshopMarseille_2007.pdf>`__
 
 The INCM was holding a `workshop on the V1 hypercolumn model on the 22nd and 23rd of October 2007 <https://facets.kip.uni-heidelberg.de/private/wiki/index.php/Meeting_V1WorkshopMarseille_2007>`__.
 The purpose of the workshop was to promote the coordination of modeling
@@ -304,7 +302,7 @@ When and where?
 
 The date for the workshop is Monday, 22 and Tuesday, 23 October 07. It
 will take place at the INCM in Marseille as last meeting (see
-`Marseille\_November2006 <https://invibe.net/LaurentPerrinet/SciBlog/2006-11-20>`__ ).
+`Marseille\_November2006 <https://laurentperrinet.github.io/sciblog/posts/2006-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html>`__ ).
 
 -  Meeting will be salle George Morin (INCM's seminar room),
 -  Lunch at the CNRS on place,
@@ -368,7 +366,3 @@ more info
    Bjoern if somebody is missing) who should be interested in going.
 -  Ryan Air is flying now to Marseille :
    `http://www.bookryanair.com/skylights/cgi-bin/skylights.cgi <http://www.bookryanair.com/skylights/cgi-bin/skylights.cgi>`__
-
-
-
-.. |(!)| image:: https://invibe.net/moin_static196/moniker/img/idea.png

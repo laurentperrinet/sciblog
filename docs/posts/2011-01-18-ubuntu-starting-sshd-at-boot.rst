@@ -48,13 +48,9 @@
           /etc/rc4.d/S20ssh -> ../init.d/ssh
           /etc/rc5.d/S20ssh -> ../init.d/ssh
 
--  should work now |:-)|
+-  should work now
 
    ::
 
        $ ls -l /etc/rc1.d/*ssh*
        lrwxrwxrwx 1 root root 13 2011-01-18 21:33 /etc/rc1.d/K20ssh -> ../init.d/ssh
-
-
-
-.. |:-)| image:: https://invibe.net/moin_static196/moniker/img/smile.png

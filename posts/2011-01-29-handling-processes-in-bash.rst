@@ -34,12 +34,8 @@
 
        pkill -s STOP python
 
--  resuming all python processes ( |alert| to test ... ) :
+-  resuming all python processes ( to test ... ) :
 
    ::
 
        pkill -s CONT python
-
-
-
-.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

@@ -61,9 +61,5 @@
          forward. certainly when comparing to the quality of the dropbox
          service
 
--  |alert| everything I say here is with a QNAP server (and I am not a
+-   everything I say here is with a QNAP server (and I am not a
    sysdamin), so it is certainly partly my fault.
-
-
-
-.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

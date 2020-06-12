@@ -17,9 +17,9 @@ d'offres <http://www.cnrs.fr/prg/PIR/programmes/neuro-ic/ao.htm>`__:
    `http://www.cnrs.fr/prg/PIR/Docs/neuro-ic/NeuroIC\_appel-offre2010.pdf <http://www.cnrs.fr/prg/PIR/Docs/neuro-ic/NeuroIC_appel-offre2010.pdf>`__
 -  Dossier de réponse (doc) :
    `http://www.cnrs.fr/prg/PIR/Docs/neuro-ic/NeuroIC\_formulaire-soumission.doc <http://www.cnrs.fr/prg/PIR/Docs/neuro-ic/NeuroIC_formulaire-soumission.doc>`__
--  |(./)| 7 fev: URL de soumission :
+-  7 fev: URL de soumission :
    `https://www2.cnrs.fr/ipam\_gao/inscription.php?id\_ao=6601 <https://www2.cnrs.fr/ipam_gao/inscription.php?id_ao=6601>`__
--  |(./)| 11 février 2010 minuit : URL de soumission :
+-  11 février 2010 minuit : URL de soumission :
    hhttps://www2.cnrs.fr/ipam\_gao/depot.php?code=149142677d9880a63fabb09196db54fd&type=2788
 -  {x} mars 2010 : je n'ai pas eu de réponse officielle, mais il semble
    que cette proposition ait été déclinée.
@@ -646,7 +646,3 @@ Le programme Neuroinformatique et Neurosciences Computationnelles peut
 aussi être vu comme une étape préliminaire et nécessaire à un plan
 d’action structurant plus ambitieux à venir, et dont la mise en place
 dépendra de l’ambition scientifique des institutions concernées).
-
-
-
-.. |(./)| image:: https://invibe.net/moin_static196/moniker/img/checkmark.png

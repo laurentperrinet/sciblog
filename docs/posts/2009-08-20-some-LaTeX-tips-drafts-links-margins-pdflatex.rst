@@ -121,7 +121,3 @@ using pdfLaTeX
 
    il suffit alors d'executer en console
    `` ./mon_script la-ou-ya-tout-mes-eps/*.eps ``
-
-
-
-.. |X-(| image:: https://invibe.net/moin_static196/moniker/img/angry.png

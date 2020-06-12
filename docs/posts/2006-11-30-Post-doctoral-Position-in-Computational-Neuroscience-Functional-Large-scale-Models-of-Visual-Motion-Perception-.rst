@@ -89,7 +89,7 @@ full social coverage included.
 Interested candidates should send their application materials - cover
 letter, CV, statement of research interests and research experience (no
 .doc file, please) or informal enquiries to Dr. `Laurent
-Perrinet <https://invibe.net/LaurentPerrinet/ContactInformation>`__ (
+Perrinet <https://laurentperrinet.github.io/#contact>`__ (
 `mailto:Laurent.Perrinet@incm.cnrs-mrs.fr <mailto:Laurent.Perrinet@incm.cnrs-mrs.fr>`__
 ).
 
@@ -97,7 +97,3 @@ Perrinet <https://invibe.net/LaurentPerrinet/ContactInformation>`__ (
 +--------------------------------------------------------------------------------+
 | This work was supported by European integrated project FP6-015879, "FACETS".   |
 +--------------------------------------------------------------------------------+
-
-
-
-.. |alert| image:: https://invibe.net/moin_static196/moniker/img/alert.png

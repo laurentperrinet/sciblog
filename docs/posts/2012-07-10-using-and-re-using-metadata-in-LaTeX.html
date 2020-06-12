@@ -145,44 +145,36 @@ System Message: WARNING/2 (&lt;string&gt;, lin">
 <!-- TEASER_END -->
 <ul>
 <li>
-<p class="first">pour mieux référencer votre papier, introduisez des metas en ajoutant
+<p>pour mieux référencer votre papier, introduisez des metas en ajoutant
 avant le <a href="2012-07-10-using-and-re-using-metadata-in-LaTeX.html#id1"><span class="problematic" id="id2">``</span></a>begin{document} `` la commande</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 9); <em><a href="2012-07-10-using-and-re-using-metadata-in-LaTeX.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 9); <em><a href="2012-07-10-using-and-re-using-metadata-in-LaTeX.html#id2">backlink</a></em></p>
 <p>Inline literal start-string without end-string.</p>
 </div>
-<pre class="literal-block">
-\hypersetup{%
+<pre class="literal-block">\hypersetup{%
   pdftitle={my title},%
   pdfsubject={short description},%
-  pdfauthor={Laurent Perrinet &lt;Laurent.Perrinet@univ-amu.fr.fr&gt;, INT/CNRS, 31, ch. Joseph Aiguier, 13402 Marseille Cedex 20, France; https://invibe.net/LaurentPerrinet},%
+  pdfauthor={Laurent Perrinet &lt;Laurent.Perrinet@univ-amu.fr.fr&gt;, INT/CNRS, 31, ch. Joseph Aiguier, 13402 Marseille Cedex 20, France; https://laurentperrinet.github.io},%
   pdfkeywords={Neuronal representation, ....},%
-}
-</pre>
+}</pre>
 </li>
 <li>
-<p class="first">vous aurez besoin auparavant de charger le package <tt class="docutils literal">hyperref</tt>:</p>
-<pre class="literal-block">
-\usepackage[pdftex, pdfusetitle ,colorlinks=false, pdfborder={0 0 0}]{hyperref}%
-</pre>
+<p>vous aurez besoin auparavant de charger le package <code class="docutils literal">hyperref</code>:</p>
+<pre class="literal-block">\usepackage[pdftex, pdfusetitle ,colorlinks=false, pdfborder={0 0 0}]{hyperref}%</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="variables">
 <h2>variables</h2>
 <ul>
+<li><p>the basics is to use variables within LaTex</p></li>
 <li>
-<p class="first">the basics is to use variables within LaTex</p>
-</li>
-<li>
-<p class="first">for instance, these may be useful to define a switch</p>
-<pre class="literal-block">
-\let \mode=0
+<p>for instance, these may be useful to define a switch</p>
+<pre class="literal-block">\let \mode=0
 \if 1\mode
  truc...truc...truc
 \else
-\fi
-</pre>
+\fi</pre>
 </li>
 </ul>
 </div>
@@ -190,13 +182,12 @@ avant le <a href="2012-07-10-using-and-re-using-metadata-in-LaTeX.html#id1"><spa
 <h2>complete example</h2>
 <ul>
 <li>
-<p class="first">even better, we can use string variables</p>
-<pre class="literal-block">
-\documentclass[11pt]{article}
+<p>even better, we can use string variables</p>
+<pre class="literal-block">\documentclass[11pt]{article}
 %-------definitions-----
 \newcommand{\Author}{Laurent Perrinet}
 \newcommand{\Address}{INT}
-\newcommand{\Website}{https://invibe.net/LaurentPerrinet}
+\newcommand{\Website}{https://laurentperrinet.github.io}
 \newcommand{\Email}{Laurent.Perrinet@incm.cnrs-mrs.fr}
 \newcommand{\Title}{My title}
 \newcommand{\Keywords}{my first keyword, my first keyword, more keywords.}
@@ -217,8 +208,7 @@ pdfkeywords={\Keywords},%
 
 My text is here...
 
-\end{document}
-</pre>
+\end{document}</pre>
 </li>
 </ul>
 </div>

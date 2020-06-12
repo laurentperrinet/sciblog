@@ -234,7 +234,7 @@ Intervention(s)
 
 Manifestation
 
-FACETS `CodeJam <https://invibe.net/LaurentPerrinet/CodeJam>`__ Workshop #4
+FACETS CodeJam  Workshop #4
 
 Type de manifestation
 
@@ -250,7 +250,7 @@ Durée
 
 Intervention(s)
 
-| Hooking together the pieces to build a neuroscience demo `https://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4 <https://invibe.net/LaurentPerrinet/Presentations/10-06-24_CodeJamNr4>`__ par Laurent Perrinet
+| Hooking together the pieces to build a neuroscience demo `https://laurentperrinet.github.io/post/2010-06-22_codejam-nr4/ <https://laurentperrinet.github.io/post/2010-06-22_codejam-nr4/>`__ par Laurent Perrinet
 |  Communication orale
 
 Manifestation
@@ -273,9 +273,7 @@ Durée
 Intervention(s)
 
 Models of low-level vision: linking probabilistic models and neural
-masses.
-`https://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets <https://invibe.net/LaurentPerrinet/Presentations/10-01-08_facets>`__
-par Laurent Perrinet and Guillaume S. Masson.
+masses. par Laurent Perrinet and Guillaume S. Masson.
 
 Manifestation
 
@@ -296,9 +294,8 @@ Durée
 
 Manifestation
 
-Second `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ Marseille Workshop
+Second NeuroComp Marseille Workshop
 "Computational Neuroscience: From Representations to Behavior"
-`https://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop <https://invibe.net/LaurentPerrinet/NeuroCompMarseille/2010Workshop>`__
 
 Type de manifestation
 
@@ -314,7 +311,7 @@ Durée
 
 Intervention(s)
 
-| Introduction à la journée `https://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop <https://invibe.net/LaurentPerrinet/Presentations/10-05-27_NeuroCompMarseilleWorkshop>`__ par Laurent Perrinet
+| Introduction à la journée  par Laurent Perrinet
 |  Communication orale
 
 Manifestation
@@ -414,7 +411,7 @@ Type de document
 
 Informations complémentaires
 
-Conférence `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ 2010
+Conférence NeuroComp 2010
 
 Type d'intervention
 
@@ -524,7 +521,7 @@ Allemagne ( Europe )
 
 Unité partenaire
 
-`NeuroInformatics <https://invibe.net/LaurentPerrinet/NeuroInformatics>`__
+NeuroInformatics
 
 Intitulé
 
@@ -627,7 +624,7 @@ Total
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                   Animation scientifique                                                                                                                                                                                                                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__.fr Animation d'un réseau marseillais des `NeuroComp <https://invibe.net/LaurentPerrinet/NeuroComp>`__ Encadrement projet Master BIM à Luminy   |
+| Organisation à Marseille de la deuxième conférence internationale en Neurosciences Computationnelles Participation au réseau NeuroComp Animation d'un réseau marseillais des NeuroComp / Encadrement projet Master BIM à Luminy   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Enseignement**
@@ -664,7 +661,7 @@ France
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Informations complémentaires sur les enseignements dispensés en formation initiale                                                                                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  **(1)** `https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences <https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences>`__    |
+|  **(1)** 2010-10-20_M2_MasterSciences  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Valorisation et partenariat**

@@ -145,8 +145,8 @@ to grab the latest source code from open ">
     <div>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <div class="section" id="using-subversion-svn">
 <h2>using SubVersion (SVN)</h2>
@@ -154,32 +154,34 @@ to grab the latest source code from open ">
 <p><a class="reference external" href="http://software-carpentry.org/version.html">Version Control</a> is an
 everyday tool to handle your important source files. It is useful:</p>
 <ul class="simple">
-<li>to grab the latest source code from open source projects and to
-always keep up-to-date,</li>
-<li>to share a bunch of files (a set of latex source code, python
+<li><p>to grab the latest source code from open source projects and to
+always keep up-to-date,</p></li>
+<li><p>to share a bunch of files (a set of latex source code, python
 scripts, ...) allowing to work on different computers with different
-persons,</li>
-<li>to keep track of revisions from your project.</li>
+persons,</p></li>
+<li><p>to keep track of revisions from your project.</p></li>
 </ul>
 <div class="section" id="svn-getting-help">
 <h3>SVN: Getting help</h3>
 <ul class="simple">
-<li>Versions are kept in a central repository (the <strong>SVN server</strong>) while
-you work with local <strong>working copies</strong> using your SVN client.</li>
-<li>Help for svn can be found in the big <a class="reference external" href="http://svnbook.red-bean.com/nightly/en/index.html">svn
+<li><p>Versions are kept in a central repository (the <strong>SVN server</strong>) while
+you work with local <strong>working copies</strong> using your SVN client.</p></li>
+<li>
+<p>Help for svn can be found in the big <a class="reference external" href="http://svnbook.red-bean.com/nightly/en/index.html">svn
 book</a>. Other
-ressources:<ul>
-<li>cf.
-<a class="reference external" href="http://svnbook.red-bean.com/nightly/en/svn-book.html">http://svnbook.red-bean.com/nightly/en/svn-book.html</a>
-</li>
-<li><a class="reference external" href="http://www.sujee.net/geeky/svn.html">http://www.sujee.net/geeky/svn.html</a></li>
-<li><a class="reference external" href="http://www.abbeyworkshop.com/howto/misc/svn01/">http://www.abbeyworkshop.com/howto/misc/svn01/</a></li>
+ressources:</p>
+<ul>
+<li><p>cf.
+<a class="reference external" href="http://svnbook.red-bean.com/nightly/en/svn-book.html">http://svnbook.red-bean.com/nightly/en/svn-book.html</a></p></li>
+<li><p><a class="reference external" href="http://www.sujee.net/geeky/svn.html">http://www.sujee.net/geeky/svn.html</a></p></li>
+<li><p><a class="reference external" href="http://www.abbeyworkshop.com/howto/misc/svn01/">http://www.abbeyworkshop.com/howto/misc/svn01/</a></p></li>
 </ul>
 </li>
-<li>Many solutions exist to integrate SVN to your file manager<ul>
-<li>On MacOsX, integrate SVN to the
-<tt class="docutils literal">Finder.app</tt> using <a class="reference external" href="http://scplugin.tigris.org/">SCPlugin</a>
-</li>
+<li>
+<p>Many solutions exist to integrate SVN to your file manager</p>
+<ul>
+<li><p>On MacOsX, integrate SVN to the
+<code class="docutils literal">Finder.app</code> using <a class="reference external" href="http://scplugin.tigris.org/">SCPlugin</a></p></li>
 </ul>
 </li>
 </ul>
@@ -188,28 +190,24 @@ ressources:<ul>
 <h3>SVN: 2 minutes guide using the commandline</h3>
 <ul>
 <li>
-<p class="first">to just access a remote repository and make a local working copy
-("checking-out") in a local <tt class="docutils literal">my_projects</tt> folder, do</p>
-<pre class="literal-block">
-cd my_projects/
-svn checkout svn+ssh://myname@svnserver/path/to/svn/project my_localcopy
-</pre>
+<p>to just access a remote repository and make a local working copy
+("checking-out") in a local <code class="docutils literal">my_projects</code> folder, do</p>
+<pre class="literal-block">cd my_projects/
+svn checkout svn+ssh://myname@svnserver/path/to/svn/project my_localcopy</pre>
 <p>this basically copies the current version of the remote copy to your
-local computer as the folder <tt class="docutils literal">my_localcopy</tt>. Then, you just need to
-issue <tt class="docutils literal">svnup</tt> in this folder to stay up-to-date.</p>
+local computer as the folder <code class="docutils literal">my_localcopy</code>. Then, you just need to
+issue <code class="docutils literal">svn up</code> in this folder to stay up-to-date.</p>
 </li>
 <li>
-<p class="first">to create from scratch your own folder in an existing repository (,
+<p>to create from scratch your own folder in an existing repository (,
 do</p>
-<pre class="literal-block">
-cd my_projects/
+<pre class="literal-block">cd my_projects/
 svn add new_project
-svn ci new_project -m'Committing my modifications'
-</pre>
+svn ci new_project -m'Committing my modifications'</pre>
 <p>. Then you just need to issue the
-<tt class="docutils literal">svncinew_project<span class="pre">-m'Committing</span>mymodifications'</tt> command to
+<code class="docutils literal"><span class="pre">svn ci new_project -m'Committing my modifications'</span></code> command to
 commit new modifications to the server. Don't forget to
-<tt class="docutils literal">svnaddnewfiles</tt> or to <tt class="docutils literal">svnrmobsolete_files</tt>.</p>
+<code class="docutils literal">svn add newfiles</code> or to <code class="docutils literal">svn rm obsolete_files</code>.</p>
 </li>
 </ul>
 </div>
@@ -217,63 +215,48 @@ commit new modifications to the server. Don't forget to
 <h3>random SVN tips</h3>
 <ul>
 <li>
-<p class="first">roll-back to a previous version (e.g. 3421) of a file <tt class="docutils literal">myfile</tt>:</p>
-<pre class="literal-block">
-svn up -r 3421 myfile
-</pre>
+<p>roll-back to a previous version (e.g. 3421) of a file <code class="docutils literal">myfile</code>:</p>
+<pre class="literal-block">svn up -r 3421 myfile</pre>
 </li>
 <li>
-<p class="first">Create a repository</p>
+<p>Create a repository</p>
 <ul>
 <li>
-<p class="first">use the database backend</p>
-<pre class="literal-block">
-svnadmin create /ih/funk/svn/projects
-</pre>
+<p>use the database backend</p>
+<pre class="literal-block">svnadmin create /ih/funk/svn/projects</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">use the filesystem backend</p>
-<pre class="literal-block">
-svnadmin create --fs-type=fsfs PATH
-</pre>
+<p>use the filesystem backend</p>
+<pre class="literal-block">svnadmin create --fs-type=fsfs PATH</pre>
 </li>
 <li>
-<p class="first">Import a revision</p>
-<pre class="literal-block">
-svn import -m "Initial import" Eccos file:///ih/funk/svn/projects
-</pre>
+<p>Import a revision</p>
+<pre class="literal-block">svn import -m "Initial import" Eccos file:///ih/funk/svn/projects</pre>
 </li>
 <li>
-<p class="first">Check out a revision</p>
-<pre class="literal-block">
-svn co file:///ih/funk/svn/projects
-</pre>
+<p>Check out a revision</p>
+<pre class="literal-block">svn co file:///ih/funk/svn/projects</pre>
 </li>
 <li>
-<p class="first">Dump a repository</p>
-<pre class="literal-block">
- svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; dump.gz
+<p>Dump a repository</p>
+<pre class="literal-block"> svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; dump.gz
  svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+Eccosdump%Y-%m-%d_%H:%M:%S.gz"`
-svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+projects_dump%Y-%m-%d_%H:%M:%S.gz"`
-</pre>
+svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+projects_dump%Y-%m-%d_%H:%M:%S.gz"`</pre>
 </li>
 <li>
-<p class="first">Load contents of a dump into a repository</p>
-<pre class="literal-block">
-gunzip -c dump.gz | svnadmin load /data/svn/projects
-</pre>
+<p>Load contents of a dump into a repository</p>
+<pre class="literal-block">gunzip -c dump.gz | svnadmin load /data/svn/projects</pre>
 </li>
 <li>
-<p class="first">Import from an existing directory, no need to check it out again</p>
+<p>Import from an existing directory, no need to check it out again</p>
 <ul>
 <li>
-<p class="first">It should work, but you could also check it out right into /etc.
+<p>It should work, but you could also check it out right into /etc.
 Something</p>
 <p>like this:</p>
-<pre class="literal-block">
-$ svnadmin create /var/svnrepos/admin
+<pre class="literal-block">$ svnadmin create /var/svnrepos/admin
 $ svn mkdir -m "initial setup" file:///var/svnrepos/admin/trunk
 c:&gt; svn mkdir -m "initial setup" file:///c:/fhs/svn_repos/trunk
 $ cd /etc
@@ -281,95 +264,74 @@ $ svn co file:///var/svnrepos/admin/trunk .
 $ svn add passwd group
 $ svn commit -m "start loading it in"
 
-I tested the 'svn co' into '.' just now. Works great.
-</pre>
+I tested the 'svn co' into '.' just now. Works great.</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">svn propset</p>
-<pre class="literal-block">
-svn propset svn:keywords "LastChangedDate LastChangedRevision Id Author" weather.txt
-svn propset svn:keywords "LastChangedDate LastChangedRevision Id" slides.tex
-</pre>
+<p>svn propset</p>
+<pre class="literal-block">svn propset svn:keywords "LastChangedDate LastChangedRevision Id Author" weather.txt
+svn propset svn:keywords "LastChangedDate LastChangedRevision Id" slides.tex</pre>
 </li>
 <li>
-<p class="first">Before an update you could use the following to get the log messages
+<p>Before an update you could use the following to get the log messages
 of the changes:</p>
-<pre class="literal-block">
-svn log -rBASE:HEAD
-</pre>
+<pre class="literal-block">svn log -rBASE:HEAD</pre>
 </li>
 <li>
-<p class="first">Upgrade to a new subversion version</p>
-<pre class="literal-block">
-$ mv repos repos.tmp
+<p>Upgrade to a new subversion version</p>
+<pre class="literal-block">$ mv repos repos.tmp
 $ svnadmin create repos
 $ svnadmin-old dump repos.tmp | svnadmin load repos
-$ # copy over any hook scripts and stuff from repos.tmp to repos
-</pre>
+$ # copy over any hook scripts and stuff from repos.tmp to repos</pre>
 </li>
 <li>
-<p class="first">Checkout from a repository over ssh</p>
-<pre class="literal-block">
-svn co svn+ssh://felix/home/reichr/svn_repos/XSteveData/trunk data
-</pre>
+<p>Checkout from a repository over ssh</p>
+<pre class="literal-block">svn co svn+ssh://felix/home/reichr/svn_repos/XSteveData/trunk data</pre>
 </li>
 <li>
-<p class="first">Change the path of the repository for a working copy</p>
-<pre class="literal-block">
-svn switch --relocate file:///original/path/to/repos file:///new/path
-</pre>
-<p><img alt="alert" src="https://invibe.net/moin_static196/moniker/img/alert.png"> WARNING: this will not work if
-<tt class="docutils literal"><span class="pre">file:///original/path/to/repos</span></tt> is not <em>exactly</em> the original URL.
-BE sure to check before with <tt class="docutils literal">svninfo</tt>.</p>
+<p>Change the path of the repository for a working copy</p>
+<pre class="literal-block">svn switch --relocate file:///original/path/to/repos file:///new/path</pre>
+<p>WARNING: this will not work if
+<code class="docutils literal"><span class="pre">file:///original/path/to/repos</span></code> is not <em>exactly</em> the original URL.
+BE sure to check before with <code class="docutils literal">svn info</code>.</p>
 </li>
 <li>
-<p class="first">Network a repository via svn+ssh:</p>
+<p>Network a repository via svn+ssh:</p>
 <ul>
 <li>
-<p class="first">create the repository on the repository host:</p>
-<pre class="literal-block">
-svnadmin create rp1  -- this is located at /home/svtest/rp1
-</pre>
+<p>create the repository on the repository host:</p>
+<pre class="literal-block">svnadmin create rp1  -- this is located at /home/svtest/rp1</pre>
 </li>
 <li>
-<p class="first">Import data to the repository:</p>
-<pre class="literal-block">
-svn import -m"Initial import" svn+ssh://svtest@host/rp1/trunk
-</pre>
+<p>Import data to the repository:</p>
+<pre class="literal-block">svn import -m"Initial import" svn+ssh://svtest@host/rp1/trunk</pre>
 </li>
 <li>
-<p class="first">Checkout the project:</p>
-<pre class="literal-block">
-svn co svn+ssh://svtest@host/home/svtest/rp1/trunk p1
-</pre>
+<p>Checkout the project:</p>
+<pre class="literal-block">svn co svn+ssh://svtest@host/home/svtest/rp1/trunk p1</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">Generate a patch to undo some local changes and redo them later: What
+<p>Generate a patch to undo some local changes and redo them later: What
 usually happens to me is that I've changed N files in M different &gt;
 directories distributed all over the filesystem, and I want to check
 in N-1 of them. If I need to commit all but one file, I do this:</p>
-<pre class="literal-block">
-% svn diff path/to/file_not_committing &gt; /tmp/patch.txt
+<pre class="literal-block">% svn diff path/to/file_not_committing &gt; /tmp/patch.txt
 % svn revert path/to/file_not_committing
 % svn ci -m "committing all the stuff i wanted to"
-% patch -p0 &lt; /tmp/patch.txt
-</pre>
+% patch -p0 &lt; /tmp/patch.txt</pre>
 <p>Revert is your friend. Learn it, use it, looooooooooove it.</p>
 </li>
 <li>
-<p class="first">Revert to a previous version</p>
-<pre class="literal-block">
-svn co project
+<p>Revert to a previous version</p>
+<pre class="literal-block">svn co project
 &lt;edit foo.c, adding bugs&gt;
 svn ci foo.c (commits to r348)
 &lt;realize terrible error&gt;
 svn merge -r348:347 foo.c
-svn ci foo.c (commits 349)
-</pre>
+svn ci foo.c (commits 349)</pre>
 <p>note the ordering of the revision numbers in the merge command. what
 this really says is "make a diff between revision 348 and 347, and
 apply it immediately to foo.c" if you are trying to revert a
@@ -377,12 +339,10 @@ directory tree with moves or deletes in it, and are getting arcane
 errors, try the --ignore-ancestry flag.</p>
 </li>
 <li>
-<p class="first">Edit the commit/log messages after the commit Read chapter 7,
+<p>Edit the commit/log messages after the commit Read chapter 7,
 regarding unversioned properties attached to revisions. You want to
 change the svn:log property:</p>
-<pre class="literal-block">
-$ svn propedit -r N --revprop svn:log URL
-</pre>
+<pre class="literal-block">$ svn propedit -r N --revprop svn:log URL</pre>
 </li>
 </ul>
 </div>
@@ -390,52 +350,45 @@ $ svn propedit -r N --revprop svn:log URL
 <div class="section" id="an-alternative-git">
 <h2>an alternative : Git</h2>
 <ul class="simple">
-<li>The place to
-<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">begin</a>.</li>
-<li>From the SVN world:
-<a class="reference external" href="http://git-scm.com/course/svn.html">http://git-scm.com/course/svn.html</a>
-</li>
-<li>
-<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday</a>'s
-git.</li>
+<li><p>The place to
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">begin</a>.</p></li>
+<li><p>From the SVN world:
+<a class="reference external" href="http://git-scm.com/course/svn.html">http://git-scm.com/course/svn.html</a></p></li>
+<li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday</a>'s
+git.</p></li>
 </ul>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="45%">
-<col width="55%">
+<col style="width: 45%">
+<col style="width: 55%">
 </colgroup>
-<tbody valign="top">
+<tbody>
 <tr>
-<td>git clone <em>url</em>
-</td>
-<td>svn checkout <em>url</em>
-</td>
+<td><p>git clone <em>url</em></p></td>
+<td><p>svn checkout <em>url</em></p></td>
 </tr>
 <tr>
-<td>git pull</td>
-<td>svn up</td>
+<td><p>git pull</p></td>
+<td><p>svn up</p></td>
 </tr>
 <tr>
-<td>git commit</td>
-<td>svn commit</td>
+<td><p>git commit</p></td>
+<td><p>svn commit</p></td>
 </tr>
 <tr>
-<td>git push <em>url</em>
-</td>
-<td><em>(no such a thing)</em></td>
+<td><p>git push <em>url</em></p></td>
+<td><p><em>(no such a thing)</em></p></td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>
-<p class="first">to set-up</p>
-<pre class="literal-block">
-git config --global user.name "Your Name Comes Here"
+<p>to set-up</p>
+<pre class="literal-block">git config --global user.name "Your Name Comes Here"
 git config --global user.email you@yourdomain.example.com
 git config --global color.diff auto
 git config --global color.status auto
-git config --global color.branch auto
-</pre>
+git config --global color.branch auto</pre>
 </li>
 </ul>
 </div>
@@ -443,10 +396,8 @@ git config --global color.branch auto
 <h2>using Git with SVN</h2>
 <ul>
 <li>
-<p class="first">install git-svn and use</p>
-<pre class="literal-block">
-git svn fetch
-</pre>
+<p>install git-svn and use</p>
+<pre class="literal-block">git svn fetch</pre>
 </li>
 </ul>
 </div>

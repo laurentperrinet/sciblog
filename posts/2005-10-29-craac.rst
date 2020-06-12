@@ -163,8 +163,3 @@ Vulgarisation
 Type d'information Intitulé Type de participation Intervention en milieu
 scolaire Fete de la Science Participation ponctuelle Administration de
 la recherche
-
---------------
-
--- `LaurentPerrinet <https://invibe.net/LaurentPerrinet>`__ 2005-10-29
-13:50:37

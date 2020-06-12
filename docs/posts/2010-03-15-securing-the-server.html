@@ -30,10 +30,9 @@ MathJax.Hub.Config({
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="securing the server">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2010-03-15-securing-the-server.html">
-<meta property="og:description" content="SSH (Secure Shell) is installed on most systems (here
-GnuLinuxUbuntu and MacOsX) so
+<meta property="og:description" content="SSH (Secure Shell) is installed on most systems (here GnuLinuxUbuntu and MacOsX) so
 don't panic about compilations (try Putty on Windows). Try a simple
-ssh-V to check version or whichssh to locate the">
+ssh -V to check version or which ssh to locate t">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-03-15T13:36:57+01:00">
 <meta property="article:tag" content="macos">
@@ -138,67 +137,53 @@ ssh-V to check version or whichssh to locate the">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>SSH (Secure Shell) is installed on most systems (here
-<a class="reference external" href="https://invibe.net/LaurentPerrinet/GnuLinuxUbuntu">GnuLinuxUbuntu</a> and MacOsX) so
+<li>
+<p>SSH (Secure Shell) is installed on most systems (here GnuLinuxUbuntu and MacOsX) so
 don't panic about compilations (try Putty on Windows). Try a simple
-<tt class="docutils literal">ssh<span class="pre">-V</span></tt> to check version or <tt class="docutils literal">whichssh</tt> to locate the binary.<!-- TEASER_END -->
+<code class="docutils literal"><span class="pre">ssh -V</span></code> to check version or <code class="docutils literal">which ssh</code> to locate the binary.</p>
+<!-- TEASER_END -->
 </li>
-<li>Thanks to <tt class="docutils literal">ssh</tt>, you can transport all your data (accessing files,
+<li><p>Thanks to <code class="docutils literal">ssh</code>, you can transport all your data (accessing files,
 merging repositories, lauching remote X programs) transparently using
 a secure connection. Thanks to tunneling, this is also simpler thus
 more secure for your computer and your provider. Having all security
 located in one interface sure is a big advantage: once your SSH
 communication channel is set-up, you should only focus on what you
-wish to do (SVN, etc...).</li>
-<li>Most documentation may be found in <tt class="docutils literal">manssh</tt>, <tt class="docutils literal">man<span class="pre">ssh-keygen</span></tt>
+wish to do (SVN, etc...).</p></li>
+<li><p>Most documentation may be found in <code class="docutils literal">man ssh</code>, <code class="docutils literal"><span class="pre">man ssh-keygen</span></code>
 (remember that thanks to the underlying pager system, you can search
-for a keyword, for instance <tt class="docutils literal">hello</tt>, by typing <tt class="docutils literal">\hello[ENTER]</tt>).
+for a keyword, for instance <code class="docutils literal">hello</code>, by typing <code class="docutils literal">\hello[ENTER]</code>).
 Many other sources of help exist, such as this
-<a class="reference external" href="http://www.employees.org/~satch/ssh/faq/ssh-faq.html">FAQ</a>
-</li>
+<a class="reference external" href="http://www.employees.org/~satch/ssh/faq/ssh-faq.html">FAQ</a></p></li>
 </ul>
 <div class="section" id="setting-up-ssh-spreading-the-good-keys">
 <h2>Setting up SSH: spreading the good keys</h2>
 <ol class="arabic">
-<li>
-<p class="first">There are many ways to authenticate your session, but mainly password
+<li><p>There are many ways to authenticate your session, but mainly password
 or keys. Keys are to be preferred to avoid typing your password 10
 times a day. It is also most secure (you type your key's password
-locally and not remotely).</p>
+locally and not remotely).</p></li>
+<li>
+<p>Generate a private/public key pair. Simple command to do this:</p>
+<pre class="literal-block">ssh-keygen -t rsa</pre>
 </li>
 <li>
-<p class="first">Generate a private/public key pair. Simple command to do this:</p>
-<pre class="literal-block">
-ssh-keygen -t rsa
-</pre>
-</li>
-<li>
-<p class="first">Copy the key to the</p>
-<pre class="literal-block">
-ssh-copy-id -i ~/.ssh/id_rsa.pub username@host
-</pre>
+<p>Copy the key to the</p>
+<pre class="literal-block">ssh-copy-id -i ~/.ssh/id_rsa.pub username@host</pre>
 <p>. this can be also be done using</p>
-<pre class="literal-block">
-scp ~/.ssh/id_rsa.pub username@host:~/mykey.pub
+<pre class="literal-block">scp ~/.ssh/id_rsa.pub username@host:~/mykey.pub
 ssh username@host
-cat mykey.pub &gt;&gt; .ssh/authorized_keys
-</pre>
+cat mykey.pub &gt;&gt; .ssh/authorized_keys</pre>
 </li>
 <li>
-<p class="first">Now try logging into the remote machine again from local</p>
-<pre class="literal-block">
-ssh REMOTE_USERNAME@remote_host
-</pre>
+<p>Now try logging into the remote machine again from local</p>
+<pre class="literal-block">ssh REMOTE_USERNAME@remote_host</pre>
 </li>
+<li><p>Check that your public key is in the list of authorized keys:
+<code class="docutils literal">.ssh/authorized_keys</code>.</p></li>
 <li>
-<p class="first">Check that your public key is in the list of authorized keys:
-<tt class="docutils literal">.ssh/authorized_keys</tt>.</p>
-</li>
-<li>
-<p class="first">Change password regularly:</p>
-<pre class="literal-block">
-ssh-keygen -p
-</pre>
+<p>Change password regularly:</p>
+<pre class="literal-block">ssh-keygen -p</pre>
 <p>It is not advised to put an empty pass-phrase, rather use key agent
 (see below).</p>
 </li>
@@ -207,22 +192,18 @@ ssh-keygen -p
 <h3>Aliasing</h3>
 <ul>
 <li>
-<p class="first">it is possible to create alias of the ssh binary to hostnames... but
+<p>it is possible to create alias of the ssh binary to hostnames... but
 more simply, you may put</p>
-<pre class="literal-block">
-alias myserver='ssh -Y -p2221 myuser@myserver.domain.com'
-</pre>
+<pre class="literal-block">alias myserver='ssh -Y -p2221 myuser@myserver.domain.com'</pre>
 <p>where 2221 is here the port used by the SSH server on
-<tt class="docutils literal">myserver.domain.com</tt></p>
+<code class="docutils literal">myserver.domain.com</code></p>
 </li>
 <li>
-<p class="first">more cleanly, you may edit your `` .ssh/config`` file with:</p>
-<pre class="literal-block">
-Host myserver.domain.com
+<p>more cleanly, you may edit your `` .ssh/config`` file with:</p>
+<pre class="literal-block">Host myserver.domain.com
         User myuser
-        Port 2221
-</pre>
-<p>Be careful that properties are right : <tt class="docutils literal">chmod600<span class="pre">~/.ssh/config</span></tt></p>
+        Port 2221</pre>
+<p>Be careful that properties are right : <code class="docutils literal"><span class="pre">chmod 600 ~/.ssh/config</span></code></p>
 </li>
 </ul>
 </div>
@@ -230,18 +211,21 @@ Host myserver.domain.com
 <div class="section" id="key-agent">
 <h2>key agent</h2>
 <ul class="simple">
-<li>An agent loads your keys on the local machines:<ul>
-<li>it's more secure, since all passwords are typed locally, you only
-send encrypted authentifications</li>
-<li>it's more practical, since you type your password once per session</li>
+<li>
+<p>An agent loads your keys on the local machines:</p>
+<ul>
+<li><p>it's more secure, since all passwords are typed locally, you only
+send encrypted authentifications</p></li>
+<li><p>it's more practical, since you type your password once per session</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="http://www.sshkeychain.org/mirrors/SSH-with-Keys-HOWTO/">http://www.sshkeychain.org/mirrors/SSH-with-Keys-HOWTO/</a></li>
-<li>GUI interface on MacOsX :
-<a class="reference external" href="http://www.sshkeychain.org/">http://www.sshkeychain.org/</a><ul>
-<li>install with macports using <tt class="docutils literal">sudoportinstallSSHKeychain</tt>,
-you'll find it in <tt class="docutils literal">/Applications/MacPorts</tt>
-</li>
+<li><p><a class="reference external" href="http://www.sshkeychain.org/mirrors/SSH-with-Keys-HOWTO/">http://www.sshkeychain.org/mirrors/SSH-with-Keys-HOWTO/</a></p></li>
+<li>
+<p>GUI interface on MacOsX :
+<a class="reference external" href="http://www.sshkeychain.org/">http://www.sshkeychain.org/</a></p>
+<ul>
+<li><p>install with macports using <code class="docutils literal">sudo port install SSHKeychain</code>,
+you'll find it in <code class="docutils literal">/Applications/MacPorts</code></p></li>
 </ul>
 </li>
 </ul>
@@ -249,25 +233,25 @@ you'll find it in <tt class="docutils literal">/Applications/MacPorts</tt>
 <div class="section" id="tunnels">
 <h2>tunnels</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://souptonuts.sourceforge.net/sshtips.htm">http://souptonuts.sourceforge.net/sshtips.htm</a></li>
-<li><a class="reference external" href="http://projects.tynsoe.org/en/stm/doc.php">http://projects.tynsoe.org/en/stm/doc.php</a></li>
+<li><p><a class="reference external" href="http://souptonuts.sourceforge.net/sshtips.htm">http://souptonuts.sourceforge.net/sshtips.htm</a></p></li>
+<li><p><a class="reference external" href="http://projects.tynsoe.org/en/stm/doc.php">http://projects.tynsoe.org/en/stm/doc.php</a></p></li>
 </ul>
 </div>
 <div class="section" id="securing-the-server">
 <h2>securing the server</h2>
 <ul class="simple">
-<li>Robots usually try common name / password combinations on your SSH
-server. If you're the only user <tt class="docutils literal">admin_name</tt> of your server you may
+<li><p>Robots usually try common name / password combinations on your SSH
+server. If you're the only user <code class="docutils literal">admin_name</code> of your server you may
 use in the SSH server configuration file (usually
-<tt class="docutils literal">/etc/ssh/sshd_config</tt>) the option <tt class="docutils literal">AllowUsersadmin_name</tt> to
-restrict access to user <tt class="docutils literal">admin_name</tt> and avoid brute force attacks.
+<code class="docutils literal">/etc/ssh/sshd_config</code>) the option <code class="docutils literal">AllowUsers admin_name</code> to
+restrict access to user <code class="docutils literal">admin_name</code> and avoid brute force attacks.
 Since robots are most of the time dumb, they'll get an immediate
-<tt class="docutils literal">accesdenied</tt> response to any connection request.</li>
-<li>Robots usually sniff port <tt class="docutils literal">22</tt>. To change the port which is
+<code class="docutils literal">acces denied</code> response to any connection request.</p></li>
+<li><p>Robots usually sniff port <code class="docutils literal">22</code>. To change the port which is
 listened by the SSH server, either modify the default port in the SSH
-server configuration file (usually <tt class="docutils literal">/etc/ssh/sshd_config</tt>). Another
+server configuration file (usually <code class="docutils literal">/etc/ssh/sshd_config</code>). Another
 way is to use your router to redirect the outside port (for instance
-<tt class="docutils literal">2221</tt>) to the default port of your server.</li>
+<code class="docutils literal">2221</code>) to the default port of your server.</p></li>
 </ul>
 </div>
 </div>

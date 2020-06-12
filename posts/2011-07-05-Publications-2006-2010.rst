@@ -21,7 +21,6 @@ articles
 #. `Publications/Perrinet10shl <https://laurentperrinet.github.io/publication/perrinet-10-shl>`__
 #. `Publications/Voges10neurocomp <https://laurentperrinet.github.io/publication/voges-10-neurocomp>`__
 #. `SciBlog/2011-07-05 <https://laurentperrinet.github.io/sciblog/posts/2011-07-05-Publications-2006-2010.html>`__
-#. `TagFacets <https://invibe.net/LaurentPerrinet/TagFacets>`__
 
 
 
