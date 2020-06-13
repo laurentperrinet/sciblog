@@ -133,68 +133,43 @@ MathJax.Hub.Config({
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>I always used a single <tt class="docutils literal">babel.bib</tt> BibTex file to keep a record of all my readings. Great. Then I managed it using a VCS (first SVN, then git). Super great. But at the same time, resources like <a class="reference external" href="http://www.citeulike.org/">CiteUlike</a> or Mendeley (but also other services like orcid) allow for cloud-like services of having this data everywhere, anytime. Super super great!</p>
+<p>I always used a single <code class="docutils literal">babel.bib</code> BibTex file to keep a record of all my readings. Great. Then I managed it using a VCS (first SVN, then git). Super great. But at the same time, resources like <a class="reference external" href="http://www.citeulike.org/">CiteUlike</a> or Mendeley (but also other services like orcid) allow for cloud-like services of having this data everywhere, anytime. Super super great!</p>
 <p>But this fails if you have no connection to internet (remote conference, ...) or more importantly if these services change their policy (mendeley to citeulike sync disappeared at a sudden). The work you provide is not yours. These are mostly commercial services while all the open-source tools are there. Most importantly, the multiplicity of tools makes it difficult to share bibliographic data easily, while if we would have a tool to translate between them this would make it possible (without changing your habits).</p>
 <!-- TEASER_END -->
 <p>As a consequence, I wish to build such a "BibCloud" service with the following features:</p>
 <ul class="simple">
-<li>
-<tt class="docutils literal">bibcloud init</tt> : use with biblatex (but a format using <a class="reference external" href="http://www.bibjson.org/">bibjson</a> is possible)</li>
-<li>CLI coded in python (widespread in the scientific community), all databases + configuration files being stored in plain text files.</li>
-<li>
-<tt class="docutils literal">bibcloud commit <span class="pre">-am</span> " adding Sawyer14nature "; bibcloud push</tt> : CVS integration (git / hg / ...) - and storage in remote repositories (github, bitbucket)</li>
-<li>
-<tt class="docutils literal">bibcloud pull citeulike</tt>, <tt class="docutils literal">bibcloud push citeulike</tt> : easy conversion + pull and push to existing accounts (Citeulike, Mendeley) - including synchronization of PDFs</li>
-<li>
-<tt class="docutils literal">bibcloud detect_dups records</tt> implementation of tools to detect and merge duplicate records, and duplicate fields (like <tt class="docutils literal">bibcloud detect_dups authors</tt>:  an author with different versions, like eg <tt class="docutils literal">Tom Sawyer</tt>, <tt class="docutils literal">T Sawyer</tt>, <tt class="docutils literal">T J Sawyer</tt> or for journal names with <tt class="docutils literal">bibcloud detect_dups journals</tt>)</li>
-<li>
-<tt class="docutils literal">bibcloud pull 2323422.pdf</tt> scan a pdf to extract its metadata (like the DOI) - allow to include the citation in the paper <tt class="docutils literal">bibcloud push 2323422.pdf</tt> to simply send a file to colleagues.</li>
-<li>
-<tt class="docutils literal">bibcloud citekey Sawyer14</tt> : generate a citekey according to a given rule</li>
-<li>
-<tt class="docutils literal">bibcloud edit Sawyer14</tt> : edits one particular entry</li>
-<li>
-<tt class="docutils literal">bibcloud file Sawyer14</tt> : files the PDF corresponding to the entry according to some rule</li>
-<li>
-<tt class="docutils literal">bibcloud push html</tt> easy conversion to some web format (github pages?) to read papers online.</li>
+<li><p><code class="docutils literal">bibcloud init</code> : use with biblatex (but a format using <a class="reference external" href="http://www.bibjson.org/">bibjson</a> is possible)</p></li>
+<li><p>CLI coded in python (widespread in the scientific community), all databases + configuration files being stored in plain text files.</p></li>
+<li><p><code class="docutils literal">bibcloud commit <span class="pre">-am</span> " adding Sawyer14nature "; bibcloud push</code> : CVS integration (git / hg / ...) - and storage in remote repositories (github, bitbucket)</p></li>
+<li><p><code class="docutils literal">bibcloud pull citeulike</code>, <code class="docutils literal">bibcloud push citeulike</code> : easy conversion + pull and push to existing accounts (Citeulike, Mendeley) - including synchronization of PDFs</p></li>
+<li><p><code class="docutils literal">bibcloud detect_dups records</code> implementation of tools to detect and merge duplicate records, and duplicate fields (like <code class="docutils literal">bibcloud detect_dups authors</code>:  an author with different versions, like eg <code class="docutils literal">Tom Sawyer</code>, <code class="docutils literal">T Sawyer</code>, <code class="docutils literal">T J Sawyer</code> or for journal names with <code class="docutils literal">bibcloud detect_dups journals</code>)</p></li>
+<li><p><code class="docutils literal">bibcloud pull 2323422.pdf</code> scan a pdf to extract its metadata (like the DOI) - allow to include the citation in the paper <code class="docutils literal">bibcloud push 2323422.pdf</code> to simply send a file to colleagues.</p></li>
+<li><p><code class="docutils literal">bibcloud citekey Sawyer14</code> : generate a citekey according to a given rule</p></li>
+<li><p><code class="docutils literal">bibcloud edit Sawyer14</code> : edits one particular entry</p></li>
+<li><p><code class="docutils literal">bibcloud file Sawyer14</code> : files the PDF corresponding to the entry according to some rule</p></li>
+<li><p><code class="docutils literal">bibcloud push html</code> easy conversion to some web format (github pages?) to read papers online.</p></li>
 </ul>
 <p>Before attempting to put that together, I wish to know of the existing pieces the community may know.
 A first poll was made @ <a class="reference external" href="http://tex.stackexchange.com/questions/166675/how-could-i-manage-a-bibliography-in-a-world-full-of-clouds-citeulike-mendele">http://tex.stackexchange.com/questions/166675/how-could-i-manage-a-bibliography-in-a-world-full-of-clouds-citeulike-mendele</a></p>
 <p>Notes:</p>
 <ul class="simple">
-<li>it is different from this (question "Workflow for managing references?" <a class="footnote-reference" href="2014-12-29-bib-cloud.html#id4" id="id1">[3]</a>) as existing solutions like zotero or  do not work for me. I wish to get the pieces of the puzzle together to build a command-line tool for managing bibliographies.</li>
-<li>it is different to this question <a class="footnote-reference" href="2014-12-29-bib-cloud.html#id5" id="id2">[4]</a> or to this other <a class="footnote-reference" href="2014-12-29-bib-cloud.html#id6" id="id3">[5]</a> as they ask more for a GUI solution.</li>
+<li><p>it is different from this (question "Workflow for managing references?" <a class="footnote-reference brackets" href="2014-12-29-bib-cloud.html#id4" id="id1">3</a>) as existing solutions like zotero or  do not work for me. I wish to get the pieces of the puzzle together to build a command-line tool for managing bibliographies.</p></li>
+<li><p>it is different to this question <a class="footnote-reference brackets" href="2014-12-29-bib-cloud.html#id5" id="id2">4</a> or to this other <a class="footnote-reference brackets" href="2014-12-29-bib-cloud.html#id6" id="id3">5</a> as they ask more for a GUI solution.</p></li>
 </ul>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id1">[3]</a></td>
-<td><a class="reference external" href="http://tex.stackexchange.com/questions/18848/workflow-for-managing-references">http://tex.stackexchange.com/questions/18848/workflow-for-managing-references</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id2">[4]</a></td>
-<td><a class="reference external" href="http://tex.stackexchange.com/questions/33619/latex-and-bibliography-management-tools">http://tex.stackexchange.com/questions/33619/latex-and-bibliography-management-tools</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id3">[5]</a></td>
-<td><a class="reference external" href="http://tex.stackexchange.com/questions/162703/mac-bibliography-management-with-biblatex-support-export">http://tex.stackexchange.com/questions/162703/mac-bibliography-management-with-biblatex-support-export</a></td>
-</tr></tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id1">3</a></span></dt>
+<dd>
+<p><a class="reference external" href="http://tex.stackexchange.com/questions/18848/workflow-for-managing-references">http://tex.stackexchange.com/questions/18848/workflow-for-managing-references</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id2">4</a></span></dt>
+<dd>
+<p><a class="reference external" href="http://tex.stackexchange.com/questions/33619/latex-and-bibliography-management-tools">http://tex.stackexchange.com/questions/33619/latex-and-bibliography-management-tools</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="2014-12-29-bib-cloud.html#id3">5</a></span></dt>
+<dd>
+<p><a class="reference external" href="http://tex.stackexchange.com/questions/162703/mac-bibliography-management-with-biblatex-support-export">http://tex.stackexchange.com/questions/162703/mac-bibliography-management-with-biblatex-support-export</a></p>
+</dd>
+</dl>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

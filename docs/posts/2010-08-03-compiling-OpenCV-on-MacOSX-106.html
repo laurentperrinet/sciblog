@@ -33,9 +33,7 @@ MathJax.Hub.Config({
 <meta property="og:description" content="using macports
 
 it works now with macports:
-
 sudo port install -u opencv +python26 +tbb
-
 
 
 
@@ -48,9 +46,8 @@ This post is certainly obsolete...
 latest SVN
 
 compiling here along with MacTex...
-
 from
-http://">
+http://ope">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-08-03T13:36:57+02:00">
 <meta property="article:tag" content="macos">
@@ -158,52 +155,42 @@ http://">
 <h2>using macports</h2>
 <ul>
 <li>
-<p class="first">it works now with macports:</p>
-<pre class="literal-block">
-sudo port install -u opencv +python26 +tbb
-</pre>
+<p>it works now with macports:</p>
+<pre class="literal-block">sudo port install -u opencv +python26 +tbb</pre>
 </li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 </div>
 <div class="section" id="latest-svn">
 <h2>latest SVN</h2>
 <ul>
+<li><p>compiling here along with MacTex...</p></li>
 <li>
-<p class="first">compiling here along with MacTex...</p>
-</li>
-<li>
-<p class="first">from
+<p>from
 <a class="reference external" href="http://opencv.willowgarage.com/wiki/Mac_OS_X_OpenCV_Port">http://opencv.willowgarage.com/wiki/Mac_OS_X_OpenCV_Port</a></p>
-<pre class="literal-block">
-svn co https://code.ros.org/svn/opencv/trunk/opencv
+<pre class="literal-block">svn co https://code.ros.org/svn/opencv/trunk/opencv
 cd opencv # the directory containing INSTALL, CMakeLists.txt etc.
 mkdir build
 cd build
 cmake -D CMAKE_OSX_ARCHITECTURES=x86_64 -D WITH_FFMPEG=ON -D BUILD_EXAMPLES=ON -D BUILD_LATEX_DOCS=ON -D PDFLATEX_COMPILER=/usr/texbin/pdflatex -D BUILD_NEW_PYTHON_SUPPORT=ON  -D PYTHON_LIBRARY=/opt/local/lib/libpython2.6.dylib -D PYTHON_INCLUDE_DIR=/opt/local/Library/Frameworks/Python.framework/Headers ..
 make -j4
-sudo make install
-</pre>
+sudo make install</pre>
 </li>
 <li>
-<p class="first">I had to rebuild some ports</p>
-<pre class="literal-block">
-sudo port install ilmbase
+<p>I had to rebuild some ports</p>
+<pre class="literal-block">sudo port install ilmbase
 port provides /opt/local/lib/libIlmImf.dylib
 sudo port install openexr
-sudo port install libdc1394
-</pre>
+sudo port install libdc1394</pre>
 <p>and recompile</p>
 </li>
 <li>
-<p class="first">then could run</p>
-<pre class="literal-block">
-cd ../samples/python/
-python camera.py
-</pre>
+<p>then could run</p>
+<pre class="literal-block">cd ../samples/python/
+python camera.py</pre>
 </li>
 </ul>
 </div>
@@ -211,10 +198,9 @@ python camera.py
 <h2>using homebrew</h2>
 <ul>
 <li>
-<p class="first">another route is homebrew:
+<p>another route is homebrew:
 <a class="reference external" href="http://gist.github.com/519418">http://gist.github.com/519418</a> / :</p>
-<pre class="literal-block">
-$ brew info opencv
+<pre class="literal-block">$ brew info opencv
 opencv 2.1.1-pre
 http://opencv.willowgarage.com/wiki/
 Depends on: cmake, pkg-config, libtiff, jasper, tbb
@@ -225,8 +211,7 @@ The OpenCV Python module will not work until you edit your PYTHONPATH like so:
 
 To make this permanent, put it in your shell's profile (e.g. ~/.profile).
 
-http://github.com/mxcl/homebrew/commits/master/Library/Formula/opencv.rb
-</pre>
+http://github.com/mxcl/homebrew/commits/master/Library/Formula/opencv.rb</pre>
 </li>
 </ul>
 </div>

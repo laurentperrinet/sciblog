@@ -31,17 +31,14 @@ MathJax.Hub.Config({
 <meta property="og:title" content="setting graphics' path">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2009-08-21-setting-graphics-path.html">
 <meta property="og:description" content="instead of using
-
 \includegraphics[width=\textwidth]{folder2_relative/picture.png}%
 
 
 
 
-
 by including in the front matter (i.e. before \begin{document}):
-
 \DeclareGraphicsExtensions{.png,.pdf}%
-\graph">
+\graphics">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-08-21T13:36:57+02:00">
 <meta property="article:tag" content="latex">
@@ -146,33 +143,26 @@ by including in the front matter (i.e. before \begin{document}):
     <div>
 <ul>
 <li>
-<p class="first">instead of using</p>
-<pre class="literal-block">
-\includegraphics[width=\textwidth]{folder2_relative/picture.png}%
-</pre>
+<p>instead of using</p>
+<pre class="literal-block">\includegraphics[width=\textwidth]{folder2_relative/picture.png}%</pre>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">by including in the front matter (i.e. before <tt class="docutils literal">\begin{document</tt>}):</p>
-<pre class="literal-block">
-\DeclareGraphicsExtensions{.png,.pdf}%
-\graphicspath{{../folder1_relative/},{folder2_relative/},{/home/myname/folder_absolute/figures/}}%
-</pre>
+<p>by including in the front matter (i.e. before <code class="docutils literal">\begin{document</code>}):</p>
+<pre class="literal-block">\DeclareGraphicsExtensions{.png,.pdf}%
+\graphicspath{{../folder1_relative/},{folder2_relative/},{/home/myname/folder_absolute/figures/}}%</pre>
 </li>
 <li>
-<p class="first">you may simply use</p>
-<pre class="literal-block">
-\includegraphics[width=.49\textwidth]{picture}%
-</pre>
+<p>you may simply use</p>
+<pre class="literal-block">\includegraphics[width=.49\textwidth]{picture}%</pre>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">one advantage is that you could use context dependent rules, for
+<p>one advantage is that you could use context dependent rules, for
 instance:</p>
-<pre class="literal-block">
-\newif\ifpdf
+<pre class="literal-block">\newif\ifpdf
    \ifx\pdfoutput\undefined \pdffalse
 \else \pdfoutput=1 \pdftrue \fi
 % portability between LaTeX and pdfLaTeX
@@ -190,8 +180,7 @@ instance:</p>
 \usepackage[colorlinks=false]{hyperref}%
 \DeclareGraphicsExtensions{.eps}%
 \graphicspath{{figures_eps/}}%
-\fi
-</pre>
+\fi</pre>
 </li>
 </ul>
 </div>

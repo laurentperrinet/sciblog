@@ -36,13 +36,12 @@ https://en.wikipedia.org/wiki/Umask
 
 
 on a cluster I get
-
 $ umask
 0022
 $ touch test
 $ ls -l test
 -rw-r--r-- 1 perrinet.l invibe 0 Nov 28 11:32 test
-$ umask u=rwx,g=rwx,o">
+$ umask u=rwx,g=rwx,o=">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-11-28T13:36:57+01:00">
 <meta property="article:tag" content="int">
@@ -147,15 +146,13 @@ $ umask u=rwx,g=rwx,o">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>the parameter to use is umask
-<a class="reference external" href="https://en.wikipedia.org/wiki/Umask">https://en.wikipedia.org/wiki/Umask</a>
-</li>
+<li><p>the parameter to use is umask
+<a class="reference external" href="https://en.wikipedia.org/wiki/Umask">https://en.wikipedia.org/wiki/Umask</a></p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">on a cluster I get</p>
-<pre class="literal-block">
-$ umask
+<p>on a cluster I get</p>
+<pre class="literal-block">$ umask
 0022
 $ touch test
 $ ls -l test
@@ -163,13 +160,11 @@ $ ls -l test
 $ umask u=rwx,g=rwx,o=
 $ touch test2
 $ ls -l test2
--rw-rw---- 1 perrinet.l invibe 0 Nov 28 11:33 test2
-</pre>
+-rw-rw---- 1 perrinet.l invibe 0 Nov 28 11:33 test2</pre>
 </li>
 <li>
-<p class="first">so I did:</p>
-<pre class="literal-block">
-perrinet.l@frioul:~$ vim .profile
+<p>so I did:</p>
+<pre class="literal-block">perrinet.l@frioul:~$ vim .profile
 
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
@@ -194,20 +189,16 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
-fi
-</pre>
+fi</pre>
 </li>
 <li>
-<p class="first">before loging out I have</p>
-<pre class="literal-block">
-perrinet.l@frioul:~$ umask
-0022
-</pre>
+<p>before loging out I have</p>
+<pre class="literal-block">perrinet.l@frioul:~$ umask
+0022</pre>
 </li>
 <li>
-<p class="first">and after</p>
-<pre class="literal-block">
-perrinet.l@frioul:~$ logout
+<p>and after</p>
+<pre class="literal-block">perrinet.l@frioul:~$ logout
 Connection to frioul.int.univ-amu.fr closed.
 [11:36:49]int-users-4-058: ~/Desktop/Dropbox/TROPIQUE/demos/12-11-11_projection $ frioul
 
@@ -223,12 +214,9 @@ perrinet.l@frioul:~$ umask
 perrinet.l@frioul:~$ touch test
 perrinet.l@frioul:~$ ls -l test
 -rw-rw---- 1 perrinet.l invibe 0 Nov 28 11:37 test
-perrinet.l@frioul:~$
-</pre>
+perrinet.l@frioul:~$</pre>
 </li>
-<li>
-<p class="first">Done!</p>
-</li>
+<li><p>Done!</p></li>
 </ul>
 </div>
     </div>

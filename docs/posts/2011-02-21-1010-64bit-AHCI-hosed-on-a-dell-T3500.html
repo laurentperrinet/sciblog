@@ -142,26 +142,24 @@ here's what I did to m">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">quoting
+<p>quoting
 <a class="reference external" href="http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35">http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35</a>
 : "For those (like me) who aren't familiar with grub tampering,
 here's what I did to make the change automatic:"</p>
 <!-- TEASER_END -->
-<pre class="literal-block">
-sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.orig
+<pre class="literal-block">sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.orig
 sudo cp /etc/default/grub /etc/default/grub.orig
 sudo vi /etc/default/grub
 # &lt; # GRUB_CMDLINE_LINUX=""
 # &lt; GRUB_CMDLINE_LINUX="pci=nocrs"
 # ---
 # &gt; GRUB_CMDLINE_LINUX=""
-sudo update-grub
-</pre>
+sudo update-grub</pre>
 </li>
 </ul>
 </div>

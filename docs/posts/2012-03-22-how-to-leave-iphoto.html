@@ -31,10 +31,11 @@ MathJax.Hub.Config({
 <meta property="og:title" content="how to leave iphoto">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2012-03-22-how-to-leave-iphoto.html">
 <meta property="og:description" content="iphoto.app is certainly a nice tool, but it is also
+
 slow, unresponsive and locks you in some ugly closed-source
 format.
 also, try to look in forums when you want to share pictures on
-different {comput">
+different {compu">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-03-22T13:36:57+01:00">
 <meta property="article:tag" content="macos">
@@ -139,83 +140,74 @@ different {comput">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>iphoto.app is certainly a nice tool, but it is also<ol class="arabic">
-<li>slow, unresponsive and locks you in some ugly closed-source
-format.</li>
-<li>also, try to look in forums when you want to share pictures on
+<li>
+<p>iphoto.app is certainly a nice tool, but it is also</p>
+<ol class="arabic simple">
+<li><p>slow, unresponsive and locks you in some ugly closed-source
+format.</p></li>
+<li><p>also, try to look in forums when you want to share pictures on
 different {computers / OSs / iphoto versions / places / users} =
-nightmare!</li>
-<li>on top of that, the *cloud stuff is intellectually just very
-corrupted...</li>
-<li>what decided me to drop it entirely was a sudden corruption of the
+nightmare!</p></li>
+<li><p>on top of that, the *cloud stuff is intellectually just very
+corrupted...</p></li>
+<li><p>what decided me to drop it entirely was a sudden corruption of the
 library. It took 2 days to recover my files and re-rotate
-correctly all pictures...</li>
-<li>last nail in the coffin was the fact that libraries are not
-backward compatible : you have to upgrade to the new <em>product</em>.</li>
+correctly all pictures...</p></li>
+<li><p>last nail in the coffin was the fact that libraries are not
+backward compatible : you have to upgrade to the new <em>product</em>.</p></li>
 </ol>
 </li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
-<li>
-<p class="first">so time to take back possession of your pictures!</p>
-</li>
-<li>
-<p class="first">I found some supporting arguments here:
-<a class="reference external" href="http://accretiondisc.com/blog/2011/10/26/leaving-iphoto/">http://accretiondisc.com/blog/2011/10/26/leaving-iphoto/</a></p>
-</li>
-<li>
-<p class="first">solution: put the files in folders according to a date organization
-of the type <tt class="docutils literal">2011/P0747444.jpg</tt>, other tools for tagging, etc...
+<li><p>so time to take back possession of your pictures!</p></li>
+<li><p>I found some supporting arguments here:
+<a class="reference external" href="http://accretiondisc.com/blog/2011/10/26/leaving-iphoto/">http://accretiondisc.com/blog/2011/10/26/leaving-iphoto/</a></p></li>
+<li><p>solution: put the files in folders according to a date organization
+of the type <code class="docutils literal">2011/P0747444.jpg</code>, other tools for tagging, etc...
 follow naturally (and you share as you share folders on dropbox or
-whatever)</p>
-</li>
+whatever)</p></li>
 <li>
-<p class="first">first, let's set the default application for upcoming pictures from
+<p>first, let's set the default application for upcoming pictures from
 cameras:</p>
 <ol class="arabic simple">
-<li>With your camera connected, open Image Capture</li>
-<li>You will see your camera under devices. Click the icon.</li>
-<li>Down at the bottom, you will see “Connecting this iPhone opens…”
-with a pull-down menu under it.</li>
-<li>select "autoimport" (I choose "delete after importation")</li>
-<li>another solution is to use a feature from dropbox...</li>
+<li><p>With your camera connected, open Image Capture</p></li>
+<li><p>You will see your camera under devices. Click the icon.</p></li>
+<li><p>Down at the bottom, you will see “Connecting this iPhone opens…”
+with a pull-down menu under it.</p></li>
+<li><p>select "autoimport" (I choose "delete after importation")</p></li>
+<li><p>another solution is to use a feature from dropbox...</p></li>
 </ol>
 </li>
-<li>
-<p class="first">then, let's export the data from iPhoto: <tt class="docutils literal"><span class="pre">File.../Export...</span></tt>. I
+<li><p>then, let's export the data from iPhoto: <code class="docutils literal"><span class="pre">File.../Export...</span></code>. I
 kept the original file names but with the modifications (mainly
 rotations that were applied to my old camera without a gravity
 sensor). you should end up with lots of files in one directory. but
 it ... does not work as iphoto raises a completly unmeaningful error
-('could not create file').</p>
-</li>
+('could not create file').</p></li>
 <li>
-<p class="first">so, let's explore the library:</p>
+<p>so, let's explore the library:</p>
 <ol class="arabic simple">
-<li>it is package, and we can right-click in the finder to 'show
-package content'</li>
-<li>click the Masters folder to open it, and you'll see folders
+<li><p>it is package, and we can right-click in the finder to 'show
+package content'</p></li>
+<li><p>click the Masters folder to open it, and you'll see folders
 organized by year; inside are more folders organized by date and
-album, and inside them are photos in JPG format and video clips.</li>
+album, and inside them are photos in JPG format and video clips.</p></li>
 </ol>
 </li>
 <li>
-<p class="first">then I found
+<p>then I found
 <a class="reference external" href="https://github.com/BMorearty/exportiphoto">https://github.com/BMorearty/exportiphoto</a>
 and you just have to type</p>
-<pre class="literal-block">
-python exportiphoto.py Pictures/iPhoto\ Library Pictures/Photos
-</pre>
+<pre class="literal-block">python exportiphoto.py Pictures/iPhoto\ Library Pictures/Photos</pre>
 <p>to achieve the export</p>
 <ul>
 <li>
-<p class="first">I used the following commands to post-process all</p>
-<pre class="literal-block">
-counting if everything was moved (there was some corruption in the library file with MOVies)
+<p>I used the following commands to post-process all</p>
+<pre class="literal-block">counting if everything was moved (there was some corruption in the library file with MOVies)
 find ~/Pictures/iPhoto\ Library/Masters/2012 -iname *MOV |wc -l
 find ~/Pictures/iPhoto\ Library/Masters -iname *MOV |wc -l
 find ~/Pictures/Photos -iname *MOV |wc -l
@@ -225,8 +217,7 @@ mkdir ~/Pictures/Photos/2011
 chmod -R u+rwX ~/Pictures/Photos/2011
 find ~/Pictures/iPhoto\ Library/Masters/2011 -iname *MOV -exec cp {} ~/Pictures/Photos/2011/ \;
 mkdir ~/Pictures/Photos/2012
-find ~/Pictures/iPhoto\ Library/Masters/2012 -iname *MOV -exec cp {} ~/Pictures/Photos/2012/ \;
-</pre>
+find ~/Pictures/iPhoto\ Library/Masters/2012 -iname *MOV -exec cp {} ~/Pictures/Photos/2012/ \;</pre>
 <p>(for the last exampls, see
 <a class="reference external" href="http://en.wikipedia.org/wiki/Xargs">http://en.wikipedia.org/wiki/Xargs</a>
 )</p>
@@ -234,17 +225,13 @@ find ~/Pictures/iPhoto\ Library/Masters/2012 -iname *MOV -exec cp {} ~/Pictures/
 </ul>
 </li>
 <li>
-<p class="first">at the end, the great relief is to remove all this iphoto cr*p:</p>
-<pre class="literal-block">
-cd ~/Pictures/
+<p>at the end, the great relief is to remove all this iphoto cr*p:</p>
+<pre class="literal-block">cd ~/Pictures/
 rm -rf iPhoto*
 cd ~/Library/Caches
-rm -rf com.apple.iPhoto
-</pre>
+rm -rf com.apple.iPhoto</pre>
 </li>
-<li>
-<p class="first">I'll be glad to help anybody with similar problem</p>
-</li>
+<li><p>I'll be glad to help anybody with similar problem</p></li>
 </ul>
 </div>
     </div>

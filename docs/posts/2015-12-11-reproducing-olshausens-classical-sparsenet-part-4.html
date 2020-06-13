@@ -230,14 +230,14 @@ In this notebook, we write an example script for the sklearn library showing the
 <span class="sd">"""</span>
 <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">MiniBatchDictionaryLearning</span><span class="p">,</span> <span class="n">SparseHebbianLearning</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">extract_patches_2d</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="k">import</span> <span class="n">reconstruct_from_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">MiniBatchDictionaryLearning</span><span class="p">,</span> <span class="n">SparseHebbianLearning</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">extract_patches_2d</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <span class="n">reconstruct_from_patches_2d</span>
 
 
 <span class="n">patch_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
@@ -249,13 +249,13 @@ In this notebook, we write an example script for the sklearn library showing the
 <span class="c1"># Load a natural image and extract patches</span>
 <span class="c1">#import imageio</span>
 <span class="c1">#image = imageio.imread('https://raw.githubusercontent.com/bicv/SLIP/master/database/yelmo512_w.png')</span>
-<span class="kn">from</span> <span class="nn">sklearn.externals.six.moves.urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">sklearn.externals.six.moves.urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="n">opener</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/database/yelmo512_w.png'</span><span class="p">)</span>
 <span class="nb">open</span><span class="p">(</span><span class="s1">'/tmp/yelmo512_w.png'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">opener</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">imread</span>
+    <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">imread</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">scipy.misc.pilutil</span> <span class="k">import</span> <span class="n">imread</span>
+    <span class="kn">from</span> <span class="nn">scipy.misc.pilutil</span> <span class="kn">import</span> <span class="n">imread</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s1">'/tmp/yelmo512_w.png'</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
     

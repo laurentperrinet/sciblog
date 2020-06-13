@@ -38,9 +38,8 @@ here
 
 
 install
-
  $ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"
-==&gt; This script wi'>
+==&gt; This script wil'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-08-31T13:36:57+02:00">
 <meta property="article:tag" content="macos">
@@ -145,18 +144,15 @@ install
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>a newcomer after fink and MacPorts:
-<a class="reference external" href="http://wiki.github.com/mxcl/homebrew/">http://wiki.github.com/mxcl/homebrew/</a>
-</li>
-<li>advertised
-<a class="reference external" href="http://www.engineyard.com/blog/2010/homebrew-os-xs-missing-package-manager/">here</a>
-</li>
+<li><p>a newcomer after fink and MacPorts:
+<a class="reference external" href="http://wiki.github.com/mxcl/homebrew/">http://wiki.github.com/mxcl/homebrew/</a></p></li>
+<li><p>advertised
+<a class="reference external" href="http://www.engineyard.com/blog/2010/homebrew-os-xs-missing-package-manager/">here</a></p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">install</p>
-<pre class="literal-block">
- $ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"
+<p>install</p>
+<pre class="literal-block"> $ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"
 ==&gt; This script will install:
 /usr/local/bin/brew
 /usr/local/Library/Formula/...
@@ -164,36 +160,29 @@ install
 
 Press enter to continue
 ==&gt; Downloading and Installing Homebrew...
-==&gt; Installation successful!
-</pre>
+==&gt; Installation successful!</pre>
 </li>
 <li>
-<p class="first">fix permissions</p>
-<pre class="literal-block">
-$ sudo chown -R `whoami` /usr/local
-</pre>
+<p>fix permissions</p>
+<pre class="literal-block">$ sudo chown -R `whoami` /usr/local</pre>
 </li>
 <li>
-<p class="first">to install python specific stuff, use <tt class="docutils literal">pip</tt>:</p>
-<pre class="literal-block">
-brew install pip
+<p>to install python specific stuff, use <code class="docutils literal">pip</code>:</p>
+<pre class="literal-block">brew install pip
 echo '[install]
 install-scripts=/usr/local/Cellar/PyPi/2.6/bin
 install-data=/usr/local/Cellar/PyPi/2.6/share' &gt; ~/.pydistutils.cfg
-pip install ipython
-</pre>
+pip install ipython</pre>
 </li>
 <li>
-<p class="first">this is with the exception of numpy + scipy, the latter needing</p>
-<pre class="literal-block">
-cd tmp
+<p>this is with the exception of numpy + scipy, the latter needing</p>
+<pre class="literal-block">cd tmp
 svn co http://svn.scipy.org/svn/numpy/trunk numpy
 pip install numpy
 
 brew install suite-sparse
 svn co http://svn.scipy.org/svn/scipy/trunk scipy
-pip install scipy
-</pre>
+pip install scipy</pre>
 </li>
 </ul>
 </div>

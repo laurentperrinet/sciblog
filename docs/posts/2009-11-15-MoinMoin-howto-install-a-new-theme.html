@@ -31,16 +31,13 @@ MathJax.Hub.Config({
 <meta property="og:title" content="MoinMoin: howto install a new theme">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2009-11-15-MoinMoin-howto-install-a-new-theme.html">
 <meta property="og:description" content="locally
-
 scp Downloads/moniker18_2.1.1.zip  perrinet@195.221.164.4:/var/www/moin/perrinet/data/plugin/theme/tmp
 
 .. TEASER_END
 
-
 on the server
-
 cd /var/www/moin/perrinet/data/plugin/theme/
-export USER">
+export USER=ww">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-11-15T13:36:57+01:00">
 <meta property="article:tag" content="sciblog">
@@ -144,17 +141,14 @@ export USER">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <ul>
 <li>
-<p class="first">locally</p>
-<pre class="literal-block">
-scp Downloads/moniker18_2.1.1.zip  perrinet@195.221.164.4:/var/www/moin/perrinet/data/plugin/theme/tmp
+<p>locally</p>
+<pre class="literal-block">scp Downloads/moniker18_2.1.1.zip  perrinet@195.221.164.4:/var/www/moin/perrinet/data/plugin/theme/tmp
 
-.. TEASER_END
-</pre>
+.. TEASER_END</pre>
 </li>
 <li>
-<p class="first">on the server</p>
-<pre class="literal-block">
-cd /var/www/moin/perrinet/data/plugin/theme/
+<p>on the server</p>
+<pre class="literal-block">cd /var/www/moin/perrinet/data/plugin/theme/
 export USER=www-data
 export GROUP=www-data
 export INSTANCE=/usr/share/moin/htdocs/moniker
@@ -165,8 +159,7 @@ cp -r moniker /usr/share/moin/htdocs/
 cp moniker18.py ../../
 chgrp -R $GROUP $INSTANCE
 chgrp -R $GROUP ../../moniker18.py
-vim ../../../../../../perrinet.py # set moniker18 as default
-</pre>
+vim ../../../../../../perrinet.py # set moniker18 as default</pre>
 </li>
 </ul>
 </div>

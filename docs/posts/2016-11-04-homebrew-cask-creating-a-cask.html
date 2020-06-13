@@ -138,87 +138,67 @@ MathJax.Hub.Config({
 <p>A new version of <a class="reference external" href="https://nteract.io/">https://nteract.io/</a> is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a> by creating a new cask for this application.  I will base things on this <a class="reference external" href="2015-12-08-homebrew-cask-updating-a-cask.html">previous contribution</a> where I was simply editing an existing cask.</p>
 <ul>
 <li>
-<p class="first">getting the token</p>
+<p>getting the token</p>
 <blockquote>
-<pre class="literal-block">
-"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'
-</pre>
+<pre class="literal-block">"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
 github_user='laurentperrinet'
 project='nteract'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">creating a new branch for his project</p>
-<pre class="literal-block">
-git branches
+<p>creating a new branch for his project</p>
+<pre class="literal-block">git branches
 git remote add $github_user https://github.com/$github_user/homebrew-cask
-git checkout -b $project
-</pre>
+git checkout -b $project</pre>
 </li>
 <li>
-<p class="first">finding my information and feeding to homebrew</p>
+<p>finding my information and feeding to homebrew</p>
 <blockquote>
-<pre class="literal-block">
-cd /tmp
+<pre class="literal-block">cd /tmp
 wget https://github.com/nteract/nteract/releases/download/v0.0.14/nteract-0.0.14.dmg
 sha256sum nteract-0.0.14.dmg | pbcopy
 appcast_url='https://github.com/nteract/nteract/releases.atom'
 curl --compressed --location --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' "{{appcast_url}}" | /usr/bin/sed 's|&lt;pubDate&gt;[^&lt;]*&lt;/pubDate&gt;||g' | shasum --algorithm 256
-brew cask edit $project
-</pre>
+brew cask edit $project</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">testing with homebrew:</p>
+<p>testing with homebrew:</p>
 <blockquote>
-<pre class="literal-block">
-brew cask install $project
-brew cask audit $project  --download
-</pre>
+<pre class="literal-block">brew cask install $project
+brew cask audit $project  --download</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git add Casks/"$project".rb
 git commit -am"adding nteract v0.0.14"
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
 </li>
 <li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
+<li><p>in the meanwhile, the change has been
+<a class="reference external" href="https://github.com/caskroom/homebrew-cask/pull/26400">merged</a></p></li>
 <li>
-<p class="first">in the meanwhile, the change has been
-<a class="reference external" href="https://github.com/caskroom/homebrew-cask/pull/26400">merged</a></p>
-</li>
-<li>
-<p class="first">such that now you can simply install nteract using</p>
+<p>such that now you can simply install nteract using</p>
 <blockquote>
-<pre class="literal-block">
-brew cask install nteract
-</pre>
+<pre class="literal-block">brew cask install nteract</pre>
 </blockquote>
 </li>
 </ul>

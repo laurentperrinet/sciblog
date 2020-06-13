@@ -31,7 +31,7 @@ MathJax.Hub.Config({
 <meta property="og:title" content="Change User ID and Group ID in Snow Leopard">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html">
 <meta property="og:description" content="find source and traget UID / GID using the id command on unix and
-dscllocalhostread/Local/Default/Users/lup in MacOsX
+dscl localhost read /Local/Default/Users/lup in MacOsX
 
 
 
@@ -40,7 +40,7 @@ This post is certainly obsolete...
 
 
 from
-http://macosx.com/tech-suppor">
+http://macosx.com/tech-sup">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2011-02-22T13:36:57+01:00">
 <meta property="article:tag" content="macos">
@@ -145,32 +145,26 @@ http://macosx.com/tech-suppor">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>find source and traget UID / GID using the <tt class="docutils literal">id</tt> command on unix and
-<tt class="docutils literal">dscllocalhostread/Local/Default/Users/lup</tt> in MacOsX</li>
+<li><p>find source and traget UID / GID using the <code class="docutils literal">id</code> command on unix and
+<code class="docutils literal"><span class="pre">dscl localhost read /Local/Default/Users/lup</span></code> in MacOsX</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">from
+<p>from
 <a class="reference external" href="http://macosx.com/tech-support/change-user-idgroup-id-in-leopard/336380.html">http://macosx.com/tech-support/change-user-idgroup-id-in-leopard/336380.html</a>
 :</p>
-<pre class="literal-block">
-dscl . -change $HOME UniqueID 41167 545
+<pre class="literal-block">dscl . -change $HOME UniqueID 41167 545
 dscl . -change $HOME PrimaryGroupID 41167 1007
-chown -R 545:1007 $HOME
-</pre>
+chown -R 545:1007 $HOME</pre>
 </li>
-<li>
-<p class="first">Remember to run the chown command afterwards, or you will not be able
-to access your home directory. Finally, log out and log in.</p>
-</li>
-<li>
-<p class="first">you may have to propagate changes on other drives (backup disks and
-such)</p>
-</li>
+<li><p>Remember to run the chown command afterwards, or you will not be able
+to access your home directory. Finally, log out and log in.</p></li>
+<li><p>you may have to propagate changes on other drives (backup disks and
+such)</p></li>
 </ul>
 </div>
     </div>

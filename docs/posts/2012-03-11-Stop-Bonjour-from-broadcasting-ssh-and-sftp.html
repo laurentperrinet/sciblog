@@ -36,8 +36,7 @@ MathJax.Hub.Config({
 
 
 After doing a backup, edit the following file:
-
-sudo">
+sudo ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-03-11T13:36:57+01:00">
 <meta property="article:tag" content="int">
@@ -142,49 +141,40 @@ sudo">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>largely a copy-and-paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844">http://hints.macworld.com/article.php?story=20070622210507844</a> ; Jun 25, '07 07:30:00AM • Contributed by: delight1</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>largely a copy-and-paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844">http://hints.macworld.com/article.php?story=20070622210507844</a> ; Jun 25, '07 07:30:00AM • Contributed by: delight1</p></td>
 </tr></tbody>
 </table>
 <ul>
 <li>
-<p class="first">After doing a backup, edit the following file:</p>
-<pre class="literal-block">
-sudo vim /System/Library/LaunchDaemons/ssh.plist
-</pre>
+<p>After doing a backup, edit the following file:</p>
+<pre class="literal-block">sudo vim /System/Library/LaunchDaemons/ssh.plist</pre>
 </li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">In the editor, the goal is to delete these two lines:</p>
-<pre class="literal-block">
-&lt;string&gt;ssh&lt;/string&gt;
-&lt;string&gt;sftp-ssh&lt;/string&gt;
-</pre>
+<p>In the editor, the goal is to delete these two lines:</p>
+<pre class="literal-block">&lt;string&gt;ssh&lt;/string&gt;
+&lt;string&gt;sftp-ssh&lt;/string&gt;</pre>
 </li>
-<li>
-<p class="first">They should be found around lines 22 and 23. In <tt class="docutils literal">vim</tt>, this is
-easily done by typing <tt class="docutils literal">\ssh</tt>, then <tt class="docutils literal">n</tt> until you are on the right
-line. Then type <tt class="docutils literal">d2d</tt> to delete these 2 line. Finally issue <tt class="docutils literal">wq!</tt>
-to save and quit.</p>
-</li>
-<li>
-<p class="first">Save the file and quit the editor. Then go to System Preferences »
+<li><p>They should be found around lines 22 and 23. In <code class="docutils literal">vim</code>, this is
+easily done by typing <code class="docutils literal">\ssh</code>, then <code class="docutils literal">n</code> until you are on the right
+line. Then type <code class="docutils literal">d2d</code> to delete these 2 line. Finally issue <code class="docutils literal">wq!</code>
+to save and quit.</p></li>
+<li><p>Save the file and quit the editor. Then go to System Preferences »
 Sharing » Services, unlock it, disable Remote Login, and final
 re-enable Remote Login. You can check if things worked by using
 Bonjour Browser or some such similar app to be sure ssh/sftp no
-longer show up.</p>
-</li>
+longer show up.</p></li>
 <li>
-<p class="first">A simple <tt class="docutils literal">grep<span class="pre">-ir</span>bonjour/System/Library/LaunchDaemons/</tt> gives:</p>
-<pre class="literal-block">
-/System/Library/LaunchDaemons/com.apple.AppleFileServer.plist:                  &lt;key&gt;Bonjour&lt;/key&gt;
+<p>A simple <code class="docutils literal"><span class="pre">grep -ir bonjour /System/Library/LaunchDaemons/</span></code> gives:</p>
+<pre class="literal-block">/System/Library/LaunchDaemons/com.apple.AppleFileServer.plist:                  &lt;key&gt;Bonjour&lt;/key&gt;
 /System/Library/LaunchDaemons/com.apple.bld.bulletd.plist:                      &lt;key&gt;Bonjour&lt;/key&gt;
 /System/Library/LaunchDaemons/com.apple.eppc.plist:                        &lt;key&gt;Bonjour&lt;/key&gt;
 /System/Library/LaunchDaemons/com.apple.FileSyncAgent.sshd.plist:                       &lt;key&gt;Bonjour&lt;/key&gt;
@@ -203,8 +193,7 @@ longer show up.</p>
 /System/Library/LaunchDaemons/com.apple.smbd.plist:                     &lt;key&gt;Bonjour&lt;/key&gt;
 /System/Library/LaunchDaemons/ftp.plist:                        &lt;key&gt;Bonjour&lt;/key&gt;
 /System/Library/LaunchDaemons/ssh.plist:                        &lt;key&gt;Bonjour&lt;/key&gt;
-Binary file /System/Library/LaunchDaemons/telnet.plist matches
-</pre>
+Binary file /System/Library/LaunchDaemons/telnet.plist matches</pre>
 <p>so, you may want to change these too.</p>
 </li>
 </ul>

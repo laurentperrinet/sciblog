@@ -36,16 +36,12 @@ This post is certainly obsolete...
 
 master howto:
 https://trac.macports.org/wiki/howto/SetupDovecot
-
 Install
-
 sudo port install dovecot
 sudo port load dovecot
 
-
 Configure
-
-sudo cp /opt/local/">
+sudo cp /opt/local/etc/">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-11-04T13:36:57+01:00">
 <meta property="article:tag" content="macos">
@@ -152,34 +148,27 @@ sudo cp /opt/local/">
     <div>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
+<li><p>master howto:
+<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p></li>
 <li>
-<p class="first">master howto:
-<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p>
+<p>Install</p>
+<pre class="literal-block">sudo port install dovecot
+sudo port load dovecot</pre>
 </li>
 <li>
-<p class="first">Install</p>
-<pre class="literal-block">
-sudo port install dovecot
-sudo port load dovecot
-</pre>
-</li>
-<li>
-<p class="first">Configure</p>
-<pre class="literal-block">
-sudo cp /opt/local/etc/dovecot/dovecot-example.conf  /opt/local/etc/dovecot/dovecot.conf
+<p>Configure</p>
+<pre class="literal-block">sudo cp /opt/local/etc/dovecot/dovecot-example.conf  /opt/local/etc/dovecot/dovecot.conf
 
-sudo vim /opt/local/etc/dovecot/dovecot.conf
-</pre>
+sudo vim /opt/local/etc/dovecot/dovecot.conf</pre>
 </li>
 <li>
-<p class="first">Mine reads (it's just meant to access imap files from the local mail
+<p>Mine reads (it's just meant to access imap files from the local mail
 server and not to serve outside the localhost):</p>
-<pre class="literal-block">
-protocols = imap
+<pre class="literal-block">protocols = imap
 listen = localhost:10143
 disable_plaintext_auth = no
 ssl = no
@@ -196,37 +185,28 @@ auth default {
   }
 user = root
 dict {
-}
-</pre>
+}</pre>
 </li>
 <li>
-<p class="first">Reload</p>
-<pre class="literal-block">
-sudo launchctl stop org.macports.dovecot
-sudo launchctl start org.macports.dovecot
-</pre>
+<p>Reload</p>
+<pre class="literal-block">sudo launchctl stop org.macports.dovecot
+sudo launchctl start org.macports.dovecot</pre>
 </li>
 <li>
-<p class="first">It does not work on the first try... so read documentation</p>
-<pre class="literal-block">
-less /opt/local//share/doc/dovecot/documentation.txt
+<p>It does not work on the first try... so read documentation</p>
+<pre class="literal-block">less /opt/local//share/doc/dovecot/documentation.txt
 less /opt/local//share/doc/dovecot/auth-protocol.txt
-less /opt/local//share/doc/dovecot/wiki/PasswordDatabase.PAM.txt
-</pre>
+less /opt/local//share/doc/dovecot/wiki/PasswordDatabase.PAM.txt</pre>
 </li>
 <li>
-<p class="first">Authentification</p>
-<pre class="literal-block">
-ls -l /etc/pam.d/
-sudo vim /etc/pam.d/dovecot
-</pre>
-<p>with <tt class="docutils literal">/etc/pam.d/dovecot</tt> being</p>
-<pre class="literal-block">
-auth       required       pam_permit.so
+<p>Authentification</p>
+<pre class="literal-block">ls -l /etc/pam.d/
+sudo vim /etc/pam.d/dovecot</pre>
+<p>with <code class="docutils literal">/etc/pam.d/dovecot</code> being</p>
+<pre class="literal-block">auth       required       pam_permit.so
 account    required       pam_permit.so
 password   required       pam_deny.so
-session    required       pam_uwtmp.so
-</pre>
+session    required       pam_uwtmp.so</pre>
 </li>
 </ul>
 </div>

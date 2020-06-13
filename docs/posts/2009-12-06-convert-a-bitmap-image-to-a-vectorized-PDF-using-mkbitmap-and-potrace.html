@@ -41,9 +41,8 @@ This post is certainly obsolete...
 
 
 it' a snap to install using MacPorts
-
 $ port info potrace
-potrace @1.8 (graphics">
+potrace @1.8 (graphics)">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-12-06T13:36:57+01:00">
 <meta property="article:tag" content="sciblog">
@@ -147,20 +146,18 @@ potrace @1.8 (graphics">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>to convert a bitmap image to a vectorized PDF, use
+<li><p>to convert a bitmap image to a vectorized PDF, use
 <a class="reference external" href="http://potrace.sourceforge.net/samples.html">potrace</a> and
-<a class="reference external" href="http://potrace.sourceforge.net/mkbitmap.html">mkbitmap</a>
-</li>
+<a class="reference external" href="http://potrace.sourceforge.net/mkbitmap.html">mkbitmap</a></p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">it' a snap to install using MacPorts</p>
-<pre class="literal-block">
-$ port info potrace
+<p>it' a snap to install using MacPorts</p>
+<pre class="literal-block">$ port info potrace
 potrace @1.8 (graphics)
 Variants:             a4_default, metric_default, universal
 
@@ -178,50 +175,35 @@ manga:~ lup$ port variants potrace
 potrace has the variants:
    a4_default: compile potrace with A4 as the default page size.
    metric_default: compile potrace with centimeters as the default unit  instead of inches.
-   universal: Build for multiple architectures
-</pre>
+   universal: Build for multiple architectures</pre>
 </li>
 <li>
-<p class="first">to install</p>
-<pre class="literal-block">
-sudo port install potrace +a4_default +metric_default
-</pre>
+<p>to install</p>
+<pre class="literal-block">sudo port install potrace +a4_default +metric_default</pre>
 </li>
 <li>
-<p class="first">check man pages and open your input for inspection</p>
-<pre class="literal-block">
-man mkbitmap
+<p>check man pages and open your input for inspection</p>
+<pre class="literal-block">man mkbitmap
 man potrace
-open dubout.png
-</pre>
+open dubout.png</pre>
 </li>
 <li>
-<p class="first">you can use directly this workflow</p>
-<pre class="literal-block">
-convert dubout.png ppm:- | mkbitmap -f 2 -s 2 -t 0.48 | potrace -t 5 --progress -b pdf -o dubout.pdf
-</pre>
+<p>you can use directly this workflow</p>
+<pre class="literal-block">convert dubout.png ppm:- | mkbitmap -f 2 -s 2 -t 0.48 | potrace -t 5 --progress -b pdf -o dubout.pdf</pre>
 </li>
 <li>
-<p class="first">but <tt class="docutils literal">convert</tt> being what it is, first do</p>
-<pre class="literal-block">
-convert dubout.png dubout.ppm
-</pre>
+<p>but <code class="docutils literal">convert</code> being what it is, first do</p>
+<pre class="literal-block">convert dubout.png dubout.ppm</pre>
 </li>
 <li>
-<p class="first">to take some more time fine tuning parameters:</p>
-<pre class="literal-block">
-cat dubout.ppm | mkbitmap  -t 0.48 | potrace -t 15 --progress -b pdf -o dubout.pdf
-</pre>
+<p>to take some more time fine tuning parameters:</p>
+<pre class="literal-block">cat dubout.ppm | mkbitmap  -t 0.48 | potrace -t 15 --progress -b pdf -o dubout.pdf</pre>
 </li>
 <li>
-<p class="first">in particular, the <tt class="docutils literal"><span class="pre">-x</span></tt> option resets defaults:</p>
-<pre class="literal-block">
-cat dubout.ppm | mkbitmap  -x -s 2 -3 -t 0.5 | potrace -t 25 --progress -b pdf -o dubout.pdf
-</pre>
+<p>in particular, the <code class="docutils literal"><span class="pre">-x</span></code> option resets defaults:</p>
+<pre class="literal-block">cat dubout.ppm | mkbitmap  -x -s 2 -3 -t 0.5 | potrace -t 25 --progress -b pdf -o dubout.pdf</pre>
 </li>
-<li>
-<p class="first">wait and ... enjoy!</p>
-</li>
+<li><p>wait and ... enjoy!</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><strong>Please Note</strong></div>

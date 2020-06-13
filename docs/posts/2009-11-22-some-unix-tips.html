@@ -35,9 +35,8 @@ propriétaire est inexistant de la table /etc/passwd
 
 
 batch converting
-
 for draw in `find /path/to/wiki/data -name \*.draw`; do
-    file=`di">
+    file=`dir">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-11-22T13:36:57+01:00">
 <meta property="article:tag" content="sciblog">
@@ -141,55 +140,41 @@ for draw in `find /path/to/wiki/data -name \*.draw`; do
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <ul>
 <li>
-<p class="first">find / -nouser te donneras tous les fichiers dont le nom du
+<p>find / -nouser te donneras tous les fichiers dont le nom du
 propriétaire est inexistant de la table /etc/passwd</p>
 <!-- TEASER_END -->
 </li>
 <li>
-<p class="first">batch converting</p>
-<pre class="literal-block">
-for draw in `find /path/to/wiki/data -name \*.draw`; do
+<p>batch converting</p>
+<pre class="literal-block">for draw in `find /path/to/wiki/data -name \*.draw`; do
     file=`dirname $draw`/`basename $draw .draw`
     if [ -e "${file}.gif" ]; then
         echo "Converting ${file}.gif to ${file}.png"
         convert "${file}.gif" "${file}.png"
     fi
-done
-</pre>
+done</pre>
 </li>
 <li>
-<p class="first">You may always pipe the output of commands through grep to find
+<p>You may always pipe the output of commands through grep to find
 specific words, but it can also be used to find files that contain a
 text string:</p>
-<pre class="literal-block">
-grep -lir "some text" *
-</pre>
+<pre class="literal-block">grep -lir "some text" *</pre>
 <p>The -l switch outputs only the names of files in which the text
 occurs (instead of each line containing the text), the -i switch
 ignores the case, and the -r descends into subdirectories.</p>
 </li>
 <li>
-<p class="first">compression</p>
-<pre class="literal-block">
-in : tar cvf nom.tar dir/*
+<p>compression</p>
+<pre class="literal-block">in : tar cvf nom.tar dir/*
 out : tar xvf nom
-liste : tar tvf nom
-</pre>
+liste : tar tvf nom</pre>
 </li>
-<li>
-<p class="first">du -sk : occupation des fichiers sur un disque</p>
-</li>
-<li>
-<p class="first">a2ps archives/unix.txt -Prsi2 imprime joliement...</p>
-</li>
-<li>
-<p class="first">dos2unix fic1 fic2 transforme fic1 en fichier texte unix nomme fic2</p>
-</li>
-<li>
-<p class="first">Pour connaitre le taux d'occupation de l'UC d'une machine, utiliser
+<li><p>du -sk : occupation des fichiers sur un disque</p></li>
+<li><p>a2ps archives/unix.txt -Prsi2 imprime joliement...</p></li>
+<li><p>dos2unix fic1 fic2 transforme fic1 en fichier texte unix nomme fic2</p></li>
+<li><p>Pour connaitre le taux d'occupation de l'UC d'une machine, utiliser
 la commande sar. Exemple : sar -u 1 5 donne la consommation UC
-pendant 1s et 5 fois de suite</p>
-</li>
+pendant 1s et 5 fois de suite</p></li>
 </ul>
 </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

@@ -35,9 +35,8 @@ times
 
 
 
-embarassingly parallel: pythonexperiment_all.py scans all these
+embarassingly parallel: python experiment_all.py scans all these
 parameters:
-
 1 for i in range(N):
 2     if experiment[i] ">
 <meta property="og:type" content="article">
@@ -143,33 +142,27 @@ parameters:
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>I need to run a single-processor experiment on some parameters, say N
-times</li>
+<li><p>I need to run a single-processor experiment on some parameters, say N
+times</p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">embarassingly parallel: <tt class="docutils literal">pythonexperiment_all.py</tt> scans all these
+<p>embarassingly parallel: <code class="docutils literal">python experiment_all.py</code> scans all these
 parameters:</p>
-<pre class="literal-block">
-1 for i in range(N):
+<pre class="literal-block">1 for i in range(N):
 2     if experiment[i] is not finished and not locked:
 3         lock(experiment[i])
-4         run(experiment[i])
-</pre>
+4         run(experiment[i])</pre>
 </li>
 <li>
-<p class="first">to run this on 8 cores, <tt class="docutils literal">bash</tt> is your friend (may also apply to
-<tt class="docutils literal">*sh</tt> where <tt class="docutils literal">*</tt> is either z, c, tc, ...)</p>
-<pre class="literal-block">
-for i in {1..8}; do cd /data/work/ &amp;&amp; python experiment_all.py  &amp; done
-</pre>
+<p>to run this on 8 cores, <code class="docutils literal">bash</code> is your friend (may also apply to
+<code class="docutils literal">*sh</code> where <code class="docutils literal">*</code> is either z, c, tc, ...)</p>
+<pre class="literal-block">for i in {1..8}; do cd /data/work/ &amp;&amp; python experiment_all.py  &amp; done</pre>
 </li>
 <li>
-<p class="first">however, runnning them simultaneously may cause problems if the
+<p>however, runnning them simultaneously may cause problems if the
 locking mechanism is not fast enough, so I introduce a random jitter</p>
-<pre class="literal-block">
-for i in {1..8}; do cd /data/work/ &amp;&amp; sleep 0.$(( RANDOM%1000 )) ; python experiment_all.py  &amp; done
-</pre>
+<pre class="literal-block">for i in {1..8}; do cd /data/work/ &amp;&amp; sleep 0.$(( RANDOM%1000 )) ; python experiment_all.py  &amp; done</pre>
 </li>
 </ul>
 </div>

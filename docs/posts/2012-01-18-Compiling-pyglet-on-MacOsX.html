@@ -137,48 +137,44 @@ python 64bits from EPD or homebrew). in cause is the carbon code ">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>you may get errors if trying to install pyglet using the traditional
-way, using <tt class="docutils literal">pip</tt> for instance (was my case on MacOs X Lion 10.7.0 +
+<li><p>you may get errors if trying to install pyglet using the traditional
+way, using <code class="docutils literal">pip</code> for instance (was my case on MacOs X Lion 10.7.0 +
 python 64bits from EPD or homebrew). in cause is the carbon code that
-has been abandonned in the 64bits libraries that come with the OS</li>
+has been abandonned in the 64bits libraries that come with the OS</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">the solution comes from the
+<p>the solution comes from the
 <a class="reference external" href="https://code.google.com/p/cocoa-python/">https://code.google.com/p/cocoa-python/</a>
 package</p>
 <ol class="arabic">
 <li>
-<p class="first">clone the package
+<p>clone the package
 <a href="2012-01-18-Compiling-pyglet-on-MacOsX.html#id1"><span class="problematic" id="id2">``</span></a>hg clone <a class="reference external" href="https://code.google.com/p/cocoa-python">https://code.google.com/p/cocoa-python</a> ``</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 18); <em><a href="2012-01-18-Compiling-pyglet-on-MacOsX.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 18); <em><a href="2012-01-18-Compiling-pyglet-on-MacOsX.html#id2">backlink</a></em></p>
 <p>Inline literal start-string without end-string.</p>
 </div>
 </li>
-<li>
-<p class="first">insert the code in your PYTHONPATH:
-<tt class="docutils literal">rsync<span class="pre">-av</span>cocoapy<span class="pre">/usr/local/lib/python2.7/site-packages/pyglet/libs/darwin</span></tt></p>
-</li>
+<li><p>insert the code in your PYTHONPATH:
+<code class="docutils literal"><span class="pre">rsync -av cocoapy /usr/local/lib/python2.7/site-packages/pyglet/libs/darwin</span></code></p></li>
 </ol>
 </li>
 <li>
-<p class="first">a simpler solution is to install the pyglet code from
+<p>a simpler solution is to install the pyglet code from
 <a class="reference external" href="https://code.google.com/r/evilphillip-cocoa-ctypes2/">https://code.google.com/r/evilphillip-cocoa-ctypes2/</a>
 :</p>
 <ol class="arabic simple">
-<li><tt class="docutils literal">hgclone<span class="pre">https://code.google.com/r/evilphillip-cocoa-ctypes2/</span></tt></li>
-<li><tt class="docutils literal">cd<span class="pre">evilphillip-cocoa-ctypes2/</span></tt></li>
-<li><tt class="docutils literal">pythonsetup.pyinstall</tt></li>
+<li><p><code class="docutils literal"><span class="pre">hg clone https://code.google.com/r/evilphillip-cocoa-ctypes2/</span></code></p></li>
+<li><p><code class="docutils literal"><span class="pre">cd evilphillip-cocoa-ctypes2/</span></code></p></li>
+<li><p><code class="docutils literal">python setup.py install</code></p></li>
 </ol>
 </li>
-<li>
-<p class="first">works!</p>
-</li>
+<li><p>works!</p></li>
 </ul>
 </div>
     </div>

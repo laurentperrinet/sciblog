@@ -137,27 +137,23 @@ have data on the new drive and that this data can difficultly b">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>There exist some solution to move a time machine data folder to a new
+<li><p>There exist some solution to move a time machine data folder to a new
 drive by making a clone of the drive. My problem is that I already
 have data on the new drive and that this data can difficultly be
-moved.</li>
+moved.</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">It try (after switching off Time machine of course) with <tt class="docutils literal">rsync</tt>
+<p>It try (after switching off Time machine of course) with <code class="docutils literal">rsync</code>
 while keeping hard links:</p>
-<pre class="literal-block">
-sudo rsync -av -H  /Volumes/tera_enigma/Backups.backupdb /Volumes/2T_un/
-</pre>
+<pre class="literal-block">sudo rsync -av -H  /Volumes/tera_enigma/Backups.backupdb /Volumes/2T_un/</pre>
 </li>
-<li>
-<p class="first">This takes a while as rsync has to manage a lot of them (may take
-also a lot of memory, so be patient)</p>
-</li>
+<li><p>This takes a while as rsync has to manage a lot of them (may take
+also a lot of memory, so be patient)</p></li>
 </ul>
 </div>
     </div>

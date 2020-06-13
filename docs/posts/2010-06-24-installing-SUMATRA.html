@@ -152,71 +152,59 @@ had to uninstall stuff from M">
     <div class="section" id="installing-sumatra">
 <h2>installing SUMATRA</h2>
 <ul class="simple">
-<li>notes from the
-<a class="reference external" href="https://laurentperrinet.github.io/project/facets/">CodeJamNr4 from FACETS</a>
-</li>
-<li>this was using a fresh install of ETS 6.2</li>
+<li><p>notes from the
+<a class="reference external" href="https://laurentperrinet.github.io/project/facets/">CodeJamNr4 from FACETS</a></p></li>
+<li><p>this was using a fresh install of ETS 6.2</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <div class="section" id="dependencies">
 <h3>dependencies</h3>
 <ul>
 <li>
-<p class="first">pysvn :</p>
+<p>pysvn :</p>
 <ul>
 <li>
-<p class="first">had to uninstall stuff from MacPorts</p>
-<pre class="literal-block">
-sudo port uninstall --follow-dependents subversion
-</pre>
+<p>had to uninstall stuff from MacPorts</p>
+<pre class="literal-block">sudo port uninstall --follow-dependents subversion</pre>
 </li>
 <li>
-<p class="first"><a class="reference external" href="http://pysvn.tigris.org/servlets/ProjectDocumentList?folderID=1762&amp;expandFolder=1762&amp;folderID=5842">get
+<p><a class="reference external" href="http://pysvn.tigris.org/servlets/ProjectDocumentList?folderID=1762&amp;expandFolder=1762&amp;folderID=5842">get
 pysvn</a></p>
 <ul>
 <li>
-<p class="first">make :</p>
-<pre class="literal-block">
-cd Source
+<p>make :</p>
+<pre class="literal-block">cd Source
 python setup.py backport
 Create the Makefile using python setup.py configure
-make
-</pre>
+make</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">install</p>
-<pre class="literal-block">
-sudo rsync -av pysvn /Library/Frameworks/Python.framework/Versions/6.2/lib/python2.6/site-packages/
-</pre>
+<p>install</p>
+<pre class="literal-block">sudo rsync -av pysvn /Library/Frameworks/Python.framework/Versions/6.2/lib/python2.6/site-packages/</pre>
 <ul class="simple">
-<li>pysvn 1.7.1 worked for me</li>
+<li><p>pysvn 1.7.1 worked for me</p></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">mercurial</p>
-<pre class="literal-block">
-sudo easy_install mercurial
-</pre>
+<p>mercurial</p>
+<pre class="literal-block">sudo easy_install mercurial</pre>
 </li>
 <li>
-<p class="first">django</p>
-<pre class="literal-block">
-sudo easy_install django django_tagging
-</pre>
+<p>django</p>
+<pre class="literal-block">sudo easy_install django django_tagging</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="with-hg">
 <h3>with hg</h3>
-<pre class="literal-block">
-525  svn export ../sci/dyva/Motion/particles hg_particles
+<pre class="literal-block">525  svn export ../sci/dyva/Motion/particles hg_particles
 526  cd hg_particles/
 527  hg init
 528  hg add MotionParticles.py experiment_all.py
@@ -230,13 +218,11 @@ sudo easy_install django django_tagging
 536  ipython
 537  ls
 538  smt init sumatraTest_hg
-539  smt info
-</pre>
+539  smt info</pre>
 </div>
 <div class="section" id="with-svn">
 <h3>with svn</h3>
-<pre class="literal-block">
- 501  cd sci/dyva/Motion/particles/
+<pre class="literal-block"> 501  cd sci/dyva/Motion/particles/
  502  smt init -h
  503  smt init sumatraTest
  504  smt info
@@ -284,8 +270,7 @@ sudo easy_install django django_tagging
  561  ls
  562  ls -al .smt/
  563  less .smt/simulation_records
- 564  sqlite3 .smt/simulation_records
-</pre>
+ 564  sqlite3 .smt/simulation_records</pre>
 </div>
 </div>
     </div>

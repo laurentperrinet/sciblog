@@ -141,57 +141,45 @@ System Message: ERROR/3 (&lt;string&gt;, line 2); backlink
     <div>
 <ul>
 <li>
-<p class="first">I mistyped <a href="2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,
+<p>I mistyped <a href="2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,
 so I have to modify my pull request</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 2); <em><a href="2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 2); <em><a href="2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id2">backlink</a></em></p>
 <p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
 </div>
 </li>
 <li>
-<p class="first">set-up variables</p>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/phinze-cask
+<p>set-up variables</p>
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/phinze-cask
 github_user='meduz'
 project='texshop'
-git remote -v
-</pre>
+git remote -v</pre>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">jumping to my branch</p>
-<pre class="literal-block">
-git branches
+<p>jumping to my branch</p>
+<pre class="literal-block">git branches
 git checkout remotes/origin/$project -b $project
-vim Casks/texshop.rb
-</pre>
+vim Casks/texshop.rb</pre>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git commit -v
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
 </li>
 <li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
-<li>
-<p class="first">in the meanwhile, the change has been
+<li><p>in the meanwhile, the change has been
 <a class="reference external" href="https://github.com/phinze/homebrew-cask/commit/6205e80f4403b2c99ad55ddb2b2c92402b3a883c">merged</a>
-and texshop is now available as a cask!</p>
-</li>
+and texshop is now available as a cask!</p></li>
 </ul>
 </div>
     </div>

@@ -32,8 +32,7 @@ MathJax.Hub.Config({
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-11-12-homebrew-cask-updating-a-cask.html">
 <meta property="og:description" content="A new version of owncloud is out, I will try today to push that new infomation to http://caskroom.io/
 
-
-I will base things on :doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-n">
+I will base things on :doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-ne">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-11-12T13:36:57+01:00">
 <meta property="article:tag" content="homebrew">
@@ -139,78 +138,62 @@ I will base things on :doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li><dl class="first docutils">
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><dl>
 <dt>I will base things on <a href="2014-11-12-homebrew-cask-updating-a-cask.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,</dt>
 <dd>
-<div class="first system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 4); <em><a href="2014-11-12-homebrew-cask-updating-a-cask.html#id2">backlink</a></em></p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 4); <em><a href="2014-11-12-homebrew-cask-updating-a-cask.html#id2">backlink</a></em></p>
 <p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
 </div>
-<p class="last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
+<p>though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
 </dd>
 </dl></li>
 <li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">creating a new branch for his project</p>
-<pre class="literal-block">
-git branches
+<p>creating a new branch for his project</p>
+<pre class="literal-block">git branches
 git remote add $github_user https://github.com/$github_user/homebrew-cask
-git checkout remotes/origin/$project -b $project
-</pre>
+git checkout remotes/origin/$project -b $project</pre>
 </li>
 <li>
-<p class="first">finding my information</p>
+<p>finding my information</p>
 <blockquote>
-<pre class="literal-block">
-cd /tmp
+<pre class="literal-block">cd /tmp
 wget https://download.owncloud.com/desktop/stable/ownCloud-1.7.0.1339.pkg
 sha256sum ownCloud-1.7.0.1339.pkg
 brew cask edit owncloud
 brew cask install owncloud
-brew cask audit $project  --download
-</pre>
+brew cask audit $project  --download</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git commit -v
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
 </li>
 <li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
-<li>
-<p class="first">in the meanwhile, the change has been
+<li><p>in the meanwhile, the change has been
 <a class="reference external" href="https://github.com/caskroom/homebrew-cask/pull/7278">merged</a>
-and (after some corrections) got approval: owncloud is now updated!</p>
-</li>
+and (after some corrections) got approval: owncloud is now updated!</p></li>
 </ul>
 </div>
     </div>

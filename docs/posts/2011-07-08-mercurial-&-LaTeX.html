@@ -35,9 +35,8 @@ This post is certainly obsolete...
 
 
 Just a add the following lines to your Makefile
-
 HGID:=$(shell hg parents -R .. --template "Mercurial revision {rev} - date: {date|isodate}")
-hgid.tex:dumm'>
+hgid.tex:dummy'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2011-07-08T13:36:57+02:00">
 <meta property="article:tag" content="latex">
@@ -143,38 +142,32 @@ hgid.tex:dumm'>
     <div>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ol class="arabic">
 <li>
-<p class="first">Just a add the following lines to your Makefile</p>
-<pre class="literal-block">
-HGID:=$(shell hg parents -R .. --template "Mercurial revision {rev} - date: {date|isodate}")
+<p>Just a add the following lines to your Makefile</p>
+<pre class="literal-block">HGID:=$(shell hg parents -R .. --template "Mercurial revision {rev} - date: {date|isodate}")
 hgid.tex:dummy
         [ -f $@ ] || touch $@
         echo '\\renewcommand{\hgid}{$(HGID)}' &gt; $@
-dummy: ;
-</pre>
+dummy: ;</pre>
 </li>
 <li>
-<p class="first">and this lines to your main tex file</p>
-<pre class="literal-block">
-\newcommand{\hgid}{null}
-\input{hgid}
-</pre>
-<p>now one can use the command <tt class="docutils literal">\hgid</tt> to get the version everywhere.</p>
+<p>and this lines to your main tex file</p>
+<pre class="literal-block">\newcommand{\hgid}{null}
+\input{hgid}</pre>
+<p>now one can use the command <code class="docutils literal">\hgid</code> to get the version everywhere.</p>
 </li>
 <li>
-<p class="first">for instance</p>
-<pre class="literal-block">
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+<p>for instance</p>
+<pre class="literal-block">\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
 \fancyhead{}
 \chead{{\sc This a DRAFT, please do not distribute.}}
-\cfoot{\HRule \\ \hgid}
-</pre>
+\cfoot{\HRule \\ \hgid}</pre>
 </li>
 </ol>
 </div>

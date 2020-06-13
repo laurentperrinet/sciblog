@@ -32,11 +32,9 @@ MathJax.Hub.Config({
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2010-07-08-latex-within-moinmoin.html">
 <meta property="og:description" content="installation d'après
 http://johannes.sipsolutions.net/Projects/new-moinmoin-latex
-
 pour s'adapter à ma distribution pdflatex, j'ai changé
-
 1 # last arg must have %s in it!
-2 latex_args = (&quot;--interacti">
+2 latex_args = (&quot;--interaction">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-07-08T13:36:57+02:00">
 <meta property="article:tag" content="latex">
@@ -142,38 +140,31 @@ pour s'adapter à ma distribution pdflatex, j'ai changé
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul>
+<li><p>installation d'après
+<a class="reference external" href="http://johannes.sipsolutions.net/Projects/new-moinmoin-latex">http://johannes.sipsolutions.net/Projects/new-moinmoin-latex</a></p></li>
 <li>
-<p class="first">installation d'après
-<a class="reference external" href="http://johannes.sipsolutions.net/Projects/new-moinmoin-latex">http://johannes.sipsolutions.net/Projects/new-moinmoin-latex</a></p>
-</li>
-<li>
-<p class="first">pour s'adapter à ma distribution pdflatex, j'ai changé</p>
-<pre class="literal-block">
-1 # last arg must have %s in it!
-2 latex_args = ("--interaction=nonstopmode -output-format dvi", "%s.tex")
-</pre>
+<p>pour s'adapter à ma distribution pdflatex, j'ai changé</p>
+<pre class="literal-block">1 # last arg must have %s in it!
+2 latex_args = ("--interaction=nonstopmode -output-format dvi", "%s.tex")</pre>
 <p>dans le parser
-<tt class="docutils literal">sudoopen<span class="pre">-e</span>~/WebSites/moin/data/plugin/parser/latex.py</tt>)</p>
+<code class="docutils literal"><span class="pre">sudo open -e  ~/WebSites/moin/data/plugin/parser/latex.py</span></code>)</p>
 </li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <div class="section" id="examples">
 <h2>examples</h2>
 <p>This is a red square:</p>
-<pre class="literal-block">
-\usepackage{graphics,color}
+<pre class="literal-block">\usepackage{graphics,color}
 
 %%end-prologue%%
 \newsavebox{\mysquare}
 \savebox{\mysquare}{\textcolor{red}{\rule{1in}{1in} } }
-\usebox{\mysquare}
-</pre>
+\usebox{\mysquare}</pre>
 <p>symboles</p>
-<pre class="literal-block">
-% Math-mode symbol &amp; verbatim
+<pre class="literal-block">% Math-mode symbol &amp; verbatim
 \def\W#1#2{$#1{#2}$ &amp;\tt\string#1\string{#2\string}}
 \def\X#1{$#1$ &amp;\tt\string#1}
 \def\Y#1{$\big#1$ &amp;\tt\string#1}
@@ -209,20 +200,15 @@ pour s'adapter à ma distribution pdflatex, j'ai changé
 \X\Theta        &amp;\X\Pi          &amp;\X\Phi
 \end{tabular}
 \caption{Greek Letters}\label{greek}
-\end{table}
-</pre>
+\end{table}</pre>
 <p>ou</p>
-<pre class="literal-block">
-\begin{equation}
+<pre class="literal-block">\begin{equation}
 x^3 =\int_{0}^{\infty} f(x,y) dy
-\end{equation}
-</pre>
+\end{equation}</pre>
 <ul>
 <li>
-<p class="first">et encore</p>
-<pre class="literal-block">
-$$x^3 =\int_{0}^{\infty} f(x,y) dy + c$$
-</pre>
+<p>et encore</p>
+<pre class="literal-block">$$x^3 =\int_{0}^{\infty} f(x,y) dy + c$$</pre>
 </li>
 </ul>
 </div>
@@ -230,16 +216,16 @@ $$x^3 =\int_{0}^{\infty} f(x,y) dy + c$$
 <h2>inline</h2>
 <p>Because people requested an easier way to enter latex, I've added the
 possibility to write $ ... $ to obtain inline formulas. This is
-equivalent to writing <tt class="docutils literal">\$ <span class="pre">...\$</span></tt> and has the same
+equivalent to writing <code class="docutils literal">\$ <span class="pre">...\$</span></code> and has the same
 single-line limitation (but everything else isn't really useful in
-formulas anyway). In order to do this, install the <tt class="docutils literal">inline\_latex.py</tt>
-parser add #format <tt class="docutils literal">inline\_latex to your page (alternatively, configure
-the default parser to be ``inline\_latex</tt>). This parser accepts all regular
+formulas anyway). In order to do this, install the <code class="docutils literal">inline\_latex.py</code>
+parser add #format <code class="docutils literal">inline\_latex to your page (alternatively, configure
+the default parser to be ``inline\_latex</code>). This parser accepts all regular
 wiki syntax, but additionally the <cite>$ ... $' syntax. Additionally, the
 ``inline_latex`</cite> formatter supports <cite>$$....$$</cite> style formulas (still limited
 to a single line though!) which puts the formula into a paragraph on its
 own.</p>
-<p>Note: in the nikola blog, this is directly accomplished by using ReST :  <tt class="docutils literal"><span class="pre">\$\\lambda\$</span></tt> = $lambda$</p>
+<p>Note: in the nikola blog, this is directly accomplished by using ReST :  <code class="docutils literal"><span class="pre">\$\\lambda\$</span></code> = $lambda$</p>
 </div>
 </div>
     </div>

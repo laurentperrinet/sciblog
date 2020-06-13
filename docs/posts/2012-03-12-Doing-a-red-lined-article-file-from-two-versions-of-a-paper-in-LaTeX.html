@@ -34,8 +34,7 @@ MathJax.Hub.Config({
 Using latexdiff makes this task very easy: Simply grab the 2
 versions of your manuscript and issue
 
-
-latexdiff manuscript_v1.tex m">
+latexdiff manuscript_v1.tex ma">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-03-12T13:36:57+01:00">
 <meta property="article:tag" content="latex">
@@ -140,37 +139,29 @@ latexdiff manuscript_v1.tex m">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <ul>
 <li>
-<p class="first">The editor of our submitted paper asked for a red-lined article file.
-Using <tt class="docutils literal">latexdiff</tt> makes this task very easy: Simply grab the 2
+<p>The editor of our submitted paper asked for a red-lined article file.
+Using <code class="docutils literal">latexdiff</code> makes this task very easy: Simply grab the 2
 versions of your manuscript and issue</p>
 <!-- TEASER_END -->
-<pre class="literal-block">
-latexdiff manuscript_v1.tex manuscript_v2.tex   &gt; diff.tex
-latexmk -pdf diff.tex
-</pre>
-<p>. The <tt class="docutils literal">latexmk</tt> program allows to get all necessary passes to get a
+<pre class="literal-block">latexdiff manuscript_v1.tex manuscript_v2.tex   &gt; diff.tex
+latexmk -pdf diff.tex</pre>
+<p>. The <code class="docutils literal">latexmk</code> program allows to get all necessary passes to get a
 clean output file.</p>
 </li>
 <li>
-<p class="first">One issue is that one version imported a few other source files using
-the <tt class="docutils literal">\input</tt> command, so we used the following parameter:</p>
-<pre class="literal-block">
-latexdiff --flatten manuscript_v1.tex manuscript_v2.tex   &gt; diff.tex
-latexmk -pdf diff.tex
-</pre>
+<p>One issue is that one version imported a few other source files using
+the <code class="docutils literal">\input</code> command, so we used the following parameter:</p>
+<pre class="literal-block">latexdiff --flatten manuscript_v1.tex manuscript_v2.tex   &gt; diff.tex
+latexmk -pdf diff.tex</pre>
 </li>
-<li>
-<p class="first">it is recommended that instead of using bibtex, you copy and paste
-the content of the <tt class="docutils literal">.bbl</tt> file.</p>
-</li>
-<li>
-<p class="first">Moral: one advantage of LaTeX is that your data, your dear prose, is
+<li><p>it is recommended that instead of using bibtex, you copy and paste
+the content of the <code class="docutils literal">.bbl</code> file.</p></li>
+<li><p>Moral: one advantage of LaTeX is that your data, your dear prose, is
 in text (not binary) format and has an open syntax. This process
 allows the creation of the red-lined article file in one shot with no
 fiddling and lost time of copy and pasting. So whatever soft you use
 to put your ideas in readable digital format, just use something
-simple, structured and open.</p>
-</li>
+simple, structured and open.</p></li>
 </ul>
 </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

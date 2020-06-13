@@ -203,9 +203,9 @@ index 625c121..335f925 100644
 <span class="kn">import</span> <span class="nn">pyNN.nest</span> <span class="k">as</span> <span class="nn">sim</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyNN.utility</span> <span class="k">import</span> <span class="n">get_simulator</span><span class="p">,</span> <span class="n">init_logging</span><span class="p">,</span> <span class="n">normalized_filename</span>
-<span class="kn">from</span> <span class="nn">pyNN.parameters</span> <span class="k">import</span> <span class="n">Sequence</span>
-<span class="kn">from</span> <span class="nn">pyNN.random</span> <span class="k">import</span> <span class="n">RandomDistribution</span> <span class="k">as</span> <span class="n">rnd</span>
+<span class="kn">from</span> <span class="nn">pyNN.utility</span> <span class="kn">import</span> <span class="n">get_simulator</span><span class="p">,</span> <span class="n">init_logging</span><span class="p">,</span> <span class="n">normalized_filename</span>
+<span class="kn">from</span> <span class="nn">pyNN.parameters</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">pyNN.random</span> <span class="kn">import</span> <span class="n">RandomDistribution</span> <span class="k">as</span> <span class="n">rnd</span>
 
 
 <span class="c1"># === Define parameters ========================================================</span>
@@ -262,7 +262,7 @@ index 625c121..335f925 100644
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Mean firing rate: "</span><span class="p">,</span> <span class="n">cells</span><span class="o">.</span><span class="n">mean_spike_count</span><span class="p">()</span><span class="o">*</span><span class="mf">1000.0</span><span class="o">/</span><span class="n">simtime</span><span class="p">,</span> <span class="s2">"Hz"</span><span class="p">)</span>
 
 <span class="c1"># plotting</span>
-<span class="kn">from</span> <span class="nn">pyNN.utility.plotting</span> <span class="k">import</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">Panel</span>
+<span class="kn">from</span> <span class="nn">pyNN.utility.plotting</span> <span class="kn">import</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">Panel</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">cells</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span><span class="o">.</span><span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">vm</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"v"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">gsyn</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"gsyn_exc"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>

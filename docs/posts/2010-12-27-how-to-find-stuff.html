@@ -31,17 +31,14 @@ MathJax.Hub.Config({
 <meta property="og:title" content="how to find stuff">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2010-12-27-how-to-find-stuff.html">
 <meta property="og:description" content="the most simple command is locate :
-
 locate Python.h
-
 ; it is based on a database updated regulalry (most often daily).
 
 
 
 
 the most powerful is find :
-
-# To find all files modified in ~/Sites three d">
+# To find all files modified in ~/Sites three days">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-12-27T13:36:57+01:00">
 <meta property="article:tag" content="info">
@@ -147,18 +144,15 @@ the most powerful is find :
     <div>
 <ul>
 <li>
-<p class="first">the most simple command is <tt class="docutils literal">locate</tt> :</p>
-<pre class="literal-block">
-locate Python.h
-</pre>
+<p>the most simple command is <code class="docutils literal">locate</code> :</p>
+<pre class="literal-block">locate Python.h</pre>
 <p>; it is based on a database updated regulalry (most often daily).</p>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">the most powerful is <tt class="docutils literal">find</tt> :</p>
-<pre class="literal-block">
-# To find all files modified in ~/Sites three days ago:
+<p>the most powerful is <code class="docutils literal">find</code> :</p>
+<pre class="literal-block"># To find all files modified in ~/Sites three days ago:
 find ~/Sites -mtime 3
 # and 10 minutes ago:
 find ~/Sites -mmin 10
@@ -170,8 +164,7 @@ find ~ -newer last-backup.log
 
 # will find all files changed (or created) since last-backup.log was files larger than 2 megabytes (4000 of these 512 byte blocks):
 find ~ -size +4000
-find empty files% find . -empty
-</pre>
+find empty files% find . -empty</pre>
 </li>
 </ul>
 </div>

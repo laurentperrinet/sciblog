@@ -32,11 +32,10 @@ MathJax.Hub.Config({
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2009-08-29-Tips-on-Filesystems-security-and-al-on-mac-os-x.html">
 <meta property="og:description" content="mount with AFP sharepoints from the command line (thanks to this
 hint) :
-
 # mount_afp [-i] [-o options] afp_url node
 mkdir /Volumes/truc
 mount_afp afp://user:PASSWORD@server/truc /Volumes/truc
-umount ">
+umount /">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-08-29T13:36:57+02:00">
 <meta property="article:tag" content="macos">
@@ -142,57 +141,45 @@ umount ">
     <div>
 <ul>
 <li>
-<p class="first">mount with AFP sharepoints from the command line (thanks to this
+<p>mount with AFP sharepoints from the command line (thanks to this
 <a class="reference external" href="http://plumblossom.org/macclt.html">hint</a>) :</p>
-<pre class="literal-block">
-# mount_afp [-i] [-o options] afp_url node
+<pre class="literal-block"># mount_afp [-i] [-o options] afp_url node
 mkdir /Volumes/truc
 mount_afp afp://user:PASSWORD@server/truc /Volumes/truc
 umount /Volumes/truc
-rmdir /Volumes/truc
-</pre>
+rmdir /Volumes/truc</pre>
 </li>
 </ul>
 <!-- TEASER_END --><div class="section" id="finder-nags-when-changing-a-file-s-extension">
 <h2>finder nags when changing a file's extension</h2>
 <ul>
 <li>
-<p class="first">read the default value (should be 0)</p>
-<pre class="literal-block">
-defaults read com.apple.finder FXEnableExtensionChangeWarning
-</pre>
+<p>read the default value (should be 0)</p>
+<pre class="literal-block">defaults read com.apple.finder FXEnableExtensionChangeWarning</pre>
 </li>
 <li>
-<p class="first">change it:</p>
-<pre class="literal-block">
-defaults write com.apple.finder FXEnableExtensionChangeWarning False
-</pre>
+<p>change it:</p>
+<pre class="literal-block">defaults write com.apple.finder FXEnableExtensionChangeWarning False</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="make-spell-check-show-only-desired-languages">
 <h2>Make spell check show only desired languages</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.macosxhints.com/article.php?story=20090512175846504">http://www.macosxhints.com/article.php?story=20090512175846504</a></li>
+<li><p><a class="reference external" href="http://www.macosxhints.com/article.php?story=20090512175846504">http://www.macosxhints.com/article.php?story=20090512175846504</a></p></li>
 </ul>
 </div>
 <div class="section" id="hfs">
 <h2>HFS+</h2>
 <ul>
-<li>
-<p class="first"><a class="reference external" href="http://www.kernelthread.com/mac/osx/arch_fs.html">Mac OS X
-Filesystems</a></p>
-</li>
-<li>
-<p class="first">One feature of HFS volumes is that fle are referred to as links: for
+<li><p><a class="reference external" href="http://www.kernelthread.com/mac/osx/arch_fs.html">Mac OS X
+Filesystems</a></p></li>
+<li><p>One feature of HFS volumes is that fle are referred to as links: for
 instance you can read a PDF file while changing the name at the same
-time. No problem!</p>
-</li>
+time. No problem!</p></li>
 <li>
-<p class="first">Safely remove '._' files created by HFS(+)</p>
-<pre class="literal-block">
-find . -name '._*' -print0 | xargs -0 rm
-</pre>
+<p>Safely remove '._' files created by HFS(+)</p>
+<pre class="literal-block">find . -name '._*' -print0 | xargs -0 rm</pre>
 </li>
 </ul>
 </div>
@@ -200,32 +187,26 @@ find . -name '._*' -print0 | xargs -0 rm
 <h2>Spotlight</h2>
 <ul>
 <li>
-<p class="first">to remove the remaining index files on the volume using the command:
+<p>to remove the remaining index files on the volume using the command:
 `` sudo mdutil -E /Volumes/volume_name `` utilitaires CLI :</p>
-<pre class="literal-block">
-sudo mdutil --help
+<pre class="literal-block">sudo mdutil --help
 mdutil: unrecognized option `--help'
 usage: mdutil -pE volume ...
         mdutil can be used to manage the metadata stores used by Spotlight.
         -p              publish metadata for the provided volumes.
         -i (on|off)     set indexing status for the provided volumes.
         -E              erase the master copy of the metadata stores for the provided volumes.
-        -s              print indexing status for the provided volumes.
-</pre>
+        -s              print indexing status for the provided volumes.</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="system-security">
 <h2>System &amp; Security</h2>
 <ul>
+<li><p><a class="reference external" href="http://www.macgeekery.com/tips/security/basic_mac_os_x_security">http://www.macgeekery.com/tips/security/basic_mac_os_x_security</a></p></li>
 <li>
-<p class="first"><a class="reference external" href="http://www.macgeekery.com/tips/security/basic_mac_os_x_security">http://www.macgeekery.com/tips/security/basic_mac_os_x_security</a></p>
-</li>
-<li>
-<p class="first">Synthesis of unauthorized accesses to your machine:</p>
-<pre class="literal-block">
-sudo grep "failed to auth" /var/log/secure.log | sed 's/^.*user \(.*\) for.*$/\1/' | sort | uniq -c
-</pre>
+<p>Synthesis of unauthorized accesses to your machine:</p>
+<pre class="literal-block">sudo grep "failed to auth" /var/log/secure.log | sed 's/^.*user \(.*\) for.*$/\1/' | sort | uniq -c</pre>
 </li>
 </ul>
 </div>
@@ -233,20 +214,16 @@ sudo grep "failed to auth" /var/log/secure.log | sed 's/^.*user \(.*\) for.*$/\1
 <h2>nmap</h2>
 <ul>
 <li>
-<p class="first">to scan for open ports on a remote machine :</p>
-<pre class="literal-block">
-sudo nmap -T3 -vv -sS -p 1-65535 -P0 google.com
+<p>to scan for open ports on a remote machine :</p>
+<pre class="literal-block">sudo nmap -T3 -vv -sS -p 1-65535 -P0 google.com
 Starting nmap 3.81 ( http://www.insecure.org/nmap/ ) at 2006-04-05 16:32 CEST
 Initiating SYN Stealth Scan against google.com [65535 ports] at 16:32
 Discovered open port 80/tcp on google.com
-SYN Stealth Scan Timing: About 2.18% done; ETC: 16:55 (0:22:26 remaining)
-</pre>
+SYN Stealth Scan Timing: About 2.18% done; ETC: 16:55 (0:22:26 remaining)</pre>
 </li>
 <li>
-<p class="first">to scan for open ports on your local network (see <a class="reference external" href="https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073">https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073</a> ):</p>
-<pre class="literal-block">
-nmap -sP 192.168.1.*
-</pre>
+<p>to scan for open ports on your local network (see <a class="reference external" href="https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073">https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network#15351073</a> ):</p>
+<pre class="literal-block">nmap -sP 192.168.1.*</pre>
 </li>
 </ul>
 </div>
@@ -254,39 +231,31 @@ nmap -sP 192.168.1.*
 <h2>Dash board</h2>
 <ul>
 <li>
-<p class="first">Don't use Dashboard? No particular reason to leave it running,
+<p>Don't use Dashboard? No particular reason to leave it running,
 consuming memory. Following
 <a class="reference external" href="http://www.macosxhints.com/article.php?story=20050723123302403">http://www.macosxhints.com/article.php?story=20050723123302403</a>,
 you can turn Dashboard off by doing:</p>
-<pre class="literal-block">
-defaults write com.apple.dashboard mcx-disabled -boolean YES
-killall Dock
-</pre>
+<pre class="literal-block">defaults write com.apple.dashboard mcx-disabled -boolean YES
+killall Dock</pre>
 </li>
 <li>
-<p class="first">Unsurprisingly, you change YES to NO to re-enable Dashboard:</p>
-<pre class="literal-block">
-defaults write com.apple.dashboard mcx-disabled -boolean NO
-killall Dock
-</pre>
+<p>Unsurprisingly, you change YES to NO to re-enable Dashboard:</p>
+<pre class="literal-block">defaults write com.apple.dashboard mcx-disabled -boolean NO
+killall Dock</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="unix-x11">
 <h2>Unix - X11</h2>
 <ul>
+<li><p><a class="reference external" href="http://xquartz.macosforge.org/">http://xquartz.macosforge.org/</a></p></li>
 <li>
-<p class="first"><a class="reference external" href="http://xquartz.macosforge.org/">http://xquartz.macosforge.org/</a></p>
-</li>
-<li>
-<p class="first">install quickly
+<p>install quickly
 <a class="reference external" href="http://trac.macosforge.org/projects/xquartz">http://trac.macosforge.org/projects/xquartz</a>
 :</p>
-<pre class="literal-block">
-wget http://xquartz.macosforge.org/downloads/X11-2.4.0.dmg
+<pre class="literal-block">wget http://xquartz.macosforge.org/downloads/X11-2.4.0.dmg
 sudo installer -pkg X11-2.4.0.pkg  -target /
-rm  X11-2.4.0.pkg
-</pre>
+rm  X11-2.4.0.pkg</pre>
 </li>
 </ul>
 </div>
@@ -294,16 +263,14 @@ rm  X11-2.4.0.pkg
 <h2>Change login window on (Snow) Leopard</h2>
 <ul>
 <li>
-<p class="first">disrupted by the look of the plasma flames? think it looks like a
+<p>disrupted by the look of the plasma flames? think it looks like a
 cheap star trek sundae? check
 <a class="reference external" href="http://paulstamatiou.com/2007/10/31/how-to-change-leopards-login-wallpaper">http://paulstamatiou.com/2007/10/31/how-to-change-leopards-login-wallpaper</a>
 :</p>
-<pre class="literal-block">
-cd /System/Library/CoreServices
+<pre class="literal-block">cd /System/Library/CoreServices
 sudo rm DefaultDesktop.jpg
 #sudo mv DefaultDesktop.jpg DefaultDesktop_old.jpg # if you want to keep the Aurora stuff (it stills around, do a 'locate Aurora'
-sudo ln -s /Library/Desktop\ Pictures/Nature/Stones.jpg DefaultDesktop.jpg
-</pre>
+sudo ln -s /Library/Desktop\ Pictures/Nature/Stones.jpg DefaultDesktop.jpg</pre>
 </li>
 </ul>
 </div>

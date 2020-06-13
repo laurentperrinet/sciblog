@@ -140,68 +140,56 @@ o">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
+<li><p>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
 administration of Mac applications distributed as
 binaries</a>. Something I
 always needed, hoped to get with the app store, frowned when
-openoffice or vlc were absent, and here they are!</li>
-<li>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
+openoffice or vlc were absent, and here they are!</p></li>
+<li><p>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
 use</a>
-(it is also a script to install them)</li>
+(it is also a script to install them)</p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">preparing by forking the</p>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/phinze-cask
+<p>preparing by forking the</p>
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/phinze-cask
 github_user='meduz'
 echo $github_user
-git remote add $github_user https://github.com/$github_user/homebrew-cask
-</pre>
+git remote add $github_user https://github.com/$github_user/homebrew-cask</pre>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">create, then install / edit cycle</p>
-<pre class="literal-block">
-project='texshop'
+<p>create, then install / edit cycle</p>
+<pre class="literal-block">project='texshop'
 brew cask create $project
 brew cask install $project
 brew cask edit $project
 brew cask install $project
-brew cask audit $project  --download
-</pre>
+brew cask audit $project  --download</pre>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git checkout -b $project
 git add Casks/$project.rb
 git commit -v
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
+</li>
+<li><p>result is
+<a class="reference external" href="https://github.com/phinze/homebrew-cask/pull/1530">https://github.com/phinze/homebrew-cask/pull/1530</a></p></li>
+<li>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
 <li>
-<p class="first">result is
-<a class="reference external" href="https://github.com/phinze/homebrew-cask/pull/1530">https://github.com/phinze/homebrew-cask/pull/1530</a></p>
-</li>
-<li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
-</li>
-<li>
-<p class="first">this was easy! ... but wait, I  <a href="2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#id1"><span class="problematic" id="id2">:doc:`mystyped &lt;2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request&gt;`</span></a> something...</p>
+<p>this was easy! ... but wait, I  <a href="2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#id1"><span class="problematic" id="id2">:doc:`mystyped &lt;2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request&gt;`</span></a> something...</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 59); <em><a href="2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 59); <em><a href="2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html#id2">backlink</a></em></p>
 <p>"2013-11-09-homebrew-cask-level-1-correcting-a-pull-request" slug doesn't exist.</p>
 </div>
 </li>

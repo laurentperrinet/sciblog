@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 12 Jun 2020 11:14:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model</title><link>https://laurentperrinet.github.io/sciblog/posts/2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;The INCM was holding a &lt;a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/Meeting_V1WorkshopMarseille_2007"&gt;workshop on the V1 hypercolumn model on the 22nd and 23rd of October 2007&lt;/a&gt;.
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 13 Jun 2020 14:52:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model</title><link>https://laurentperrinet.github.io/sciblog/posts/2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;The INCM was holding a &lt;a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/Meeting_V1WorkshopMarseille_2007"&gt;workshop on the V1 hypercolumn model on the 22nd and 23rd of October 2007&lt;/a&gt;.
 The purpose of the workshop was to promote the coordination of modeling
 efforts within the consortium and in particular to organize
 collaboration in WP9T2 and associated work-packages. It is labeled as
@@ -39,7 +39,7 @@ and
 &lt;a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/WP5T3"&gt;WP5T3&lt;/a&gt;
 tasks.&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;The goal of the meeting was to prepare the next deliverable D25
+&lt;li&gt;&lt;p&gt;The goal of the meeting was to prepare the next deliverable D25
 ("model of an hyper-column") but also to join our efforts in
 modeling. In particular, important decisions were made toward finding
 canonical parameters (structure, neural parameters) of all systems
@@ -47,6 +47,6 @@ being delivered in WP5T3 and WP9T2 but also concerning the definition
 of the common benchmark that will de deployed to the different
 implementations in the different partners. From this benchmark
 (benchmark zero), we should be able to validate different solutions
-to pinpoint their strengths and weaknesses.&lt;/li&gt;
+to pinpoint their strengths and weaknesses.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2006-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>facets</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2006-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html</guid><pubDate>Mon, 20 Nov 2006 12:36:57 GMT</pubDate></item></channel></rss>

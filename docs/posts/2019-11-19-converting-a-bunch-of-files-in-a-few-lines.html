@@ -140,20 +140,20 @@ I w">
 <!-- TEASER_END -->
 
 <h2>listing files</h2>
-<pre class="code literal-block"><span></span>$ f flac
-</pre>
+<pre class="code literal-block"><span></span><code>$ f flac
+</code></pre>
 
 
 <h2>converting files</h2>
 <p>Encoding in 128kB/s :</p>
-<pre class="code literal-block"><span></span>$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
-</pre>
+<pre class="code literal-block"><span></span><code>$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre>
 
 
 <p>Note that this will work also while exploring the folder hierarchy (that is if you have a bunch of folders with those files).</p>
 <h2>deleting files</h2>
-<pre class="code literal-block"><span></span>$ f flac -delete
-</pre>
+<pre class="code literal-block"><span></span><code>$ f flac -delete
+</code></pre>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

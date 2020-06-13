@@ -31,8 +31,7 @@ MathJax.Hub.Config({
 <meta property="og:title" content="homebrew cask : updating mactex">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2015-06-12-homebrew-cask-updating-mactex.html">
 <meta property="og:description" content="A new version of (MacTex)[http://www.tug.org/mactex/mactex-download.html] is out, I will try today to push that new infomation to http://caskroom.io/
-
-I will base the steps I use on this previous cont">
+I will base the steps I use on this previous contr">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-06-12T13:36:57+02:00">
 <meta property="article:tag" content="homebrew">
@@ -138,79 +137,59 @@ I will base the steps I use on this previous cont">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul>
+<li><p>A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base the steps I use on this <a class="reference external" href="2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base the steps I use on this <a class="reference external" href="2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='mactex'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">creating a new branch for his project</p>
-<pre class="literal-block">
-git branches
+<p>creating a new branch for his project</p>
+<pre class="literal-block">git branches
 git remote add $github_user https://github.com/$github_user/homebrew-cask
-git checkout -b $project
-</pre>
+git checkout -b $project</pre>
 </li>
 <li>
-<p class="first">finding my information and feeding to homebrew</p>
+<p>finding my information and feeding to homebrew</p>
 <blockquote>
-<pre class="literal-block">
-cd ~/Downloads
+<pre class="literal-block">cd ~/Downloads
 wget http://mirrors.ircam.fr/pub/CTAN/systems/mac/mactex/mactex-20150609.pkg
 sha256sum mactex-20150609.pkg
 sha256sum mactex-20150609.pkg | pbcopy
-brew cask edit $project
-</pre>
+brew cask edit $project</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">testing with homebrew:</p>
+<p>testing with homebrew:</p>
 <blockquote>
-<pre class="literal-block">
-brew cask install $project
-brew cask audit $project  --download
-</pre>
+<pre class="literal-block">brew cask install $project
+brew cask audit $project  --download</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git commit -am"upgrading mactex"
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
 </li>
 <li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
-<li>
-<p class="first">in the meanwhile, the change has been
+<li><p>in the meanwhile, the change has been
 <a class="reference external" href="https://github.com/caskroom/homebrew-cask/pull/11854">pulled</a>
-and got approveded. MacTex is updated!</p>
-</li>
+and got approveded. MacTex is updated!</p></li>
 </ul>
 </div>
     </div>

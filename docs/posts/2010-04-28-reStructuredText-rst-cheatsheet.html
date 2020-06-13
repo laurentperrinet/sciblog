@@ -34,10 +34,9 @@ MathJax.Hub.Config({
 
 
 
-
 =====================================================
  The reStructuredText_ Cheat Sheet: Syntax Reminders
-============================">
+=============================">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-04-28T13:36:57+02:00">
 <meta property="article:tag" content="sciblog">
@@ -141,12 +140,11 @@ MathJax.Hub.Config({
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></li>
+<li><p><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<pre class="first literal-block">
-=====================================================
+<pre class="literal-block">=====================================================
  The reStructuredText_ Cheat Sheet: Syntax Reminders
 =====================================================
 :Info: See &lt;http://docutils.sf.net/rst.html&gt; for introductory docs.
@@ -273,41 +271,34 @@ strong            Equivalent to **strong**
 sub               Subscript
 sup               Superscript
 title             Title reference (book, etc.); standard default role
-================  ============================================================
-</pre>
+================  ============================================================</pre>
 </li>
-<li>
-<p class="first">results in</p>
-</li>
+<li><p>results in</p></li>
 </ul>
 <div class="section" id="the-restructuredtext-cheat-sheet-syntax-reminders">
 <h2>The <a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a> Cheat Sheet: Syntax Reminders</h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">Info:</th>
-<td class="field-body">See &lt;<a class="reference external" href="http://docutils.sf.net/rst.html">http://docutils.sf.net/rst.html</a>&gt; for introductory docs.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Author:</th>
-<td class="field-body">David Goodger &lt;<a class="reference external" href="mailto:goodger@python.org">goodger@python.org</a>&gt;</td>
-</tr>
-<tr class="field">
-<th class="field-name">Date:</th>
-<td class="field-body">$Date: 2006-01-23 02:13:55 +0100 (Mon, 23 JÃ¤n 2006) $</td>
-</tr>
-<tr class="field">
-<th class="field-name">Revision:</th>
-<td class="field-body">$Revision: 4321 $</td>
-</tr>
-<tr class="field">
-<th class="field-name">Description:</th>
-<td class="field-body">This is a "docinfo block", or bibliographic field list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt>Info</dt>
+<dd>
+<p>See &lt;<a class="reference external" href="http://docutils.sf.net/rst.html">http://docutils.sf.net/rst.html</a>&gt; for introductory docs.</p>
+</dd>
+<dt>Author</dt>
+<dd>
+<p>David Goodger &lt;<a class="reference external" href="mailto:goodger@python.org">goodger@python.org</a>&gt;</p>
+</dd>
+<dt>Date</dt>
+<dd>
+<p>$Date: 2006-01-23 02:13:55 +0100 (Mon, 23 JÃ¤n 2006) $</p>
+</dd>
+<dt>Revision</dt>
+<dd>
+<p>$Revision: 4321 $</p>
+</dd>
+<dt>Description</dt>
+<dd>
+<p>This is a "docinfo block", or bibliographic field list</p>
+</dd>
+</dl>
 <div class="section" id="section-structure">
 <h3>Section Structure</h3>
 <p>Section titles are underlined or overlined &amp; underlined.</p>
@@ -315,41 +306,37 @@ title             Title reference (book, etc.); standard default role
 <div class="section" id="body-elements">
 <h3>Body Elements</h3>
 <p>Grid table:</p>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="48%">
-<col width="52%">
+<col style="width: 48%">
+<col style="width: 52%">
 </colgroup>
-<tbody valign="top">
+<tbody>
 <tr>
 <td>
-<p class="first">Paragraphs are flush-left,
+<p>Paragraphs are flush-left,
 separated by blank lines.</p>
-<blockquote class="last">
-Block quotes are indented.</blockquote>
+<blockquote>
+<p>Block quotes are indented.</p>
+</blockquote>
 </td>
 <td rowspan="2">
-<p class="first">Literal block, preceded by "::":</p>
-<pre class="literal-block">
-Indented
-</pre>
+<p>Literal block, preceded by "::":</p>
+<pre class="literal-block">Indented</pre>
 <p>or:</p>
-<pre class="last literal-block">
-&gt; Quoted
-</pre>
+<pre class="literal-block">&gt; Quoted</pre>
 </td>
 </tr>
 <tr>
 <td>
-<pre class="first last doctest-block">
-&gt;&gt;&gt; print 'Doctest block'
+<pre class="code python doctest">&gt;&gt;&gt; print 'Doctest block'
 Doctest block
 </pre>
 </td>
 </tr>
 <tr>
 <td colspan="2">
-<div class="first last line-block">
+<div class="line-block">
 <div class="line">Line blocks preserve line breaks &amp; indents. [new in 0.3.6]</div>
 <div class="line-block">
 <div class="line">Useful for addresses, verse, and adornment-free lists; long
@@ -361,126 +348,114 @@ lines can be wrapped with continuation lines.</div>
 </tbody>
 </table>
 <p>Simple tables:</p>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="21%">
-<col width="79%">
+<col style="width: 21%">
+<col style="width: 79%">
 </colgroup>
-<thead valign="bottom"><tr>
-<th class="head">List Type</th>
-<th class="head">Examples</th>
+<thead><tr>
+<th class="head"><p>List Type</p></th>
+<th class="head"><p>Examples</p></th>
 </tr></thead>
-<tbody valign="top">
+<tbody>
 <tr>
-<td>Bullet list</td>
-<td><ul class="first last simple">
-<li>items begin with "-", "+", or "*"</li>
+<td><p>Bullet list</p></td>
+<td><ul class="simple">
+<li><p>items begin with "-", "+", or "*"</p></li>
 </ul></td>
 </tr>
 <tr>
-<td>Enumerated list</td>
-<td><ol class="first last arabic simple">
-<li>items use any variation of "1.", "A)", and "(i)"</li>
-<li>also auto-enumerated</li>
+<td><p>Enumerated list</p></td>
+<td><ol class="arabic simple">
+<li><p>items use any variation of "1.", "A)", and "(i)"</p></li>
+<li><p>also auto-enumerated</p></li>
 </ol></td>
 </tr>
 <tr>
-<td>Definition list</td>
-<td><dl class="first last docutils">
-<dt>Term is flush-left <span class="classifier-delimiter">:</span> <span class="classifier">optional classifier</span>
+<td><p>Definition list</p></td>
+<td><dl class="simple">
+<dt>Term is flush-left<span class="classifier">optional classifier</span>
 </dt>
-<dd>Definition is indented, no blank line between</dd>
+<dd>
+<p>Definition is indented, no blank line between</p>
+</dd>
 </dl></td>
 </tr>
 <tr>
-<td>Field list</td>
-<td><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top"><tr class="field">
-<th class="field-name">field name:</th>
-<td class="field-body">field body</td>
-</tr></tbody>
-</table></td>
+<td><p>Field list</p></td>
+<td><dl class="field-list simple">
+<dt>field name</dt>
+<dd>
+<p>field body</p>
+</dd>
+</dl></td>
 </tr>
 <tr>
-<td>Option list</td>
-<td><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option">
-<col class="description">
-<tbody valign="top"><tr>
-<td class="option-group">
-<kbd><span class="option">-o</span></kbd>
-</td>
-<td>at least 2 spaces between option &amp; description</td>
-</tr></tbody>
-</table></td>
+<td><p>Option list</p></td>
+<td><dl class="option-list">
+<dt><kbd><span class="option">-o</span></kbd></dt>
+<dd>
+<p>at least 2 spaces between option &amp; description</p>
+</dd>
+</dl></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="21%">
-<col width="79%">
+<col style="width: 21%">
+<col style="width: 79%">
 </colgroup>
-<thead valign="bottom"><tr>
-<th class="head">Explicit Markup</th>
-<th class="head">Examples (visible in the <a class="reference external" href="cheatsheet.txt">text source</a>)</th>
+<thead><tr>
+<th class="head"><p>Explicit Markup</p></th>
+<th class="head"><p>Examples (visible in the <a class="reference external" href="cheatsheet.txt">text source</a>)</p></th>
 </tr></thead>
-<tbody valign="top">
+<tbody>
 <tr>
-<td>Footnote</td>
-<td><table class="first last docutils footnote" frame="void" id="id1" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id3">[1]</a></td>
-<td>Manually numbered or [#] auto-numbered
-(even [#labelled]) or [*] auto-symbol</td>
-</tr></tbody>
-</table></td>
+<td><p>Footnote</p></td>
+<td><dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets"><a class="fn-backref" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id3">1</a></span></dt>
+<dd>
+<p>Manually numbered or [#] auto-numbered
+(even [#labelled]) or [*] auto-symbol</p>
+</dd>
+</dl></td>
 </tr>
 <tr>
-<td>Citation</td>
-<td><table class="first last docutils citation" frame="void" id="cit2002" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id4">[CIT2002]</a></td>
-<td>A citation.</td>
-</tr></tbody>
-</table></td>
+<td><p>Citation</p></td>
+<td><dl class="citation">
+<dt class="label" id="cit2002"><span class="brackets"><a class="fn-backref" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id4">CIT2002</a></span></dt>
+<dd>
+<p>A citation.</p>
+</dd>
+</dl></td>
 </tr>
 <tr>
-<td>Hyperlink Target</td>
+<td><p>Hyperlink Target</p></td>
 <td></td>
 </tr>
 <tr id="internal-target">
-<td>Anonymous Target</td>
+<td><p>Anonymous Target</p></td>
 <td></td>
 </tr>
 <tr>
-<td>Directive ("::")</td>
-<td><img alt="images/biohazard.png" class="first last" src="images/biohazard.png"></td>
+<td><p>Directive ("::")</p></td>
+<td><img alt="images/biohazard.png" src="images/biohazard.png"></td>
 </tr>
 <tr>
-<td>Substitution Def</td>
+<td><p>Substitution Def</p></td>
 <td></td>
 </tr>
 <tr>
-<td>Comment</td>
+<td><p>Comment</p></td>
 <td>
 <!-- is anything else -->
 </td>
 </tr>
 <tr>
-<td>Empty Comment</td>
-<td>(".." on a line by itself, with blank lines before &amp; after,
-used to separate indentation contexts)</td>
+<td><p>Empty Comment</p></td>
+<td><p>(".." on a line by itself, with blank lines before &amp; after,
+used to separate indentation contexts)</p></td>
 </tr>
 </tbody>
 </table>
@@ -488,148 +463,144 @@ used to separate indentation contexts)</td>
 <div class="section" id="inline-markup">
 <h3>Inline Markup</h3>
 <p><em>emphasis</em>; <strong>strong emphasis</strong>; <cite>interpreted text</cite>; <em>interpreted text
-with role</em>; <tt class="docutils literal">inline literal text</tt>; standalone hyperlink,
+with role</em>; <code class="docutils literal">inline literal text</code>; standalone hyperlink,
 <a class="reference external" href="http://docutils.sourceforge.net">http://docutils.sourceforge.net</a>; named reference, <a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a>;
-<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html">anonymous reference</a>; footnote reference, <a class="footnote-reference" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id1" id="id3">[1]</a>; citation reference,
+<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html">anonymous reference</a>; footnote reference, <a class="footnote-reference brackets" href="2010-04-28-reStructuredText-rst-cheatsheet.html#id1" id="id3">1</a>; citation reference,
 <a class="citation-reference" href="2010-04-28-reStructuredText-rst-cheatsheet.html#cit2002" id="id4">[CIT2002]</a>; like an inline directive; <span class="target" id="inline-internal-target">inline internal target</span>.</p>
 </div>
 <div class="section" id="directive-quick-reference">
 <h3>Directive Quick Reference</h3>
 <p>See &lt;<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/directives.html">http://docutils.sf.net/docs/ref/rst/directives.html</a>&gt; for full info.</p>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="21%">
-<col width="79%">
+<col style="width: 21%">
+<col style="width: 79%">
 </colgroup>
-<thead valign="bottom"><tr>
-<th class="head">Directive Name</th>
-<th class="head">Description (Docutils version added to, in [brackets])</th>
+<thead><tr>
+<th class="head"><p>Directive Name</p></th>
+<th class="head"><p>Description (Docutils version added to, in [brackets])</p></th>
 </tr></thead>
-<tbody valign="top">
+<tbody>
 <tr>
-<td>attention</td>
-<td>Specific admonition; also "caution", "danger",
-"error", "hint", "important", "note", "tip", "warning"</td>
+<td><p>attention</p></td>
+<td><p>Specific admonition; also "caution", "danger",
+"error", "hint", "important", "note", "tip", "warning"</p></td>
 </tr>
 <tr>
-<td>admonition</td>
-<td>Generic titled admonition: <tt class="docutils literal">.. admonition:: By The Way</tt>
-</td>
+<td><p>admonition</p></td>
+<td><p>Generic titled admonition: <code class="docutils literal">.. admonition:: By The Way</code></p></td>
 </tr>
 <tr>
-<td>image</td>
-<td>
-<tt class="docutils literal">.. image:: picture.png</tt>; many options possible</td>
+<td><p>image</p></td>
+<td><p><code class="docutils literal">.. image:: picture.png</code>; many options possible</p></td>
 </tr>
 <tr>
-<td>figure</td>
-<td>Like "image", but with optional caption and legend</td>
+<td><p>figure</p></td>
+<td><p>Like "image", but with optional caption and legend</p></td>
 </tr>
 <tr>
-<td>topic</td>
-<td>
-<tt class="docutils literal">.. topic:: Title</tt>; like a mini section</td>
+<td><p>topic</p></td>
+<td><p><code class="docutils literal">.. topic:: Title</code>; like a mini section</p></td>
 </tr>
 <tr>
-<td>sidebar</td>
-<td>
-<tt class="docutils literal">.. sidebar:: Title</tt>; like a mini parallel document</td>
+<td><p>sidebar</p></td>
+<td><p><code class="docutils literal">.. sidebar:: Title</code>; like a mini parallel document</p></td>
 </tr>
 <tr>
-<td>parsed-literal</td>
-<td>A literal block with parsed inline markup</td>
+<td><p>parsed-literal</p></td>
+<td><p>A literal block with parsed inline markup</p></td>
 </tr>
 <tr>
-<td>rubric</td>
-<td><tt class="docutils literal">.. rubric:: Informal Heading</tt></td>
+<td><p>rubric</p></td>
+<td><p><code class="docutils literal">.. rubric:: Informal Heading</code></p></td>
 </tr>
 <tr>
-<td>epigraph</td>
-<td>Block quote with class="epigraph"</td>
+<td><p>epigraph</p></td>
+<td><p>Block quote with class="epigraph"</p></td>
 </tr>
 <tr>
-<td>highlights</td>
-<td>Block quote with class="highlights"</td>
+<td><p>highlights</p></td>
+<td><p>Block quote with class="highlights"</p></td>
 </tr>
 <tr>
-<td>pull-quote</td>
-<td>Block quote with class="pull-quote"</td>
+<td><p>pull-quote</p></td>
+<td><p>Block quote with class="pull-quote"</p></td>
 </tr>
 <tr>
-<td>compound</td>
-<td>Compound paragraphs [0.3.6]</td>
+<td><p>compound</p></td>
+<td><p>Compound paragraphs [0.3.6]</p></td>
 </tr>
 <tr>
-<td>container</td>
-<td>Generic block-level container element [0.3.10]</td>
+<td><p>container</p></td>
+<td><p>Generic block-level container element [0.3.10]</p></td>
 </tr>
 <tr>
-<td>table</td>
-<td>Create a titled table [0.3.1]</td>
+<td><p>table</p></td>
+<td><p>Create a titled table [0.3.1]</p></td>
 </tr>
 <tr>
-<td>list-table</td>
-<td>Create a table from a uniform two-level bullet list [0.3.8]</td>
+<td><p>list-table</p></td>
+<td><p>Create a table from a uniform two-level bullet list [0.3.8]</p></td>
 </tr>
 <tr>
-<td>csv-table</td>
-<td>Create a table from CSV data (requires Python 2.3+) [0.3.4]</td>
+<td><p>csv-table</p></td>
+<td><p>Create a table from CSV data (requires Python 2.3+) [0.3.4]</p></td>
 </tr>
 <tr>
-<td>contents</td>
-<td>Generate a table of contents</td>
+<td><p>contents</p></td>
+<td><p>Generate a table of contents</p></td>
 </tr>
 <tr>
-<td>sectnum</td>
-<td>Automatically number sections, subsections, etc.</td>
+<td><p>sectnum</p></td>
+<td><p>Automatically number sections, subsections, etc.</p></td>
 </tr>
 <tr>
-<td>header, footer</td>
-<td>Create document decorations [0.3.8]</td>
+<td><p>header, footer</p></td>
+<td><p>Create document decorations [0.3.8]</p></td>
 </tr>
 <tr>
-<td>target-notes</td>
-<td>Create an explicit footnote for each external target</td>
+<td><p>target-notes</p></td>
+<td><p>Create an explicit footnote for each external target</p></td>
 </tr>
 <tr>
-<td>meta</td>
-<td>HTML-specific metadata</td>
+<td><p>meta</p></td>
+<td><p>HTML-specific metadata</p></td>
 </tr>
 <tr>
-<td>include</td>
-<td>Read an external reST file as if it were inline</td>
+<td><p>include</p></td>
+<td><p>Read an external reST file as if it were inline</p></td>
 </tr>
 <tr>
-<td>raw</td>
-<td>Non-reST data passed untouched to the Writer</td>
+<td><p>raw</p></td>
+<td><p>Non-reST data passed untouched to the Writer</p></td>
 </tr>
 <tr>
-<td>replace</td>
-<td>Replacement text for substitution definitions</td>
+<td><p>replace</p></td>
+<td><p>Replacement text for substitution definitions</p></td>
 </tr>
 <tr>
-<td>unicode</td>
-<td>Unicode character code conversion for substitution defs</td>
+<td><p>unicode</p></td>
+<td><p>Unicode character code conversion for substitution defs</p></td>
 </tr>
 <tr>
-<td>date</td>
-<td>Generates today's date; for substitution defs</td>
+<td><p>date</p></td>
+<td><p>Generates today's date; for substitution defs</p></td>
 </tr>
 <tr>
-<td>class</td>
-<td>Set a "class" attribute on the next element</td>
+<td><p>class</p></td>
+<td><p>Set a "class" attribute on the next element</p></td>
 </tr>
 <tr>
-<td>role</td>
-<td>Create a custom interpreted text role [0.3.2]</td>
+<td><p>role</p></td>
+<td><p>Create a custom interpreted text role [0.3.2]</p></td>
 </tr>
 <tr>
-<td>default-role</td>
-<td>Set the default interpreted text role [0.3.10]</td>
+<td><p>default-role</p></td>
+<td><p>Set the default interpreted text role [0.3.10]</p></td>
 </tr>
 <tr>
-<td>title</td>
-<td>Set the metadata document title [0.3.10]</td>
+<td><p>title</p></td>
+<td><p>Set the metadata document title [0.3.10]</p></td>
 </tr>
 </tbody>
 </table>
@@ -637,53 +608,51 @@ with role</em>; <tt class="docutils literal">inline literal text</tt>; standalon
 <div class="section" id="interpreted-text-role-quick-reference">
 <h3>Interpreted Text Role Quick Reference</h3>
 <p>See &lt;<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/roles.html">http://docutils.sf.net/docs/ref/rst/roles.html</a>&gt; for full info.</p>
-<table border="1" class="docutils">
+<table>
 <colgroup>
-<col width="21%">
-<col width="79%">
+<col style="width: 21%">
+<col style="width: 79%">
 </colgroup>
-<thead valign="bottom"><tr>
-<th class="head">Role Name</th>
-<th class="head">Description</th>
+<thead><tr>
+<th class="head"><p>Role Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr></thead>
-<tbody valign="top">
+<tbody>
 <tr>
-<td>emphasis</td>
-<td>Equivalent to <em>emphasis</em>
-</td>
+<td><p>emphasis</p></td>
+<td><p>Equivalent to <em>emphasis</em></p></td>
 </tr>
 <tr>
-<td>literal</td>
-<td>Equivalent to <tt class="docutils literal">literal</tt> but processes backslash escapes</td>
+<td><p>literal</p></td>
+<td><p>Equivalent to <code class="docutils literal">literal</code> but processes backslash escapes</p></td>
 </tr>
 <tr>
-<td>PEP</td>
-<td>Reference to a numbered Python Enhancement Proposal</td>
+<td><p>PEP</p></td>
+<td><p>Reference to a numbered Python Enhancement Proposal</p></td>
 </tr>
 <tr>
-<td>RFC</td>
-<td>Reference to a numbered Internet Request For Comments</td>
+<td><p>RFC</p></td>
+<td><p>Reference to a numbered Internet Request For Comments</p></td>
 </tr>
 <tr>
-<td>raw</td>
-<td>For non-reST data; cannot be used directly (see docs) [0.3.6]</td>
+<td><p>raw</p></td>
+<td><p>For non-reST data; cannot be used directly (see docs) [0.3.6]</p></td>
 </tr>
 <tr>
-<td>strong</td>
-<td>Equivalent to <strong>strong</strong>
-</td>
+<td><p>strong</p></td>
+<td><p>Equivalent to <strong>strong</strong></p></td>
 </tr>
 <tr>
-<td>sub</td>
-<td>Subscript</td>
+<td><p>sub</p></td>
+<td><p>Subscript</p></td>
 </tr>
 <tr>
-<td>sup</td>
-<td>Superscript</td>
+<td><p>sup</p></td>
+<td><p>Superscript</p></td>
 </tr>
 <tr>
-<td>title</td>
-<td>Title reference (book, etc.); standard default role</td>
+<td><p>title</p></td>
+<td><p>Title reference (book, etc.); standard default role</p></td>
 </tr>
 </tbody>
 </table>

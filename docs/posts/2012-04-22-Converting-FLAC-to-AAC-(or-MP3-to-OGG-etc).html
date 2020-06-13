@@ -40,9 +40,8 @@ This post is certainly obsolete...
 
 
 installation on MacOsX Lion (with homebrew) :
-
 brew install libcdio
-brew install lame two-lame mpg123">
+brew install lame two-lame mpg123 ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-04-22T13:36:57+02:00">
 <meta property="article:tag" content="sciblog">
@@ -146,47 +145,38 @@ brew install lame two-lame mpg123">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>the solution is
-<a class="reference external" href="http://audiotools.sourceforge.net/">http://audiotools.sourceforge.net/</a>
-</li>
+<li><p>the solution is
+<a class="reference external" href="http://audiotools.sourceforge.net/">http://audiotools.sourceforge.net/</a></p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">installation on MacOsX Lion (with homebrew) :</p>
-<pre class="literal-block">
-brew install libcdio
+<p>installation on MacOsX Lion (with homebrew) :</p>
+<pre class="literal-block">brew install libcdio
 brew install lame two-lame mpg123 mp3gain
 brew install libogg libvorbis     vorbis-tools  vorbisgain
 brew install faac faad2
 git clone git://github.com/laurentperrinet/python-audio-tools.git  audio-tools
 cd audio-tools
 make
-make install
-</pre>
+make install</pre>
 </li>
 <li>
-<p class="first">using it:</p>
-<pre class="literal-block">
-track2track  -t aiff *.flac #lossless
-track2track  -q 0 -t m4a *.ogg #lossy
-</pre>
+<p>using it:</p>
+<pre class="literal-block">track2track  -t aiff *.flac #lossless
+track2track  -q 0 -t m4a *.ogg #lossy</pre>
 </li>
 <li>
-<p class="first">and on a whole folder, placing the files in the same directory:</p>
-<pre class="literal-block">
-find a_folder/with/lots_of_flac -name *flac -exec sh -c 'echo "Processing $0"; track2track -t aiff  "$0" -o "${0%.flac}.aiff"' {} \;
-find a_folder/with/lots_of_ogg -name *ogg -exec sh -c 'echo "Processing $0"; track2track -t m4a  "$0" -o "${0%.flac}.m4a"' {} \;
-</pre>
+<p>and on a whole folder, placing the files in the same directory:</p>
+<pre class="literal-block">find a_folder/with/lots_of_flac -name *flac -exec sh -c 'echo "Processing $0"; track2track -t aiff  "$0" -o "${0%.flac}.aiff"' {} \;
+find a_folder/with/lots_of_ogg -name *ogg -exec sh -c 'echo "Processing $0"; track2track -t m4a  "$0" -o "${0%.flac}.m4a"' {} \;</pre>
 </li>
-<li>
-<p class="first">tried as a formula in homebrew:
+<li><p>tried as a formula in homebrew:
 <a class="reference external" href="https://github.com/mxcl/homebrew">https://github.com/mxcl/homebrew</a>
-but closed it.</p>
-</li>
+but closed it.</p></li>
 </ul>
 </div>
     </div>

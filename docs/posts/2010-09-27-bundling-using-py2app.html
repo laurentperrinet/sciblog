@@ -37,14 +37,11 @@ This post is certainly obsolete...
 using macports
 
 install py2app :
-
 sudo port install -u  py26-py2app
-
 
 there's sometimes a problem in py2app to check the right architecture
 to build on:
-
-f">
+find">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-09-27T13:36:57+02:00">
 <meta property="article:tag" content="macos">
@@ -150,31 +147,26 @@ f">
     <div>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <div class="section" id="using-macports">
 <h2>using macports</h2>
 <ul>
 <li>
-<p class="first">install py2app :</p>
-<pre class="literal-block">
-sudo port install -u  py26-py2app
-</pre>
+<p>install py2app :</p>
+<pre class="literal-block">sudo port install -u  py26-py2app</pre>
 </li>
 <li>
-<p class="first">there's sometimes a problem in py2app to check the right architecture
+<p>there's sometimes a problem in py2app to check the right architecture
 to build on:</p>
-<pre class="literal-block">
-find /opt/local -name apptemplate/setup.py
-sudo vim /opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/py2app/apptemplate/setup.py
-</pre>
+<pre class="literal-block">find /opt/local -name apptemplate/setup.py
+sudo vim /opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/py2app/apptemplate/setup.py</pre>
 </li>
 <li>
-<p class="first">in this case, this can be done by adding the following lines to
+<p>in this case, this can be done by adding the following lines to
 py2app/apptemplate/setup.py:</p>
-<pre class="literal-block">
-gPreBuildVariants = [
+<pre class="literal-block">gPreBuildVariants = [
     ...
     {
         'name': 'main-x86_64',
@@ -189,11 +181,9 @@ gPreBuildVariants = [
         'cc': 'gcc-4.2',
     },
     ...
-]
-</pre>
+]</pre>
 <p>. So, change to</p>
-<pre class="literal-block">
-gPreBuildVariants = [
+<pre class="literal-block">gPreBuildVariants = [
     {
         'name': 'main-x86_64',
         'target': '10.5',
@@ -224,16 +214,15 @@ gPreBuildVariants = [
 #         'cflags': '-isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc',
 #         'cc': 'gcc-4.0',
 #     },
-]
-</pre>
+]</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="using-homebrew">
 <h2>using homebrew</h2>
 <ul class="simple">
-<li>another route is homebrew:
-<a class="reference external" href="http://gist.github.com/519418">http://gist.github.com/519418</a> /</li>
+<li><p>another route is homebrew:
+<a class="reference external" href="http://gist.github.com/519418">http://gist.github.com/519418</a> /</p></li>
 </ul>
 </div>
 </div>

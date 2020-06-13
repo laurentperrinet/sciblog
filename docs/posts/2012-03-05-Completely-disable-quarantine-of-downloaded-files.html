@@ -139,11 +139,10 @@ asks if you really mean it. While it is inte">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>copy and paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20091208050655947">http://hints.macworld.com/article.php?story=20091208050655947</a>
-</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>copy and paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20091208050655947">http://hints.macworld.com/article.php?story=20091208050655947</a></p></td>
 </tr></tbody>
 </table>
 <p>Starting in Leopard when you open a file downloaded from the web, OS X
@@ -153,21 +152,15 @@ here on working around it, it turns out that you can disable it
 completely using a Terminal command:</p>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
-<pre class="literal-block">
-defaults write com.apple.LaunchServices LSQuarantine -bool NO
-</pre>
+<pre class="literal-block">defaults write com.apple.LaunchServices LSQuarantine -bool NO</pre>
 <p>After that, reboot.</p>
 <p>To know the state of your system, use</p>
-<pre class="literal-block">
-defaults read com.apple.LaunchServices LSQuarantine
-</pre>
+<pre class="literal-block">defaults read com.apple.LaunchServices LSQuarantine</pre>
 <p>, to go back to default, use</p>
-<pre class="literal-block">
-defaults write com.apple.LaunchServices LSQuarantine -bool YES
-</pre>
+<pre class="literal-block">defaults write com.apple.LaunchServices LSQuarantine -bool YES</pre>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

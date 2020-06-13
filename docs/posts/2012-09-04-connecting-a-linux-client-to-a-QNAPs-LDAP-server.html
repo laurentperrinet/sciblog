@@ -144,42 +144,46 @@ on the server sid">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>after installing a linux client, you usually wish to have the same
-users as on your QNAP server. A LDAP server is one useful solution.</li>
+<li><p>after installing a linux client, you usually wish to have the same
+users as on your QNAP server. A LDAP server is one useful solution.</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul class="simple">
-<li>on the server side, setup according to:
-<a class="reference external" href="http://web.qnap.com/pro_application.asp?ap_id=847">http://web.qnap.com/pro_application.asp?ap_id=847</a><ul>
-<li>one note: the domain name is a name you choose for your server
-(not the domain name of your local network), something useful for
-the LDAP server to recognise itself (like my-nas.local).</li>
-</ul>
-</li>
-<li>on the client side, there are several HOWTOs, like:<ul>
-<li>my favorite:
-<a class="reference external" href="http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client">http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client</a>
-</li>
-<li><a class="reference external" href="http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch31_:_Centralized_Logins_Using_LDAP_and_RADIUS#Configuring_The_LDAP_Client">http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch31_:_Centralized_Logins_Using_LDAP_and_RADIUS#Configuring_The_LDAP_Client</a></li>
-<li><a class="reference external" href="http://beginlinux.com/server_training/server-managment-topics/1017-ldap-client-on-ubuntu-804">http://beginlinux.com/server_training/server-managment-topics/1017-ldap-client-on-ubuntu-804</a></li>
 <li>
-<a class="reference external" href="http://doc.ubuntu-fr.org/ldap_client">http://doc.ubuntu-fr.org/ldap_client</a>
-(in french)</li>
-<li>it usually takes two minutes if you copy and paste on the client
-side the information of your NAS server's LDAP page</li>
+<p>on the server side, setup according to:
+<a class="reference external" href="http://web.qnap.com/pro_application.asp?ap_id=847">http://web.qnap.com/pro_application.asp?ap_id=847</a></p>
+<ul>
+<li><p>one note: the domain name is a name you choose for your server
+(not the domain name of your local network), something useful for
+the LDAP server to recognise itself (like my-nas.local).</p></li>
 </ul>
 </li>
-<li>unfortunately, it failed with "failed to bind to LDAP server
-<a class="reference external" href="ldap://192.168.0.5/">ldap://192.168.0.5/</a>: Invalid credentials"<ul>
-<li>the (undocumented) solution was to:</li>
-<li>generate a password on the server side using the slappasswd
-command</li>
-<li>on the client side, copy and paste the generated SHA password
+<li>
+<p>on the client side, there are several HOWTOs, like:</p>
+<ul>
+<li><p>my favorite:
+<a class="reference external" href="http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client">http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client</a></p></li>
+<li><p><a class="reference external" href="http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch31_:_Centralized_Logins_Using_LDAP_and_RADIUS#Configuring_The_LDAP_Client">http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch31_:_Centralized_Logins_Using_LDAP_and_RADIUS#Configuring_The_LDAP_Client</a></p></li>
+<li><p><a class="reference external" href="http://beginlinux.com/server_training/server-managment-topics/1017-ldap-client-on-ubuntu-804">http://beginlinux.com/server_training/server-managment-topics/1017-ldap-client-on-ubuntu-804</a></p></li>
+<li><p><a class="reference external" href="http://doc.ubuntu-fr.org/ldap_client">http://doc.ubuntu-fr.org/ldap_client</a>
+(in french)</p></li>
+<li><p>it usually takes two minutes if you copy and paste on the client
+side the information of your NAS server's LDAP page</p></li>
+</ul>
+</li>
+<li>
+<p>unfortunately, it failed with "failed to bind to LDAP server
+<a class="reference external" href="ldap://192.168.0.5/">ldap://192.168.0.5/</a>: Invalid credentials"</p>
+<ul>
+<li><p>the (undocumented) solution was to:</p></li>
+<li><p>generate a password on the server side using the slappasswd
+command</p></li>
+<li><p>on the client side, copy and paste the generated SHA password
 instead of the password in clear text in the /etc/ldap.conf
-configuration file</li>
+configuration file</p></li>
 </ul>
 </li>
 </ul>

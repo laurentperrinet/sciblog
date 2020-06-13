@@ -165,10 +165,10 @@ if not">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 
-<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s">'../files/2014-11-10_reverse-phi'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2014-11-10_reverse-phi'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">scipy.ndimage</span> <span class="k">as</span> <span class="nn">nd</span>
@@ -205,10 +205,10 @@ if not">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
-<span class="c">#hv.notebook_extension('bokeh')</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+<span class="c1">#hv.notebook_extension('bokeh')</span>
 <span class="n">hv</span><span class="o">.</span><span class="n">notebook_extension</span><span class="p">()</span>
-<span class="n">nb_name</span> <span class="o">=</span> <span class="s">'reverse_'</span>
+<span class="n">nb_name</span> <span class="o">=</span> <span class="s1">'reverse_'</span>
 </pre></div>
 
     </div>
@@ -338,10 +338,10 @@ div.hologroup {
 
 
 
-<div id="2db00181-8cd8-40a7-ad7c-faf642c71d44"></div>
+<div id="b2beb3a9-e5ef-4c77-a430-942b407f8a4b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2db00181-8cd8-40a7-ad7c-faf642c71d44');
+var element = $('#b2beb3a9-e5ef-4c77-a430-942b407f8a4b');
 function HoloViewsWidget() {
 }
 
@@ -1112,10 +1112,10 @@ if (window.Jupyter !== undefined) {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">toss</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">toss</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">&gt;.</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">mcg</span><span class="p">(</span><span class="n">img</span><span class="p">,</span>  <span class="n">wait</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">term</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">shift_range</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">mcg</span><span class="p">(</span><span class="n">img</span><span class="p">,</span>  <span class="n">wait</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">term</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">shift_range</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    From a (square, gray level) image, we write a funtion that returns a (3D ndarray) movie with a revese phi motion.</span>
 <span class="sd">    </span>
@@ -1137,9 +1137,9 @@ if (window.Jupyter !== undefined) {
             <span class="n">contrast</span> <span class="o">=</span> <span class="n">toss</span><span class="p">()</span>
             <span class="n">shift</span> <span class="o">=</span> <span class="n">toss</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">shift_range</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">contrast</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">reverse</span><span class="o">==</span><span class="k">False</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">contrast</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">reverse</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
             <span class="n">shift</span> <span class="o">=</span> <span class="n">shift_range</span>
-        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s">'contrast='</span><span class="p">,</span> <span class="n">contrast</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'contrast='</span><span class="p">,</span> <span class="n">contrast</span><span class="p">)</span>
         <span class="n">start</span> <span class="o">=</span> <span class="n">i_test</span><span class="o">*</span><span class="n">period</span> <span class="o">+</span> <span class="n">wait</span>
         <span class="n">movie</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">start</span><span class="p">:(</span><span class="n">start</span> <span class="o">+</span> <span class="n">term</span><span class="p">)]</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
         <span class="n">img_shifted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">shift</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">contrast</span>
@@ -1169,7 +1169,7 @@ if (window.Jupyter !== undefined) {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
 pictogram = 2. * (np.random.rand(64, 64) &gt; .5) - 1.
 hv.Image(pictogram).hist()
 </pre></div>
@@ -1190,10 +1190,10 @@ hv.Image(pictogram).hist()
 
 
 
-<div id="aa696b64-0217-4fc4-92f9-b62d75cfc612"></div>
+<div id="370d970b-cc51-4f8e-81ed-49311ff024a0"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#aa696b64-0217-4fc4-92f9-b62d75cfc612');
+var element = $('#370d970b-cc51-4f8e-81ed-49311ff024a0');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim_imgNone'))) {
@@ -1229,8 +1229,8 @@ if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'pictogram-phi'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'pictogram-phi'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1275,8 +1275,8 @@ if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">shift_range</span> <span class="o">=-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'pictogram-phidown'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shift_range</span> <span class="o">=-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'pictogram-phidown'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1321,8 +1321,8 @@ if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'pictogram-reversephi'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'pictogram-reversephi'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1367,8 +1367,8 @@ if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'pictogram'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">pictogram</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'pictogram'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1413,12 +1413,12 @@ if (!(document.getElementById('4912531160')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">face</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">face</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">face</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">'Size of image @ loading '</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Size of image @ loading '</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">color</span><span class="p">[:,</span> <span class="p">(</span><span class="mi">1024</span><span class="o">-</span><span class="mi">768</span><span class="p">):,</span> <span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span> <span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">-</span> <span class="mf">1.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">'Size of image after square reshaping + gray levels '</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Size of image after square reshaping + gray levels '</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1450,7 +1450,7 @@ Size of image after square reshaping + gray levels  (768, 768)
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
 hv.RGB(color) + hv.Image(image).hist()
 </pre></div>
 
@@ -1470,10 +1470,10 @@ hv.RGB(color) + hv.Image(image).hist()
 
 
 
-<div id="871a5866-fb16-4701-aa4a-69574d70b5b6"></div>
+<div id="07d501d3-8d8a-4d3d-9cf7-abced2a56246"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#871a5866-fb16-4701-aa4a-69574d70b5b6');
+var element = $('#07d501d3-8d8a-4d3d-9cf7-abced2a56246');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('4582586464')) && !(document.getElementById('_anim_imgNone'))) {
@@ -1499,8 +1499,8 @@ if (!(document.getElementById('4582586464')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'natural'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'natural'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1545,8 +1545,8 @@ if (!(document.getElementById('4582586464')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'natural_random'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'natural_random'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1593,7 +1593,7 @@ if (!(document.getElementById('4582586464')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
 fx, fy, ft = mc.get_grids(mc.N_X, mc.N_Y, 1)
 name = nb_name + 'MC1'
 image = mc.rectif(mc.random_cloud(mc.envelope_gabor(fx, fy, ft)))
@@ -1618,10 +1618,10 @@ hv.Image(image).hist()
 
 
 
-<div id="9545306a-34e8-4322-9d16-df4a4847817c"></div>
+<div id="9849d435-674d-442f-9f09-e380955c5853"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#9545306a-34e8-4322-9d16-df4a4847817c');
+var element = $('#9849d435-674d-442f-9f09-e380955c5853');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('4961626152')) && !(document.getElementById('_anim_imgNone'))) {
@@ -1657,8 +1657,8 @@ if (!(document.getElementById('4961626152')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'MC1-phi'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'MC1-phi'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1703,8 +1703,8 @@ if (!(document.getElementById('4961626152')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'MC1-reversephi'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'MC1-reversephi'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1749,8 +1749,8 @@ if (!(document.getElementById('4961626152')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'MC1re-random'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">mcg</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">nb_test</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'MC1re-random'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1797,8 +1797,8 @@ if (!(document.getElementById('4961626152')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s">'MC'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">nb_name</span> <span class="o">+</span> <span class="s1">'MC'</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">rot90</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
@@ -1866,15 +1866,15 @@ INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module name
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">i_frame</span> <span class="o">=</span> <span class="mi">4</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i_frame</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
 <span class="n">mov_</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mov</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s">'Size of movie @ loading '</span><span class="p">,</span> <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">Size of frame = '</span><span class="p">,</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'Size of movie @ loading '</span><span class="p">,</span> <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">Size of frame = '</span><span class="p">,</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">][:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="n">i_frame</span><span class="p">)]</span> <span class="o">=</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">][:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">mov_</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_just_Phi'</span><span class="p">))</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">'_just_Phi'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_just_Phi'</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'_just_Phi'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1919,7 +1919,7 @@ Size of frame =  (256, 256)
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
 key_dims = [hv.Dimension('x',range=(-.5,.5)), hv.Dimension('y',range=(-.5,.5))]
 one = hv.Image(mov_[:, :, mc.N_frame//2-i_frame].T, group='one frame', key_dimensions=key_dims)
 two = hv.Image(mov_[:, :, mc.N_frame//2].T, group='second frame', key_dimensions=key_dims).hist()
@@ -1954,10 +1954,10 @@ WARNING:root:Image03448: Setting non-parameter attribute key_dimensions=[Dimensi
 
 
 
-<div id="c0cb0618-738f-4488-9327-f2c2a06c9cbf"></div>
+<div id="32b51887-1c6e-4831-850e-2b0cd92d44af"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#c0cb0618-738f-4488-9327-f2c2a06c9cbf');
+var element = $('#32b51887-1c6e-4831-850e-2b0cd92d44af');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('5195103592')) && !(document.getElementById('_anim_imgNone'))) {
@@ -1983,15 +1983,15 @@ if (!(document.getElementById('5195103592')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">i_frame</span> <span class="o">=</span> <span class="mi">4</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i_frame</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
 <span class="n">mov_</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mov</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s">'Size of movie @ loading '</span><span class="p">,</span> <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">Size of frame = '</span><span class="p">,</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'Size of movie @ loading '</span><span class="p">,</span> <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">Size of frame = '</span><span class="p">,</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="n">i_frame</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">][:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">mov_</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">):(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="n">i_frame</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="n">mov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">][:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">mov_</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_reverse_Phi'</span><span class="p">))</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">'_reverse_Phi'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_reverse_Phi'</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'_reverse_Phi'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2036,7 +2036,7 @@ Size of frame =  (256, 256)
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">opts</span> Image style(cmap='gray')
 resone = hv.Image(mov_[:, :, mc.N_frame//2-i_frame].T, group='one frame', key_dimensions=key_dims)
 two = hv.Image(mov_[:, :, mc.N_frame//2].T, group='second frame', key_dimensions=key_dims).hist()
 one + two
@@ -2070,10 +2070,10 @@ WARNING:root:Image04104: Setting non-parameter attribute key_dimensions=[Dimensi
 
 
 
-<div id="7a7b02c2-01a0-46b9-b5d7-df4ade88feab"></div>
+<div id="104e8be1-4bb0-469f-b5fd-65c9a24a0e61"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#7a7b02c2-01a0-46b9-b5d7-df4ade88feab');
+var element = $('#104e8be1-4bb0-469f-b5fd-65c9a24a0e61');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('5039117480')) && !(document.getElementById('_anim_imgNone'))) {
@@ -2109,7 +2109,7 @@ if (!(document.getElementById('5039117480')) && !(document.getElementById('_anim
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
 

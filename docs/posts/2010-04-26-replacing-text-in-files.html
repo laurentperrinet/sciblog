@@ -144,42 +144,34 @@ To replace foo with foo_bar">
 <h2>using sed</h2>
 <ul>
 <li>
-<p class="first">The UNIX command sed is useful to find and replace text in single or
-multiple files. This page lists some common commands in using <tt class="docutils literal">sed</tt>
+<p>The UNIX command sed is useful to find and replace text in single or
+multiple files. This page lists some common commands in using <code class="docutils literal">sed</code>
 to improve editing code.</p>
 <!-- TEASER_END -->
 </li>
 <li>
-<p class="first">To replace foo with foo_bar in a single file:</p>
-<pre class="literal-block">
-sed -i 's/foo/foo_bar/g' my_script.py
-</pre>
+<p>To replace foo with foo_bar in a single file:</p>
+<pre class="literal-block">sed -i 's/foo/foo_bar/g' my_script.py</pre>
 <ul class="simple">
-<li>-i = edit the file "in-place": sed will directly modify the file
-if it finds anything to replace</li>
-<li>s = substitute the following text</li>
-<li>foo = the text string to be substituted</li>
-<li>foo_bar = the replacement string</li>
-<li>g = global, match all occurrences in the line</li>
+<li><p>-i = edit the file "in-place": sed will directly modify the file
+if it finds anything to replace</p></li>
+<li><p>s = substitute the following text</p></li>
+<li><p>foo = the text string to be substituted</p></li>
+<li><p>foo_bar = the replacement string</p></li>
+<li><p>g = global, match all occurrences in the line</p></li>
 </ul>
 </li>
 <li>
-<p class="first">To replace foo with foo_bar in multiple files:</p>
-<pre class="literal-block">
-sed -i 's/foo/foo_bar/g'  *.py
-</pre>
+<p>To replace foo with foo_bar in multiple files:</p>
+<pre class="literal-block">sed -i 's/foo/foo_bar/g'  *.py</pre>
 </li>
+<li><p>Consult the manual pages of the operating system that you use:
+<code class="docutils literal">man sed</code></p></li>
 <li>
-<p class="first">Consult the manual pages of the operating system that you use:
-<tt class="docutils literal">mansed</tt></p>
-</li>
-<li>
-<p class="first">in the particular case of changing a scaling parameter in a set of
+<p>in the particular case of changing a scaling parameter in a set of
 experiment files:</p>
-<pre class="literal-block">
-sed -i 's/size = 6/size = 7/g'  experiment*.py
-sed -i 's/size = 7/size = 6/g'  experiment*.py
-</pre>
+<pre class="literal-block">sed -i 's/size = 6/size = 7/g'  experiment*.py
+sed -i 's/size = 7/size = 6/g'  experiment*.py</pre>
 </li>
 </ul>
 </div>
@@ -187,39 +179,31 @@ sed -i 's/size = 7/size = 6/g'  experiment*.py
 <h2>using vim</h2>
 <ul>
 <li>
-<p class="first">on the current buffer, with confirmation</p>
-<pre class="literal-block">
-:%s/old_text/new_text/cg
-</pre>
+<p>on the current buffer, with confirmation</p>
+<pre class="literal-block">:%s/old_text/new_text/cg</pre>
 </li>
 <li>
-<p class="first">on the current buffer</p>
-<pre class="literal-block">
-:%s/old_text/new_text/g
-</pre>
+<p>on the current buffer</p>
+<pre class="literal-block">:%s/old_text/new_text/g</pre>
 </li>
 <li>
-<p class="first">to get help</p>
-<pre class="literal-block">
-:help substitute
-</pre>
+<p>to get help</p>
+<pre class="literal-block">:help substitute</pre>
 </li>
 <li>
-<p class="first">one could pass the required files to 'args' and apply whatever
+<p>one could pass the required files to 'args' and apply whatever
 command to all these files using the command 'argdo'. First I will
 apply the substitute 's' command and then 'update' which will only
 save the modified files.</p>
-<pre class="literal-block">
-:args *.py
-:argdo :%s/old_text/new_text/g | update
-</pre>
+<pre class="literal-block">:args *.py
+:argdo :%s/old_text/new_text/g | update</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="using-python">
 <h2>using python</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://muharem.wordpress.com/2007/05/20/python-find-files-using-unix-shell-style-wildcards/">http://muharem.wordpress.com/2007/05/20/python-find-files-using-unix-shell-style-wildcards/</a></li>
+<li><p><a class="reference external" href="http://muharem.wordpress.com/2007/05/20/python-find-files-using-unix-shell-style-wildcards/">http://muharem.wordpress.com/2007/05/20/python-find-files-using-unix-shell-style-wildcards/</a></p></li>
 </ul>
 </div>
 </div>

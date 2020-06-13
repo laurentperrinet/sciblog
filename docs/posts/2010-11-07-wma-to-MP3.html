@@ -141,26 +141,24 @@ Mplayer has changed the syntax for pcm (wav) output. The pcm -aofile
     <div>
 <!-- TEASER_END -->
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul class="simple">
-<li><a class="reference external" href="http://seismic.ocean.dal.ca/~leblanc/pwp_wiki/static/upload/audio_conv.py">http://seismic.ocean.dal.ca/~leblanc/pwp_wiki/static/upload/audio_conv.py</a></li>
-<li>Mplayer has changed the syntax for pcm (wav) output. The pcm -aofile
+<li><p><a class="reference external" href="http://seismic.ocean.dal.ca/~leblanc/pwp_wiki/static/upload/audio_conv.py">http://seismic.ocean.dal.ca/~leblanc/pwp_wiki/static/upload/audio_conv.py</a></p></li>
+<li><p>Mplayer has changed the syntax for pcm (wav) output. The pcm -aofile
 &lt;filename&gt; options has changed to -ao pcm:file=&lt;filename&gt; which
 doesn't like dos filenames (c:\bla\...). so I'm using a real hack
 to make a tempfile in the current directory (for windows only, *nix
 works normally). This script uses the syntax for the newer version of
 Mplayer, if you need the older syntax comment out the current method
 near line 286 and uncomment the one above it. This should be pretty
-clear when looking at the code.</li>
+clear when looking at the code.</p></li>
 </ul>
-<pre class="literal-block">
-./audio_conv.py -h
+<pre class="literal-block">./audio_conv.py -h
 ./audio_conv.py  -i "*.wma" -r --to-mp3 --dry-run
 ./audio_conv.py  -i "*.wma" -r --to-mp3
-./audio_conv.py  -i "*.wma" -r --to-mp3 --normalize --delete
-</pre>
+./audio_conv.py  -i "*.wma" -r --to-mp3 --normalize --delete</pre>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

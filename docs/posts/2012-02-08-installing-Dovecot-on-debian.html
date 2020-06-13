@@ -32,11 +32,8 @@ MathJax.Hub.Config({
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2012-02-08-installing-Dovecot-on-debian.html">
 <meta property="og:description" content="master howto:
 https://trac.macports.org/wiki/howto/SetupDovecot
-
 Install
-
 sudo aptitude install dovecot
-
 
 
 
@@ -46,9 +43,9 @@ This post is certainly obsolete...
 
 
 Configure
-
 sudo vim /etc/dovecot/dovecot.conf
-">
+
+Min">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-02-08T13:36:57+01:00">
 <meta property="article:tag" content="sciblog">
@@ -153,33 +150,26 @@ sudo vim /etc/dovecot/dovecot.conf
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul>
+<li><p>master howto:
+<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p></li>
 <li>
-<p class="first">master howto:
-<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p>
-</li>
-<li>
-<p class="first">Install</p>
-<pre class="literal-block">
-sudo aptitude install dovecot
-</pre>
+<p>Install</p>
+<pre class="literal-block">sudo aptitude install dovecot</pre>
 </li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">Configure</p>
-<pre class="literal-block">
-sudo vim /etc/dovecot/dovecot.conf
-</pre>
+<p>Configure</p>
+<pre class="literal-block">sudo vim /etc/dovecot/dovecot.conf</pre>
 </li>
 <li>
-<p class="first">Mine reads (it's just meant to access imap files from the local mail
+<p>Mine reads (it's just meant to access imap files from the local mail
 server and not to serve outside the localhost):</p>
-<pre class="literal-block">
-protocols = imaps
+<pre class="literal-block">protocols = imaps
 listen = localhost:10943
 mail_location = maildir:~/Maildir
 protocol imap {
@@ -187,14 +177,11 @@ protocol imap {
 }
 ssl_disable = no
 ssl_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
-ssl_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
-</pre>
+ssl_key_file = /etc/ssl/private/ssl-cert-snakeoil.key</pre>
 </li>
 <li>
-<p class="first">Reload</p>
-<pre class="literal-block">
-sudo service dovecot restart
-</pre>
+<p>Reload</p>
+<pre class="literal-block">sudo service dovecot restart</pre>
 </li>
 </ul>
 </div>

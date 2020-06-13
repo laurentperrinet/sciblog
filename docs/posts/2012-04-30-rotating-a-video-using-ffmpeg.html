@@ -33,16 +33,13 @@ MathJax.Hub.Config({
 <meta property="og:description" content='Easy transformations of videos:
 
 turn to the right
-
 ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19.31.32_right.mov
 
 
 
 
-
 turn to the left
-
-ffmpeg -i  2012-04-29\ 19.31'>
+ffmpeg -i  2012-04-29\ 19.31.32'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-04-30T13:36:57+02:00">
 <meta property="article:tag" content="sciblog">
@@ -148,29 +145,22 @@ ffmpeg -i  2012-04-29\ 19.31'>
 <p>Easy transformations of videos:</p>
 <ul>
 <li>
-<p class="first">turn to the right</p>
-<pre class="literal-block">
-ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19.31.32_right.mov
-</pre>
+<p>turn to the right</p>
+<pre class="literal-block">ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19.31.32_right.mov</pre>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">turn to the left</p>
-<pre class="literal-block">
-ffmpeg -i  2012-04-29\ 19.31.32.mov  -vf "transpose=3" -sameq 2012-04-29\ 19.31.32_left.mov
-</pre>
+<p>turn to the left</p>
+<pre class="literal-block">ffmpeg -i  2012-04-29\ 19.31.32.mov  -vf "transpose=3" -sameq 2012-04-29\ 19.31.32_left.mov</pre>
 </li>
 <li>
-<p class="first">upside down</p>
-<pre class="literal-block">
-ffmpeg -i  2012-04-29\ 19.31.32.mov  -vf "transpose=2" -sameq 2012-04-29\ 19.31.32_left.mov
-</pre>
+<p>upside down</p>
+<pre class="literal-block">ffmpeg -i  2012-04-29\ 19.31.32.mov  -vf "transpose=2" -sameq 2012-04-29\ 19.31.32_left.mov</pre>
 </li>
 <li>
-<p class="first">made some scripts:</p>
-<pre class="literal-block">
-$ vim ~/bin/video_rotate.sh
+<p>made some scripts:</p>
+<pre class="literal-block">$ vim ~/bin/video_rotate.sh
 $ chmod +x ~/bin/video_rotate.sh
 
 $ cat  ~/bin/video_rotate.sh
@@ -180,8 +170,7 @@ IFS=$'\n'
 ffmpeg  -i $1 -v 0  -vf "transpose=$2"  -qscale 0 -y tmp.mov &amp;&amp; mv tmp.mov $1
 IFS=$ORIGINAL_IFS
 
-$ video_rotate.sh 2012-04-29_19.31.32.mov 1
-</pre>
+$ video_rotate.sh 2012-04-29_19.31.32.mov 1</pre>
 </li>
 </ul>
 </div>

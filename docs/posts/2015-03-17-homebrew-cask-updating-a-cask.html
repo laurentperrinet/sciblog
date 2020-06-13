@@ -31,13 +31,10 @@ MathJax.Hub.Config({
 <meta property="og:title" content="homebrew cask : updating an existing cask">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2015-03-17-homebrew-cask-updating-a-cask.html">
 <meta property="og:description" content="A new version of owncloud is out, I will try today to push that new infomation to http://caskroom.io/
-
 I will base things on this previous contribution
-
 set-up variables
 
-
-cd $(brew --prefix)/Library/">
+cd $(brew --prefix)/Library/Tap">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-03-17T13:36:57+01:00">
 <meta property="article:tag" content="homebrew">
@@ -143,85 +140,63 @@ cd $(brew --prefix)/Library/">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul>
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base things on this <a class="reference external" href="2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">creating a new branch for his project</p>
-<pre class="literal-block">
-git branches
+<p>creating a new branch for his project</p>
+<pre class="literal-block">git branches
 git remote add $github_user https://github.com/$github_user/homebrew-cask
-git checkout $project
-</pre>
+git checkout $project</pre>
 </li>
 <li>
-<p class="first">finding my information and feeding to homebrew</p>
+<p>finding my information and feeding to homebrew</p>
 <blockquote>
-<pre class="literal-block">
-cd /tmp
+<pre class="literal-block">cd /tmp
 wget https://download.owncloud.com/desktop/stable/ownCloud-1.8.0.2139.pkg
 sha256sum ownCloud-1.8.0.2139.pkg
 sha256sum ownCloud-1.8.0.2139.pkg | pbcopy
-brew cask edit owncloud
-</pre>
+brew cask edit owncloud</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">testing with homebrew:</p>
+<p>testing with homebrew:</p>
 <blockquote>
-<pre class="literal-block">
-brew cask install $project
-brew cask audit $project  --download
-</pre>
+<pre class="literal-block">brew cask install $project
+brew cask audit $project  --download</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">publishing results</p>
-<pre class="literal-block">
-git status
+<p>publishing results</p>
+<pre class="literal-block">git status
 git commit -am"upgrading owncloud"
-git push $github_user $project
-</pre>
+git push $github_user $project</pre>
 </li>
 <li>
-<p class="first">confirm the pull request</p>
-<pre class="literal-block">
-open https://github.com/$github_user/homebrew-cask
-</pre>
+<p>confirm the pull request</p>
+<pre class="literal-block">open https://github.com/$github_user/homebrew-cask</pre>
 </li>
 <li>
-<p class="first">come back to the <tt class="docutils literal">master</tt> branch</p>
-<pre class="literal-block">
-git checkout master
-</pre>
+<p>come back to the <code class="docutils literal">master</code> branch</p>
+<pre class="literal-block">git checkout master</pre>
 </li>
-<li>
-<p class="first">in the meanwhile, the change has been
+<li><p>in the meanwhile, the change has been
 <a class="reference external" href="https://github.com/caskroom/homebrew-cask/pull/10091">merged</a>
-and got approveded. Owncloud is updated!</p>
-</li>
+and got approveded. Owncloud is updated!</p></li>
 <li>
-<p class="first">moreover, I do not like the default pattern of ignored files and I edit it globally:</p>
+<p>moreover, I do not like the default pattern of ignored files and I edit it globally:</p>
 <blockquote>
-<pre class="literal-block">
-sudo vim /Applications/owncloud.app/Contents/Resources/sync-exclude.lst
-</pre>
+<pre class="literal-block">sudo vim /Applications/owncloud.app/Contents/Resources/sync-exclude.lst</pre>
 </blockquote>
 </li>
 </ul>

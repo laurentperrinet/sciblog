@@ -35,11 +35,12 @@ http://www.dakarlug.org/pat/scientifique/html/numpy.html
 
 
 
+
 Le tableau : l'outil de base du calcul scientifique
 
 Manipulation fréquente d'ensembles ordonnés discrets :
 
-temps discrétisé">
+temps discrétis">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-04-08T13:36:57+02:00">
 <meta property="article:tag" content="sciblog">
@@ -143,31 +144,32 @@ temps discrétisé">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>accessible sur
-<a class="reference external" href="http://www.dakarlug.org/pat/scientifique/html/numpy.html">http://www.dakarlug.org/pat/scientifique/html/numpy.html</a><!-- TEASER_END -->
+<li>
+<p>accessible sur
+<a class="reference external" href="http://www.dakarlug.org/pat/scientifique/html/numpy.html">http://www.dakarlug.org/pat/scientifique/html/numpy.html</a></p>
+<!-- TEASER_END -->
 </li>
 </ul>
 <div class="topic">
-<p class="topic-title first">Le tableau : l'outil de base du calcul scientifique</p>
+<p class="topic-title">Le tableau : l'outil de base du calcul scientifique</p>
 <img alt="simple_histo.jpg" class="align-right" src="simple_histo.jpg"><p>Manipulation fréquente d'<strong>ensembles ordonnés discrets</strong> :</p>
 <ul class="simple">
-<li>temps discrétisé d'une expérience/simulation</li>
-<li>signal enregistré par un appareil de mesure</li>
-<li>pixels d'une image, ...</li>
+<li><p>temps discrétisé d'une expérience/simulation</p></li>
+<li><p>signal enregistré par un appareil de mesure</p></li>
+<li><p>pixels d'une image, ...</p></li>
 </ul>
 <p>Le module <strong>Numpy</strong> permet de</p>
 <ul class="simple">
-<li>créer d'un coup ces ensembles de données</li>
-<li>réaliser des opérations en "batch" sur les tableaux de données (pas
-de boucle sur les éléments).</li>
+<li><p>créer d'un coup ces ensembles de données</p></li>
+<li><p>réaliser des opérations en "batch" sur les tableaux de données (pas
+de boucle sur les éléments).</p></li>
 </ul>
-<p>Tableau de données := <tt class="docutils literal">numpy.ndarray</tt></p>
+<p>Tableau de données := <code class="docutils literal">numpy.ndarray</code></p>
 </div>
 <div class="section" id="la-creation-de-tableaux-de-donnees-numpy">
 <h2>La création de tableaux de données Numpy</h2>
 <p>Un petit exemple pour commencer:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; import numpy as np
+<pre class="literal-block">&gt;&gt;&gt; import numpy as np
 &gt;&gt;&gt; a = np.array([0, 1, 2])
 &gt;&gt;&gt; a
 array([0, 1, 2])
@@ -176,36 +178,30 @@ array([0, 1, 2])
 &gt;&gt;&gt; b = np.array([[0., 1.], [2., 3.]])
 &gt;&gt;&gt; b
 array([[ 0.,  1.],
-       [ 2.,  3.]])
-</pre>
+       [ 2.,  3.]])</pre>
 <p>Dans la pratique, on rentre rarement les éléments un par un...</p>
 <blockquote>
 <ul>
 <li>
-<p class="first">Valeurs espacées régulièrement:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; import numpy as np
+<p>Valeurs espacées régulièrement:</p>
+<pre class="literal-block">&gt;&gt;&gt; import numpy as np
 &gt;&gt;&gt; a = np.arange(10) # de 0 a n-1
 &gt;&gt;&gt; a
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 &gt;&gt;&gt; b = np.arange(1., 9., 2) # syntaxe : debut, fin, saut
 &gt;&gt;&gt; b
-array([ 1.,  3.,  5.,  7.])
-</pre>
+array([ 1.,  3.,  5.,  7.])</pre>
 <p>ou encore, en spécifiant le nombre de points:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; c = np.linspace(0, 1, 6)
+<pre class="literal-block">&gt;&gt;&gt; c = np.linspace(0, 1, 6)
 &gt;&gt;&gt; c
 array([ 0. ,  0.2,  0.4,  0.6,  0.8,  1. ])
 &gt;&gt;&gt; d = np.linspace(0, 1, 5, endpoint=False)
 &gt;&gt;&gt; d
-array([ 0. ,  0.2,  0.4,  0.6,  0.8])
-</pre>
+array([ 0. ,  0.2,  0.4,  0.6,  0.8])</pre>
 </li>
 <li>
-<p class="first">Constructeurs pour des tableaux classiques:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.ones((3,3))
+<p>Constructeurs pour des tableaux classiques:</p>
+<pre class="literal-block">&gt;&gt;&gt; a = np.ones((3,3))
 &gt;&gt;&gt; a
 array([[ 1.,  1.,  1.],
        [ 1.,  1.,  1.],
@@ -223,8 +219,7 @@ array([[ 0.,  0.],
 &gt;&gt;&gt; d
 array([[ 1.,  0.,  0.],
        [ 0.,  1.,  0.],
-       [ 0.,  0.,  1.]])
-</pre>
+       [ 0.,  0.,  1.]])</pre>
 </li>
 </ul>
 </blockquote>
@@ -234,46 +229,44 @@ array([[ 1.,  0.,  0.],
 <p>Maintenant que nous avons nos premiers tableaux de données, nous allons
 les visualiser. <strong>Matplotlib</strong> est un package de plot 2-D, on importe ces
 fonctions de la manière suivante</p>
-<pre class="literal-block">
-&gt;&gt;&gt; import pylab
+<pre class="literal-block">&gt;&gt;&gt; import pylab
 &gt;&gt;&gt; # ou
-&gt;&gt;&gt; from pylab import * # pour tout importer dans le namespace
-</pre>
-<p>Si vous avec lancé Ipython avec python(x,y), ou avec l'option <tt class="docutils literal">ipython
-<span class="pre">-pylab</span></tt> (sous linux), toutes les fonctions/objets de pylab ont déjà été
-importées, comme si on avait fait <tt class="docutils literal">from pylab import *</tt>. Dans la suite
-on suppose qu'on a fait <tt class="docutils literal">from pylab import *</tt> ou lancé <tt class="docutils literal">ipython
-<span class="pre">-pylab</span></tt>: on n'écrira donc pas <tt class="docutils literal">pylab.fonction()</tt> mais directement
-<tt class="docutils literal">fonction</tt>.</p>
+&gt;&gt;&gt; from pylab import * # pour tout importer dans le namespace</pre>
+<p>Si vous avec lancé Ipython avec python(x,y), ou avec l'option <code class="docutils literal">ipython
+<span class="pre">-pylab</span></code> (sous linux), toutes les fonctions/objets de pylab ont déjà été
+importées, comme si on avait fait <code class="docutils literal">from pylab import *</code>. Dans la suite
+on suppose qu'on a fait <code class="docutils literal">from pylab import *</code> ou lancé <code class="docutils literal">ipython
+<span class="pre">-pylab</span></code>: on n'écrira donc pas <code class="docutils literal">pylab.fonction()</code> mais directement
+<code class="docutils literal">fonction</code>.</p>
 <p><strong>Tracé de courbes 1-D</strong></p>
-<pre class="code python"><a name="rest_code_bee9879943bc49ca824ebddc095900c1-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># line plot</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95abd0c</span><span class="o">&gt;</span><span class="p">]</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">)</span> <span class="c1"># symboles ronds</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95b1c8c</span><span class="o">&gt;</span><span class="p">]</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">clf</span><span class="p">()</span> <span class="c1"># clear figure</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">loglog</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95abf6c</span><span class="o">&gt;</span><span class="p">]</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span> <span class="c1"># un peu petit</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-10"></a><span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x98923ec</span><span class="o">&gt;</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-11"></a><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span> <span class="c1"># plus gros</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-12"></a><span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x98923ec</span><span class="o">&gt;</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9892b8c</span><span class="o">&gt;</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-15"></a><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">grid</span><span class="p">()</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-16"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_bee9879943bc49ca824ebddc095900c1-17"></a><span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9b633cc</span><span class="o">&gt;</span>
+<pre class="code python"><a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># line plot</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95abd0c</span><span class="o">&gt;</span><span class="p">]</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">)</span> <span class="c1"># symboles ronds</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95b1c8c</span><span class="o">&gt;</span><span class="p">]</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">clf</span><span class="p">()</span> <span class="c1"># clear figure</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">loglog</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x95abf6c</span><span class="o">&gt;</span><span class="p">]</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span> <span class="c1"># un peu petit</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-10"></a><span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x98923ec</span><span class="o">&gt;</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-11"></a><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span> <span class="c1"># plus gros</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-12"></a><span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x98923ec</span><span class="o">&gt;</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9892b8c</span><span class="o">&gt;</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-15"></a><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">grid</span><span class="p">()</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-16"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_1a9f2c3ec0a04f9db26b5174c947e489-17"></a><span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9b633cc</span><span class="o">&gt;</span>
 </pre>
 <img alt="plot.png" class="align-center" src="plot.png"><p><strong>Tableaux 2-D</strong> (images par exemple)</p>
-<pre class="code python"><a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="c1"># Tableaux 30x30 de nombres aleatoires entre 0 et 1</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9e954ac</span><span class="o">&gt;</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">gray</span><span class="p">()</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">hot</span><span class="p">()</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xa23972c</span><span class="o">&gt;</span>
-<a name="rest_code_ea9d4cb9ea204f6a9d09b9dc0460cef3-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span> <span class="c1"># on enleve les ticks et les labels</span>
+<pre class="code python"><a name="rest_code_c3ae43da9354453e90843e942a56455c-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="c1"># Tableaux 30x30 de nombres aleatoires entre 0 et 1</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x9e954ac</span><span class="o">&gt;</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">gray</span><span class="p">()</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">hot</span><span class="p">()</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xa23972c</span><span class="o">&gt;</span>
+<a name="rest_code_c3ae43da9354453e90843e942a56455c-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span> <span class="c1"># on enleve les ticks et les labels</span>
 </pre>
 <img alt="imshow.png" class="align-center" src="imshow.png"><p>Il y a bien d'autres fonctionnalités dans matplotlib : choix de couleurs
 ou des tailles de marqueurs, fontes latex, inserts à l'intérieur d'une
@@ -281,27 +274,25 @@ figure, histogrammes, etc.</p>
 <p>Pour aller plus loin :</p>
 <blockquote>
 <ul class="simple">
-<li>la documentation de matplotlib
-<a class="reference external" href="http://matplotlib.sourceforge.net/contents.html">http://matplotlib.sourceforge.net/contents.html</a>
-</li>
-<li>une gallerie d'exemples accompagnés du code source
-<a class="reference external" href="http://matplotlib.sourceforge.net/gallery.html">http://matplotlib.sourceforge.net/gallery.html</a>
-</li>
+<li><p>la documentation de matplotlib
+<a class="reference external" href="http://matplotlib.sourceforge.net/contents.html">http://matplotlib.sourceforge.net/contents.html</a></p></li>
+<li><p>une gallerie d'exemples accompagnés du code source
+<a class="reference external" href="http://matplotlib.sourceforge.net/gallery.html">http://matplotlib.sourceforge.net/gallery.html</a></p></li>
 </ul>
 </blockquote>
 <p><strong>Représentation en 3-D</strong></p>
 <p>Pour la visualisation 3-D, on utilise un autre package : <strong>Mayavi</strong>. Un
 exemple rapide : commencez par <strong>relancer ipython</strong> avec les options
 <strong>ipython -pylab -wthread</strong></p>
-<pre class="code python"><a name="rest_code_74572b147fd24d608794e43a5de9f89b-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enthought.mayavi</span> <span class="kn">import</span> <span class="n">mlab</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-3"></a><span class="n">get</span> <span class="n">fences</span> <span class="n">failed</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-4"></a><span class="n">param</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="mi">0</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xcb2677c</span><span class="o">&gt;</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">surf</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-7"></a><span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">Surface</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xd0862fc</span><span class="o">&gt;</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
-<a name="rest_code_74572b147fd24d608794e43a5de9f89b-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xd07892c</span><span class="o">&gt;</span>
+<pre class="code python"><a name="rest_code_be697c10d6b442aeb8017155b5fe2088-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enthought.mayavi</span> <span class="kn">import</span> <span class="n">mlab</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-3"></a><span class="n">get</span> <span class="n">fences</span> <span class="n">failed</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-4"></a><span class="n">param</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="mi">0</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xcb2677c</span><span class="o">&gt;</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">surf</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-7"></a><span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">Surface</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xd0862fc</span><span class="o">&gt;</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">mlab</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<a name="rest_code_be697c10d6b442aeb8017155b5fe2088-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">enthought</span><span class="o">.</span><span class="n">mayavi</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xd07892c</span><span class="o">&gt;</span>
 </pre>
 <img alt="surf.png" class="align-center" src="surf.png"><p>La fenêtre mayavi/mlab qui s'ouvre est interactive : en cliquant sur le
 bouton gauche de la souris vous pouvez faire tourner l'image, on peut
@@ -312,21 +303,18 @@ zoomer avec la molette, etc.</p>
 <div class="section" id="indexage">
 <h2>Indexage</h2>
 <p>On peut accéder aux éléments des tableaux Numpy (indexer) d'une manière
-similaire que pour les autres séquences Python (<tt class="docutils literal">list</tt>, <tt class="docutils literal">tuple</tt>)</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+similaire que pour les autres séquences Python (<code class="docutils literal">list</code>, <code class="docutils literal">tuple</code>)</p>
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 &gt;&gt;&gt; a[0], a[2], a[-1]
-(0, 2, 9)
-</pre>
+(0, 2, 9)</pre>
 <p>Attention ! L'indexage commence à partir de 0, comme pour les autres
 séquences Python (et comme en C/C++). En Fortran ou Matlab, l'indexage
 commence à 1.</p>
 <p>Pour les tableaux multidimensionnels, l'indice d'un élément est donné par
 un n-uplet d'entiers</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.diag(np.arange(5))
+<pre class="literal-block">&gt;&gt;&gt; a = np.diag(np.arange(5))
 &gt;&gt;&gt; a
 array([[0, 0, 0, 0, 0],
        [0, 1, 0, 0, 0],
@@ -343,55 +331,45 @@ array([[ 0,  0,  0,  0,  0],
        [ 0,  0,  0,  3,  0],
        [ 0,  0,  0,  0,  4]])
 &gt;&gt;&gt; a[1]
-array([0, 1, 0, 0, 0])
-</pre>
+array([0, 1, 0, 0, 0])</pre>
 <p>A retenir :</p>
 <ul class="simple">
-<li>En 2-D, la première dimension correspond aux lignes, la seconde aux
-colonnes.</li>
-<li>Pour un tableau <tt class="docutils literal">a</tt> à plus qu'une dimension,`a[0]` est interprété
-en prenant tous les éléments dans les dimensions non-spécifiés.</li>
+<li><p>En 2-D, la première dimension correspond aux lignes, la seconde aux
+colonnes.</p></li>
+<li><p>Pour un tableau <code class="docutils literal">a</code> à plus qu'une dimension,`a[0]` est interprété
+en prenant tous les éléments dans les dimensions non-spécifiés.</p></li>
 </ul>
 </div>
 <div class="section" id="slicing-parcours-regulier-des-elements">
 <h2>Slicing (parcours régulier des éléments)</h2>
 <p>Comme l'indexage, similaire au slicing des autres séquences Python:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 &gt;&gt;&gt; a[2:9:3] # [début:fin:pas]
-array([2, 5, 8])
-</pre>
+array([2, 5, 8])</pre>
 <p>Attention, le dernier indice n'est pas inclus</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[:4]
-array([0, 1, 2, 3])
-</pre>
-<p><tt class="docutils literal">début:fin:pas</tt> est un objet <tt class="docutils literal">slice</tt>, qui représente l'ensemble d'indices
-<tt class="docutils literal">range(début, fin, pas)</tt>. On peut créer explicitement un <tt class="docutils literal">slice</tt></p>
-<pre class="literal-block">
-&gt;&gt;&gt; sl = slice(1, 9, 2)
+<pre class="literal-block">&gt;&gt;&gt; a[:4]
+array([0, 1, 2, 3])</pre>
+<p><code class="docutils literal">début:fin:pas</code> est un objet <code class="docutils literal">slice</code>, qui représente l'ensemble d'indices
+<code class="docutils literal">range(début, fin, pas)</code>. On peut créer explicitement un <code class="docutils literal">slice</code></p>
+<pre class="literal-block">&gt;&gt;&gt; sl = slice(1, 9, 2)
 &gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; b = 2*a + 1
 &gt;&gt;&gt; a, b
 (array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), array([ 1,  3,  5,  7,  9, 11, 13, 15, 17, 19]))
 &gt;&gt;&gt; a[sl], b[sl]
-(array([1, 3, 5, 7]), array([ 3,  7, 11, 15]))
-</pre>
+(array([1, 3, 5, 7]), array([ 3,  7, 11, 15]))</pre>
 <p>On n'est pas obligé de spécifier à la fois le début (indice 0 par
 défaut), la fin (dernier indice par défaut) et le pas (1 par défaut):</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[1:3]
+<pre class="literal-block">&gt;&gt;&gt; a[1:3]
 array([1, 2])
 &gt;&gt;&gt; a[::2]
 array([0, 2, 4, 6, 8])
 &gt;&gt;&gt; a[3:]
-array([3, 4, 5, 6, 7, 8, 9])
-</pre>
+array([3, 4, 5, 6, 7, 8, 9])</pre>
 <p>Et bien sûr, ça marche pour les tableaux à plusieurs dimensions:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.eye(5)
+<pre class="literal-block">&gt;&gt;&gt; a = np.eye(5)
 &gt;&gt;&gt; a
 array([[ 1.,  0.,  0.,  0.,  0.],
        [ 0.,  1.,  0.,  0.,  0.],
@@ -400,27 +378,23 @@ array([[ 1.,  0.,  0.,  0.,  0.],
        [ 0.,  0.,  0.,  0.,  1.]])
 &gt;&gt;&gt; a[2:4,:3] #2è et 3è lignes, trois premières colonnes
 array([[ 0.,  0.,  1.],
-       [ 0.,  0.,  0.]])
-</pre>
+       [ 0.,  0.,  0.]])</pre>
 <p>On peut changer la valeur de tous les éléments indexés par une slice de
 façon très simple</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[:3,:3] = 4
+<pre class="literal-block">&gt;&gt;&gt; a[:3,:3] = 4
 &gt;&gt;&gt; a
 array([[ 4.,  4.,  4.,  0.,  0.],
        [ 4.,  4.,  4.,  0.,  0.],
        [ 4.,  4.,  4.,  0.,  0.],
        [ 0.,  0.,  0.,  1.,  0.],
-       [ 0.,  0.,  0.,  0.,  1.]])
-</pre>
+       [ 0.,  0.,  0.,  0.,  1.]])</pre>
 <p>Une petite illustration en résumé de l'indexage et du slicing avec
 Numpy...</p>
 <img alt="numpy_indexing.png" class="align-center" src="numpy_indexing.png"><p>Une opération de slicing crée une <strong>vue</strong> (<strong>view</strong>) du tableau
 d'origine, c'est-à-dire une manière d'aller lire dans la mémoire. Le
 tableau d'origine n'est donc pas copié. <strong>Quand on modifie la vue, on
 modife aussi le tableau d'origine.</strong>:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 &gt;&gt;&gt; b = a[::2]; b
@@ -429,13 +403,11 @@ array([0, 2, 4, 6, 8])
 &gt;&gt;&gt; b
 array([12,  2,  4,  6,  8])
 &gt;&gt;&gt; a # a a été modifié aussi !
-array([12,  1,  2,  3,  4,  5,  6,  7,  8,  9])
-</pre>
+array([12,  1,  2,  3,  4,  5,  6,  7,  8,  9])</pre>
 <p>Ce comportement peut surprendre au début... mais est bien pratique pour
 gérer la mémoire de façon économe.</p>
 <p>Si on veut faire une copie différente du tableau d'origine</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 &gt;&gt;&gt; b = np.copy(a[::2]); b
@@ -444,15 +416,13 @@ array([0, 2, 4, 6, 8])
 &gt;&gt;&gt; b
 array([12,  2,  4,  6,  8])
 &gt;&gt;&gt; a # a n'a pas été modifié
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</pre>
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
 </div>
 <div class="section" id="manipuler-la-forme-des-tableaux">
 <h2>Manipuler la forme des tableaux</h2>
-<p>On obtient la forme d'un tableau grâce à la méthode <tt class="docutils literal">ndarray.shape</tt> qui
+<p>On obtient la forme d'un tableau grâce à la méthode <code class="docutils literal">ndarray.shape</code> qui
 retourne un tuple des dimensions du tableau</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a.shape
 (10,)
 &gt;&gt;&gt; b = np.ones((3,4))
@@ -462,21 +432,17 @@ retourne un tuple des dimensions du tableau</p>
 3
 &gt;&gt;&gt; # et on peut aussi faire
 &gt;&gt;&gt; np.shape(b)
-(3, 4)
-</pre>
+(3, 4)</pre>
 <p>Par ailleurs on obtient la longueur de la première dimension avec
-<tt class="docutils literal">np.alen</tt> (par analogie avec <tt class="docutils literal">len</tt> pour une liste) et le nombre total
-d'éléments avec <tt class="docutils literal">ndarray.size</tt>:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; np.alen(b)
+<code class="docutils literal">np.alen</code> (par analogie avec <code class="docutils literal">len</code> pour une liste) et le nombre total
+d'éléments avec <code class="docutils literal">ndarray.size</code>:</p>
+<pre class="literal-block">&gt;&gt;&gt; np.alen(b)
 3
 &gt;&gt;&gt; b.size
-12
-</pre>
+12</pre>
 <p>Il existe plusieurs fonctions Numpy qui permettent de créer un tableau de
 taille différente à partir d'un tableau de départ.:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(36)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(36)
 &gt;&gt;&gt; b = a.reshape((6, 6))
 &gt;&gt;&gt; b
 array([[ 0,  1,  2,  3,  4,  5],
@@ -484,19 +450,15 @@ array([[ 0,  1,  2,  3,  4,  5],
        [12, 13, 14, 15, 16, 17],
        [18, 19, 20, 21, 22, 23],
        [24, 25, 26, 27, 28, 29],
-       [30, 31, 32, 33, 34, 35]])
-</pre>
-<p><tt class="docutils literal">ndarray.reshape</tt> renvoie une vue, et pas une copie</p>
-<pre class="literal-block">
-&gt;&gt;&gt; b[0,0] = 10
+       [30, 31, 32, 33, 34, 35]])</pre>
+<p><code class="docutils literal">ndarray.reshape</code> renvoie une vue, et pas une copie</p>
+<pre class="literal-block">&gt;&gt;&gt; b[0,0] = 10
 &gt;&gt;&gt; a
 array([10,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
        17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
-       34, 35])
-</pre>
-<p>On peut aussi créer un tableau avec un nombre d'éléments différents avec <tt class="docutils literal">ndarray.resize</tt>:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(36)
+       34, 35])</pre>
+<p>On peut aussi créer un tableau avec un nombre d'éléments différents avec <code class="docutils literal">ndarray.resize</code>:</p>
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(36)
 &gt;&gt;&gt; a.resize((4,2))
 &gt;&gt;&gt; a
 array([[0, 1],
@@ -508,11 +470,9 @@ array([[0, 1],
 &gt;&gt;&gt; b
 array([[0, 1],
        [2, 3],
-       [0, 0]])
-</pre>
+       [0, 0]])</pre>
 <p>Ou paver un grand tableau à partir d'un tableau plus petit</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(4).reshape((2,2))
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(4).reshape((2,2))
 &gt;&gt;&gt; a
 array([[0, 1],
        [2, 3]])
@@ -520,8 +480,7 @@ array([[0, 1],
 array([[0, 1, 0, 1, 0, 1],
        [2, 3, 2, 3, 2, 3],
        [0, 1, 0, 1, 0, 1],
-       [2, 3, 2, 3, 2, 3]])
-</pre>
+       [2, 3, 2, 3, 2, 3]])</pre>
 </div>
 <div class="section" id="exercices-quelques-gammes-avec-les-tableaux-numpy">
 <h2>Exercices : quelques gammes avec les tableaux numpy</h2>
@@ -529,22 +488,17 @@ array([[0, 1, 0, 1, 0, 1],
 opérations simples sur les tableaux (+/-/x/:), on peut facilement créer
 des tableaux de grande taille correspondant à des motifs variés.</p>
 <p><strong>Exemple</strong> : comment créer le tableau:</p>
-<pre class="literal-block">
-[[ 0  1  2  3  4]
+<pre class="literal-block">[[ 0  1  2  3  4]
  [ 5  6  7  8  9]
  [10 11 12 13  0]
  [15 16 17 18 19]
- [20 21 22 23 24]]
-</pre>
+ [20 21 22 23 24]]</pre>
 <p><strong>Réponse</strong></p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(25).reshape((5,5))
-&gt;&gt;&gt; a[2, 4] = 0
-</pre>
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(25).reshape((5,5))
+&gt;&gt;&gt; a[2, 4] = 0</pre>
 <p><strong>Exercices</strong> : créer les tableaux suivants de la manière la plus simple
 possible (pas élément par élement)</p>
-<pre class="literal-block">
-[[ 1.  1.  1.  1.]
+<pre class="literal-block">[[ 1.  1.  1.  1.]
  [ 1.  1.  1.  1.]
  [ 1.  1.  1.  2.]
  [ 1.  6.  1.  1.]]
@@ -554,8 +508,7 @@ possible (pas élément par élement)</p>
  [0 3 0 0 0]
  [0 0 4 0 0]
  [0 0 0 5 0]
- [0 0 0 0 6]]
-</pre>
+ [0 0 0 0 6]]</pre>
 </div>
 <div class="section" id="de-vraies-donnees-lire-et-ecrire-des-tableaux-dans-des-fichiers">
 <h2>De "vraies données" : lire et écrire des tableaux dans des fichiers</h2>
@@ -569,14 +522,11 @@ tableaux qu'on a obtenus dans des fichiers.</p>
 <p>Pour se déplacer dans une arborescence de fichiers :</p>
 <blockquote>
 <ul>
+<li><p>utiliser les fonctionnalités d'Ipython : <code class="docutils literal">cd</code>, <code class="docutils literal">pwd</code>,
+tab-completion.</p></li>
 <li>
-<p class="first">utiliser les fonctionnalités d'Ipython : <tt class="docutils literal">cd</tt>, <tt class="docutils literal">pwd</tt>,
-tab-completion.</p>
-</li>
-<li>
-<p class="first">modules os (routines système) et os.path (gestion des chemins)</p>
-<pre class="literal-block">
-&gt;&gt;&gt; import os, os.path
+<p>modules os (routines système) et os.path (gestion des chemins)</p>
+<pre class="literal-block">&gt;&gt;&gt; import os, os.path
 &gt;&gt;&gt; current_dir = os.getcwd()
 &gt;&gt;&gt; current_dir
 '/home/gouillar/sandbox'
@@ -587,56 +537,44 @@ tab-completion.</p>
 ...     os.mkdir('data')
 ...     print "creation du repertoire 'data'"
 ...
-&gt;&gt;&gt; os.chdir(data_dir) # ou dans Ipython : cd data
-</pre>
+&gt;&gt;&gt; os.chdir(data_dir) # ou dans Ipython : cd data</pre>
 </li>
 </ul>
 </blockquote>
 <p>On peut en fait se servir de Ipython comme d'un véritable shell grâce aux
-fonctionnalités d'Ipython et au module <tt class="docutils literal">os</tt>.</p>
+fonctionnalités d'Ipython et au module <code class="docutils literal">os</code>.</p>
 <p><strong>Ecrire un tableau de données dans un fichier</strong></p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(100)
-&gt;&gt;&gt; a = a.reshape((10, 10))
-</pre>
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(100)
+&gt;&gt;&gt; a = a.reshape((10, 10))</pre>
 <ul>
 <li>
-<p class="first">Ecriture dans un fichier texte (en ascii)</p>
-<pre class="literal-block">
-&gt;&gt;&gt; np.savetxt('data_a.txt', a)
-</pre>
+<p>Ecriture dans un fichier texte (en ascii)</p>
+<pre class="literal-block">&gt;&gt;&gt; np.savetxt('data_a.txt', a)</pre>
 </li>
 <li>
-<p class="first">Ecriture dans un fichier en binaire (extension <tt class="docutils literal">.npy</tt>)</p>
-<pre class="literal-block">
-&gt;&gt;&gt; np.save('data_a.npy', a)
-</pre>
+<p>Ecriture dans un fichier en binaire (extension <code class="docutils literal">.npy</code>)</p>
+<pre class="literal-block">&gt;&gt;&gt; np.save('data_a.npy', a)</pre>
 </li>
 </ul>
 <p><strong>Charger un tableau de données à partir d'un fichier</strong></p>
 <ul>
 <li>
-<p class="first">Lecture dans un fichier texte</p>
-<pre class="literal-block">
-&gt;&gt;&gt; b = np.loadtxt('data_a.txt')
-</pre>
+<p>Lecture dans un fichier texte</p>
+<pre class="literal-block">&gt;&gt;&gt; b = np.loadtxt('data_a.txt')</pre>
 </li>
 <li>
-<p class="first">Lecture dans un fichier binaire</p>
-<pre class="literal-block">
-&gt;&gt;&gt; c = np.load('data_a.npy')
-</pre>
+<p>Lecture dans un fichier binaire</p>
+<pre class="literal-block">&gt;&gt;&gt; c = np.load('data_a.npy')</pre>
 </li>
 </ul>
 <div class="topic">
-<p class="topic-title first">Pour lire les fichiers de données matlab</p>
-<p><tt class="docutils literal">scipy.io.loadmat</tt> : la structure matlab d'un fichier .mat est
+<p class="topic-title">Pour lire les fichiers de données matlab</p>
+<p><code class="docutils literal">scipy.io.loadmat</code> : la structure matlab d'un fichier .mat est
 stockée dans un dictionnaire.</p>
 </div>
 <p><strong>Pour sélectionner un fichier dans une liste</strong></p>
-<p>On va sauver chaque ligne de <tt class="docutils literal">a</tt> dans un fichier différent</p>
-<pre class="literal-block">
-&gt;&gt;&gt; for i, l in enumerate(a):
+<p>On va sauver chaque ligne de <code class="docutils literal">a</code> dans un fichier différent</p>
+<pre class="literal-block">&gt;&gt;&gt; for i, l in enumerate(a):
 ...     print i, l
 ...     np.savetxt('ligne_'+str(i), l)
 ...
@@ -649,20 +587,17 @@ stockée dans un dictionnaire.</p>
 6 [60 61 62 63 64 65 66 67 68 69]
 7 [70 71 72 73 74 75 76 77 78 79]
 8 [80 81 82 83 84 85 86 87 88 89]
-9 [90 91 92 93 94 95 96 97 98 99]
-</pre>
-<p>Pour obtenir une liste de tous les fichiers commençant par <tt class="docutils literal">ligne</tt>, on
-fait appel au module <tt class="docutils literal">glob</tt> qui "gobe" tous les chemins correspondant à
+9 [90 91 92 93 94 95 96 97 98 99]</pre>
+<p>Pour obtenir une liste de tous les fichiers commençant par <code class="docutils literal">ligne</code>, on
+fait appel au module <code class="docutils literal">glob</code> qui "gobe" tous les chemins correspondant à
 un motif. Exemple</p>
-<pre class="literal-block">
-&gt;&gt;&gt; import glob
+<pre class="literal-block">&gt;&gt;&gt; import glob
 &gt;&gt;&gt; filelist = glob.glob('ligne*')
 &gt;&gt;&gt; filelist
 ['ligne_0', 'ligne_1', 'ligne_2', 'ligne_3', 'ligne_4', 'ligne_5', 'ligne_6', 'ligne_7', 'ligne_8', 'ligne_9']
 &gt;&gt;&gt; # attention la liste n'est pas toujours ordonnee
 &gt;&gt;&gt; filelist.sort()
-&gt;&gt;&gt; l2 = np.loadtxt(filelist[2])
-</pre>
+&gt;&gt;&gt; l2 = np.loadtxt(filelist[2])</pre>
 <p>Remarque : il est aussi possible de créer des tableaux à partir de
 fichiers Excel/Calc, de fichiers hdf5, etc. (mais à l'aide de modules
 supplémentaires non décrits ici : xlrd, pytables, etc.).</p>
@@ -671,50 +606,43 @@ supplémentaires non décrits ici : xlrd, pytables, etc.).</p>
 <h2>Opérations mathématiques et statistiques simples sur les tableaux</h2>
 <p>Un certain nombre d'opérations sur les tableaux sont codées directement
 dans numpy (et sont donc en général très efficaces):</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a.min() # ou np.min(a)
 0
 &gt;&gt;&gt; a.max() # ou np.max(a)
 9
 &gt;&gt;&gt; a.sum() # ou np.sum(a)
-45
-</pre>
+45</pre>
 <p>Il est possible de réaliser l'opération le long d'un axe uniquement,
 plutôt que sur tous les éléments</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.array([[1, 3], [9, 6]])
+<pre class="literal-block">&gt;&gt;&gt; a = np.array([[1, 3], [9, 6]])
 &gt;&gt;&gt; a
 array([[1, 3],
        [9, 6]])
 &gt;&gt;&gt; a.mean(axis=0) # tableau contenant la moyenne de chaque colonne
 array([ 5. ,  4.5])
 &gt;&gt;&gt; a.mean(axis=1) # tableau contenant la moyenne de chaque ligne
-array([ 2. ,  7.5])
-</pre>
+array([ 2. ,  7.5])</pre>
 <p>Il y en a encore bien d'autres opérations possibles : on en découvrira
 quelques unes au fil de ce cours.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Les opérations arithmétiques sur les tableaux correspondent à des
 opérations élément par élément. En particulier, le produit n'est pas
 un produit matriciel (<strong>contrairement à Matlab</strong>) ! Le produit
-matriciel est fourni par <tt class="docutils literal">np.dot</tt>:</p>
-<pre class="last literal-block">
-&gt;&gt;&gt; a = np.ones((2,2))
+matriciel est fourni par <code class="docutils literal">np.dot</code>:</p>
+<pre class="literal-block">&gt;&gt;&gt; a = np.ones((2,2))
 &gt;&gt;&gt; a*a
 array([[ 1.,  1.],
        [ 1.,  1.]])
 &gt;&gt;&gt; np.dot(a,a)
 array([[ 2.,  2.],
-       [ 2.,  2.]])
-</pre>
+       [ 2.,  2.]])</pre>
 </div>
 <p><strong>Exemple</strong> : simulation de diffusion avec un marcheur aléatoire</p>
 <img alt="random_walk.png" class="align-center" src="random_walk.png"><p>Quelle est la distance typique d'un marcheur aléatoire à l'origine, après
 t sauts à droite ou à gauche ?</p>
-<img alt="random_walk_schema.png" class="align-center" src="random_walk_schema.png"><pre class="literal-block">
-&gt;&gt;&gt; nreal = 1000 # nombre de réalisations de la marche
+<img alt="random_walk_schema.png" class="align-center" src="random_walk_schema.png"><pre class="literal-block">&gt;&gt;&gt; nreal = 1000 # nombre de réalisations de la marche
 &gt;&gt;&gt; tmax = 200 # temps sur lequel on suit le marcheur
 &gt;&gt;&gt; # On tire au hasard tous les pas 1 ou -1 de la marche
 &gt;&gt;&gt; walk = 2 * ( np.random.random_integers(0, 1, (nreal,tmax)) - 0.5 )
@@ -724,44 +652,44 @@ array([-1.,  1.])
 &gt;&gt;&gt; cumwalk = np.cumsum(walk, axis=1) # axis = 1 : dimension du temps
 &gt;&gt;&gt; sq_distance = cumwalk**2
 &gt;&gt;&gt; # On moyenne dans le sens des réalisations
-&gt;&gt;&gt; mean_sq_distance = np.mean(sq_distance, axis=0)
-</pre>
-<pre class="code python"><a name="rest_code_2f2e7ebbbe9c439a81b0e9c20987103a-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">figure</span><span class="p">()</span>
-<a name="rest_code_2f2e7ebbbe9c439a81b0e9c20987103a-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">mean_sq_distance</span><span class="p">)</span>
-<a name="rest_code_2f2e7ebbbe9c439a81b0e9c20987103a-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">figure</span><span class="p">()</span>
-<a name="rest_code_2f2e7ebbbe9c439a81b0e9c20987103a-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_sq_distance</span><span class="p">))</span>
+&gt;&gt;&gt; mean_sq_distance = np.mean(sq_distance, axis=0)</pre>
+<pre class="code python"><a name="rest_code_ab6052840f0a4db9b0ca9577ef26b419-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">figure</span><span class="p">()</span>
+<a name="rest_code_ab6052840f0a4db9b0ca9577ef26b419-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">mean_sq_distance</span><span class="p">)</span>
+<a name="rest_code_ab6052840f0a4db9b0ca9577ef26b419-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">figure</span><span class="p">()</span>
+<a name="rest_code_ab6052840f0a4db9b0ca9577ef26b419-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_sq_distance</span><span class="p">))</span>
 </pre>
 <img alt="diffuse.png" class="align-center" src="diffuse.png" style="width: 750px;"><p>On retrouve bien que la distance grandit comme la racine carrée du temps
 !</p>
 <p><strong>Exercice</strong> : statistiques des femmes dans la recherche (données INSEE)</p>
 <ol class="arabic simple">
-<li>Récupérer les fichiers <tt class="docutils literal">organismes.txt</tt> et <tt class="docutils literal">pourcentage_femmes.txt</tt>
-(clé USB du cours ou <a class="reference external" href="http://www.dakarlug.org/pat/scientifique/data/">http://www.dakarlug.org/pat/scientifique/data/</a>).</li>
-<li>Créer un tableau <tt class="docutils literal">data</tt> en ouvrant le fichier <tt class="docutils literal">pourcentage_femmes.txt</tt>
-avec <tt class="docutils literal">np.loadtxt</tt>. Quelle est la taille de ce tableau ?</li>
-<li>Les colonnes correspondent aux années 2006 à 2001. Créer un tableau
-<tt class="docutils literal">annees</tt> (sans accent !) contenant les entiers correspondant à ces
-années.</li>
-<li>Les différentes lignes correspondent à différents organismes de
+<li><p>Récupérer les fichiers <code class="docutils literal">organismes.txt</code> et <code class="docutils literal">pourcentage_femmes.txt</code>
+(clé USB du cours ou <a class="reference external" href="http://www.dakarlug.org/pat/scientifique/data/">http://www.dakarlug.org/pat/scientifique/data/</a>).</p></li>
+<li><p>Créer un tableau <code class="docutils literal">data</code> en ouvrant le fichier <code class="docutils literal">pourcentage_femmes.txt</code>
+avec <code class="docutils literal">np.loadtxt</code>. Quelle est la taille de ce tableau ?</p></li>
+<li><p>Les colonnes correspondent aux années 2006 à 2001. Créer un tableau
+<code class="docutils literal">annees</code> (sans accent !) contenant les entiers correspondant à ces
+années.</p></li>
+<li><p>Les différentes lignes correspondent à différents organismes de
 recherche dont les noms sont stockés dans le fichier
-<tt class="docutils literal">organismes.txt</tt>. Créer un tableau <tt class="docutils literal">organisms</tt> en ouvrant ce
-fichier. <strong>Attention</strong> : comme <tt class="docutils literal">np.loadtxt</tt> crée par défaut des tableaux
+<code class="docutils literal">organismes.txt</code>. Créer un tableau <code class="docutils literal">organisms</code> en ouvrant ce
+fichier. <strong>Attention</strong> : comme <code class="docutils literal">np.loadtxt</code> crée par défaut des tableaux
 de flottant, il faut lui préciser qu'on veut créer un tableau de
-strings : <tt class="docutils literal">organisms = <span class="pre">np.loadtxt('organismes.txt',</span> dtype=str)</tt>
-</li>
-<li>Vérifier que le nombre de lignes de data est égal au nombre
-d'organismes.</li>
-<li>Quel est le pourcentage maximal de femmes dans tous les organismes,
-toutes années confondues ?</li>
-<li>Créer un tableau contenant la moyenne temporelle du pourcentage de
-femmes pour chaque organisme (i.e., faire la moyenne de <tt class="docutils literal">data</tt> suivant
-l'axe No 1).</li>
-<li>Quel organisme avait le pourcentage de femmes le plus élevé en 2004 ?
-(Indice np.argmax).</li>
-<li><dl class="first docutils">
+strings : <code class="docutils literal">organisms = <span class="pre">np.loadtxt('organismes.txt',</span> dtype=str)</code></p></li>
+<li><p>Vérifier que le nombre de lignes de data est égal au nombre
+d'organismes.</p></li>
+<li><p>Quel est le pourcentage maximal de femmes dans tous les organismes,
+toutes années confondues ?</p></li>
+<li><p>Créer un tableau contenant la moyenne temporelle du pourcentage de
+femmes pour chaque organisme (i.e., faire la moyenne de <code class="docutils literal">data</code> suivant
+l'axe No 1).</p></li>
+<li><p>Quel organisme avait le pourcentage de femmes le plus élevé en 2004 ?
+(Indice np.argmax).</p></li>
+<li><dl class="simple">
 <dt>Représenter un histogramme du pourcentage de femmes dans les</dt>
-<dd>différents organismes en 2006 (indice : np.histogram, puis bar ou
-plot de matplotlib pour la visualisation).</dd>
+<dd>
+<p>différents organismes en 2006 (indice : np.histogram, puis bar ou
+plot de matplotlib pour la visualisation).</p>
+</dd>
 </dl></li>
 </ol>
 </div>
@@ -771,8 +699,7 @@ plot de matplotlib pour la visualisation).</dd>
 de booléens (les <strong>masques</strong>) ou d'entiers : on appelle ces opérations plus
 évoluées du <em>fancy indexing</em>.</p>
 <p><strong>Les masques</strong></p>
-<pre class="literal-block">
-&gt;&gt;&gt; np.random.seed(3)
+<pre class="literal-block">&gt;&gt;&gt; np.random.seed(3)
 &gt;&gt;&gt; a = np.random.random_integers(0, 20, 15)
 &gt;&gt;&gt; a
 array([10,  3,  8,  0, 19, 10, 11,  9, 10,  6,  0, 20, 12,  7, 14])
@@ -782,50 +709,38 @@ array([False,  True, False,  True, False, False, False,  True, False,
 &gt;&gt;&gt; mask = (a%3 == 0)
 &gt;&gt;&gt; extract_from_a = a[mask] #on pourrait écrire directement a[a%3==0]
 &gt;&gt;&gt; extract_from_a #on extrait un sous-tableau grâce au masque
-array([ 3,  0,  9,  6,  0, 12])
-</pre>
+array([ 3,  0,  9,  6,  0, 12])</pre>
 <p>Extraire un sous-tableau avec un masque produit une copie de ce
 sous-tableau, et non une vue</p>
-<pre class="literal-block">
-&gt;&gt;&gt; extract_from_a = -1
+<pre class="literal-block">&gt;&gt;&gt; extract_from_a = -1
 &gt;&gt;&gt; a
-array([10,  3,  8,  0, 19, 10, 11,  9, 10,  6,  0, 20, 12,  7, 14])
-</pre>
+array([10,  3,  8,  0, 19, 10, 11,  9, 10,  6,  0, 20, 12,  7, 14])</pre>
 <p>L'indexation grâce masques peut être très utile pour l'assignation d'une
 nouvelle valeur à un sous-tableau</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[mask] = 0
+<pre class="literal-block">&gt;&gt;&gt; a[mask] = 0
 &gt;&gt;&gt; a
-array([10,  0,  8,  0, 19, 10, 11,  0, 10,  0,  0, 20,  0,  7, 14])
-</pre>
+array([10,  0,  8,  0, 19, 10, 11,  0, 10,  0,  0, 20,  0,  7, 14])</pre>
 <p><strong>Indexer avec un tableau d'entiers</strong></p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; a[::2] +=3 #pour ne pas avoir toujours le même np.arange(10)...
 &gt;&gt;&gt; a
 array([ 3,  1,  5,  3,  7,  5,  9,  7, 11,  9])
 &gt;&gt;&gt; a[[2, 5, 1, 8]] # ou a[np.array([2, 5, 1, 8])]
-array([ 5,  5,  1, 11])
-</pre>
+array([ 5,  5,  1, 11])</pre>
 <p>On peut indexer avec des tableaux d'entiers où le même indice est répété
 plusieurs fois</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[[2, 3, 2, 4, 2]]
-array([5, 3, 5, 7, 5])
-</pre>
+<pre class="literal-block">&gt;&gt;&gt; a[[2, 3, 2, 4, 2]]
+array([5, 3, 5, 7, 5])</pre>
 <p>On peut assigner de nouvelles valeurs avec ce type d'indexation</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[[9, 7]] = -10
+<pre class="literal-block">&gt;&gt;&gt; a[[9, 7]] = -10
 &gt;&gt;&gt; a
 array([  3,   1,   5,   3,   7,   5,   9, -10,  11, -10])
 &gt;&gt;&gt; a[[2, 3, 2, 4, 2]] +=1
 &gt;&gt;&gt; a
-array([  3,   1,   6,   4,   8,   5,   9, -10,  11, -10])
-</pre>
+array([  3,   1,   6,   4,   8,   5,   9, -10,  11, -10])</pre>
 <p>Quand on crée un tableau en indexant avec un tableau d'entiers, le
 nouveau tableau a la même forme que le tableau d'entiers</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(10)
 &gt;&gt;&gt; idx = np.array([[3, 4], [9, 7]])
 &gt;&gt;&gt; a[idx]
 array([[3, 4],
@@ -843,42 +758,38 @@ array([[ 0,  1,  2,  3],
 ...              [3,3] ] )
 &gt;&gt;&gt; a[i,j]
 array([[ 2,  5],
-       [ 7, 11]])
-</pre>
+       [ 7, 11]])</pre>
 <img alt="numpy_fancy_indexing.png" class="align-center" src="numpy_fancy_indexing.png"><p><strong>Exercice</strong></p>
 <p>Reprenons nos données de statistiques du pourcentage de femmes dans la
-recherche (tableaux <tt class="docutils literal">data</tt> et <tt class="docutils literal">organisms</tt>)</p>
+recherche (tableaux <code class="docutils literal">data</code> et <code class="docutils literal">organisms</code>)</p>
 <ol class="arabic simple">
-<li>Créer un tableau <tt class="docutils literal">sup30</tt> de même taille que <tt class="docutils literal">data</tt> valant 1 si la
-valeur de <tt class="docutils literal">data</tt> est supérieure à 30%, et 0 sinon.</li>
-<li>Créez un tableau contenant l'organisme avec le pourcentage de femmes
-le plus élévé de chaque année.</li>
+<li><p>Créer un tableau <code class="docutils literal">sup30</code> de même taille que <code class="docutils literal">data</code> valant 1 si la
+valeur de <code class="docutils literal">data</code> est supérieure à 30%, et 0 sinon.</p></li>
+<li><p>Créez un tableau contenant l'organisme avec le pourcentage de femmes
+le plus élévé de chaque année.</p></li>
 </ol>
 </div>
 <div class="section" id="le-broadcasting">
 <h2>Le broadcasting</h2>
-<p>Les opérations élémentaires sur les tableaux <tt class="docutils literal">numpy</tt> (addition, etc.)
+<p>Les opérations élémentaires sur les tableaux <code class="docutils literal">numpy</code> (addition, etc.)
 sont faites élément par élément et opèrent donc des tableaux
 de même taille. Il est néanmoins possible de faire des opérations sur des
-tableaux de taille différente si <tt class="docutils literal">numpy`</tt> arrive à transformer les
+tableaux de taille différente si <code class="docutils literal">numpy`</code> arrive à transformer les
 tableaux pour qu'ils aient tous la même taille : on appelle cette
 transformation le <strong>broadcasting</strong> (jeu de mots intraduisible en
 français).</p>
 <p>L'image ci-dessous donne un exemple de</p>
 <img alt="numpy_broadcasting.png" class="align-center" src="numpy_broadcasting.png"><p>ce qui donne dans Ipython:</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(0, 40, 10)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(0, 40, 10)
 &gt;&gt;&gt; b = np.arange(0, 3)
 &gt;&gt;&gt; a = a.reshape((4,1)) #il faut transformer a en tableau "vertical"
 &gt;&gt;&gt; a + b
 array([[ 0,  1,  2],
        [10, 11, 12],
        [20, 21, 22],
-       [30, 31, 32]])
-</pre>
+       [30, 31, 32]])</pre>
 <p>On a déjà utilisé le broadcasting sans le savoir</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(20).reshape((4,5))
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(20).reshape((4,5))
 &gt;&gt;&gt; a
 array([[ 0,  1,  2,  3,  4],
        [ 5,  6,  7,  8,  9],
@@ -890,12 +801,10 @@ array([[ 0,  1,  2,  3,  4],
 array([[ 1,  2,  3,  4,  5],
        [ 1,  2,  3,  4,  5],
        [ 1,  2,  3,  4,  5],
-       [15, 16, 17, 18, 19]])
-</pre>
+       [15, 16, 17, 18, 19]])</pre>
 <p>On peut même utiliser en même temps le fancy indexing et le broadcasting
 : reprenons un exemple déjà utilisé plus haut</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a = np.arange(12).reshape(3,4)
+<pre class="literal-block">&gt;&gt;&gt; a = np.arange(12).reshape(3,4)
 &gt;&gt;&gt; a
 array([[ 0,  1,  2,  3],
        [ 4,  5,  6,  7],
@@ -904,8 +813,7 @@ array([[ 0,  1,  2,  3],
 ...              [1,2] ] )
 &gt;&gt;&gt; a[i, 2] # même chose que a[i, 2*np.ones((2,2), dtype=int)]
 array([[ 2,  6],
-       [ 6, 10]])
-</pre>
+       [ 6, 10]])</pre>
 <p>Le broadcasting peut sembler un peu magique, mais il est en fait assez
 naturel de l'utiliser dès qu'on veut veut résoudre un problème où on
 obtient en sortie un tableau avec plus de dimensions que les données en
@@ -914,8 +822,7 @@ entrée.</p>
 les villes de la route 66 : Chicago, Springfield, Saint-Louis, Tulsa,
 Oklahoma City, Amarillo, Santa Fe, Albucquerque, Flagstaff et Los
 Angeles.</p>
-<pre class="literal-block">
-&gt;&gt;&gt; mileposts = np.array([0, 198, 303, 736, 871, 1175, 1475, 1544,
+<pre class="literal-block">&gt;&gt;&gt; mileposts = np.array([0, 198, 303, 736, 871, 1175, 1475, 1544,
 ...                         1913, 2448])
 &gt;&gt;&gt; tableau_de_distances = np.abs(mileposts - mileposts[:,np.newaxis])
 &gt;&gt;&gt; tableau_de_distances
@@ -928,50 +835,46 @@ array([[   0,  198,  303,  736,  871, 1175, 1475, 1544, 1913, 2448],
        [1475, 1277, 1172,  739,  604,  300,    0,   69,  438,  973],
        [1544, 1346, 1241,  808,  673,  369,   69,    0,  369,  904],
        [1913, 1715, 1610, 1177, 1042,  738,  438,  369,    0,  535],
-       [2448, 2250, 2145, 1712, 1577, 1273,  973,  904,  535,    0]])
-</pre>
+       [2448, 2250, 2145, 1712, 1577, 1273,  973,  904,  535,    0]])</pre>
 <img alt="route66.png" class="align-center" src="route66.png"><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>Bonnes pratiques</p>
-<blockquote class="last">
+<blockquote>
 <p>Sur l'exemple précédent, on peut noter quelques bonnes (et mauvaises)
 pratiques :</p>
 <ul class="simple">
-<li>Donner des noms de variables explicites (pas besoin d'un
-commentaire pour expliquer ce qu'il y a dans la variable).</li>
-<li>Mettre des espaces après les virgules, autour des <tt class="docutils literal">=</tt>, etc. Un
+<li><p>Donner des noms de variables explicites (pas besoin d'un
+commentaire pour expliquer ce qu'il y a dans la variable).</p></li>
+<li><p>Mettre des espaces après les virgules, autour des <code class="docutils literal">=</code>, etc. Un
 certain nombre de règles pour écrire du "beau" code (et surtout,
 utiliser les mêmes conventions que tout le monde !) sont données
 par le <a class="reference external" href="http://www.python.org/dev/peps/pep-0008">Style Guide for Python Code</a> et la page <a class="reference external" href="http://www.python.org/dev/peps/pep-0257">Docstring
 Conventions</a> (pour organiser
-les messages d'aide).</li>
-<li>Sauf exception (ex : cours pour francophones ?), donner des noms de
+les messages d'aide).</p></li>
+<li><p>Sauf exception (ex : cours pour francophones ?), donner des noms de
 variables en anglais, et écrire les commentaires en anglais
-(imaginez récupérer un code commenté en russe...).</li>
+(imaginez récupérer un code commenté en russe...).</p></li>
 </ul>
 </blockquote>
 </div>
 <p>Beaucoup de problèmes sur grille ou réseau peuvent aussi utiliser du
 broadcasting. Par exemple, si on veut calculer la distance à l'origine
 des points sur une grille 10x10, on peut faire</p>
-<pre class="literal-block">
-&gt;&gt;&gt; x, y = np.arange(5), np.arange(5)
+<pre class="literal-block">&gt;&gt;&gt; x, y = np.arange(5), np.arange(5)
 &gt;&gt;&gt; distance = np.sqrt(x**2 + y[:, np.newaxis]**2)
 &gt;&gt;&gt; distance
 array([[ 0.        ,  1.        ,  2.        ,  3.        ,  4.        ],
        [ 1.        ,  1.41421356,  2.23606798,  3.16227766,  4.12310563],
        [ 2.        ,  2.23606798,  2.82842712,  3.60555128,  4.47213595],
        [ 3.        ,  3.16227766,  3.60555128,  4.24264069,  5.        ],
-       [ 4.        ,  4.12310563,  4.47213595,  5.        ,  5.65685425]])
-</pre>
+       [ 4.        ,  4.12310563,  4.47213595,  5.        ,  5.65685425]])</pre>
 <p>On peut représenter les valeurs du tableau distance en niveau de couleurs
-grâce à la fonction <tt class="docutils literal">pylab.imshow</tt> (syntaxe :
-<tt class="docutils literal">pylab.imshow(distance)</tt>. voir l'aide pour plus d'options).</p>
-<img alt="distance.png" class="align-center" src="distance.png"><p><strong>Remarque</strong> : la fonction <tt class="docutils literal">numpy.ogrid</tt> permet de créer directement
+grâce à la fonction <code class="docutils literal">pylab.imshow</code> (syntaxe :
+<code class="docutils literal">pylab.imshow(distance)</code>. voir l'aide pour plus d'options).</p>
+<img alt="distance.png" class="align-center" src="distance.png"><p><strong>Remarque</strong> : la fonction <code class="docutils literal">numpy.ogrid</code> permet de créer directement
 les vecteurs x et y de l'exemple précédent avec deux "dimensions
 significatives" différentes</p>
-<pre class="literal-block">
-&gt;&gt;&gt; x, y = np.ogrid[0:5, 0:5]
+<pre class="literal-block">&gt;&gt;&gt; x, y = np.ogrid[0:5, 0:5]
 &gt;&gt;&gt; x, y
 (array([[0],
        [1],
@@ -980,13 +883,11 @@ significatives" différentes</p>
        [4]]), array([[0, 1, 2, 3, 4]]))
 &gt;&gt;&gt; x.shape, y.shape
 ((5, 1), (1, 5))
-&gt;&gt;&gt; distance = np.sqrt(x**2 + y**2)
-</pre>
-<p><tt class="docutils literal">np.ogrid</tt> est donc très utile dès qu'on a des calculs à faire sur un
-réseau. <tt class="docutils literal">np.mgrid</tt> fournit par contre directement des matrices pleines
+&gt;&gt;&gt; distance = np.sqrt(x**2 + y**2)</pre>
+<p><code class="docutils literal">np.ogrid</code> est donc très utile dès qu'on a des calculs à faire sur un
+réseau. <code class="docutils literal">np.mgrid</code> fournit par contre directement des matrices pleines
 d'indices pour les cas où on ne peut/veut pas profiter du broadcasting</p>
-<pre class="literal-block">
-&gt;&gt;&gt; x, y = np.mgrid[0:4, 0:4]
+<pre class="literal-block">&gt;&gt;&gt; x, y = np.mgrid[0:4, 0:4]
 &gt;&gt;&gt; x
 array([[0, 0, 0, 0],
        [1, 1, 1, 1],
@@ -996,107 +897,93 @@ array([[0, 0, 0, 0],
 array([[0, 1, 2, 3],
        [0, 1, 2, 3],
        [0, 1, 2, 3],
-       [0, 1, 2, 3]])
-</pre>
+       [0, 1, 2, 3]])</pre>
 </div>
 <div class="section" id="exercice-de-synthese-un-medaillon-pour-lena">
 <h2>Exercice de synthèse : un médaillon pour Lena</h2>
 <p>Nous allons faire quelques manipulations sur les tableaux numpy en partant de
-la célébre image de Lena (<a class="reference external" href="http://www.cs.cmu.edu/~chuck/lennapg/">http://www.cs.cmu.edu/~chuck/lennapg/</a>). <tt class="docutils literal">scipy</tt> fournit un tableau 2D de l'image de Lena avec la fonction <tt class="docutils literal">scipy.lena</tt></p>
-<pre class="literal-block">
-&gt;&gt;&gt; import scipy
-&gt;&gt;&gt; lena = scipy.lena()
-</pre>
+la célébre image de Lena (<a class="reference external" href="http://www.cs.cmu.edu/~chuck/lennapg/">http://www.cs.cmu.edu/~chuck/lennapg/</a>). <code class="docutils literal">scipy</code> fournit un tableau 2D de l'image de Lena avec la fonction <code class="docutils literal">scipy.lena</code></p>
+<pre class="literal-block">&gt;&gt;&gt; import scipy
+&gt;&gt;&gt; lena = scipy.lena()</pre>
 <p>Voici quelques images que nous allons obtenir grâce à nos manipulations :
 utiliser différentes colormaps, recadrer l'image, modifier certaines
 parties de l'image.</p>
 <img alt="lenas.png" class="align-center" src="lenas.png"><ul class="simple">
-<li>Utilisons la fonction imshow de pylab pour afficher l'image de Lena.</li>
+<li><p>Utilisons la fonction imshow de pylab pour afficher l'image de Lena.</p></li>
 </ul>
-<pre class="code python"><a name="rest_code_2fdd438229d0400184b8f0b8b99568c6-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pylab</span>
-<a name="rest_code_2fdd438229d0400184b8f0b8b99568c6-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">lena</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
-<a name="rest_code_2fdd438229d0400184b8f0b8b99568c6-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_c0de795171024ae5b402de1815f44924-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pylab</span>
+<a name="rest_code_c0de795171024ae5b402de1815f44924-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">lena</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
+<a name="rest_code_c0de795171024ae5b402de1815f44924-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 </pre>
 <ul class="simple">
-<li>Lena s'affiche alors en fausses couleurs, il faut spécifier une
-colormap pour qu'elle s'affiche en niveaux de gris.</li>
+<li><p>Lena s'affiche alors en fausses couleurs, il faut spécifier une
+colormap pour qu'elle s'affiche en niveaux de gris.</p></li>
 </ul>
-<pre class="code python"><a name="rest_code_803b1474dee34b23852237ac162985c9-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-<a name="rest_code_803b1474dee34b23852237ac162985c9-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="c1"># ou</span>
-<a name="rest_code_803b1474dee34b23852237ac162985c9-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">gray</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_871934488fc44ecd9b433d72b5e7bc16-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">pl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+<a name="rest_code_871934488fc44ecd9b433d72b5e7bc16-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="c1"># ou</span>
+<a name="rest_code_871934488fc44ecd9b433d72b5e7bc16-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">gray</span><span class="p">()</span>
 </pre>
 <ul class="simple">
-<li>Créez un tableau où le cadrage de Lena est plus serré : enlevez par
+<li><p>Créez un tableau où le cadrage de Lena est plus serré : enlevez par
 exemple 30 pixels de tous les côtés de l'image. Affichez ce nouveau
-tableau avec <tt class="docutils literal">imshow</tt> pour vérifier.</li>
+tableau avec <code class="docutils literal">imshow</code> pour vérifier.</p></li>
 </ul>
-<pre class="code python"><a name="rest_code_42c3605d0cd54825b13a7279d70124f1-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">crop_lena</span> <span class="o">=</span> <span class="n">lena</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">]</span>
+<pre class="code python"><a name="rest_code_b163de4cad9642e990015dc7c9a13d16-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">crop_lena</span> <span class="o">=</span> <span class="n">lena</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">]</span>
 </pre>
 <ul>
 <li>
-<p class="first">On veut maintenant entourer le visage de Lena d'un médaillon noir. Pour
+<p>On veut maintenant entourer le visage de Lena d'un médaillon noir. Pour
 cela, il faut</p>
 <blockquote>
 <ul class="simple">
-<li>créer un masque correspondant aux pixels qu'on veut mettre en noir.
-Le masque est défini par la condition <tt class="docutils literal"><span class="pre">(y-256)**2</span> + <span class="pre">(x-256)**2</span></tt>
-</li>
+<li><p>créer un masque correspondant aux pixels qu'on veut mettre en noir.
+Le masque est défini par la condition <code class="docutils literal"><span class="pre">(y-256)**2</span> + <span class="pre">(x-256)**2</span></code></p></li>
 </ul>
 </blockquote>
 </li>
 </ul>
-<pre class="code python"><a name="rest_code_11157e183676432a8c55b970ae3be1ad-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">512</span><span class="p">]</span> <span class="c1"># les indices x et y des pixels</span>
-<a name="rest_code_11157e183676432a8c55b970ae3be1ad-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
-<a name="rest_code_11157e183676432a8c55b970ae3be1ad-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">512</span><span class="p">))</span>
-<a name="rest_code_11157e183676432a8c55b970ae3be1ad-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="c1"># centre de l'image</span>
-<a name="rest_code_11157e183676432a8c55b970ae3be1ad-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">centery</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">centerx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="mi">230</span><span class="o">**</span><span class="mi">2</span>
+<pre class="code python"><a name="rest_code_06f138542e9f4d1991c88809248b4730-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">512</span><span class="p">]</span> <span class="c1"># les indices x et y des pixels</span>
+<a name="rest_code_06f138542e9f4d1991c88809248b4730-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<a name="rest_code_06f138542e9f4d1991c88809248b4730-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">512</span><span class="p">))</span>
+<a name="rest_code_06f138542e9f4d1991c88809248b4730-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="c1"># centre de l'image</span>
+<a name="rest_code_06f138542e9f4d1991c88809248b4730-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">centery</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">centerx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="mi">230</span><span class="o">**</span><span class="mi">2</span>
 </pre>
 <p>puis</p>
 <blockquote>
 <ul class="simple">
-<li>affecter la valeur 0 aux pixels de l'image correspondant au masque.
-La syntaxe pour cela est extrêmement simple et intuitive :</li>
+<li><p>affecter la valeur 0 aux pixels de l'image correspondant au masque.
+La syntaxe pour cela est extrêmement simple et intuitive :</p></li>
 </ul>
 </blockquote>
-<pre class="code python"><a name="rest_code_ca4d0668cec34e43ad2457118fbf2aa3-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">lena</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
-<a name="rest_code_ca4d0668cec34e43ad2457118fbf2aa3-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<a name="rest_code_ca4d0668cec34e43ad2457118fbf2aa3-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xa36534c</span><span class="o">&gt;</span>
+<pre class="code python"><a name="rest_code_08d3d1a2b0e3414a8c566339078f7af9-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">lena</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<a name="rest_code_08d3d1a2b0e3414a8c566339078f7af9-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<a name="rest_code_08d3d1a2b0e3414a8c566339078f7af9-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xa36534c</span><span class="o">&gt;</span>
 </pre>
 <ul class="simple">
-<li>Question subsidiaire : recopier toutes les instructions de cet exercice
-dans un script <tt class="docutils literal">medaillon_lena.py</tt> puis exécuter ce script dans
-Ipython avec <tt class="docutils literal">%run medaillon_lena.py</tt>.</li>
+<li><p>Question subsidiaire : recopier toutes les instructions de cet exercice
+dans un script <code class="docutils literal">medaillon_lena.py</code> puis exécuter ce script dans
+Ipython avec <code class="docutils literal">%run medaillon_lena.py</code>.</p></li>
 </ul>
 <div class="topic">
-<p class="topic-title first">Conclusion : que faut-il savoir faire sur les tableaux numpy pour démarrer ?</p>
+<p class="topic-title">Conclusion : que faut-il savoir faire sur les tableaux numpy pour démarrer ?</p>
 <ul>
+<li><p>Savoir créer des tableaux : <code class="docutils literal">array</code>, <code class="docutils literal">arange</code>, <code class="docutils literal">ones</code>,
+<code class="docutils literal">zeros</code>.</p></li>
+<li><p>Connaître la forme du tableau avec <code class="docutils literal">array.shape</code>, puis faire du
+slicing pour obtenir différentes vues du tableau : <code class="docutils literal"><span class="pre">array[::2]</span></code>,
+etc. Changer la forme du tableau avec <code class="docutils literal">reshape</code>.</p></li>
 <li>
-<p class="first">Savoir créer des tableaux : <tt class="docutils literal">array</tt>, <tt class="docutils literal">arange</tt>, <tt class="docutils literal">ones</tt>,
-<tt class="docutils literal">zeros</tt>.</p>
-</li>
-<li>
-<p class="first">Connaître la forme du tableau avec <tt class="docutils literal">array.shape</tt>, puis faire du
-slicing pour obtenir différentes vues du tableau : <tt class="docutils literal"><span class="pre">array[::2]</span></tt>,
-etc. Changer la forme du tableau avec <tt class="docutils literal">reshape</tt>.</p>
-</li>
-<li>
-<p class="first">Obtenir une partie des éléments d'un tableau et/ou en modifier la
+<p>Obtenir une partie des éléments d'un tableau et/ou en modifier la
 valeur grâce aux masques</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a[a&lt;0] = 0
-</pre>
+<pre class="literal-block">&gt;&gt;&gt; a[a&lt;0] = 0</pre>
 </li>
-<li>
-<p class="first">Savoir faire quelques opérations sur les tableaux comme trouver le
-max ou la moyenne (<tt class="docutils literal">array.max()</tt>, <tt class="docutils literal">array.mean()</tt>). Pas la peine
-de tout retenir, mais avoir le réflexe de chercher dans la doc</p>
-</li>
-<li>
-<p class="first">Pour une utilisation plus avancée : maîtriser l'indexation avec des
+<li><p>Savoir faire quelques opérations sur les tableaux comme trouver le
+max ou la moyenne (<code class="docutils literal">array.max()</code>, <code class="docutils literal">array.mean()</code>). Pas la peine
+de tout retenir, mais avoir le réflexe de chercher dans la doc</p></li>
+<li><p>Pour une utilisation plus avancée : maîtriser l'indexation avec des
 tableaux d'indices entiers, et le broadcasting. Connaître plus de
 fonctions de numpy permettant de réaliser des opérations sur les
-tableaux.</p>
-</li>
+tableaux.</p></li>
 </ul>
 </div>
 </div>

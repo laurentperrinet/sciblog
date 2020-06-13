@@ -42,8 +42,7 @@ This post is certainly obsolete...
 
 dependencies:
 
-
-sudo apt-get install cmake libboos">
+sudo apt-get install cmake libboost">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2011-03-10T13:36:57+01:00">
 <meta property="article:tag" content="sciblog">
@@ -147,43 +146,34 @@ sudo apt-get install cmake libboos">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>
-<a class="reference external" href="http://spikestream.sourceforge.net/pages/download.html">SpikeStream</a>
+<li><p><a class="reference external" href="http://spikestream.sourceforge.net/pages/download.html">SpikeStream</a>
 &amp; Nemo are (ultra fast) neural simulation frameworks. cool. but how to compile
-on ubuntu?</li>
+on ubuntu?</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">dependencies:</p>
+<p>dependencies:</p>
 <ul>
 <li>
-<pre class="first literal-block">
-sudo apt-get install cmake libboost-all-dev libltdl-dev libgmp3-dev  libqwt-dev
-</pre>
+<pre class="literal-block">sudo apt-get install cmake libboost-all-dev libltdl-dev libgmp3-dev  libqwt-dev</pre>
 </li>
-<li>
-<p class="first">CUDA :
-<a class="reference external" href="http://www.nvidia.com/object/thankyou.html?url=/compute/cuda/3_2_prod/toolkit/cudatoolkit_3.2.16_linux_64_ubuntu10.04.run">http://www.nvidia.com/object/thankyou.html?url=/compute/cuda/3_2_prod/toolkit/cudatoolkit_3.2.16_linux_64_ubuntu10.04.run</a></p>
-</li>
+<li><p>CUDA :
+<a class="reference external" href="http://www.nvidia.com/object/thankyou.html?url=/compute/cuda/3_2_prod/toolkit/cudatoolkit_3.2.16_linux_64_ubuntu10.04.run">http://www.nvidia.com/object/thankyou.html?url=/compute/cuda/3_2_prod/toolkit/cudatoolkit_3.2.16_linux_64_ubuntu10.04.run</a></p></li>
 </ul>
 </li>
 <li>
-<p class="first">now download and install Nemo with a standard</p>
-<pre class="literal-block">
-mkdir build
+<p>now download and install Nemo with a standard</p>
+<pre class="literal-block">mkdir build
 cd build
 cmake .. -D NEMO_MATLAB_ENABLED=NO ..
 make
-sudo make install
-</pre>
+sudo make install</pre>
 </li>
-<li>
-<p class="first">now download and install SpikeStream ... FAIL!</p>
-</li>
+<li><p>now download and install SpikeStream ... FAIL!</p></li>
 </ul>
 </div>
     </div>

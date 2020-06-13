@@ -138,68 +138,61 @@ MathJax.Hub.Config({
 <p>There are different components I wish to cover here:</p>
 <ul>
 <li>
-<p class="first">cloud service: <a class="reference external" href="http://owncloud.org">http://owncloud.org</a> is a self-hosted service offering a performant file synchronization and more (see below):</p>
+<p>cloud service: <a class="reference external" href="http://owncloud.org">http://owncloud.org</a> is a self-hosted service offering a performant file synchronization and more (see below):</p>
 <ol class="arabic simple">
-<li>owncloud comes with a client for file synchronization which works actually fine. to install on Mac os x you may use home brew casks and just type `` brew cask install owncloud `` and you just need to enter your credentials to your server</li>
-<li>however this tool scales pretty badly with a lot of files. It works fine for less than 1k files - and very good for a couple of files like a calendar, todo.txt (see below), a picture roll, etc... However it chucks with larger number like a whole repository of data files (&gt; 10k files). Another solution is then to sync files using the decentralized system offered by syncthing - works like a charm on macs (type <tt class="docutils literal">brew install syncthing</tt> and basically you are set) androids and more (no iOS so far up to my knowledge)</li>
+<li><p>owncloud comes with a client for file synchronization which works actually fine. to install on Mac os x you may use home brew casks and just type `` brew cask install owncloud `` and you just need to enter your credentials to your server</p></li>
+<li><p>however this tool scales pretty badly with a lot of files. It works fine for less than 1k files - and very good for a couple of files like a calendar, todo.txt (see below), a picture roll, etc... However it chucks with larger number like a whole repository of data files (&gt; 10k files). Another solution is then to sync files using the decentralized system offered by syncthing - works like a charm on macs (type <code class="docutils literal">brew install syncthing</code> and basically you are set) androids and more (no iOS so far up to my knowledge)</p></li>
 </ol>
 </li>
 <li>
-<p class="first">e-mail: instead of using a webmail, use an IMAP server such as dovecot (like on a NAS). As an e-mail client, I chose</p>
+<p>e-mail: instead of using a webmail, use an IMAP server such as dovecot (like on a NAS). As an e-mail client, I chose</p>
 <ol class="arabic simple">
-<li>thunderbird on desktop, (note that by default, thunderbird uses "search bing for...". to avoid that follow these simple instructions: <a class="reference external" href="https://duck.co/help/desktop/thunderbird">https://duck.co/help/desktop/thunderbird</a> --- showing that thunderbird is not quite streamlined...) - useful info on both sides: <a class="reference external" href="https://support.mozilla.org/en-US/kb/thunderbird-and-gmail">https://support.mozilla.org/en-US/kb/thunderbird-and-gmail</a> - <a class="reference external" href="https://support.google.com/mail/answer/78892?hl=en">https://support.google.com/mail/answer/78892?hl=en</a>
-</li>
-<li>k9-mail on android</li>
+<li><p>thunderbird on desktop, (note that by default, thunderbird uses "search bing for...". to avoid that follow these simple instructions: <a class="reference external" href="https://duck.co/help/desktop/thunderbird">https://duck.co/help/desktop/thunderbird</a> --- showing that thunderbird is not quite streamlined...) - useful info on both sides: <a class="reference external" href="https://support.mozilla.org/en-US/kb/thunderbird-and-gmail">https://support.mozilla.org/en-US/kb/thunderbird-and-gmail</a> - <a class="reference external" href="https://support.google.com/mail/answer/78892?hl=en">https://support.google.com/mail/answer/78892?hl=en</a></p></li>
+<li><p>k9-mail on android</p></li>
 </ol>
 </li>
 <li>
-<p class="first">addressbook : the addressbook is useful in the e-mail client only (system wide integration is unnecessary)</p>
+<p>addressbook : the addressbook is useful in the e-mail client only (system wide integration is unnecessary)</p>
 <ol class="arabic simple">
-<li>as owncloud provides with an addressbook and a carddav link, it is possible to use it as a server,</li>
-<li>the carddav service in MacOsX is flawed and won't work with this implementation. As we just need it in thunderbird, we may use the sogo connector (see <a class="reference external" href="http://www.sogo.nu/downloads/frontends.html">http://www.sogo.nu/downloads/frontends.html</a> ) to add an option in thenuderbird's address book to connect to the carddav link,</li>
-<li>on android, integration works with CardDAV-Sync free beta which is available @ <a class="reference external" href="https://play.google.com/store/apps/details?id=org.dmfs.carddav.sync">https://play.google.com/store/apps/details?id=org.dmfs.carddav.sync</a> (<strong>edit</strong>: see also DavDroid as explained in this <a class="reference external" href="2014-12-18-can-we-live-without-google-and-co.html">post</a>)</li>
-<li>one difficulty (illustrating the lock-in syndrome of private providers) is that import and export tools are often flawed (again). A working solution was to:</li>
+<li><p>as owncloud provides with an addressbook and a carddav link, it is possible to use it as a server,</p></li>
+<li><p>the carddav service in MacOsX is flawed and won't work with this implementation. As we just need it in thunderbird, we may use the sogo connector (see <a class="reference external" href="http://www.sogo.nu/downloads/frontends.html">http://www.sogo.nu/downloads/frontends.html</a> ) to add an option in thenuderbird's address book to connect to the carddav link,</p></li>
+<li><p>on android, integration works with CardDAV-Sync free beta which is available @ <a class="reference external" href="https://play.google.com/store/apps/details?id=org.dmfs.carddav.sync">https://play.google.com/store/apps/details?id=org.dmfs.carddav.sync</a> (<strong>edit</strong>: see also DavDroid as explained in this <a class="reference external" href="2014-12-18-can-we-live-without-google-and-co.html">post</a>)</p></li>
+<li><p>one difficulty (illustrating the lock-in syndrome of private providers) is that import and export tools are often flawed (again). A working solution was to:</p></li>
 </ol>
 <blockquote>
 <ol class="arabic simple">
-<li>open thunderbird's adress book and allow macosx address book integration,</li>
-<li>export that entries to a VCF file,</li>
-<li>use the following online tool (code on <a class="reference external" href="https://github.com/thomascube/vcfconvert">https://github.com/thomascube/vcfconvert</a> ) to convert it to a LDIF format,</li>
-<li>import that format to thunderbird,</li>
-<li>copy that entries to the owncloud addressbook,</li>
-<li>restart thunderbird and synchronize.</li>
+<li><p>open thunderbird's adress book and allow macosx address book integration,</p></li>
+<li><p>export that entries to a VCF file,</p></li>
+<li><p>use the following online tool (code on <a class="reference external" href="https://github.com/thomascube/vcfconvert">https://github.com/thomascube/vcfconvert</a> ) to convert it to a LDIF format,</p></li>
+<li><p>import that format to thunderbird,</p></li>
+<li><p>copy that entries to the owncloud addressbook,</p></li>
+<li><p>restart thunderbird and synchronize.</p></li>
 </ol>
 </blockquote>
 </li>
 <li>
-<p class="first">calendar: again, owncloud provides a nice solution using a caldav link:</p>
+<p>calendar: again, owncloud provides a nice solution using a caldav link:</p>
 <ol class="arabic simple">
-<li>so we use owncloud as the server,</li>
-<li>thunderbird as a calendar as an add-on, so install "lightning",</li>
-<li>lightning accepts to connect to a caldav calendar with no issue,</li>
-<li>to export gmail's calendar, you may need to export it in ICS format from the calendar.app application from macosx.</li>
-<li>however, macosx' native calendar.app fails to connect to the owncloud server - luckily owncloud is smart (yet it's not completly intuitive...): make sure to export the ICS file within your owncloud file folder, sync with the desktop client, get on the web interface for owncloud, locate the file, select it... a dialog opens proposing to import the file as events in a calendar.</li>
-<li>on android, you can similarly use Caldav Sync Free Beta <a class="reference external" href="https://play.google.com/store/apps/details?id=org.gege.caldavsyncadapter">https://play.google.com/store/apps/details?id=org.gege.caldavsyncadapter</a> and do the same process as above. Integrates perfectly with the agenda client from google (they are not so evil after all...). <strong>Edit</strong>: see also DavDroid as explained in this <a class="reference external" href="2014-12-18-can-we-live-without-google-and-co.html">post</a>
-</li>
+<li><p>so we use owncloud as the server,</p></li>
+<li><p>thunderbird as a calendar as an add-on, so install "lightning",</p></li>
+<li><p>lightning accepts to connect to a caldav calendar with no issue,</p></li>
+<li><p>to export gmail's calendar, you may need to export it in ICS format from the calendar.app application from macosx.</p></li>
+<li><p>however, macosx' native calendar.app fails to connect to the owncloud server - luckily owncloud is smart (yet it's not completly intuitive...): make sure to export the ICS file within your owncloud file folder, sync with the desktop client, get on the web interface for owncloud, locate the file, select it... a dialog opens proposing to import the file as events in a calendar.</p></li>
+<li><p>on android, you can similarly use Caldav Sync Free Beta <a class="reference external" href="https://play.google.com/store/apps/details?id=org.gege.caldavsyncadapter">https://play.google.com/store/apps/details?id=org.gege.caldavsyncadapter</a> and do the same process as above. Integrates perfectly with the agenda client from google (they are not so evil after all...). <strong>Edit</strong>: see also DavDroid as explained in this <a class="reference external" href="2014-12-18-can-we-live-without-google-and-co.html">post</a></p></li>
 </ol>
 </li>
 <li>
-<p class="first">tasks: everything revolves under the <a class="reference external" href="http://todotxt.com/">http://todotxt.com/</a> specifications -- all in one, simple todo.txt file</p>
+<p>tasks: everything revolves under the <a class="reference external" href="http://todotxt.com/">http://todotxt.com/</a> specifications -- all in one, simple todo.txt file</p>
 <ol class="arabic simple">
-<li>the file sits in the owncloud repository, syncs with desktop and android using the owncloud app, (on android, be sure to not save it on the external sdcard as it would make it read-only)</li>
-<li>on mac, I use vim or alternatively todotxtmac available using <tt class="docutils literal">brew cask install todotxt</tt> - another nice tool is the CLI available using <tt class="docutils literal">brew install <span class="pre">todo-txt</span></tt>
-</li>
-<li>on android, I use the folowing solution: <a class="reference external" href="https://blog.portknox.net/2014/11/how-to-manage-todo-txt-with-owncloud/">https://blog.portknox.net/2014/11/how-to-manage-todo-txt-with-owncloud/</a> (that is by using <a class="reference external" href="https://f-droid.org/repository/browse/?fdid=nl.mpcjanssen.simpletask">https://f-droid.org/repository/browse/?fdid=nl.mpcjanssen.simpletask</a> )</li>
+<li><p>the file sits in the owncloud repository, syncs with desktop and android using the owncloud app, (on android, be sure to not save it on the external sdcard as it would make it read-only)</p></li>
+<li><p>on mac, I use vim or alternatively todotxtmac available using <code class="docutils literal">brew cask install todotxt</code> - another nice tool is the CLI available using <code class="docutils literal">brew install <span class="pre">todo-txt</span></code></p></li>
+<li><p>on android, I use the folowing solution: <a class="reference external" href="https://blog.portknox.net/2014/11/how-to-manage-todo-txt-with-owncloud/">https://blog.portknox.net/2014/11/how-to-manage-todo-txt-with-owncloud/</a> (that is by using <a class="reference external" href="https://f-droid.org/repository/browse/?fdid=nl.mpcjanssen.simpletask">https://f-droid.org/repository/browse/?fdid=nl.mpcjanssen.simpletask</a> )</p></li>
 </ol>
 </li>
-<li>
-<p class="first">applications:
+<li><p>applications:
 1. on android: you need a gmail account for any android device. for that, create a dummy account accross all devices.
-2. on macosx, I keep my iCloud account</p>
-</li>
-<li>
-<p class="first">it's then clean-up time to remove all synchronization items in macosx and android with icloud, gmail and such.</p>
-</li>
+2. on macosx, I keep my iCloud account</p></li>
+<li><p>it's then clean-up time to remove all synchronization items in macosx and android with icloud, gmail and such.</p></li>
 </ul>
 <p>As a conclusion, it's quite easy to set up a self-hosted cloud solution for such simple setup, and I am quite surprised macosx is so obstrusive (for the icloud, carddav and caldav accounts).</p>
 </div>

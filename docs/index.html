@@ -421,16 +421,16 @@ this will be exposed in the following book chapter (see also https://laurentperr
 <p>more information on sparse coding is exposed in the following book chapter (see also <a href="https://laurentperrinet.github.io/publication/perrinet-15-bicv">https://laurentperrinet.github.io/publication/perrinet-15-bicv</a> ):</p>
 </li>
 </ul>
-<pre><code>bibtex
-@inbook{Perrinet15bicv,
-    title = {Sparse models},
-    author = {Perrinet, Laurent U.},
-    booktitle = {Biologically-inspired Computer Vision},
-    chapter = {13},
-    editor = {Keil, Matthias and Crist\'{o}bal, Gabriel and Perrinet, Laurent U.},
-    publisher = {Wiley, New-York},
-    year = {2015}
-}</code></pre>
+<div class="highlight"><pre><span></span><span class="nc">@inbook</span><span class="p">{</span><span class="nl">Perrinet15bicv</span><span class="p">,</span>
+    <span class="na">title</span> <span class="p">=</span> <span class="s">{Sparse models}</span><span class="p">,</span>
+    <span class="na">author</span> <span class="p">=</span> <span class="s">{Perrinet, Laurent U.}</span><span class="p">,</span>
+    <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Biologically-inspired Computer Vision}</span><span class="p">,</span>
+    <span class="na">chapter</span> <span class="p">=</span> <span class="s">{13}</span><span class="p">,</span>
+    <span class="na">editor</span> <span class="p">=</span> <span class="s">{Keil, Matthias and Crist\'{o}bal, Gabriel and Perrinet, Laurent U.}</span><span class="p">,</span>
+    <span class="na">publisher</span> <span class="p">=</span> <span class="s">{Wiley, New-York}</span><span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
+<span class="p">}</span>
+</pre></div>
 <p class="more"><a href="posts/2019-11-28-role-of-gamma-correction-in-sparse-coding.html">Read more…</a></p>
 </div>
 </div>
@@ -998,7 +998,7 @@ I discovered it is possible to do that in the <a class="reference external" href
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 
@@ -1371,9 +1371,9 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -1388,15 +1388,15 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">'2017-04-10_physical_speed'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'2017-04-10_physical_speed'</span>
 <span class="n">DOWNSCALE</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">/</span><span class="n">DOWNSCALE</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">/</span><span class="n">DOWNSCALE</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">/</span><span class="n">DOWNSCALE</span>
 
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s">'../files/2017-04-10_physical_speed/'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2017-04-10_physical_speed/'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -1420,8 +1420,8 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">z</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_vanilla'</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_vanilla'</span> 
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
@@ -1488,8 +1488,8 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="s">'http://www.rhsmpsychology.com/images/monocular_IV.jpg'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">'http://www.rhsmpsychology.com/images/monocular_IV.jpg'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1532,7 +1532,7 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">Image</span><span class="p">(</span><span class="s">'https://upload.wikimedia.org/wikipedia/en/7/71/Golconde.jpg'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">'https://upload.wikimedia.org/wikipedia/en/7/71/Golconde.jpg'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1583,7 +1583,7 @@ $$</p>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">mc</span><span class="o">.</span><span class="n">B_sf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">B_sf</span>
 </pre></div>
 
     </div>
@@ -1616,7 +1616,7 @@ $$</p>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">envelope_parallax_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">envelope_parallax_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span>
                         <span class="n">B_V</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_V</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">loggabor</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">loggabor</span><span class="p">,</span>
                         <span class="n">theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_theta</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">alpha</span><span class="p">):</span>
     <span class="sd">"""</span>
@@ -1630,13 +1630,13 @@ $$</p>
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_orientation</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>    
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_radial</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">loggabor</span><span class="o">=</span><span class="n">loggabor</span><span class="p">)</span>
     
-    <span class="n">f_radius</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">ft_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">ft_0</span><span class="p">,</span> <span class="n">clean_division</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+    <span class="n">f_radius</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">ft_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">ft_0</span><span class="p">,</span> <span class="n">clean_division</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V_X</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">V_Y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="o">*</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span> <span class="o">*</span> <span class="n">ft</span> <span class="o">+</span> <span class="n">sf_0</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">B_V</span><span class="o">*</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-    <span class="c"># Hack to remove the other part of the envelope - use angle instead to allow for higher B_theta values</span>
+    <span class="c1"># Hack to remove the other part of the envelope - use angle instead to allow for higher B_theta values</span>
     <span class="k">return</span> <span class="n">envelope</span>
 
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_parallax'</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_parallax'</span>
 <span class="n">opts</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=.</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">envelope_parallax_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
@@ -1691,9 +1691,9 @@ $$</p>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">opts_</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">B_V_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">opts</span><span class="p">[</span><span class="s">'B_V'</span><span class="p">]:</span>
-    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_parallax_B_V_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span> <span class="c">#os.path.join(mc.figpath, )</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opts_</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">B_V_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">opts</span><span class="p">[</span><span class="s1">'B_V'</span><span class="p">]:</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_parallax_B_V_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_V_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span> <span class="c1">#os.path.join(mc.figpath, )</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">envelope_parallax_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V_</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
@@ -1833,7 +1833,7 @@ $$</p>
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">envelope_physical_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">envelope_physical_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span>
                         <span class="n">B_V</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_V</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">loggabor</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">loggabor</span><span class="p">,</span>
                         <span class="n">theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_theta</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">alpha</span><span class="p">):</span>
     <span class="sd">"""</span>
@@ -1847,15 +1847,15 @@ $$</p>
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_orientation</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>    
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_radial</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">loggabor</span><span class="o">=</span><span class="n">loggabor</span><span class="p">)</span>
     
-    <span class="n">f_radius</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">ft_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">ft_0</span><span class="p">,</span> <span class="n">clean_division</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+    <span class="n">f_radius</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">ft_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">ft_0</span><span class="p">,</span> <span class="n">clean_division</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="o">*</span><span class="p">((</span><span class="n">ft</span> <span class="o">+</span> <span class="n">sf_0</span> <span class="o">*</span> <span class="n">V_X</span> <span class="o">-</span> <span class="p">(</span><span class="n">f_radius</span> <span class="o">-</span> <span class="n">sf_0</span><span class="p">)</span> <span class="o">/</span> <span class="n">K</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">B_V</span><span class="o">*</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-    <span class="c"># Hack to remove the other part of the envelope - use angle instead to allow for higher B_theta values</span>
+    <span class="c1"># Hack to remove the other part of the envelope - use angle instead to allow for higher B_theta values</span>
     <span class="n">envelope</span> <span class="o">*=</span> <span class="n">fx</span><span class="o">*</span><span class="n">ft</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
     
     <span class="k">return</span> <span class="n">envelope</span>
 
-<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_group_speed'</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_group_speed'</span>
 <span class="n">K</span> <span class="o">=</span> <span class="mf">1.</span>
 <span class="n">opts</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">envelope_physical_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
@@ -1911,8 +1911,8 @@ $$</p>
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">K_</span> <span class="ow">in</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="p">:</span>
-    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">'_group_speed_K_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">K_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">K_</span> <span class="ow">in</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="p">:</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_group_speed_K_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">K_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">envelope_physical_speed</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K_</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">name_</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">)</span>
@@ -2509,7 +2509,7 @@ index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="../files/2016-11-15_noise.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 
@@ -2572,22 +2572,18 @@ index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
 <p>A new version of <a class="reference external" href="https://nteract.io/">https://nteract.io/</a> is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a> by creating a new cask for this application.  I will base things on this <a class="reference external" href="posts/2015-12-08-homebrew-cask-updating-a-cask.html">previous contribution</a> where I was simply editing an existing cask.</p>
 <ul>
 <li>
-<p class="first">getting the token</p>
+<p>getting the token</p>
 <blockquote>
-<pre class="literal-block">
-"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'
-</pre>
+<pre class="literal-block">"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" '/Applications/nteract.app'</pre>
 </blockquote>
 </li>
 <li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd "$(brew --prefix)"/Homebrew/Library/Taps/caskroom/homebrew-cask
 github_user='laurentperrinet'
 project='nteract'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -3055,21 +3051,15 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -3529,21 +3519,15 @@ git remote -v
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base the steps I use on this <a class="reference external" href="posts/2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of (MacTex)[<a class="reference external" href="http://www.tug.org/mactex/mactex-download.html">http://www.tug.org/mactex/mactex-download.html</a>] is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base the steps I use on this <a class="reference external" href="posts/2015-03-17-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='mactex'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -3868,21 +3852,15 @@ git remote -v
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>A new version of psychopy is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of psychopy is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='psychopy'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -3953,21 +3931,15 @@ year = {2016}
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p></li>
 <li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on this <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">previous contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -4148,21 +4120,15 @@ git remote -v
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><p>I will base things on <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">my contribution</a></p></li>
 <li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li>
-<p class="first">I will base things on <a class="reference external" href="posts/2014-11-12-homebrew-cask-updating-a-cask.html">my contribution</a></p>
-</li>
-<li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -4392,7 +4358,7 @@ git remote -v
 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<p>I always used a single <tt class="docutils literal">babel.bib</tt> BibTex file to keep a record of all my readings. Great. Then I managed it using a VCS (first SVN, then git). Super great. But at the same time, resources like <a class="reference external" href="http://www.citeulike.org/">CiteUlike</a> or Mendeley (but also other services like orcid) allow for cloud-like services of having this data everywhere, anytime. Super super great!</p>
+<p>I always used a single <code class="docutils literal">babel.bib</code> BibTex file to keep a record of all my readings. Great. Then I managed it using a VCS (first SVN, then git). Super great. But at the same time, resources like <a class="reference external" href="http://www.citeulike.org/">CiteUlike</a> or Mendeley (but also other services like orcid) allow for cloud-like services of having this data everywhere, anytime. Super super great!</p>
 <p>But this fails if you have no connection to internet (remote conference, ...) or more importantly if these services change their policy (mendeley to citeulike sync disappeared at a sudden). The work you provide is not yours. These are mostly commercial services while all the open-source tools are there. Most importantly, the multiplicity of tools makes it difficult to share bibliographic data easily, while if we would have a tool to translate between them this would make it possible (without changing your habits).</p>
 <p class="more"><a href="posts/2014-12-29-bib-cloud.html">Read more…</a></p>
 </div>
@@ -4519,13 +4485,14 @@ git remote -v
 </div>
             </header><div class="p-summary entry-summary">
                     <ul class="simple">
-<li>paramétrer un nouveau compte avec son adresse
-<a class="reference external" href="mailto:lolo.toto@univ-amu.fr">lolo.toto@univ-amu.fr</a>
-</li>
-<li>indiquer les parametres:<ol class="arabic">
-<li>en entrant, serveur IMAP <tt class="docutils literal"><span class="pre">imap.univ-amu.fr</span></tt> avec SSL (port 993) et l'authentification est par mot de passe</li>
-<li>en sortant, serveur SMTP <tt class="docutils literal"><span class="pre">smtp.univ-amu.fr</span></tt> en STARTTLS, port 587 et  l'authentification est par mot de passe</li>
-<li>attention, en entrant et en sortant, comme identifiant, l'identifiant univ-amu (de la forme <tt class="docutils literal">toto.l</tt>)</li>
+<li><p>paramétrer un nouveau compte avec son adresse
+<a class="reference external" href="mailto:lolo.toto@univ-amu.fr">lolo.toto@univ-amu.fr</a></p></li>
+<li>
+<p>indiquer les parametres:</p>
+<ol class="arabic simple">
+<li><p>en entrant, serveur IMAP <code class="docutils literal"><span class="pre">imap.univ-amu.fr</span></code> avec SSL (port 993) et l'authentification est par mot de passe</p></li>
+<li><p>en sortant, serveur SMTP <code class="docutils literal"><span class="pre">smtp.univ-amu.fr</span></code> en STARTTLS, port 587 et  l'authentification est par mot de passe</p></li>
+<li><p>attention, en entrant et en sortant, comme identifiant, l'identifiant univ-amu (de la forme <code class="docutils literal">toto.l</code>)</p></li>
 </ol>
 </li>
 </ul>
@@ -4607,28 +4574,24 @@ git remote -v
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
-<li>
-<p class="first">A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p>
-</li>
-<li><dl class="first docutils">
+<li><p>A new version of owncloud is out, I will try today to push that new infomation to <a class="reference external" href="http://caskroom.io/">http://caskroom.io/</a></p></li>
+<li><dl>
 <dt>I will base things on <a href="posts/2014-11-12-homebrew-cask-updating-a-cask.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,</dt>
 <dd>
-<div class="first system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 4); <em><a href="posts/2014-11-12-homebrew-cask-updating-a-cask.html#id2">backlink</a></em></p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 4); <em><a href="posts/2014-11-12-homebrew-cask-updating-a-cask.html#id2">backlink</a></em></p>
 <p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
 </div>
-<p class="last">though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
+<p>though now <cite>phinze-cask</cite> paths are now <cite>brew-cask</cite>.</p>
 </dd>
 </dl></li>
 <li>
-<p class="first">set-up variables</p>
+<p>set-up variables</p>
 <blockquote>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/caskroom/homebrew-cask
 github_user='meduz'
 project='owncloud'
-git remote -v
-</pre>
+git remote -v</pre>
 </blockquote>
 </li>
 </ul>
@@ -4772,8 +4735,8 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s">'&lt;center&gt;&lt;video controls autoplay loop src="../files/2014-10-24_waves/waves.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="../files/2014-10-24_waves/waves.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -5845,21 +5808,19 @@ pip install --user neurotools</code></pre>
                     <div class="section" id="basics-commands-in-vim">
 <h2>Basics commands in Vim</h2>
 <p>Sometimes, it's good to go back to the basics.</p>
-<p>In command mode, typing <tt class="docutils literal">:help usr_02.txt</tt> (or simplier something like <tt class="docutils literal">:h <span class="pre">usr_&lt;TAB&gt;02&lt;TAB&gt;&lt;ENTER&gt;</span></tt>), you learn the letters for navigating a file:</p>
+<p>In command mode, typing <code class="docutils literal">:help usr_02.txt</code> (or simplier something like <code class="docutils literal">:h <span class="pre">usr_&lt;TAB&gt;02&lt;TAB&gt;&lt;ENTER&gt;</span></code>), you learn the letters for navigating a file:</p>
 <ul class="simple">
-<li>these letters are <tt class="docutils literal">HJKL</tt> - glad it works on an international keyboard.</li>
-<li>letters on the borders (<tt class="docutils literal">HL</tt>) are for horizontal movements- obviously <tt class="docutils literal">H</tt> for left, <tt class="docutils literal">L</tt> for right</li>
-<li>letters on the inside are for vertical movements - <tt class="docutils literal">J</tt> for down, <tt class="docutils literal">K</tt> for up; a nice feature is that these keys are now quite widely used in the community, take for example in the gmail interface when switching to the next message.</li>
+<li><p>these letters are <code class="docutils literal">HJKL</code> - glad it works on an international keyboard.</p></li>
+<li><p>letters on the borders (<code class="docutils literal">HL</code>) are for horizontal movements- obviously <code class="docutils literal">H</code> for left, <code class="docutils literal">L</code> for right</p></li>
+<li><p>letters on the inside are for vertical movements - <code class="docutils literal">J</code> for down, <code class="docutils literal">K</code> for up; a nice feature is that these keys are now quite widely used in the community, take for example in the gmail interface when switching to the next message.</p></li>
 </ul>
 <p>I was still using the arrows keys, but taking this habit makes thinks easier, especially when switching often keyboards.</p>
 <p>Simalarly, to scroll the text - you can use:</p>
 <ul class="simple">
-<li>
-<tt class="docutils literal"><span class="pre">&lt;CTRL-U&gt;</span></tt> to scroll a half-page up</li>
-<li>
-<tt class="docutils literal"><span class="pre">&lt;CTRL-D&gt;</span></tt> to scroll a half-page down</li>
+<li><p><code class="docutils literal"><span class="pre">&lt;CTRL-U&gt;</span></code> to scroll a half-page up</p></li>
+<li><p><code class="docutils literal"><span class="pre">&lt;CTRL-D&gt;</span></code> to scroll a half-page down</p></li>
 </ul>
-<p>Here, the <tt class="docutils literal">:h <span class="pre">ctrl-u</span></tt> page will give you more info (or <tt class="docutils literal">:help usr_03.txt</tt>).</p>
+<p>Here, the <code class="docutils literal">:h <span class="pre">ctrl-u</span></code> page will give you more info (or <code class="docutils literal">:help usr_03.txt</code>).</p>
 <p>Note that to follow a link (think "searching a tag"), you can press <cite>*</cite> (or <cite>#</cite> to go backwards).</p>
 </div>
                 </div>
@@ -6033,8 +5994,8 @@ pip install --user neurotools</code></pre>
 <h2>Using folds in Vim</h2>
 <p>Folds are useful when having long files to have a good perspective on its
 structure. Especially useful in LaTeX mode.</p>
-<p>To install, I recommend using the <tt class="docutils literal"><span class="pre">python-mode</span></tt> described in <a class="reference external" href="http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/">http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/</a></p>
-<p>The magical shortcut all begin with <tt class="docutils literal">z</tt>. Type <tt class="docutils literal">:hep fold</tt> to learn more about
+<p>To install, I recommend using the <code class="docutils literal"><span class="pre">python-mode</span></code> described in <a class="reference external" href="http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/">http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/</a></p>
+<p>The magical shortcut all begin with <code class="docutils literal">z</code>. Type <code class="docutils literal">:hep fold</code> to learn more about
 them.</p>
 <p class="more"><a href="posts/2014-01-15-vim-folding-commands.html">Read more…</a></p>
 </div>
@@ -6193,23 +6154,20 @@ npm install -g less
 </div>
 <p>I have managed to install Nikola, and build a site using it using this code:</p>
 <p><a class="reference external" href="listings/install-nikola.sh.html">install-nikola.sh</a>  <a class="reference external" href="listings/install-nikola.sh">(Source)</a></p>
-<pre class="code bash"><a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-1"></a>git clone git://github.com/getnikola/nikola.git
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-2"></a><span class="nb">cd</span> nikola
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-3"></a>pip install -r requirements-full.txt
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-4"></a>pip install .
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-5"></a>nikola init --demo invibe
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-6"></a>nikola build
-<a name="rest_code_a164cbe571be49b295516b29cc5cbc7e-7"></a>nikola serve
+<pre class="code bash"><a name="rest_code_ed52b06805214cc2826693b7fb612e0b-1"></a>git clone git://github.com/getnikola/nikola.git
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-2"></a><span class="nb">cd</span> nikola
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-3"></a>pip install -r requirements-full.txt
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-4"></a>pip install .
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-5"></a>nikola init --demo invibe
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-6"></a>nikola build
+<a name="rest_code_ed52b06805214cc2826693b7fb612e0b-7"></a>nikola serve
 </pre>
 <p>Pretty simple, congratulations to the developpers!</p>
 <p>More info:</p>
 <ul class="simple">
-<li>You can read the manual <a class="reference external" href="http://getnikola.com/handbook.html">here</a>
-</li>
-<li>You can see a demo photo gallery <a class="reference external" href="galleries/demo/index.html">here</a>
-</li>
-<li>You can learn more about Nikola at <a class="reference external" href="http://getnikola.com">http://getnikola.com</a>
-</li>
+<li><p>You can read the manual <a class="reference external" href="http://getnikola.com/handbook.html">here</a></p></li>
+<li><p>You can see a demo photo gallery <a class="reference external" href="galleries/demo/index.html">here</a></p></li>
+<li><p>You can learn more about Nikola at <a class="reference external" href="http://getnikola.com">http://getnikola.com</a></p></li>
 </ul>
 </div>
                 </div>
@@ -6232,8 +6190,7 @@ npm install -g less
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>see <a class="reference external" href="http://www.allstar.fiu.edu/aero/airflylvl3.htm">http://www.allstar.fiu.edu/aero/airflylvl3.htm</a>
-</li>
+<li><p>see <a class="reference external" href="http://www.allstar.fiu.edu/aero/airflylvl3.htm">http://www.allstar.fiu.edu/aero/airflylvl3.htm</a></p></li>
 </ul>
 <p class="more"><a href="posts/2014-01-01-How-Airplanes-Fly-A-Physical-Description-of-Lift.html">Read more…</a></p>
 </div>
@@ -6258,21 +6215,19 @@ npm install -g less
                     <div>
 <ul>
 <li>
-<p class="first">I mistyped <a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,
+<p>I mistyped <a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id1"><span class="problematic" id="id2">:doc:`my contribution &lt;2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask&gt;`</span></a>,
 so I have to modify my pull request</p>
 <div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 2); <em><a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id2">backlink</a></em></p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 2); <em><a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html#id2">backlink</a></em></p>
 <p>"2013-11-08-homebrew-cask-level-0-contributing-a-new-cask" slug doesn't exist.</p>
 </div>
 </li>
 <li>
-<p class="first">set-up variables</p>
-<pre class="literal-block">
-cd $(brew --prefix)/Library/Taps/phinze-cask
+<p>set-up variables</p>
+<pre class="literal-block">cd $(brew --prefix)/Library/Taps/phinze-cask
 github_user='meduz'
 project='texshop'
-git remote -v
-</pre>
+git remote -v</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html">Read more…</a></p>
@@ -6297,14 +6252,14 @@ git remote -v
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
+<li><p>homebrew casks are <a class="reference external" href="https://github.com/phinze/homebrew-cask">a friendly homebrew-style CLI workflow for the
 administration of Mac applications distributed as
 binaries</a>. Something I
 always needed, hoped to get with the app store, frowned when
-openoffice or vlc were absent, and here they are!</li>
-<li>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
+openoffice or vlc were absent, and here they are!</p></li>
+<li><p>see my <a class="reference external" href="https://github.com/meduz/dotfiles/blob/master/init/osx_cask_base.sh">list of casks I currently
 use</a>
-(it is also a script to install them)</li>
+(it is also a script to install them)</p></li>
 </ul>
 <p class="more"><a href="posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html">Read more…</a></p>
 </div>
@@ -6328,15 +6283,11 @@ use</a>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>SparkleShare is a great alternative to DropBox</p></li>
 <li>
-<p class="first">SparkleShare is a great alternative to DropBox</p>
-</li>
-<li>
-<p class="first">Fetch the Dazzle script on
+<p>Fetch the Dazzle script on
 <a class="reference external" href="https://github.com/hbons/Dazzle">https://github.com/hbons/Dazzle</a></p>
-<pre class="literal-block">
-curl https://raw.github.com/hbons/Dazzle/master/dazzle.sh   --output /usr/bin/dazzle &amp;&amp; chmod +x /usr/bin/dazzle
-</pre>
+<pre class="literal-block">curl https://raw.github.com/hbons/Dazzle/master/dazzle.sh   --output /usr/bin/dazzle &amp;&amp; chmod +x /usr/bin/dazzle</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2013-11-04-SparkleShare-on-a-QNAP.html">Read more…</a></p>
@@ -6360,13 +6311,11 @@ curl https://raw.github.com/hbons/Dazzle/master/dazzle.sh   --output /usr/bin/da
 </div>
             </header><div class="p-summary entry-summary">
                     <ul class="simple">
-<li>New Scientist : Meshnet activists rebuilding the internet from
+<li><p>New Scientist : Meshnet activists rebuilding the internet from
 scratch.
-<a class="reference external" href="http://google.com/producer/s/CBIw8NukjwE">http://google.com/producer/s/CBIw8NukjwE</a>
-</li>
-<li><a class="reference external" href="https://projectmeshnet.org/%E2%80%8E">https://projectmeshnet.org/‎</a></li>
-<li>routing uses <a class="reference external" href="http://cjdns.info/">http://cjdns.info/</a>
-</li>
+<a class="reference external" href="http://google.com/producer/s/CBIw8NukjwE">http://google.com/producer/s/CBIw8NukjwE</a></p></li>
+<li><p><a class="reference external" href="https://projectmeshnet.org/%E2%80%8E">https://projectmeshnet.org/‎</a></p></li>
+<li><p>routing uses <a class="reference external" href="http://cjdns.info/">http://cjdns.info/</a></p></li>
 </ul>
 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2013-07-08-Useful-numbers.html" class="u-url">Useful numbers</a></h1>
@@ -6388,9 +6337,8 @@ scratch.
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>adapted from
-<a class="reference external" href="http://www.stanford.edu/group/vista/cgi-bin/wandell/a-brief-organized-list/">http://www.stanford.edu/group/vista/cgi-bin/wandell/a-brief-organized-list/</a>
-</li>
+<li><p>adapted from
+<a class="reference external" href="http://www.stanford.edu/group/vista/cgi-bin/wandell/a-brief-organized-list/">http://www.stanford.edu/group/vista/cgi-bin/wandell/a-brief-organized-list/</a></p></li>
 </ul>
 <p class="more"><a href="posts/2013-07-08-Useful-numbers.html">Read more…</a></p>
 </div>
@@ -6414,7 +6362,7 @@ scratch.
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>mactex is not there yet, but pre-relaeses are.</li>
+<li><p>mactex is not there yet, but pre-relaeses are.</p></li>
 </ul>
 <p class="more"><a href="posts/2013-06-12-updating-to-mactex-%28texlive-for-mac%29-version-2013.html">Read more…</a></p>
 </div>
@@ -6465,10 +6413,8 @@ problems and finally decided to drop wasting time on maintaining it.</p></li>
                     <div>
 <ul>
 <li>
-<p class="first">call vim to open more files</p>
-<pre class="literal-block">
-vim -p file1 file2 file3
-</pre>
+<p>call vim to open more files</p>
+<pre class="literal-block">vim -p file1 file2 file3</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2013-03-25-using-tabs-in-vim.html">Read more…</a></p>
@@ -6493,15 +6439,11 @@ vim -p file1 file2 file3
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>from
+<a class="reference external" href="http://doc.owncloud.org/server/5.0/admin_manual/maintenance/update.html">http://doc.owncloud.org/server/5.0/admin_manual/maintenance/update.html</a></p></li>
 <li>
-<p class="first">from
-<a class="reference external" href="http://doc.owncloud.org/server/5.0/admin_manual/maintenance/update.html">http://doc.owncloud.org/server/5.0/admin_manual/maintenance/update.html</a></p>
-</li>
-<li>
-<p class="first">backup</p>
-<pre class="literal-block">
-rsync -a owncloud/ owncloud_bkp`date +"%Y%m%d"`/
-</pre>
+<p>backup</p>
+<pre class="literal-block">rsync -a owncloud/ owncloud_bkp`date +"%Y%m%d"`/</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2013-03-23-upgrading-owncloud-to-500.html">Read more…</a></p>
@@ -6527,7 +6469,8 @@ rsync -a owncloud/ owncloud_bkp`date +"%Y%m%d"`/
                     <div>
 <p>Starting in Leopard (I believe) when you open a file downloaded from the web, OS X asks if you really mean it. While it is intended to stop maliciousness, it is only a source of aggravation for me. While there are some hints here on working around it, it turns out that you can disable it completely using a Terminal command:</p>
 <blockquote>
-defaults write com.apple.LaunchServices LSQuarantine -bool NO</blockquote>
+<p>defaults write com.apple.LaunchServices LSQuarantine -bool NO</p>
+</blockquote>
 <p class="more"><a href="posts/2010-10-15-Completely-disable-quarantine-of-downloaded-files.html">Read more…</a></p>
 </div>
                 </div>
@@ -6549,7 +6492,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool NO</blockquote>
 </div>
             </header><div class="p-summary entry-summary">
                     <ul class="simple">
-<li>⇧⌃⏏ (shift+control+eject)</li>
+<li><p>⇧⌃⏏ (shift+control+eject)</p></li>
 </ul>
 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2013-03-06-setting-some-conventions-common-in-Bibdesk-%28to-work-with-bibtex-citeUlike%29.html" class="u-url">setting some conventions common in Bibdesk (to work with bibtex, citeUlike)</a></h1>
@@ -6571,12 +6514,14 @@ defaults write com.apple.LaunchServices LSQuarantine -bool NO</blockquote>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>I found this set useful to collaborate:<ul>
-<li>citekey `` %a1%y%u0 ``</li>
-<li>rangement semi-automatique papiers: `` %f{Cite Key}%n0%e ``</li>
-<li>Topic = use citekey of related papers</li>
-<li>Comment (instead annote) to put... comments (as annote gets
-printed in the manuscript that would use the entry)</li>
+<li>
+<p>I found this set useful to collaborate:</p>
+<ul>
+<li><p>citekey `` %a1%y%u0 ``</p></li>
+<li><p>rangement semi-automatique papiers: `` %f{Cite Key}%n0%e ``</p></li>
+<li><p>Topic = use citekey of related papers</p></li>
+<li><p>Comment (instead annote) to put... comments (as annote gets
+printed in the manuscript that would use the entry)</p></li>
 </ul>
 </li>
 </ul>
@@ -6601,14 +6546,12 @@ printed in the manuscript that would use the entry)</li>
 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<p>Everything (almost) can be done by the <tt class="docutils literal">find</tt> command:</p>
+<p>Everything (almost) can be done by the <code class="docutils literal">find</code> command:</p>
 <blockquote>
 <ul>
 <li>
-<p class="first">finding in the current directory (<tt class="docutils literal">.</tt>) all files containing a <tt class="docutils literal">lock</tt> pattern:</p>
-<pre class="literal-block">
-find . -name *lock*
-</pre>
+<p>finding in the current directory (<code class="docutils literal">.</code>) all files containing a <code class="docutils literal">lock</code> pattern:</p>
+<pre class="literal-block">find . -name *lock*</pre>
 </li>
 </ul>
 </blockquote>
@@ -6693,16 +6636,16 @@ internal neural representation of the environment.</p>
 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>tl;dr `` sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist ``</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>tl;dr `` sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist ``</p></td>
 </tr></tbody>
 </table>
 <ul class="simple">
-<li>summarizing the instructions in
+<li><p>summarizing the instructions in
 <a class="reference external" href="http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05">http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05</a>
-:</li>
+:</p></li>
 </ul>
 <p class="more"><a href="posts/2013-02-02-How-To-Change-Your-Time-Machine-Backup-Interval.html">Read more…</a></p>
 </div>
@@ -6725,18 +6668,14 @@ internal neural representation of the environment.</p>
 </div>
             </header><div class="p-summary entry-summary">
                     <ul>
-<li>
-<p class="first">I use <a class="reference external" href="http://owncloud.org">ownCloud</a> as a remplacement of
+<li><p>I use <a class="reference external" href="http://owncloud.org">ownCloud</a> as a remplacement of
 dropbox, but I had unfortunately lots of conflicts files (on client
-and server)</p>
-</li>
+and server)</p></li>
 <li>
-<p class="first">these contain the <tt class="docutils literal">_conflict-</tt> pattern, so a solution is to move
+<p>these contain the <code class="docutils literal">_conflict-</code> pattern, so a solution is to move
 all of them to a backup folder:</p>
-<pre class="literal-block">
-cd /share/DriveOne/Web/owncloud/data/admin/files
-find . -name *_conflict-* -exec mv {} /share/Backups/backups/duplicate-photos/ \;
-</pre>
+<pre class="literal-block">cd /share/DriveOne/Web/owncloud/data/admin/files
+find . -name *_conflict-* -exec mv {} /share/Backups/backups/duplicate-photos/ \;</pre>
 </li>
 </ul>
 </div>
@@ -6784,9 +6723,8 @@ steps:</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>the parameter to use is umask
-<a class="reference external" href="https://en.wikipedia.org/wiki/Umask">https://en.wikipedia.org/wiki/Umask</a>
-</li>
+<li><p>the parameter to use is umask
+<a class="reference external" href="https://en.wikipedia.org/wiki/Umask">https://en.wikipedia.org/wiki/Umask</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-11-28-setting-the-umask-to-define-default-permissions-for-created-files.html">Read more…</a></p>
 </div>
@@ -6810,8 +6748,8 @@ steps:</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>the network utility GUI is useful, but you may get the same results
-via the command line:</li>
+<li><p>the network utility GUI is useful, but you may get the same results
+via the command line:</p></li>
 </ul>
 <p class="more"><a href="posts/2012-09-30-discover-ports-on-MacOSX.html">Read more…</a></p>
 </div>
@@ -6835,8 +6773,8 @@ via the command line:</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>on a 2007 imac that will slow to a crawl since mountain lion, I have
-installed linux mint (why not debian?)</li>
+<li><p>on a 2007 imac that will slow to a crawl since mountain lion, I have
+installed linux mint (why not debian?)</p></li>
 </ul>
 <p class="more"><a href="posts/2012-09-09-installing-linux-on-imac-hardware.html">Read more…</a></p>
 </div>
@@ -6860,8 +6798,8 @@ installed linux mint (why not debian?)</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>after installing a linux client, you usually wish to have the same
-users as on your QNAP server. A LDAP server is one useful solution.</li>
+<li><p>after installing a linux client, you usually wish to have the same
+users as on your QNAP server. A LDAP server is one useful solution.</p></li>
 </ul>
 <p class="more"><a href="posts/2012-09-04-connecting-a-linux-client-to-a-QNAPs-LDAP-server.html">Read more…</a></p>
 </div>
@@ -6885,9 +6823,8 @@ users as on your QNAP server. A LDAP server is one useful solution.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>master howto:
-<a class="reference external" href="http://forum.qnap.com/viewtopic.php?f=143&amp;t=33376&amp;start=30">http://forum.qnap.com/viewtopic.php?f=143&amp;t=33376&amp;start=30</a>
-</li>
+<li><p>master howto:
+<a class="reference external" href="http://forum.qnap.com/viewtopic.php?f=143&amp;t=33376&amp;start=30">http://forum.qnap.com/viewtopic.php?f=143&amp;t=33376&amp;start=30</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-08-27-installing-Dovecot-on-QNAP.html">Read more…</a></p>
 </div>
@@ -6911,9 +6848,8 @@ users as on your QNAP server. A LDAP server is one useful solution.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>discovered this by looking to nemo &gt; outis &gt;
-<a class="reference external" href="http://en.wikipedia.org/wiki/Istv%C3%A1n_Orosz">http://en.wikipedia.org/wiki/Istv%C3%A1n_Orosz</a>
-</li>
+<li><p>discovered this by looking to nemo &gt; outis &gt;
+<a class="reference external" href="http://en.wikipedia.org/wiki/Istv%C3%A1n_Orosz">http://en.wikipedia.org/wiki/Istv%C3%A1n_Orosz</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-08-19-Istvan-Orosz.html">Read more…</a></p>
 </div>
@@ -6937,9 +6873,9 @@ users as on your QNAP server. A LDAP server is one useful solution.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>The cmap package is intended to make the PDF files generated by
+<li><p>The cmap package is intended to make the PDF files generated by
 pdflatex "searchable and copyable" in acrobat reader and other
-compliant PDF viewers.</li>
+compliant PDF viewers.</p></li>
 </ul>
 <p class="more"><a href="posts/2012-07-24-Make-PDF-files-searchable-and-copyable.html">Read more…</a></p>
 </div>
@@ -7021,8 +6957,8 @@ compliant PDF viewers.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>dans un journal qui nécessite un abonnement pour accéder au contenu,
-il faut passer par le serveur de l'INIST.</li>
+<li><p>dans un journal qui nécessite un abonnement pour accéder au contenu,
+il faut passer par le serveur de l'INIST.</p></li>
 </ul>
 <p class="more"><a href="posts/2012-06-12-racourci-pour-acceder-a-une-page-INIST.html">Read more…</a></p>
 </div>
@@ -7048,10 +6984,8 @@ il faut passer par le serveur de l'INIST.</li>
 <p>Easy transformations of videos:</p>
 <ul>
 <li>
-<p class="first">turn to the right</p>
-<pre class="literal-block">
-ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19.31.32_right.mov
-</pre>
+<p>turn to the right</p>
+<pre class="literal-block">ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19.31.32_right.mov</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2012-04-30-rotating-a-video-using-ffmpeg.html">Read more…</a></p>
@@ -7076,9 +7010,8 @@ ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>the solution is
-<a class="reference external" href="http://audiotools.sourceforge.net/">http://audiotools.sourceforge.net/</a>
-</li>
+<li><p>the solution is
+<a class="reference external" href="http://audiotools.sourceforge.net/">http://audiotools.sourceforge.net/</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-04-22-Converting-FLAC-to-AAC-%28or-MP3-to-OGG-etc%29.html">Read more…</a></p>
 </div>
@@ -7103,13 +7036,11 @@ ffmpeg  -i  2012-04-29\ 19.31.32.mov  -vf "transpose=1" -sameq -y 2012-04-29\ 19
                     <div>
 <ul>
 <li>
-<p class="first">recently, a message popped-up :</p>
-<pre class="literal-block">
-Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+<p>recently, a message popped-up :</p>
+<pre class="literal-block">Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ Package `movie15' is obsolete and @@
 (movie15)                @@ superseded by `media9'.           @@
-(movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
-</pre>
+(movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2012-04-17-transition-from-movie15sty-to-media9sty.html">Read more…</a></p>
@@ -7158,10 +7089,9 @@ default parameters. Still you want the same behaviour everywhere...</p></li>
 </div>
             </header><div class="p-summary entry-summary">
                     <ul class="simple">
-<li>duckduckgo is a search engine as google was.</li>
-<li>add to firefox :
-<a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/">https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/</a>
-</li>
+<li><p>duckduckgo is a search engine as google was.</p></li>
+<li><p>add to firefox :
+<a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/">https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/</a></p></li>
 </ul>
 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2012-03-24-Type-your-paths-directly.html" class="u-url">Type your paths directly</a></h1>
@@ -7183,12 +7113,10 @@ default parameters. Still you want the same behaviour everywhere...</p></li>
             </header><div class="p-summary entry-summary">
                     <ul>
 <li>
-<p class="first">from
+<p>from
 <a class="reference external" href="http://apple.blogoverflow.com/2012/03/open-and-save-like-a-pro-secrets-of-opensave-dialogs/">http://apple.blogoverflow.com/2012/03/open-and-save-like-a-pro-secrets-of-opensave-dialogs/</a>
 :</p>
-<pre class="literal-block">
-Let’s move on to a more advanced feature: the Go to Folder dialog. Like in Finder, you can access a prompt for typing a path by pressing ⇧+⌘+G. If you love the keyboard, you’ll love this dialog; frequently, the fastest way to get to where you want to go is by typing its path. This is especially true because the Go to Folder dialog features tab autocompletion: type the beginning of the name of a file or folder and hit tab to fill in the rest of the name automatically. My favorite part about the Go to Folder dialog is that it appears automatically whenever you begin typing a path (/ or ~). When saving, the desired filename can even be included in the path.
-</pre>
+<pre class="literal-block">Let’s move on to a more advanced feature: the Go to Folder dialog. Like in Finder, you can access a prompt for typing a path by pressing ⇧+⌘+G. If you love the keyboard, you’ll love this dialog; frequently, the fastest way to get to where you want to go is by typing its path. This is especially true because the Go to Folder dialog features tab autocompletion: type the beginning of the name of a file or folder and hit tab to fill in the rest of the name automatically. My favorite part about the Go to Folder dialog is that it appears automatically whenever you begin typing a path (/ or ~). When saving, the desired filename can even be included in the path.</pre>
 </li>
 </ul>
 </div>
@@ -7211,19 +7139,21 @@ Let’s move on to a more advanced feature: the Go to Folder dialog. Like in Fin
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>iphoto.app is certainly a nice tool, but it is also<ol class="arabic">
-<li>slow, unresponsive and locks you in some ugly closed-source
-format.</li>
-<li>also, try to look in forums when you want to share pictures on
+<li>
+<p>iphoto.app is certainly a nice tool, but it is also</p>
+<ol class="arabic simple">
+<li><p>slow, unresponsive and locks you in some ugly closed-source
+format.</p></li>
+<li><p>also, try to look in forums when you want to share pictures on
 different {computers / OSs / iphoto versions / places / users} =
-nightmare!</li>
-<li>on top of that, the *cloud stuff is intellectually just very
-corrupted...</li>
-<li>what decided me to drop it entirely was a sudden corruption of the
+nightmare!</p></li>
+<li><p>on top of that, the *cloud stuff is intellectually just very
+corrupted...</p></li>
+<li><p>what decided me to drop it entirely was a sudden corruption of the
 library. It took 2 days to recover my files and re-rotate
-correctly all pictures...</li>
-<li>last nail in the coffin was the fact that libraries are not
-backward compatible : you have to upgrade to the new <em>product</em>.</li>
+correctly all pictures...</p></li>
+<li><p>last nail in the coffin was the fact that libraries are not
+backward compatible : you have to upgrade to the new <em>product</em>.</p></li>
 </ol>
 </li>
 </ul>
@@ -7249,9 +7179,8 @@ backward compatible : you have to upgrade to the new <em>product</em>.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>master howto:
-<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a>
-</li>
+<li><p>master howto:
+<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-03-21-installing-Dovecot-on-MacOsX-using-HomeBrew.html">Read more…</a></p>
 </div>
@@ -7275,9 +7204,8 @@ backward compatible : you have to upgrade to the new <em>product</em>.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>largely adapted from
-<a class="reference external" href="https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX">https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX</a>
-</li>
+<li><p>largely adapted from
+<a class="reference external" href="https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX">https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html">Read more…</a></p>
 </div>
@@ -7301,10 +7229,10 @@ backward compatible : you have to upgrade to the new <em>product</em>.</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>There exist some solution to move a time machine data folder to a new
+<li><p>There exist some solution to move a time machine data folder to a new
 drive by making a clone of the drive. My problem is that I already
 have data on the new drive and that this data can difficultly be
-moved.</li>
+moved.</p></li>
 </ul>
 <p class="more"><a href="posts/2012-03-13-Moving-Time-Machine-to-a-New-Hard-Drive.html">Read more…</a></p>
 </div>
@@ -7327,8 +7255,8 @@ moved.</li>
 </div>
             </header><div class="p-summary entry-summary">
                     <ul><li>
-<p class="first">The editor of our submitted paper asked for a red-lined article file.
-Using <tt class="docutils literal">latexdiff</tt> makes this task very easy: Simply grab the 2
+<p>The editor of our submitted paper asked for a red-lined article file.
+Using <code class="docutils literal">latexdiff</code> makes this task very easy: Simply grab the 2
 versions of your manuscript and issue</p>
 <p class="more"><a href="posts/2012-03-12-Doing-a-red-lined-article-file-from-two-versions-of-a-paper-in-LaTeX.html">Read more…</a></p>
 </li></ul>
@@ -7351,18 +7279,16 @@ versions of your manuscript and issue</p>
 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>largely a copy-and-paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844">http://hints.macworld.com/article.php?story=20070622210507844</a> ; Jun 25, '07 07:30:00AM • Contributed by: delight1</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>largely a copy-and-paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20070622210507844">http://hints.macworld.com/article.php?story=20070622210507844</a> ; Jun 25, '07 07:30:00AM • Contributed by: delight1</p></td>
 </tr></tbody>
 </table>
 <ul>
 <li>
-<p class="first">After doing a backup, edit the following file:</p>
-<pre class="literal-block">
-sudo vim /System/Library/LaunchDaemons/ssh.plist
-</pre>
+<p>After doing a backup, edit the following file:</p>
+<pre class="literal-block">sudo vim /System/Library/LaunchDaemons/ssh.plist</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2012-03-11-Stop-Bonjour-from-broadcasting-ssh-and-sftp.html">Read more…</a></p>
@@ -7386,11 +7312,10 @@ sudo vim /System/Library/LaunchDaemons/ssh.plist
 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>copy and paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20091208050655947">http://hints.macworld.com/article.php?story=20091208050655947</a>
-</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>copy and paste from <a class="reference external" href="http://hints.macworld.com/article.php?story=20091208050655947">http://hints.macworld.com/article.php?story=20091208050655947</a></p></td>
 </tr></tbody>
 </table>
 <p>Starting in Leopard when you open a file downloaded from the web, OS X
@@ -7420,8 +7345,7 @@ completely using a Terminal command:</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>Finder / Pomme-K / <a class="reference external" href="smb://10.164.0.66">smb://10.164.0.66</a>
-</li>
+<li><p>Finder / Pomme-K / <a class="reference external" href="smb://10.164.0.66">smb://10.164.0.66</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-02-22-access-spawn.html">Read more…</a></p>
 </div>
@@ -7445,9 +7369,8 @@ completely using a Terminal command:</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>paramétrer un nouveau compte avec son adresse
-<a class="reference external" href="mailto:lolo.toto@univ-amu.fr">lolo.toto@univ-amu.fr</a>
-</li>
+<li><p>paramétrer un nouveau compte avec son adresse
+<a class="reference external" href="mailto:lolo.toto@univ-amu.fr">lolo.toto@univ-amu.fr</a></p></li>
 </ul>
 <p class="more"><a href="posts/2012-02-17-parametrer-le-mail-a-lINT.html">Read more…</a></p>
 </div>
@@ -7471,8 +7394,8 @@ completely using a Terminal command:</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li><a class="reference external" href="http://www.ran-dan.net/eng/?p=406">An experimentation and meeting about Tropique of Etienne
-Rey</a></li>
+<li><p><a class="reference external" href="http://www.ran-dan.net/eng/?p=406">An experimentation and meeting about Tropique of Etienne
+Rey</a></p></li>
 </ul>
 <div class="section" id="neurosciences">
 <h2>neurosciences?</h2>
@@ -7516,15 +7439,11 @@ mieux comprendre cet objet...</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul>
+<li><p>master howto:
+<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p></li>
 <li>
-<p class="first">master howto:
-<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p>
-</li>
-<li>
-<p class="first">Install</p>
-<pre class="literal-block">
-sudo aptitude install dovecot
-</pre>
+<p>Install</p>
+<pre class="literal-block">sudo aptitude install dovecot</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2012-02-08-installing-Dovecot-on-debian.html">Read more…</a></p>
@@ -7549,10 +7468,10 @@ sudo aptitude install dovecot
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>you may get errors if trying to install pyglet using the traditional
-way, using <tt class="docutils literal">pip</tt> for instance (was my case on MacOs X Lion 10.7.0 +
+<li><p>you may get errors if trying to install pyglet using the traditional
+way, using <code class="docutils literal">pip</code> for instance (was my case on MacOs X Lion 10.7.0 +
 python 64bits from EPD or homebrew). in cause is the carbon code that
-has been abandonned in the 64bits libraries that come with the OS</li>
+has been abandonned in the 64bits libraries that come with the OS</p></li>
 </ul>
 <p class="more"><a href="posts/2012-01-18-Compiling-pyglet-on-MacOsX.html">Read more…</a></p>
 </div>
@@ -7576,8 +7495,8 @@ has been abandonned in the 64bits libraries that come with the OS</li>
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>due to a disruption on my previous server, I had to move in a rush to
-a new server.</li>
+<li><p>due to a disruption on my previous server, I had to move in a rush to
+a new server.</p></li>
 </ul>
 <p class="more"><a href="posts/2012-01-07-installing-MoinMoin-on-a-OVH-server.html">Read more…</a></p>
 </div>
@@ -7602,10 +7521,9 @@ a new server.</li>
                     <div class="section" id="the-poll">
 <h2>the poll</h2>
 <ul class="simple">
-<li>On april 1st, 2011, I sent the following message to the comp-neuro
+<li><p>On april 1st, 2011, I sent the following message to the comp-neuro
 and connectionists lists: (see
-<a class="reference external" href="http://www.neuroinf.org/pipermail/comp-neuro/2011-April/002613.html">http://www.neuroinf.org/pipermail/comp-neuro/2011-April/002613.html</a>
-</li>
+<a class="reference external" href="http://www.neuroinf.org/pipermail/comp-neuro/2011-April/002613.html">http://www.neuroinf.org/pipermail/comp-neuro/2011-April/002613.html</a></p></li>
 </ul>
 <p class="more"><a href="posts/2011-07-25-computational-and-theoretical-neuroscience.html">Read more…</a></p>
 </div>
@@ -7689,10 +7607,10 @@ and connectionists lists: (see
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>MoinMoin is hugely useful for day to day use. Scripting is even
+<li><p>MoinMoin is hugely useful for day to day use. Scripting is even
 better. Here, I show how to get, edit and rename pages on your wiki.
 To avoid bad surprise, this is based on a copy of the remote server
-using a local server with a <tt class="docutils literal">wikiconfig.py</tt> script.</li>
+using a local server with a <code class="docutils literal">wikiconfig.py</code> script.</p></li>
 </ul>
 <p class="more"><a href="posts/2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html">Read more…</a></p>
 </div>
@@ -7772,10 +7690,9 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>
-<a class="reference external" href="http://spikestream.sourceforge.net/pages/download.html">SpikeStream</a>
+<li><p><a class="reference external" href="http://spikestream.sourceforge.net/pages/download.html">SpikeStream</a>
 &amp; Nemo are (ultra fast) neural simulation frameworks. cool. but how to compile
-on ubuntu?</li>
+on ubuntu?</p></li>
 </ul>
 <p class="more"><a href="posts/2011-03-10-SpikeStream-%26-Nemo.html">Read more…</a></p>
 </div>
@@ -7800,9 +7717,8 @@ on ubuntu?</li>
                     <div>
 <ul>
 <li>
-<p class="first">GATSBY UNIT EXTERNAL SEMINAR</p>
-<pre class="literal-block">
-Bard Ermentrout
+<p>GATSBY UNIT EXTERNAL SEMINAR</p>
+<pre class="literal-block">Bard Ermentrout
 Department of Mathematics
 University of Pittsburgh
 
@@ -7817,8 +7733,7 @@ Double or Nothing: Phosphenes and the periodic driving of cortex
 
 Abstract:
 
-In this talk, I examine two different types of phosphenes - patterns in the visual systems evoked from within it. I first study contour phosphenes in which direct stimulation of the eyeball coupled with a moving bar in the visual field produces slowly propagating waves. The mechanism appears to be due to period doubling which produces an intrinsic bistability. Using averaging, I analyze the dynamics of a one-dimensional analog. In the second part of the talk, I study flicker-induced hallucinations in which diffuse stroboscopic light is capable of  evoking spatial patterns in the visual field. I use Floquet theory and symmetric bifurcation theory to explain experiments that indicate different patterns are seen with different temporal frequencies.
-</pre>
+In this talk, I examine two different types of phosphenes - patterns in the visual systems evoked from within it. I first study contour phosphenes in which direct stimulation of the eyeball coupled with a moving bar in the visual field produces slowly propagating waves. The mechanism appears to be due to period doubling which produces an intrinsic bistability. Using averaging, I analyze the dynamics of a one-dimensional analog. In the second part of the talk, I study flicker-induced hallucinations in which diffuse stroboscopic light is capable of  evoking spatial patterns in the visual field. I use Floquet theory and symmetric bifurcation theory to explain experiments that indicate different patterns are seen with different temporal frequencies.</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2011-03-09-Ermentrout-Double-or-Nothing-Phosphenes-and-the-periodic-driving-of-cortex-.html">Read more…</a></p>
@@ -7843,8 +7758,8 @@ In this talk, I examine two different types of phosphenes - patterns in the visu
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>find source and traget UID / GID using the <tt class="docutils literal">id</tt> command on unix and
-<tt class="docutils literal">dscllocalhostread/Local/Default/Users/lup</tt> in MacOsX</li>
+<li><p>find source and traget UID / GID using the <code class="docutils literal">id</code> command on unix and
+<code class="docutils literal"><span class="pre">dscl localhost read /Local/Default/Users/lup</span></code> in MacOsX</p></li>
 </ul>
 <p class="more"><a href="posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html">Read more…</a></p>
 </div>
@@ -7868,11 +7783,11 @@ In this talk, I examine two different types of phosphenes - patterns in the visu
             </header><div class="p-summary entry-summary">
                     <div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul><li>
-<p class="first">quoting
+<p>quoting
 <a class="reference external" href="http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35">http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35</a>
 : "For those (like me) who aren't familiar with grub tampering,
 here's what I did to make the change automatic:"</p>
@@ -7899,15 +7814,15 @@ here's what I did to make the change automatic:"</p>
             </header><div class="p-summary entry-summary">
                     <div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul class="simple">
-<li>from
-<a class="reference external" href="http://www.fscklog.com/2008/02/schnellschlaf-s.html">http://www.fscklog.com/2008/02/schnellschlaf-s.html</a>:</li>
+<li><p>from
+<a class="reference external" href="http://www.fscklog.com/2008/02/schnellschlaf-s.html">http://www.fscklog.com/2008/02/schnellschlaf-s.html</a>:</p></li>
 </ul>
 <p>To select one of the different sleep modes of the Mac use the
-command-line tool <tt class="docutils literal">pmset</tt>:</p>
+command-line tool <code class="docutils literal">pmset</code>:</p>
 <p class="more"><a href="posts/2011-02-09-pmset-selecting-the-sleep-mode-in-Mac-Os-X.html">Read more…</a></p>
 </div>
                 </div>
@@ -7958,11 +7873,9 @@ command-line tool <tt class="docutils literal">pmset</tt>:</p>
                     <div>
 <ul>
 <li>
-<p class="first">with a setup.py package,
+<p>with a setup.py package,
 <a class="reference external" href="http://docs.python.org/install/index.html">http://docs.python.org/install/index.html</a></p>
-<pre class="literal-block">
-python setup.py install --home=$HOME/Python2.6
-</pre>
+<pre class="literal-block">python setup.py install --home=$HOME/Python2.6</pre>
 </li>
 </ul>
 <p class="more"><a href="posts/2011-01-26-python-in-user-space.html">Read more…</a></p>
@@ -7986,14 +7899,14 @@ python setup.py install --home=$HOME/Python2.6
 </div>
             </header><div class="p-summary entry-summary">
                     <ul class="simple">
-<li>⇧⌘C: Computer</li>
-<li>⇧⌘H: Home</li>
-<li>⇧⌘D: Desktop</li>
-<li>⇧⌘K: Network</li>
-<li>⌥⌘L: Downloads</li>
-<li>⇧⌘A: Applications</li>
-<li>⇧⌘O: Documents</li>
-<li>⇧⌘U: Utilities</li>
+<li><p>⇧⌘C: Computer</p></li>
+<li><p>⇧⌘H: Home</p></li>
+<li><p>⇧⌘D: Desktop</p></li>
+<li><p>⇧⌘K: Network</p></li>
+<li><p>⌥⌘L: Downloads</p></li>
+<li><p>⇧⌘A: Applications</p></li>
+<li><p>⇧⌘O: Documents</p></li>
+<li><p>⇧⌘U: Utilities</p></li>
 </ul>
 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2011-01-19-inverting-colors-in-MacOsX.html" class="u-url">inverting colors in MacOsX</a></h1>
@@ -8015,9 +7928,9 @@ python setup.py install --home=$HOME/Python2.6
             </header><div class="p-summary entry-summary">
                     <div>
 <ul class="simple">
-<li>during a presentation, a figure may reveal more readable if you
+<li><p>during a presentation, a figure may reveal more readable if you
 invert colors and luminance: black gets white and reverse, red
-becomes cyan and so on.</li>
+becomes cyan and so on.</p></li>
 </ul>
 <p class="more"><a href="posts/2011-01-19-inverting-colors-in-MacOsX.html">Read more…</a></p>
 </div>

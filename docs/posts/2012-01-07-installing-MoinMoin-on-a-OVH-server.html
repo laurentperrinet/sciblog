@@ -146,36 +146,33 @@ g">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>due to a disruption on my previous server, I had to move in a rush to
-a new server.</li>
+<li><p>due to a disruption on my previous server, I had to move in a rush to
+a new server.</p></li>
 </ul>
 <!-- TEASER_END --><ul>
 <li>
-<p class="first">choosing the right provider</p>
+<p>choosing the right provider</p>
 <ul class="simple">
-<li><a class="reference external" href="http://240plan.ovh.net/infos/python.cgi">http://240plan.ovh.net/infos/python.cgi</a></li>
-<li><a class="reference external" href="http://240plan.ovh.net/net2ftp/index.php">http://240plan.ovh.net/net2ftp/index.php</a></li>
+<li><p><a class="reference external" href="http://240plan.ovh.net/infos/python.cgi">http://240plan.ovh.net/infos/python.cgi</a></p></li>
+<li><p><a class="reference external" href="http://240plan.ovh.net/net2ftp/index.php">http://240plan.ovh.net/net2ftp/index.php</a></p></li>
 </ul>
 </li>
 <li>
-<p class="first">getting a basic MoinMoin instance running</p>
+<p>getting a basic MoinMoin instance running</p>
 <ul class="simple">
-<li><a class="reference external" href="http://moinmo.in/via_ftp_on_vserver">http://moinmo.in/via_ftp_on_vserver</a></li>
-<li><a class="reference external" href="http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/REQUIREMENTS">http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/REQUIREMENTS</a></li>
+<li><p><a class="reference external" href="http://moinmo.in/via_ftp_on_vserver">http://moinmo.in/via_ftp_on_vserver</a></p></li>
+<li><p><a class="reference external" href="http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/REQUIREMENTS">http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/REQUIREMENTS</a></p></li>
 </ul>
 </li>
-<li>
-<p class="first">getting the path of the pages on the server using the <tt class="docutils literal">explore.py</tt>
+<li><p>getting the path of the pages on the server using the <code class="docutils literal">explore.py</code>
 script in
-<a class="reference external" href="http://wiki.python.org/jython/HelpOnInstalling/ApacheOnLinuxFtp">http://wiki.python.org/jython/HelpOnInstalling/ApacheOnLinuxFtp</a></p>
-</li>
+<a class="reference external" href="http://wiki.python.org/jython/HelpOnInstalling/ApacheOnLinuxFtp">http://wiki.python.org/jython/HelpOnInstalling/ApacheOnLinuxFtp</a></p></li>
 <li>
-<p class="first">setting up an empty MoinMoin instance, using:</p>
+<p>setting up an empty MoinMoin instance, using:</p>
 <ul>
 <li>
-<p class="first">the following <tt class="docutils literal"><span class="pre">cgi-bin/index.cgi</span></tt> script:</p>
-<pre class="literal-block">
- 1 #!/usr/bin/python
+<p>the following <code class="docutils literal"><span class="pre">cgi-bin/index.cgi</span></code> script:</p>
+<pre class="literal-block"> 1 #!/usr/bin/python
  2
  3 import sys, os
  4
@@ -184,59 +181,46 @@ script in
  7 os.environ['FCGI_FORCE_CGI'] = 'N' # 'Y' for (slow) CGI, 'N' for FCGI
  8
  9 from MoinMoin.web.flup_frontend import CGIFrontEnd
-10 CGIFrontEnd().run()
-</pre>
+10 CGIFrontEnd().run()</pre>
 </li>
 <li>
-<p class="first">setting up the right path in <tt class="docutils literal">xikiconfig.py</tt> :</p>
-<pre class="literal-block">
-1     data_dir = '/homez.52/invibe/moin/data/'
+<p>setting up the right path in <code class="docutils literal">xikiconfig.py</code> :</p>
+<pre class="literal-block">1     data_dir = '/homez.52/invibe/moin/data/'
 2     data_underlay_dir = '/homez.52/invibe/moin/underlay_min/'
 3     url_prefix_static = '/moin_static193'
-4     url_mappings = {'/cgi-bin/index.cgi':'/LaurentPerrinet'}
-</pre>
+4     url_mappings = {'/cgi-bin/index.cgi':'/LaurentPerrinet'}</pre>
 </li>
-<li>
-<p class="first">note that I installed the htdocs as <tt class="docutils literal">www/moin_static193</tt></p>
-</li>
+<li><p>note that I installed the htdocs as <code class="docutils literal">www/moin_static193</code></p></li>
 </ul>
 </li>
 <li>
-<p class="first">once functional, getting my old stuff on the new server</p>
+<p>once functional, getting my old stuff on the new server</p>
 <ul class="simple">
-<li>do not forget to set up permissions to <tt class="docutils literal">755</tt> on the site (I used
+<li><p>do not forget to set up permissions to <code class="docutils literal">755</code> on the site (I used
 their online ftp tool for that -
 <a class="reference external" href="http://240plan.ovh.net/net2ftp/index.php">http://240plan.ovh.net/net2ftp/index.php</a>
-)</li>
+)</p></li>
 </ul>
 </li>
 <li>
-<p class="first">rewrite rule</p>
+<p>rewrite rule</p>
 <ul>
+<li><p><a class="reference external" href="http://rabaix.net/en/articles/2007/08/31/how-to-install-django-on-ovh-net">http://rabaix.net/en/articles/2007/08/31/how-to-install-django-on-ovh-net</a></p></li>
+<li><p><a class="reference external" href="http://guide.ovh.com/HtaccessModRewrite">http://guide.ovh.com/HtaccessModRewrite</a></p></li>
 <li>
-<p class="first"><a class="reference external" href="http://rabaix.net/en/articles/2007/08/31/how-to-install-django-on-ovh-net">http://rabaix.net/en/articles/2007/08/31/how-to-install-django-on-ovh-net</a></p>
-</li>
-<li>
-<p class="first"><a class="reference external" href="http://guide.ovh.com/HtaccessModRewrite">http://guide.ovh.com/HtaccessModRewrite</a></p>
-</li>
-<li>
-<p class="first">I opted for this config in the <tt class="docutils literal"><span class="pre">www/.htaccess</span></tt> file:</p>
-<pre class="literal-block">
-Options +FollowSymlinks
+<p>I opted for this config in the <code class="docutils literal"><span class="pre">www/.htaccess</span></code> file:</p>
+<pre class="literal-block">Options +FollowSymlinks
 RewriteEngine on
 RewriteRule ^LaurentPerrinet$  LaurentPerrinet/ [L]
 RewriteRule ^LaurentPerrinet(.*)$  /cgi-bin/index.cgi$1 [L]
-RewriteRule !(moin_static193|images|robots.txt|favicon.ico|cgi-bin) LaurentPerrinet  [L]
-</pre>
+RewriteRule !(moin_static193|images|robots.txt|favicon.ico|cgi-bin) LaurentPerrinet  [L]</pre>
 </li>
 </ul>
 </li>
-<li>
-<p class="first">overall, this process was not linear and quite frustrating as there
+<li><p>overall, this process was not linear and quite frustrating as there
 is no ssh (only a ftp) access and absolutely no simple guide and
 worse, no logfile from apache (you see quite often an "error 500"
-without any cue as what is going wrong)</p>
-</li>
+without any cue as what is going wrong)</p></li>
 </ul>
 </div>
     </div>

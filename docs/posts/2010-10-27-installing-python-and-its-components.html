@@ -138,84 +138,66 @@ som">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>Python is often pre-installed on your system or easy to download.
+<li><p>Python is often pre-installed on your system or easy to download.
 More difficult is to get the essential packages (numpy, scipy,
 matplotlib, ipython) and their dependencies installed. Here, I list
-some of the possibilities.</li>
+some of the possibilities.</p></li>
 </ul>
 <!-- TEASER_END --><div class="section" id="on-macosx-using-macports">
 <h2>on MacOsX: using MacPorts</h2>
 <ul>
-<li>
-<p class="first">A basic installation procedure is to use the <a class="reference external" href="http://www.enthought.com/products/edudownload.php">enthought
-distribution</a>,</p>
-</li>
-<li>
-<p class="first">Another route is to use <a class="reference external" href="http://www.macports.org">MacPorts</a>. It is
+<li><p>A basic installation procedure is to use the <a class="reference external" href="http://www.enthought.com/products/edudownload.php">enthought
+distribution</a>,</p></li>
+<li><p>Another route is to use <a class="reference external" href="http://www.macports.org">MacPorts</a>. It is
 a generic package manager inspired by what you get using Debian's
-<tt class="docutils literal">apt</tt> scheme.</p>
-</li>
+<code class="docutils literal">apt</code> scheme.</p></li>
 <li>
-<p class="first">Once <a class="reference external" href="http://www.macports.org/install.php">install</a>ed, do on the
+<p>Once <a class="reference external" href="http://www.macports.org/install.php">install</a>ed, do on the
 command-line</p>
 <ul>
 <li>
-<p class="first">on Leopard:</p>
-<pre class="literal-block">
-sudo port install py25-pil py25-numpy py25-scipy py25-ipython py25-matplotlib +cairo+latex+tkinter
-sudo python_select python25
-</pre>
-<p>(Note: you may also use <tt class="docutils literal">python26</tt> on Leopard).</p>
+<p>on Leopard:</p>
+<pre class="literal-block">sudo port install py25-pil py25-numpy py25-scipy py25-ipython py25-matplotlib +cairo+latex+tkinter
+sudo python_select python25</pre>
+<p>(Note: you may also use <code class="docutils literal">python26</code> on Leopard).</p>
 </li>
 <li>
-<p class="first">on Snow Leopard:</p>
-<pre class="literal-block">
-sudo port install py26-numpy py26-scipy py26-ipython py26-matplotlib
+<p>on Snow Leopard:</p>
+<pre class="literal-block">sudo port install py26-numpy py26-scipy py26-ipython py26-matplotlib
 sudo port install py26-pyobjc2-cocoa py26-pil py26-distribute py26-pip py26-py2app python_select
 sudo port install vtk5 +carbon +qt4_mac +python26 py26-mayavi
 
-sudo python_select python26
-</pre>
+sudo python_select python26</pre>
 <p>to install a bunch of useful python packages.</p>
 </li>
 <li>
-<p class="first">to get a package that is not available through macports, do:</p>
-<pre class="literal-block">
-sudo easy_install progressbar
-</pre>
+<p>to get a package that is not available through macports, do:</p>
+<pre class="literal-block">sudo easy_install progressbar</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">for <a class="reference external" href="http://www.visionegg.org">visionEgg</a> :</p>
-<pre class="literal-block">
-sudo port install py26-opengl py26-game
-sudo easy_install visionegg
-</pre>
+<p>for <a class="reference external" href="http://www.visionegg.org">visionEgg</a> :</p>
+<pre class="literal-block">sudo port install py26-opengl py26-game
+sudo easy_install visionegg</pre>
 </li>
-<li>
-<p class="first"><a class="reference external" href="http://ipython.scipy.org/moin/Py4Science/InstallationOSX">http://ipython.scipy.org/moin/Py4Science/InstallationOSX</a></p>
-</li>
-<li>
-<p class="first">on Snow Leopard, you'll have to follow <a class="reference external" href="http://blog.hyperjeff.net/?p=160">these
-instructions</a>.</p>
-</li>
+<li><p><a class="reference external" href="http://ipython.scipy.org/moin/Py4Science/InstallationOSX">http://ipython.scipy.org/moin/Py4Science/InstallationOSX</a></p></li>
+<li><p>on Snow Leopard, you'll have to follow <a class="reference external" href="http://blog.hyperjeff.net/?p=160">these
+instructions</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="windows">
 <h2>Windows</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.pythonxy.com">http://www.pythonxy.com</a></li>
+<li><p><a class="reference external" href="http://www.pythonxy.com">http://www.pythonxy.com</a></p></li>
 </ul>
 </div>
 <div class="section" id="debian-ubuntu">
 <h2>Debian / Ubuntu</h2>
 <ul>
 <li>
-<p class="first">see <a class="reference external" href="http://neuro.debian.net/">http://neuro.debian.net/</a></p>
-<pre class="literal-block">
-sudo aptitude install ipython python-numpy python-scipy python-matplotlib
-</pre>
+<p>see <a class="reference external" href="http://neuro.debian.net/">http://neuro.debian.net/</a></p>
+<pre class="literal-block">sudo aptitude install ipython python-numpy python-scipy python-matplotlib</pre>
 </li>
 </ul>
 </div>
@@ -223,57 +205,39 @@ sudo aptitude install ipython python-numpy python-scipy python-matplotlib
 <h2>DistUtils, PIP &amp; Easy Install</h2>
 <ul>
 <li>
-<p class="first">most of the time, there's a <tt class="docutils literal">setup.py</tt> file:</p>
-<pre class="literal-block">
-python setup.py install --prefix=~
-</pre>
+<p>most of the time, there's a <code class="docutils literal">setup.py</code> file:</p>
+<pre class="literal-block">python setup.py install --prefix=~</pre>
+</li>
+<li><p>See
+<a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">http://peak.telecommunity.com/DevCenter/EasyInstall</a></p></li>
+<li>
+<p>to install <code class="docutils literal">numpy</code> (same for <code class="docutils literal">pylab</code>, <code class="docutils literal">scipy</code>, or
+<code class="docutils literal">visionegg</code>), simply do</p>
+<pre class="literal-block">easy_install numpy</pre>
 </li>
 <li>
-<p class="first">See
-<a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">http://peak.telecommunity.com/DevCenter/EasyInstall</a></p>
-</li>
-<li>
-<p class="first">to install <tt class="docutils literal">numpy</tt> (same for <tt class="docutils literal">pylab</tt>, <tt class="docutils literal">scipy</tt>, or
-<tt class="docutils literal">visionegg</tt>), simply do</p>
-<pre class="literal-block">
-easy_install numpy
-</pre>
-</li>
-<li>
-<p class="first">most of the cases, on a test server or a single-user machine, you may
+<p>most of the cases, on a test server or a single-user machine, you may
 find more useful to install in your home dirtectory, for instance:</p>
-<pre class="literal-block">
-easy_install -d ~/lib/python2.5/site-packages/ numpy
-</pre>
+<pre class="literal-block">easy_install -d ~/lib/python2.5/site-packages/ numpy</pre>
 </li>
 <li>
-<p class="first">to upgrade, use</p>
-<pre class="literal-block">
-easy_install -U numpy
-</pre>
+<p>to upgrade, use</p>
+<pre class="literal-block">easy_install -U numpy</pre>
 </li>
+<li><p>you can <a class="reference external" href="http://pypi.python.org/pypi?%3Aaction=browse">browse</a> the
+list of available packages.</p></li>
+<li><p>for pip: <a class="reference external" href="http://pip.openplans.org/">http://pip.openplans.org/</a></p></li>
 <li>
-<p class="first">you can <a class="reference external" href="http://pypi.python.org/pypi?%3Aaction=browse">browse</a> the
-list of available packages.</p>
-</li>
-<li>
-<p class="first">for pip: <a class="reference external" href="http://pip.openplans.org/">http://pip.openplans.org/</a></p>
-</li>
-<li>
-<p class="first">you may create a script tu update all packages:</p>
-<pre class="literal-block">
-for i in `python -c "for dist in __import__('pkg_resources').working_set: print dist.project_name"`:
+<p>you may create a script tu update all packages:</p>
+<pre class="literal-block">for i in `python -c "for dist in __import__('pkg_resources').working_set: print dist.project_name"`:
 do
 echo "`easy_install -U $i`"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++"
-done
-</pre>
+done</pre>
 </li>
 <li>
-<p class="first">to install PIL, use</p>
-<pre class="literal-block">
-easy_install -d lib/python2.6/site-packages/ --find-links http://www.pythonware.com/products/pil/ Imaging
-</pre>
+<p>to install PIL, use</p>
+<pre class="literal-block">easy_install -d lib/python2.6/site-packages/ --find-links http://www.pythonware.com/products/pil/ Imaging</pre>
 </li>
 </ul>
 </div>
@@ -281,124 +245,102 @@ easy_install -d lib/python2.6/site-packages/ --find-links http://www.pythonware.
 <h2>SVNs: bleeding edge versions</h2>
 <ul>
 <li>
-<p class="first">numpy</p>
-<pre class="literal-block">
-svn co http://svn.scipy.org/svn/numpy/trunk numpy
+<p>numpy</p>
+<pre class="literal-block">svn co http://svn.scipy.org/svn/numpy/trunk numpy
 cd numpy
 python setup.py build
 sudo python setup.py install
 rm -rf build
-cd ..
-</pre>
+cd ..</pre>
 </li>
 <li>
-<p class="first">SciPy</p>
-<pre class="literal-block">
-svn co http://svn.scipy.org/svn/scipy/trunk scipy
+<p>SciPy</p>
+<pre class="literal-block">svn co http://svn.scipy.org/svn/scipy/trunk scipy
 cd scipy
 python setup.py build
 sudo python setup.py install
 rm -rf build
-cd ..
-</pre>
+cd ..</pre>
 <ul class="simple">
-<li>see <a class="reference external" href="http://www.scipy.org/Installing_SciPy/Mac_OS_X">scipy</a>
-<a class="reference external" href="http://www.scipy.org/Installing_SciPy/Mac_OS_X">http://www.scipy.org/Installing_SciPy/Mac_OS_X</a>
-</li>
+<li><p>see <a class="reference external" href="http://www.scipy.org/Installing_SciPy/Mac_OS_X">scipy</a>
+<a class="reference external" href="http://www.scipy.org/Installing_SciPy/Mac_OS_X">http://www.scipy.org/Installing_SciPy/Mac_OS_X</a></p></li>
 </ul>
 </li>
 <li>
-<p class="first">pylab</p>
-<pre class="literal-block">
-svn co https://svn.sourceforge.net/svnroot/matplotlib/trunk/matplotlib matplotlib
+<p>pylab</p>
+<pre class="literal-block">svn co https://svn.sourceforge.net/svnroot/matplotlib/trunk/matplotlib matplotlib
 cd matplotlib
 python setup.py build
 sudo python setup.py install
 sudo rm -rf build
-cd ..
-</pre>
+cd ..</pre>
 </li>
 <li>
-<p class="first"><a class="reference external" href="http://pythonide.blogspot.com/2007/02/how-to-download-latest-spe-from_26.html">SPE</a></p>
-<pre class="literal-block">
-svn checkout svn://svn.berlios.de/python/spe/trunk/_spe
-</pre>
+<p><a class="reference external" href="http://pythonide.blogspot.com/2007/02/how-to-download-latest-spe-from_26.html">SPE</a></p>
+<pre class="literal-block">svn checkout svn://svn.berlios.de/python/spe/trunk/_spe</pre>
 </li>
 <li>
-<p class="first">PIL</p>
-<pre class="literal-block">
-wget http://effbot.org/downloads/Imaging-1.1.6.tar.gz
+<p>PIL</p>
+<pre class="literal-block">wget http://effbot.org/downloads/Imaging-1.1.6.tar.gz
 tar zxvf  Imaging-1.1.6.tar.gz
 cd Imaging-1.1.6
 python setup.py build_ext -i
 python selftest.py
-python setup.py install
-</pre>
+python setup.py install</pre>
 </li>
 <li>
-<p class="first">gsl</p>
-<pre class="literal-block">
-cvs -d :pserver:anoncvs@sources.redhat.com:/cvs/gsl login
+<p>gsl</p>
+<pre class="literal-block">cvs -d :pserver:anoncvs@sources.redhat.com:/cvs/gsl login
 cvs -d :pserver:anoncvs@sources.redhat.com:/cvs/gsl checkout gsl
 cd gsl/
 ./autogen.sh
 ./configure --enable-maintainer-mode
-make
-</pre>
+make</pre>
 </li>
 <li>
-<p class="first">pytables</p>
+<p>pytables</p>
 <ul>
 <li>
-<p class="first">dependency on HDF</p>
-<pre class="literal-block">
-wget ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-1.6.5.tar.gz
+<p>dependency on HDF</p>
+<pre class="literal-block">wget ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-1.6.5.tar.gz
 tar zxvf hdf5-1.6.5.tar.gz
 cd hdf5-1.6.5
 ./configure --enable-cxx
 make
 make install
-h5ls -r  Documents/Sci/projets/virtualV1/experiments/benchmark_one/results/benchmark_retina_high.h5
-</pre>
+h5ls -r  Documents/Sci/projets/virtualV1/experiments/benchmark_one/results/benchmark_retina_high.h5</pre>
 <ul class="simple">
-<li>and <a class="reference external" href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-0.9.5.1a.tar.gz">Py
-Rex</a>
-</li>
+<li><p>and <a class="reference external" href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-0.9.5.1a.tar.gz">Py
+Rex</a></p></li>
 </ul>
-<pre class="literal-block">
-wget http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-0.9.5.1a.tar.gz
+<pre class="literal-block">wget http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/Pyrex-0.9.5.1a.tar.gz
 tar zxvf Pyrex-0.9.5.1a.tar.gz
 cd Pyrex-0.9.5.1a
 python setup.py build
 sudo python setup.py install
-rm -rf build
-</pre>
+rm -rf build</pre>
 </li>
 <li>
-<p class="first">install</p>
-<pre class="literal-block">
-wget http://puzzle.dl.sourceforge.net/sourceforge/pytables/pytables-1.4.tar.gz
+<p>install</p>
+<pre class="literal-block">wget http://puzzle.dl.sourceforge.net/sourceforge/pytables/pytables-1.4.tar.gz
 #svn co http://pytables.org/svn/pytables/trunk/ pytables
 tar zxvf pytables-1.4.tar.gz
 cd pytables-1.4
 export DYLD_LIBRARY_PATH=/sw/lib # or in .bashrc
 python setup.py install --hdf5=/sw
-cd ..
-</pre>
+cd ..</pre>
 </li>
 </ul>
 </li>
 <li>
-<p class="first">pygtk</p>
-<pre class="literal-block">
-wget http://ftp.gnome.org/pub/GNOME/sources/pygtk/2.8/pygtk-2.8.6.tar.bz2
+<p>pygtk</p>
+<pre class="literal-block">wget http://ftp.gnome.org/pub/GNOME/sources/pygtk/2.8/pygtk-2.8.6.tar.bz2
 tar xvfj pygtk-2.8.6.tar.bz2
 cd pygtk-2.8.6
 .configure
 make
 sudo make install    # or without sudo as root
-cd ..
-</pre>
+cd ..</pre>
 </li>
 </ul>
 </div>

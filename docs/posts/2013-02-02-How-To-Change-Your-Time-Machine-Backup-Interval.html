@@ -139,44 +139,38 @@ summarizing the instruct">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<table border="1" class="docutils">
-<colgroup><col width="100%"></colgroup>
-<tbody valign="top"><tr>
-<td>tl;dr `` sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist ``</td>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<tbody><tr>
+<td><p>tl;dr `` sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist ``</p></td>
 </tr></tbody>
 </table>
 <ul class="simple">
-<li>summarizing the instructions in
+<li><p>summarizing the instructions in
 <a class="reference external" href="http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05">http://maketecheasier.com/change-your-time-machine-backup-interval/2009/06/05</a>
-:</li>
+:</p></li>
 </ul>
 <!-- TEASER_END --><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This post is certainly obsolete...</p>
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
 </div>
 <ul>
 <li>
-<p class="first">make a backup</p>
-<pre class="literal-block">
-sudo cp /System/Library/LaunchDaemons/com.apple.backupd-auto.plist /System/Library/LaunchDaemons/com.apple.backupd-auto.plist.backup
-</pre>
+<p>make a backup</p>
+<pre class="literal-block">sudo cp /System/Library/LaunchDaemons/com.apple.backupd-auto.plist /System/Library/LaunchDaemons/com.apple.backupd-auto.plist.backup</pre>
 </li>
 </ul>
 <div class="section" id="method-1-vim-or-any-editor">
 <h2>method 1 : vim (or any editor)</h2>
 <ul>
 <li>
-<p class="first">open the file for edition</p>
-<pre class="literal-block">
-sudo vim /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
-</pre>
+<p>open the file for edition</p>
+<pre class="literal-block">sudo vim /System/Library/LaunchDaemons/com.apple.backupd-auto.plist</pre>
 </li>
 <li>
-<p class="first">replace 36000 (one hour) by 86400 (one day), then quit:</p>
-<pre class="literal-block">
-:%s/3600/86400/g
-:wq!
-</pre>
+<p>replace 36000 (one hour) by 86400 (one day), then quit:</p>
+<pre class="literal-block">:%s/3600/86400/g
+:wq!</pre>
 </li>
 </ul>
 </div>
@@ -184,34 +178,28 @@ sudo vim /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
 <h2>method 2 : plistbuddy</h2>
 <ul>
 <li>
-<p class="first">you can make it in one line:</p>
-<pre class="literal-block">
-sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
-</pre>
+<p>you can make it in one line:</p>
+<pre class="literal-block">sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 86400' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist</pre>
 </li>
 <li>
-<p class="first">this method uses the PlistBuddy method to read / write the file. this utility can be used
+<p>this method uses the PlistBuddy method to read / write the file. this utility can be used
 interactively</p>
-<pre class="literal-block">
-sudo /usr/libexec/PlistBuddy  /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
-</pre>
+<pre class="literal-block">sudo /usr/libexec/PlistBuddy  /System/Library/LaunchDaemons/com.apple.backupd-auto.plist</pre>
 </li>
 <li>
-<p class="first">but also directly:</p>
-<pre class="literal-block">
-sudo /usr/libexec/PlistBuddy -c 'print  ' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
+<p>but also directly:</p>
+<pre class="literal-block">sudo /usr/libexec/PlistBuddy -c 'print  ' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
 sudo /usr/libexec/PlistBuddy -c 'print  :LaunchEvents:com.apple.time ' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
 sudo /usr/libexec/PlistBuddy -c 'print  :LaunchEvents:com.apple.time:"Backup Interval" ' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
 sudo /usr/libexec/PlistBuddy -c 'print  :LaunchEvents:com.apple.time:"Backup Interval":Interval ' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
-sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 3600' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
-</pre>
+sudo /usr/libexec/PlistBuddy -c 'set  :LaunchEvents:com.apple.time:"Backup Interval":Interval 3600' /System/Library/LaunchDaemons/com.apple.backupd-auto.plist</pre>
 </li>
 </ul>
 </div>
 <div class="section" id="finally">
 <h2>finally</h2>
 <ul class="simple">
-<li>reboot.</li>
+<li><p>reboot.</p></li>
 </ul>
 </div>
 </div>

@@ -137,29 +137,24 @@ To avoid bad surprise, this is based on a copy of the remote server">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>MoinMoin is hugely useful for day to day use. Scripting is even
+<li><p>MoinMoin is hugely useful for day to day use. Scripting is even
 better. Here, I show how to get, edit and rename pages on your wiki.
 To avoid bad surprise, this is based on a copy of the remote server
-using a local server with a <tt class="docutils literal">wikiconfig.py</tt> script.</li>
+using a local server with a <code class="docutils literal">wikiconfig.py</code> script.</p></li>
 </ul>
 <!-- TEASER_END --><ul>
+<li><p>it heavily uses examples shown in
+<a class="reference external" href="http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29">http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29</a></p></li>
 <li>
-<p class="first">it heavily uses examples shown in
-<a class="reference external" href="http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29">http://moinmo.in/MoinAPI/Examples?highlight=%28xmlrpc%29</a></p>
-</li>
-<li>
-<p class="first">first define the server and import the library</p>
-<pre class="literal-block">
-1 wikiurl = "http://localhost:8080"
+<p>first define the server and import the library</p>
+<pre class="literal-block">1 wikiurl = "http://localhost:8080"
 2 username, password = 'YourName', 'yur)s3cr3t-pwd'
 3
-4 import xmlrpclib
-</pre>
+4 import xmlrpclib</pre>
 </li>
 <li>
-<p class="first">let's try to read a page</p>
-<pre class="literal-block">
- 1     pagename = u'NewsEvents' # not protected
+<p>let's try to read a page</p>
+<pre class="literal-block"> 1     pagename = u'NewsEvents' # not protected
  2     pagename = u'Publications/Perrinet06ciotat' # protected
  3     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
  4     auth_token = homewiki.getAuthToken(username, password)
@@ -171,13 +166,11 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
 10     if isinstance(result, tuple) and tuple(result)[0] == "SUCCESS":
 11         print "reading page '%s' : %s" % (pagename, tuple(result)[0])
 12     else:
-13         print tuple(result)[0]
-</pre>
+13         print tuple(result)[0]</pre>
 </li>
 <li>
-<p class="first">and now to write another one</p>
-<pre class="literal-block">
- 1     pagename = u'TestingPage'
+<p>and now to write another one</p>
+<pre class="literal-block"> 1     pagename = u'TestingPage'
  2     text = """
  3     This is a line of TEXT
  4
@@ -193,13 +186,11 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
 14     if isinstance(result, tuple) and tuple(result)[0] == "SUCCESS":
 15         print "page '%s' created: %s" % (pagename, tuple(result)[0])
 16     else:
-17         print 'You did not change the page content, not saved!'
-</pre>
+17         print 'You did not change the page content, not saved!'</pre>
 </li>
 <li>
-<p class="first">so we may now read a page, replace some text and write it</p>
-<pre class="literal-block">
- 1     old, new = 'Category', 'Tag'
+<p>so we may now read a page, replace some text and write it</p>
+<pre class="literal-block"> 1     old, new = 'Category', 'Tag'
  2
  3     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
  4     auth_token = homewiki.getAuthToken(username, password)
@@ -219,13 +210,11 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
 18         else:
 19             print 'not modified'
 20     else:
-21         print tuple(result)[0]
-</pre>
+21         print tuple(result)[0]</pre>
 </li>
 <li>
-<p class="first">let's now do that on the whole website</p>
-<pre class="literal-block">
- 1     old, new = '^= reference =$', '^== reference ==$'
+<p>let's now do that on the whole website</p>
+<pre class="literal-block"> 1     old, new = '^= reference =$', '^== reference ==$'
  2     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
  3     auth_token = homewiki.getAuthToken(username, password)
  4     mc = xmlrpclib.MultiCall(homewiki)
@@ -252,25 +241,21 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
 25             else:
 26                 print tuple(result)[0]
 27         except:
-28             print 'failed', pagename
-</pre>
+28             print 'failed', pagename</pre>
 </li>
 <li>
-<p class="first">let's now rename one page</p>
-<pre class="literal-block">
-1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+<p>let's now rename one page</p>
+<pre class="literal-block">1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
 2     auth_token = homewiki.getAuthToken(username, password)
 3     mc = xmlrpclib.MultiCall(homewiki)
 4     mc.applyAuthToken(auth_token)
 5     mc.renamePage(u'TestingPage', u'TestPage2')
 6     result = mc()
-7     print result[0]
-</pre>
+7     print result[0]</pre>
 </li>
 <li>
-<p class="first">and now some more pages (here to reflect changes in the links)</p>
-<pre class="literal-block">
- 1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
+<p>and now some more pages (here to reflect changes in the links)</p>
+<pre class="literal-block"> 1     homewiki = xmlrpclib.ServerProxy(wikiurl + "?action=xmlrpc2", allow_none=True)
  2     auth_token = homewiki.getAuthToken(username, password)
  3     mc = xmlrpclib.MultiCall(homewiki)
  4     old, new = 'Category', 'Tag'
@@ -280,8 +265,7 @@ using a local server with a <tt class="docutils literal">wikiconfig.py</tt> scri
  8             mc.applyAuthToken(auth_token)
  9             mc.renamePage(pagename, pagename.replace(old, new))
 10             result = mc()
-11             print ":-) page '%s' modified: %s" % (pagename, tuple(result)[0])
-</pre>
+11             print ":-) page '%s' modified: %s" % (pagename, tuple(result)[0])</pre>
 </li>
 </ul>
 </div>
