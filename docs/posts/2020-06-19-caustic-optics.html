@@ -29,7 +29,7 @@ MathJax.Hub.Config({
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="2020-06-19 caustic (optics)">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html">
-<meta property="og:description" content="Caustics) are luminous patterns which are resulting from the smooth deviation of light rays. It is the heart-shaped pattern in your cup of coffee which is formed by reflection of rays. It is also the ">
+<meta property="og:description" content="Caustics () are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is the heart-shaped pattern in your cup of coffee which is formed as the rays of from t">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-06-19T10:01:02+02:00">
 <meta property="article:tag" content="art">
@@ -145,7 +145,8 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Caustic_(optics">Caustics</a>) are luminous patterns which are resulting from the smooth deviation of light rays. It is the heart-shaped pattern in your cup of coffee which is formed by reflection of rays. It is also the wiggly patterns of light that you will see on the floor of a pool. Here we will simulate this physical phenomenon. It is indeed of interest in visual neuroscience as it speaks to how images are formed (more on this later), hence how the brain may understand images, but also simply because they are mesmerizingly beautiful. In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
+<p>Caustics (<a href="https://en.wikipedia.org/wiki/Caustic_(optics"><i class="fab fa-wikipedia-w"></i></a>) are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is the heart-shaped pattern in your cup of coffee which is formed as the rays of from the sun are reflected on the cup's surface. It is also the wiggly patterns of light that you will see on the floor of a pool as the sun's light is <em>refracted</em> at the surface of the water. Here we will simulate this particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images. In this post,</p>
+<p>I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
 <p><br></p>
 <p></p>
 <center><img src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
@@ -256,11 +257,11 @@ MathJax.Hub.Config({
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--seed"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"seed for RNG"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--H"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"depth"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--sf_0"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"sf"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_sf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0015</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in sf"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_sf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in sf"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--V_Y"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"horizontal speed"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--V_X"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"vertical speed"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_V"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in speed"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"angle with the horizontal"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_V"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in speed"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.61803</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s2">"angle with the horizontal"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in theta"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--fps"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in theta"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--verbose"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bool</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Displays more verbose output."</span><span class="p">)</span>
@@ -304,7 +305,7 @@ MathJax.Hub.Config({
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Namespace(B_V=1.0, B_sf=0.0015, B_theta=0.2617993877991494, H=50.0, V_X=0.3, V_Y=0.3, bin_dens=4, figpath='../files/2020-06-19_caustique', fps=18, nframe=128, nx=1280, ny=2048, seed=42, sf_0=0.002, tag='2020-06-19_caustique', theta=1.5707963267948966, verbose=False)</pre>
+<pre>Namespace(B_V=1.4, B_sf=0.001, B_theta=0.2617993877991494, H=50.0, V_X=0.3, V_Y=0.3, bin_dens=4, figpath='../files/2020-06-19_caustique', fps=18, nframe=128, nx=1280, ny=2048, seed=42, sf_0=0.002, tag='2020-06-19_caustique', theta=2.399988291783386, verbose=False)</pre>
 </div>
 
 </div>
@@ -356,103 +357,35 @@ MathJax.Hub.Config({
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-is-a-caustic?">What is a caustic?<a class="anchor-link" href="2020-06-19-caustic-optics.html#What-is-a-caustic?">¶</a>
 </h2>
-<p>A caustic usually refers to the image which is formed by the convergence or divergence of rays on a surface. Mathematically, this may be understood as the enveloppe of a set of rays, and the best known example are that formed when the sun hits a glass or cup and you see heart-shaped pattern (actually more a kidney than a heart, hence the name "nephroid"):</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">'https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="1024">
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(image by <a href="https://commons.wikimedia.org/wiki/User:Paul_venter">User:Paul venter</a>).</p>
+<p>A caustic usually refers to the image which is formed by the convergence or divergence of rays on a surface. Mathematically, this may be understood as the <em>enveloppe</em> of a set of rays, and intuitively, it is best understood by looking at the best known example: When the sun hits a glass or cup and you see heart-shaped pattern (actually more a kidney than a heart, hence the name "nephroid"):</p>
+<p><br></p>
+<p></p>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="38.2%/"></center>
+<br><p>(image by <a href="https://commons.wikimedia.org/wiki/User:Paul_venter">User:Paul venter</a>).</p>
 <p>Their study is essential in optics, as these are the bases for lenses and therefore of central importance in our image-centered society :-)</p>
 <p>They are also of interest simply be cause they create mesmerizing patterns in nature, for in the pattern of wiggly lines on swimming pool bottoms, or on the sea floor at shallow depths.</p>
 <p>The formation of that specific pattern is very well illustrated by this animation (credit <a href="https://twitter.com/j_bertolotti">Jacopo Bertolotti</a>)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">'https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="1024">
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What happens? Light travels fast (<em>very</em> fast) but it will travel slower in water than in the air. A consequence of this is that a ray changes slightly its direction as it hits the water. That is why a pen which is half immerged looks as if it is broken. In fact, it's only its image that gets distorted.</p>
-<p>The laws governing this deviations are well known as <a href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell's law</a> and state that</p>
+<p><br></p>
+<p></p>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="61.8%/"></center>
+<br><p>What happens? Light travels fast (<em>very</em> fast) but it will travel slower in water than in the air. A consequence of this is that a ray changes slightly its direction as it hits the water: the light ray is refracted. That is why a pen which is half immerged looks "as if" it is broken. In fact, it's only its image that gets distorted:</p>
+<p><br></p>
+<p></p>
+<center><a title="Ulflund / CC0" href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg"><img width="512" alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg"></a></center>
+<br><p>The laws governing this deviations are well known as <a href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell's law</a> and state that</p>
 $$
 \frac{\sin\theta_2}{\sin\theta_1} = \frac{n_1}{n_2}
-$$<p>Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indeices of air and water, respectively.</p>
-<p>Going back to the swimming pool, considering that the sun is emitting an uniform pattern of parallel rays, we may apply this lax to all light rays. The important ingredient is that the surface of the water (given as the surface height $z(x, y)$) changes smoothly and will deviate the light rays non-uniformly, thus creating the patterns. Writing down the equation, the displacement resulting from the angle of refraction is given by:</p>
+$$<p>Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indices of air and water, respectively.</p>
+<p><br></p>
+<p></p>
+<center>
+<a title="Cristan at English Wikipedia, Sawims at Dutch Wikipedia / Public domain" href="https://commons.wikimedia.org/wiki/File:Snells_law.svg"><img width="512" alt="Snells law" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/512px-Snells_law.svg.png"></a>        
+</center>
+<br><p>Going back to the swimming pool, considering that the sun is emitting an uniform pattern of parallel rays, we may apply this law to all light rays. The important ingredient is that the surface of the water (given as the surface height $z(x, y)$) changes smoothly and will deviate the light rays non-uniformly, thus creating the patterns. Writing down the equation, the displacement resulting from the angle of refraction is given by:</p>
 $$
-\Delta x(x, y) = H \cdot \arcsin ( \frac 1 n \sin( \theta_I - \arctan(\frac{\partial z(x, y)}{\partial x}) + \arctan(\frac{\partial z(x, y)}{\partial x})
+\Delta x(x, y) = H \cdot \arcsin ( \frac 1 n \sin( \theta_I - \arctan(\frac{\partial}{\partial x} z(x, y)) + \arctan(\frac{\partial}{\partial x} z(x, y))
 $$<p>Where $H$ is the pool's depth, $n$ is the refractive index and $\theta_I$ the incident angle.
-The same formula applies in the other spatial dimension $y$ by computing the angle of the surface along this dimension as as $arctan(\frac{\partial z(x, y)}{\partial y})$.</p>
+The same formula applies in the other spatial dimension $y$ by computing the angle of the surface along this dimension as as $\arctan(\frac{\partial}{\partial y} z(x, y))$.</p>
 <p>In the limit of a zenithal light and small angles, the equations simplifies a lot:
 $$
 \Delta x(x, y) \approx H' \cdot \frac{\partial z(x, y)}{\partial x}
@@ -461,15 +394,15 @@ and
 $$
 \Delta y(x, y) \approx H' \cdot \frac{\partial z(x, y)}{\partial y}
 $$</p>
-<p>What is interesting here is that we will transform an incoming image (here uniform) by a set of small deformations of the support of the image. The equations are ultra-simple, but the consequences will paradoxically look complex.
-Thinking about images as densities, it is very easy to simulate the transformation:</p>
+<p>with $ H' = \frac{n-1}{n} H$. What is interesting here is that we will transform an incoming image (here uniform) by a set of small deformations of the support of the image. The equations are ultra-simple, but the consequences will paradoxically look complex.
+Thinking about images as densities which we may discretize on a rectangular grid (in the <code>__init__</code> function), it is very easy to simulate the transformation (in the <code>transform</code> function) and compute the resulting image as an histogram  (in the <code>plot</code> function):</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
@@ -549,17 +482,49 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gifname</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Doing'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Caustique</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
-    <span class="n">gifname</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Doing ../files/2020-06-19_caustique/2020-06-19_caustique..mp4
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2020-06-19_caustique/2020-06-19_caustique.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -576,18 +541,37 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gifname</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Caustique</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+    <span class="n">gifname</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique.gif" width="1024">
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -597,17 +581,23 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Which ressembles what we expected to find.</p>
+<p>This image ressembles the wiggling lines that we expected to find, great! Some properties:</p>
+<ul>
+<li>it is periodic in space and time by construction which may look unrealistic for a pool, but looks better as you do not have border effects...</li>
+<li>there are different classes of visual objects: veil-like smooth curves, traveling waves with a difference in their group/phase speed, nephroid-like intersection points, smooth gradients, ... which mainly depend on the surface's ondulation,</li>
+<li>when looking at this video long enough (I recommend opening this animated GIF in a separate tab and to zoom on it fullscreen), you may perceive some three-dimensionnal percepts, especially when some features change their speed..</li>
+</ul>
 <h3 id="exploring-parameters">exploring parameters<a class="anchor-link" href="2020-06-19-caustic-optics.html#exploring-parameters">¶</a>
 </h3>
-<p>The first thing to do is to explore is the effect of the pool's depth:</p>
+<p>Is there more to see in our system?
+The first thing to do is to explore is the effect of the pool's depth:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_scan</span> <span class="o">=</span> <span class="mi">9</span>
@@ -621,7 +611,7 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
@@ -632,7 +622,7 @@ Thinking about images as densities, it is very easy to simulate the transformati
 <span class="k">for</span> <span class="n">H_</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">H</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">base</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'H = </span><span class="si">{</span><span class="n">H_</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="n">c</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">H_</span>
-    <span class="n">gifname</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_H=</span><span class="si">{</span><span class="n">H_</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.gif'</span>
+    <span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_H_</span><span class="si">{</span><span class="n">H_</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.gif'</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gifname</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
@@ -644,13 +634,227 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 25.000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_25.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 29.730
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_29.730.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 35.355
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_35.355.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 42.045
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_42.045.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 50.000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_50.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 59.460
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_59.460.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 70.711
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_70.711.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 84.090
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_84.090.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 100.000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_100.000.gif" width="1024">
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth where the curvature of the waveform concentrates light as a lens.</p>
+<p>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth where the curvature of the waveform concentrates light as a lens. Note that at great distortions some ripples appear which are due to our sampling of space.</p>
 <p>We may now explore the parameters of this waveform to see their effect on the resulting caustic:</p>
 
 </div>
@@ -658,7 +862,7 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
@@ -673,8 +877,9 @@ Thinking about images as densities, it is very easy to simulate the transformati
         <span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span> <span class="o">*=</span> <span class="n">modul</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">(default)*</span><span class="si">{</span><span class="n">modul</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="si">:</span><span class="s1">.3E</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">*=</span><span class="si">{</span><span class="n">modul</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.gif'</span>
+        <span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">_modul_</span><span class="si">{</span><span class="n">modul</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.gif'</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gifname</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'Doing '</span><span class="p">,</span> <span class="n">gifname</span><span class="p">)</span>
             <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">*=</span><span class="si">{</span><span class="n">modul</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span> 
                 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">*=</span><span class="si">{</span><span class="n">modul</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
@@ -683,6 +888,1469 @@ Thinking about images as densities, it is very easy to simulate the transformati
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======sf_0======
+sf_0=sf_0(default)*0.500=1.000E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*0.595=1.189E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*0.707=1.414E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*0.841=1.682E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*1.000=2.000E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*1.189=2.378E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*1.414=2.828E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*1.682=3.364E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sf_0=sf_0(default)*2.000=4.000E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======B_sf======
+B_sf=B_sf(default)*0.500=5.000E-04
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*0.595=5.946E-04
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*0.707=7.071E-04
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*0.841=8.409E-04
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*1.000=1.000E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*1.189=1.189E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*1.414=1.414E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*1.682=1.682E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_sf=B_sf(default)*2.000=2.000E-03
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======theta======
+theta=theta(default)*0.500=1.200E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*0.595=1.427E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*0.707=1.697E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*0.841=2.018E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*1.000=2.400E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*1.189=2.854E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*1.414=3.394E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*1.682=4.036E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>theta=theta(default)*2.000=4.800E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======B_theta======
+B_theta=B_theta(default)*0.500=1.309E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*0.595=1.557E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*0.707=1.851E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*0.841=2.201E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*1.000=2.618E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*1.189=3.113E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*1.414=3.702E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*1.682=4.403E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_theta=B_theta(default)*2.000=5.236E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======V_X======
+V_X=V_X(default)*0.500=1.500E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*0.595=1.784E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*0.707=2.121E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*0.841=2.523E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*1.000=3.000E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*1.189=3.568E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*1.414=4.243E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*1.682=5.045E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_X=V_X(default)*2.000=6.000E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======V_Y======
+V_Y=V_Y(default)*0.500=1.500E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*0.595=1.784E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*0.707=2.121E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*0.841=2.523E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*1.000=3.000E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*1.189=3.568E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*1.414=4.243E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*1.682=5.045E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>V_Y=V_Y(default)*2.000=6.000E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>======B_V======
+B_V=B_V(default)*0.500=7.000E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.500.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*0.595=8.324E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.595.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*0.707=9.899E-01
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.707.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*0.841=1.177E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.841.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*1.000=1.400E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*1.189=1.665E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.189.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*1.414=1.980E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.414.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*1.682=2.355E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.682.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>B_V=B_V(default)*2.000=2.800E+00
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_2.000.gif" width="1024">
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -700,11 +2368,11 @@ Thinking about images as densities, it is very easy to simulate the transformati
 <li>use different indices for different wavelengths (+add gamma correction for rendering),</li>
 <li>make it live (using pyglet for instance)</li>
 </ul>
-<p>This happens in <a href="https://github.com/NaturalPatterns/2020_caustiques">https://github.com/NaturalPatterns/2020_caustiques</a> - I am happy to welcome any people that would be interested in exploring this.</p>
+<p>This development happens in <a href="https://github.com/NaturalPatterns/2020_caustiques">https://github.com/NaturalPatterns/2020_caustiques</a> - I am happy to welcome any people that would be interested in exploring this.</p>
 
 </div>
 </div>
-</div>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth where the curvature of the waveform concentrates light as a lens. 
+</div>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth for which the curvature of the waveform concentrates light as a lens. 
 
 We may now explore the parameters of this waveform to see their effect on the resulting caustic:</div>
     </div>
