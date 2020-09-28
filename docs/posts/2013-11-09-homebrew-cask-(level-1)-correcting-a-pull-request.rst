@@ -5,7 +5,7 @@
 .. tags: homebrew, macos, sciblog
 
 
--  I mistyped :doc:`my contribution <2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask>`,
+-  I mistyped :doc:`my contribution <2013-11-08-homebrew-cask-level-0-contributing-a-new-cask>`,
    so I have to modify my pull request
 -  set-up variables
 

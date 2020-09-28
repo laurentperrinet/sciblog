@@ -1,5 +1,5 @@
 .. title: homebrew cask (level 0): contributing a new cask
-.. slug: 2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask
+.. slug: 2013-11-08-homebrew-cask-level-0-contributing-a-new-cask
 .. date: 2013-11-08 13:36:57
 .. type: text
 .. tags: homebrew, macos, sciblog
@@ -62,4 +62,4 @@
 
        git checkout master
 
--  this was easy! ... but wait, I  :doc:`mystyped <2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request>` something...
+-  this was easy! ... but wait, I  :doc:`mystyped <2013-11-09-homebrew-cask-level-1-correcting-a-pull-request>` something...

@@ -6,7 +6,7 @@
 
 - A new version of owncloud is out, I will try today to push that new infomation to http://caskroom.io/
 
-- I will base things on :doc:`my contribution <2013-11-08-homebrew-cask-(level-0)-contributing-a-new-cask>`,
+- I will base things on :doc:`my contribution <2013-11-08-homebrew-cask-level-0-contributing-a-new-cask>`,
    though now `phinze-cask` paths are now `brew-cask`.
 
 - set-up variables

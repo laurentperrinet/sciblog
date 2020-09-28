@@ -94,7 +94,7 @@ Useful draft tips
 using pdfLaTeX
 --------------
 
--  |X-(| sites like arXiV use only plain LaTeX so that you should keep
+-  but... sites like arXiV use only plain LaTeX so that you should keep
    the 2 versions of your directives for better portability (see \\ifpdf
    ...)
 

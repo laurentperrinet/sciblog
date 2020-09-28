@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2020-09-28T15:31:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -127,7 +127,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/homebrew.html</loc>
-  <lastmod>2020-07-28T18:27:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/illusion.html</loc>
@@ -155,7 +155,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/latex.html</loc>
-  <lastmod>2020-07-28T18:27:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/learning.html</loc>
@@ -171,7 +171,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.html</loc>
-  <lastmod>2020-07-28T18:27:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/matching-pursuit.html</loc>
@@ -327,7 +327,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.html</loc>
-  <lastmod>2020-09-28T15:31:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shell.html</loc>
@@ -547,7 +547,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2020-09-28T15:31:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -595,7 +595,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2009-08-20-some-LaTeX-tips-drafts-links-margins-pdflatex.html</loc>
-  <lastmod>2020-07-28T18:33:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2009-08-21-setting-graphics-path.html</loc>
@@ -603,7 +603,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2009-08-23-List-Of-Symbols.html</loc>
-  <lastmod>2020-07-28T18:33:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2009-08-26-Creating-Proceedings-%28almost%29-automatically-using-python-and-latex.html</loc>
@@ -1043,15 +1043,19 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-04-SparkleShare-on-a-QNAP.html</loc>
-  <lastmod>2020-07-28T18:33:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-08-homebrew-cask-%28level-0%29-contributing-a-new-cask.html</loc>
   <lastmod>2020-07-28T18:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-08-homebrew-cask-level-0-contributing-a-new-cask.html</loc>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-09-homebrew-cask-%28level-1%29-correcting-a-pull-request.html</loc>
-  <lastmod>2020-07-28T18:33:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2013-11-12-craac.html</loc>
@@ -1187,7 +1191,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-11-12-homebrew-cask-updating-a-cask.html</loc>
-  <lastmod>2020-07-28T18:33:00Z</lastmod>
+  <lastmod>2020-09-28T15:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-11-15-reading-kml-my-tracks-files-in-ipython.html</loc>

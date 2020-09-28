@@ -8,7 +8,7 @@
 symbols
 -------
 
--  |(!)| Use `Detexify2 - LaTeX symbol
+-  Use `Detexify2 - LaTeX symbol
    classifier <http://detexify.kirelabs.org/classify.html>`__ to find
    out a particular symbol.
 
