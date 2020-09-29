@@ -164,6 +164,7 @@
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
@@ -192,7 +193,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="c1"># https://en.wikipedia.org/wiki/ISO_8601</span>
 <span class="n">tag</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">_caustique'</span>
-<span class="n">tag</span> <span class="o">=</span> <span class="s1">'2020-06-19_caustique'</span> <span class="c1"># overwriting</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="s1">'2020-06-19_caustique'</span> <span class="c1"># overwriting tag</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Tagging our simulations with tag=</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
@@ -234,7 +235,7 @@
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">[]):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">[],</span> <span class="n">ds</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">argparse</span>
 
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -245,15 +246,17 @@
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--bin_dens"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"relative bin density"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--nframe"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"number of frames"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--seed"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"seed for RNG"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--H"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">20.</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"depth of the pool"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--H"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"depth of the pool"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--sf_0"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.004</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"sf"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_sf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in sf"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--V_Y"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"horizontal speed"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--V_X"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"vertical speed"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_V"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in speed"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_V"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in speed"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.61803</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s2">"angle with the horizontal"</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in theta"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--B_theta"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in theta"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--min_lum"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"diffusion level for the rendering"</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--fps"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"bandwidth in theta"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--cache"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bool</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Cache intermediate output."</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--verbose"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bool</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Displays more verbose output."</span><span class="p">)</span>
 
     <span class="n">opt</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
@@ -261,6 +264,7 @@
     <span class="k">if</span> <span class="n">opt</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">opt</span>
+
 <span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
 <span class="n">opt</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span>
 </pre></div>
@@ -294,7 +298,7 @@
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Namespace(B_V=2.0, B_sf=0.002, B_theta=0.2617993877991494, H=20.0, V_X=0.3, V_Y=0.3, bin_dens=4, figpath='2020-06-19_caustique', fps=18, nframe=128, nx=1280, ny=2048, seed=42, sf_0=0.004, tag='2020-06-19_caustique', theta=2.399988291783386, verbose=False)</pre>
+<pre>Namespace(B_V=4.0, B_sf=0.002, B_theta=0.39269908169872414, H=10.0, V_X=0.3, V_Y=0.3, bin_dens=4, cache=True, figpath='2020-06-19_caustique', fps=18, min_lum=0.2, nframe=128, nx=1280, ny=2048, seed=42, sf_0=0.004, tag='2020-06-19_caustique', theta=2.399988291783386, verbose=False)</pre>
 </div>
 
 </div>
@@ -338,7 +342,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
@@ -402,17 +406,17 @@ Thinking about images as densities which we may discretize on a rectangular grid
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
         <span class="sd">"""</span>
-<span class="sd">        Image coordinates follow 'ij' indexing, that is, </span>
-<span class="sd">        * their origin at the top left, </span>
+<span class="sd">        Image coordinates follow 'ij' indexing, that is,</span>
+<span class="sd">        * their origin at the top left,</span>
 <span class="sd">        * the X axis is vertical and goes "down",</span>
 <span class="sd">        * the Y axis is horizontal and goes "right".</span>
-<span class="sd">        </span>
+
 <span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">ny</span><span class="o">/</span><span class="n">opt</span><span class="o">.</span><span class="n">nx</span> <span class="c1"># ratio between height and width (&gt;1 for portrait, &lt;1 for landscape)</span>
         <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">nx</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># vertical</span>
@@ -421,20 +425,36 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="bp">self</span><span class="o">.</span><span class="n">opt</span> <span class="o">=</span> <span class="n">opt</span>
         <span class="c1"># https://stackoverflow.com/questions/16878315/what-is-the-right-way-to-treat-python-argparse-namespace-as-a-dictionary</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cachepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'/tmp'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cachepath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+        <span class="c1"># a standard white:</span>
+        <span class="n">illuminant_D65</span> <span class="o">=</span> <span class="n">xyz_from_xy</span><span class="p">(</span><span class="mf">0.3127</span><span class="p">,</span> <span class="mf">0.3291</span><span class="p">),</span> 
+        <span class="n">illuminant_sun</span> <span class="o">=</span> <span class="n">xyz_from_xy</span><span class="p">(</span><span class="mf">0.325998</span><span class="p">,</span> <span class="mf">0.335354</span><span class="p">)</span>
+        <span class="c1"># color conversion class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs_srgb</span> <span class="o">=</span> <span class="n">ColourSystem</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="n">xyz_from_xy</span><span class="p">(</span><span class="mf">0.64</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">),</span>
+                               <span class="n">green</span><span class="o">=</span><span class="n">xyz_from_xy</span><span class="p">(</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">),</span>
+                               <span class="n">blue</span><span class="o">=</span><span class="n">xyz_from_xy</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">),</span>
+                               <span class="n">white</span><span class="o">=</span><span class="n">illuminant_sun</span><span class="p">)</span>        
     <span class="k">def</span> <span class="nf">wave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># A simplistic model of a wave using https://github.com/NeuralEnsemble/MotionClouds</span>
-        <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
-        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">ny</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">)</span>
-        <span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_V</span><span class="p">,</span>
-                                <span class="n">sf_0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_sf</span><span class="p">,</span> 
-                                <span class="n">theta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_theta</span><span class="p">)</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">seed</span><span class="p">))</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cachepath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_wave.npy'</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">cache</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># A simplistic model of a wave using https://github.com/NeuralEnsemble/MotionClouds</span>
+            <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+            <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">ny</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">)</span>
+            <span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_V</span><span class="p">,</span>
+                                    <span class="n">sf_0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_sf</span><span class="p">,</span>
+                                    <span class="n">theta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">B_theta</span><span class="p">)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">seed</span><span class="p">))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">z</span>
 
     <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_</span><span class="p">):</span>
         <span class="n">xv</span><span class="p">,</span> <span class="n">yv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xv</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">yv</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        
+
         <span class="n">dzdx</span> <span class="o">=</span> <span class="n">z_</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">z_</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">dzdy</span> <span class="o">=</span> <span class="n">z_</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">z_</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">xv</span> <span class="o">=</span> <span class="n">xv</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">H</span> <span class="o">*</span> <span class="n">dzdx</span>
@@ -447,30 +467,250 @@ Thinking about images as densities which we may discretize on a rectangular grid
 
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">gifname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gifname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">gifname</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cachepath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_hist.npy'</span>
         <span class="n">binsx</span><span class="p">,</span> <span class="n">binsy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nx</span><span class="o">//</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">bin_dens</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">ny</span><span class="o">//</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">bin_dens</span>
-
-        <span class="n">hist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">binsx</span><span class="p">,</span> <span class="n">binsy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">i_frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">):</span>
-            <span class="n">xv</span><span class="p">,</span> <span class="n">yv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">z</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">])</span>
-            <span class="n">hist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">],</span> <span class="n">edge_x</span><span class="p">,</span> <span class="n">edge_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">xv</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yv</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> 
-                                                                 <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">binsx</span><span class="p">,</span> <span class="n">binsy</span><span class="p">],</span> 
-                                                                 <span class="nb">range</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span><span class="p">]],</span> 
-                                                                 <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="n">hist</span> <span class="o">/=</span> <span class="n">hist</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">cache</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="n">hist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">binsx</span><span class="p">,</span> <span class="n">binsy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">i_frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">):</span>
+                <span class="n">xv</span><span class="p">,</span> <span class="n">yv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">z</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">])</span>
+                <span class="n">hist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">],</span> <span class="n">edge_x</span><span class="p">,</span> <span class="n">edge_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">xv</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yv</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+                                                                     <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">binsx</span><span class="p">,</span> <span class="n">binsy</span><span class="p">],</span>
+                                                                     <span class="nb">range</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span><span class="p">]],</span>
+                                                                     <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">hist</span> <span class="o">/=</span> <span class="n">hist</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">hist</span><span class="p">)</span>
+            
         <span class="n">subplotpars</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">SubplotParams</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.</span><span class="p">,)</span>
         <span class="n">fnames</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i_frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">nframe</span><span class="p">):</span>
             <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">binsy</span><span class="o">/</span><span class="n">dpi</span><span class="p">,</span> <span class="n">binsx</span><span class="o">/</span><span class="n">dpi</span><span class="p">),</span> <span class="n">subplotpars</span><span class="o">=</span><span class="n">subplotpars</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">edge_y</span><span class="p">,</span> <span class="n">edge_x</span><span class="p">,</span> <span class="n">hist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span><span class="p">)</span>
-            <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'/tmp/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_frame_</span><span class="si">{</span><span class="n">i_frame</span><span class="si">}</span><span class="s1">.png'</span>
+            <span class="n">bluesky</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.268375</span><span class="p">,</span> <span class="mf">0.283377</span><span class="p">])</span> <span class="c1"># xyz</span>
+            <span class="n">sun</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.325998</span><span class="p">,</span> <span class="mf">0.335354</span><span class="p">])</span> <span class="c1"># xyz</span>
+            <span class="c1"># ax.pcolormesh(edge_y, edge_x, hist[:, :, i_frame], vmin=0, vmax=1, cmap=plt.cm.Blues_r)</span>
+            <span class="c1"># https://en.wikipedia.org/wiki/CIE_1931_color_space#Mixing_colors_specified_with_the_CIE_xy_chromaticity_diagram</span>
+            <span class="n">L1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">hist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">]</span>
+            <span class="n">L2</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">]</span>
+            <span class="n">image_denom</span> <span class="o">=</span> <span class="n">L1</span> <span class="o">/</span> <span class="n">bluesky</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">L2</span> <span class="o">/</span> <span class="n">sun</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>            
+            <span class="n">image_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">L1</span> <span class="o">*</span> <span class="n">bluesky</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">bluesky</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">L2</span> <span class="o">*</span> <span class="n">sun</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">sun</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">image_denom</span>
+            <span class="n">image_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">L1</span> <span class="o">+</span> <span class="n">L2</span><span class="p">)</span> <span class="o">/</span> <span class="n">image_denom</span> 
+            <span class="n">image_xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">image_x</span><span class="p">,</span> <span class="n">image_y</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">image_x</span> <span class="o">-</span> <span class="n">image_y</span><span class="p">))</span>
+            <span class="n">image_rgb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cs_srgb</span><span class="o">.</span><span class="n">xyz_to_rgb</span><span class="p">(</span><span class="n">image_xyz</span><span class="p">)</span>
+            <span class="n">image_L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">min_lum</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">min_lum</span><span class="p">)</span><span class="o">*</span> <span class="n">L2</span> <span class="o">**</span> <span class="o">.</span><span class="mi">61803</span>
+            
+            <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_L</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="n">image_rgb</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cachepath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">_frame_</span><span class="si">{</span><span class="n">i_frame</span><span class="si">}</span><span class="s1">.png'</span>
             <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
             <span class="n">fnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">'all'</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">make_gif</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">fps</span><span class="p">)</span>
+
+    
+<span class="c1"># the rest is borrowed from https://github.com/gummiks/gummiks.github.io/blob/master/scripts/astro/planck.py</span>
+<span class="c1"># as synthesized in https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html</span>
+
+<span class="k">def</span> <span class="nf">planck</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">scipy.constants</span> <span class="k">as</span> <span class="nn">const</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span> <span class="c1"># c = 3.0e+8</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">h</span> <span class="c1"># h = 6.626e-34</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">k</span> <span class="c1"># k = 1.38e-23</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">wav</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="p">(</span> <span class="p">(</span><span class="n">wav</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">intensity</span>
+
+<span class="k">def</span> <span class="nf">scattering</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.45</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    b is  proportionate  to  the  column  density  of  aerosols  </span>
+<span class="sd">    along  the  path  of  sunlight,  from  outside  the  atmosphere </span>
+<span class="sd">    to  the  point  of  observation</span>
+<span class="sd">    </span>
+<span class="sd">    N_O3  is  the  ozone  column  density  along  the  path  of  sunlight,  </span>
+<span class="sd">    sigma_O3 is  the  wavelength dependent ozone absorption cross-section.</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="c1"># converting wav in µm:</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">wav</span><span class="o">/</span><span class="mf">1e-6</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># Rayleigh extinction by nitrogen</span>
+    <span class="n">intensity</span> <span class="o">*=</span> <span class="p">(</span><span class="n">wav</span><span class="o">/</span><span class="mf">1e-6</span><span class="p">)</span><span class="o">**-</span><span class="mi">4</span>
+    <span class="n">intensity</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">((</span><span class="n">wav</span><span class="o">/</span><span class="mf">1e-6</span><span class="p">)</span><span class="o">**</span><span class="n">p</span><span class="p">))</span> <span class="c1"># Aerosols</span>
+    <span class="k">return</span> <span class="n">intensity</span>
+
+<span class="k">def</span> <span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">ColourSystem</span><span class="p">:</span>
+    <span class="sd">"""A class representing a colour system.</span>
+
+<span class="sd">    A colour system defined by the CIE x, y and z=1-x-y coordinates of</span>
+<span class="sd">    its three primary illuminants and its "white point".</span>
+
+<span class="sd">    TODO: Implement gamma correction</span>
+
+<span class="sd">    """</span>
+
+    <span class="c1"># CMF is the CIE colour matching function for 380 - 780 nm in 5 nm intervals</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">white</span><span class="p">):</span>
+        <span class="sd">"""Initialise the ColourSystem object.</span>
+
+<span class="sd">        Pass vectors (ie NumPy arrays of shape (3,)) for each of the</span>
+<span class="sd">        red, green, blue  chromaticities and the white illuminant</span>
+<span class="sd">        defining the colour system.</span>
+
+<span class="sd">        """</span>
+
+        <span class="c1"># Chromaticities</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span> <span class="o">=</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">white</span> <span class="o">=</span> <span class="n">white</span>
+        <span class="c1"># The chromaticity matrix (rgb -&gt; xyz) and its inverse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">))</span><span class="o">.</span><span class="n">T</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">MI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+        <span class="c1"># White scaling array</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wscale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MI</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+        <span class="c1"># xyz -&gt; rgb transformation matrix</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MI</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">wscale</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+        <span class="n">CMF_str</span> <span class="o">=</span> <span class="s2">"""380 0.0014 0.0000 0.0065</span>
+<span class="s2">        385 0.0022 0.0001 0.0105</span>
+<span class="s2">        390 0.0042 0.0001 0.0201</span>
+<span class="s2">        395 0.0076 0.0002 0.0362</span>
+<span class="s2">        400 0.0143 0.0004 0.0679</span>
+<span class="s2">        405 0.0232 0.0006 0.1102</span>
+<span class="s2">        410 0.0435 0.0012 0.2074</span>
+<span class="s2">        415 0.0776 0.0022 0.3713</span>
+<span class="s2">        420 0.1344 0.0040 0.6456</span>
+<span class="s2">        425 0.2148 0.0073 1.0391</span>
+<span class="s2">        430 0.2839 0.0116 1.3856</span>
+<span class="s2">        435 0.3285 0.0168 1.6230</span>
+<span class="s2">        440 0.3483 0.0230 1.7471</span>
+<span class="s2">        445 0.3481 0.0298 1.7826</span>
+<span class="s2">        450 0.3362 0.0380 1.7721</span>
+<span class="s2">        455 0.3187 0.0480 1.7441</span>
+<span class="s2">        460 0.2908 0.0600 1.6692</span>
+<span class="s2">        465 0.2511 0.0739 1.5281</span>
+<span class="s2">        470 0.1954 0.0910 1.2876</span>
+<span class="s2">        475 0.1421 0.1126 1.0419</span>
+<span class="s2">        480 0.0956 0.1390 0.8130</span>
+<span class="s2">        485 0.0580 0.1693 0.6162</span>
+<span class="s2">        490 0.0320 0.2080 0.4652</span>
+<span class="s2">        495 0.0147 0.2586 0.3533</span>
+<span class="s2">        500 0.0049 0.3230 0.2720</span>
+<span class="s2">        505 0.0024 0.4073 0.2123</span>
+<span class="s2">        510 0.0093 0.5030 0.1582</span>
+<span class="s2">        515 0.0291 0.6082 0.1117</span>
+<span class="s2">        520 0.0633 0.7100 0.0782</span>
+<span class="s2">        525 0.1096 0.7932 0.0573</span>
+<span class="s2">        530 0.1655 0.8620 0.0422</span>
+<span class="s2">        535 0.2257 0.9149 0.0298</span>
+<span class="s2">        540 0.2904 0.9540 0.0203</span>
+<span class="s2">        545 0.3597 0.9803 0.0134</span>
+<span class="s2">        550 0.4334 0.9950 0.0087</span>
+<span class="s2">        555 0.5121 1.0000 0.0057</span>
+<span class="s2">        560 0.5945 0.9950 0.0039</span>
+<span class="s2">        565 0.6784 0.9786 0.0027</span>
+<span class="s2">        570 0.7621 0.9520 0.0021</span>
+<span class="s2">        575 0.8425 0.9154 0.0018</span>
+<span class="s2">        580 0.9163 0.8700 0.0017</span>
+<span class="s2">        585 0.9786 0.8163 0.0014</span>
+<span class="s2">        590 1.0263 0.7570 0.0011</span>
+<span class="s2">        595 1.0567 0.6949 0.0010</span>
+<span class="s2">        600 1.0622 0.6310 0.0008</span>
+<span class="s2">        605 1.0456 0.5668 0.0006</span>
+<span class="s2">        610 1.0026 0.5030 0.0003</span>
+<span class="s2">        615 0.9384 0.4412 0.0002</span>
+<span class="s2">        620 0.8544 0.3810 0.0002</span>
+<span class="s2">        625 0.7514 0.3210 0.0001</span>
+<span class="s2">        630 0.6424 0.2650 0.0000</span>
+<span class="s2">        635 0.5419 0.2170 0.0000</span>
+<span class="s2">        640 0.4479 0.1750 0.0000</span>
+<span class="s2">        645 0.3608 0.1382 0.0000</span>
+<span class="s2">        650 0.2835 0.1070 0.0000</span>
+<span class="s2">        655 0.2187 0.0816 0.0000</span>
+<span class="s2">        660 0.1649 0.0610 0.0000</span>
+<span class="s2">        665 0.1212 0.0446 0.0000</span>
+<span class="s2">        670 0.0874 0.0320 0.0000</span>
+<span class="s2">        675 0.0636 0.0232 0.0000</span>
+<span class="s2">        680 0.0468 0.0170 0.0000</span>
+<span class="s2">        685 0.0329 0.0119 0.0000</span>
+<span class="s2">        690 0.0227 0.0082 0.0000</span>
+<span class="s2">        695 0.0158 0.0057 0.0000</span>
+<span class="s2">        700 0.0114 0.0041 0.0000</span>
+<span class="s2">        705 0.0081 0.0029 0.0000</span>
+<span class="s2">        710 0.0058 0.0021 0.0000</span>
+<span class="s2">        715 0.0041 0.0015 0.0000</span>
+<span class="s2">        720 0.0029 0.0010 0.0000</span>
+<span class="s2">        725 0.0020 0.0007 0.0000</span>
+<span class="s2">        730 0.0014 0.0005 0.0000</span>
+<span class="s2">        735 0.0010 0.0004 0.0000</span>
+<span class="s2">        740 0.0007 0.0002 0.0000</span>
+<span class="s2">        745 0.0005 0.0002 0.0000</span>
+<span class="s2">        750 0.0003 0.0001 0.0000</span>
+<span class="s2">        755 0.0002 0.0001 0.0000</span>
+<span class="s2">        760 0.0002 0.0001 0.0000</span>
+<span class="s2">        765 0.0001 0.0000 0.0000</span>
+<span class="s2">        770 0.0001 0.0000 0.0000</span>
+<span class="s2">        775 0.0001 0.0000 0.0000</span>
+<span class="s2">        780 0.0000 0.0000 0.0000"""</span>
+        <span class="n">CMF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">CMF_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)),</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">CMF_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)):</span> 
+            <span class="n">CMF</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmf</span> <span class="o">=</span> <span class="n">CMF</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">200e-9</span><span class="p">,</span> <span class="mf">2000e-9</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">intensity5800</span> <span class="o">=</span> <span class="n">planck</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelengths</span><span class="p">,</span> <span class="mf">5800.</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intensity5800</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity5800</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intensitysky</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity5800</span> <span class="o">*</span> <span class="n">scattering</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelengths</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">):</span>
+        <span class="sd">"""Transform from xyz to rgb representation of colour.</span>
+
+<span class="sd">        The output rgb components are normalized on their maximum</span>
+<span class="sd">        value. If xyz is out the rgb gamut, it is desaturated until it</span>
+<span class="sd">        comes into gamut.</span>
+
+<span class="sd">        By default, fractional rgb components are returned.</span>
+
+<span class="sd">        """</span>
+
+        <span class="c1"># rgb = self.T.dot(xyz)</span>
+        <span class="n">rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">rgb</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c1"># We're not in the RGB gamut: approximate by desaturating</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+            <span class="n">rgb</span> <span class="o">+=</span> <span class="n">w</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">rgb</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+            <span class="c1"># Normalize the rgb vector</span>
+            <span class="n">rgb</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">rgb</span>
+
+    <span class="k">def</span> <span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+        <span class="sd">"""Convert a spectrum to an xyz point.</span>
+
+<span class="sd">        The spectrum must be on the same grid of points as the colour-matching</span>
+<span class="sd">        function, self.cmf: 380-780 nm in 5 nm steps.</span>
+
+<span class="sd">        """</span>
+
+        <span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spec</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmf</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">den</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">XYZ</span>
+        <span class="k">return</span> <span class="n">XYZ</span> <span class="o">/</span> <span class="n">den</span>
+
+    <span class="k">def</span> <span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">out_fmt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""Convert a spectrum to an rgb value."""</span>
+
+        <span class="n">xyz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_to_xyz</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xyz_to_rgb</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">out_fmt</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -492,7 +732,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span>
@@ -540,7 +780,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
@@ -596,7 +836,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_scan</span> <span class="o">=</span> <span class="mi">9</span>
@@ -610,7 +850,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
@@ -636,6 +876,98 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 5.000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="2020-06-19_caustique/2020-06-19_caustique_H_5.000.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 5.946
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="2020-06-19_caustique/2020-06-19_caustique_H_5.946.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 7.071
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="2020-06-19_caustique/2020-06-19_caustique_H_7.071.gif" width="1024">
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H = 8.409
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="2020-06-19_caustique/2020-06-19_caustique_H_8.409.gif" width="1024">
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -752,98 +1084,6 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>H = 23.784
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="2020-06-19_caustique/2020-06-19_caustique_H_23.784.gif" width="1024">
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>H = 28.284
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="2020-06-19_caustique/2020-06-19_caustique_H_28.284.gif" width="1024">
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>H = 33.636
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="2020-06-19_caustique/2020-06-19_caustique_H_33.636.gif" width="1024">
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>H = 40.000
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="2020-06-19_caustique/2020-06-19_caustique_H_40.000.gif" width="1024">
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -861,7 +1101,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
@@ -1527,7 +1767,7 @@ theta=theta(default)*0.500=1.200E+00
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======B_theta======
-B_theta=B_theta(default)*0.500=1.309E-01
+B_theta=B_theta(default)*0.500=1.963E-01
 </pre>
 </div>
 </div>
@@ -1550,7 +1790,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*0.595=1.557E-01
+<pre>B_theta=B_theta(default)*0.595=2.335E-01
 </pre>
 </div>
 </div>
@@ -1573,7 +1813,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*0.707=1.851E-01
+<pre>B_theta=B_theta(default)*0.707=2.777E-01
 </pre>
 </div>
 </div>
@@ -1596,7 +1836,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*0.841=2.201E-01
+<pre>B_theta=B_theta(default)*0.841=3.302E-01
 </pre>
 </div>
 </div>
@@ -1619,7 +1859,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*1.000=2.618E-01
+<pre>B_theta=B_theta(default)*1.000=3.927E-01
 </pre>
 </div>
 </div>
@@ -1642,7 +1882,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*1.189=3.113E-01
+<pre>B_theta=B_theta(default)*1.189=4.670E-01
 </pre>
 </div>
 </div>
@@ -1665,7 +1905,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*1.414=3.702E-01
+<pre>B_theta=B_theta(default)*1.414=5.554E-01
 </pre>
 </div>
 </div>
@@ -1688,7 +1928,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*1.682=4.403E-01
+<pre>B_theta=B_theta(default)*1.682=6.604E-01
 </pre>
 </div>
 </div>
@@ -1711,7 +1951,7 @@ B_theta=B_theta(default)*0.500=1.309E-01
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_theta=B_theta(default)*2.000=5.236E-01
+<pre>B_theta=B_theta(default)*2.000=7.854E-01
 </pre>
 </div>
 </div>
@@ -2151,7 +2391,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======B_V======
-B_V=B_V(default)*0.500=1.000E+00
+B_V=B_V(default)*0.500=2.000E+00
 </pre>
 </div>
 </div>
@@ -2174,7 +2414,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*0.595=1.189E+00
+<pre>B_V=B_V(default)*0.595=2.378E+00
 </pre>
 </div>
 </div>
@@ -2197,7 +2437,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*0.707=1.414E+00
+<pre>B_V=B_V(default)*0.707=2.828E+00
 </pre>
 </div>
 </div>
@@ -2220,7 +2460,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*0.841=1.682E+00
+<pre>B_V=B_V(default)*0.841=3.364E+00
 </pre>
 </div>
 </div>
@@ -2243,7 +2483,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*1.000=2.000E+00
+<pre>B_V=B_V(default)*1.000=4.000E+00
 </pre>
 </div>
 </div>
@@ -2266,7 +2506,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*1.189=2.378E+00
+<pre>B_V=B_V(default)*1.189=4.757E+00
 </pre>
 </div>
 </div>
@@ -2289,7 +2529,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*1.414=2.828E+00
+<pre>B_V=B_V(default)*1.414=5.657E+00
 </pre>
 </div>
 </div>
@@ -2312,7 +2552,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*1.682=3.364E+00
+<pre>B_V=B_V(default)*1.682=6.727E+00
 </pre>
 </div>
 </div>
@@ -2335,7 +2575,7 @@ B_V=B_V(default)*0.500=1.000E+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>B_V=B_V(default)*2.000=4.000E+00
+<pre>B_V=B_V(default)*2.000=8.000E+00
 </pre>
 </div>
 </div>
