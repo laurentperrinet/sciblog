@@ -139,7 +139,7 @@ THEME = "bootblog4"
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
 
-if THEME is "zen-ipython":
+if THEME == "zen-ipython":
     # Links for the sidebar / navigation bar.
     # You should provide a key-value pair for each used language.
     # (the same way you would do with a (translatable) setting.)
@@ -172,6 +172,10 @@ else:
 # Examples below are for bootblog4.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
 #                     featured_large_image_on_mobile featured_strip_html sidebar
+
+#
+# https://getnikola.com/handbook.html#featured-posts
+#
 # bootstrap4 supports: navbar_light (defaults to False)
 THEME_CONFIG = {
     DEFAULT_LANG: {
