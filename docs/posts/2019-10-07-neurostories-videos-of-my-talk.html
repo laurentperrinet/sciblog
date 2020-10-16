@@ -159,7 +159,7 @@ In">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [29]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
@@ -172,30 +172,11 @@ In">
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">proglog</span>
 <span class="n">proglog</span><span class="o">.</span><span class="n">notebook</span><span class="p">()</span>
-<span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
+<span class="c1">#%load_ext autoreload</span>
+<span class="c1">#%autoreload 2</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The autoreload extension is already loaded. To reload it, use:
-  %reload_ext autoreload
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -212,7 +193,7 @@ In">
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [30]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">"Laurent Perrinet INT - CNRS"</span>
@@ -299,10 +280,10 @@ Moviepy - Writing video __temp__.mp4
 
  
  
-<div id="597f0b2d-266a-4fad-a374-0f294fc5d3d3"></div>
+<div id="4b8a098b-cb28-45f5-abfd-e67e547479da"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#597f0b2d-266a-4fad-a374-0f294fc5d3d3');
+var element = $('#4b8a098b-cb28-45f5-abfd-e67e547479da');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -324,7 +305,7 @@ Moviepy - video ready __temp__.mp4
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -340,7 +321,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [31]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'2019-09-30_flash_lag_stop.mp4'</span>
@@ -381,10 +362,10 @@ Moviepy - Writing video __temp__.mp4
 
  
  
-<div id="68baeeb0-fcaa-4031-aeb6-0b781e1bab5d"></div>
+<div id="8c2291e8-45ff-48fc-8e98-09ec61bda978"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#68baeeb0-fcaa-4031-aeb6-0b781e1bab5d');
+var element = $('#8c2291e8-45ff-48fc-8e98-09ec61bda978');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -406,7 +387,7 @@ Moviepy - video ready __temp__.mp4
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -422,7 +403,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [32]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t_flashes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.10</span><span class="p">]</span>
@@ -437,7 +418,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [33]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">t_flash</span><span class="p">,</span> <span class="n">flash_fill</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">t_flashes</span><span class="p">,</span> <span class="n">color_flashes</span><span class="p">)):</span>
@@ -465,7 +446,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [34]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">"Laurent Perrinet INT - CNRS"</span>
@@ -559,10 +540,10 @@ Moviepy - Writing video ../files/2019-09-30_flash_lag_parallel.mp4
 
  
  
-<div id="fdd838e5-e85d-4c6c-b5b8-03f4053967e3"></div>
+<div id="5bffcd7b-c04c-462d-a51d-c93fa3f61eec"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#fdd838e5-e85d-4c6c-b5b8-03f4053967e3');
+var element = $('#5bffcd7b-c04c-462d-a51d-c93fa3f61eec');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -595,10 +576,10 @@ Moviepy - Writing video __temp__.mp4
 
  
  
-<div id="8a860c0d-de53-4f7a-ac21-ec85a21514c2"></div>
+<div id="4c5426b0-798d-4365-a42d-51ff0b5d8f5d"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#8a860c0d-de53-4f7a-ac21-ec85a21514c2');
+var element = $('#4c5426b0-798d-4365-a42d-51ff0b5d8f5d');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -620,7 +601,7 @@ Moviepy - video ready __temp__.mp4
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -646,7 +627,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [35]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">"Laurent Perrinet INT - CNRS"</span>
@@ -739,10 +720,10 @@ Moviepy - Writing video __temp__.mp4
 
  
  
-<div id="5762e668-6c2c-44c8-9d47-5eb6a1923abf"></div>
+<div id="32789194-93a6-493a-9c54-bdbaca0e235b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#5762e668-6c2c-44c8-9d47-5eb6a1923abf');
+var element = $('#32789194-93a6-493a-9c54-bdbaca0e235b');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -764,7 +745,7 @@ Moviepy - video ready __temp__.mp4
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -780,7 +761,7 @@ Moviepy - video ready __temp__.mp4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'2019-09-30_flash_lag_parallel_shift_5.mp4'</span>
@@ -821,10 +802,10 @@ Moviepy - Writing video __temp__.mp4
 
  
  
-<div id="10da5e55-88cf-4c31-afb6-4ec90ae0217d"></div>
+<div id="e57b8136-73a6-4105-b51f-58b153c26ce5"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#10da5e55-88cf-4c31-afb6-4ec90ae0217d');
+var element = $('#e57b8136-73a6-4105-b51f-58b153c26ce5');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script>
@@ -846,7 +827,7 @@ Moviepy - video ready __temp__.mp4
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
