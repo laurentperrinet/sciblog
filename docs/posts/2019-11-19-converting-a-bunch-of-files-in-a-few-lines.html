@@ -132,12 +132,10 @@ I w">
 <pre class="code literal-block"><span></span><code>$ f flac
 </code></pre>
 
-
 <h2>converting files</h2>
 <p>Encoding in 128kB/s :</p>
 <pre class="code literal-block"><span></span><code>$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
 </code></pre>
-
 
 <p>Note that this will work also while exploring the folder hierarchy (that is if you have a bunch of folders with those files).</p>
 <h2>deleting files</h2>
@@ -192,9 +190,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
         <script src="../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

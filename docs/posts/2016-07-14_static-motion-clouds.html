@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Static motion clouds?">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html">
-<meta property="og:description" content="Motion Clouds were defined in the origin to define parameterized moving textures. The library in itself is also interesting in itself to generate a spatial texture. Herein I describe a solution to gen">
+<meta property="og:description" content="Motion Clouds were originally defined as moving textures controlled by a few parameters. The library is also capable to generate a static spatial texture. Herein I describe a solution to generate a si">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-07-14T15:18:22+02:00">
 <meta property="article:tag" content="motionclouds">
@@ -127,7 +127,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to define parameterized moving textures. The library in itself is also interesting in itself to generate a spatial texture. Herein I describe a solution to generate just one static frame.</p>
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were originally defined as moving textures controlled by a few parameters. The library is also capable to generate a <em>static</em> spatial texture. Herein I describe a solution to generate a single static frame.</p>
 <!-- TEASER_END -->
 
 <p>There are multiple solutions, and the simplest is perhaps to generate a movie that does not move. This means that the mean velocity $(V_X, V_Y)$ is null $=(0, 0)$ but also that there is no noise in the definition of the speed plane. This is defined by $B_V=0$, that is, that all the energy is concentrated on the spped plane:</p>
@@ -475,9 +475,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
         <script src="../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

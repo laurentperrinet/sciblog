@@ -21,7 +21,7 @@ Do not hesitate to comment!
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2020-10-10-fitting-covid-data.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -187,7 +187,38 @@ this will be exposed in the following book chapter (see also https://laurentperr
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2020-10-10-fitting-covid-data.html" class="u-url">Fitting COVID data</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html" class="u-url">2020-11-24 Extracting music from the screenshots of a Spotify playlist</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html" rel="bookmark">
+            <time class="published dt-published" datetime="2020-11-24T15:19:07+01:00" itemprop="datePublished" title="2020-11-24 15:19">2020-11-24 15:19</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html#disqus_thread" data-disqus-identifier="cache/posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html">Comments</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Extracting-music-from-the-screenshots-of-a-Spotify-playlist.">Extracting music from the screenshots of a Spotify playlist.<a class="anchor-link" href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html#Extracting-music-from-the-screenshots-of-a-Spotify-playlist.">¶</a>
+</h2>
+<p>In this post I'll try to show how from a screenshot obtained from a software like Spotify you can programmatically extract the tracks of the songs as well as the artists, to finally download them from the Internet.</p>
+<p></p>
+<p class="more"><a href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html">Read more…</a></p>
+</div>
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2020-10-10-fitting-covid-data.html" class="u-url">Fitting COVID data</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
@@ -2861,7 +2892,7 @@ apprendre plus sur les mathématiques et la science dans une ambiance conviviale
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to define parameterized moving textures. The library in itself is also interesting in itself to generate a spatial texture. Herein I describe a solution to generate just one static frame.</p>
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were originally defined as moving textures controlled by a few parameters. The library is also capable to generate a <em>static</em> spatial texture. Herein I describe a solution to generate a single static frame.</p>
 <p class="more"><a href="posts/2016-07-14_static-motion-clouds.html">Read more…</a></p>
 </div>
 </div>
@@ -6563,13 +6594,13 @@ npm install -g less
 </div>
 <p>I have managed to install Nikola, and build a site using it using this code:</p>
 <p><a class="reference external" href="listings/install-nikola.sh.html">install-nikola.sh</a>  <a class="reference external" href="listings/install-nikola.sh">(Source)</a></p>
-<pre class="code bash"><a name="rest_code_5138a8d94fab40e183a02c0f4929a650-1"></a>git clone git://github.com/getnikola/nikola.git
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-2"></a><span class="nb">cd</span> nikola
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-3"></a>pip install -r requirements-full.txt
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-4"></a>pip install .
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-5"></a>nikola init --demo invibe
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-6"></a>nikola build
-<a name="rest_code_5138a8d94fab40e183a02c0f4929a650-7"></a>nikola serve
+<pre class="code bash"><a name="rest_code_53bd430711774632b8e7d848f39d051c-1"></a>git clone git://github.com/getnikola/nikola.git
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-2"></a><span class="nb">cd</span> nikola
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-3"></a>pip install -r requirements-full.txt
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-4"></a>pip install .
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-5"></a>nikola init --demo invibe
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-6"></a>nikola build
+<a name="rest_code_53bd430711774632b8e7d848f39d051c-7"></a>nikola serve
 </pre>
 <p>Pretty simple, congratulations to the developpers!</p>
 <p>More info:</p>
@@ -8167,37 +8198,6 @@ In this talk, I examine two different types of phosphenes - patterns in the visu
 <p class="more"><a href="posts/2011-02-22-Change-User-ID-and-Group-ID-in-Snow-Leopard.html">Read more…</a></p>
 </div>
                 </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2011-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html" class="u-url">Ubuntu 10.10 64bit AHCI hosted on a dell T3500</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Laurent Perrinet
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/2011-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html" rel="bookmark">
-            <time class="published dt-published" datetime="2011-02-21T13:36:57+01:00" itemprop="datePublished" title="2011-02-21 13:36">2011-02-21 13:36</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="posts/2011-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html#disqus_thread" data-disqus-identifier="cache/posts/2011-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This post is certainly obsolete...</p>
-</div>
-<ul><li>
-<p>quoting
-<a class="reference external" href="http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35">http://ubuntuforums.org/showpost.php?p=10189331&amp;postcount=35</a>
-: "For those (like me) who aren't familiar with grub tampering,
-here's what I did to make the change automatic:"</p>
-<p class="more"><a href="posts/2011-02-21-1010-64bit-AHCI-hosed-on-a-dell-T3500.html">Read more…</a></p>
-</li></ul>
-</div>
-                </div>
             </article>
 </div>
     
@@ -8229,9 +8229,7 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
         <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>
