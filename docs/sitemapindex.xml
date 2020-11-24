@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2020-11-24T14:40:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.xml</loc>
@@ -235,7 +235,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.xml</loc>
-  <lastmod>2020-11-24T14:40:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.xml</loc>
@@ -255,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.xml</loc>
-  <lastmod>2020-11-24T14:40:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2020-11-24T14:40:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -431,10 +431,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2020-11-24T15:45:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2020-11-24T15:45:00Z</lastmod>
+  <lastmod>2020-11-24T16:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>

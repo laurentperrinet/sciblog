@@ -153,7 +153,7 @@ I'll use the python programming language as well as different libraries that are
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We start with a series of files in PNG format. They correspond to screenshots that you can easily obtain with your usual operating system, whether it is MacOS Windows. I received this from a friend to of remind memories of a good party...</p>
+<p>We start with a series of files in PNG format. They correspond to screenshots that you can easily obtain with your usual operating system, whether it is MacOS Windows. I received this from a friend to remind memories of a good party...</p>
 <p>For this first step we use the pillow library that allows us to transform this image file into a numpy matrix:</p>
 
 </div>
@@ -765,7 +765,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="batch-of-images">batch of images<a class="anchor-link" href="2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html#batch-of-images">¶</a>
 </h3>
-<p>Applying this on the set of screenshot we have:</p>
+<p>Applying this on the set of screenshots, we have:</p>
 
 </div>
 </div>
@@ -824,7 +824,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So that the pandas files is retrived using:</p>
+<p>So that the pandas files is constructed using:</p>
 
 </div>
 </div>
@@ -977,10 +977,9 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="one-more-thing...">one more thing...<a class="anchor-link" href="2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html#one-more-thing...">¶</a>
 </h2>
-<p>It's incredible how easy it is nowadays to do these operations and to be able to extract from an image the information you wanted so quickly... 
-This is one of the many advantages that emerge from existing collaborations in the fields of computer vision and artificial intelligence.</p>
+<p>It's incredible how easy it is nowadays to do these operations! To be able to extract the information you wanted from an image so quickly was not imagniable a few years ago... This is one of the many advantages that emerge from the numerour existing collaborations in the fields of computer vision and artificial intelligence.</p>
 <p>Can we go one step further and extract an audio file from this information?</p>
-<p>A first step would be to try to find a URI from a search query containing the title and the artist. To do this we will use the DuckDuckGo search engine, and use the DuckPy library to do this programmatically:</p>
+<p>A first step would be to try to find a <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a> from a search query containing the title and the artist. To do this, we will use the <a href="https://duckduckgo.com">DuckDuckGo</a> search engine, and use the <a href="https://pypi.org/project/duckpy/">DuckPy</a> library to do this programmatically:</p>
 
 </div>
 </div>
@@ -2098,7 +2097,7 @@ search_pattern='Je T’aime Romare site:www.youtube.com -playlist', len(results)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="...-scoring-heuristics-...">... scoring heuristics ...<a class="anchor-link" href="2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html#...-scoring-heuristics-...">¶</a>
 </h3>
-<p>I was not completely happy with the search results so I added some heuristics to select among all results:</p>
+<p>I was not completely happy with the raw search results, so I added some <em>magical</em> heuristics to select among all results:</p>
 
 </div>
 </div>
@@ -2279,283 +2278,6 @@ search_pattern='Je T’aime Romare site:www.youtube.com -playlist', len(results)
 </pre></div>
 
     </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">songs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>title     Arco lris
-artist    New Order
-Name: 11, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">songs_results</span><span class="p">[</span><span class="n">songs_results</span><span class="p">[</span><span class="s1">'i_song'</span><span class="p">]</span><span class="o">==</span><span class="mi">11</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>i_song</th>
-      <th>rank</th>
-      <th>title</th>
-      <th>url</th>
-      <th>description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>215</th>
-      <td>11</td>
-      <td>0</td>
-      <td>MC Arco lris --- Bonde Colorido ( canal da bib...</td>
-      <td>https://www.youtube.com/watch?v=58AXI11zLRw</td>
-      <td>Mc Arco Iris 🌈 Alice Monteiro - Melhores Amiga...</td>
-    </tr>
-<tr>
-<th>216</th>
-      <td>11</td>
-      <td>1</td>
-      <td>LRİS EVRİM GEÇİRDİ! NEW BREKING LRIS EFSANE - ...</td>
-      <td>https://www.youtube.com/watch?v=gigiAYIj2zg</td>
-      <td>NEW BREKING LRIS EFSANE | B37 Ark Tranformatio...</td>
-    </tr>
-<tr>
-<th>217</th>
-      <td>11</td>
-      <td>2</td>
-      <td>Danza de jóvenes de Templo Elim de la Barriada...</td>
-      <td>https://www.youtube.com/watch?v=qZk0CvnMB_E</td>
-      <td>Danza de jóvenes de Templo Elim de la Barriada...</td>
-    </tr>
-<tr>
-<th>218</th>
-      <td>11</td>
-      <td>3</td>
-      <td>O arco-lris mágicos - YouTube</td>
-      <td>https://www.youtube.com/watch?v=OEcGqkFjh8M</td>
-      <td>Se escreva no meu canal. Espero que goste Nome...</td>
-    </tr>
-<tr>
-<th>219</th>
-      <td>11</td>
-      <td>4</td>
-      <td>New Order - Crystal &amp; Regret (Live Finsbury Pa...</td>
-      <td>https://www.youtube.com/watch?v=srN4BpOWPJ4</td>
-      <td>All rights reserved of the copyright holder, p...</td>
-    </tr>
-<tr>
-<th>220</th>
-      <td>11</td>
-      <td>5</td>
-      <td>Arco lris doble - YouTube</td>
-      <td>https://www.youtube.com/watch?v=Ip7b3QIovpQ</td>
-      <td>Отмена. Месяц бесплатно. Arco lris doble. Will...</td>
-    </tr>
-<tr>
-<th>221</th>
-      <td>11</td>
-      <td>6</td>
-      <td>Fazendo balão arco lris - YouTube</td>
-      <td>https://www.youtube.com/watch?v=ZgfHhp_o4lk</td>
-      <td>Fazendo balão arco lris. Marly Rodrigues. Загр...</td>
-    </tr>
-<tr>
-<th>222</th>
-      <td>11</td>
-      <td>7</td>
-      <td>El arco compuesto y para que sirve - Cronicas ...</td>
-      <td>https://www.youtube.com/watch?v=E2nGV2YHg1c</td>
-      <td>En este video vamos a ver para que sirve el ar...</td>
-    </tr>
-<tr>
-<th>223</th>
-      <td>11</td>
-      <td>8</td>
-      <td>MHW Iceborne | Novos Moves e Combos do ARCO / ...</td>
-      <td>https://www.youtube.com/watch?v=GCNvrf34nGo</td>
-      <td>Monster Hunter World | Bow - Arco Tutorial / G...</td>
-    </tr>
-<tr>
-<th>224</th>
-      <td>11</td>
-      <td>9</td>
-      <td>Otávio Arco_ĺris10 - YouTube</td>
-      <td>https://www.youtube.com/channel/UCn0hqrvg3uDk2...</td>
-      <td>Otávio Arco_ĺris10. Otávio Arco_ĺris10. 6 подп...</td>
-    </tr>
-<tr>
-<th>225</th>
-      <td>11</td>
-      <td>10</td>
-      <td>MHW Iceborne - Builds de Bow / Arco Adaptativa...</td>
-      <td>https://www.youtube.com/watch?v=d82Ea8oJZwY</td>
-      <td>Caçada Shara Ishvalda de Arco Divindade de Vel...</td>
-    </tr>
-<tr>
-<th>226</th>
-      <td>11</td>
-      <td>11</td>
-      <td>YORICK ARCO DE LUZ (1350 RP) NUEVA SKIN! - You...</td>
-      <td>https://www.youtube.com/watch?v=9o38r4F_iJg</td>
-      <td>New arclight yorick jungle spotlight | this sk...</td>
-    </tr>
-<tr>
-<th>227</th>
-      <td>11</td>
-      <td>12</td>
-      <td>ИСТОРИЯ МИРА - ЛОР МОДА The New Order - YouTube</td>
-      <td>https://www.youtube.com/watch?v=1ObVjtFdmRM</td>
-      <td>Hoi4 The New Order Heydrichs Germany! Mountain...</td>
-    </tr>
-<tr>
-<th>228</th>
-      <td>11</td>
-      <td>13</td>
-      <td>Arco-Íris Doloroso | As Meninas Superpoderosas...</td>
-      <td>https://www.youtube.com/watch?v=ePtB4V9hFwU</td>
-      <td>Oggy &amp; Zig &amp; Sharko Season 2 NEW BEST COMPILAT...</td>
-    </tr>
-<tr>
-<th>229</th>
-      <td>11</td>
-      <td>14</td>
-      <td>My Little Pony Corrida Arco-Íris #1 - YouTube</td>
-      <td>https://www.youtube.com/watch?v=se8V8Zrilmk</td>
-      <td>Corra, pule e voe para restaurar as cores do m...</td>
-    </tr>
-<tr>
-<th>230</th>
-      <td>11</td>
-      <td>15</td>
-      <td>Arco-Flagellants And Repentia Superior Reveale...</td>
-      <td>https://www.youtube.com/watch?v=L6WTfy6sbAU</td>
-      <td>Следующее. Sisters of Battle - Arco-Flagellant...</td>
-    </tr>
-<tr>
-<th>231</th>
-      <td>11</td>
-      <td>16</td>
-      <td>FINAL FANTASY XV Os Sapos Lendários - Localiza...</td>
-      <td>https://www.youtube.com/watch?v=P31ppRW-iA8</td>
-      <td>Опубликовано: 8 дек. 2016 г. Os Sapos lendário...</td>
-    </tr>
-<tr>
-<th>232</th>
-      <td>11</td>
-      <td>17</td>
-      <td>Destiny 2: COMO CONSEGUIR ALIENTO DEL LEVIATAN...</td>
-      <td>https://www.youtube.com/watch?v=8P04oGdftlo</td>
-      <td>Aventura de arco exótico! Sala Oculta! Secreto...</td>
-    </tr>
-<tr>
-<th>233</th>
-      <td>11</td>
-      <td>18</td>
-      <td>New Order - Sunrise - YouTube</td>
-      <td>https://www.youtube.com/watch?v=KQfV-9tv6Ag</td>
-      <td>New Order SUNRISE Album "LOW LIFE", Track 04 F...</td>
-    </tr>
-<tr>
-<th>234</th>
-      <td>11</td>
-      <td>19</td>
-      <td>Ministério Arco Iris Mozambique - YouTube</td>
-      <td>https://www.youtube.com/watch?v=nvGaIr3Gpsc</td>
-      <td>Ministerio Arco Iris, Matola Rio 2010 - Englis...</td>
-    </tr>
-<tr>
-<th>235</th>
-      <td>11</td>
-      <td>20</td>
-      <td>LA VETA EN LOS ARCOS DE MADERA - Arquería Trad...</td>
-      <td>https://www.youtube.com/watch?v=r6fyramzu24</td>
-      <td>"LONGBOW" EL ARCO DE ROBIN HOOD - Arquería Tra...</td>
-    </tr>
-<tr>
-<th>236</th>
-      <td>11</td>
-      <td>21</td>
-      <td>ESO Complete Psijic Order Guide (2020) | All R...</td>
-      <td>https://www.youtube.com/watch?v=GPJvUD9iIr8</td>
-      <td>Heyo everyone! If you need help understanding ...</td>
-    </tr>
-<tr>
-<th>237</th>
-      <td>11</td>
-      <td>22</td>
-      <td>Skyrim - Dawnguard DLC: 'A New Order' Quest - ...</td>
-      <td>https://www.youtube.com/watch?v=0JhlDp0aHPE</td>
-      <td>How to find a Gyro for Sorine Jurard, in the '...</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -4301,6 +4023,248 @@ Name: 11, dtype: object</pre>
     </tr>
 </tbody>
 </table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">songs_results</span><span class="p">[</span><span class="n">songs_results</span><span class="p">[</span><span class="s1">'i_song'</span><span class="p">]</span><span class="o">==</span><span class="mi">11</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>i_song</th>
+      <th>rank</th>
+      <th>title</th>
+      <th>url</th>
+      <th>description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>215</th>
+      <td>11</td>
+      <td>0</td>
+      <td>MC Arco lris --- Bonde Colorido ( canal da bib...</td>
+      <td>https://www.youtube.com/watch?v=58AXI11zLRw</td>
+      <td>Mc Arco Iris 🌈 Alice Monteiro - Melhores Amiga...</td>
+    </tr>
+<tr>
+<th>216</th>
+      <td>11</td>
+      <td>1</td>
+      <td>LRİS EVRİM GEÇİRDİ! NEW BREKING LRIS EFSANE - ...</td>
+      <td>https://www.youtube.com/watch?v=gigiAYIj2zg</td>
+      <td>NEW BREKING LRIS EFSANE | B37 Ark Tranformatio...</td>
+    </tr>
+<tr>
+<th>217</th>
+      <td>11</td>
+      <td>2</td>
+      <td>Danza de jóvenes de Templo Elim de la Barriada...</td>
+      <td>https://www.youtube.com/watch?v=qZk0CvnMB_E</td>
+      <td>Danza de jóvenes de Templo Elim de la Barriada...</td>
+    </tr>
+<tr>
+<th>218</th>
+      <td>11</td>
+      <td>3</td>
+      <td>O arco-lris mágicos - YouTube</td>
+      <td>https://www.youtube.com/watch?v=OEcGqkFjh8M</td>
+      <td>Se escreva no meu canal. Espero que goste Nome...</td>
+    </tr>
+<tr>
+<th>219</th>
+      <td>11</td>
+      <td>4</td>
+      <td>New Order - Crystal &amp; Regret (Live Finsbury Pa...</td>
+      <td>https://www.youtube.com/watch?v=srN4BpOWPJ4</td>
+      <td>All rights reserved of the copyright holder, p...</td>
+    </tr>
+<tr>
+<th>220</th>
+      <td>11</td>
+      <td>5</td>
+      <td>Arco lris doble - YouTube</td>
+      <td>https://www.youtube.com/watch?v=Ip7b3QIovpQ</td>
+      <td>Отмена. Месяц бесплатно. Arco lris doble. Will...</td>
+    </tr>
+<tr>
+<th>221</th>
+      <td>11</td>
+      <td>6</td>
+      <td>Fazendo balão arco lris - YouTube</td>
+      <td>https://www.youtube.com/watch?v=ZgfHhp_o4lk</td>
+      <td>Fazendo balão arco lris. Marly Rodrigues. Загр...</td>
+    </tr>
+<tr>
+<th>222</th>
+      <td>11</td>
+      <td>7</td>
+      <td>El arco compuesto y para que sirve - Cronicas ...</td>
+      <td>https://www.youtube.com/watch?v=E2nGV2YHg1c</td>
+      <td>En este video vamos a ver para que sirve el ar...</td>
+    </tr>
+<tr>
+<th>223</th>
+      <td>11</td>
+      <td>8</td>
+      <td>MHW Iceborne | Novos Moves e Combos do ARCO / ...</td>
+      <td>https://www.youtube.com/watch?v=GCNvrf34nGo</td>
+      <td>Monster Hunter World | Bow - Arco Tutorial / G...</td>
+    </tr>
+<tr>
+<th>224</th>
+      <td>11</td>
+      <td>9</td>
+      <td>Otávio Arco_ĺris10 - YouTube</td>
+      <td>https://www.youtube.com/channel/UCn0hqrvg3uDk2...</td>
+      <td>Otávio Arco_ĺris10. Otávio Arco_ĺris10. 6 подп...</td>
+    </tr>
+<tr>
+<th>225</th>
+      <td>11</td>
+      <td>10</td>
+      <td>MHW Iceborne - Builds de Bow / Arco Adaptativa...</td>
+      <td>https://www.youtube.com/watch?v=d82Ea8oJZwY</td>
+      <td>Caçada Shara Ishvalda de Arco Divindade de Vel...</td>
+    </tr>
+<tr>
+<th>226</th>
+      <td>11</td>
+      <td>11</td>
+      <td>YORICK ARCO DE LUZ (1350 RP) NUEVA SKIN! - You...</td>
+      <td>https://www.youtube.com/watch?v=9o38r4F_iJg</td>
+      <td>New arclight yorick jungle spotlight | this sk...</td>
+    </tr>
+<tr>
+<th>227</th>
+      <td>11</td>
+      <td>12</td>
+      <td>ИСТОРИЯ МИРА - ЛОР МОДА The New Order - YouTube</td>
+      <td>https://www.youtube.com/watch?v=1ObVjtFdmRM</td>
+      <td>Hoi4 The New Order Heydrichs Germany! Mountain...</td>
+    </tr>
+<tr>
+<th>228</th>
+      <td>11</td>
+      <td>13</td>
+      <td>Arco-Íris Doloroso | As Meninas Superpoderosas...</td>
+      <td>https://www.youtube.com/watch?v=ePtB4V9hFwU</td>
+      <td>Oggy &amp; Zig &amp; Sharko Season 2 NEW BEST COMPILAT...</td>
+    </tr>
+<tr>
+<th>229</th>
+      <td>11</td>
+      <td>14</td>
+      <td>My Little Pony Corrida Arco-Íris #1 - YouTube</td>
+      <td>https://www.youtube.com/watch?v=se8V8Zrilmk</td>
+      <td>Corra, pule e voe para restaurar as cores do m...</td>
+    </tr>
+<tr>
+<th>230</th>
+      <td>11</td>
+      <td>15</td>
+      <td>Arco-Flagellants And Repentia Superior Reveale...</td>
+      <td>https://www.youtube.com/watch?v=L6WTfy6sbAU</td>
+      <td>Следующее. Sisters of Battle - Arco-Flagellant...</td>
+    </tr>
+<tr>
+<th>231</th>
+      <td>11</td>
+      <td>16</td>
+      <td>FINAL FANTASY XV Os Sapos Lendários - Localiza...</td>
+      <td>https://www.youtube.com/watch?v=P31ppRW-iA8</td>
+      <td>Опубликовано: 8 дек. 2016 г. Os Sapos lendário...</td>
+    </tr>
+<tr>
+<th>232</th>
+      <td>11</td>
+      <td>17</td>
+      <td>Destiny 2: COMO CONSEGUIR ALIENTO DEL LEVIATAN...</td>
+      <td>https://www.youtube.com/watch?v=8P04oGdftlo</td>
+      <td>Aventura de arco exótico! Sala Oculta! Secreto...</td>
+    </tr>
+<tr>
+<th>233</th>
+      <td>11</td>
+      <td>18</td>
+      <td>New Order - Sunrise - YouTube</td>
+      <td>https://www.youtube.com/watch?v=KQfV-9tv6Ag</td>
+      <td>New Order SUNRISE Album "LOW LIFE", Track 04 F...</td>
+    </tr>
+<tr>
+<th>234</th>
+      <td>11</td>
+      <td>19</td>
+      <td>Ministério Arco Iris Mozambique - YouTube</td>
+      <td>https://www.youtube.com/watch?v=nvGaIr3Gpsc</td>
+      <td>Ministerio Arco Iris, Matola Rio 2010 - Englis...</td>
+    </tr>
+<tr>
+<th>235</th>
+      <td>11</td>
+      <td>20</td>
+      <td>LA VETA EN LOS ARCOS DE MADERA - Arquería Trad...</td>
+      <td>https://www.youtube.com/watch?v=r6fyramzu24</td>
+      <td>"LONGBOW" EL ARCO DE ROBIN HOOD - Arquería Tra...</td>
+    </tr>
+<tr>
+<th>236</th>
+      <td>11</td>
+      <td>21</td>
+      <td>ESO Complete Psijic Order Guide (2020) | All R...</td>
+      <td>https://www.youtube.com/watch?v=GPJvUD9iIr8</td>
+      <td>Heyo everyone! If you need help understanding ...</td>
+    </tr>
+<tr>
+<th>237</th>
+      <td>11</td>
+      <td>22</td>
+      <td>Skyrim - Dawnguard DLC: 'A New Order' Quest - ...</td>
+      <td>https://www.youtube.com/watch?v=0JhlDp0aHPE</td>
+      <td>How to find a Gyro for Sorine Jurard, in the '...</td>
+    </tr>
+</tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -7679,6 +7643,16 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Icing on the cake, we can get a free and good quality opus-like format.</p>
+
+</div>
+</div>
 </div>
 </div>
     </div>
