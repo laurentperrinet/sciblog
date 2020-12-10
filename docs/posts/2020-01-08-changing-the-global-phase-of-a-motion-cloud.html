@@ -15,7 +15,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" title="Role of gamma correction in Sparse coding" type="text/html">
-<link rel="next" href="2020-04-08-fitting-a-psychometric-curve-using-pytorch.html" title="2020-04-08 fitting a psychometric curve using pyTorch" type="text/html">
+<link rel="next" href="2020-04-08-fitting-a-psychometric-curve-using-pytorch.html" title="Fitting a psychometric curve using pyTorch" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Changing the global phase of a Motion Cloud">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html">
@@ -770,7 +770,7 @@ Git branch : master
                 <a href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" rel="prev" title="Role of gamma correction in Sparse coding">Previous post</a>
             </li>
             <li class="next">
-                <a href="2020-04-08-fitting-a-psychometric-curve-using-pytorch.html" rel="next" title="2020-04-08 fitting a psychometric curve using pyTorch">Next post</a>
+                <a href="2020-04-08-fitting-a-psychometric-curve-using-pytorch.html" rel="next" title="Fitting a psychometric curve using pyTorch">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -820,6 +820,39 @@ Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://theme
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
-    </script>
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
 </body>
 </html>
