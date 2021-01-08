@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.xml</loc>
@@ -191,7 +191,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
@@ -235,7 +235,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.xml</loc>
@@ -243,7 +243,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/orientation.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/oss.xml</loc>
@@ -255,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2021-01-08T11:33:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -391,7 +391,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/v1.xml</loc>
-  <lastmod>2021-01-08T11:33:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vim.xml</loc>
@@ -399,7 +399,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.xml</loc>
-  <lastmod>2021-01-08T11:33:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.xml</loc>
@@ -431,10 +431,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2021-01-08T11:34:00Z</lastmod>
+  <lastmod>2021-01-08T11:50:00Z</lastmod>
  </sitemap>
 </sitemapindex>
