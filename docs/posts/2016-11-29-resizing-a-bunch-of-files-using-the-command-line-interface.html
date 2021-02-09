@@ -145,9 +145,9 @@ Solution: ImageMagick.</p>
 <span class="nb">cd</span> /tmp/database
 <span class="nb">export</span> <span class="nv">EXT</span><span class="o">=</span>jpg
 
-<span class="k">for</span> j in *
+<span class="k">for</span> j <span class="k">in</span> *
 <span class="k">do</span>
-    <span class="k">for</span> i in <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">"</span>/*.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
+    <span class="k">for</span> i <span class="k">in</span> <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">"</span>/*.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
     <span class="k">do</span>
         identify <span class="s2">"</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">done</span>
@@ -1395,11 +1395,11 @@ serre07_targets/M_ani61.jpg JPEG 256x256 256x256+0+0 8-bit sRGB 62.4KB 0.000u 0:
 <span class="nb">cd</span> /tmp/database
 <span class="nb">export</span> <span class="nv">EXT</span><span class="o">=</span>jpg
 
-<span class="k">for</span> j in *
+<span class="k">for</span> j <span class="k">in</span> *
 <span class="k">do</span>
     mkdir -p <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">_64"</span>
     <span class="nb">cd</span> <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">for</span> i in *.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
+    <span class="k">for</span> i <span class="k">in</span> *.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
     <span class="k">do</span>
         convert <span class="s2">"</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">"</span> -resize 64x64 <span class="s2">"../</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">_64/</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">done</span>
@@ -1431,9 +1431,9 @@ serre07_targets/M_ani61.jpg JPEG 256x256 256x256+0+0 8-bit sRGB 62.4KB 0.000u 0:
 <span class="nb">cd</span> /tmp/database
 <span class="nb">export</span> <span class="nv">EXT</span><span class="o">=</span>jpg
 
-<span class="k">for</span> j in *_64
+<span class="k">for</span> j <span class="k">in</span> *_64
 <span class="k">do</span>
-    <span class="k">for</span> i in <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">"</span>/*.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
+    <span class="k">for</span> i <span class="k">in</span> <span class="s2">"</span><span class="si">${</span><span class="nv">j</span><span class="si">}</span><span class="s2">"</span>/*.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span>
     <span class="k">do</span>
         identify <span class="s2">"</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">done</span>
