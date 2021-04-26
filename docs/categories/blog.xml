@@ -3,7 +3,18 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 22 Feb 2021 19:55:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Time lapsing an orchid's flower</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-02-21-time-lapsing-an-orchids-flower.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 26 Apr 2021 20:04:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2021-03-27 Density of stars on the surface of the sky</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Looking at the night sky, the pattern of stars on the surface of the sky follows a familiar pattern. The Big Dipper, Cassiopeia, the Pleiades, or Orion are popular landmarks in the sky. Different civilisations labelled them using names of so-called constellations. However, this pattern is often the result of pure chance as stars from one constellation belong often to remote areas in the universe and they have this familiarity because the rate at which stars move is much shorter than the lifespan of humanity.&lt;/p&gt;
+&lt;p&gt;I am curious here to study the density of stars as they appear on the surface of the sky and if some generic principles could be used to characterize it. This is my attempt to answer the question&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://astronomy.stackexchange.com/questions/43147/density-of-stars-on-the-surface-of-the-sky"&gt;https://astronomy.stackexchange.com/questions/43147/density-of-stars-on-the-surface-of-the-sky&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(but also to make the formulation of the question clearer...)&lt;/p&gt;
+&lt;p&gt;The main assumption is that in the model we will formulate, there is no structure and the position of stars is drawn completly randomly. Comparing the resulting night sky for this model to that observed from earth, we will perhaps learn more about the balance between structure (Milky way, clusters, ...) and what is more characteristic of a noisy arrangment of matter.&lt;/p&gt;
+&lt;p&gt;In the end of this notebook, we should be able to generate images like&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/files/2021-03-27_generative.png" alt="astro gen"&gt;&lt;/p&gt;
+&lt;p&gt;which captures pretty well what you could observe in the sky during a clear night.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html"&gt;Read more…&lt;/a&gt; (16 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>grand-public</category><category>moviepy</category><category>outreach</category><category>python</category><category>space</category><guid>https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html</guid><pubDate>Sat, 27 Mar 2021 13:06:52 GMT</pubDate></item><item><title>Time lapsing an orchid's flower</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-02-21-time-lapsing-an-orchids-flower.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The goal here is to realize a time-lapse using a raspberry π and some python code and finally get this:&lt;/p&gt;
@@ -114,50 +125,4 @@ index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Let's unwrap how we found such an easy solution...&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>numpy</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html</guid><pubDate>Thu, 17 Nov 2016 08:56:25 GMT</pubDate></item><item><title>Saving and displaying movies and dynamic figures</title><link>https://laurentperrinet.github.io/sciblog/posts/2016-11-15-saving-and-displaying-movies-and-dynamic-figures.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;It is insanely useful to create movies to illustrate a talk, blog post or just to include in a notebook:&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTML&lt;/span&gt;
-&lt;span class="n"&gt;HTML&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;center&amp;gt;&amp;lt;video controls autoplay loop src="../files/2016-11-15_noise.mp4" width=61.8%/&amp;gt;&amp;lt;/center&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2016-11-15_noise.mp4" width="61.8%/"&gt;&lt;/video&gt;&lt;/center&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;For years I have used a custom made solution made around saving single frames and then calling &lt;code&gt;ffmpeg&lt;/code&gt; to save that files to a movie file. That function (called &lt;code&gt;anim_save&lt;/code&gt; had to be maintained accross different libraries to reflect new needs (going to WEBM and MP4 formats for instance). That made the code longer than necessary and had not its place in a scientific library.&lt;/p&gt;
-&lt;p&gt;Here, I show how to use the &lt;code&gt;animation&lt;/code&gt; library from matplotlib to replace that 
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-15-saving-and-displaying-movies-and-dynamic-figures.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>Motion Particles</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-15-saving-and-displaying-movies-and-dynamic-figures.html</guid><pubDate>Tue, 15 Nov 2016 08:56:25 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>numpy</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html</guid><pubDate>Thu, 17 Nov 2016 08:56:25 GMT</pubDate></item></channel></rss>
