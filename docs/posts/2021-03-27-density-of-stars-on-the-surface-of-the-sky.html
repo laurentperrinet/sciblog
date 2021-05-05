@@ -134,7 +134,7 @@
 <hr>
 <p>Building on the answers from @anders-sandberg and @ProfRob I think I get an answer for my own question. I am most certainly reinventing the wheel, but it has been fun. Please comment if you know any pointer on a similar derivation.</p>
 <p>As a (very) rough approximation, one may assume that in a given line of sight, there is locally a uniform, independent and identically distributed density of stars. This can be modeled for instance by a <a href="https://en.wikipedia.org/wiki/Poisson_distribution">3D Poisson distribution</a>. A 3D Poisson distribution consists in drawing random positions in space independently for the 3 axis and independently for the different points.</p>
-<p>As a consequence, there are stars in all directions, but they have different luminances due to their distance it is easy to derive the probability distribution of the distance and by a change of variable, one can find that of luminance as :</p>
+<p>As a consequence, there are stars in all directions, but they have different luminances due to their distance. It is easy to derive the probability distribution of the distance for such a model and by a change of variable, one can find that of luminance as :</p>
 $$
 \text{Pr}(L) \propto \frac 1 {d^{\frac 5 2}}
 $$<p>This is what you get with a simple simulation by placing stars at random positions in the universe but also if you plot the distribution of the luminance for stars drawn from [a catalog of more than 100k stars][2] (left panel):</p>
