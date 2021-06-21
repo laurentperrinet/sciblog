@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2021-06-21T12:32:00Z</lastmod>
+  <lastmod>2021-06-21T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/deep-learning.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/demo.html</loc>
@@ -147,7 +147,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ipython.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/jupyter.html</loc>
@@ -159,7 +159,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/learning.html</loc>
-  <lastmod>2021-04-26T19:41:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/loggabor.html</loc>
@@ -167,7 +167,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/machine-learning.html</loc>
-  <lastmod>2021-06-21T12:29:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.html</loc>
@@ -219,7 +219,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neural.html</loc>
-  <lastmod>2021-04-26T19:41:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/neuralensemble.html</loc>
@@ -239,7 +239,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.html</loc>
-  <lastmod>2021-06-21T12:29:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/obv1.html</loc>
@@ -247,7 +247,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2021-06-21T12:29:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -287,7 +287,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/public.html</loc>
@@ -303,11 +303,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2021-06-21T12:32:00Z</lastmod>
+  <lastmod>2021-06-21T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
-  <lastmod>2021-06-21T12:29:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
@@ -1547,11 +1547,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-06-13-generating-an-unique-seed-for-a-given-filename.html</loc>
-  <lastmod>2021-06-21T12:33:00Z</lastmod>
+  <lastmod>2021-06-21T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html</loc>
-  <lastmod>2021-06-21T12:33:00Z</lastmod>
+  <lastmod>2021-06-21T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html</loc>
