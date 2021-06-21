@@ -7,15 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2021-05-06T21:42:00Z</lastmod>
+  <lastmod>2021-05-19T15:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2021-05-19T15:02:00Z</lastmod>
+  <lastmod>2021-06-21T12:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2021-05-06T21:41:00Z</lastmod>
+  <lastmod>2021-05-19T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -167,7 +167,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/machine-learning.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.html</loc>
@@ -179,7 +179,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/math.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/matlab.html</loc>
@@ -239,7 +239,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.html</loc>
-  <lastmod>2021-04-26T19:41:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/obv1.html</loc>
@@ -247,7 +247,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2021-04-26T19:41:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -267,7 +267,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.html</loc>
@@ -303,11 +303,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2021-05-19T15:02:00Z</lastmod>
+  <lastmod>2021-06-21T12:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-06-21T12:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
@@ -459,15 +459,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-25_pollymagoo/</loc>
-  <lastmod>2021-02-04T19:58:00Z</lastmod>
+  <lastmod>2020-09-11T09:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-28_mejanes/</loc>
-  <lastmod>2021-02-04T19:59:00Z</lastmod>
+  <lastmod>2019-11-15T13:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-07-07_EDP-proba/</loc>
-  <lastmod>2021-02-04T20:03:00Z</lastmod>
+  <lastmod>2019-11-15T13:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-09-26_Perrinet16journalClub/2016-09-26_Perrinet16journalClub.slides.html</loc>
@@ -547,7 +547,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/galleries/</loc>
-  <lastmod>2021-02-10T06:19:00Z</lastmod>
+  <lastmod>2021-02-23T00:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
@@ -555,7 +555,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
-  <lastmod>2021-02-10T06:19:00Z</lastmod>
+  <lastmod>2021-02-23T00:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/import_moinmoinpages.py.html</loc>
@@ -1547,11 +1547,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-06-13-generating-an-unique-seed-for-a-given-filename.html</loc>
-  <lastmod>2021-02-21T20:05:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html</loc>
-  <lastmod>2021-02-21T20:05:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html</loc>
@@ -1635,7 +1635,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2020-10-10-fitting-covid-data.html</loc>
-  <lastmod>2021-02-21T20:04:00Z</lastmod>
+  <lastmod>2021-06-21T12:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html</loc>
