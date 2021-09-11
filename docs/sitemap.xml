@@ -7,15 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2021-05-19T15:35:00Z</lastmod>
+  <lastmod>2021-07-07T13:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2021-06-21T12:56:00Z</lastmod>
+  <lastmod>2021-09-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2021-05-19T15:09:00Z</lastmod>
+  <lastmod>2021-06-21T19:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/art.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-09-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/behavior.html</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2021-05-19T15:02:00Z</lastmod>
+  <lastmod>2021-09-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.html</loc>
@@ -91,7 +91,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/elasticite.html</loc>
-  <lastmod>2021-02-21T20:03:00Z</lastmod>
+  <lastmod>2021-09-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/experiment.html</loc>
@@ -303,7 +303,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2021-06-21T12:36:00Z</lastmod>
+  <lastmod>2021-09-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
@@ -459,15 +459,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-25_pollymagoo/</loc>
-  <lastmod>2020-09-11T09:50:00Z</lastmod>
+  <lastmod>2021-02-04T19:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-04-28_mejanes/</loc>
-  <lastmod>2019-11-15T13:28:00Z</lastmod>
+  <lastmod>2021-02-04T19:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-07-07_EDP-proba/</loc>
-  <lastmod>2019-11-15T13:28:00Z</lastmod>
+  <lastmod>2021-02-04T20:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/files/2016-09-26_Perrinet16journalClub/2016-09-26_Perrinet16journalClub.slides.html</loc>
@@ -547,15 +547,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/galleries/</loc>
-  <lastmod>2021-02-23T00:25:00Z</lastmod>
+  <lastmod>2021-02-10T06:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2021-04-26T19:46:00Z</lastmod>
+  <lastmod>2021-09-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
-  <lastmod>2021-02-23T00:25:00Z</lastmod>
+  <lastmod>2021-02-10T06:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/import_moinmoinpages.py.html</loc>
@@ -1655,7 +1655,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html</loc>
-  <lastmod>2021-05-19T15:03:00Z</lastmod>
+  <lastmod>2021-09-11T10:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2021-09-11-modelling-ocean-surface-waves.html</loc>
+  <lastmod>2021-09-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>

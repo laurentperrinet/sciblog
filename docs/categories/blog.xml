@@ -3,7 +3,15 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 19 May 2021 15:03:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Density of stars on the surface of the sky</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 11 Sep 2021 10:22:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelling Ocean surface waves</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-09-11-modelling-ocean-surface-waves.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Trying to model Ocean surface waves, I have played using a &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-24_a-bit-of-fun-with-gravity-waves.html"&gt;linear superposition of sinusoids&lt;/a&gt; and also on the fact that &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-04-24_a-wave-going-backwards.html"&gt;phase speed (following a wave's crest) is twice as fast as group speed (following a group of waves)&lt;/a&gt;. Finally, I more recently used such generation of a model of the random superposition of waves to model the &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html"&gt;wigggling lines formed by the refraction (bendings of the trajectory of a ray at the interface between air and water) of light, called caustics&lt;/a&gt;...&lt;/p&gt;
+&lt;p&gt;Observing real-life ocean waves instructed me that if a single wave is well approximated by a sinusoïd, it is qualitatively a bit different. Typical for these surface gravity waves are &lt;a href="https://en.wikipedia.org/wiki/Stokes_wave"&gt;the sharp crests and flat troughs&lt;/a&gt;. As a matter of fact, modelling ocean waves is on one side very useful (modelling tides, tsunamis, diffraction in a bay to predict coastline evolution, ...) but quite demanding despite a rather well known mathematical model. Starting with the Navier-Stokes equations to an incompressible fluid (water) in a gravitational field leads to &lt;a href="https://en.wikipedia.org/wiki/Luke%27s_variational_principle"&gt;Luke's variational principle&lt;/a&gt; in certain simplifying conditions. Further simplifications lead to the approximate solution given by Stokes:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Stokes3_wave.svg/2880px-Stokes3_wave.svg.png" alt="Stokes wave(https://en.wikipedia.org/wiki/Stokes_wave)"&gt;&lt;/p&gt;
+&lt;p&gt;This seems well enough at the moement and I will capture this shape in this notebook and notably if that applies to a random mixture of such waves...&lt;/p&gt;
+&lt;p&gt;(WORK IN PROGRESS)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2021-09-11-modelling-ocean-surface-waves.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>elasticite</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2021-09-11-modelling-ocean-surface-waves.html</guid><pubDate>Sat, 11 Sep 2021 09:56:27 GMT</pubDate></item><item><title>Density of stars on the surface of the sky</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;a href="https://zenodo.org/badge/latestdoi/191391751"&gt;&lt;img src="https://zenodo.org/badge/191391751.svg" alt="DOI"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -51,76 +59,4 @@ Solution: ImageMagick.&lt;/p&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Let's explore generators and the &lt;code&gt;yield&lt;/code&gt; statement in the &lt;a href="http://bit.ly/1uFNyUX"&gt;python&lt;/a&gt; language...&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-24-using-generators-in-python.html"&gt;Read more…&lt;/a&gt; (25 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-24-using-generators-in-python.html</guid><pubDate>Thu, 24 Nov 2016 13:22:22 GMT</pubDate></item><item><title>Finding extremal values in a nd-array</title><link>https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Sometimes, you need to pick up the $N$-th  extremal values in a mutli-dimensional matrix.&lt;/p&gt;
-&lt;p&gt;Let's suppose it is represented as a &lt;code&gt;nd-array&lt;/code&gt; (here, I further suppose you are using the numpy library from the python language). Finding extremal values is easy with &lt;code&gt;argmax&lt;/code&gt;,  &lt;code&gt;argmin&lt;/code&gt; or &lt;code&gt;argsort&lt;/code&gt; but this function operated on 1d vectors...  Juggling around indices is sometimes not such an easy task, but luckily, we have the &lt;code&gt;unravel_index&lt;/code&gt; function.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;For those in a hurry, one quick application is that given an &lt;code&gt;np.ndarray&lt;/code&gt;, it's eeasy to get the index of the maximal value in that array :&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;permutation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'input ndarray'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unravel_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argmax&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ravel&lt;/span&gt;&lt;span class="p"&gt;()),&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'index of maximal value = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;idx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;' and we verify that '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;idx&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;input ndarray [[[ 4  3]
-  [19  7]
-  [ 1 13]]
-
- [[ 6 12]
-  [14  0]
-  [16 11]]
-
- [[15 17]
-  [20 22]
-  [ 9  5]]
-
- [[ 8 18]
-  [23 21]
-  [10  2]]]
-index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let's unwrap how we found such an easy solution...&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>numpy</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-17-finding-extremal-values-in-a-nd-array.html</guid><pubDate>Thu, 17 Nov 2016 08:56:25 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-11-24-using-generators-in-python.html"&gt;Read more…&lt;/a&gt; (25 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>ipython</category><category>open-science</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-11-24-using-generators-in-python.html</guid><pubDate>Thu, 24 Nov 2016 13:22:22 GMT</pubDate></item></channel></rss>
