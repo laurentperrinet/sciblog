@@ -141,7 +141,7 @@
 <p>This is well documented on the web and consisted in simply:</p>
 <ul>
 <li>setting up the raspberry π to use the camera</li>
-<li>create a startup script <a href="startup.sh"><code>startup.sh</code></a> (or clone this repo in <code>/home/pi</code> using <code>git clone https://github.com/laurentperrinet/TimeTeleScope)</code> consisting of the commands which take 2 successive frames at different exposures :
+<li>create a startup script <a href="https://github.com/laurentperrinet/TimeTeleScope/blob/main/startup.sh"><code>startup.sh</code></a> (or clone this repo in <code>/home/pi</code> using <code>git clone https://github.com/laurentperrinet/TimeTeleScope)</code> consisting of the commands which take 2 successive frames at different exposures :
 <pre><code>raspistill -rot 270 -ev -10 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-%m-%d.%H:%M:%S`.jpg
 raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-%m-%d.%H:%M:%S`.jpg</code></pre>
 </li>
