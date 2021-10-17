@@ -37,7 +37,7 @@ references of full articles
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
    Masson. Dynamics of distributed 1D and 2D motion representations for
    short-latency ocular following,
-   `URL <https://laurentperrinet.github.io/publication/barthelemy-07>`__
+   `URL <https://laurentperrinet.github.io/publication/barthelemy-08>`__
    `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
    `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
@@ -146,7 +146,7 @@ references of full articles
 
 -  Sylvain Fischer, Filip Sroubek, Laurent U. Perrinet, Rafael Redondo,
    Gabriel Crist\\'obal. Self-invertible 2D log-Gabor wavelets,
-   `URL <https://laurentperrinet.github.io/publication/fischer-07cv>`__
+   `URL <https://laurentperrinet.github.io/publication/fischer-07-cv>`__
    . *Int. Journal of Computional Vision*, 2007
 
 
@@ -388,7 +388,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent Perrinet. Recurrent cortical networks with
    realistic horizontal connectivities show complex dynamics,
-   `URL <https://laurentperrinet.github.io/publication/Voges09cns>`__ .
+   `URL <https://laurentperrinet.github.io/publication/voges-09-cns>`__ .
    In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages T26-3C + 10(Suppl 1):P176.
    2009
@@ -479,7 +479,7 @@ references of articles and proceedings
    Masson. Inferring monkey ocular following responses from V1
    population dynamics using a probabilistic model of motion
    integration,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-09vss>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-09-vss>`__
    . In *Vision Science Society*, 2009
 
    Short presentation of a large moving pattern elicits an ocular
@@ -618,14 +618,14 @@ references of articles and proceedings
 -  Laurent Perrinet, Guillaume S. Masson. Modeling spatial integration
    in the ocular following response to center-surround stimulation using
    a probabilistic framework,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-08-cosyne_motion>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-09-cosyne>`__
    . In *Proceedings of COSYNE, 2008*, 2008,
 
 
 -  Laurent Perrinet. What adaptive code for efficient spiking
    representations? A model for the formation of receptive fields of
    simple cells.,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-08-cosyne_learning>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-08>`__
    . In *Proceedings of COSYNE*, 2008
 
 
@@ -812,7 +812,7 @@ references of articles and proceedings
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-06,>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-06>`__
    . pages 163--225.
 
 -  Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, Eric Castet,
@@ -1227,7 +1227,7 @@ references of articles and proceedings
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
    Masson. Dynamics of distributed 1D and 2D motion representations for
    short-latency ocular following,
-   `URL <https://laurentperrinet.github.io/publication/barthelemy-07>`__
+   `URL <https://laurentperrinet.github.io/publication/barthelemy-08>`__
    `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
    `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
