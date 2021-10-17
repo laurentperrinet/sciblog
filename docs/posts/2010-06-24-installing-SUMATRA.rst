@@ -8,7 +8,7 @@ installing SUMATRA
 ==================
 
 -  notes from the
-   `CodeJamNr4 from FACETS <https://laurentperrinet.github.io/project/facets/>`__
+   `CodeJamNr4 from FACETS <https://laurentperrinet.github.io/grant/facets/>`__
 -  this was using a fresh install of ETS 6.2
 
 

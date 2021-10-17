@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2021-10-17T21:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.xml</loc>
@@ -103,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/grand-public.xml</loc>
-  <lastmod>2021-05-19T15:03:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/hardlink.xml</loc>
@@ -147,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/learning.xml</loc>
-  <lastmod>2021-10-17T21:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/loggabor.xml</loc>
@@ -195,7 +195,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
-  <lastmod>2021-10-17T21:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/mytracks.xml</loc>
@@ -227,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/numpy.xml</loc>
-  <lastmod>2021-06-21T12:59:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/obv1.xml</loc>
@@ -251,7 +251,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/outreach.xml</loc>
-  <lastmod>2021-05-19T15:03:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2021-10-17T21:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -315,7 +315,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.xml</loc>
-  <lastmod>2021-10-17T15:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shell.xml</loc>
@@ -403,7 +403,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.xml</loc>
-  <lastmod>2021-04-26T19:46:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.xml</loc>
@@ -411,19 +411,19 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/year07.xml</loc>
-  <lastmod>2021-10-17T15:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/year08.xml</loc>
-  <lastmod>2021-10-17T15:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/year09.xml</loc>
-  <lastmod>2021-10-17T15:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/year10.xml</loc>
-  <lastmod>2021-10-17T15:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/year12.xml</loc>
@@ -435,10 +435,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2021-10-17T21:27:00Z</lastmod>
+  <lastmod>2021-10-17T21:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2021-10-17T21:28:00Z</lastmod>
+  <lastmod>2021-10-17T21:52:00Z</lastmod>
  </sitemap>
 </sitemapindex>

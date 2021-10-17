@@ -16,7 +16,7 @@ articles
 #. `Publications/Fischer07cv <https://laurentperrinet.github.io/publication/fischer-07-cv>`__
 #. `Publications/Kremkow10jcns <https://laurentperrinet.github.io/publication/kremkow-10-jcns>`__
 #. `Publications/Montagnini07 <https://laurentperrinet.github.io/publication/montagnini-07>`__
-#. `Publications/Perrinet06 <https://laurentperrinet.github.io/publication/Perrinet06>`__
+#. `Publications/Perrinet06 <https://laurentperrinet.github.io/publication/perrinet-07>`__
 #. `Publications/Perrinet07neurocomp <https://laurentperrinet.github.io/publication/perrinet-07-neurocomp>`__
 #. `Publications/Perrinet10shl <https://laurentperrinet.github.io/publication/perrinet-10-shl>`__
 #. `Publications/Voges10neurocomp <https://laurentperrinet.github.io/publication/voges-10-neurocomp>`__
