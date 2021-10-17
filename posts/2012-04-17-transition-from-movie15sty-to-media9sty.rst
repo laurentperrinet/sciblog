@@ -33,7 +33,7 @@
 
    ::
 
-       \includemovie[label=aperture_aperture,poster=figures/aperture_aperture.png,mouse,repeat,autoplay]{\linewidth}{.75\linewidth}{./figures/aperture_aperture.mp4}
+       \includemovie[label=aperture_aperture,poster=figures/aperture_aperture.png,mouse,repeat,autoplay]{\linewidth}{.75\linewidth}{./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4}
 
 -  by something like:
 
@@ -42,9 +42,9 @@
        \includemedia[
        width=\linewidth,height=0.75\linewidth,
        activate=pageopen,
-       addresource=./figures/aperture_aperture.mp4,
+       addresource=./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4,
        flashvars={
-       source=./figures/aperture_aperture.mp4 % same path as in addresource!
+       source=./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4 % same path as in addresource!
        &loop=true % loop video
        }
        ]{}{VPlayer.swf}
@@ -89,7 +89,7 @@
 
    ::
 
-       \includemovie{\linewidth}{.75\linewidth}{./figures/aperture_aperture.mp4}
+       \includemovie{\linewidth}{.75\linewidth}{./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4}
 
 -  note that (from
    `http://tex.stackexchange.com/questions/45242/animations-with-movie15-and-swf-files <http://tex.stackexchange.com/questions/45242/animations-with-movie15-and-swf-files>`__

@@ -158,6 +158,7 @@ year = {2016}
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2015-03-26_the-vancouver-set'</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="c1"># set some custom size:</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
@@ -195,8 +196,8 @@ year = {2016}
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver'</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -212,16 +213,52 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2021-10-18 00:17:39.230 Python[37800:4841176] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/3p/m0g52j9j69z3gj8ktpgg1dm00000gn/T/org.python.python.savedState
+/usr/local/lib/python3.9/site-packages/vispy/gloo/texture.py:28: UserWarning: GPUs can't support floating point data with more than 32-bits, precision will be lost due to downcasting to 32-bit float.
+  warnings.warn(F64_PRECISION_WARNING)
+/usr/local/lib/python3.9/site-packages/vispy/gloo/texture.py:28: UserWarning: GPUs can't support floating point data with more than 32-bits, precision will be lost due to downcasting to 32-bit float.
+  warnings.warn(F64_PRECISION_WARNING)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -248,8 +285,8 @@ year = {2016}
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver-fog'</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -265,16 +302,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -300,10 +358,10 @@ year = {2016}
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span> <span class="c1"># makes an envelope in Fourier space</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span> <span class="c1"># makes an envelope in Fourier space</span>
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="c1"># transforms the envelope into a movie</span>
-<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'../files'</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">vext</span><span class="o">=</span><span class="s1">'.mat'</span><span class="p">)</span> <span class="c1"># saves that movie into MATLAB format</span>
-<span class="c1">#mc.anim_save(mov, os.path.join('../files', name), vext='.h5') # saves that movie into HDF5 format</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">vext</span><span class="o">=</span><span class="s1">'.mat'</span><span class="p">)</span> <span class="c1"># saves that movie into MATLAB format</span>
+<span class="c1">#mc.anim_save(mov, os.path.join(mc.figpath, name), vext='.h5') # saves that movie into HDF5 format</span>
 </pre></div>
 
     </div>
@@ -348,8 +406,8 @@ year = {2016}
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">V_X</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]:</span>
     <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'-V_X-'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -365,16 +423,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X--1_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X--1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X--1_0_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -386,16 +465,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X--0_5.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X--0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X--0_5_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -407,16 +507,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X-0_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X-0_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X-0_0_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -428,16 +549,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X-0_1.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X-0_1.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X-0_1_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -449,16 +591,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X-0_5.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X-0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X-0_5_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -470,16 +633,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X-1_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X-1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X-1_0_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>
@@ -491,16 +675,37 @@ year = {2016}
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
+built with Apple clang version 12.0.5 (clang-1205.0.22.9)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/4.4_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+libavutil      56. 70.100 / 56. 70.100
+libavcodec     58.134.100 / 58.134.100
+libavformat    58. 76.100 / 58. 76.100
+libavdevice    58. 13.100 / 58. 13.100
+libavfilter     7.110.100 /  7.110.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  9.100 /  5.  9.100
+libswresample   3.  9.100 /  3.  9.100
+libpostproc    55.  9.100 / 55.  9.100
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
-<td width="33%%"><center><img src="../files/vancouver-fog-V_X-4_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/vancouver-fog-V_X-4_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
                 </tr>
 <tr>
-<td><center><img src="../files/vancouver-fog-V_X-4_0_cube.png" width="100%/"></center></td>
+<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0_cube.png" width="100%/"></center></td>
                 </tr>
 </table></center>
 </div>

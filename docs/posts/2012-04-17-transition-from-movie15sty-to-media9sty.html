@@ -143,16 +143,16 @@ make the transition (this was easily fixed by downloading a copy of
 <code class="docutils literal">movie15.sty</code>)</p></li>
 <li>
 <p>to make the change, you have to change the lines which are like:</p>
-<pre class="literal-block">\includemovie[label=aperture_aperture,poster=figures/aperture_aperture.png,mouse,repeat,autoplay]{\linewidth}{.75\linewidth}{./figures/aperture_aperture.mp4}</pre>
+<pre class="literal-block">\includemovie[label=aperture_aperture,poster=figures/aperture_aperture.png,mouse,repeat,autoplay]{\linewidth}{.75\linewidth}{./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4}</pre>
 </li>
 <li>
 <p>by something like:</p>
 <pre class="literal-block">\includemedia[
 width=\linewidth,height=0.75\linewidth,
 activate=pageopen,
-addresource=./figures/aperture_aperture.mp4,
+addresource=./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4,
 flashvars={
-source=./figures/aperture_aperture.mp4 % same path as in addresource!
+source=./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4 % same path as in addresource!
 &amp;loop=true % loop video
 }
 ]{}{VPlayer.swf}</pre>
@@ -191,7 +191,7 @@ source=#3 % same path as in addresource!
 </li>
 <li>
 <p>and then use something like:</p>
-<pre class="literal-block">\includemovie{\linewidth}{.75\linewidth}{./figures/aperture_aperture.mp4}</pre>
+<pre class="literal-block">\includemovie{\linewidth}{.75\linewidth}{./files/2016-07-07_EDP-proba/figures/aperture_aperture.mp4}</pre>
 </li>
 <li>
 <p>note that (from
