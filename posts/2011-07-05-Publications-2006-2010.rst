@@ -8,13 +8,13 @@
 articles
 --------
 
-#. `Publications/Barthelemy07 <https://laurentperrinet.github.io/publication/barthelemy-08-a>`__
+#. `Publications/Barthelemy07 <https://laurentperrinet.github.io/publication/barthelemy-08>`__
 #. `Publications/Cessac07 <https://laurentperrinet.github.io/publication/cessac-07>`__
 #. `Publications/Daucé10 <https://laurentperrinet.github.io/publication/dauce-10>`__
 #. `Publications/Davison08 <https://laurentperrinet.github.io/publication/davison-08>`__
 #. `Publications/Fischer07 <https://laurentperrinet.github.io/publication/fischer-07>`__
-#. `Publications/Fischer07cv <https://laurentperrinet.github.io/publication/fischer-07cv>`__
-#. `Publications/Kremkow10jcns <https://laurentperrinet.github.io/publication/kremkow-10jcns>`__
+#. `Publications/Fischer07cv <https://laurentperrinet.github.io/publication/fischer-07-cv>`__
+#. `Publications/Kremkow10jcns <https://laurentperrinet.github.io/publication/kremkow-10-jcns>`__
 #. `Publications/Montagnini07 <https://laurentperrinet.github.io/publication/montagnini-07>`__
 #. `Publications/Perrinet06 <https://laurentperrinet.github.io/publication/Perrinet06>`__
 #. `Publications/Perrinet07neurocomp <https://laurentperrinet.github.io/publication/perrinet-07-neurocomp>`__
@@ -31,7 +31,7 @@ references of full articles
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-06,>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-06>`__
    . pages 163--225.
 
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
