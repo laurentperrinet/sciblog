@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2021-10-06T13:21:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.xml</loc>
@@ -135,7 +135,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ipython.xml</loc>
-  <lastmod>2021-06-21T12:36:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/jupyter.xml</loc>
@@ -147,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/learning.xml</loc>
-  <lastmod>2021-06-21T12:37:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/loggabor.xml</loc>
@@ -235,7 +235,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.xml</loc>
-  <lastmod>2021-06-21T12:59:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2021-10-06T13:21:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -435,10 +435,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2021-10-17T21:01:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2021-10-17T21:01:00Z</lastmod>
+  <lastmod>2021-10-17T21:09:00Z</lastmod>
  </sitemap>
 </sitemapindex>
