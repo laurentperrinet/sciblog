@@ -163,7 +163,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_X</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">width</span> <span class="o">=</span> <span class="mf">29.7</span><span class="o">*</span><span class="mi">256</span><span class="o">/</span><span class="mi">1050</span>
 <span class="n">sf_0</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="n">width</span><span class="o">/</span><span class="n">N_X</span>
-<span class="n">B_V</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>     <span class="c1"># BW temporal frequency (speed plane thickness)</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="mf">.5</span>     <span class="c1"># BW temporal frequency (speed plane thickness)</span>
 <span class="n">B_sf</span> <span class="o">=</span> <span class="n">sf_0</span>   <span class="c1"># BW spatial frequency</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="mf">0.0</span>   <span class="c1"># Central orientation</span>
 <span class="n">B_theta_low</span><span class="p">,</span> <span class="n">B_theta_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
@@ -206,7 +206,6 @@
 
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
 <td width="33%%"><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow.png" width="100%/"></center></td>
@@ -227,7 +226,6 @@
 
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
 <td width="33%%"><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad.png" width="100%/"></center></td>
@@ -262,7 +260,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: an analysis of the response of a neural network to such stimulations as been explored by <a href="https://laurentperrinet.github.io/sciblog/posts/14-06-18-stage-m1-chloe-pasturel-week-6.html">Chloé Pasturel</a>.</p>
+<p>Note: an analysis of the response of a neural network to such stimulations as been explored by <a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html">Chloé Pasturel</a>.</p>
 
 </div>
 </div>
@@ -287,14 +285,14 @@
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">5</span>
+    <span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.5</span>
     <span class="k">for</span> <span class="n">i_sub</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_sub</span><span class="p">):</span>
         <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">N_theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N_theta</span>
         <span class="n">mc_i</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> 
                                          <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> 
                                          <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> 
                                          <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc_i</span><span class="p">))</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_sub</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc_i</span><span class="p">))</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_sub</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">im</span>
                 
 <span class="n">im</span> <span class="o">=</span> <span class="n">make_one_block</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_theta</span><span class="p">,</span> <span class="n">N_sub</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">N_frame_sub</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">N_theta</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -318,7 +316,6 @@
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_block.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -640,7 +637,7 @@ cycles per pixel =  0.06306382336048236
 
 <span class="n">sf_0</span> <span class="o">=</span> <span class="n">phi_sf_0</span><span class="o">*</span><span class="n">width</span><span class="o">/</span><span class="n">N_X</span>
 <span class="n">B_sf</span> <span class="o">=</span> <span class="n">sf_0</span>   <span class="c1"># BW spatial frequency</span>
-<span class="n">B_V</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>     <span class="c1"># BW temporal frequency (speed plane thickness) WARNING temporal autocorrelation depends on N_frame</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="mf">.5</span>     <span class="c1"># BW temporal frequency (speed plane thickness) WARNING temporal autocorrelation depends on N_frame</span>
 
 <span class="c1"># generate zip files</span>
 <span class="n">dry_run</span> <span class="o">=</span> <span class="kc">True</span>
@@ -650,7 +647,7 @@ cycles per pixel =  0.06306382336048236
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">5</span>
+    <span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.5</span>
 
     <span class="k">for</span> <span class="n">i_sub</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_sub</span><span class="p">):</span>
         <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">N_theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N_theta</span>
@@ -658,7 +655,7 @@ cycles per pixel =  0.06306382336048236
                                          <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> 
                                          <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> 
                                          <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc_i</span><span class="p">))</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_sub</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc_i</span><span class="p">))</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_sub</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">im</span>
                 
 <span class="c1">#for i_B_theta, B_theta in enumerate([np.pi/24, np.pi/12, np.pi/6, np.pi/3, np.pi][::-1]):</span>
@@ -2497,8 +2494,7 @@ done
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -2532,8 +2528,7 @@ done
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Wed Nov 14 15:47:56 2018 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 
