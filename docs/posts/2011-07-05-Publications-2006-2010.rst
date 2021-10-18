@@ -31,7 +31,7 @@ references of full articles
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-06>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-07>`__
    . pages 163--225.
 
 -  Frédéric Barthélemy, Laurent Perrinet, Éric Castet, Guillaume S.
@@ -193,8 +193,6 @@ references of full articles
    becoming more and more necessary to understand the brain in its full
    complexity, from multiple levels of description to a multi-level
    understanding.
-
-|FigureDeux_tumb.png|
 
 -  Laurent U. Perrinet. Role of homeostasis in learning sparse
    representations,
@@ -388,7 +386,7 @@ references of articles and proceedings
 
 -  Nicole Voges, Laurent Perrinet. Recurrent cortical networks with
    realistic horizontal connectivities show complex dynamics,
-   `URL <https://laurentperrinet.github.io/publication/voges-09-cns>`__ .
+   `URL <https://laurentperrinet.github.io/publication/voges-09-gns>`__ .
    In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages T26-3C + 10(Suppl 1):P176.
    2009
@@ -812,7 +810,7 @@ references of articles and proceedings
 
 -  Laurent Perrinet. Dynamical Neural Networks: modeling low-level
    vision at short latencies,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-06>`__
+   `URL <https://laurentperrinet.github.io/publication/perrinet-07>`__
    . pages 163--225.
 
 -  Anna Montagnini, Pascal Mamassian, Laurent U. Perrinet, Eric Castet,
@@ -947,7 +945,8 @@ references of articles and proceedings
 -  Jens Kremkow, Laurent Perrinet, Cyril Monier, Yves Fregnac, Guillaume
    S. Masson, Ad Aertsen. Control of the temporal interplay between
    excitation and inhibition by the statistics of visual input,
-   `URL <https://laurentperrinet.github.io/publication/kremkow-09-cns-talk>`__
+   `URL <https://laurentperrinet.github.io/publication/kremkow-09-cnstalk
+>`__
    `URL2 <http://www.biomedcentral.com/1471-2202/10/S1/O21>`__ . In
    *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18–23 July 2009*, pages Oral presentation, 10(Suppl
@@ -1231,8 +1230,3 @@ references of articles and proceedings
    `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
    `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
-
-
-
-
-.. |FigureDeux_tumb.png| image:: https://laurentperrinet.github.io/publication/perrinet-10-shl?action=AttachFile&do=get&target=FigureDeux_tumb.png
