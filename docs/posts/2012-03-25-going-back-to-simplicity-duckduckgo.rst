@@ -8,4 +8,4 @@
 -  duckduckgo is a search engine as google was.
 
 -  add to firefox :
-   `https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/ <https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/>`__
+   `https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-ssl/ <https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/>`__
