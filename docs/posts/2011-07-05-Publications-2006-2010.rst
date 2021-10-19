@@ -139,7 +139,6 @@ references of full articles
    Crist\\'obal. Sparse approximation of images inspired from the
    functional architecture of the primary visual areas,
    `URL <https://laurentperrinet.github.io/publication/fischer-07>`__
-   `URL2 <http://www.hindawi.com/GetArticle.aspx?doi=10.1155/2007/90727&e=cta>`__
    . *EURASIP Journal on Advances in Signal Processing, special issue on
    Image Perception*, :Article ID 90727, 16 pages, 2007
 
@@ -421,9 +420,7 @@ references of articles and proceedings
    Neuroscience, Marseille*, 2008
 
 -  Nicole Voges, Jens Kremkow, Laurent U. Perrinet. Dynamics of cortical
-   networks based on patchy connectivity patterns,
-   `URL <http://fens2008.neurosciences.asso.fr/abstracts/R3/A075_14.html>`__
-   . In *FENS Abstract*, 2008
+   networks based on patchy connectivity patterns. In *FENS Abstract*, 2008
 
 -  Claudio Simoncini, Laurent U. Perrinet, Anna Montagnini, Pascal
    Mamassian, Guillaume S. Masson. Different pooling of motion
@@ -578,9 +575,7 @@ references of articles and proceedings
 
 -  Laurent Perrinet, Guillaume S. Masson. Decoding the population
    dynamics underlying ocular following response using a probabilistic
-   framework,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-09-cns>`__
-   . In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
+   framework. In *Eighteenth Annual Computational Neuroscience Meeting: CNS\*2009
    Berlin, Germany. 18--23 July 2009*, pages 10(Suppl 1):P359. 2009
 
 
@@ -780,9 +775,7 @@ references of articles and proceedings
    control which are characteristic to the function of V1.
 
 -  Laurent Perrinet. An efficiency razor for model selection and
-   adaptation in the primary visual cortex,
-   `URL <https://laurentperrinet.github.io/publication/perrinet-06-cns>`__
-   . In *Fifteenth Annual Computational Neuroscience Meeting*, 2006
+   adaptation in the primary visual cortex. In *Fifteenth Annual Computational Neuroscience Meeting*, 2006
 
    We describe the theoretical formulation of a learning algorithm in a
    model of the primary visual cortex (V1) and present results of the
@@ -866,9 +859,7 @@ references of articles and proceedings
 
 -  Jens Kremkow. Correlating Excitation and Inhibition in Visual
    Cortical Circuits: Functional Consequences and Biological
-   Feasibility,
-   `URL <https://laurentperrinet.github.io/publication/kremkow-09-thesis>`__
-   . 2009
+   Feasibility, PhD thesis. 2009
    The primary visual cortex (V1) is one of the most studied cortical
    area in the brain. Together with the retina and the lateral
    geniculate nucleus (LGN) it forms the early visual system. Artificial
@@ -1227,6 +1218,4 @@ references of articles and proceedings
    Masson. Dynamics of distributed 1D and 2D motion representations for
    short-latency ocular following,
    `URL <https://laurentperrinet.github.io/publication/barthelemy-08>`__
-   `URL2 <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T0W-4RNS32H-1&_user=10&_coverDate=01%2F25%2F2008&_alid=686299429&_rdoc=1&_fmt=summary&_orig=search&_cdi=4873&_sort=d&_docanchor=&view=c&_ct=1&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=ed0b707f40add6962f55a0a3370fdd2f>`__
-   `URL3 <http://www.ncbi.nlm.nih.gov/pubmed/18221979?ordinalpos=1&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum>`__
    . *Vision Research*, **48**\ (4):501--22, 2008
