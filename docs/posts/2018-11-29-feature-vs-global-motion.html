@@ -166,7 +166,7 @@ In particular, it is debatable to know which weight individual features, such as
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
-<span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">disk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.5</span>
 
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2018-11-29-feature-vs-global-motion'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
@@ -193,7 +193,7 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-<span class="n">global_contrast</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">global_contrast</span> <span class="o">=</span> <span class="mf">.5</span>
 </pre></div>
 
     </div>
@@ -238,7 +238,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_dense.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -253,7 +252,7 @@ In particular, it is debatable to know which weight individual features, such as
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One can overlay this with a similar motion in the upper right direction, such that one obtains a texture generalizing a <a href="https://neuralensemble.github.io/MotionClouds/posts/motion-plaid.html">plaid stimulus</a>, that we place in a disk to make all directions iso-probable:</p>
+<p>One can overlay this with a similar motion in the upper right direction, such that one obtains a texture generalizing a <a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_motion-plaid.html">plaid stimulus</a>, that we place in a disk to make all directions iso-probable:</p>
 
 </div>
 </div>
@@ -271,7 +270,7 @@ In particular, it is debatable to know which weight individual features, such as
 <span class="n">movie2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -290,7 +289,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_plaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -347,7 +345,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -374,7 +371,7 @@ In particular, it is debatable to know which weight individual features, such as
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_features'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -393,7 +390,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_overlay_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -419,9 +415,9 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_contrast_PSE'</span>
-<span class="n">contrast</span> <span class="o">=</span> <span class="o">.</span><span class="mi">3</span>
+<span class="n">contrast</span> <span class="o">=</span> <span class="mf">.3</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">contrast</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">contrast</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -440,7 +436,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_contrast_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -470,7 +465,7 @@ In particular, it is debatable to know which weight individual features, such as
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_features'</span>
 
-<span class="n">B_V2</span> <span class="o">=</span> <span class="o">.</span><span class="mi">3</span> <span class="o">*</span> <span class="n">opts</span><span class="p">[</span><span class="s1">'B_V'</span><span class="p">]</span>
+<span class="n">B_V2</span> <span class="o">=</span> <span class="mf">.3</span> <span class="o">*</span> <span class="n">opts</span><span class="p">[</span><span class="s1">'B_V'</span><span class="p">]</span>
 <span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">B_V</span><span class="o">=</span><span class="n">B_V2</span><span class="p">)</span>
 <span class="n">mc2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=+</span><span class="mf">1.</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
@@ -495,7 +490,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -522,7 +516,7 @@ In particular, it is debatable to know which weight individual features, such as
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_PSE'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -541,7 +535,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -573,11 +566,11 @@ In particular, it is debatable to know which weight individual features, such as
     <span class="k">else</span><span class="p">:</span>
         <span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">movie1</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mf">2.</span><span class="o">*</span><span class="n">movie2</span><span class="o">-</span><span class="mi">1</span>
         <span class="n">movie</span> <span class="o">=</span> <span class="n">movie1</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie2</span><span class="p">))</span> <span class="o">+</span> <span class="n">movie2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">movie2</span><span class="p">))</span>
-        <span class="k">return</span> <span class="o">.</span><span class="mi">5</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">movie</span>
+        <span class="k">return</span> <span class="mf">.5</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="n">movie</span>
 
 <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_PSE_NL'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
-    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="o">=.</span><span class="mi">7</span><span class="p">),</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">.7</span><span class="p">),</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 
@@ -596,7 +589,6 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -640,8 +632,7 @@ In particular, it is debatable to know which weight individual features, such as
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -671,8 +662,7 @@ In particular, it is debatable to know which weight individual features, such as
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Thu Nov 22 15:48:49 2018 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 
