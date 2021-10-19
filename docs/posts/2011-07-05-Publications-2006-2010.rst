@@ -1060,8 +1060,8 @@ references of articles and proceedings
    nucleus. Nature 1996, 383:815-819. 4. Binzegger T, Douglas RJ, Martin
    KAC: A quantitative map of the circuit of the cat primary visual
    cortex. J Neurosci 2004, 24:8441-8453. 5. NEST
-   http://www.nest-initiative.org6. PyNN
-   http://neuralensemble.org/PyNN7. Gazeres N, Borg-Graham LJ,
+   http://www.nest-initiative.org. PyNN
+   http://neuralensemble.org/PyNN. Gazeres N, Borg-Graham LJ,
    Fr\\'egnac Y: A phenomenological model of visually evoked spike
    trains in cat geniculate nonlagged X-cells.Vis Neurosci 1998,
    15:1157-1174.
