@@ -150,11 +150,11 @@ jinja-based theme, upgrading is probably a bad idea right now.</p>
 using a custom theme. Also, some templates have been tweaked, but nothing should
 break for you.</p>
 <p>Facebook comments support changed the HTML tag to:</p>
-<pre class="code mako"><a id="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-1" name="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-1"></a><span class="x">&lt;html</span>
-<a id="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-2" name="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span><span class="x"></span>
-<a id="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-3" name="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
-<a id="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-4" name="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-4"></a><span class="cp">%</span><span class="k">endif</span><span class="x"></span>
-<a id="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-5" name="rest_code_657c1bc1388341ccaa8c82ee6b3fe6f9-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
+<pre class="code mako"><a id="rest_code_54296723f12e409d9436698ab6e997ba-1" name="rest_code_54296723f12e409d9436698ab6e997ba-1"></a><span class="x">&lt;html</span>
+<a id="rest_code_54296723f12e409d9436698ab6e997ba-2" name="rest_code_54296723f12e409d9436698ab6e997ba-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span><span class="x"></span>
+<a id="rest_code_54296723f12e409d9436698ab6e997ba-3" name="rest_code_54296723f12e409d9436698ab6e997ba-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
+<a id="rest_code_54296723f12e409d9436698ab6e997ba-4" name="rest_code_54296723f12e409d9436698ab6e997ba-4"></a><span class="cp">%</span><span class="k">endif</span><span class="x"></span>
+<a id="rest_code_54296723f12e409d9436698ab6e997ba-5" name="rest_code_54296723f12e409d9436698ab6e997ba-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
 </pre>
 <p>If you do not want to use Facebook comments, you can leave the old <code class="docutils literal">&lt;html
 <span class="pre">lang="${lang}"&gt;</span></code> tag in and it will work just fine.</p>
@@ -178,22 +178,22 @@ should be <strong>exactly</strong> as before.</p>
 story short, anything that had a <code class="docutils literal">True</code> as the <code class="docutils literal">use_in_feeds</code>
 (last) value goes to <code class="docutils literal">POSTS</code> and anything with <code class="docutils literal">False</code> goes to
 <code class="docutils literal">PAGES</code>.  For example:</p>
-<pre class="code python"><a id="rest_code_1b932751a0a147a79a696e96d808cc23-1" name="rest_code_1b932751a0a147a79a696e96d808cc23-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-2" name="rest_code_1b932751a0a147a79a696e96d808cc23-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-3" name="rest_code_1b932751a0a147a79a696e96d808cc23-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-4" name="rest_code_1b932751a0a147a79a696e96d808cc23-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-5" name="rest_code_1b932751a0a147a79a696e96d808cc23-5"></a><span class="p">)</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-6" name="rest_code_1b932751a0a147a79a696e96d808cc23-6"></a>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-7" name="rest_code_1b932751a0a147a79a696e96d808cc23-7"></a><span class="c1">### becomes ###</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-8" name="rest_code_1b932751a0a147a79a696e96d808cc23-8"></a>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-9" name="rest_code_1b932751a0a147a79a696e96d808cc23-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-10" name="rest_code_1b932751a0a147a79a696e96d808cc23-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-11" name="rest_code_1b932751a0a147a79a696e96d808cc23-11"></a><span class="p">)</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-12" name="rest_code_1b932751a0a147a79a696e96d808cc23-12"></a>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-13" name="rest_code_1b932751a0a147a79a696e96d808cc23-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-14" name="rest_code_1b932751a0a147a79a696e96d808cc23-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-15" name="rest_code_1b932751a0a147a79a696e96d808cc23-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1b932751a0a147a79a696e96d808cc23-16" name="rest_code_1b932751a0a147a79a696e96d808cc23-16"></a><span class="p">)</span>
+<pre class="code python"><a id="rest_code_e75311def7a2475f980adb34774c2ec9-1" name="rest_code_e75311def7a2475f980adb34774c2ec9-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-2" name="rest_code_e75311def7a2475f980adb34774c2ec9-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-3" name="rest_code_e75311def7a2475f980adb34774c2ec9-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-4" name="rest_code_e75311def7a2475f980adb34774c2ec9-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-5" name="rest_code_e75311def7a2475f980adb34774c2ec9-5"></a><span class="p">)</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-6" name="rest_code_e75311def7a2475f980adb34774c2ec9-6"></a>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-7" name="rest_code_e75311def7a2475f980adb34774c2ec9-7"></a><span class="c1">### becomes ###</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-8" name="rest_code_e75311def7a2475f980adb34774c2ec9-8"></a>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-9" name="rest_code_e75311def7a2475f980adb34774c2ec9-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-10" name="rest_code_e75311def7a2475f980adb34774c2ec9-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-11" name="rest_code_e75311def7a2475f980adb34774c2ec9-11"></a><span class="p">)</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-12" name="rest_code_e75311def7a2475f980adb34774c2ec9-12"></a>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-13" name="rest_code_e75311def7a2475f980adb34774c2ec9-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-14" name="rest_code_e75311def7a2475f980adb34774c2ec9-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-15" name="rest_code_e75311def7a2475f980adb34774c2ec9-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a id="rest_code_e75311def7a2475f980adb34774c2ec9-16" name="rest_code_e75311def7a2475f980adb34774c2ec9-16"></a><span class="p">)</span>
 </pre>
 <p>Also, you will get warnings. That doesn't mean things broke. They are
 there to inform you of what's happening, and that you need to tweak your
