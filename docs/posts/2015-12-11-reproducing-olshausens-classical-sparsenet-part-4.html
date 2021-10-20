@@ -280,7 +280,7 @@ In this notebook, we write an example script for the sklearn library showing the
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Learning the dictionary...'</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">dico</span> <span class="o">=</span> <span class="n">SparseHebbianLearning</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">transform_algorithm</span><span class="o">=</span><span class="n">transform_algorithm</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span> 
-                             <span class="n">gain_rate</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span>
+                             <span class="n">gain_rate</span><span class="o">=</span><span class="mf">.01</span><span class="p">)</span>
 <span class="n">V</span> <span class="o">=</span> <span class="n">dico</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">components_</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'done in </span><span class="si">%.2f</span><span class="s1">s.'</span> <span class="o">%</span> <span class="n">dt</span><span class="p">)</span>
@@ -569,8 +569,7 @@ The version_information extension is already loaded. To reload it, use:
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -596,8 +595,7 @@ The version_information extension is already loaded. To reload it, use:
 <td>2.1</td>
 </tr>
 <tr><td colspan="2">Tue Dec 15 16:46:35 2015 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 

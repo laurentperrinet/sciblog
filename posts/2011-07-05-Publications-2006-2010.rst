@@ -1168,8 +1168,7 @@ references of articles and proceedings
 -  B. Cessac, E. Daucé, Laurent U. Perrinet, M. Samuelides. *Topics in
    Dynamical Neural Networks: From Large Scale Neural Networks to Motor
    Control and Vision,
-   `URL <https://laurentperrinet.github.io/publication/cessac-07>`__
-   `URL2 <http://www.springerlink.com/content/q00921n9886h/?p=03c19c7c204d4fa78b850f88b97da2f7π=0>`__
+   `URL <https://laurentperrinet.github.io/publication/cessac-07>`__ .
    .* Springer Berlin / Heidelberg, 2007.
 
 -  Amarender Bogadhi, Anna Montagnini, Pascal Mamassian, Laurent U.

@@ -196,7 +196,7 @@ In [1]:
 
     <span class="n">canvas</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">SceneCanvas</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s1">'interactive'</span><span class="p">)</span>
     <span class="n">view</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">central_widget</span><span class="o">.</span><span class="n">add_view</span><span class="p">()</span>
-    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">02</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">02</span><span class="p">)</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">.02</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">.02</span><span class="p">)</span>
     <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">)</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">Z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">R</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -238,7 +238,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/sinc_vispy.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 
@@ -306,7 +305,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/sinc_mpl.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 
@@ -332,7 +330,7 @@ In [1]:
     <span class="n">fig_mpl</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">draw_elementary_pattern</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">Wedge</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">width</span><span class="o">=.</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">Wedge</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">.1</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
@@ -359,7 +357,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/circle.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 
@@ -436,7 +433,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/svm.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 
@@ -488,7 +484,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/test_grid.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 
@@ -531,7 +526,6 @@ In [1]:
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/test_grid2.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 

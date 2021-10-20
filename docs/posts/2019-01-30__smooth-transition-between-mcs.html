@@ -172,7 +172,7 @@
 <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">B_sf</span> <span class="ow">in</span> <span class="n">B_sfs</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">B_sf</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># Grating</span>
-        <span class="n">im_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">*</span><span class="p">(</span><span class="n">fx</span> <span class="o">-</span> <span class="o">.</span><span class="mi">25</span><span class="o">*</span><span class="n">ft</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">)))</span>
+        <span class="n">im_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">*</span><span class="p">(</span><span class="n">fx</span> <span class="o">-</span> <span class="mf">.25</span><span class="o">*</span><span class="n">ft</span><span class="o">/</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">)))</span>
     <span class="k">else</span><span class="p">:</span> <span class="c1"># Motion Cloud</span>
         <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">im_new</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">im_new</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'energy'</span><span class="p">)</span>
@@ -199,7 +199,6 @@
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2019-01-30_Ravello19.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -232,7 +231,7 @@
 <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Grating"</span><span class="p">,</span> <span class="s2">"MC Narrow"</span><span class="p">,</span> <span class="s2">"MC Broad"</span><span class="p">]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
 
-<span class="n">txt_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">txt_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">"Amiri-Bold"</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
     <span class="c1"># Generate a text clip. You can customize the font, color, etc.</span>
     <span class="n">txt_clip</span> <span class="o">=</span> <span class="n">TextClip</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="o">**</span><span class="n">txt_opts</span><span class="p">)</span>
@@ -360,8 +359,7 @@ Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -395,8 +393,7 @@ Moviepy - video ready ../files/2019-01-30_Ravello19_text.mp4
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Thu Jan 31 12:21:58 2019 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 

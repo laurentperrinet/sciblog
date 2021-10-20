@@ -181,7 +181,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="représentation-du-temps">représentation du temps<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#repr%C3%A9sentation-du-temps">¶</a>
+<h2 id="repr%C3%A9sentation-du-temps">représentation du temps<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#repr%C3%A9sentation-du-temps">¶</a>
 </h2>
 </div>
 </div>
@@ -191,7 +191,7 @@
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="c1"># pas de temps</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">.5</span> <span class="c1"># pas de temps</span>
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 </pre></div>
 
@@ -381,7 +381,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="un-modèle-simple-de-neurone-intègre-et-tire-leaky_IF">un modèle simple de neurone intègre-et-tire <code>leaky_IF</code><a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#un-mod%C3%A8le-simple-de-neurone-int%C3%A8gre-et-tire-leaky_IF">¶</a>
+<h3 id="un-mod%C3%A8le-simple-de-neurone-int%C3%A8gre-et-tire-leaky_IF">un modèle simple de neurone intègre-et-tire <code>leaky_IF</code><a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#un-mod%C3%A8le-simple-de-neurone-int%C3%A8gre-et-tire-leaky_IF">¶</a>
 </h3>
 <p>Commençons avec cet équation du potentiel membranaire:</p>
 $$
@@ -721,7 +721,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -764,7 +764,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Création-d'un-input-bruité">Création d'un input bruité<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#Cr%C3%A9ation-d'un-input-bruit%C3%A9">¶</a>
+<h3 id="Cr%C3%A9ation-d'un-input-bruit%C3%A9">Création d'un input bruité<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#Cr%C3%A9ation-d'un-input-bruit%C3%A9">¶</a>
 </h3>
 <p>Un modèle linéaire de diffusion permet de créer simplement un bruit:</p>
 
@@ -871,7 +871,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Neurone-LIF-avec-Input-bruité">Neurone LIF avec Input bruité<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#Neurone-LIF-avec-Input-bruit%C3%A9">¶</a>
+<h3 id="Neurone-LIF-avec-Input-bruit%C3%A9">Neurone LIF avec Input bruité<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#Neurone-LIF-avec-Input-bruit%C3%A9">¶</a>
 </h3>
 <p>Observons maintenant la réponse de notre neurone LIF à cette entrée:</p>
 
@@ -932,7 +932,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1347,7 +1347,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">);</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1380,7 +1380,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bruit-gelé">bruit gelé<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#bruit-gel%C3%A9">¶</a>
+<h3 id="bruit-gel%C3%A9">bruit gelé<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#bruit-gel%C3%A9">¶</a>
 </h3>
 </div>
 </div>
@@ -1642,7 +1642,7 @@ seed(...) method of numpy.random.mtrand.RandomState instance
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1738,7 +1738,7 @@ seed(...) method of numpy.random.mtrand.RandomState instance
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -2361,7 +2361,7 @@ number of spikes per trial : [16 17 17 18 17 17 17 17 17 17 17 17 17 17 17 17 17
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -2464,7 +2464,7 @@ number of spikes per trial : [16 17 17 18 17 17 17 17 17 17 17 17 17 17 17 17 17
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'numéro essai'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (ms)'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">-</span><span class="mf">.5</span><span class="p">);</span>
 </pre></div>
 
     </div>
