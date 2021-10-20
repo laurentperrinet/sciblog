@@ -146,13 +146,7 @@ running. There's no native solution in matlab to my knowledge.</p></li>
 5   plhs[0] = mxCreateDoubleScalar((double) getpid());
 6 }</pre>
 </li>
-<li>
-<p>compile with <a href="2010-08-11-getting-the-PID-from-matlab.html#id1"><span class="problematic" id="id2">``</span></a>mex getpid.c ``</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 22); <em><a href="2010-08-11-getting-the-PID-from-matlab.html#id2">backlink</a></em></p>
-<p>Inline literal start-string without end-string.</p>
-</div>
-</li>
+<li><p>compile with <code class="docutils literal">mex getpid.c</code></p></li>
 <li><p>use in matlab as <code class="docutils literal"><span class="pre">pid = getpid()</span></code></p></li>
 <li><p>this is part of the package in
 <a class="reference external" href="https://laurentperrinet.github.io/publication/perrinet-19-hulk">SparseHebbianLearning</a></p></li>

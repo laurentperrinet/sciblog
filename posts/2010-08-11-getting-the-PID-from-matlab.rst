@@ -25,7 +25,7 @@
           5   plhs[0] = mxCreateDoubleScalar((double) getpid());
           6 }
 
--  compile with ``mex getpid.c ``
+-  compile with ``mex getpid.c``
 -  use in matlab as ``pid = getpid()``
 -  this is part of the package in
    `SparseHebbianLearning <https://laurentperrinet.github.io/publication/perrinet-19-hulk>`__
