@@ -14,8 +14,6 @@
 
 .. topic:: Le tableau : l'outil de base du calcul scientifique
 
-    .. image:: simple_histo.jpg
-       :align: right
 
     Manipulation fréquente d'**ensembles ordonnés discrets** :
 
@@ -136,9 +134,6 @@ on suppose qu'on a fait ``from pylab import *`` ou lancé ``ipython
     In [15]: axvline(2)
     Out[15]: <matplotlib.lines.Line2D object at 0x9b633cc>
 
-.. image:: plot.png
-   :align: center
-
 
 **Tableaux 2-D** (images par exemple)
 
@@ -153,9 +148,6 @@ on suppose qu'on a fait ``from pylab import *`` ou lancé ``ipython
     In [53]: imshow(image, cmap=cm.gray)
     Out[53]: <matplotlib.image.AxesImage object at 0xa23972c>
     In [54]: axis('off') # on enleve les ticks et les labels
-
-.. image:: imshow.png
-   :align: center
 
 Il y a bien d'autres fonctionnalités dans matplotlib : choix de couleurs
 ou des tailles de marqueurs, fontes latex, inserts à l'intérieur d'une
@@ -187,15 +179,10 @@ exemple rapide : commencez par **relancer ipython** avec les options
     In [62]: mlab.axes()
     Out[62]: <enthought.mayavi.modules.axes.Axes object at 0xd07892c>
 
-.. image:: surf.png
-   :align: center
-
 La fenêtre mayavi/mlab qui s'ouvre est interactive : en cliquant sur le
 bouton gauche de la souris vous pouvez faire tourner l'image, on peut
 zoomer avec la molette, etc.
 
-.. image:: potential.jpg
-   :align: center
 
 Pour plus d'informations sur Mayavi :
 http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/index.html
@@ -305,12 +292,6 @@ façon très simple ::
            [ 4.,  4.,  4.,  0.,  0.],
            [ 0.,  0.,  0.,  1.,  0.],
            [ 0.,  0.,  0.,  0.,  1.]])
-
-Une petite illustration en résumé de l'indexage et du slicing avec
-Numpy...
-
-.. image:: numpy_indexing.png
-   :align: center
 
 Une opération de slicing crée une **vue** (**view**) du tableau
 d'origine, c'est-à-dire une manière d'aller lire dans la mémoire. Le
@@ -610,14 +591,8 @@ quelques unes au fil de ce cours.
 
 **Exemple** : simulation de diffusion avec un marcheur aléatoire
 
-.. image:: random_walk.png
-   :align: center
-
 Quelle est la distance typique d'un marcheur aléatoire à l'origine, après
 t sauts à droite ou à gauche ?
-
-.. image:: random_walk_schema.png
-   :align: center
 
 ::
 
@@ -640,9 +615,6 @@ t sauts à droite ou à gauche ?
     In [41]: figure()
     In [42]: plot(np.sqrt(mean_sq_distance))
 
-.. image:: diffuse.png
-   :align: center
-   :width: 750px
 
 On retrouve bien que la distance grandit comme la racine carrée du temps
 !
@@ -768,8 +740,6 @@ nouveau tableau a la même forme que le tableau d'entiers ::
            [ 7, 11]])
 
 
-.. image:: numpy_fancy_indexing.png
-   :align: center
 
 **Exercice**
 
@@ -794,10 +764,8 @@ tableaux pour qu'ils aient tous la même taille : on appelle cette
 transformation le **broadcasting** (jeu de mots intraduisible en
 français).
 
-L'image ci-dessous donne un exemple de
+L'image ci-dessous donne un exemple de broadcasting
 
-.. image:: numpy_broadcasting.png
-   :align: center
 
 ce qui donne dans Ipython::
 
@@ -869,8 +837,6 @@ Angeles.
            [2448, 2250, 2145, 1712, 1577, 1273,  973,  904,  535,    0]])
 
 
-.. image:: route66.png
-   :align: center
 
 .. warning::
  Bonnes pratiques
@@ -910,9 +876,6 @@ des points sur une grille 10x10, on peut faire ::
 On peut représenter les valeurs du tableau distance en niveau de couleurs
 grâce à la fonction ``pylab.imshow`` (syntaxe :
 ``pylab.imshow(distance)``. voir l'aide pour plus d'options).
-
-.. image:: distance.png
-    :align: center
 
 **Remarque** : la fonction ``numpy.ogrid`` permet de créer directement
 les vecteurs x et y de l'exemple précédent avec deux "dimensions
@@ -959,9 +922,6 @@ la célébre image de Lena (http://www.cs.cmu.edu/~chuck/lennapg/). ``scipy`` fo
 Voici quelques images que nous allons obtenir grâce à nos manipulations :
 utiliser différentes colormaps, recadrer l'image, modifier certaines
 parties de l'image.
-
-.. image:: lenas.png
-   :align: center
 
 * Utilisons la fonction imshow de pylab pour afficher l'image de Lena.
 
