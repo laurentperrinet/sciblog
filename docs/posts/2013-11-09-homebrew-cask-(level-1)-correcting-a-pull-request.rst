@@ -1,5 +1,5 @@
 .. title: homebrew cask (level 1): correcting a pull request
-.. slug: 2013-11-09-homebrew-cask-(level-1)-correcting-a-pull-request
+.. slug: 2013-11-09-homebrew-cask-level-1-correcting-a-pull-request
 .. date: 2013-11-09 13:36:57
 .. type: text
 .. tags: homebrew, macos, sciblog
