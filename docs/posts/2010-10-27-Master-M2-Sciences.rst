@@ -53,8 +53,6 @@ pré-requis
 -  le théorème de Bayes: vraisemblance et probabilité a priori,
    probabilité a posteriori et décision MAP (maximum a posteriori)
 -  installer le logiciel de simulation
--  télécharger la "boîte à outil":
-   `motion\_plant.py </LaurentPerrinet/Presentations/10-10-27_M2_MasterSciences?action=AttachFile&do=get&target=motion_plant.py>`__
 
 expérience simple
 -----------------
