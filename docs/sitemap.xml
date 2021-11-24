@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2021-10-23T22:13:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -203,7 +203,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2021-10-20T12:22:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -303,7 +303,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2021-10-20T12:22:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
@@ -311,7 +311,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
-  <lastmod>2021-10-20T12:17:00Z</lastmod>
+  <lastmod>2021-11-24T11:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.html</loc>
@@ -351,7 +351,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparse.html</loc>
-  <lastmod>2021-10-20T12:17:00Z</lastmod>
+  <lastmod>2021-11-24T11:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparseedges.html</loc>
@@ -551,7 +551,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2021-10-23T22:13:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -1147,7 +1147,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-10-08_moving-from-mayavi-to-matplotlib.html</loc>
-  <lastmod>2021-10-20T12:26:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2014-10-15-setting-options-in-holoviews.html</loc>
@@ -1535,11 +1535,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-11-07-meul-with-a-non-parametric-homeostasis.html</loc>
-  <lastmod>2021-10-20T12:24:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2017-11-21_retina_sparseness.html</loc>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-12-13-accessing-the-data-from-a-pupil-recording.html</loc>
-  <lastmod>2021-10-20T12:24:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2017-12-21-predictive-coding-of-variable-motion.html</loc>

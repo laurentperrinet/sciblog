@@ -191,7 +191,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.xml</loc>
-  <lastmod>2021-10-20T12:23:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2021-10-20T12:22:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -299,7 +299,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.xml</loc>
-  <lastmod>2021-10-20T12:26:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.xml</loc>
@@ -339,7 +339,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparse.xml</loc>
-  <lastmod>2021-10-20T12:26:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparseedges.xml</loc>
@@ -435,10 +435,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2021-10-23T22:13:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2021-10-23T22:13:00Z</lastmod>
+  <lastmod>2021-11-24T11:32:00Z</lastmod>
  </sitemap>
 </sitemapindex>
