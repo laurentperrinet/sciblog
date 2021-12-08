@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logistic regression | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2021-12-12-logistic-regression.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2021-04-28-experimenting-with-transfer-learning-for-visual-categorization.html" title="Experimenting with transfer learning for visual categorization" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Logistic regression">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2021-12-12-logistic-regression.html">
+<meta property="og:description" content="In a previous notebook, I have shown how to fit a psychometric curve using pyTorch. Here, I would like to review some nice properies of the logistic regression model (WORK IN PROGRESS).
+
+
+Let's first ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-12-12T10:32:39+01:00">
+<meta property="article:tag" content="computational neuroscience">
+<meta property="article:tag" content="deep-learning">
+<meta property="article:tag" content="machine-learning">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="pytorch">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2021-12-12-logistic-regression.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Logistic regression</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2021-12-12T10:32:39+01:00" itemprop="datePublished" title="2021-12-12 10:32">2021-12-12 10:32</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2021-12-12-logistic-regression.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In a previous notebook, I have shown how to <a href="https://laurentperrinet.github.io/sciblog/posts/2020-04-08-fitting-a-psychometric-curve-using-pytorch.html">fit a psychometric curve using pyTorch</a>. Here, I would like to review some nice properies of the logistic regression model (WORK IN PROGRESS).</p>
+<!-- TEASER_END -->
+
+<p>Let's first initialize the notebook:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">256</span> <span class="c1"># number of factors</span>
+<span class="n">n_classes</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># number of classes</span>
+<span class="n">N_batch</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">1973</span> <span class="c1"># release year of https://en.wikipedia.org/wiki/Ring_Ring_(ABBA_song)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span> <span class="c1"># FIXED design matrix</span>
+
+<span class="k">def</span> <span class="nf">psychometric_function</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">factors</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">factors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">logit</span> <span class="o">=</span> <span class="p">(</span><span class="n">factors</span> <span class="o">@</span> <span class="n">W</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span> <span class="o">+</span> <span class="n">W</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">logit</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">N_batch</span><span class="p">):</span>
+    <span class="n">N</span><span class="p">,</span> <span class="n">n_classes</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">W</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N_batch</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">psychometric_function</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">factors</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N_batch</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>  <span class="c1"># generate data</span>
+    
+    <span class="k">return</span> <span class="n">factors</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N_batch</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">factors</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(4, 256)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">W</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(257, 10)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">factors</span><span class="nd">@W</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(4, 10)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">((</span><span class="n">factors</span><span class="nd">@W</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span> <span class="o">+</span> <span class="n">W</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(4, 10)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">psychometric_function</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">factors</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(257, 10) (4, 256)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[9.99953315e-01, 3.45805742e-04, 9.99999999e-01, 4.75663615e-10,
+        1.00000000e+00, 9.82830237e-01, 2.55754635e-09, 4.08280280e-01,
+        4.28969143e-08, 9.99999994e-01],
+       [1.10737661e-07, 8.51910182e-01, 2.73556933e-01, 9.99999999e-01,
+        5.29446551e-02, 1.00000000e+00, 6.10242975e-03, 9.99336308e-01,
+        1.00000000e+00, 9.29815468e-01],
+       [9.99999496e-01, 9.99936173e-01, 3.46135826e-07, 1.00000000e+00,
+        2.80007212e-04, 1.00000000e+00, 1.09061508e-07, 9.49790432e-04,
+        7.03708243e-07, 1.09295139e-04],
+       [1.00000000e+00, 9.99999846e-01, 1.00000000e+00, 9.99999968e-01,
+        1.33090647e-04, 1.00000000e+00, 5.67447527e-02, 9.81359607e-01,
+        9.99998653e-01, 9.99882309e-01]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factors</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">N_batch</span><span class="p">)</span>
+<span class="n">factors</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(257, 10) (4, 256)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((4, 256), (4, 10), (4, 10))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([17.,  1.,  1.,  0.,  0.,  2.,  0.,  0.,  0., 19.]),
+ array([1.10640081e-12, 1.00000000e-01, 2.00000000e-01, 3.00000000e-01,
+        4.00000000e-01, 5.00000000e-01, 6.00000000e-01, 7.00000000e-01,
+        8.00000000e-01, 9.00000000e-01, 1.00000000e+00]),
+ &lt;BarContainer object of 10 artists&gt;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="inversion">inversion<a class="anchor-link" href="2021-12-12-logistic-regression.html#inversion">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">set_default_tensor_type</span><span class="p">(</span><span class="s2">"torch.DoubleTensor"</span><span class="p">)</span> <span class="c1"># -&gt; torch.tensor([1.2, 3]).dtype = torch.float64</span>
+<span class="c1"># see https://sebastianraschka.com/faq/docs/pytorch-crossentropy.html#pytorch-loss-input-confusion-cheatsheet</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)</span> <span class="c1"># loss divided by output size</span>
+<span class="c1">#criterion = torch.nn.NLLLoss(reduction="mean") # loss divided by output size</span>
+
+<span class="k">class</span> <span class="nc">LogisticRegressionModel</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="c1">#torch.nn.Module -&gt; Base class for all neural network modules</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LogisticRegressionModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">)</span>
+        <span class="c1"># self.nl = torch.nn.LogSoftmax(n_classes)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nl</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factors</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.999</span>
+<span class="n">betas</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span><span class="p">)</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">n_classes</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">amsgrad</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># gives similar results</span>
+<span class="n">amsgrad</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># gives similar results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logistic_model</span> <span class="o">=</span> <span class="n">LogisticRegressionModel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N_batch</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fit_data</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
+            <span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>  <span class="c1"># gamma=gamma,</span>
+            <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
+            <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">,</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">):</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">factors</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span><span class="p">)</span>
+
+    <span class="n">N_batch</span> <span class="o">=</span> <span class="n">factors</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">factors</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">n_classes</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">logistic_model</span> <span class="o">=</span> <span class="n">LogisticRegressionModel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
+    <span class="n">logistic_model</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">logistic_model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span>
+        <span class="n">logistic_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">,</span> <span class="n">amsgrad</span><span class="o">=</span><span class="n">amsgrad</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">)):</span>
+        <span class="n">logistic_model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">X_</span><span class="p">,</span> <span class="n">labels_</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+            <span class="n">X_</span><span class="p">,</span> <span class="n">labels_</span> <span class="o">=</span> <span class="n">X_</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels_</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="p">(</span><span class="n">X_</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels_</span><span class="p">)</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_epochs</span> <span class="o">//</span> <span class="mi">32</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2"> - Loss: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="n">logistic_model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">factors</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">logistic_model</span><span class="p">,</span> <span class="n">loss</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factors</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">N_batch</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">logistic_model</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="n">fit_data</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Final loss ="</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(257, 10) (10000, 256)
+Iteration: 0 - Loss: 0.51191
+Iteration: 16 - Loss: 0.11679
+Iteration: 32 - Loss: 0.09595
+Iteration: 48 - Loss: 0.08673
+Iteration: 64 - Loss: 0.08175
+Iteration: 80 - Loss: 0.07856
+Iteration: 96 - Loss: 0.07641
+Iteration: 112 - Loss: 0.07492
+Iteration: 128 - Loss: 0.07407
+Iteration: 144 - Loss: 0.07360
+Iteration: 160 - Loss: 0.07150
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">logistic_model</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="s1">'r'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">W</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">'r--'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logistic_model</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">W</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i_digit</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span> <span class="n">i_digit</span><span class="p">],</span> <span class="s1">'g--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">logistic_model</span><span class="o">.</span><span class="n">linear</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="n">i_digit</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="s1">'r'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/computational-neuroscience.html" rel="tag">computational neuroscience</a></li>
+            <li><a class="tag p-category" href="../categories/deep-learning.html" rel="tag">deep-learning</a></li>
+            <li><a class="tag p-category" href="../categories/machine-learning.html" rel="tag">machine-learning</a></li>
+            <li><a class="tag p-category" href="../categories/math.html" rel="tag">math</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/pytorch.html" rel="tag">pytorch</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2021-04-28-experimenting-with-transfer-learning-for-visual-categorization.html" rel="prev" title="Experimenting with transfer learning for visual categorization">Previous post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>
