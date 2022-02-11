@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/art.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/behavior.html</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.html</loc>
@@ -119,7 +119,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/grand-public.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/hardlink.html</loc>
@@ -207,7 +207,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.html</loc>
@@ -251,7 +251,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -267,11 +267,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/outreach.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/plot.html</loc>
@@ -307,7 +307,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
@@ -347,7 +347,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/space.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparse-coding.html</loc>
@@ -411,7 +411,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/v1.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vim.html</loc>
@@ -555,7 +555,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/index-1.html</loc>
-  <lastmod>2022-01-28T08:25:00Z</lastmod>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
@@ -1687,7 +1687,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2021-12-12-logistic-regression.html</loc>
-  <lastmod>2022-01-28T08:26:00Z</lastmod>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2022-01-30-dreamachine.html</loc>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2022-02-11-cosyne-reviewer-feedback.html</loc>
+  <lastmod>2022-02-11T13:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>
