@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Testing more complex trajectories | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2017-12-21-predictive-coding-of-variable-motion.html" title="Predictive coding of variable motion" type="text/html">
+<link rel="next" href="2018-06-13-generating-an-unique-seed-for-a-given-filename.html" title="Generating an unique seed for a given filename" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Testing more complex trajectories">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html">
+<meta property="og:description" content="MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories.
+
+
+Let's start with the classical Motion Cloud:
+
+
+
+
+
+
+In [1]:
+
+    
+name = 'traje">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-01-16T10:53:03+01:00">
+<meta property="article:tag" content="motion-detection">
+<meta property="article:tag" content="motionclouds">
+<meta property="article:tag" content="psychophysics">
+<meta property="article:tag" content="retina">
+<meta property="article:tag" content="vision">
+</head>
+<body>
+    <input id="dark-mode" type="checkbox"><div class="theme">
+        <div class="layout">
+                <header class="cover"><h3 id="brand"><a href="../" title="Scientific logbook" rel="home">
+            <span id="blog-title">Scientific logbook</span>
+        </a></h3>
+
+    <div>
+    <label class="dark-mode-label hover:dark-mode-label" for="dark-mode">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation: isolate;" viewbox="0 0 416 416" width="30px" height="30px"><defs><clippath id="_clipPath_qEPwrMg7OPn6mDBNPkG6Nqc7qffgU4IC"><rect width="416" height="416"></rect></clippath></defs><g clip-path="url(#_clipPath_qEPwrMg7OPn6mDBNPkG6Nqc7qffgU4IC)"><path d=" M 304 88 C 304 57.38 299.49 26.39 288 0 C 364.43 33.27 416 111.32 416 200 C 416 319.29 319.29 416 200 416 C 111.32 416 33.27 364.43 0 288 C 26.39 299.49 57.38 304 88 304 C 207.29 304 304 207.29 304 88 Z "></path></g></svg></label>
+    
+    </div>
+
+        <div class="searchform" role="search">
+            
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+        </div>
+
+    </header><input id="cool-menu" type="checkbox"><label for="cool-menu" class="cool-menu__label">
+        <svg class="cool-menu hover:cool-menu checked:cool-menu" viewbox="0 0 100 100" width="40" height="40" aria-hidden="true"><circle cx="50" cy="50" r="50" fill-opacity="0.5"></circle></svg></label>
+        <nav class="menu"><ul>
+<li><a href="../index.html">Home</a></li>
+                <li><a href="../archive.html">Archives</a></li>
+                <li><a href="../categories/index.html">Tags</a></li>
+                <li><a href="../rss.xml">RSS</a></li>
+                <li><a href="http://laurentperrinet.github.io">About my research</a></li>
+                <li><a href="https://twitter.com/laurentperrinet">Twitter</a></li>
+                <li><a href="https://github.com/laurentperrinet">Github</a></li>
+
+    
+    
+    
+    </ul></nav><main id="content" class="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h2 class="p-name entry-title header__title" itemprop="headline name"><a href="#" class="u-url hover:header__title__link">Testing more complex trajectories</a></h2>
+
+        <div class="metadata">
+            <span class="byline author vcard p-author h-card">
+            <span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span>
+            </span>
+                | <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/motion-detection.html" rel="tag">#motion-detection</a>
+                | <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/motionclouds.html" rel="tag">#motionclouds</a>
+                | <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/psychophysics.html" rel="tag">#psychophysics</a>
+                | <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/retina.html" rel="tag">#retina</a>
+                | <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/vision.html" rel="tag">#vision</a>
+            <span class="dateline">
+            <a class="article__meta__link hover:article__meta__link" href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2018-01-16T10:53:03+01:00" itemprop="datePublished" title="2018-01-16 10:53">2018-01-16 10:53</time></a>
+            </span>
+                    | <span class="sourceline"><a class="article__meta__link hover:article__meta__link" href="2018-01-16-testing-more-complex-trajectories.ipynb">Source</a></span>
+
+        </div>
+        
+    </header><section class="e-content entry-content" itemprop="articleBody text"><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories.</p>
+<!-- TEASER_END -->
+
+<p>Let's start with the classical Motion Cloud:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'trajectory'</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2018-01-16-testing-more-complex'</span>
+<span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_dense'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.7/site-packages/vispy/visuals/isocurve.py:22: UserWarning: VisPy is not yet compatible with matplotlib 2.2+
+  warnings.warn("VisPy is not yet compatible with matplotlib 2.2+")
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-01-16-testing-more-complex/trajectory_dense.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-01-16-testing-more-complex/trajectory_dense.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-01-16-testing-more-complex/trajectory_dense_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The information is distributed densely in space and time.</p>
+<h3 id="one-definition-of-a-trajectory">one definition of a trajectory<a class="anchor-link" href="2018-01-16-testing-more-complex-trajectories.html#one-definition-of-a-trajectory">¶</a>
+</h3>
+<p>It is also possible to show the impulse response ("texton") corresponding to this particular texture (be patient to see a full period):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_impulse'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">impulse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-01-16-testing-more-complex/trajectory_impulse.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-01-16-testing-more-complex/trajectory_impulse.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-01-16-testing-more-complex/trajectory_impulse_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To generate a trajectory, we should just convolve this impulse response to a trajectory defined as a binary profile in space and time:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_straight'</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">fx</span><span class="o">+</span><span class="mf">.5</span><span class="p">,</span> <span class="n">fy</span><span class="o">+</span><span class="mf">.5</span><span class="p">,</span> <span class="n">ft</span><span class="o">+</span><span class="mf">.5</span>
+<span class="n">width_y</span><span class="p">,</span> <span class="n">width_x</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.005</span>
+<span class="n">events</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_y</span> <span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_x</span> <span class="p">)</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-01-16-testing-more-complex/trajectory_straight.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-01-16-testing-more-complex/trajectory_straight.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-01-16-testing-more-complex/trajectory_straight_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is possible to make this trajectory noisy:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_noisy'</span>
+<span class="n">noise_x</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">noise_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">events</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_y</span> <span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_x</span> <span class="p">)</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">events</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-01-16-testing-more-complex/trajectory_noisy.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-01-16-testing-more-complex/trajectory_noisy.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-01-16-testing-more-complex/trajectory_noisy_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, it is possible to make the amplitude of the texton change as a function of time:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_noisier'</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">noise_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">events</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_y</span> <span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">width_x</span> <span class="p">)</span>
+<span class="n">A_noise_x</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">A_noise</span> <span class="o">=</span> <span class="n">A_noise_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">phase_noise</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">A_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">A_noise</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">phase_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">phase_noise</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">A_noise</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phase_noise</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">events</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2018-01-16-testing-more-complex/trajectory_noisier.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2018-01-16-testing-more-complex/trajectory_noisier.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2018-01-16-testing-more-complex/trajectory_noisier_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="addition-of-a-trajectory-to-the-incoherent-noise">addition of a trajectory to the incoherent noise<a class="anchor-link" href="2018-01-16-testing-more-complex-trajectories.html#addition-of-a-trajectory-to-the-incoherent-noise">¶</a>
+</h3>
+<p>It is now possible to add this trajectory to any kind of background, such as a background texture of the same "texton" but with a null average motion:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay'</span>
+<span class="n">movie_coh</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="n">A_noise</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phase_noise</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">events</span><span class="p">))</span>
+<span class="n">mc0</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">movie_unc</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="mf">.9</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">rho_coh</span><span class="o">*</span><span class="n">movie_coh</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rho_coh</span><span class="p">)</span><span class="o">*</span><span class="n">movie_unc</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-01-16-testing-more-complex/trajectory_overlay.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_difficult'</span>
+<span class="n">rho_coh</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">rho_coh</span><span class="o">*</span><span class="n">movie_coh</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rho_coh</span><span class="p">)</span><span class="o">*</span><span class="n">movie_unc</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-01-16-testing-more-complex/trajectory_overlay_difficult.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Though it is difficult to find the coherent pattern in a single frame, one detects it thanks to its coherent motion (see work from Watamaniuk, McKee and colleagues).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2018-01-16-testing-more-complex-trajectories.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<span class="o">%</span><span class="k">version_information</span> numpy, matplotlib, MotionClouds
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.7.2 64bit [Clang 10.0.0 (clang-1000.11.45.5)]</td>
+</tr>
+<tr>
+<td>IPython</td>
+<td>7.3.0</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Darwin 17.7.0 x86_64 i386 64bit</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td>1.16.2</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.0.2</td>
+</tr>
+<tr>
+<td>MotionClouds</td>
+<td>20180606</td>
+</tr>
+<tr><td colspan="2">Tue Feb 26 22:35:19 2019 CET</td></tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </section><aside class="postpromonav"><nav><ul itemprop="keywords" class="tags article__meta">
+<li>
+            <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/motion-detection.html" rel="tag">#motion-detection</a>
+          </li>
+          <li>
+            <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/motionclouds.html" rel="tag">#motionclouds</a>
+          </li>
+          <li>
+            <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/psychophysics.html" rel="tag">#psychophysics</a>
+          </li>
+          <li>
+            <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/retina.html" rel="tag">#retina</a>
+          </li>
+          <li>
+            <a class="tag p-category article__meta__link hover:article__meta__link" href="../categories/vision.html" rel="tag">#vision</a>
+          </li>
+        </ul>
+<ul class="pager hidden-print pagination">
+<li class="previous">
+                <a class="hover:pagination__link" href="2017-12-21-predictive-coding-of-variable-motion.html" rel="prev" title="Predictive coding of variable motion">Previous post</a>
+            </li>
+            <li class="next">
+                <a class="hover:pagination__link" href="2018-06-13-generating-an-unique-seed-for-a-given-filename.html" rel="next" title="Generating an unique seed for a given filename">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article></main>
+</div>
+    </div>
+                <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>
