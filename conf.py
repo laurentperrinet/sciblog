@@ -954,7 +954,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = """Contents &copy; {date} <a href="mailto:{email}">{author}</a> -
-Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br>
+Powered by <a href="http://getnikola.com">Nikola</a>.<br>
 {license}"""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
@@ -1243,6 +1243,7 @@ SEARCH_FORM = """
 </form>
 <!-- End of custom search -->
 """ % SITE_URL
+SEARCH_FOR = ''
 #
 # If you prefer a google search form, here's an example that should just work:
 # SEARCH_FORM = """
