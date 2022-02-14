@@ -133,9 +133,9 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #     )
 #
 # Name of the theme to use.
-THEME = "bootblog4"
 THEME = "zen-ipython"
 THEME = "cadair"
+THEME = "bootblog4"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -1243,7 +1243,7 @@ SEARCH_FORM = """
 </form>
 <!-- End of custom search -->
 """ % SITE_URL
-SEARCH_FOR = ''
+# SEARCH_FOR = ''
 #
 # If you prefer a google search form, here's an example that should just work:
 # SEARCH_FORM = """
