@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>compiling notebooks into a report | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2016-06-25-compiling-notebooks-into-a-report.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+<meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2016-06-01-compiling-and-using-pynn-%2B-nest-%2B-python3.html" title="Compiling and using pyNN + NEST + python3" type="text/html">
+<link rel="next" href="2016-07-14_static-motion-clouds.html" title="Static motion clouds?" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="compiling notebooks into a report">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2016-06-25-compiling-notebooks-into-a-report.html">
+<meta property="og:description" content="For a master's project in computational neuroscience, we adopted a quite novel workflow to go all the steps from the learning of the small steps to the wrtiting of the final thesis. Though we were fle">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-06-25T07:58:24+02:00">
+<meta property="article:tag" content="ipython">
+<meta property="article:tag" content="neural">
+<meta property="article:tag" content="open-science">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://laurentperrinet.github.io/sciblog/">Scientific logbook</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Home</a>
+                </li>
+<li>
+<a href="../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="http://laurentperrinet.github.io">About my research</a>
+                </li>
+<li>
+<a href="https://twitter.com/laurentperrinet">Twitter</a>
+                </li>
+<li>
+<a href="https://github.com/laurentperrinet">Github</a>
+
+        </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+        <ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><!-- pass --><li>
+    <a href="2016-06-25-compiling-notebooks-into-a-report.ipynb" id="sourcelink">Source</a>
+    </li>
+
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">compiling notebooks into a report</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2016-06-25T07:58:24+02:00" itemprop="datePublished" title="2016-06-25 07:58">2016-06-25 07:58</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2016-06-25-compiling-notebooks-into-a-report.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For a master's project in computational neuroscience, we adopted a quite novel workflow to go all the steps from the learning of the small steps to the wrtiting of the final thesis. Though we were flexible in our method during the 6 months of this work, a simple workflow emerged that I describe here.</p>
+<p><img src="../files/2016-06-26_thesis.png" alt="Compiling a set of notebook to a LaTeX document."></p>
+<!-- TEASER_END -->
+
+<p>The project involved the modelling of a rather complex system involving the modelling of spiking neurons, studying the emerging states when they interact in populations. Of particular interest was the possibility to obtain what is called a "balanced state" which is relevant to model the brain. Finally, we modeled some realistic representation of the coding of orientation in what is called a "ring model".</p>
+<ul>
+<li>As such, we had a hierarchy of problems to solve from the single neuron to the full network. The only solution was thus to take small steps and we were careful to create on a daily basis new notebooks reporting for these advances (pre-pended with the iso8601, for instance <code>2016-03-02_FeedForward_comparing_ExpVSAlpha</code>). </li>
+<li>To avoid the usual rush at the moment of handing over the thesis, another constraint that we adopted was that for every notebook, the first cell would describe what was done with possibly a visual figure. One huge advantage is that the student did not have to learn LaTeX, but only markdown.</li>
+<li>In the end we had a bunch of notebooks that could just be "compiled" to produce a nice looking PDF file.</li>
+</ul>
+<p>Let's focus on how to do that. For those in a hurry, let's just say that it involves:</p>
+<ul>
+<li>globing a set of relevant notebooks,</li>
+<li>striping out what is not important and keep the important stuff,</li>
+<li>concatenate all of these in one notebook,</li>
+<li>convert that to a PDF using a latex template
+This is summarized in this script:</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> thesis.py
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'thesis'</span>
+
+<span class="kn">import</span> <span class="nn">nbconvert</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+
+<span class="n">nb_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*.ipynb'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span>  <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">]:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">', "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">nb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        
+<span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Keeps only the cells :</span>
+<span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
+<span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+    <span class="n">nb_out</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i_cell</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nb_out</span><span class="o">.</span><span class="n">cells</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'#'</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">start</span> <span class="o">=</span> <span class="n">i_cell</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">stop</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">):</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">i_cell</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nb_out</span><span class="o">.</span><span class="n">cells</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">nb_out</span>
+    
+<span class="k">def</span> <span class="nf">merge_notebooks</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">filenames</span><span class="p">):</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+        
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">merged</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">merged</span> <span class="o">=</span> <span class="n">nb</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nbformat</span><span class="o">.</span><span class="n">writes</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">))</span>
+<span class="n">merge_notebooks</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">,</span> <span class="n">nb_list</span><span class="p">)</span>  
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+
+<span class="n">latex_exporter</span> <span class="o">=</span> <span class="n">nbconvert</span><span class="o">.</span><span class="n">PDFExporter</span><span class="p">()</span>
+<span class="n">latex_exporter</span><span class="o">.</span><span class="n">template_file</span> <span class="o">=</span> <span class="n">name</span> <span class="c1"># assumes it has the same name as the output</span>
+<span class="n">latex_exporter</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">latex_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.pdf'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"iso-8859-1"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"iso-8859-1"</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting thesis.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> thesis.py
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>'1.0-Introduction.ipynb', 
+'1.1-Plan.ipynb', 
+'2.0.0_SpikingNeuronModels.ipynb', 
+'2.1.1_NeuralNetworks_SpikingNeuronModel.ipynb', 
+'2.1.2_NeuralNetworks_Brian_OneNeuron.ipynb', 
+'2.1.3_NeuralNetworks_Brian.ipynb', 
+'2.1.4_NeuralNetworks_Nest.ipynb', 
+'2.1.5_NeuralNetworks_pyNN_CODAvsCUBA.ipynb', 
+'2.1.6_FeedForward_Exploration_I-Fcurve.ipynb', 
+'2.2.1_RRNN_Presentation.ipynb', 
+'2.2.2_RRNN_Exploration_control cell parameters.ipynb', 
+'2.2.3_RRNN_Exploration_ModelExpVSAlpha.ipynb', 
+'2.2.4_RRNN_Rasterplot_InputVariation.ipynb', 
+'2.2.5_RRNN_Rasterplot_CheckingInvariants.ipynb', 
+'2.2.6_RRNN_Rasterplot_GlobalWeight_Variation.ipynb', 
+'2.2.7_RRNN_Exploration_Curve_Weights.ipynb', 
+'2.2.8_RRNN_Exploration_Curve_Sparseness.ipynb', 
+'2.2.9_RRNN_Exploration_Curve_G.ipynb', 
+'2.3.1_RRNN_BalancedStates_MultiOptimisation_Intro.ipynb', 
+'2.3.3_RRNN_BalancedStates_MultiOptimisation_DifferentG.ipynb', 
+'3.1.1_Ring Intro.ipynb', 
+'3.2.1_Ring UnTuned = input + feed-forward.ipynb', 
+'3.2.2_Ring UnTuned input Homogeneous weight.ipynb', 
+'3.2.3_Ring UnTuned_Bandwidths.ipynb', 
+'3.2.4_Ring Untuned_FittingResponse.ipynb', 
+'3.3.1_Ring_FeedForwardvsRecurrent-Rasterplots.ipynb', 
+'3.3.2_Ring recurrent_Bandwidths.ipynb', 
+'3.3.3_Ring recurrent_FittingResponse.ipynb', 
+'4.1_Discussion et perspectives.ipynb', 
+'4.2_These.ipynb', 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Voilà!</p>
+<h3 id="details-of-the-method">details of the method<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#details-of-the-method">¶</a>
+</h3>
+<p>Below I will detail the method in more detail.</p>
+<h4 id="templating">templating<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#templating">¶</a>
+</h4>
+<p>While essential to typeset documents, $\LaTeX$ takes a while to learn and we decided to have everything written down in MarkDown, as it is native to ipython notebooks and allows to cover most of most needs, from structuring a document to writing equations. In ipython's <code>nbconvert</code> scheme, this involves doing the conversion machinery in a template that we simply adapted to our needs (mainly by tweeking the <code>report.tplx</code> file and using information around the web). Still some cosmetics could be done to pass some parameters such as author's name etc... programmatically, but that is pratictally what came out:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> thesis.tplx
+<span class="p">((</span><span class="o">*-</span> <span class="n">extends</span> <span class="s1">'report.tplx'</span> <span class="o">-*</span><span class="p">))</span>
+
+<span class="o">%</span> <span class="n">Default</span> <span class="n">to</span> <span class="n">the</span> <span class="n">notebook</span> <span class="n">output</span> <span class="n">style</span>
+<span class="p">((</span><span class="o">*</span> <span class="nb">set</span> <span class="n">cell_style</span> <span class="o">=</span> <span class="s1">'style_ipython.tplx'</span> <span class="o">*</span><span class="p">))</span>
+<span class="o">%</span><span class="p">((</span><span class="o">*</span> <span class="nb">set</span> <span class="n">cell_style</span> <span class="o">=</span> <span class="s1">'style_bw_python.tplx'</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">docclass</span> <span class="o">*</span><span class="p">))</span>
+\<span class="n">documentclass</span><span class="p">[</span><span class="n">french</span><span class="p">,</span> <span class="mi">12</span><span class="n">pt</span><span class="p">]{</span><span class="n">report</span><span class="p">}</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">docclass</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">packages</span> <span class="o">*</span><span class="p">))</span>
+<span class="p">(((</span> <span class="nb">super</span><span class="p">()</span> <span class="p">)))</span>
+\<span class="n">usepackage</span><span class="p">[</span><span class="n">french</span><span class="p">]{</span><span class="n">babel</span><span class="p">}</span><span class="o">%</span>
+<span class="o">%</span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">graphics</span><span class="p">}</span><span class="o">%</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">setspace</span><span class="p">}</span><span class="o">%</span>
+
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">BookTitle</span><span class="p">}{</span>
+<span class="p">{</span>\<span class="n">bf</span> <span class="n">Aix</span><span class="o">-</span><span class="n">Marseille</span> <span class="n">Université</span><span class="p">}</span>\\
+        <span class="p">{</span>\<span class="n">bf</span> <span class="n">Mémoire</span> <span class="n">de</span> <span class="n">Recherche</span><span class="p">}</span> \\
+        <span class="n">présenté</span> <span class="n">en</span> <span class="n">vue</span> <span class="n">de</span> <span class="n">l</span><span class="s1">'obtention du </span><span class="se">\\</span>
+         <span class="p">{</span>\<span class="n">bf</span> <span class="n">MASTER</span> <span class="n">de</span> <span class="n">NEUROSCIENCES</span><span class="p">}</span> \\
+         <span class="p">(</span><span class="n">Spécialité</span><span class="p">:</span> <span class="n">NIC</span><span class="p">)</span>
+        <span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Title</span><span class="p">}{</span><span class="n">OB</span><span class="o">-</span><span class="n">V1</span> <span class="p">:</span> <span class="n">un</span> <span class="n">modèle</span> <span class="n">de</span> <span class="n">détection</span> <span class="n">de</span> <span class="n">l</span><span class="s1">'orientation dans l'</span><span class="n">aire</span> <span class="n">visuelle</span> <span class="n">primaire</span><span class="p">}</span><span class="o">%</span> 
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Author</span><span class="p">}{</span><span class="n">Fernand</span> <span class="n">David</span> <span class="n">Arbib</span><span class="p">}</span><span class="o">%</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">AuthorB</span><span class="p">}{</span><span class="n">Laurent</span> <span class="n">U</span><span class="o">.~</span><span class="n">Perrinet</span><span class="p">}</span><span class="o">%</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Team</span><span class="p">}{</span>\<span class="s1">'Equipe Inference in Visual Behaviour (InViBe)}%</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Institute</span><span class="p">}{</span><span class="n">Institut</span> <span class="n">de</span> <span class="n">Neurosciences</span> <span class="n">de</span> <span class="n">la</span> <span class="n">Timone</span><span class="p">}</span><span class="o">%</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">InstituteUMR</span><span class="p">}{</span><span class="n">UMR</span> <span class="mi">7289</span><span class="p">,</span> <span class="n">CNRS</span> <span class="o">/</span> <span class="n">Aix</span><span class="o">-</span><span class="n">Marseille</span> <span class="n">Université</span><span class="p">}</span><span class="o">%</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Address</span><span class="p">}{</span><span class="mi">27</span><span class="p">,</span> <span class="n">Bd</span><span class="o">.</span> <span class="n">Jean</span> <span class="n">Moulin</span><span class="p">,</span> <span class="mi">13385</span> <span class="n">Marseille</span> <span class="n">Cedex</span> <span class="mi">5</span><span class="p">,</span> <span class="n">France</span><span class="p">}</span> 
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Website</span><span class="p">}{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">URL</span><span class="o">/</span><span class="n">LaurentPerrinet</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">Email</span><span class="p">}{</span><span class="n">Laurent</span><span class="o">.</span><span class="n">Perrinet</span><span class="nd">@univ</span><span class="o">-</span><span class="n">amu</span><span class="o">.</span><span class="n">fr</span><span class="p">}</span> 
+                   
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">packages</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">h1</span> <span class="o">-*</span><span class="p">))</span>\<span class="n">chapter</span><span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">h1</span> <span class="o">-*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">h2</span> <span class="o">-*</span><span class="p">))</span>\<span class="n">section</span><span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">h2</span> <span class="o">-*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">h3</span> <span class="o">-*</span><span class="p">))</span>\<span class="n">subsection</span><span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">h3</span> <span class="o">-*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">h4</span> <span class="o">-*</span><span class="p">))</span>\<span class="n">subsubsection</span><span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">h4</span> <span class="o">-*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">h5</span> <span class="o">-*</span><span class="p">))</span>\<span class="n">paragraph</span><span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">h5</span> <span class="o">-*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">abstract</span> <span class="o">*</span><span class="p">))</span>
+<span class="o">%</span>\<span class="n">tableofcontents</span>
+<span class="o">~</span>\<span class="n">par</span>
+\<span class="n">newpage</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">abstract</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">margins</span> <span class="o">*</span><span class="p">))</span>
+\<span class="n">parindent</span><span class="o">=</span><span class="mi">0</span><span class="n">pt</span>
+\<span class="n">parskip</span><span class="o">=</span><span class="mi">6</span><span class="n">pt</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">margins</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">predoc</span> <span class="o">*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">title</span> <span class="o">*</span><span class="p">))</span>
+                            \<span class="n">title</span><span class="p">{</span>\<span class="n">Title</span><span class="p">}</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">title</span> <span class="o">*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">author</span> <span class="o">*</span><span class="p">))</span>
+                            \<span class="n">author</span><span class="p">{</span>\<span class="n">Author</span><span class="p">}</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">author</span> <span class="o">*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">maketitle</span> <span class="o">*</span><span class="p">))</span>     
+<span class="o">%</span>\<span class="n">maketitle</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">titlepage</span><span class="p">}</span>
+
+\<span class="n">begin</span><span class="p">{</span><span class="n">center</span><span class="p">}</span>
+<span class="o">%</span>\<span class="n">vskip</span> <span class="mi">2</span><span class="n">cm</span>
+                   \<span class="n">begin</span><span class="p">{</span><span class="n">spacing</span><span class="p">}{</span><span class="mf">1.2</span><span class="p">}</span>
+<span class="p">{</span>\<span class="n">Large</span> \<span class="n">BookTitle</span> <span class="p">}</span><span class="o">%</span>
+                   \<span class="n">end</span><span class="p">{</span><span class="n">spacing</span><span class="p">}</span>
+\<span class="n">vskip</span> <span class="mi">1</span><span class="n">cm</span>
+                   \<span class="n">begin</span><span class="p">{</span><span class="n">spacing</span><span class="p">}{</span><span class="mf">1.5</span><span class="p">}</span>
+<span class="p">{</span>\<span class="n">Huge</span> \<span class="n">Title</span> <span class="p">}</span>
+                   \<span class="n">end</span><span class="p">{</span><span class="n">spacing</span><span class="p">}</span>
+<span class="o">%</span>\<span class="n">vskip</span> <span class="mi">1</span><span class="n">cm</span>
+<span class="o">%</span>\<span class="n">emph</span><span class="p">{</span>\<span class="n">Large</span> \<span class="n">SubTitle</span> <span class="p">}</span><span class="o">%</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">center</span><span class="p">}</span>
+\<span class="n">includegraphics</span><span class="p">{</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">troislogos</span><span class="o">.</span><span class="n">png</span><span class="p">}</span> 
+\<span class="n">end</span><span class="p">{</span><span class="n">center</span><span class="p">}</span>
+<span class="o">%</span>\<span class="n">vskip</span> <span class="mi">1</span><span class="n">cm</span>
+                   <span class="p">{</span>\<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">arraystretch</span><span class="p">}{</span><span class="mf">1.5</span><span class="p">}</span> <span class="o">%&lt;-</span> <span class="n">modify</span> <span class="n">value</span> <span class="n">to</span> <span class="n">suit</span> <span class="n">your</span> <span class="n">needs</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">tabular</span><span class="p">}[</span><span class="n">t</span><span class="p">]{</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="p">}</span>
+\<span class="n">hline</span>
+<span class="n">Par</span><span class="p">:</span> <span class="o">&amp;</span> <span class="p">{</span>\<span class="n">large</span> \<span class="n">Author</span><span class="p">}</span>  \\\<span class="n">hline</span>
+<span class="n">Responsable</span> <span class="n">de</span> <span class="n">Stage</span><span class="p">:</span> <span class="o">&amp;</span> <span class="p">{</span>\<span class="n">large</span> \<span class="n">AuthorB</span><span class="p">}</span>  \\<span class="o">%</span>\<span class="n">hline</span>
+<span class="o">&amp;</span>\<span class="n">url</span><span class="p">{</span>\<span class="n">Website</span><span class="p">}</span>\\<span class="o">%</span>\<span class="n">hline</span>
+<span class="o">&amp;</span>\<span class="n">url</span><span class="p">{</span>\<span class="n">Email</span><span class="p">}</span>\\\<span class="n">hline</span>
+<span class="n">Laboratoire</span><span class="p">:</span> <span class="o">&amp;</span> \<span class="n">Team</span> \\<span class="o">%</span>\<span class="n">hline</span>
+             <span class="o">&amp;</span>          \<span class="n">Institute</span> \\ 
+             <span class="o">&amp;</span>           \<span class="n">InstituteUMR</span> \\<span class="o">%</span>\<span class="n">hline</span>
+             <span class="o">&amp;</span>\<span class="n">Address</span> \\\<span class="n">hline</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">tabular</span><span class="p">}</span>
+                    <span class="p">}</span>
+\<span class="n">vskip</span> <span class="mf">.5</span><span class="n">cm</span>
+
+\<span class="n">vfill</span>
+<span class="p">{</span>\<span class="n">large</span> <span class="n">Juin</span> <span class="mi">2016</span><span class="p">}</span>
+<span class="o">%</span>\<span class="n">pageskip</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">center</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">titlepage</span><span class="p">}</span>
+\<span class="n">tableofcontents</span>
+<span class="o">%</span>\<span class="n">doublespacing</span>
+                   
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">maketitle</span> <span class="o">*</span><span class="p">))</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">predoc</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">commands</span> <span class="o">*</span><span class="p">))</span>
+    <span class="o">%</span> <span class="n">Prevent</span> <span class="n">overflowing</span> <span class="n">lines</span> <span class="n">due</span> <span class="n">to</span> <span class="n">hard</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="k">break</span> <span class="n">entities</span>
+    \<span class="n">sloppy</span>
+    <span class="o">%</span> <span class="n">Setup</span> <span class="n">hyperref</span> <span class="n">package</span>
+    \<span class="n">hypersetup</span><span class="p">{</span>
+      <span class="n">breaklinks</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="o">%</span> <span class="n">so</span> <span class="n">long</span> <span class="n">urls</span> <span class="n">are</span> <span class="n">correctly</span> <span class="n">broken</span> <span class="n">across</span> <span class="n">lines</span>
+	<span class="n">pdftitle</span><span class="o">=</span><span class="p">{</span>\<span class="n">Title</span><span class="p">},</span>
+	<span class="n">pdfauthor</span><span class="o">=</span><span class="p">{</span>\<span class="n">Author</span><span class="p">},</span>
+	<span class="n">colorlinks</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="o">%</span><span class="n">colorise</span> <span class="n">les</span> <span class="n">liens</span>
+	<span class="n">breaklinks</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="o">%</span><span class="n">permet</span> <span class="n">le</span> <span class="n">retour</span> <span class="n">à</span> <span class="n">la</span> <span class="n">ligne</span> <span class="n">dans</span> <span class="n">les</span> <span class="n">liens</span> <span class="n">trop</span> <span class="n">longs</span>
+	<span class="n">urlcolor</span><span class="o">=</span> <span class="n">blue</span><span class="p">,</span> <span class="o">%</span><span class="n">couleur</span> <span class="n">des</span> <span class="n">hyperliens</span>
+	<span class="n">linkcolor</span><span class="o">=</span> <span class="n">blue</span><span class="p">,</span> <span class="o">%</span><span class="n">couleur</span> <span class="n">des</span> <span class="n">liens</span> <span class="n">internes</span>
+	<span class="n">citecolor</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span>    <span class="o">%</span><span class="n">couleur</span> <span class="n">des</span> <span class="n">liens</span> <span class="n">de</span> <span class="n">citations</span>
+	<span class="n">bookmarksopen</span><span class="o">=</span><span class="n">false</span><span class="p">,</span>
+	<span class="n">pdftoolbar</span><span class="o">=</span><span class="n">false</span><span class="p">,</span>
+	<span class="n">pdfmenubar</span><span class="o">=</span><span class="n">false</span><span class="p">,</span>
+<span class="o">%</span>      <span class="n">hidelinks</span>
+      <span class="p">}</span>
+    <span class="o">%</span> <span class="n">Slightly</span> <span class="n">bigger</span> <span class="n">margins</span> <span class="n">than</span> <span class="n">the</span> <span class="n">latex</span> <span class="n">defaults</span>
+    \<span class="n">geometry</span><span class="p">{</span><span class="n">verbose</span><span class="p">,</span><span class="n">tmargin</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span><span class="p">,</span><span class="n">bmargin</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span><span class="p">,</span><span class="n">lmargin</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span><span class="p">,</span><span class="n">rmargin</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span><span class="p">}</span>
+
+    <span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">commands</span> <span class="o">*</span><span class="p">))</span>
+
+<span class="p">((</span><span class="o">*</span> <span class="n">block</span> <span class="n">bibliography</span> <span class="o">*</span><span class="p">))</span>
+\<span class="n">bibliographystyle</span><span class="p">{</span><span class="n">plain</span><span class="p">}</span>
+\<span class="n">bibliography</span><span class="p">{</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">thesis</span><span class="p">}</span>
+<span class="p">((</span><span class="o">*</span> <span class="n">endblock</span> <span class="n">bibliography</span> <span class="o">*</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting thesis.tplx
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For some reason, the latex file is compiled on a temporary folder and loses track of the current working directory. One solution is to copy files in an absolute path that will be cleaned-up at the next reboot:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp ../figs/troislogos.png /tmp/troislogos.png
+<span class="o">!</span>cp ../figs/ring_model.png /tmp/ring_model.png
+<span class="o">!</span>cp ../figs/future_model.png /tmp/future_model.png
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Optionnally, it is possible to disable selectively some cells by introduciong the following in the template:</p>
+
+</div>
+</div>
+</div>% Disable input cells
+%((* block input_group *))
+%((* endblock input_group *))
+% Disable output cells
+%((* block output_group *))
+%((* endblock output_group *))
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="including-references">including references<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#including-references">¶</a>
+</h4>
+<p>Moreover, it is possible to include references and have that included using BibTeX. In MarkDown, it has to be fomatted like</p>
+
+<pre><code>&lt;cite data-cite="Brunel2000"&gt;(Brunel, 2000)&lt;/cite&gt;
+
+</code></pre>
+<p>To get somthing like <cite data-cite="Brunel2000">(Brunel, 2000)</cite>. This involves of course creating a bibliography file:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> /tmp/thesis.bib
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Brunel_2007</span><span class="p">,</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Brunel</span><span class="p">,</span> <span class="n">Nicolas</span> <span class="ow">and</span> <span class="n">van</span> <span class="n">Rossum</span><span class="p">,</span> <span class="n">Mark</span> <span class="n">C</span><span class="o">.</span> <span class="n">W</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">007</span><span class="o">-</span><span class="mi">0190</span><span class="o">-</span><span class="mi">0</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1432</span><span class="o">-</span><span class="mi">0770</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Biol</span> <span class="n">Cybern</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="p">{</span><span class="n">Oct</span><span class="p">},</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">337</span><span class="o">--</span><span class="mi">339</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Springer</span> <span class="n">Science</span> <span class="o">+</span> <span class="n">Business</span> <span class="n">Media</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Lapicque</span><span class="s1">'s 1907 paper: from frogs to integrate-and-fire},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">007</span><span class="o">-</span><span class="mi">0190</span><span class="o">-</span><span class="mi">0</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">97</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2007</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">007</span><span class="o">-</span><span class="mi">0190</span><span class="o">-</span><span class="mi">0</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Burkitt_2006</span><span class="p">,</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Burkitt</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">N</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0068</span><span class="o">-</span><span class="mi">6</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1432</span><span class="o">-</span><span class="mi">0770</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Biol</span> <span class="n">Cybern</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="p">{</span><span class="n">Apr</span><span class="p">},</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="o">--</span><span class="mi">19</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Springer</span> <span class="n">Science</span> <span class="o">+</span> <span class="n">Business</span> <span class="n">Media</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">Review</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Integrate</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">fire</span> <span class="n">Neuron</span> <span class="n">Model</span><span class="p">:</span> <span class="n">I</span><span class="o">.</span> <span class="n">Homogeneous</span> <span class="n">Synaptic</span> <span class="n">Input</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0068</span><span class="o">-</span><span class="mi">6</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">95</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2006</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0068</span><span class="o">-</span><span class="mi">6</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Burkitt_2006a</span><span class="p">,</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Burkitt</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">N</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">54</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0082</span><span class="o">-</span><span class="mi">8</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1432</span><span class="o">-</span><span class="mi">0770</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Biol</span> <span class="n">Cybern</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="p">{</span><span class="n">Jul</span><span class="p">},</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">97</span><span class="o">--</span><span class="mi">112</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Springer</span> <span class="n">Science</span> <span class="o">+</span> <span class="n">Business</span> <span class="n">Media</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">review</span> <span class="n">of</span> <span class="n">the</span> <span class="n">integrate</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">fire</span> <span class="n">neuron</span> <span class="n">model</span><span class="p">:</span> <span class="n">II</span><span class="o">.</span> <span class="n">Inhomogeneous</span> <span class="n">synaptic</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">network</span> <span class="n">properties</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0082</span><span class="o">-</span><span class="mi">8</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">95</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2006</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s00422</span><span class="o">-</span><span class="mi">006</span><span class="o">-</span><span class="mi">0082</span><span class="o">-</span><span class="mi">8</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Goris_2015</span><span class="p">,</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Goris</span><span class="p">,</span> <span class="n">Robbe</span> <span class="n">L</span><span class="o">.</span><span class="n">T</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Simoncelli</span><span class="p">,</span> <span class="n">Eero</span> <span class="n">P</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Movshon</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span> <span class="n">Anthony</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1016</span><span class="o">/</span><span class="n">j</span><span class="o">.</span><span class="n">neuron</span><span class="mf">.2015.10.009</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0896</span><span class="o">-</span><span class="mi">6273</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Neuron</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="p">{</span><span class="n">Nov</span><span class="p">},</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">819</span><span class="o">--</span><span class="mi">831</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Elsevier</span> <span class="n">BV</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Origin</span> <span class="ow">and</span> <span class="n">Function</span> <span class="n">of</span> <span class="n">Tuning</span> <span class="n">Diversity</span> <span class="ow">in</span> <span class="n">Macaque</span> <span class="n">Visual</span> <span class="n">Cortex</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1016</span><span class="o">/</span><span class="n">j</span><span class="o">.</span><span class="n">neuron</span><span class="mf">.2015.10.009</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">88</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2015</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1016</span><span class="o">/</span><span class="n">j</span><span class="o">.</span><span class="n">neuron</span><span class="mf">.2015.10.009</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">hansel1995synchrony</span><span class="p">,</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Hansel</span><span class="p">,</span> <span class="n">David</span> <span class="ow">and</span> <span class="n">Mato</span><span class="p">,</span> <span class="n">Germ</span><span class="p">{</span>\<span class="s1">'a}n and Meunier, Claude},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Added</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">52</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">52</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Neural</span> <span class="n">computation</span><span class="p">},</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">307</span><span class="o">--</span><span class="mi">337</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">MIT</span> <span class="n">Press</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Synchrony</span> <span class="ow">in</span> <span class="n">excitatory</span> <span class="n">neural</span> <span class="n">networks</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1995</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Hunter07</span><span class="p">,</span>
+	<span class="n">Abstract</span> <span class="o">=</span> <span class="p">{</span><span class="n">Matplotlib</span> <span class="ow">is</span> <span class="n">a</span> <span class="p">{</span><span class="mi">2</span><span class="n">D</span><span class="p">}</span> <span class="n">graphics</span> <span class="n">package</span> <span class="k">for</span> <span class="n">Python</span> <span class="k">for</span> <span class="n">application</span> <span class="n">development</span><span class="p">,</span> <span class="n">interactive</span> <span class="n">scripting</span><span class="p">,</span> <span class="ow">and</span> <span class="n">publication</span><span class="o">-</span><span class="n">quality</span> <span class="n">image</span> <span class="n">generation</span> <span class="n">across</span> <span class="n">user</span> <span class="n">interfaces</span> <span class="ow">and</span> <span class="n">operating</span> <span class="n">systems</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Los</span> <span class="n">Alamitos</span><span class="p">,</span> <span class="n">CA</span><span class="p">,</span> <span class="n">USA</span><span class="p">},</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Hunter</span><span class="p">,</span> <span class="n">John</span> <span class="n">D</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computing</span> <span class="ow">in</span> <span class="n">Science</span> \<span class="o">&amp;</span> <span class="n">Engineering</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Article</span><span class="o">-</span><span class="n">Id</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2878517</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">0</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.55</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">ieeecomputersociety</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.55</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">mcse</span><span class="mf">.2007.55</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ieeexplore</span><span class="o">.</span><span class="n">ieee</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">xpls</span><span class="o">/</span><span class="nb">abs</span>\<span class="n">_all</span><span class="o">.</span><span class="n">jsp</span><span class="err">?</span><span class="n">arnumber</span><span class="o">=</span><span class="mi">4160265</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Added</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Day</span> <span class="o">=</span> <span class="p">{</span><span class="mi">01</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.55</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1521</span><span class="o">-</span><span class="mi">9615</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computing</span> <span class="ow">in</span> <span class="n">Science</span> <span class="ow">and</span> <span class="n">Engineering</span><span class="p">},</span>
+	<span class="n">Keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">assofield</span><span class="p">,</span> <span class="n">bicv</span><span class="o">-</span><span class="n">motion</span><span class="p">,</span> <span class="n">bicv</span><span class="o">-</span><span class="n">sparse</span><span class="p">,</span> <span class="n">kaplan13</span><span class="p">,</span> <span class="n">khoei13jpp</span><span class="p">,</span> <span class="n">perrinet12pred</span><span class="p">,</span> <span class="n">python</span><span class="p">,</span> <span class="n">reproducible</span><span class="o">-</span><span class="n">science</span><span class="p">,</span> <span class="n">thesis</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="n">may</span><span class="p">,</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="o">--</span><span class="mi">95</span><span class="p">},</span>
+	<span class="n">Priority</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">IEEE</span> <span class="n">Computer</span> <span class="n">Society</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Matplotlib</span><span class="p">:</span> <span class="n">A</span> <span class="p">{</span><span class="mi">2</span><span class="n">D</span><span class="p">}</span> <span class="n">Graphics</span> <span class="n">Environment</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.55</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2007</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.55</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Leon12</span><span class="p">,</span>
+	<span class="n">Abstract</span> <span class="o">=</span> <span class="p">{</span><span class="n">Choosing</span> <span class="n">an</span> <span class="n">appropriate</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">stimuli</span> <span class="ow">is</span> <span class="n">essential</span> <span class="n">to</span> <span class="n">characterize</span> <span class="n">the</span> <span class="n">response</span> <span class="n">of</span> <span class="n">a</span> <span class="n">sensory</span> <span class="n">system</span> <span class="n">to</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">functional</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">the</span> <span class="n">eye</span> <span class="n">movement</span> <span class="n">following</span> <span class="n">the</span> <span class="n">motion</span> <span class="n">of</span> <span class="n">a</span> <span class="n">visual</span> <span class="n">scene</span><span class="o">.</span> <span class="n">Here</span><span class="p">,</span> <span class="n">we</span> <span class="n">describe</span> <span class="n">a</span> <span class="n">framework</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">random</span> <span class="n">texture</span> <span class="n">movies</span> <span class="k">with</span> <span class="n">controlled</span> <span class="n">information</span> <span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">,</span> <span class="n">Motion</span> <span class="n">Clouds</span><span class="o">.</span> <span class="n">These</span> <span class="n">stimuli</span> <span class="n">are</span> <span class="n">defined</span> <span class="n">using</span> <span class="n">a</span> <span class="n">generative</span> <span class="n">model</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">based</span> <span class="n">on</span> <span class="n">controlled</span> <span class="n">experimental</span> <span class="n">parametrization</span><span class="o">.</span> <span class="n">We</span> <span class="n">show</span> <span class="n">that</span> <span class="n">Motion</span> <span class="n">Clouds</span> <span class="n">correspond</span> <span class="n">to</span> <span class="n">dense</span> <span class="n">mixing</span> <span class="n">of</span> <span class="n">localized</span> <span class="n">moving</span> <span class="n">gratings</span> <span class="k">with</span> <span class="n">random</span> <span class="n">positions</span><span class="o">.</span> <span class="n">Their</span> <span class="k">global</span> <span class="n">envelope</span> <span class="ow">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">natural</span><span class="o">-</span><span class="n">like</span> <span class="n">stimulation</span> <span class="k">with</span> <span class="n">an</span> <span class="n">approximate</span> <span class="n">full</span><span class="o">-</span><span class="n">field</span> <span class="n">translation</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">a</span> <span class="n">retinal</span> <span class="n">slip</span><span class="o">.</span> <span class="n">We</span> <span class="n">describe</span> <span class="n">the</span> <span class="n">construction</span> <span class="n">of</span> <span class="n">these</span> <span class="n">stimuli</span> <span class="n">mathematically</span> <span class="ow">and</span> <span class="n">propose</span> <span class="n">an</span> <span class="nb">open</span><span class="o">-</span><span class="n">source</span> <span class="n">Python</span><span class="o">-</span><span class="n">based</span> <span class="n">implementation</span><span class="o">.</span> <span class="n">Examples</span> <span class="n">of</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">this</span> <span class="n">framework</span> <span class="n">are</span> <span class="n">shown</span><span class="o">.</span> <span class="n">We</span> <span class="n">also</span> <span class="n">propose</span> <span class="n">extensions</span> <span class="n">to</span> <span class="n">other</span> <span class="n">modalities</span> <span class="n">such</span> <span class="k">as</span> <span class="n">color</span> <span class="n">vision</span><span class="p">,</span> <span class="n">touch</span><span class="p">,</span> <span class="ow">and</span> <span class="n">audition</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sanz</span><span class="o">-</span><span class="n">Leon</span><span class="p">,</span> <span class="n">Paula</span> <span class="ow">and</span> <span class="n">Vanzetta</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Masson</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span> <span class="n">S</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Perrinet</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span> <span class="n">U</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Article</span><span class="o">-</span><span class="n">Id</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10461699</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">0</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1152</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">jn</span><span class="o">.</span><span class="n">physiology</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">early</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="o">.</span><span class="n">abstract</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">jn</span><span class="o">.</span><span class="n">physiology</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">early</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="o">.</span><span class="n">full</span><span class="o">.</span><span class="n">pdf</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">view</span><span class="o">.</span><span class="n">ncbi</span><span class="o">.</span><span class="n">nlm</span><span class="o">.</span><span class="n">nih</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">pubmed</span><span class="o">/</span><span class="mi">22423003</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">4</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">hubmed</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">display</span><span class="o">.</span><span class="n">cgi</span><span class="err">?</span><span class="n">uids</span><span class="o">=</span><span class="mi">22423003</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Added</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">31</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">31</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Day</span> <span class="o">=</span> <span class="p">{</span><span class="mi">14</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1152</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1522</span><span class="o">-</span><span class="mi">1598</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Journal</span> <span class="n">of</span> <span class="n">Neurophysiology</span><span class="p">},</span>
+	<span class="n">Keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">bicv</span><span class="o">-</span><span class="n">sparse</span><span class="p">,</span> <span class="n">freemove</span><span class="p">,</span> <span class="n">kaplan13</span><span class="p">,</span> <span class="n">motion</span><span class="o">-</span><span class="n">clouds</span><span class="p">,</span> <span class="n">sanz12jnp</span><span class="p">,</span> <span class="n">vacher14</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="n">mar</span><span class="p">,</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">11</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3217</span><span class="o">--</span><span class="mi">3226</span><span class="p">},</span>
+	<span class="n">Pmid</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22423003</span><span class="p">},</span>
+	<span class="n">Priority</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">American</span> <span class="n">Physiological</span> <span class="n">Society</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Motion</span> <span class="n">clouds</span><span class="p">:</span> <span class="n">model</span><span class="o">-</span><span class="n">based</span> <span class="n">stimulus</span> <span class="n">synthesis</span> <span class="n">of</span> <span class="n">natural</span><span class="o">-</span><span class="n">like</span> <span class="n">random</span> <span class="n">textures</span> <span class="k">for</span> <span class="n">the</span> <span class="n">study</span> <span class="n">of</span> <span class="n">motion</span> <span class="n">perception</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1152</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">107</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2012</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1152</span><span class="o">/</span><span class="n">jn</span><span class="mf">.00737.2011</span><span class="p">}}</span>
+
+<span class="nd">@article</span><span class="p">{</span><span class="n">Oliphant07</span><span class="p">,</span>
+	<span class="n">Abstract</span> <span class="o">=</span> <span class="p">{</span><span class="n">By</span> <span class="n">itself</span><span class="p">,</span> <span class="n">Python</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">excellent</span> <span class="s2">"steering"</span> <span class="n">language</span> <span class="k">for</span> <span class="n">scientific</span> <span class="n">codes</span> <span class="n">written</span> <span class="ow">in</span> <span class="n">other</span> <span class="n">languages</span><span class="o">.</span> <span class="n">However</span><span class="p">,</span> <span class="k">with</span> <span class="n">additional</span> <span class="n">basic</span> <span class="n">tools</span><span class="p">,</span> <span class="n">Python</span> <span class="n">transforms</span> <span class="n">into</span> <span class="n">a</span> <span class="n">high</span><span class="o">-</span><span class="n">level</span> <span class="n">language</span> <span class="n">suited</span> <span class="k">for</span> <span class="n">scientific</span> <span class="ow">and</span> <span class="n">engineering</span> <span class="n">code</span> <span class="n">that</span><span class="s1">'s often fast enough to be immediately useful but also flexible enough to be sped up with additional extensions.},</span>
+	<span class="n">Address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Los</span> <span class="n">Alamitos</span><span class="p">,</span> <span class="n">CA</span><span class="p">,</span> <span class="n">USA</span><span class="p">},</span>
+	<span class="n">Author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Oliphant</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="n">E</span><span class="o">.</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Article</span><span class="o">-</span><span class="n">Id</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5662279</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">0</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.58</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">ieeecomputersociety</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.58</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">mcse</span><span class="mf">.2007.58</span><span class="p">},</span>
+	<span class="n">Citeulike</span><span class="o">-</span><span class="n">Linkout</span><span class="o">-</span><span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ieeexplore</span><span class="o">.</span><span class="n">ieee</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">xpls</span><span class="o">/</span><span class="nb">abs</span>\<span class="n">_all</span><span class="o">.</span><span class="n">jsp</span><span class="err">?</span><span class="n">arnumber</span><span class="o">=</span><span class="mi">4160250</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Added</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Date</span><span class="o">-</span><span class="n">Modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2016</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mi">0000</span><span class="p">},</span>
+	<span class="n">Day</span> <span class="o">=</span> <span class="p">{</span><span class="mi">01</span><span class="p">},</span>
+	<span class="n">Doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.58</span><span class="p">},</span>
+	<span class="n">Institution</span> <span class="o">=</span> <span class="p">{</span><span class="n">Brigham</span> <span class="n">Young</span> <span class="n">Univ</span><span class="o">.</span><span class="p">,</span> <span class="n">Provo</span><span class="p">},</span>
+	<span class="n">Issn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1521</span><span class="o">-</span><span class="mi">9615</span><span class="p">},</span>
+	<span class="n">Journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Computing</span> <span class="ow">in</span> <span class="n">Science</span> <span class="ow">and</span> <span class="n">Engineering</span><span class="p">},</span>
+	<span class="n">Keywords</span> <span class="o">=</span> <span class="p">{</span><span class="n">assofield</span><span class="p">,</span> <span class="n">bicv</span><span class="o">-</span><span class="n">motion</span><span class="p">,</span> <span class="n">bicv</span><span class="o">-</span><span class="n">sparse</span><span class="p">,</span> <span class="n">kaplan13</span><span class="p">,</span> <span class="n">khoei13jpp</span><span class="p">,</span> <span class="n">perrinet12pred</span><span class="p">,</span> <span class="n">python</span><span class="p">,</span> <span class="n">reproducible</span><span class="o">-</span><span class="n">science</span><span class="p">,</span> <span class="n">thesis</span><span class="p">},</span>
+	<span class="n">Month</span> <span class="o">=</span> <span class="n">may</span><span class="p">,</span>
+	<span class="n">Number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span>
+	<span class="n">Pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="o">--</span><span class="mi">20</span><span class="p">},</span>
+	<span class="n">Priority</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span>
+	<span class="n">Publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">IEEE</span> <span class="n">Computer</span> <span class="n">Society</span><span class="p">},</span>
+	<span class="n">Title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Python</span> <span class="k">for</span> <span class="n">Scientific</span> <span class="n">Computing</span><span class="p">},</span>
+	<span class="n">Url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.58</span><span class="p">},</span>
+	<span class="n">Volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">},</span>
+	<span class="n">Year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2007</span><span class="p">},</span>
+	<span class="n">Bdsk</span><span class="o">-</span><span class="n">Url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">dx</span><span class="o">.</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">MCSE</span><span class="mf">.2007.58</span><span class="p">}}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting /tmp/thesis.bib
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="merging-all-notebooks">merging all notebooks<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#merging-all-notebooks">¶</a>
+</h3>
+<p>From all dated notebooks, we slected the one to be included in the report and ordered theme according to a hierarchical naming schemes that allowed to easily glob them:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span> <span class="c1"># manual mode</span>
+    <span class="n">nb_list</span> <span class="o">=</span><span class="p">[</span><span class="s1">'1-Introduction.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.1_NeuralNetworks_SpikingNeuronModel.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.2_NeuralNetworks_Brian_OneNeuron.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.3_NeuralNetworks_Brian.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.4_NeuralNetworks_Nest.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.5_NeuralNetworks_pyNN_CODAvsCUBA.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.1.6_FeedForward_Exploration_I-Fcurve.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.10_RRNN_Exploration_Curve_Sparseness.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.11_RRNN_Exploration_Curve_G.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.12_RRNN_Rasterplot_G.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.1_RRNN_Presentation.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.2_RRNN_Exploration_control cell parameters.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.3_RRNN_Exploration_ModelExpVSAlpha.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.4_RRNN_Rasterplot_InputVariation.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.5_RRNN_Rasterplot_InputWeight.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.6_RRNN_Exploration_I-Fcurve.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.7_RRNN_Rasterplot_CheckingInvariants.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.8_RRNN_Rasterplot_GlobalWeight_Variation.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.2.9_RRNN_Exploration_Curve_Weights.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.3.1_RRNN_BalancedStates_MultiOptimisation_Intro.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.3.2_RRNN_BalancedStates_MultiOptimisation_DifferentWeight.ipynb'</span><span class="p">,</span> 
+<span class="s1">'2.3.3_RRNN_BalancedStates_MultiOptimisation_DifferentG.ipynb'</span><span class="p">,</span> 
+<span class="s1">'3.1.1_Ring Intro.ipynb'</span><span class="p">,</span> 
+<span class="s1">'3.2.1_Ring Tuned input.ipynb'</span><span class="p">,</span> 
+<span class="s1">'3.2.2_Ring Tuned input Homogeneous weight.ipynb'</span><span class="p">,</span> 
+<span class="s1">'3.2.3_Ring Tuned_Bandwidths.ipynb'</span><span class="p">,</span> 
+             <span class="p">]</span>    
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">nb_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="kn">import</span> <span class="nn">glob</span>
+    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*.ipynb'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span>  <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">]:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">', "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="p">)</span>
+            <span class="n">nb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>'1.0-Introduction.ipynb', 
+'1.1-Plan.ipynb', 
+'2.0.0_SpikingNeuronModels.ipynb', 
+'2.1.1_NeuralNetworks_SpikingNeuronModel.ipynb', 
+'2.1.2_NeuralNetworks_Brian_OneNeuron.ipynb', 
+'2.1.3_NeuralNetworks_Brian.ipynb', 
+'2.1.4_NeuralNetworks_Nest.ipynb', 
+'2.1.5_NeuralNetworks_pyNN_CODAvsCUBA.ipynb', 
+'2.1.6_FeedForward_Exploration_I-Fcurve.ipynb', 
+'2.2.1_RRNN_Presentation.ipynb', 
+'2.2.2_RRNN_Exploration_control cell parameters.ipynb', 
+'2.2.3_RRNN_Exploration_ModelExpVSAlpha.ipynb', 
+'2.2.4_RRNN_Rasterplot_InputVariation.ipynb', 
+'2.2.5_RRNN_Rasterplot_CheckingInvariants.ipynb', 
+'2.2.6_RRNN_Rasterplot_GlobalWeight_Variation.ipynb', 
+'2.2.7_RRNN_Exploration_Curve_Weights.ipynb', 
+'2.2.8_RRNN_Exploration_Curve_Sparseness.ipynb', 
+'2.2.9_RRNN_Exploration_Curve_G.ipynb', 
+'2.3.1_RRNN_BalancedStates_MultiOptimisation_Intro.ipynb', 
+'2.3.3_RRNN_BalancedStates_MultiOptimisation_DifferentG.ipynb', 
+'3.1.1_Ring Intro.ipynb', 
+'3.2.1_Ring UnTuned = input + feed-forward.ipynb', 
+'3.2.2_Ring UnTuned input Homogeneous weight.ipynb', 
+'3.2.3_Ring UnTuned_Bandwidths.ipynb', 
+'3.2.4_Ring Untuned_FittingResponse.ipynb', 
+'3.3.1_Ring_FeedForwardvsRecurrent-Rasterplots.ipynb', 
+'3.3.2_Ring recurrent_Bandwidths.ipynb', 
+'3.3.3_Ring recurrent_FittingResponse.ipynb', 
+'4.1_Discussion et perspectives.ipynb', 
+'4.2_These.ipynb', 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This also gives the outline of the thesis.</p>
+<h4 id="stripping-the-first-block">stripping the first block<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#stripping-the-first-block">¶</a>
+</h4>
+<p>When working on a notebook, you want to be free to experiment new things or to be able to test code bits. By convention, we chose to define a "serious block" the rest being stripped of the the final report. by convention, we chose to keep only the cells :</p>
+<ul>
+<li>starting with the first to begin with a section (that is with a <code>#</code>)</li>
+<li>stoping with the next cell to begin with a section (that is with a <code>#</code>)</li>
+</ul>
+<p>We can experiment how to read for instance one notebook:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'1.0-Introduction.ipynb'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+<span class="n">nb</span><span class="o">.</span><span class="n">cells</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">)]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'Number of cells: '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of cells:  13
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And define different blocks:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'1.0-Introduction.ipynb'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>    
+<span class="n">blocks</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'#'</span><span class="p">:</span> 
+            <span class="n">blocks</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'-----'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'-----'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'metadata': {}, 'source': '## figures / autre notes\n\n(Les caractéristiques de la réponse de la plupart des neurones sélectifs à l\'orientation, ont également été étudiées. Il existe une certaine diversité dans la courbe d\'accord de ces neurones. En effet, la largeur de bande ou "bandwidth" de cette courbe varie d\'un neurone à l\'autre. Ainsi, la discriminabilité de l\'orientation par les neurones du cortex visuel primaire n\'est pas uniforme. Cette caractéristique a un effet direct sur le codage des orientations présentes dans un stimulus visuel . Les stimuli ne contenant qu\'une seule orientation sont mieux codés par les neurones les plus sélectifs. A contrario, les stimuli riches en orientations sont mieux représentés par l\'activité des neurones les moins sélectifs &lt;cite data-cite="Goris_2015"&gt;(Goris, 2015)&lt;/cite&gt;.)\n\n![](figs/orientation_tuning.png) \nAinsi, la perception des orientations contenues dans les différents stimuli visuels doit dépendre également de propriétés quantitatives que nous nous proposons d\'étudier dans ce travail.\n\n\n\n\n\nParamètres pour balanced states :\n\n* g = 4\n* w_in = 0.015\n* w = 0.04\n* s = 1\n* c = 0.015\n* p = 0.8\n* n = 1080', 'cell_type': 'markdown'}
+-----
+0
+-----
+%load_ext autoreload
+%autoreload 2
+
+%matplotlib inline
+import numpy as np
+-----
+1
+-----
+# Introduction
+
+## Motivation
+
+Une entité ne peut être vivante si elle n'interagit pas avec son environnement. La vie, réduit à son plus simple appareil, comporte du code génétique. Pour se perpétuer, ce code génétique doit permettre de produire des molécules qui vont former le matériel nécessaire à sa protection, à son alimentation et enfin à sa reproduction. La cellule remplit ces rôles, aussi, sa membrane et les protéines qui la constituent lui permettent de jouer un rôle d'interface entre le code génétique et l'environnement. Il apparait que la notion d'interface soit importante dans le vivant. Ainsi, l'interface se conserve et se sophistique, au fil de nombreuses mutations du code génétique et de la sélection naturelle. Cette dernière va permettre l'émergence d'interfaces de plus en plus élaborées, qui vont offrir de multiples manières de filtrer l'environnement et des moyens d'explorer celui-ci.
+
+Avec l'apparition des organismes pluricellulaires et des moyens de communications entre les cellules, les cellules se spécialisent, s'assemblent et constituent des tissus cellulaires, des organes et des systèmes qui vont permettre à l'ensemble de l'organisme d'interagir, d'une manière spécifique au système considéré, avec l'environnement. Le système nerveux en est un exemple. En effet, celui-ci permet de traiter des informations externes ou internes, et une partie de ce traitement comprend diverses fonctions que l'on regroupe dans le concept de perception.
+
+Selon l'approche neurophysiologique de la vision, la perception visuelle est construite sur la photosensibilité de certaines cellules, les cônes et les bâtonnets. Ces cellules et d'autres comme, par exemple, les cellules ganglionnaires, forment la rétine tapissant le fond de l'oeil où, à tout instant, une image de l'environnement se projette. Les cellules photosensibles vont permettre d'encoder les variations locales de luminosité composant l'image en variations de potentiel membranaire. Ces variations de potentiel vont ensuite être codées en influx nerveux qui vont être transmis dans le réseau rétinien pour y être transformés. Les informations visuelles arrivent alors au niveau du cortex visuel primaire via les entrées thalamiques. L'organisation de ce cortex est rétinotopique. Ainsi, l'activité du cortex visuel primaire représente l'espace visuel, composé d'éléments locaux comme, par exemple, les bords orientés et les couleurs. Une question se pose alors lorsqu'on cherche à associer ce substrat biologique à la perception visuelle : comment le système nerveux central réalise l'intégration de ces éléments locaux afin de constuire un percept global ?
+
+Afin de répondre à cette large problématique, il convient de s'intéresser aux divers constituants de l'image composante par composante. Ainsi, le travail qui vous est présenté est dédié à l'étude de la détection d'orientations. Il s'incrit dans un projet interdisciplinaire porté par l'équipe InViBe au sein de l'Institut de Neurosciences de la Timone. Ce projet prévoit, outre diverses expérimentations chez l'animal, une approche computationnelle des mécanismes impliqués dans cette détection d'orientations, qui constitue l'objet de ce travail.
+
+## Contexte scientifique
+
+### Organisation des orientations
+Des électrophysiologistes tels que Hubel et Wiesel ont mis en évidence, chez le chat, que des colonnes corticales du cortex visuel primaire ont une sensibilité préférentielle à une orientation possible de barres de contraste&lt;cite data-cite="Hubel"&gt;(Hubel, Wiesel, 1962)&lt;/cite&gt;. L'avancée des études sur la sélectivité à l'orientation des neurones corticaux, montrent que le cortex visuel primaire des mammifères carnivores et des primates est comme une carte, où les neurones de même sélectivité à l'orientation sont regroupés en domaines d'iso-orientation. L'organisation particulière de ces domaines ou îlots donne lieu à des propriétés remarquables. En effet, il existe différents voisinages d'un neurone se trouvant dans le cortex visuel primaire. Si celui-ci se trouve à l'intérieur des îlots, il est à proximité de neurones de même, ou proche, sélectivité à l'orientation. Si, en revanche, toutes les orientations sont codées par son voisinage, alors il est à l'intérieur des fractures (ou pinwheels), où la sélectivité à l'orientation varie rapidement &lt;cite data-cite="ohki"&gt;(Ohki et al., 2006)&lt;/cite&gt; &lt;cite data-cite="grinvald"&gt;(Bonhoeffer, Grinvald 1991)&lt;/cite&gt;. Dans le cortex visuel primaire du rongeur, il n'existe pas de domaines d'iso-orientation, le voisinage d'un neurone quelconque est alors de la deuxième espèce citée.
+
+### Réponse à une orientation
+
+De telles organisations suscitent des hypothèses quant à l'intégration des informations sur l'orientation au sein des colonnes corticales du cortex visuel primaire.
+Une d'entre elles postule que la probablité de connexion entre les neurones du cortex visuel primaire est exclusivement dépendante de leur distance anatomique &lt;cite data-cite="das"&gt;(Das, Gilbert 1999)&lt;/cite&gt;. Ce qui signifie que, dans le cas admis où il existe des connexions récurrentes et latérales au niveau cortical, les neurones à l'intérieur des domaines d'iso-orientation intègrent des informations provenant de neurones de même préférence à l'orientation. Ainsi, la réponse de ces neurones est fortement sélective et est robuste à la richesse en orientations d'un stimulus. Cela veut dire également qu'à proximité des fractures, et dans le cortex visuel primaire du rat, les neurones devraient avoir une faible sélectivité à l'orientation car ils intègrent les informations provenant de neurones sélectifs à différentes orientations. Ce n'est pourtant pas ce qui est montré expérimentalement. Une étude explique alors ce paradoxe. En effet, il a été théoriquement démontré que la réponse de ces neurones, supposés peu sélectifs, peut être plus sélective à l'orientation si le réseau du cortex visuel primaire est dans un état balancé entre l'excitation et l'inhibition &lt;cite data-cite="HanselVan"&gt;(Hansel, Van Vreeswijk 2012)&lt;/cite&gt;.
+
+Nous nous proposons donc d'étudier la réponse d'un réseau de neurones artificiel, un ring, à différents stimuli visuels, des motion clouds &lt;cite data-cite="Leon12"&gt;(Leon)&lt;/cite&gt;, dont nous ferons alors varier la richesse en orientations. En effet, le contenu en orientations de chaque stimulus peut être défini de façon quantitative en modulant une certaine valeur de bandwidth $B_\theta$ caractérisant l'entrée visuelle. Le but est d'implémenter le réseau, de façon à ce qu'il possède des propriétés similaires à celles évoquées plus haut concernant le cortex visuel primaire. Nous comparerons alors la réponse de ce réseau à des données physiologiques.
+
+
+![Réseau de neurones organisé en "ring".](/tmp/ring_model.png)
+-----
+2
+-----
+## figures / autre notes
+
+(Les caractéristiques de la réponse de la plupart des neurones sélectifs à l'orientation, ont également été étudiées. Il existe une certaine diversité dans la courbe d'accord de ces neurones. En effet, la largeur de bande ou "bandwidth" de cette courbe varie d'un neurone à l'autre. Ainsi, la discriminabilité de l'orientation par les neurones du cortex visuel primaire n'est pas uniforme. Cette caractéristique a un effet direct sur le codage des orientations présentes dans un stimulus visuel . Les stimuli ne contenant qu'une seule orientation sont mieux codés par les neurones les plus sélectifs. A contrario, les stimuli riches en orientations sont mieux représentés par l'activité des neurones les moins sélectifs &lt;cite data-cite="Goris_2015"&gt;(Goris, 2015)&lt;/cite&gt;.)
+
+![](figs/orientation_tuning.png) 
+Ainsi, la perception des orientations contenues dans les différents stimuli visuels doit dépendre également de propriétés quantitatives que nous nous proposons d'étudier dans ce travail.
+
+
+
+
+
+Paramètres pour balanced states :
+
+* g = 4
+* w_in = 0.015
+* w = 0.04
+* s = 1
+* c = 0.015
+* p = 0.8
+* n = 1080
+-----
+3
+-----
+## brouillon
+
+- chez primates et carnivores : 2 zones anatomo-fonctionnelles différentes : pinwheel et intérieur d'un patch
+- chez rat : pas d'iso-orientation
+
+gradient de sélectivité :
+couche 4 : peu de sélectivité
+couche 2-3 : bcp de sélectivité
+
+problématique dans l'intégration de la réponse :
+
+on pense que neurones à certaines PO intègrent des réponses d'autres neurones de même PO
+mais ça c'est valide qu'à l'intérieur d'un patch
+qu'en est il pour le pinwheel???
+
+- si probabilité de connexion dépend uniquement de proximité anatomique : les neurones dans pinwheel sont peu sélectifs à l'orientation
+
+- du coup V1 balancé pourrait avoir SO
+
+- plusieurs stimuli gratings, mc dont la réponse a V1 à ceux ci permet d'infirmer une des deux hypothèses.
+
+
+
+
+
+
+
+-----
+3
+-----
+import matplotlib.pyplot as plt
+
+def envelope(th, theta, B_theta):
+    if B_theta==np.inf:
+        env = np.ones_like(th) 
+    elif B_theta==0:
+        env = np.zeros_like(th)
+        env[np.argmin(th &lt; theta)] = 1.
+    else:
+        env = np.exp((np.cos(2*(th-theta))-1)/4/B_theta**2)
+    return env/env.max()        
+
+N_theta = 12
+bins = 180
+th = np.linspace(0, np.pi, bins, endpoint=False)
+fig, axs = plt.subplots(1, 2, figsize=(8, 5))
+for i, B_theta_ in enumerate([np.pi/12, np.pi/4]):#[0, np.pi/64, np.pi/32, np.pi/16, np.pi/8, np.pi/4, np.pi/2, np.inf]:
+    for theta, color in zip(np.linspace(0, np.pi, N_theta, endpoint=False), 
+                            [plt.cm.hsv(h) for h in np.linspace(0, 1, N_theta)]):
+        axs[i].plot(th*180/np.pi, envelope(th, theta, B_theta_), alpha=.6, color=color, lw=3)
+        axs[i].fill_between(th*180/np.pi, 0, envelope(th, theta, B_theta_), alpha=.1, color=color)
+    axs[i].set_xlim([0, 180])
+    axs[i].set_ylim([0, 1.1])
+    axs[i].set_xticks(np.linspace(0, 180, 5, endpoint=True) )#to specify number of tick…
+fig.savefig('../figs/tuning_functions.png', dpi = 600)
+
+-----
+3
+-----
+from IPython.display import FileLink, FileLinks
+FileLinks('.')
+-----
+3
+-----
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle, Arrow
+from matplotlib.colors import hsv_to_rgb
+
+def model(future=False):
+    fig = plt.figure(figsize=(8, 8))
+
+    ax2 = fig.add_subplot(111, alpha=0., axis_bgcolor=(1,1,1,0))
+    ax = fig.add_subplot(111, projection='polar', alpha=0., axis_bgcolor=(1,1,1,0))
+
+    opts= dict(ha='center', fontsize=14)
+    N = 24
+    s = 42
+    theta = np.linspace(0, 2*np.pi, N+1, endpoint=True)
+
+    ## connexions
+    N_arrow = 3
+    dthetas = alphas = np.linspace(-N_arrow, N_arrow, 2*N_arrow+1, endpoint=True)
+    dthetas *= 1.75*np.pi/N
+    alphas = np.exp( - alphas**2/ .4**2 / 2)
+    #print(alphas)
+    for dtheta, alpha in zip(dthetas, alphas):
+        plt.arrow(np.pi/2, 1.4, dtheta, -.2, color='k', alpha=alpha)
+
+        plt.arrow(0, 1.1, dtheta, -.1, color='r', alpha=alpha)
+        plt.arrow(0, 1.1, dtheta, 0., color='r', alpha=alpha)
+
+        plt.arrow(np.pi, .9, dtheta, .1, color='b', alpha=alpha)
+        plt.arrow(np.pi, .9, dtheta, 0., color='b', alpha=alpha)
+        #set_connectionstyle("arc,angleA=0,armA=30,rad=10")
+        #set_arrowstyle("Fancy,head_length=0.2")
+
+    ## neurones
+    colors = theta
+    for r, c in zip([.9, 1.1, 1.4], ['b', 'r', 'k']):
+        ax.plot(theta, r*np.ones_like(theta), c=c, alpha=.4)
+        c = ax.scatter(theta[:-1], r*np.ones_like(theta[:-1]), c=c, s=s)
+        #c.set_alpha(0.15)
+
+    ## entrée
+    N = 1080
+    theta = np.linspace(0, 2*np.pi, N)
+    ax.fill_between(theta, 1.45, 1.45 + envelope(theta/2, np.pi/4, np.pi/24)/2.5, lw=0, color='g', alpha=.3)
+
+    ax.set_ylim((0, 1.85))
+
+    ax.text(-np.pi/2, 1.25, 'Excitateurs', **opts)
+    ax.text(-np.pi/2, .8, 'Inhibiteurs', **opts)
+    if future:
+
+        ax.text(np.pi/2, 1.6, 'Entrée\ndirectionnelle', **opts)
+        ax.text(-np.pi/2, 1.55, 'convergence corticale', **opts)
+    else:
+        
+        ax.text(np.pi/2, 1.6, 'Entrée\norientationnelle', **opts)
+        ax.text(-np.pi/2, 1.55, 'convergence thalamo-corticale', **opts)
+
+    N = 12
+    for theta in np.linspace(0, 2*np.pi, N, endpoint=False):
+        r, angle, l = .15, theta, .1
+        if future:
+            ax2.add_patch(Arrow((r-l/2)*np.sin(angle)+.5, (r-l/2)*np.cos(angle)+.5, l*np.sin(angle), l*np.cos(angle), width=.06, color='k'))
+        else:
+            ax2.add_patch(Rectangle([r*np.sin(angle)+.5, r*np.cos(angle)+.5], .01, .04, angle=theta/2*180/np.pi, color=hsv_to_rgb([theta/2/np.pi, 1, 1])))            
+
+    for ax_ in [ax, ax2]:
+        ax_.grid(False, axis='both')
+
+        ax_.set_xticks([])
+        ax_.set_yticks([])
+        ax_.set_axis_off()
+    
+    fig.subplots_adjust(hspace = .0, wspace = .0, left=0.01, bottom=0.01, right=.99, top=.99)
+    return fig, ax
+-----
+3
+-----
+fig, ax = model()
+fig.savefig('../figs/ring_model.png', dpi=600)
+-----
+3
+-----
+fig, ax = model(future=True)
+fig.savefig('../figs/future_model.png', dpi=600)
+-----
+4
+-----
+### more code
+-----
+4
+-----
+fig = plt.figure(figsize=(8, 8))
+ax = plt.subplot(111)
+
+N = 12
+s = 42
+for theta in np.linspace(0, 2*np.pi, N, endpoint=False):
+    r, angle = .35, theta#
+    ax.add_patch(Rectangle([r*np.sin(angle-0.*np.pi/N/2)+.5, r*np.cos(angle-0.*np.pi/N/2)+.5], .01, .04, angle=theta/2*180/np.pi, color=hsv_to_rgb([theta/2/np.pi, 1, 1])))
+
+ax.grid(True, axis='both')
+
+#ax.set_xticks([])
+#ax.set_yticks([])
+#ax.set_axis_off()
+#fig.tight_layout()
+-----
+4
+-----
+from matplotlib.patches import Rectangle
+from matplotlib.colors import hsv_to_rgb
+fig = plt.figure(figsize=(8, 8))
+ax = plt.subplot(111)
+
+N = 12
+s = 42
+for theta in np.linspace(0, 2*np.pi, N, endpoint=False):
+    r, angle, l = .35, theta, .1
+    ax.add_patch(Arrow(r*np.sin(angle)+.5, r*np.cos(angle)+.5, l*np.sin(angle), l*np.cos(angle), width=.06, color='k'))
+
+ax.grid(True, axis='both')
+
+#ax.set_xticks([])
+#ax.set_yticks([])
+#ax.set_axis_off()
+#fig.tight_layout()
+-----
+4
+-----
+
+fig = plt.figure(figsize=(8, 8))
+
+ax2 = fig.add_subplot(111, alpha=0., axis_bgcolor=(1,1,1,0))
+ax = fig.add_subplot(111, projection='polar', alpha=0., axis_bgcolor=(1,1,1,0))
+
+ax2.grid(False, axis='both')
+
+## entrée
+N = 1080
+theta = np.linspace(0, 2*np.pi, N)
+ax.fill_between(theta, 1.45, 1.45 + envelope(theta/2, np.pi/4, np.pi/24)/2.5, lw=0, color='g', alpha=.3)
+
+
+N = 12
+s = 42
+for theta in np.linspace(0, 2*np.pi, N, endpoint=False):
+    r, angle = .15, theta#
+    ax2.add_patch(Rectangle([r*np.sin(angle-np.pi/N)+.5, r*np.cos(angle-np.pi/N)+.5], .01, .04, angle=theta/2*180/np.pi, color=hsv_to_rgb([theta/2/np.pi, 1, 1])))
+
+for ax_ in [ax, ax2]:
+    ax_.grid(False, axis='both')
+
+    ax_.set_xticks([])
+    ax_.set_yticks([])
+    ax_.set_axis_off()
+fig.tight_layout()    
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>we can wrap up this in one function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'1.0-Introduction.ipynb'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Keeps only the cells :</span>
+<span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
+<span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+    <span class="n">nb_out</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i_cell</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nb_out</span><span class="o">.</span><span class="n">cells</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cell</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'#'</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">start</span> <span class="o">=</span> <span class="n">i_cell</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">stop</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">):</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">i_cell</span>
+        <span class="c1">#print(start, stop, cell['source'])</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nb_out</span><span class="o">.</span><span class="n">cells</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+    <span class="c1">#print(start, stop, nb_out.cells)</span>
+    <span class="k">return</span> <span class="n">nb_out</span>
+    
+<span class="n">nb_out</span> <span class="o">=</span> <span class="n">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nb_out</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'metadata': {'language_info': {'codemirror_mode': {'version': 3, 'name': 'ipython'}, 'pygments_lexer': 'ipython3', 'name': 'python', 'mimetype': 'text/x-python', 'nbconvert_exporter': 'python', 'version': '3.5.1', 'file_extension': '.py'}, 'kernelspec': {'language': 'python', 'name': 'python3', 'display_name': 'Python 3'}, 'widgets': {'state': {}, 'version': '1.1.2'}}, 'nbformat': 4, 'cells': [{'metadata': {}, 'source': '# Introduction\n\n## Motivation\n\nUne entité ne peut être vivante si elle n\'interagit pas avec son environnement. La vie, réduit à son plus simple appareil, comporte du code génétique. Pour se perpétuer, ce code génétique doit permettre de produire des molécules qui vont former le matériel nécessaire à sa protection, à son alimentation et enfin à sa reproduction. La cellule remplit ces rôles, aussi, sa membrane et les protéines qui la constituent lui permettent de jouer un rôle d\'interface entre le code génétique et l\'environnement. Il apparait que la notion d\'interface soit importante dans le vivant. Ainsi, l\'interface se conserve et se sophistique, au fil de nombreuses mutations du code génétique et de la sélection naturelle. Cette dernière va permettre l\'émergence d\'interfaces de plus en plus élaborées, qui vont offrir de multiples manières de filtrer l\'environnement et des moyens d\'explorer celui-ci.\n\nAvec l\'apparition des organismes pluricellulaires et des moyens de communications entre les cellules, les cellules se spécialisent, s\'assemblent et constituent des tissus cellulaires, des organes et des systèmes qui vont permettre à l\'ensemble de l\'organisme d\'interagir, d\'une manière spécifique au système considéré, avec l\'environnement. Le système nerveux en est un exemple. En effet, celui-ci permet de traiter des informations externes ou internes, et une partie de ce traitement comprend diverses fonctions que l\'on regroupe dans le concept de perception.\n\nSelon l\'approche neurophysiologique de la vision, la perception visuelle est construite sur la photosensibilité de certaines cellules, les cônes et les bâtonnets. Ces cellules et d\'autres comme, par exemple, les cellules ganglionnaires, forment la rétine tapissant le fond de l\'oeil où, à tout instant, une image de l\'environnement se projette. Les cellules photosensibles vont permettre d\'encoder les variations locales de luminosité composant l\'image en variations de potentiel membranaire. Ces variations de potentiel vont ensuite être codées en influx nerveux qui vont être transmis dans le réseau rétinien pour y être transformés. Les informations visuelles arrivent alors au niveau du cortex visuel primaire via les entrées thalamiques. L\'organisation de ce cortex est rétinotopique. Ainsi, l\'activité du cortex visuel primaire représente l\'espace visuel, composé d\'éléments locaux comme, par exemple, les bords orientés et les couleurs. Une question se pose alors lorsqu\'on cherche à associer ce substrat biologique à la perception visuelle : comment le système nerveux central réalise l\'intégration de ces éléments locaux afin de constuire un percept global ?\n\nAfin de répondre à cette large problématique, il convient de s\'intéresser aux divers constituants de l\'image composante par composante. Ainsi, le travail qui vous est présenté est dédié à l\'étude de la détection d\'orientations. Il s\'incrit dans un projet interdisciplinaire porté par l\'équipe InViBe au sein de l\'Institut de Neurosciences de la Timone. Ce projet prévoit, outre diverses expérimentations chez l\'animal, une approche computationnelle des mécanismes impliqués dans cette détection d\'orientations, qui constitue l\'objet de ce travail.\n\n## Contexte scientifique\n\n### Organisation des orientations\nDes électrophysiologistes tels que Hubel et Wiesel ont mis en évidence, chez le chat, que des colonnes corticales du cortex visuel primaire ont une sensibilité préférentielle à une orientation possible de barres de contraste&lt;cite data-cite="Hubel"&gt;(Hubel, Wiesel, 1962)&lt;/cite&gt;. L\'avancée des études sur la sélectivité à l\'orientation des neurones corticaux, montrent que le cortex visuel primaire des mammifères carnivores et des primates est comme une carte, où les neurones de même sélectivité à l\'orientation sont regroupés en domaines d\'iso-orientation. L\'organisation particulière de ces domaines ou îlots donne lieu à des propriétés remarquables. En effet, il existe différents voisinages d\'un neurone se trouvant dans le cortex visuel primaire. Si celui-ci se trouve à l\'intérieur des îlots, il est à proximité de neurones de même, ou proche, sélectivité à l\'orientation. Si, en revanche, toutes les orientations sont codées par son voisinage, alors il est à l\'intérieur des fractures (ou pinwheels), où la sélectivité à l\'orientation varie rapidement &lt;cite data-cite="ohki"&gt;(Ohki et al., 2006)&lt;/cite&gt; &lt;cite data-cite="grinvald"&gt;(Bonhoeffer, Grinvald 1991)&lt;/cite&gt;. Dans le cortex visuel primaire du rongeur, il n\'existe pas de domaines d\'iso-orientation, le voisinage d\'un neurone quelconque est alors de la deuxième espèce citée.\n\n### Réponse à une orientation\n\nDe telles organisations suscitent des hypothèses quant à l\'intégration des informations sur l\'orientation au sein des colonnes corticales du cortex visuel primaire.\nUne d\'entre elles postule que la probablité de connexion entre les neurones du cortex visuel primaire est exclusivement dépendante de leur distance anatomique &lt;cite data-cite="das"&gt;(Das, Gilbert 1999)&lt;/cite&gt;. Ce qui signifie que, dans le cas admis où il existe des connexions récurrentes et latérales au niveau cortical, les neurones à l\'intérieur des domaines d\'iso-orientation intègrent des informations provenant de neurones de même préférence à l\'orientation. Ainsi, la réponse de ces neurones est fortement sélective et est robuste à la richesse en orientations d\'un stimulus. Cela veut dire également qu\'à proximité des fractures, et dans le cortex visuel primaire du rat, les neurones devraient avoir une faible sélectivité à l\'orientation car ils intègrent les informations provenant de neurones sélectifs à différentes orientations. Ce n\'est pourtant pas ce qui est montré expérimentalement. Une étude explique alors ce paradoxe. En effet, il a été théoriquement démontré que la réponse de ces neurones, supposés peu sélectifs, peut être plus sélective à l\'orientation si le réseau du cortex visuel primaire est dans un état balancé entre l\'excitation et l\'inhibition &lt;cite data-cite="HanselVan"&gt;(Hansel, Van Vreeswijk 2012)&lt;/cite&gt;.\n\nNous nous proposons donc d\'étudier la réponse d\'un réseau de neurones artificiel, un ring, à différents stimuli visuels, des motion clouds &lt;cite data-cite="Leon12"&gt;(Leon)&lt;/cite&gt;, dont nous ferons alors varier la richesse en orientations. En effet, le contenu en orientations de chaque stimulus peut être défini de façon quantitative en modulant une certaine valeur de bandwidth $B_\\theta$ caractérisant l\'entrée visuelle. Le but est d\'implémenter le réseau, de façon à ce qu\'il possède des propriétés similaires à celles évoquées plus haut concernant le cortex visuel primaire. Nous comparerons alors la réponse de ce réseau à des données physiologiques.\n\n\n![Réseau de neurones organisé en "ring".](/tmp/ring_model.png)', 'cell_type': 'markdown'}], 'nbformat_minor': 0}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="merging-notebooks">merging notebooks<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#merging-notebooks">¶</a>
+</h4>
+<p>We can now merge these blocks together in one master notebook:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_notebooks</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">filenames</span><span class="p">):</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">merged</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">merged</span> <span class="o">=</span> <span class="n">nb</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nbformat</span><span class="o">.</span><span class="n">writes</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">))</span>
+<span class="n">merge_notebooks</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">,</span> <span class="n">nb_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="converting-to-LaTeX-and-PDF">converting to LaTeX and PDF<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#converting-to-LaTeX-and-PDF">¶</a>
+</h3>
+<p>Finally, we convert this notebook using <code>nconvert</code> and the template that we defined above.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
+<span class="c1">#nb.cells[0]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbconvert</span>
+<span class="c1">#help(nbconvert.LatexExporter)</span>
+<span class="c1">#nbconvert.exporters.export_latex(nb)</span>
+<span class="kn">from</span> <span class="nn">traitlets.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="c1"># 1. Import the exporter</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">PDFExporter</span>
+<span class="c1"># 2. Instantiate the exporter. We use the `basic` template for now; we'll get into</span>
+<span class="c1"># later about how to customize the exporter further.</span>
+<span class="n">latex_exporter</span> <span class="o">=</span> <span class="n">PDFExporter</span><span class="p">()</span>
+<span class="n">latex_exporter</span><span class="o">.</span><span class="n">template_file</span> <span class="o">=</span> <span class="s1">'thesis'</span>
+<span class="n">latex_exporter</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1"># 3. Process the notebook we loaded earlier</span>
+<span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">latex_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+<span class="c1"># 4. write to file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">'.pdf'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"iso-8859-1"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"iso-8859-1"</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now enjoy reading the thesis file:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open thesis.pdf
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/ipython.html" rel="tag">ipython</a></li>
+            <li><a class="tag p-category" href="../categories/neural.html" rel="tag">neural</a></li>
+            <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2016-06-01-compiling-and-using-pynn-%2B-nest-%2B-python3.html" rel="prev" title="Compiling and using pyNN + NEST + python3">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2016-07-14_static-motion-clouds.html" rel="next" title="Static motion clouds?">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article>
+</div>
+
+  <div class="footerbox">
+    Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="../assets/js/all-nocdn.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><script>
+baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+        return element.getElementsByTagName('img')[0].alt;
+}});
+</script><!-- Abstract hide/show
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>

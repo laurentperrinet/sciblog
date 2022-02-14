@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about motionclouds)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/motionclouds.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 14 Feb 2022 08:47:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dreamachine</title><link>https://laurentperrinet.github.io/sciblog/posts/2022-01-30-dreamachine.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;It's at the &lt;a href="https://miam.org/"&gt;MIAM&lt;/a&gt; (Miam Musée International des Arts Modestes) in Sète, France, that I could for the first time experience really the &lt;a href="https://en.wikipedia.org/wiki/Dreamachine"&gt;Dreamachine&lt;/a&gt;. It's an optical system which consists of a central light which is periodically occluded by a rotating (cardboard?) cylinder.&lt;/p&gt;
+&lt;p&gt;The magic of it is that the frequency of occlusion is around $12$ Hz, an important resonant state for sensory system. For the first time, I could really try it out at the MIAM - the important point being to close your lids and rest quiet while looking at the stroboscopic light source. Surprisingly, you see the emergence of "psychedelic patterns" (of course, less than in hippie's movies) yet of the order of the color pattern that may arise in &lt;a href="https://en.wikipedia.org/wiki/Fechner_color"&gt;Benham's Disk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's difficult to reproduce this pattern on a screen, yet it is still possible to give an &lt;em&gt;impression of it&lt;/em&gt;. The goal is here :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;to generate a complex visual stimulation flickering on average at $12$ Hz&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;to project it on a retinotopic space to maximise the "psychelic" effect&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/files/2022-01-30-dreamachine/retino_alpha.gif" alt="retino_alpha"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2022-01-30-dreamachine.html"&gt;Read more…&lt;/a&gt; (16 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>grand-public</category><category>motionclouds</category><category>outreach</category><category>python</category><category>space</category><category>v1</category><guid>https://laurentperrinet.github.io/sciblog/posts/2022-01-30-dreamachine.html</guid><pubDate>Sun, 30 Jan 2022 10:33:46 GMT</pubDate></item><item><title>Generating second-order figures from texture</title><link>https://laurentperrinet.github.io/sciblog/posts/2021-01-08-generating-second-order-figures-from-texture.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The goal here is to use the &lt;a href="https://github.com/NeuralEnsemble/MotionClouds"&gt;MotionClouds&lt;/a&gt; library to generate figures with second-order contours, similar to those used in the &lt;a href="https://nin.nl/research/researchgroups/roelfsema-group/"&gt;P. Roelfsema's group&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2021-01-08-generating-second-order-figures-from-texture.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>motionclouds</category><category>orientation</category><category>python</category><category>v1</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2021-01-08-generating-second-order-figures-from-texture.html</guid><pubDate>Fri, 08 Jan 2021 10:54:45 GMT</pubDate></item><item><title>Colors of the sky</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Our sensorial environment contains multiple regularities which our brain uses to optimize its representation of the world: objects fall most of the time downwards, the nose is usually in the middle below the eyes, the &lt;em&gt;sky is blue&lt;/em&gt;... Concerning this last point, I wish here to illustrate the physical origins of this phenomenon and in particular the range of colors that you may observe in the sky.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html"&gt;Read more…&lt;/a&gt; (12 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>grand-public</category><category>math</category><category>motionclouds</category><category>numpy</category><category>open-science</category><category>outreach</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html</guid><pubDate>Sat, 04 Jul 2020 10:05:58 GMT</pubDate></item><item><title>Caustic (optics)</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Caustics (&lt;a href="https://en.wikipedia.org/wiki/Caustic_%28optics%29"&gt;wikipedia&lt;/a&gt; are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is for instance the heart-shaped pattern in your cup of coffee which is formed as the rays of the sun are reflected on the cup's surface. It is also the wiggly pattern of light curves that you will see on the floor of a pool as the sun's light is &lt;em&gt;refracted&lt;/em&gt; at the surface of the water. Here, we simulate that particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images.&lt;/p&gt;
+&lt;p&gt;In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is &lt;em&gt;very&lt;/em&gt; simple to code yet generates patterns with great complexity, such as:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"&gt; &lt;/center&gt;
+&lt;br&gt;
+
+&lt;p&gt;This is joint work with artist &lt;a href="https://laurentperrinet.github.io/authors/etienne-rey/"&gt;Etienne Rey&lt;/a&gt;, in which I especially follow the ideas put forward in the series &lt;a href="http://ondesparalleles.org/projets/turbulences/"&gt;Turbulence&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://zenodo.org/badge/latestdoi/273226625"&gt;&lt;img src="https://zenodo.org/badge/273226625.svg" alt="DOI"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>elasticite</category><category>grand-public</category><category>math</category><category>motionclouds</category><category>numpy</category><category>open-science</category><category>outreach</category><category>v1</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html</guid><pubDate>Fri, 19 Jun 2020 08:01:02 GMT</pubDate></item><item><title>Changing the global phase of a Motion Cloud</title><link>https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://neuralensemble.github.io/MotionClouds"&gt;Motion Clouds&lt;/a&gt; were defined in the origin to define parameterized moving textures. In &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-07-14_static-motion-clouds.html"&gt;that other post&lt;/a&gt;, we defined a simple code to generate static images using a simple code. Can we generate a series of images while changing the phase &lt;em&gt;globally&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/files/2020-01-08-MC_phase.gif" alt="2020-01-08-MC_phase"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motionclouds</category><category>orientation</category><category>psychophysics</category><guid>https://laurentperrinet.github.io/sciblog/posts/2020-01-08-changing-the-global-phase-of-a-motion-cloud.html</guid><pubDate>Wed, 08 Jan 2020 20:43:42 GMT</pubDate></item><item><title>Generating textures with different complexities</title><link>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This video shows different &lt;a href="https://neuralensemble.github.io/MotionClouds/"&gt;MotionClouds&lt;/a&gt; with different complexities, from a crystal-like Grating to textures with an incresing span of spatial frequencies (resp "Mc Narrow" and "MC Broad"). This is to illustrate the different stimuli used in this &lt;a href="https://laurentperrinet.github.io/publication/ravello-19"&gt;paper on the chracterization of speed-selectivity in the retina&lt;/a&gt; available @ &lt;a href="https://www.nature.com/articles/s41598-018-36861-8"&gt;https://www.nature.com/articles/s41598-018-36861-8&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2019-01-30_Ravello19_text.mp4" width="61.8%/"&gt; &lt;/video&gt;&lt;/center&gt;
+&lt;br&gt;
+
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motion-detection</category><category>motionclouds</category><category>psychophysics</category><category>retina</category><guid>https://laurentperrinet.github.io/sciblog/posts/2019-01-30__smooth-transition-between-mcs.html</guid><pubDate>Wed, 30 Jan 2019 08:06:52 GMT</pubDate></item><item><title>Feature vs global motion</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As we see a visual scene, there is contribution of the motion of each of the objects that constitute the visual scene into detecting its global motion.
+In particular, it is debatable to know which weight individual features, such as small objects in the foreground, have into this computation compared to a dense texture-like stimulus, as that of the background for instance.&lt;/p&gt;
+&lt;p&gt;Here, we design a a stimulus where we control independently these two aspects of motions to titrate their relative contribution to the detection of motion.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Can you spot the motion ? Is it more going to the upper left or to the upper right?&lt;/p&gt;
+&lt;p&gt;(For a more controlled test, imagine you fixate on the center of the movie.)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motion-detection</category><category>motionclouds</category><category>psychophysics</category><category>retina</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-29-feature-vs-global-motion.html</guid><pubDate>Thu, 29 Nov 2018 09:53:03 GMT</pubDate></item><item><title>Embedding a trajectory in noise</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Motion detection has many functions, one of which is the potential localization of the biomimetic camouflage seen in this &lt;a href="https://twitter.com/CoenCagli_Lab/status/1168565787818385408"&gt;video&lt;/a&gt;. Can we test this in the lab by using synthetic textures such as &lt;a href="https://neuralensemble.github.io/MotionClouds/"&gt;MotionClouds&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;However, by construction, MotionClouds have no spatial structure and it seems interesting to consider more complex trajectories. Following a &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html"&gt;previous post&lt;/a&gt;, we design a trajectory embedded in noise.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;center&gt;&lt;table style="width:100%"&gt;&lt;tr&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_reversed.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_shuffled.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;td&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-13-testing-more-complex/trajectory_overlay_shuffled_reversed.mp4" width="100%/"&gt;&lt;/video&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Can you spot the motion ? from left to right or reversed ?&lt;/p&gt;
+&lt;p&gt;(For a more controlled test, imagine you fixate on the top left corner of each movie.)&lt;/p&gt;
+&lt;p&gt;(Upper row is coherent, lower row uncoherent / Left is &lt;code&gt;-&amp;gt;&lt;/code&gt; Right column is &lt;code&gt;&amp;lt;-&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html"&gt;Read more…&lt;/a&gt; (12 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>code</category><category>motionclouds</category><category>trajectory</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-13-testing-more-complex-trajectories.html</guid><pubDate>Tue, 13 Nov 2018 09:43:46 GMT</pubDate></item><item><title>Statistics of the natural input to a ring model</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;figure&gt;&lt;img src="https://laurentperrinet.github.io/sciblog/files/2018-11-05_Ring_input.png"&gt;&lt;/figure&gt; &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;What does the input to a population of neurons in the primary visual cortex look like? In this post, we will try to have a feeling of the structure and statistics of the natural input to such a "ring" model.&lt;/p&gt;
+&lt;p&gt;This notebook explores this question using a retina-like temporal filtering and oriented Gabor-like filters. It produces this polar plot of the instantaneous energy in the different orientations for a natural movie :&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2018-11-05_Ring_input.mp4" width="61.8%/"&gt; &lt;/video&gt;&lt;/center&gt;
+&lt;br&gt;
+
+&lt;p&gt;One observes different striking features in the structure of this input to populations of V1 neurons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;input is sparse: often, a few orientations dominate - the shape of these components (bandwidth) seem to be similar,&lt;/li&gt;
+&lt;li&gt;there are many "switches": at some moments, the representations flips to another. This is due to cuts in the movie (changes from one scene to the other for instance). In a more realistic setting where we would add eye movements, these switches should also happen during saccades (but is there any knowledge of the occurence of the switch by the visual system?),&lt;/li&gt;
+&lt;li&gt;between switches, there is some coherence in amplitude (a component will slowly change its energy) but also in time (a component is more likely to have a ghradually changing oriantation, for instance when the scene rotates).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This structure is specific to the structure of natural images and to the way they transform (translations, rotations, zooms due to the motion and deformation of visual objects). This is certainly incorporated as a "prior" information in the structure of the visual cortex. As to know how and where this is implemented is an open scientific question.&lt;/p&gt;
+&lt;p&gt;This is joint work with &lt;a href="https://laurentperrinet.github.io/authors/hugo-ladret"&gt;Hugo Ladret&lt;/a&gt;.
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html"&gt;Read more…&lt;/a&gt; (597 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>computational neuroscience</category><category>LogGabor</category><category>machine-learning</category><category>motion</category><category>motionclouds</category><category>neural</category><category>numpy</category><category>orientation</category><category>psychophysics</category><category>v1</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html</guid><pubDate>Mon, 05 Nov 2018 14:41:07 GMT</pubDate></item><item><title>Testing more complex trajectories</title><link>https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;MotionClouds may be considered as a control stimulus - it seems more interesting to consider more complex trajectories.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>motion-detection</category><category>motionclouds</category><category>psychophysics</category><category>retina</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2018-01-16-testing-more-complex-trajectories.html</guid><pubDate>Tue, 16 Jan 2018 09:53:03 GMT</pubDate></item></channel></rss>

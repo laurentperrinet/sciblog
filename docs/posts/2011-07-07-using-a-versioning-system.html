@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>using a versioning system | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2011-07-07-using-a-versioning-system.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+<meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html" title="scripting MoinMoin to get, change or rename pages" type="text/html">
+<link rel="next" href="2011-07-08-mercurial-%26-LaTeX.html" title="mercurial &amp; LaTeX" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="using a versioning system">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2011-07-07-using-a-versioning-system.html">
+<meta property="og:description" content="Warning
+This post is certainly obsolete...
+
+
+using SubVersion (SVN)
+
+Version Control is an
+everyday tool to handle your important source files. It is useful:
+
+to grab the latest source code from open ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-07-07T13:36:57+02:00">
+<meta property="article:tag" content="macos">
+<meta property="article:tag" content="sciblog">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://laurentperrinet.github.io/sciblog/">Scientific logbook</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Home</a>
+                </li>
+<li>
+<a href="../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="http://laurentperrinet.github.io">About my research</a>
+                </li>
+<li>
+<a href="https://twitter.com/laurentperrinet">Twitter</a>
+                </li>
+<li>
+<a href="https://github.com/laurentperrinet">Github</a>
+
+        </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+        <ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><!-- pass --><li>
+    <a href="2011-07-07-using-a-versioning-system.rst" id="sourcelink">Source</a>
+    </li>
+
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">using a versioning system</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2011-07-07T13:36:57+02:00" itemprop="datePublished" title="2011-07-07 13:36">2011-07-07 13:36</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2011-07-07-using-a-versioning-system.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- TEASER_END -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
+</div>
+<div class="section" id="using-subversion-svn">
+<h2>using SubVersion (SVN)</h2>
+<!-- TEASER_END -->
+<p><a class="reference external" href="http://software-carpentry.org/version.html">Version Control</a> is an
+everyday tool to handle your important source files. It is useful:</p>
+<ul class="simple">
+<li><p>to grab the latest source code from open source projects and to
+always keep up-to-date,</p></li>
+<li><p>to share a bunch of files (a set of latex source code, python
+scripts, ...) allowing to work on different computers with different
+persons,</p></li>
+<li><p>to keep track of revisions from your project.</p></li>
+</ul>
+<div class="section" id="svn-getting-help">
+<h3>SVN: Getting help</h3>
+<ul class="simple">
+<li><p>Versions are kept in a central repository (the <strong>SVN server</strong>) while
+you work with local <strong>working copies</strong> using your SVN client.</p></li>
+<li>
+<p>Help for svn can be found in the big <a class="reference external" href="http://svnbook.red-bean.com/nightly/en/index.html">svn
+book</a>. Other
+ressources:</p>
+<ul>
+<li><p>cf.
+<a class="reference external" href="http://svnbook.red-bean.com/nightly/en/svn-book.html">http://svnbook.red-bean.com/nightly/en/svn-book.html</a></p></li>
+<li><p><a class="reference external" href="http://www.sujee.net/geeky/svn.html">http://www.sujee.net/geeky/svn.html</a></p></li>
+<li><p><a class="reference external" href="http://www.abbeyworkshop.com/howto/misc/svn01/">http://www.abbeyworkshop.com/howto/misc/svn01/</a></p></li>
+</ul>
+</li>
+<li>
+<p>Many solutions exist to integrate SVN to your file manager</p>
+<ul>
+<li><p>On MacOsX, integrate SVN to the
+<code class="docutils literal">Finder.app</code> using <a class="reference external" href="http://scplugin.tigris.org/">SCPlugin</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="svn-2-minutes-guide-using-the-commandline">
+<h3>SVN: 2 minutes guide using the commandline</h3>
+<ul>
+<li>
+<p>to just access a remote repository and make a local working copy
+("checking-out") in a local <code class="docutils literal">my_projects</code> folder, do</p>
+<pre class="literal-block">cd my_projects/
+svn checkout svn+ssh://myname@svnserver/path/to/svn/project my_localcopy</pre>
+<p>this basically copies the current version of the remote copy to your
+local computer as the folder <code class="docutils literal">my_localcopy</code>. Then, you just need to
+issue <code class="docutils literal">svn up</code> in this folder to stay up-to-date.</p>
+</li>
+<li>
+<p>to create from scratch your own folder in an existing repository (,
+do</p>
+<pre class="literal-block">cd my_projects/
+svn add new_project
+svn ci new_project -m'Committing my modifications'</pre>
+<p>. Then you just need to issue the
+<code class="docutils literal"><span class="pre">svn ci new_project -m'Committing my modifications'</span></code> command to
+commit new modifications to the server. Don't forget to
+<code class="docutils literal">svn add newfiles</code> or to <code class="docutils literal">svn rm obsolete_files</code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="random-svn-tips">
+<h3>random SVN tips</h3>
+<ul>
+<li>
+<p>roll-back to a previous version (e.g. 3421) of a file <code class="docutils literal">myfile</code>:</p>
+<pre class="literal-block">svn up -r 3421 myfile</pre>
+</li>
+<li>
+<p>Create a repository</p>
+<ul>
+<li>
+<p>use the database backend</p>
+<pre class="literal-block">svnadmin create /ih/funk/svn/projects</pre>
+</li>
+</ul>
+</li>
+<li>
+<p>use the filesystem backend</p>
+<pre class="literal-block">svnadmin create --fs-type=fsfs PATH</pre>
+</li>
+<li>
+<p>Import a revision</p>
+<pre class="literal-block">svn import -m "Initial import" Eccos file:///ih/funk/svn/projects</pre>
+</li>
+<li>
+<p>Check out a revision</p>
+<pre class="literal-block">svn co file:///ih/funk/svn/projects</pre>
+</li>
+<li>
+<p>Dump a repository</p>
+<pre class="literal-block"> svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; dump.gz
+ svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+Eccosdump%Y-%m-%d_%H:%M:%S.gz"`
+svnadmin dump /ih/funk/svn/projects | gzip -9 &gt; `date "+projects_dump%Y-%m-%d_%H:%M:%S.gz"`</pre>
+</li>
+<li>
+<p>Load contents of a dump into a repository</p>
+<pre class="literal-block">gunzip -c dump.gz | svnadmin load /data/svn/projects</pre>
+</li>
+<li>
+<p>Import from an existing directory, no need to check it out again</p>
+<ul>
+<li>
+<p>It should work, but you could also check it out right into /etc.
+Something</p>
+<p>like this:</p>
+<pre class="literal-block">$ svnadmin create /var/svnrepos/admin
+$ svn mkdir -m "initial setup" file:///var/svnrepos/admin/trunk
+c:&gt; svn mkdir -m "initial setup" file:///c:/fhs/svn_repos/trunk
+$ cd /etc
+$ svn co file:///var/svnrepos/admin/trunk .
+$ svn add passwd group
+$ svn commit -m "start loading it in"
+
+I tested the 'svn co' into '.' just now. Works great.</pre>
+</li>
+</ul>
+</li>
+<li>
+<p>svn propset</p>
+<pre class="literal-block">svn propset svn:keywords "LastChangedDate LastChangedRevision Id Author" weather.txt
+svn propset svn:keywords "LastChangedDate LastChangedRevision Id" slides.tex</pre>
+</li>
+<li>
+<p>Before an update you could use the following to get the log messages
+of the changes:</p>
+<pre class="literal-block">svn log -rBASE:HEAD</pre>
+</li>
+<li>
+<p>Upgrade to a new subversion version</p>
+<pre class="literal-block">$ mv repos repos.tmp
+$ svnadmin create repos
+$ svnadmin-old dump repos.tmp | svnadmin load repos
+$ # copy over any hook scripts and stuff from repos.tmp to repos</pre>
+</li>
+<li>
+<p>Checkout from a repository over ssh</p>
+<pre class="literal-block">svn co svn+ssh://felix/home/reichr/svn_repos/XSteveData/trunk data</pre>
+</li>
+<li>
+<p>Change the path of the repository for a working copy</p>
+<pre class="literal-block">svn switch --relocate file:///original/path/to/repos file:///new/path</pre>
+<p>WARNING: this will not work if
+<code class="docutils literal"><span class="pre">file:///original/path/to/repos</span></code> is not <em>exactly</em> the original URL.
+BE sure to check before with <code class="docutils literal">svn info</code>.</p>
+</li>
+<li>
+<p>Network a repository via svn+ssh:</p>
+<ul>
+<li>
+<p>create the repository on the repository host:</p>
+<pre class="literal-block">svnadmin create rp1  -- this is located at /home/svtest/rp1</pre>
+</li>
+<li>
+<p>Import data to the repository:</p>
+<pre class="literal-block">svn import -m"Initial import" svn+ssh://svtest@host/rp1/trunk</pre>
+</li>
+<li>
+<p>Checkout the project:</p>
+<pre class="literal-block">svn co svn+ssh://svtest@host/home/svtest/rp1/trunk p1</pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Generate a patch to undo some local changes and redo them later: What
+usually happens to me is that I've changed N files in M different &gt;
+directories distributed all over the filesystem, and I want to check
+in N-1 of them. If I need to commit all but one file, I do this:</p>
+<pre class="literal-block">% svn diff path/to/file_not_committing &gt; /tmp/patch.txt
+% svn revert path/to/file_not_committing
+% svn ci -m "committing all the stuff i wanted to"
+% patch -p0 &lt; /tmp/patch.txt</pre>
+<p>Revert is your friend. Learn it, use it, looooooooooove it.</p>
+</li>
+<li>
+<p>Revert to a previous version</p>
+<pre class="literal-block">svn co project
+&lt;edit foo.c, adding bugs&gt;
+svn ci foo.c (commits to r348)
+&lt;realize terrible error&gt;
+svn merge -r348:347 foo.c
+svn ci foo.c (commits 349)</pre>
+<p>note the ordering of the revision numbers in the merge command. what
+this really says is "make a diff between revision 348 and 347, and
+apply it immediately to foo.c" if you are trying to revert a
+directory tree with moves or deletes in it, and are getting arcane
+errors, try the --ignore-ancestry flag.</p>
+</li>
+<li>
+<p>Edit the commit/log messages after the commit Read chapter 7,
+regarding unversioned properties attached to revisions. You want to
+change the svn:log property:</p>
+<pre class="literal-block">$ svn propedit -r N --revprop svn:log URL</pre>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="an-alternative-git">
+<h2>an alternative : Git</h2>
+<ul class="simple">
+<li><p>The place to
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">begin</a>.</p></li>
+<li><p>From the SVN world:
+<a class="reference external" href="http://git-scm.com/course/svn.html">http://git-scm.com/course/svn.html</a></p></li>
+<li><p><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday</a>'s
+git.</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 55%">
+</colgroup>
+<tbody>
+<tr>
+<td><p>git clone <em>url</em></p></td>
+<td><p>svn checkout <em>url</em></p></td>
+</tr>
+<tr>
+<td><p>git pull</p></td>
+<td><p>svn up</p></td>
+</tr>
+<tr>
+<td><p>git commit</p></td>
+<td><p>svn commit</p></td>
+</tr>
+<tr>
+<td><p>git push <em>url</em></p></td>
+<td><p><em>(no such a thing)</em></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>to set-up</p>
+<pre class="literal-block">git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="using-git-with-svn">
+<h2>using Git with SVN</h2>
+<ul>
+<li>
+<p>install git-svn and use</p>
+<pre class="literal-block">git svn fetch</pre>
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/macos.html" rel="tag">macos</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2011-07-06-scripting-MoinMoin-to-get-change-or-rename-pages.html" rel="prev" title="scripting MoinMoin to get, change or rename pages">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2011-07-08-mercurial-%26-LaTeX.html" rel="next" title="mercurial &amp; LaTeX">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+
+  <div class="footerbox">
+    Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="../assets/js/all-nocdn.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><script>
+baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+        return element.getElementsByTagName('img')[0].alt;
+}});
+</script><!-- Abstract hide/show
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>

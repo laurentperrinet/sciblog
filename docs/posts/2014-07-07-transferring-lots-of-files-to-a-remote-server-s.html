@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>transferring (lots of) files to a remote server + saving space | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+<meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2014-06-25-animation-in-a-notebook.html" title="animation-in-a-notebook" type="text/html">
+<link rel="next" href="2014-10-08_moving-from-mayavi-to-matplotlib.html" title="Moving from Mayavi to Matplotlib" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="transferring (lots of) files to a remote server + saving space">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html">
+<meta property="og:description" content="I have recently been asked how to transfer lots of file from a backup server to a local disk. The context is that
+
+the backup is an archive to be put on an external hard drive and then in a closet for">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-07-07T10:31:28+02:00">
+<meta property="article:tag" content="hardlink">
+<meta property="article:tag" content="int">
+<meta property="article:tag" content="rsync">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://laurentperrinet.github.io/sciblog/">Scientific logbook</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Home</a>
+                </li>
+<li>
+<a href="../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="http://laurentperrinet.github.io">About my research</a>
+                </li>
+<li>
+<a href="https://twitter.com/laurentperrinet">Twitter</a>
+                </li>
+<li>
+<a href="https://github.com/laurentperrinet">Github</a>
+
+        </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+        <ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><!-- pass --><li>
+    <a href="2014-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb" id="sourcelink">Source</a>
+    </li>
+
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">transferring (lots of) files to a remote server + saving space</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2014-07-07T10:31:28+02:00" itemprop="datePublished" title="2014-07-07 10:31">2014-07-07 10:31</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2014-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have recently been asked how to transfer lots of file from a backup server to a local disk. The context is that</p>
+<ol>
+<li>the backup is an archive to be put on an external hard drive and then in a closet for future use,</li>
+<li>the transfer line is not quite reliable and transfers may stop (for instance if it is mounted as a samba / windows / applefile share)</li>
+</ol>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="rsync">rsync<a class="anchor-link" href="2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html#rsync">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The solution is to use the beloved <code>rsync</code> tool:</p>
+<p>In its most simple form, you use this command in the termina:</p>
+
+<pre><code>rsync -av  $INPUT  $OUTPUT
+
+</code></pre>
+<p>Where <code>-av</code>stands for "keep file attributes and be (not too) verbose", <code>$INPUT</code> is the folder containing the files to be backed up, <code>$OUTPUT</code> is the destination folder. Be careful to avoid a trailing slash in <code>$INPUT</code>, unless you want the files that reside within the folder to be transferred instead of the folder itself.</p>
+<p>One huge advantage is that <code>$INPUT</code> or <code>$OUTPUT</code> can contain a remote server in the form of <code>myname@remoteserver:/path/to/my/folder</code>.</p>
+<p>An additional, useful option is <code>--dry-run</code> to try the command without moving the files. Also <code>--progress</code> gives a bit more info.</p>
+<p>Let's try it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+rsync -av  --progress --dry-run perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex /Volumes/3tera/backups/12_backups/
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>receiving incremental file list
+alex/
+alex/bruitlolo_090319.mat
+alex/lolo.mat
+alex/lolo2.mat
+alex/lolocenter.mat
+alex/lolofrozenpixel.mat
+alex/worloloofr.mat
+alex/.AppleDouble/
+alex/.AppleDouble/.Parent
+alex/.AppleDouble/bruitlolo_090319.mat
+alex/.AppleDouble/lolo.mat
+alex/.AppleDouble/lolo2.mat
+alex/.AppleDouble/lolocenter.mat
+alex/.AppleDouble/lolofrozenpixel.mat
+alex/.AppleDouble/worloloofr.mat
+
+sent 58 bytes  received 422 bytes  960.00 bytes/sec
+total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All good! We could connect to the server and the folder names were apparently correct. Let's use another option to exclude some files:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
+<span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
+rsync -av --dry-run  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>receiving incremental file list
+alex/
+alex/bruitlolo_090319.mat
+alex/lolo.mat
+alex/lolo2.mat
+alex/lolocenter.mat
+alex/lolofrozenpixel.mat
+alex/worloloofr.mat
+
+sent 51 bytes  received 222 bytes  546.00 bytes/sec
+total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's now do it for real:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
+<span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>receiving incremental file list
+alex/
+alex/bruitlolo_090319.mat
+    986,581,489 100%   63.21MB/s    0:00:14 (xfr#1, to-chk=5/7)
+alex/lolo.mat
+        248,942 100%  248.83kB/s    0:00:00 (xfr#2, to-chk=4/7)
+alex/lolo2.mat
+    522,599,574 100%   49.22MB/s    0:00:10 (xfr#3, to-chk=3/7)
+alex/lolocenter.mat
+        458,267 100%  438.75kB/s    0:00:01 (xfr#4, to-chk=2/7)
+alex/lolofrozenpixel.mat
+     65,216,914 100%   47.08MB/s    0:00:01 (xfr#5, to-chk=1/7)
+alex/worloloofr.mat
+  1,197,423,956 100%   54.14MB/s    0:00:21 (xfr#6, to-chk=0/7)
+
+sent 147 bytes  received 2,772,868,036 bytes  58,376,172.27 bytes/sec
+total size is 2,772,529,142  speedup is 1.00
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Everything went fine, with a file transfer speed of ~58Mb/s. The good sync with <code>rsync</code> is that if you do that once again (or if the transfer was interrupted) you only transfer the files you need and not the whole thing. So for instance, if we do the same command again, we get:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
+<span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>receiving incremental file list
+
+sent 30 bytes  received 201 bytes  154.00 bytes/sec
+total size is 2,772,529,142  speedup is 12,002,290.66
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That is a speedup of more than $10^7$, but that does not make sense, it's just very quick :-)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hardlinking">Hardlinking<a class="anchor-link" href="2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html#Hardlinking">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And now, what about saving space? On a hard drive, files exist physically on the plates as streeams of bits --- zeros and ones--- but a curcial point is that they may be chunked in different pieces (imagine placing a big file on a disk which is fragmented may cause problems similar to when you have to re-order your desk...). A solution on most filesystems is that they contain a file allocation tables containing (1) all the filenames and the name of the folder in which they sit (2) a pointer to the chunks on the physical disk where the actual data is.</p>
+<p>So we can take advantage of that on a backup: a somewhat obscure habit is to take a folder <code>my_work</code>, copy it and then rename <code>my_work_new</code>. Strange habit, but let's stick with that and take advantage of the previous remark. Such technique is used in many backup mechanisms (such as the Time Machine used on Mac Os X) and allows to copy a whole folder with a different name but without taking more space on the disk (google <code>incremental backups</code> for more info on this).</p>
+<p>As a matter of fact, it is possible to have two files with different names but pointing to the same data chunks, it is a harlink. If a program would detect files that are exactly the same, for instance if we used the copy-and-paste procedure described above, this would greatly reduce the actual physical space. Many such programs exist and one easy piece of software is available on <a href="https://hardlinkpy.googlecode.com/">https://hardlinkpy.googlecode.com/</a>. It just consists of a python script, so the install is obvious:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+wget https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>--2014-07-07 11:47:55--  https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
+Resolving hardlinkpy.googlecode.com (hardlinkpy.googlecode.com)... 173.194.70.82, 2a00:1450:4001:c02::52
+Connecting to hardlinkpy.googlecode.com (hardlinkpy.googlecode.com)|173.194.70.82|:443... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Accept-Ranges: none
+  ETag: "544c8545289d2cbbb3d7b6d76eca8d743bca65bf/hardlink.py"
+  Date: Mon, 07 Jul 2014 09:45:13 GMT
+  Content-Type: text/plain
+  Server: hg_frontend
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: public,max-age=60
+  Age: 0
+  Alternate-Protocol: 443:quic
+  Transfer-Encoding: chunked
+Length: unspecified [text/plain]
+Last-modified header missing -- time-stamps turned off.
+--2014-07-07 11:47:55--  https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
+Reusing existing connection to hardlinkpy.googlecode.com:443.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Accept-Ranges: none
+  ETag: "544c8545289d2cbbb3d7b6d76eca8d743bca65bf/hardlink.py"
+  Date: Mon, 07 Jul 2014 09:45:13 GMT
+  Content-Type: text/plain
+  Server: hg_frontend
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: public,max-age=60
+  Age: 0
+  Alternate-Protocol: 443:quic
+  Transfer-Encoding: chunked
+Length: unspecified [text/plain]
+Saving to: 'hardlink.py'
+
+     0K .......... ..........                                   947K=0.02s
+
+2014-07-07 11:47:55 (947 KB/s) - 'hardlink.py' saved [21430]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now imagine we had copied the folder twice:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
+<span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/alex_new
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>receiving incremental file list
+created directory /Volumes/3tera/backups/12_backups/alex_new
+alex/
+alex/bruitlolo_090319.mat
+    986,581,489 100%   19.40MB/s    0:00:48 (xfr#1, to-chk=5/7)
+alex/lolo.mat
+        248,942 100%    1.70MB/s    0:00:00 (xfr#2, to-chk=4/7)
+alex/lolo2.mat
+    522,599,574 100%   52.06MB/s    0:00:09 (xfr#3, to-chk=3/7)
+alex/lolocenter.mat
+        458,267 100%  962.42kB/s    0:00:00 (xfr#4, to-chk=2/7)
+alex/lolofrozenpixel.mat
+     65,216,914 100%   47.12MB/s    0:00:01 (xfr#5, to-chk=1/7)
+alex/worloloofr.mat
+  1,197,423,956 100%   58.84MB/s    0:00:19 (xfr#6, to-chk=0/7)
+
+sent 147 bytes  received 2,772,868,036 bytes  34,878,845.07 bytes/sec
+total size is 2,772,529,142  speedup is 1.00
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The program is easy to use: just type <code>python hardlink.py</code> in the terminal to have basic usage:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Usage: hardlink.py [options] directory [ directory ... ]
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -f, --filenames-equal
+                        Filenames have to be identical
+  -n, --dry-run         Do NOT actually hardlink files
+  -p, --print-previous  Print previously created hardlinks
+  -q, --no-stats        Do not print the statistics
+  -t, --timestamp-ignore
+                        File modification times do NOT have to be identical
+  -c, --content-only    Only file contents have to match
+  -v LEVEL, --verbose=LEVEL
+                        Verbosity level (default: 1)
+  -x REGEX, --exclude=REGEX
+                        Regular expression used to exclude files/dirs (may specify multiple times)
+
+Error: Must supply one or more directories
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Such that in our case, we want to do this: <code>python hardlink.py /Volumes/3tera/backups/12_backups/</code> :</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py /Volumes/3tera/backups/12_backups/
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Comparing: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
+     to: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat, saved 986581489
+Comparing: /Volumes/3tera/backups/12_backups/alex/lolo.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolo.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo.mat
+     to: /Volumes/3tera/backups/12_backups/alex/lolo.mat, saved 248942
+Comparing: /Volumes/3tera/backups/12_backups/alex/lolo2.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
+     to: /Volumes/3tera/backups/12_backups/alex/lolo2.mat, saved 522599574
+Comparing: /Volumes/3tera/backups/12_backups/alex/lolocenter.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolocenter.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolocenter.mat
+     to: /Volumes/3tera/backups/12_backups/alex/lolocenter.mat, saved 458267
+Comparing: /Volumes/3tera/backups/12_backups/alex/lolofrozenpixel.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
+     to: /Volumes/3tera/backups/12_backups/alex/lolofrozenpixel.mat, saved 65216914
+Comparing: /Volumes/3tera/backups/12_backups/alex/worloloofr.mat
+     to  : /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
+Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
+     to: /Volumes/3tera/backups/12_backups/alex/worloloofr.mat, saved 1197423956
+
+
+Hard linking Statistics:
+Files Hardlinked this run:
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
+        to: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo.mat
+        to: /Volumes/3tera/backups/12_backups/alex/lolo.mat
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
+        to: /Volumes/3tera/backups/12_backups/alex/lolo2.mat
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolocenter.mat
+        to: /Volumes/3tera/backups/12_backups/alex/lolocenter.mat
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
+        to: /Volumes/3tera/backups/12_backups/alex/lolofrozenpixel.mat
+Hardlinked: /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
+        to: /Volumes/3tera/backups/12_backups/alex/worloloofr.mat
+
+Directories           : 4
+Regular files         : 12
+Comparisons           : 6
+Hardlinked this run   : 6
+Total hardlinks       : 6
+Bytes saved this run  : 2772529142 (2.582 gibibytes)
+Total bytes saved     : 2772529142 (2.582 gibibytes)
+Total run time        : 17.3441710472 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ok, we just saved over 2Go :-)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="book-keeping">book keeping<a class="anchor-link" href="2014-07-07-transferring-lots-of-files-to-a-remote-server-s.html#book-keeping">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> 14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.meta
+<span class="o">..</span> <span class="n">title</span><span class="p">:</span> <span class="mi">14</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span> <span class="n">transferring</span> <span class="p">(</span><span class="n">lots</span> <span class="n">of</span><span class="p">)</span> <span class="n">files</span> <span class="n">to</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">server</span> <span class="o">+</span> <span class="n">saving</span> <span class="n">space</span>
+<span class="o">..</span> <span class="n">slug</span><span class="p">:</span> <span class="mi">14</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="n">transferring</span><span class="o">-</span><span class="n">lots</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">files</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">s</span>
+<span class="o">..</span> <span class="n">date</span><span class="p">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span> <span class="mi">10</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">28</span> <span class="n">UTC</span><span class="o">+</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span>
+<span class="o">..</span> <span class="n">tags</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hardlink</span><span class="p">,</span> <span class="n">rsync</span>
+<span class="o">..</span> <span class="n">link</span><span class="p">:</span> 
+<span class="o">..</span> <span class="n">description</span><span class="p">:</span> 
+<span class="o">..</span> <span class="nb">type</span><span class="p">:</span> <span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting 14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.meta
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola build
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scanning posts........done!
+.  render_posts:cache/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.html
+.  render_sources:output/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb
+.  render_tags:output/categories/index.html
+.  render_tags:output/categories/int.html
+.  render_tags:output/categories/demo.html
+.  render_tags:output/categories/oss.html
+.  render_tags:output/categories/vim.html
+.  render_tags:output/categories/macos.html
+.  render_tags:output/categories/elasticite.html
+.  render_tags:output/categories/ring-model.html
+.  render_tags:output/categories/computationalneuroscience.html
+.  render_tags:output/categories/moin.html
+.  render_tags:output/categories/talks.html
+.  render_tags:output/categories/anr-balav1.html
+.  render_tags:output/categories/find.html
+.  render_tags:output/categories/nikola.html
+.  render_tags:output/categories/year09.html
+.  render_tags:output/categories/year08.html
+.  render_tags:output/categories/year07.html
+.  render_tags:output/categories/blog.html
+.  render_tags:output/categories/craac.html
+.  render_tags:output/categories/cnrs.html
+.  render_tags:output/categories/python.html
+.  render_tags:output/categories/rsync.html
+.  render_tags:output/categories/neuralensemble.html
+.  render_tags:output/categories/hardlink.html
+.  render_tags:output/categories/ssh.html
+.  render_tags:output/categories/ubuntu.html
+.  render_tags:output/categories/moinmoin.html
+.  render_tags:output/categories/using.html
+.  render_tags:output/categories/info.html
+.  render_tags:output/categories/latex.html
+.  render_tags:output/categories/ipython.html
+.  render_tags:output/categories/motionclouds.html
+.  render_tags:output/categories/facets.html
+.  render_tags:output/categories/year12.html
+.  render_tags:output/categories/year10.html
+.  render_tags:output/categories/notebook.html
+.  render_tags:output/categories/tropique.html
+.  render_tags:output/categories/sciblog.html
+.  render_tags:output/categories/bibcloud.html
+.  render_tags:output/categories/brainscales.html
+.  render_tags:output/categories/pynn.html
+.  render_tags:output/assets/js/tag_cloud_data.json
+.  render_indexes:output/index.html
+.  render_indexes:output/index-11.html
+.  render_indexes:output/index-9.html
+.  render_indexes:output/index-2.html
+.  render_indexes:output/index-13.html
+.  render_indexes:output/index-14.html
+.  render_indexes:output/index-3.html
+.  render_indexes:output/index-4.html
+.  render_indexes:output/index-8.html
+.  render_indexes:output/index-5.html
+.  render_indexes:output/index-6.html
+.  render_indexes:output/index-7.html
+.  render_indexes:output/index-12.html
+.  render_indexes:output/index-1.html
+.  render_indexes:output/index-10.html
+.  generate_rss:output/rss.xml
+.  render_tags:output/categories/oss.xml
+.  render_tags:output/categories/int.xml
+.  render_tags:output/categories/elasticite.xml
+.  render_tags:output/categories/rsync.xml
+.  render_tags:output/categories/notebook.xml
+.  render_tags:output/categories/vim.xml
+.  render_tags:output/categories/tropique.xml
+.  render_tags:output/categories/macos.xml
+.  render_tags:output/categories/sciblog.xml
+.  render_tags:output/categories/bibcloud.xml
+.  render_tags:output/categories/ring-model.xml
+.  render_tags:output/categories/brainscales.xml
+.  render_tags:output/categories/computationalneuroscience.xml
+.  render_tags:output/categories/pynn.xml
+.  render_tags:output/categories/moin.xml
+.  render_tags:output/categories/talks.xml
+.  render_tags:output/categories/anr-balav1.xml
+.  render_tags:output/categories/demo.xml
+.  render_tags:output/categories/find.xml
+.  render_tags:output/categories/nikola.xml
+.  render_tags:output/categories/year09.xml
+.  render_tags:output/categories/year08.xml
+.  render_tags:output/categories/year07.xml
+.  render_tags:output/categories/blog.xml
+.  render_tags:output/categories/craac.xml
+.  render_tags:output/categories/cnrs.xml
+.  render_tags:output/categories/python.xml
+.  render_tags:output/categories/neuralensemble.xml
+.  render_tags:output/categories/hardlink.xml
+.  render_tags:output/categories/ubuntu.xml
+.  render_tags:output/categories/ssh.xml
+.  render_tags:output/categories/moinmoin.xml
+.  render_tags:output/categories/using.xml
+.  render_tags:output/categories/info.xml
+.  render_pages:output/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.html
+.  render_tags:output/categories/latex.xml
+.  render_tags:output/categories/ipython.xml
+.  render_tags:output/categories/motionclouds.xml
+.  render_tags:output/categories/facets.xml
+.  render_tags:output/categories/year12.xml
+.  render_tags:output/categories/year10.xml
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola deploy
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scanning posts........done!
+<span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git add .
+</span><span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git commit --dry-run -am 'Test' |grep -q -v 'nothing to commit' &amp;&amp; git commit -am 'Update'; git push
+</span>[master 6f3001e] Update
+ 2 files changed, 126 insertions(+), 9 deletions(-)
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.16 KiB | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To https://meduz@bitbucket.org/meduz/invibe.git
+   154ad20..6f3001e  master -&gt; master
+<span class="ansi-white-fg">[2014-07-07T09:57:24Z] INFO: deploy: ==&gt; ./deploy.sh
+Removing old file `index-1.html'
+Transferring file `index-1.html'
+Removing old file `index-10.html'
+Transferring file `index-10.html'
+Removing old file `index-11.html'
+Transferring file `index-11.html'
+Removing old file `index-12.html'
+Transferring file `index-12.html'
+Removing old file `index-13.html'
+Transferring file `index-13.html'
+Removing old file `index-14.html'
+Transferring file `index-14.html'
+Removing old file `index-2.html'
+Transferring file `index-2.html'
+Removing old file `index-3.html'
+Transferring file `index-3.html'
+Removing old file `index-4.html'
+Transferring file `index-4.html'
+Removing old file `index-5.html'
+Transferring file `index-5.html'
+Removing old file `index-6.html'
+Transferring file `index-6.html'
+Removing old file `index-7.html'
+Transferring file `index-7.html'
+Removing old file `index-8.html'
+Transferring file `index-8.html'
+Removing old file `index-9.html'
+Transferring file `index-9.html'
+Removing old file `index.html'
+Transferring file `index.html'
+Removing old file `rss.xml'
+Transferring file `rss.xml'
+Mirroring directory `2005'
+Mirroring directory `2006'
+Mirroring directory `2007'
+Mirroring directory `2008'
+Mirroring directory `2009'
+Mirroring directory `2010'
+Mirroring directory `2011'
+Mirroring directory `2012'
+Mirroring directory `2013'
+Mirroring directory `2014'
+Mirroring directory `assets'
+Mirroring directory `assets/css'
+Mirroring directory `assets/fonts'
+Mirroring directory `assets/images'
+Mirroring directory `assets/js'
+Removing old file `assets/js/tag_cloud_data.json'
+Transferring file `assets/js/tag_cloud_data.json'
+Mirroring directory `categories'
+Removing old file `categories/anr-balav1.html'
+Transferring file `categories/anr-balav1.html'
+Removing old file `categories/bibcloud.html'
+Transferring file `categories/bibcloud.html'
+Removing old file `categories/blog.html'
+Transferring file `categories/blog.html'
+Removing old file `categories/brainscales.html'
+Transferring file `categories/brainscales.html'
+Removing old file `categories/cnrs.html'
+Transferring file `categories/cnrs.html'
+Removing old file `categories/computationalneuroscience.html'
+Transferring file `categories/computationalneuroscience.html'
+Removing old file `categories/craac.html'
+Transferring file `categories/craac.html'
+Removing old file `categories/demo.html'
+Transferring file `categories/demo.html'
+Removing old file `categories/elasticite.html'
+Transferring file `categories/elasticite.html'
+Removing old file `categories/facets.html'
+Transferring file `categories/facets.html'
+Removing old file `categories/find.html'
+Transferring file `categories/find.html'
+Removing old file `categories/info.html'
+Transferring file `categories/info.html'
+Removing old file `categories/int.html'
+Transferring file `categories/int.html'
+Removing old file `categories/int.xml'
+Transferring file `categories/int.xml'
+Removing old file `categories/ipython.html'
+Transferring file `categories/ipython.html'
+Removing old file `categories/latex.html'
+Transferring file `categories/latex.html'
+Removing old file `categories/macos.html'
+Transferring file `categories/macos.html'
+Removing old file `categories/moin.html'
+Transferring file `categories/moin.html'
+Removing old file `categories/moinmoin.html'
+Transferring file `categories/moinmoin.html'
+Removing old file `categories/motionclouds.html'
+Transferring file `categories/motionclouds.html'
+Removing old file `categories/neuralensemble.html'
+Transferring file `categories/neuralensemble.html'
+Removing old file `categories/nikola.html'
+Transferring file `categories/nikola.html'
+Removing old file `categories/notebook.html'
+Transferring file `categories/notebook.html'
+Removing old file `categories/oss.html'
+Transferring file `categories/oss.html'
+Removing old file `categories/pynn.html'
+Transferring file `categories/pynn.html'
+Removing old file `categories/python.html'
+Transferring file `categories/python.html'
+Removing old file `categories/ring-model.html'
+Transferring file `categories/ring-model.html'
+Removing old file `categories/sciblog.html'
+Transferring file `categories/sciblog.html'
+Removing old file `categories/ssh.html'
+Transferring file `categories/ssh.html'
+Removing old file `categories/talks.html'
+Transferring file `categories/talks.html'
+Removing old file `categories/tropique.html'
+Transferring file `categories/tropique.html'
+Removing old file `categories/ubuntu.html'
+Transferring file `categories/ubuntu.html'
+Removing old file `categories/using.html'
+Transferring file `categories/using.html'
+Removing old file `categories/vim.html'
+Transferring file `categories/vim.html'
+Removing old file `categories/year07.html'
+Transferring file `categories/year07.html'
+Removing old file `categories/year08.html'
+Transferring file `categories/year08.html'
+Removing old file `categories/year09.html'
+Transferring file `categories/year09.html'
+Removing old file `categories/year10.html'
+Transferring file `categories/year10.html'
+Removing old file `categories/year12.html'
+Transferring file `categories/year12.html'
+Mirroring directory `galleries'
+Mirroring directory `galleries/demo'
+Mirroring directory `listings'
+Mirroring directory `posts'
+Removing old file `posts/14-06-25-grille-hexagonale.html'
+Transferring file `posts/14-06-25-grille-hexagonale.html'
+Transferring file `posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.html'
+Transferring file `posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb'
+Mirroring directory `stories'
+</span><span class="ansi-white-fg">[2014-07-07T09:57:42Z] INFO: deploy: Successful deployment
+</span></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/hardlink.html" rel="tag">hardlink</a></li>
+            <li><a class="tag p-category" href="../categories/int.html" rel="tag">int</a></li>
+            <li><a class="tag p-category" href="../categories/rsync.html" rel="tag">rsync</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2014-06-25-animation-in-a-notebook.html" rel="prev" title="animation-in-a-notebook">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2014-10-08_moving-from-mayavi-to-matplotlib.html" rel="next" title="Moving from Mayavi to Matplotlib">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article>
+</div>
+
+  <div class="footerbox">
+    Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="../assets/js/all-nocdn.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><script>
+baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+        return element.getElementsByTagName('img')[0].alt;
+}});
+</script><!-- Abstract hide/show
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>

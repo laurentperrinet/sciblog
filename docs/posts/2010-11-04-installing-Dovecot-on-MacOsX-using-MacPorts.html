@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>installing Dovecot on MacOsX using MacPorts | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+<meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2010-11-03-rsync-to-an-alternate-ssh-port.html" title="rsync to an alternate ssh port" type="text/html">
+<link rel="next" href="2010-11-07-wma-to-MP3.html" title="wma to MP3" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="installing Dovecot on MacOsX using MacPorts">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.html">
+<meta property="og:description" content="Warning
+This post is certainly obsolete...
+
+
+master howto:
+https://trac.macports.org/wiki/howto/SetupDovecot
+Install
+sudo port install dovecot
+sudo port load dovecot
+
+Configure
+sudo cp /opt/local/etc/">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-11-04T13:36:57+01:00">
+<meta property="article:tag" content="macos">
+<meta property="article:tag" content="sciblog">
+<meta property="article:tag" content="using">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://laurentperrinet.github.io/sciblog/">Scientific logbook</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Home</a>
+                </li>
+<li>
+<a href="../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="http://laurentperrinet.github.io">About my research</a>
+                </li>
+<li>
+<a href="https://twitter.com/laurentperrinet">Twitter</a>
+                </li>
+<li>
+<a href="https://github.com/laurentperrinet">Github</a>
+
+        </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+        <ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><!-- pass --><li>
+    <a href="2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.rst" id="sourcelink">Source</a>
+    </li>
+
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">installing Dovecot on MacOsX using MacPorts</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2010-11-04T13:36:57+01:00" itemprop="datePublished" title="2010-11-04 13:36">2010-11-04 13:36</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2010-11-04-installing-Dovecot-on-MacOsX-using-MacPorts.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- TEASER_END -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This post is certainly obsolete...</p>
+</div>
+<ul>
+<li><p>master howto:
+<a class="reference external" href="https://trac.macports.org/wiki/howto/SetupDovecot">https://trac.macports.org/wiki/howto/SetupDovecot</a></p></li>
+<li>
+<p>Install</p>
+<pre class="literal-block">sudo port install dovecot
+sudo port load dovecot</pre>
+</li>
+<li>
+<p>Configure</p>
+<pre class="literal-block">sudo cp /opt/local/etc/dovecot/dovecot-example.conf  /opt/local/etc/dovecot/dovecot.conf
+
+sudo vim /opt/local/etc/dovecot/dovecot.conf</pre>
+</li>
+<li>
+<p>Mine reads (it's just meant to access imap files from the local mail
+server and not to serve outside the localhost):</p>
+<pre class="literal-block">protocols = imap
+listen = localhost:10143
+disable_plaintext_auth = no
+ssl = no
+mail_location = maildir:~/Maildir
+protocol imap {
+}
+auth default {
+  mechanisms = plain
+  passdb pam {
+    args = login
+  }
+  userdb passwd {
+      args =
+  }
+user = root
+dict {
+}</pre>
+</li>
+<li>
+<p>Reload</p>
+<pre class="literal-block">sudo launchctl stop org.macports.dovecot
+sudo launchctl start org.macports.dovecot</pre>
+</li>
+<li>
+<p>It does not work on the first try... so read documentation</p>
+<pre class="literal-block">less /opt/local//share/doc/dovecot/documentation.txt
+less /opt/local//share/doc/dovecot/auth-protocol.txt
+less /opt/local//share/doc/dovecot/wiki/PasswordDatabase.PAM.txt</pre>
+</li>
+<li>
+<p>Authentification</p>
+<pre class="literal-block">ls -l /etc/pam.d/
+sudo vim /etc/pam.d/dovecot</pre>
+<p>with <code class="docutils literal">/etc/pam.d/dovecot</code> being</p>
+<pre class="literal-block">auth       required       pam_permit.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_uwtmp.so</pre>
+</li>
+</ul>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/macos.html" rel="tag">macos</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+            <li><a class="tag p-category" href="../categories/using.html" rel="tag">using</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2010-11-03-rsync-to-an-alternate-ssh-port.html" rel="prev" title="rsync to an alternate ssh port">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2010-11-07-wma-to-MP3.html" rel="next" title="wma to MP3">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+
+  <div class="footerbox">
+    Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a> with <a href="https://themes.getnikola.com/v7/maupassant/">Maupassant</a> theme <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="../assets/js/all-nocdn.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><script>
+baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+        return element.getElementsByTagName('img')[0].alt;
+}});
+</script><!-- Abstract hide/show
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>

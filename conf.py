@@ -134,6 +134,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #
 # Name of the theme to use.
 THEME = "bootblog4"
+THEME = "zen-ipython"
+THEME = "cadair"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -149,7 +151,7 @@ if THEME == "zen-ipython":
             ('/index.html', 'Home', 'icon-home'),
             ('/archive.html', 'Archives', 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags', 'icon-tags'),
-            ('/rss.xml', 'RSS'),#, 'icon-rss'),
+            ('/rss.xml', 'RSS', 'icon-rss'),
             ('https://laurentperrinet.github.io', 'About my research', 'icon-user'),
             ('https://twitter.com/laurentperrinet', 'Twitter', 'icon-twitter'),
             ('https://github.com/laurentperrinet', 'Github', 'icon-github'),
