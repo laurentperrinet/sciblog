@@ -3,11 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-<<<<<<< HEAD
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Feb 2022 08:44:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Batch removing files on a FTP server</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-02-28-batch-removing-files-on-a-ftp-server.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-=======
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 14 Feb 2022 08:48:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Batch removing files on a FTP server</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-02-28-batch-removing-files-on-a-ftp-server.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
->>>>>>> 7023783f0cdd73fc68710d269884d0e863ef03b6
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 20 Feb 2022 11:11:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Batch removing files on a FTP server</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-02-28-batch-removing-files-on-a-ftp-server.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In a previous post, I have shown how to convert MoinMoin pages to this blog (Nikola angine). Let's now tidy up the place and remove obsolete pages.&lt;/p&gt;
@@ -25,15 +21,9 @@ users as on your QNAP server. A LDAP server is one useful solution.&lt;/p&gt;&lt
 &lt;li&gt;&lt;p&gt;largely adapted from
 &lt;a class="reference external" href="https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX"&gt;https://help.ubuntu.com/community/Installation/FromUSBStick#From_Mac_OSX&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-<<<<<<< HEAD
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>info</category><category>macos</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html</guid><pubDate>Fri, 16 Mar 2012 12:36:57 GMT</pubDate></item><item><title>mounting filesystems using SSH</title><link>https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;section id="install-on-ubuntu"&gt;
-&lt;h2&gt;install on ubuntu&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/section&gt;</description><category>info</category><category>macos</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html</guid><pubDate>Sun, 10 Jul 2011 11:36:57 GMT</pubDate></item><item><title>how to find stuff</title><link>https://laurentperrinet.github.io/sciblog/posts/2010-12-27-how-to-find-stuff.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul&gt;
-=======
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>info</category><category>macos</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2012-03-16-Creating-a-bootable-Debian-USB-flash-drive-on-MacOsX.html</guid><pubDate>Fri, 16 Mar 2012 12:36:57 GMT</pubDate></item><item><title>mounting filesystems using SSH</title><link>https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="section" id="install-on-ubuntu"&gt;
 &lt;h2&gt;install on ubuntu&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>info</category><category>macos</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2011-07-10-mounting-filesystems-using-SSH.html</guid><pubDate>Sun, 10 Jul 2011 11:36:57 GMT</pubDate></item><item><title>how to find stuff</title><link>https://laurentperrinet.github.io/sciblog/posts/2010-12-27-how-to-find-stuff.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;ul&gt;
->>>>>>> 7023783f0cdd73fc68710d269884d0e863ef03b6
 &lt;li&gt;&lt;p&gt;the most simple command is &lt;code class="docutils literal"&gt;locate&lt;/code&gt; :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;locate Python.h&lt;/pre&gt;
 &lt;p&gt;; it is based on a database updated regulalry (most often daily).&lt;/p&gt;
@@ -42,19 +32,11 @@ users as on your QNAP server. A LDAP server is one useful solution.&lt;/p&gt;&lt
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2010-12-27-how-to-find-stuff.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>info</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2010-12-27-how-to-find-stuff.html</guid><pubDate>Mon, 27 Dec 2010 12:36:57 GMT</pubDate></item><item><title>duplicate files</title><link>https://laurentperrinet.github.io/sciblog/posts/2008-12-05-duplicate-files.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;You may find yourself overwhelmed by files and in the need to keep the
 filesystem organized. If deleting is the best option, you may consider
 these 2 options:&lt;/p&gt;
-<<<<<<< HEAD
-&lt;section id="preferred-hardlink"&gt;
-=======
 &lt;div class="section" id="preferred-hardlink"&gt;
->>>>>>> 7023783f0cdd73fc68710d269884d0e863ef03b6
 &lt;h2&gt;preferred: Hardlink&lt;/h2&gt;
 &lt;p&gt;From
 &lt;a class="reference external" href="http://code.google.com/p/hardlinkpy/"&gt;http://code.google.com/p/hardlinkpy/&lt;/a&gt;
 , "hardlink.py is a tool to hardlink together identical files in order
 to save space.". Thus the filesystem is the same, but duplicate files
 are checked so they are actually written &lt;em&gt;once&lt;/em&gt; on the hard drive.&lt;/p&gt;
-<<<<<<< HEAD
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2008-12-05-duplicate-files.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/section&gt;&lt;/div&gt;</description><category>info</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2008-12-05-duplicate-files.html</guid><pubDate>Fri, 05 Dec 2008 12:36:57 GMT</pubDate></item></channel></rss>
-=======
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2008-12-05-duplicate-files.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>info</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2008-12-05-duplicate-files.html</guid><pubDate>Fri, 05 Dec 2008 12:36:57 GMT</pubDate></item></channel></rss>
->>>>>>> 7023783f0cdd73fc68710d269884d0e863ef03b6
