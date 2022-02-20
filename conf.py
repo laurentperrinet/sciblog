@@ -133,9 +133,9 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #     )
 #
 # Name of the theme to use.
-#THEME = "bootblog4"
-THEME = "willy-theme"
+THEME = "zen-ipython"
 THEME = "cadair"
+THEME = "bootblog4"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -954,7 +954,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = """Contents &copy; {date} <a href="mailto:{email}">{author}</a> -
-Powered by <a href="http://getnikola.com">Nikola</a>. <br>
+Powered by <a href="http://getnikola.com">Nikola</a>.<br>
 {license}"""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
@@ -1243,6 +1243,7 @@ SEARCH_FORM = """
 </form>
 <!-- End of custom search -->
 """ % SITE_URL
+# SEARCH_FOR = ''
 #
 # If you prefer a google search form, here's an example that should just work:
 # SEARCH_FORM = """

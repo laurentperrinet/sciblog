@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2006-11-30-Post-doctoral-Position-in-Computational-Neuroscience-Functional-Large-scale-Models-of-Visual-Motion-Perception-.html" title='Post-doctoral Position in Computational Neuroscience: "Functional, Large-scale Models of Visual Motion Perception"' type="text/html">
+<link rel="next" href="2008-08-29-keyboard.html" title="keyboard" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Deliverable M9-3: Workshop for definition of a detailed version of the">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.html">
+<meta property="og:description" content="The INCM was holding a workshop on the V1 hypercolumn model on the 22nd and 23rd of October 2007.
+The purpose of the workshop was to promote the coordination of modeling
+efforts within the consortium ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2007-10-22T13:36:57+02:00">
+<meta property="article:tag" content="facets">
+<meta property="article:tag" content="neuralensemble">
+<meta property="article:tag" content="pynn">
+<meta property="article:tag" content="sciblog">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2007-10-22T13:36:57+02:00" itemprop="datePublished" title="2007-10-22 13:36">2007-10-22 13:36</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2007-10-22-Deliverable-M9-3-Workshop-for-definition-of-a-detailed-version-of-the-V1-hypercolumn-model.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>The INCM was holding a <a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/Meeting_V1WorkshopMarseille_2007">workshop on the V1 hypercolumn model on the 22nd and 23rd of October 2007</a>.
+The purpose of the workshop was to promote the coordination of modeling
+efforts within the consortium and in particular to organize
+collaboration in WP9T2 and associated work-packages. It is labeled as
+deliverable M9-3: "Workshop for definition of a detailed version of the
+V1 hyper-column model" for WP9-2 (workpackage 9 task 2), but is also
+linked by its subject to WP5. In contrast to the previous meeting, we
+started with brief presentations of the results from each group to
+expose the different efficient aspects of each model. This allowed us in
+the second half of the workshop to converge to some main issues and
+prioritize the neural features that are the most important for the
+efficiency of V1. As for the format, we proposed that PhD students and
+post-docs should have the opportunity to present this work to give them
+experience and reduce the burden on busy chiefs. We felt it was
+important to involve as many in this workshop as possible as we approach
+a crucial stage in integrating the different models.</p>
+<!-- TEASER_END -->
+<div class="section" id="program">
+<h2>Program</h2>
+<p><strong>Afternoon of Monday, 22 October 07: Framework</strong></p>
+<p>12:30-14:00</p>
+<p>Registration and Lunch</p>
+<p><strong>14:00-18:00 (First session)</strong></p>
+<p>Introduction: coordination of modeling efforts for WP9T2</p>
+<p>14:00-14:10</p>
+<p>Guillaume Masson (INCM): <strong>Welcome</strong></p>
+<p>14:10-14:30</p>
+<ul class="simple">
+<li><p>Laurent presented some examples of using the benchmark structure
+proposed in <a class="reference external" href="http://neuralensemble.org/trac/NeuroTools/">NeuroTools</a>
+and the new <a class="reference external" href="http://neuralensemble.org/trac/NeuroTools/wiki/signals">SpikeList</a>
+object. The benchmark will be the privileged way of spreading the
+different benchmarks to all partners and is a practical way of
+describing a benchmark as a list of experiments, storing the result of
+the experiments, distribute and run the experiments on a cluster and
+finally for plotting figures. In a second part, Laurent presented the <a class="reference external" href="http://neuralensemble.org/trac/NeuroTools/wiki/signals">SpikeList</a>
+object as an answer to the difficulty of finding a common format for
+describing lists of spikes. Some experimental example and an interface
+with <a class="reference external" href="http://neuralensemble.org/trac/PyNN">PyNN</a> was shown as a proof
+of concept. Jan suggested that the internal representation could be
+sparse. This should be easily done by using the format methods (See
+<a class="reference external" href="http://neuralensemble.org/trac/NeuroTools/wiki/signals">SpikeList</a>).</p></li>
+</ul>
+<p>14:40-15:10</p>
+<ul class="simple">
+<li><p>Andrew and Jens presented a system's approach to modeling the visual
+system. Partners in FACETS need to exchange knowledge on their modeling
+progress and this approach allowed to construct a model from composite
+parts (retina, LGN, V1) from the “LEGO bricks” of the different groups.
+A practical example with INRIA/INCM retina and a INCM V1-layer 4 was
+shown. An LGN brick is to be developed. Brick for higher areas (MT) can
+also be developed.</p></li>
+</ul>
+<p>15:20-16:00</p>
+<p><em>Coffee</em></p>
+<p>16:00-16:20</p>
+<ul class="simple">
+<li><p>Andrew proposed a format specification for benchmarks : 1) the input is
+provided as zipped PNG files, storing is done in the FACETS knowledge
+base (every stimulus has a unique URL), 2) A specification scheme for
+writing benchmarks and a whole experiment was presented with a proposed
+format using a XML interface.</p></li>
+</ul>
+<p>16:30-16:50</p>
+<ul class="simple">
+<li><p>Adrien presented his physiologically realistic retina, emphasizing on
+the contrast gain control. His model uses the INRIA simulator but with
+an open architecture and specification compatible with the FACETS
+specification. The retina uses a feed-back on the bipolar cells to
+achieve realistic contrast gain control which was compared with
+classical experiments (Shapley and Victor, 79, Enroth and Cugell XX). A
+possible extent is to study the importance of the spike profile at image
+onset which reveals first the luminance image and then the edges (Enroth
+Cugell 83 Bernadete-Kaplan 99). He also approached a mean field approach
+valid for gratings.</p></li>
+</ul>
+<p>17:00-17:20</p>
+<ul class="simple">
+<li><p>Klaus presented the retina used at the TUG. It is based on a
+spatio-temporal decorrelation model from Dong and Attick (1995) for the
+linear part and on a gamma renewal process (Gazères, 1998) for the
+spiking part. It is available to FACETS partners in the SVN1 and will
+converted to the format specified in the VisualSytem class (See
+<a class="reference external" href="https://www.kip.uni-heidelberg.de/repos/FACETSCOMMON/facetsmodel/LGN/trunk/graz">https://www.kip.uni-heidelberg.de/repos/FACETSCOMMON/facetsmodel/LGN/trunk/graz</a>
+).</p></li>
+</ul>
+<p>17:30-18:00</p>
+<blockquote>
+<p><strong>General Discussion</strong></p>
+</blockquote>
+<ul class="simple">
+<li><p>conclusions on benchmarking progress and decisions about their
+future development and use.</p></li>
+<li><p>We concluded on benchmarking progress and
+decided about their future development and use. In particular, the
+unification proposed by the Benchmark class and the
+<a class="reference external" href="http://neuralensemble.org/trac/NeuroTools/wiki/signals">SpikeList</a>
+object from Laurent and the specification proposed by Andrew seemed to
+fit to the needs of the partners and we agreed to use the proposed
+schemes.</p></li>
+<li><p>We agreed on further definition of the visual benchmarks
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/WP9T2-VisionBenchmarks">WP9T2-VisionBenchmarks</a>
+(while respecting the standards from
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/wiki/index.php/FACETS_Benchmarks">FACETS_Benchmarks</a>).
+This will be implemented in a coming deliverable.</p></li>
+<li><p>The question if we can reach the goal a single, common framework
+for multiple V1 models in FACETS was left open due to the wide variety
+of approaches in the consortium. However, the discussion suggested some
+collaborations of groups on some specific scientific questions.</p></li>
+</ul>
+<p><strong>Morning of Tuesday, 23rd of october 07</strong></p>
+<p><strong>09:00-13:00 (Second session)</strong></p>
+<p><strong>Progress in Modeling V1</strong></p>
+<ul class="simple">
+<li><p>09:00-09:20*</p></li>
+<li><p>Mike described current progress towards a neural model of motion
+perception in V1/MT, a collaborative project with CNRS/INCM. The model
+is based on the recurrent neural circuitry between a V1 hypercolumn and
+area MT, and uses a Kalman-Bucy approach to estimate the velocity of the
+moving object by integration of local motion information. The model will
+be suitable for testing using the FACETS visual motion benchmark
+stimuli, in particular the CNRS/INCM data on motion integration for
+smooth eye pursuit.*</p></li>
+</ul>
+<p>09:30-09:50</p>
+<ul class="simple">
+<li><p>The KTH model was presented by Jan, with the latest changes and
+additions and some preliminary results. HH neuronal models, hierarchical
+columnar structure. The horizontal connectivity is specified by the
+LISSOM model while the vertical connectivity is inspired by biology.*</p></li>
+</ul>
+<p>10:00-10:20</p>
+<ul class="simple">
+<li><p>Klaus presented the TUG model with the latest changes and some
+preliminary results. He illustrated the use of Izhikievitch neurons, the
+data from Alex Thomson (and not from Binzegger) by showing some results
+of the columnar model in particular by studying the influence of NMDA.*</p></li>
+</ul>
+<p>10:30-10:50</p>
+<ul class="simple">
+<li><p>Jens presented progress of the INCM/ALUF cooperation emphasizing on
+progress in the specification of the thalamo-cortical projections. He
+presented results of applying the different benchmarks proposed to
+reveal the functional properties of the model. It emerged that the
+inhibition scheme used allowed a normalization of the input at the
+network level. This was put into evidence using the spike-triggered
+conductance profile which were consistent with some recent data from
+Rudolph et al. (2007).*</p></li>
+</ul>
+<p>11:00-11:30</p>
+<p><em>Coffee</em></p>
+<p>11:30-13:00</p>
+<ul class="simple">
+<li><p>Round-table discussion: questions, problems, and issues of modeling V1.
+Moderator: G. Masson</p></li>
+<li><p>Retina model: shouldn't we use a more standardized input? How should
+we set up background noise? Biologists need to specify what they intend
+by background (on-going) activity to be simulated in large scale neural
+networks.</p></li>
+<li><p>Back to back cooperation between experimentalists and modelers for
+defining benchmarks in connections with dissemination of experimental
+data.</p></li>
+<li><p>Link with more high-level task, as the one presented by Mike and in
+WP9T3 or the work done in collaboration INCM-INRIA. Since they use the
+same benchmarks (such as motion integration), these approaches can
+better defined the computational rules to be implemented in large scale
+neural networks. One good example in the role of asymmetric diffusion of
+information/activity in the network, thanks to feedback from higher
+areas.</p></li>
+</ul>
+<p><strong>13:00-14:00</strong></p>
+<p><strong>Lunch</strong></p>
+<p><strong>Afternoon of Tuesday, 23rd of october 07</strong></p>
+<p><strong>14:00-16:30 (Third session)</strong></p>
+<p><strong>Scientific questions coming from the Biology of V1</strong></p>
+<p>14:00-14:20</p>
+<ul class="simple">
+<li><p>Julian presented a review of different results on the physiology and
+anatomy of the cat retino-thalamo-cortical projections. In fact, though
+the question of the architecture of these projections was questioned
+during the workshop, little is known with general agreement. Correlating
+different works from the literature, a detailed quantification was
+reviewed suggesting a disagreement between anatomy and physiology.
+Presenting the work of Ringach (2004), he concluded by showing own
+simulations suggesting that the properties and diversity of the
+receptive field of cat's area 17 simple cells may be captured by a
+wiring scheme based on the specific quantization of the parameters of
+the retino-thalamo-cortical pathway.*</p></li>
+</ul>
+<p>14:30-14:50</p>
+<ul class="simple">
+<li><p>Cyril reviewed different models of the emergence of orientation and
+direction selectivity before emphasizing on the results of different
+groups on the role of conductance profile in this function. This
+revealed a diversity of behavior between push-pull model where
+inhibitory and excitatory profiles are in overlap and other
+configuration This was put in light with results obtained at the UNIC.*</p></li>
+</ul>
+<p>15:00-15:20</p>
+<ul class="simple">
+<li><p>Alex presented preliminary results of center-surround interactions
+using VSD optical imaging in the primate V1 cortex. In the retinotopic
+position of the center the response to the center appears with
+decreasing latency for increasing contrast. The response of the 80%
+contrast surround reaches the center at a latency equivalent to approx.
+15% contrast, leaving open the question of the interaction of these two
+information streams. Preliminary results show suppression for high
+contrasts but facilitation for low center contrast. Further analysis (of
+latency, propagation) suggests the functional role of horizontal
+propagation in this configuration.*</p></li>
+</ul>
+<p>15:30-16:00</p>
+<p><em>Coffee</em></p>
+<p>16:00-16:30</p>
+<p>General Discussion Moderator: Yves Fregnac (UNIC)</p>
+<p>16:30-17:30</p>
+<blockquote>
+<p><strong>Outcome: Planning of Implementation plans / priorities for WP9T2.</strong></p>
+</blockquote>
+<ul class="simple">
+<li><p>Several actions need to be taken. 1) We keep the idea of one annual
+meeting on V1 modeling. The meeting shall be held in June instead of
+October, to prepare for Annual reports and implementation plan. We will
+post a call for the organization of the 2008 meeting. We should also try
+to bring more biologists in these meetings. 2) We will organize a
+phone/video conference once every 3 months to exchange information and
+compare outputs for each benchmark steps. 3) We shall provide a timeline
+for delivering benchmark tools and objectives, as well as deadline for
+collecting results for testing models. Such a timeline will be added to
+the D9-2 in which we will describe the different benchmarks. 4) We will
+set a discussion list on the FACETS Wiki website to propose new
+questions from modelers to biologist and vice-versa. The idea is to put
+information for which there is a general agreement rather than having an
+on-going forum. Answers shall be concise, with reference to published
+work and or available data. 5) We shall promote active collaboration
+between sites with the objectives of common publication of one specific
+aspects of visual tasks to be develop in FACETS (on-going activity,
+local cortical point spread function ….)</p></li>
+</ul>
+</div>
+<div class="section" id="questions">
+<h2>Questions</h2>
+<p>Below are some questions modelers (please add to this list) would like
+the biologists at the meeting to answer during the round-table
+discussion (11:30-13:30 on 23 October):</p>
+<ul class="simple">
+<li><p>What is the purpose of the Y-type pathway input to layer 4 of cat
+area 17?</p></li>
+<li><p>Is the tuning of cortical neurons dynamic or not (e.g. for
+orientation)?</p></li>
+<li><p>Can simple or complex cortical cells be directionally selective but
+untuned for orientation?</p></li>
+<li><p>Are inhibitory neurons in cortex generally tuned for orientation or
+not?</p></li>
+<li><p>Do inhibitory fast-spiking (FS) neurons have a higher spiking
+threshold than excitatory regular-spiking (RS) neurons?</p></li>
+<li><p>Is modelling corticothalamic feedback essential for models of V1?</p></li>
+<li><p>What common mistakes do modellers make that annoy you and fellow
+biologists the most?</p></li>
+<li><p>How can modellers best help the biologists?</p></li>
+</ul>
+<p>For the sake of fairness, we would also like some questions from the
+biologists for modellers to answer during the same discussion session.</p>
+</div>
+<div class="section" id="organization">
+<h2>Organization</h2>
+<div class="section" id="when-and-where">
+<h3>When and where?</h3>
+<p>The date for the workshop is Monday, 22 and Tuesday, 23 October 07. It
+will take place at the INCM in Marseille as last meeting (see
+<a class="reference external" href="https://laurentperrinet.github.io/sciblog/posts/2006-11-20-V1-hypercolumn-Coordination-Meeting-20th-21st-Nov-2006.html">Marseille_November2006</a> ).</p>
+<ul class="simple">
+<li><p>Meeting will be salle George Morin (INCM's seminar room),</p></li>
+<li><p>Lunch at the CNRS on place,</p></li>
+<li><p>monday dinner at "La Pôz" 1, Boulevard Saint-Anne , 13008 Marseille
+Tel : 04 91 77 70 00</p></li>
+<li><p>local organization: Laurent Perrinet Tél +33 6 19 47 81 20</p></li>
+<li><p>directions for
+<a class="reference external" href="http://www.cnrs.fr/provence/delegation/Accueil_Delegation/Acces_en_Voiture/plan_d_acces/plan_acces_par_route.gif?popup=grande%20the%20lab">http://www.cnrs.fr/provence/delegation/Accueil_Delegation/Acces_en_Voiture/plan_d_acces/plan_acces_par_route.gif?popup=grande
+the
+lab</a>
+from the
+<a class="reference external" href="http://www.cnrs.fr/provence/delegation/Accueil_Delegation/Acces_en_Avion/;view%20airport%20(in%20french)">http://www.cnrs.fr/provence/delegation/Accueil_Delegation/Acces_en_Avion/;view
+airport (in
+french)</a>.
+When entering the campus, go to the main hall (large staircase),
+inside on the left you'll find on the same floor a door
+"Neurosciences Intégratives". Follow the next door in front of you
+(labelled "INCM"), and on the left (second door) you'll find the room
+"Salle Jean Requin" where we meet.</p></li>
+</ul>
+</div>
+<div class="section" id="who-is-attending">
+<h3>Who is attending</h3>
+<p>Please
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/internal/jss/AttendMeeting?meetingID=28%20register%20your%20attendance">https://facets.kip.uni-heidelberg.de/internal/jss/AttendMeeting?meetingID=28
+register your
+attendance</a>.</p>
+<ul class="simple">
+<li><p>monday lunch 16 people (everybody except Anders Lansner)</p></li>
+<li><p>monday dinner 15 people (everybody except Anders Lansner and Andrew
+Davison)</p></li>
+<li><p>tuesday lunch 16 people (everybody except Andrew Davison)</p></li>
+</ul>
+</div>
+<div class="section" id="facilities">
+<h3>facilities</h3>
+<p>we will have</p>
+<ul class="simple">
+<li><p>a beamer</p></li>
+<li><p>no internet connection (ask if you need one)</p></li>
+<li><p>lunch and coffee breaks!</p></li>
+<li><p><em>( the video conferencing system was not needed anymore)</em></p></li>
+</ul>
+</div>
+<div class="section" id="more-info">
+<h3>more info</h3>
+<ul class="simple">
+<li><p>see the report of M9-3 at
+<a class="reference external" href="https://www.kip.uni-heidelberg.de/repos/FACETSCOMMON/WP9T2/07-10_M9-3/">https://www.kip.uni-heidelberg.de/repos/FACETSCOMMON/WP9T2/07-10_M9-3/</a></p></li>
+<li><p>date poll
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/jss/DatePoll?sId=7">https://facets.kip.uni-heidelberg.de/private/jss/DatePoll?sId=7</a></p></li>
+<li><p>discussion list
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/forum/viewtopic.php?t=147">https://facets.kip.uni-heidelberg.de/forum/viewtopic.php?t=147</a></p></li>
+<li><p>this is a deliverable
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/jss/servlet/de.bkmk.facets.Deliverables?m=showDeliverable&amp;bk_deliverableID=86%20M9-3">https://facets.kip.uni-heidelberg.de/private/jss/servlet/de.bkmk.facets.Deliverables?m=showDeliverable&amp;bk_deliverableID=86
+M9-3</a></p></li>
+<li><p>To ease the choice of a date for the workshop on the V1 hypercolumn
+model in October/November this year, a
+<a class="reference external" href="https://facets.kip.uni-heidelberg.de/private/jss/DatePoll?sId=7%20date%20poll">https://facets.kip.uni-heidelberg.de/private/jss/DatePoll?sId=7 date
+poll</a>
+was created on the FACETS internal web page for all the people (tell
+Bjoern if somebody is missing) who should be interested in going.</p></li>
+<li><p>Ryan Air is flying now to Marseille :
+<a class="reference external" href="http://www.bookryanair.com/skylights/cgi-bin/skylights.cgi">http://www.bookryanair.com/skylights/cgi-bin/skylights.cgi</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/facets.html" rel="tag">facets</a></li>
+            <li><a class="tag p-category" href="../categories/neuralensemble.html" rel="tag">neuralensemble</a></li>
+            <li><a class="tag p-category" href="../categories/pynn.html" rel="tag">pynn</a></li>
+            <li><a class="tag p-category" href="../categories/sciblog.html" rel="tag">sciblog</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2006-11-30-Post-doctoral-Position-in-Computational-Neuroscience-Functional-Large-scale-Models-of-Visual-Motion-Perception-.html" rel="prev" title='Post-doctoral Position in Computational Neuroscience: "Functional, Large-scale Models of Visual Motion Perception"'>Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2008-08-29-keyboard.html" rel="next" title="keyboard">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer">
+            Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>
