@@ -136,6 +136,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 THEME = "zen-ipython"
 THEME = "cadair"
 THEME = "bootblog4"
+THEME = "bootstrap3-jinja"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
