@@ -135,8 +135,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 # Name of the theme to use.
 THEME = "zen-ipython"
 THEME = "cadair"
-THEME = "bootblog4"
 THEME = "bootstrap3-jinja"
+THEME = "bootblog4"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -232,12 +232,18 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
+# POSTS = (
+#          ("posts/*.ipynb", "posts", "post.tmpl"),
+#          ("posts/*.txt", "posts", "post.tmpl"),
+#          ("posts/*.md", "posts", "post.tmpl"),
+#          ("posts/*.rst", "posts", "post.tmpl"),
+#          ("posts/*.html", "posts", "post.tmpl"),
+#          )
+# HACK : remove compilation of RST files:
 POSTS = (
          ("posts/*.ipynb", "posts", "post.tmpl"),
          ("posts/*.txt", "posts", "post.tmpl"),
          ("posts/*.md", "posts", "post.tmpl"),
-         ("posts/*.rst", "posts", "post.tmpl"),
-         ("posts/*.rst4", "posts", "post.tmpl"),
          ("posts/*.html", "posts", "post.tmpl"),
          )
 PAGES = (

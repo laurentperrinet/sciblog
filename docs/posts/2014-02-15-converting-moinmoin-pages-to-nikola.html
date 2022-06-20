@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converting moinmoin pages to nikola | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-02-15-converting-moinmoin-pages-to-nikola.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" title="Converting MoinMoin pages to Nikola" type="text/html">
+<link rel="next" href="2014-02-28-batch-removing-files-on-a-ftp-server.html" title="Batch removing files on a FTP server" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Converting moinmoin pages to nikola">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-02-15-converting-moinmoin-pages-to-nikola.html">
+<meta property="og:description" content="nikolFrom a previous post, we have this function to import a page from moinmoin, convert it and publish:
+
+
+
+
+
+
+In [1]:
+
+    
+def url2rst(URL):
+    import urllib
+    import subprocess
+    f = urllib.ur">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-02-15T15:09:31+02:00">
+<meta property="article:tag" content="ipython">
+<meta property="article:tag" content="moinmoin">
+<meta property="article:tag" content="nikola">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2014-02-15-converting-moinmoin-pages-to-nikola.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Converting moinmoin pages to nikola</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-15T15:09:31+02:00" itemprop="datePublished" title="2014-02-15 15:09">2014-02-15 15:09</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2014-02-15-converting-moinmoin-pages-to-nikola.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>nikolFrom a previous post, we have this function to import a page from moinmoin, convert it and publish:</p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">urllib</span>
+    <span class="kn">import</span> <span class="nn">subprocess</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">'?action=print'</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">'pandoc'</span><span class="p">,</span> <span class="s1">'--from=html'</span><span class="p">,</span> <span class="s1">'--to=rst'</span><span class="p">],</span>
+                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">html</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">,</span> <span class="n">doit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">pagerst</span> <span class="o">=</span> <span class="n">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+  
+    <span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
+    <span class="n">SLUG</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+    <span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. type: text</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">    </span>
+<span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">doit</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="nb">print</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="s1">'cd ..; nikola new_post --title="</span><span class="si">%s</span><span class="s1">" --tags="</span><span class="si">%s</span><span class="s1">"'</span> <span class="o">%</span> <span class="p">(</span><span class="n">TIMEDTITLE</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="n">cmd</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">file</span><span class="p">(</span><span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">tmplt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/Presentations/10-10-20_M2_MasterSciences'</span>
+<span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2010-10-20'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
+<span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">'Master M2 Sciences'</span><span class="p">,</span> <span class="s1">'Talks, ComputationalNeuroscience, sciblog'</span>
+<span class="c1">#convert(URL, DATE, TIME, TITLE, TAGS, doit=False)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/Presentations/10-10-27_M2_MasterSciences'</span>
+<span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2010-10-27'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
+<span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">'Master M2 Sciences'</span><span class="p">,</span> <span class="s1">'Talks, ComputationalNeuroscience, sciblog'</span>
+<span class="c1">#convert(URL, DATE, TIME, TITLE, TAGS, doit=False)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="extracting-title-and-tags">extracting title and tags<a class="anchor-link" href="2014-02-15-converting-moinmoin-pages-to-nikola.html#extracting-title-and-tags">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">url2raw</span><span class="p">(</span><span class="n">URL</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">urllib</span>
+    <span class="kn">import</span> <span class="nn">subprocess</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">'?action=raw'</span><span class="p">)</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">raw</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2009-08-20'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+<span class="n">RAW</span> <span class="o">=</span> <span class="n">url2raw</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="c1">#print RAW</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some heuristics to extract the title (always a level 1 header):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import string</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">RAW</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'='</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'= '</span><span class="p">:</span> 
+                <span class="n">TITLE</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+                <span class="n">TITLE</span> <span class="o">=</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'</span><span class="se">\r</span><span class="s1">'</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s2">"</span><span class="si">%r</span><span class="s2">, </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">)</span>
+                <span class="c1">#for char in TITLE: print char</span>
+                <span class="nb">print</span> <span class="s1">','</span> <span class="ow">in</span> <span class="n">TITLE</span>
+                <span class="c1"># while TITLE[-1]==' ': TITLE = TITLE[:-1]</span>
+                <span class="c1">#TITLE.replace?</span>
+                <span class="c1">#TITLE = unicode(TITLE, "utf-8")</span>
+                <span class="n">TITLE</span> <span class="o">=</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s2">"</span><span class="si">%r</span><span class="s2">, </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">)</span>
+                <span class="n">TITLE</span> <span class="o">=</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'drafts'</span><span class="p">,</span> <span class="s1">'toto'</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s2">"</span><span class="si">%r</span><span class="s2">, </span><span class="si">%r</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">TITLE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">)</span>
+<span class="c1">#TITLE = str(TITLE)</span>
+<span class="c1">#TITLE.replace(u",", u"-")</span>
+<span class="nb">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">TITLE</span><span class="p">),</span> <span class="n">TITLE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>'= some LaTeX tips: drafts, links, margins, pdflatex =\r', 'some LaTeX tips: drafts, links, margins, pdflatex '
+True
+'= some LaTeX tips: drafts, links, margins, pdflatex =\r', 'some LaTeX tips: drafts- links- margins- pdflatex '
+'= some LaTeX tips: drafts, links, margins, pdflatex =\r', 'some LaTeX tips: toto- links- margins- pdflatex '
+&lt;type 'str'&gt; some LaTeX tips: toto- links- margins- pdflatex 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s1">'some LaTeX tips: drafts / links / margins / pdflatex'</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+<span class="n">TITLE</span> <span class="o">=</span> <span class="s1">'some LaTeX tips: drafts / links / margins / pdflatex'</span>
+<span class="n">exclude_chars</span> <span class="o">=</span><span class="p">[</span><span class="s1">':'</span><span class="p">,</span> <span class="s1">' :'</span><span class="p">,</span> <span class="s1">': '</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="s1">'  '</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">exclude_chars</span><span class="p">:</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">TITLE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>some LaTeX tips: drafts - links - margins - pdflatex
+some LaTeX tips- drafts - links - margins - pdflatex
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some heuristics to extract the tags (always begins with "Tags"):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TAGS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">RAW</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Tag'</span><span class="p">:</span> 
+                <span class="n">TAGS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<span class="nb">print</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TAGS</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>LaTex
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some heuristics to process the rst code:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pagerst</span> <span class="o">=</span> <span class="n">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import re</span>
+<span class="n">pagerst_</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">line_old</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="k">for</span> <span class="n">i_line</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pagerst</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i_line</span> <span class="o">&gt;</span><span class="mi">2</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">'`Tag'</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">line_old</span><span class="o">==</span><span class="s1">''</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">==</span><span class="s1">'------'</span><span class="p">):</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'https://invibe.net/moin_static196/'</span><span class="p">)</span>
+                <span class="n">pagerst_</span> <span class="o">+=</span> <span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s1">'stripping title :'</span><span class="p">,</span> <span class="n">line</span>
+    <span class="n">line_old</span> <span class="o">=</span> <span class="n">line</span>
+<span class="nb">print</span> <span class="n">pagerst_</span>
+<span class="c1">#https://invibe.net/moin_static196/moniker/img/angry.png</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stripping title : some LaTeX tips: drafts, links, margins, pdflatex
+stripping title : =================================================
+stripping title : 
+checking typographic style
+--------------------------
+
+-  Lint for LaTeX :
+   `http://baruch.ev-en.org/proj/chktex/ &lt;http://baruch.ev-en.org/proj/chktex/&gt;`__
+
+make links
+----------
+
+-  hyperref quick reference list :
+
+   ::
+
+       \href{URL}{text } 
+       \url{URL}
+       \nolinkurl{URL}
+
+managing margins
+----------------
+
+-  to adjust margins, use
+
+   ::
+
+       \usepackage[margin=2.5cm]{geometry}
+
+   then play around with the ``2.5cm`` value until it fits.
+
+-  tips for fitting your text in the required size : `LaTeX Tips n
+   Tricks for Conference
+   Paper &lt;http://www-db.stanford.edu/~manku/latex.html&gt;`__
+
+citations
+---------
+
+-  If you give LaTeX \\cite{fred,joe,harry,min}, its default commands
+   could give something like "[2,6,4,3]"; this looks awful. One can of
+   course get the things in order by rearranging the keys in the \\cite
+   command, but who wants to do that sort of thing for no more
+   improvement than "[2,3,4,6]"
+
+   -  The cite package sorts the numbers and detects consecutive
+      sequences, so creating "[2-4,6]". The natbib package, with the
+      numbers and sort&amp;compress options, will do the same when working
+      with its own numeric bibliography styles (plainnat.bst and
+      unsrtnat.bst).
+   -  If you might need to make hyperreferences to your citations, cite
+      isn't adequate. If you add the hypernat package:
+
+      ::
+
+            \usepackage[...]{hyperref}
+            \usepackage[numbers,sort&amp;compress]{natbib}
+            \usepackage{hypernat}
+            ...
+            \bibliographystyle{plainnat}
+
+      See for example
+      `http://www.tex.ac.uk/cgi-bin/texfaq2html?label=citesort &lt;http://www.tex.ac.uk/cgi-bin/texfaq2html?label=citesort&gt;`__
+
+Useful draft tips
+-----------------
+
+-  “LaTeX and Subversion”
+
+   -  set a keyword with ``svn propset svn:keywords "Id" index.tex `` so
+      that every occurrence of
+   -  use latex-svninfo
+      `http://www.ctan.org/tex-archive/macros/latex/contrib/svninfo/ &lt;http://www.ctan.org/tex-archive/macros/latex/contrib/svninfo/&gt;`__
+      for instance with
+
+      ::
+
+          \usepackage[fancyhdr,today,draft]{svninfo}%
+          %\usepackage[fancyhdr]{svninfo}%
+          \pagestyle{fancyplain}
+          \fancyhead{}
+
+   -  now at every commit $Id$ will be replaced by useful data that will
+      show up in the foot of the page
+   -  for a reference on using keywords see
+      `http://wiki.loria.fr/wiki/Variables\_automatiques &lt;http://wiki.loria.fr/wiki/Variables_automatiques&gt;`__
+
+using pdfLaTeX
+--------------
+
+-  |X-(| sites like arXiV use only plain LaTeX so that you should keep
+   the 2 versions of your directives for better portability (see \\ifpdf
+   ...)
+
+   -  in particular arXiV rejects the ``microtype`` package
+
+-  le package hyperref permet même de faire des références vers les
+   différents chapitres.
+-  PDfLaTeX ne permet pas d'inclure des eps pour cela il faut les
+   convertir en pdf avec
+   `epstopdf &lt;http://www.ctan.org/tex-archive/support/epstopdf/&gt;`__ ou
+   le script suivant qui permet de convertir tous les .eps d'un dossier
+   (à sauver et rendre executable):
+
+   ::
+
+       for f in $* ;do
+           if echo "$f" | grep -i eps*   ; then
+                epstopdf --nocompress $f
+                echo "converting  $f to pdf ..."
+           else
+           echo "$f is not a eps file, ignored"
+           fi
+       done
+
+   il suffit alors d'executer en console
+   `` ./mon_script la-ou-ya-tout-mes-eps/*.eps ``
+
+
+
+.. |X-(| image:: https://invibe.net/moin_static196/moniker/img/angry.png
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>wrapping-up:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="n">URL</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">re</span>
+    <span class="n">RAW</span> <span class="o">=</span> <span class="n">url2raw</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">"Unknown title"</span>
+    <span class="n">TAGS</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">RAW</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"= "</span><span class="p">:</span> 
+                <span class="n">TITLE</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">TITLE</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">exclude_chars</span> <span class="o">=</span><span class="p">[</span><span class="s1">' / '</span><span class="p">,</span> <span class="s1">' /'</span><span class="p">,</span> <span class="s1">'/ '</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="s1">'  '</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">exclude_chars</span><span class="p">:</span>
+                    <span class="n">TITLE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">:</span> 
+                <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Tag"</span><span class="p">:</span> 
+                    <span class="n">TAGS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'</span><span class="se">\r</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="c1">#if not('sciblog' in TAGS): TAGS.append('sciblog')</span>
+    <span class="n">TAGS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">TAGS</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">TITLE</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TAGS</span><span class="p">)</span>    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the following function includes all of the above plus a hack to remove a former version of the script that created filenames with special characters.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convertSciBlog</span><span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="o">=</span><span class="s1">'13:36:57'</span><span class="p">,</span> <span class="n">doit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+    <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="n">extract</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+    <span class="c1">#print URL, TITLE, TAGS</span>
+    <span class="n">pagerst</span> <span class="o">=</span> <span class="n">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+    <span class="n">pagerst_parsed</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="n">line_old</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="n">finished_title</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">pagerst</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">finished_title</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">'`Tag'</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">line_old</span><span class="o">==</span><span class="s1">''</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="o">==</span><span class="s1">'------'</span><span class="p">):</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/moin_static196/'</span><span class="p">,</span> <span class="s1">'https://invibe.net/moin_static196/'</span><span class="p">)</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&lt;/LaurentPerrinet/'</span><span class="p">,</span> <span class="s1">'&lt;https://invibe.net/LaurentPerrinet/'</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="s1">'SciBlog'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> <span class="nb">print</span> <span class="s1">'Warning '</span><span class="p">,</span> <span class="n">line</span>
+                    <span class="n">pagerst_parsed</span> <span class="o">+=</span> <span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">'===='</span><span class="p">:</span> <span class="n">finished_title</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="nb">print</span> <span class="s1">'stripping title :'</span><span class="p">,</span> <span class="n">line</span>
+        <span class="n">line_old</span> <span class="o">=</span> <span class="n">line</span>
+  
+    <span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
+
+    <span class="c1"># The following is a hack to remove old files which had improper characters</span>
+    <span class="c1">#SLUG_OLD = DATE[2:] + '-' + TITLE.replace(' ', '-')</span>
+    <span class="n">SLUG</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="n">TITLE</span>
+    <span class="n">exclude_chars</span><span class="p">,</span> <span class="n">exclude_chars_space</span> <span class="o">=</span><span class="p">[</span><span class="s1">':'</span><span class="p">,</span> <span class="s1">'"'</span><span class="p">,</span> <span class="s1">','</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="s1">'!'</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">exclude_chars</span><span class="p">:</span>
+        <span class="n">exclude_chars_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+        <span class="n">exclude_chars_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">' '</span> <span class="o">+</span> <span class="n">char</span><span class="p">)</span>
+        <span class="n">exclude_chars_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span> <span class="o">+</span> <span class="s1">' '</span><span class="p">)</span>
+        <span class="n">exclude_chars_space</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">' '</span> <span class="o">+</span> <span class="n">char</span> <span class="o">+</span> <span class="s1">' '</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">exclude_chars_space</span><span class="p">:</span>
+        <span class="n">SLUG</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">)</span>
+
+    <span class="n">translate</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'é'</span><span class="p">:</span><span class="s1">'e'</span><span class="p">,</span> <span class="s1">'è'</span><span class="p">:</span><span class="s1">'e'</span><span class="p">,</span> <span class="s1">'ê'</span><span class="p">:</span><span class="s1">'e'</span><span class="p">,</span> <span class="s1">'à'</span><span class="p">:</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'á'</span><span class="p">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'É'</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s2">"'"</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s2">"\."</span><span class="p">:</span> <span class="s1">''</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">translate</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">SLUG</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">translate</span><span class="p">[</span><span class="n">char</span><span class="p">],</span> <span class="n">SLUG</span><span class="p">)</span>
+                    
+    <span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. type: text</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
+
+<span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">doit</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="c1">#print URL, TITLE, TAGS</span>
+        <span class="nb">print</span> <span class="n">TIMEDTITLE</span><span class="p">,</span> <span class="n">TAGS</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">file</span><span class="p">(</span><span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst_parsed</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">tmplt</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATE</span> <span class="o">=</span> <span class="s1">'2010-10-06'</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://invibe.net/LaurentPerrinet/SciBlog/'</span> <span class="o">+</span> <span class="n">DATE</span>
+<span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="n">extract</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
+<span class="nb">print</span> <span class="n">TIMEDTITLE</span><span class="p">,</span> <span class="n">TAGS</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10-10-06 Émergence sciblog
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s1">'nikola new_post --title="</span><span class="si">%r</span><span class="s1">" --tags="</span><span class="si">%r</span><span class="s1">" '</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>nikola new_post --title="'10-10-06 \xc3\x89mergence'" --tags="'sciblog'" 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">convertSciBlog</span><span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">doit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stripping title : --------------
+stripping title : 
+stripping title : Émergence
+stripping title : =========
+.. title: 10-10-06 Émergence
+.. slug: 10-10-06-Emergence
+.. date: 2010-10-06 13:36:57
+.. type: text
+.. tags: sciblog
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">convertSciBlog</span><span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">doit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stripping title : --------------
+stripping title : 
+stripping title : Émergence
+stripping title : =========
+10-10-06 Émergence sciblog
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">done_page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">"""</span>
+<span class="n">page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">SciBlog/2006-11-20</span>
+<span class="s2">SciBlog/2006-11-30</span>
+<span class="s2">SciBlog/2007-10-22</span>
+<span class="s2">SciBlog/2008-08-29</span>
+<span class="s2">SciBlog/2008-11-20</span>
+<span class="s2">SciBlog/2008-12-05</span>
+<span class="s2">SciBlog/2009-08-19</span>
+<span class="s2">SciBlog/2009-08-20</span>
+<span class="s2">SciBlog/2009-08-21</span>
+<span class="s2">SciBlog/2009-08-23</span>
+<span class="s2">SciBlog/2009-08-26</span>
+<span class="s2">SciBlog/2009-08-29</span>
+<span class="s2">SciBlog/2009-11-01</span>
+<span class="s2">SciBlog/2009-11-15</span>
+<span class="s2">SciBlog/2009-11-22</span>
+<span class="s2">SciBlog/2009-11-26</span>
+<span class="s2">SciBlog/2009-12-02</span>
+<span class="s2">SciBlog/2009-12-06</span>
+<span class="s2">SciBlog/2009-12-09</span>
+<span class="s2">SciBlog/2009-12-11</span>
+<span class="s2">SciBlog/2009-12-17</span>
+<span class="s2">SciBlog/2009-12-19</span>
+<span class="s2">SciBlog/2010-01-27</span>
+<span class="s2">SciBlog/2010-02-03</span>
+<span class="s2">SciBlog/2010-02-11</span>
+<span class="s2">SciBlog/2010-03-15</span>
+<span class="s2">SciBlog/2010-04-07</span>
+<span class="s2">SciBlog/2010-04-08</span>
+<span class="s2">SciBlog/2010-04-24</span>
+<span class="s2">SciBlog/2010-04-25</span>
+<span class="s2">SciBlog/2010-04-26</span>
+<span class="s2">SciBlog/2010-04-28</span>
+<span class="s2">SciBlog/2010-05-22</span>
+<span class="s2">SciBlog/2010-05-23</span>
+<span class="s2">SciBlog/2010-07-08</span>
+<span class="s2">SciBlog/2010-08-03</span>
+<span class="s2">SciBlog/2010-08-05</span>
+<span class="s2">SciBlog/2010-08-07</span>
+<span class="s2">SciBlog/2010-08-09</span>
+<span class="s2">SciBlog/2010-08-11</span>
+<span class="s2">SciBlog/2010-08-29</span>
+<span class="s2">SciBlog/2010-08-30</span>
+<span class="s2">SciBlog/2010-08-31</span>
+<span class="s2">SciBlog/2010-09-03</span>
+<span class="s2">SciBlog/2010-09-09</span>
+<span class="s2">SciBlog/2010-09-27</span>
+<span class="s2">SciBlog/2010-10-05</span>
+<span class="s2">SciBlog/2010-10-06</span>
+<span class="s2">SciBlog/2010-10-09</span>
+<span class="s2">SciBlog/2010-10-27</span>
+<span class="s2">SciBlog/2010-10-31</span>
+<span class="s2">SciBlog/2010-11-03</span>
+<span class="s2">SciBlog/2010-11-04</span>
+<span class="s2">SciBlog/2010-11-07</span>
+<span class="s2">SciBlog/2010-11-09</span>
+<span class="s2">SciBlog/2010-11-15</span>
+<span class="s2">SciBlog/2010-11-27</span>
+<span class="s2">SciBlog/2010-12-08</span>
+<span class="s2">SciBlog/2010-12-20</span>
+<span class="s2">SciBlog/2010-12-27</span>
+<span class="s2">SciBlog/2011-01-18</span>
+<span class="s2">SciBlog/2011-01-19</span>
+<span class="s2">SciBlog/2011-01-25</span>
+<span class="s2">SciBlog/2011-01-26</span>
+<span class="s2">SciBlog/2011-01-29</span>
+<span class="s2">SciBlog/2011-02-09</span>
+<span class="s2">SciBlog/2011-02-21</span>
+<span class="s2">SciBlog/2011-02-22</span>
+<span class="s2">SciBlog/2011-03-09</span>
+<span class="s2">SciBlog/2011-03-10</span>
+<span class="s2">SciBlog/2011-05-04</span>
+<span class="s2">SciBlog/2011-07-05</span>
+<span class="s2">SciBlog/2011-07-06</span>
+<span class="s2">SciBlog/2011-07-07</span>
+<span class="s2">SciBlog/2011-07-08</span>
+<span class="s2">SciBlog/2011-07-10</span>
+<span class="s2">SciBlog/2011-07-25</span>
+<span class="s2">SciBlog/2012-01-07</span>
+<span class="s2">SciBlog/2012-01-18</span>
+<span class="s2">SciBlog/2012-02-08</span>
+<span class="s2">SciBlog/2012-02-16</span>
+<span class="s2">SciBlog/2012-02-17</span>
+<span class="s2">SciBlog/2012-02-22</span>
+<span class="s2">SciBlog/2012-03-05</span>
+<span class="s2">SciBlog/2012-03-10</span>
+<span class="s2">SciBlog/2012-03-11</span>
+<span class="s2">SciBlog/2012-03-12</span>
+<span class="s2">SciBlog/2012-03-13</span>
+<span class="s2">SciBlog/2012-03-16</span>
+<span class="s2">SciBlog/2012-03-21</span>
+<span class="s2">SciBlog/2012-03-22</span>
+<span class="s2">SciBlog/2012-03-24</span>
+<span class="s2">SciBlog/2012-03-25</span>
+<span class="s2">SciBlog/2012-04-05</span>
+<span class="s2">SciBlog/2012-04-17</span>
+<span class="s2">SciBlog/2012-04-22</span>
+<span class="s2">SciBlog/2012-04-30</span>
+<span class="s2">SciBlog/2012-06-12</span>
+<span class="s2">SciBlog/2012-07-10</span>
+<span class="s2">SciBlog/2012-07-24</span>
+<span class="s2">SciBlog/2012-08-19</span>
+<span class="s2">SciBlog/2012-08-27</span>
+<span class="s2">SciBlog/2012-09-04</span>
+<span class="s2">SciBlog/2012-09-09</span>
+<span class="s2">SciBlog/2012-09-30</span>
+<span class="s2">SciBlog/2012-11-07</span>
+<span class="s2">SciBlog/2012-11-28</span>
+<span class="s2">SciBlog/2013-01-16</span>
+<span class="s2">SciBlog/2013-01-31</span>
+<span class="s2">SciBlog/2013-02-02</span>
+<span class="s2">SciBlog/2013-02-04</span>
+<span class="s2">SciBlog/2013-03-06</span>
+<span class="s2">SciBlog/2013-03-13</span>
+<span class="s2">SciBlog/2013-03-23</span>
+<span class="s2">SciBlog/2013-03-25</span>
+<span class="s2">SciBlog/2013-05-14</span>
+<span class="s2">SciBlog/2013-06-12</span>
+<span class="s2">SciBlog/2013-07-08</span>
+<span class="s2">SciBlog/2013-10-26</span>
+<span class="s2">SciBlog/2013-11-04</span>
+<span class="s2">SciBlog/2013-11-08</span>
+<span class="s2">SciBlog/2013-11-09</span>
+<span class="s2">SciBlog/2014-01-01"""</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">page_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">page</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'SciBlog/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2006-11-20 2006-11-30 2007-10-22 2008-08-29 2008-11-20 2008-12-05 2009-08-19 2009-08-20 2009-08-21 2009-08-23 2009-08-26 2009-08-29 2009-11-01 2009-11-15 2009-11-22 2009-11-26 2009-12-02 2009-12-06 2009-12-09 2009-12-11 2009-12-17 2009-12-19 2010-01-27 2010-02-03 2010-02-11 2010-03-15 2010-04-07 2010-04-08 2010-04-24 2010-04-25 2010-04-26 2010-04-28 2010-05-22 2010-05-23 2010-07-08 2010-08-03 2010-08-05 2010-08-07 2010-08-09 2010-08-11 2010-08-29 2010-08-30 2010-08-31 2010-09-03 2010-09-09 2010-09-27 2010-10-05 2010-10-06 2010-10-09 2010-10-27 2010-10-31 2010-11-03 2010-11-04 2010-11-07 2010-11-09 2010-11-15 2010-11-27 2010-12-08 2010-12-20 2010-12-27 2011-01-18 2011-01-19 2011-01-25 2011-01-26 2011-01-29 2011-02-09 2011-02-21 2011-02-22 2011-03-09 2011-03-10 2011-05-04 2011-07-05 2011-07-06 2011-07-07 2011-07-08 2011-07-10 2011-07-25 2012-01-07 2012-01-18 2012-02-08 2012-02-16 2012-02-17 2012-02-22 2012-03-05 2012-03-10 2012-03-11 2012-03-12 2012-03-13 2012-03-16 2012-03-21 2012-03-22 2012-03-24 2012-03-25 2012-04-05 2012-04-17 2012-04-22 2012-04-30 2012-06-12 2012-07-10 2012-07-24 2012-08-19 2012-08-27 2012-09-04 2012-09-09 2012-09-30 2012-11-07 2012-11-28 2013-01-16 2013-01-31 2013-02-02 2013-02-04 2013-03-06 2013-03-13 2013-03-23 2013-03-25 2013-05-14 2013-06-12 2013-07-08 2013-10-26 2013-11-04 2013-11-08 2013-11-09 2014-01-01
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">page_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="n">convertSciBlog</span><span class="p">(</span><span class="n">DATE</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'SciBlog/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span> <span class="n">doit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stripping title : --------------
+stripping title : 
+stripping title : V1 hypercolumn Coordination Meeting, 20th - 21st Nov 2006
+stripping title : =========================================================
+06-11-20 V1 hypercolumn Coordination Meeting, 20th - 21st Nov 2006 facets, sciblog
+stripping title : Post-doctoral Position in Computational Neuroscience: "Functional, Large-scale Models of Visual Motion Perception"
+stripping title : ==================================================================================================================
+06-11-30 Post-doctoral Position in Computational Neuroscience: "Functional, Large-scale Models of Visual Motion Perception" facets, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model
+stripping title : ===========================================================================================
+Warning     PDF &lt;https://invibe.net/LaurentPerrinet/SciBlog/2007-10-22?action=AttachFile&amp;do=view&amp;target=Meeting_V1WorkshopMarseille_2007.pdf&gt;`__
+Warning  `Marseille\_November2006 &lt;https://invibe.net/LaurentPerrinet/SciBlog/2006-11-20&gt;`__ ).
+07-10-22 Deliverable M9-3: Workshop for definition of a detailed version of the V1 hypercolumn model facets, sciblog
+stripping title : keyboard
+stripping title : ========
+08-08-29 keyboard macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Impact Factor
+stripping title : =============
+Warning     paper &lt;https://invibe.net/LaurentPerrinet/SciBlog/2008-11-20?action=AttachFile&amp;do=get&amp;target=TaylorPerakakisTrachana2008.pdf&gt;`__
+08-11-20 Impact Factor sciblog
+stripping title : --------------
+stripping title : 
+stripping title : duplicate files
+stripping title : ===============
+08-12-05 duplicate files info, sciblog
+stripping title : some LaTeX tips: counting words / install on macosx
+stripping title : ===================================================
+09-08-19 Installation TeX latex
+stripping title : some LaTeX tips: drafts, links, margins, pdflatex
+stripping title : =================================================
+09-08-20 some LaTeX tips: drafts, links, margins, pdflatex latex
+stripping title : setting graphics' path
+stripping title : ======================
+No old file 09-08-21-setting-graphics'-path.rst
+09-08-21 setting graphics' path latex
+stripping title : List Of Symbols
+stripping title : ===============
+09-08-23 List Of Symbols latex
+stripping title : Creating Proceedings (almost) automatically using python and latex
+stripping title : ==================================================================
+Warning  `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning     `body.py &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.py&gt;`__
+Warning     `body.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
+Warning     `neurocomp08proceedings.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.tex&gt;`__:
+Warning        `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning        `titlepage.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=titlepage.tex&gt;`__:
+Warning        `body.tex &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=body.tex&gt;`__
+Warning     `Makefile &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=Makefile&gt;`__
+Warning     `voilà! &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-08-26?action=AttachFile&amp;do=view&amp;target=neurocomp08proceedings.pdf&gt;`__
+09-08-26 Creating Proceedings (almost) automatically using python and latex latex
+stripping title : Tips on Filesystems, security and al on mac os x
+stripping title : ================================================
+09-08-29 Tips on Filesystems, security and al on mac os x macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : floating point magic
+stripping title : ====================
+09-11-01 floating point magic sciblog
+stripping title : --------------
+stripping title : 
+stripping title : MoinMoin: howto install a new theme
+stripping title : ===================================
+09-11-15 MoinMoin: howto install a new theme sciblog
+stripping title : --------------
+stripping title : 
+stripping title : some unix tips
+stripping title : ==============
+09-11-22 some unix tips sciblog
+stripping title : --------------
+stripping title : 
+stripping title : inkscape native
+stripping title : ===============
+09-11-26 inkscape native macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : CRAAC: Compte rendu annuel d'activité des chercheurs du CNRS. Année 2008 - 2009
+stripping title : ===============================================================================
+No old file 09-12-02-CRAAC-Compte-rendu-annuel-d'activité-des-chercheurs-du-CNRS.-Année-2008-2009.rst
+09-12-02 CRAAC: Compte rendu annuel d'activité des chercheurs du CNRS. Année 2008 - 2009 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : convert a bitmap image to a vectorized PDF using mkbitmap and potrace
+stripping title : =====================================================================
+09-12-06 convert a bitmap image to a vectorized PDF using mkbitmap and potrace sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Journal Club : The good, the bad and the NOISE
+stripping title : ==============================================
+Warning     (63Mo) &lt;https://invibe.net/LaurentPerrinet/SciBlog/2009-12-09?action=AttachFile&amp;do=get&amp;target=09-12-10_journal_club_noise.pdf&gt;`__
+09-12-09 Journal Club : The good, the bad and the NOISE motionclouds, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : which or that?
+stripping title : ==============
+09-12-11 which or that? sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Assistance Mail Free
+stripping title : ====================
+09-12-17 Assistance Mail Free sciblog
+stripping title : contributing to the python community
+stripping title : ====================================
+09-12-19 contributing to the python community sciblog
+stripping title : --------------
+stripping title : 
+stripping title : The original eve
+stripping title : ================
+10-01-27 The original eve sciblog
+stripping title : --------------
+stripping title : 
+stripping title : quelques blogs français de science
+stripping title : ==================================
+10-02-03 quelques blogs français de science sciblog
+stripping title : appel d'offres 2010 "Neuroinformatique et neurosciences computationnelles"
+stripping title : ==========================================================================
+10-02-11 Neuroinformatique et neurosciences computationnelles computationalneuroscience
+stripping title : Using Ssh, the Secure Shell
+stripping title : ===========================
+10-03-15 securing the server macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : using grin
+stripping title : ==========
+10-04-07 using grin sciblog
+stripping title : Comment créer et manipuler les données scientifiques : autour de Numpy
+stripping title : ======================================================================
+No old file 10-04-08-Comment-créer-et-manipuler-les-données-scientifiques-autour-de-Numpy.rst
+10-04-08 Comment créer et manipuler les données scientifiques : autour de Numpy sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Richard Dawkins on our "queer" universe
+stripping title : =======================================
+10-04-24 Richard Dawkins on our "queer" universe sciblog
+stripping title : --------------
+stripping title : 
+stripping title : bibdesk + citeulike
+stripping title : ===================
+10-04-25 bibdesk + citeulike bibcloud, sciblog
+stripping title : replacing text in files
+stripping title : =======================
+10-04-26 replacing text in files sciblog
+stripping title : --------------
+stripping title : 
+stripping title : reStructuredText rst cheatsheet
+stripping title : ===============================
+10-04-28 reStructuredText rst cheatsheet sciblog
+stripping title : --------------
+stripping title : 
+stripping title : sanitize a bibtex file using bibtool
+stripping title : ====================================
+10-05-22 sanitize a bibtex file using bibtool bibcloud, sciblog
+stripping title : Haïm Cohen : Tu Ne Laisseras Point Pleurer
+stripping title : ==========================================
+10-05-23 Haïm Cohen : Tu Ne Laisseras Point Pleurer sciblog
+stripping title : --------------
+stripping title : 
+stripping title : latex within moin
+stripping title : =================
+10-07-08 latex within moin moin, sciblog, latex
+stripping title : compiling OpenCV on MacOSX 10.6
+stripping title : ===============================
+No old file 10-08-03-compiling-OpenCV-on-MacOSX-10.6.rst
+10-08-03 compiling OpenCV on MacOSX 10.6 macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Pinna illusion
+stripping title : ==============
+10-08-05 Pinna illusion sciblog
+stripping title : --------------
+stripping title : 
+stripping title : distributed computing
+stripping title : =====================
+10-08-07 distributed computing sciblog
+stripping title : running embarassingly parallel simulations on a multicore machine using bash loops
+stripping title : ==================================================================================
+10-08-09 running embarassingly parallel simulations on a multicore machine using bash loops sciblog
+stripping title : --------------
+stripping title : 
+stripping title : getting the PID from matlab
+stripping title : ===========================
+10-08-11 getting the PID from matlab sciblog
+stripping title : System Updates
+stripping title : ==============
+10-08-29 System Updates macos, sciblog
+stripping title : Terminal.app shortcuts
+stripping title : ======================
+No old file 10-08-30-Terminal.app-shortcuts.rst
+10-08-30 Terminal.app shortcuts macos, sciblog
+stripping title : managing packages on MacOsX : testing HomeBrew
+stripping title : ==============================================
+10-08-31 managing packages on MacOsX : testing HomeBrew macos, sciblog
+stripping title : A neurocentric approach to Bayesian inference
+stripping title : =============================================
+10-09-03 A neurocentric approach to Bayesian inference sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Journée de l'IFR 131 -Sciences du Cerveau et de la Cognition
+stripping title : ============================================================
+Warning     présentation &lt;https://invibe.net/LaurentPerrinet/SciBlog/2010-09-09?action=AttachFile&amp;do=view&amp;target=10-09-09_journee_IFR_noise.pdf&gt;`__
+No old file 10-09-09-Journée-de-l'IFR-131-Sciences-du-Cerveau-et-de-la-Cognition.rst
+10-09-09 Journée de l'IFR 131 -Sciences du Cerveau et de la Cognition sciblog
+stripping title : --------------
+stripping title : 
+stripping title : bundling using py2app
+stripping title : =====================
+10-09-27 bundling using py2app macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : gmail Exchange ActiveSync
+stripping title : =========================
+10-10-05 gmail Exchange ActiveSync sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Émergence
+stripping title : =========
+10-10-06 Émergence sciblog
+stripping title : --------------
+stripping title : 
+stripping title : nous
+stripping title : ====
+10-10-09 nous sciblog
+stripping title : installing python and its components
+stripping title : ====================================
+Warning     `TagSciBlog &lt;https://invibe.net/LaurentPerrinet/TagSciBlog&gt;`__
+10-10-27 installing python and its components macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Marseille : bookmarks and tips
+stripping title : ==============================
+10-10-31 Marseille : bookmarks and tips sciblog
+stripping title : --------------
+stripping title : 
+stripping title : rsync to an alternate ssh port
+stripping title : ==============================
+10-11-03 rsync to an alternate ssh port sciblog
+stripping title : --------------
+stripping title : 
+stripping title : installing Dovecot on MacOsX using MacPorts
+stripping title : ===========================================
+10-11-04 installing Dovecot on MacOsX using MacPorts using, macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : wma to MP3
+stripping title : ==========
+10-11-07 wma to MP3 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Instinct Paradise : journée IMERA du 9 nov 2010
+stripping title : ===============================================
+No old file 10-11-09-Instinct-Paradise-journée-IMERA-du-9-nov-2010.rst
+10-11-09 Instinct Paradise :-journée IMERA du 9 nov 2010 tropique, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Password-less logins with OpenSSH
+stripping title : =================================
+10-11-15 Password-less logins with OpenSSH sciblog
+stripping title : --------------
+stripping title : 
+stripping title : ignoring a folder in SVN
+stripping title : ========================
+10-11-27 ignoring a folder in SVN sciblog
+stripping title : --------------
+stripping title : 
+stripping title : CRAAC: Compte rendu annuel d'activité des chercheurs du CNRS. Année 2010
+stripping title : ========================================================================
+No old file 10-12-08-CRAAC-Compte-rendu-annuel-d'activité-des-chercheurs-du-CNRS.-Année-2010.rst
+10-12-08 CRAAC: Compte rendu annuel d'activité des chercheurs du CNRS. Année 2010 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Caps Lock, what a useless key
+stripping title : =============================
+10-12-20 Caps Lock, what a useless key macos, sciblog
+stripping title : how to find stuff
+stripping title : =================
+10-12-27 how to find stuff info, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : ubuntu : starting sshd at boot
+stripping title : ==============================
+11-01-18 ubuntu : starting sshd at boot sciblog
+stripping title : --------------
+stripping title : 
+stripping title : inverting colors in MacOsX
+stripping title : ==========================
+11-01-19 inverting colors in MacOsX macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Finder Shortcuts in MacOsX
+stripping title : ==========================
+11-01-25 Finder Shortcuts in MacOsX macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : python in user space
+stripping title : ====================
+11-01-26 python in user space sciblog
+stripping title : --------------
+stripping title : 
+stripping title : handling processes in bash
+stripping title : ==========================
+11-01-29 handling processes in bash sciblog
+stripping title : --------------
+stripping title : 
+stripping title : pmset: selecting the sleep mode in Mac Os X
+stripping title : ===========================================
+11-02-09 pmset: selecting the sleep mode in Mac Os X sciblog
+stripping title : --------------
+stripping title : 
+stripping title : 10.10 64bit AHCI hosed on a dell T3500
+stripping title : ======================================
+No old file 11-02-21-10.10-64bit-AHCI-hosed-on-a-dell-T3500.rst
+11-02-21 10.10 64bit AHCI hosed on a dell T3500 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Change User ID and Group ID in Snow Leopard
+stripping title : ===========================================
+11-02-22 Change User ID and Group ID in Snow Leopard macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Ermentrout : "Double or Nothing: Phosphenes and the periodic driving of cortex"
+stripping title : ===============================================================================
+11-03-09 Ermentrout : "Double or Nothing: Phosphenes and the periodic driving of cortex" sciblog
+stripping title : --------------
+stripping title : 
+stripping title : SpikeStream &amp; Nemo
+stripping title : ==================
+11-03-10 SpikeStream &amp; Nemo sciblog
+stripping title : --------------
+stripping title : 
+stripping title : HomeBrew: compiling a python toolchain
+stripping title : ======================================
+11-05-04 HomeBrew: compiling a python toolchain sciblog
+stripping title : Publications 2006-2010
+stripping title : ======================
+Warning  #. `SciBlog/2011-07-05 &lt;https://invibe.net/LaurentPerrinet/SciBlog/2011-07-05?highlight=%28TagPublicationsArticles%29%7C%28TagYear06%29%7C%28TagYear07%29%7C%28TagYear08%29%7C%28TagYear09%29%7C%28TagYear10%29&gt;`__
+11-07-05 Publications 2006-2010 publications2006-2009, year09, year08, publications2006-2010, year10), sciblog, year07
+stripping title : --------------
+stripping title : 
+stripping title : scripting MoinMoin to get, change or rename pages
+stripping title : =================================================
+11-07-06 scripting MoinMoin to get, change or rename pages moin, sciblog
+stripping title : using a versioning system
+stripping title : =========================
+11-07-07 using a versioning system macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : mercurial &amp; LaTeX
+stripping title : =================
+11-07-08 mercurial &amp; LaTeX latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : mounting filesystems using SSH
+stripping title : ==============================
+11-07-10 mounting filesystems using SSH info, macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : computational and theoretical neuroscience
+stripping title : ==========================================
+11-07-25 computational and theoretical neuroscience sciblog, computationalneuroscience
+stripping title : --------------
+stripping title : 
+stripping title : installing MoinMoin on a OVH server
+stripping title : ===================================
+12-01-07 installing MoinMoin on a OVH server moin, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Compiling pyglet on MacOsX
+stripping title : ==========================
+12-01-18 Compiling pyglet on MacOsX macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : installing Dovecot on debian
+stripping title : ============================
+12-02-08 installing Dovecot on debian using, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Tropique : intervention Enghien
+stripping title : ===============================
+12-02-16 Tropique :-intervention Enghien year12, tropique, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : paramétrer l'e-mail à l'INT
+stripping title : ===========================
+No old file 12-02-17-paramétrer-l'e-mail-à-l'INT.rst
+12-02-17 paramétrer l'e-mail à l'INT int, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : access spawn
+stripping title : ============
+12-02-22 access spawn int, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Completely disable quarantine of downloaded files
+stripping title : =================================================
+12-03-05 Completely disable quarantine of downloaded files macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : view pdf online on firefox in macosx
+stripping title : ====================================
+12-03-10 view pdf online on firefox in macosx macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Stop Bonjour from broadcasting ssh and sftp
+stripping title : ===========================================
+12-03-11 Stop Bonjour from broadcasting ssh and sftp int, macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Doing a red-lined article file from two versions of a paper in LaTeX
+stripping title : ====================================================================
+12-03-12 Doing a red-lined article file from two versions of a paper in LaTeX latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Moving Time Machine to a New Hard Drive
+stripping title : =======================================
+12-03-13 Moving Time Machine to a New Hard Drive macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Creating a bootable Debian USB flash drive on MacOsX
+stripping title : ====================================================
+12-03-16 Creating a bootable Debian USB flash drive on MacOsX info, macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : installing Dovecot on MacOsX using HomeBrew
+stripping title : ===========================================
+12-03-21 installing Dovecot on MacOsX using HomeBrew using, macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : how to leave iphoto
+stripping title : ===================
+12-03-22 how to leave iphoto macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Type your paths directly
+stripping title : ========================
+12-03-24 Type your paths directly macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : going back to simplicity: duckduckgo
+stripping title : ====================================
+12-03-25 going back to simplicity: duckduckgo sciblog
+stripping title : --------------
+stripping title : 
+stripping title : managing defaults on MacOsX
+stripping title : ===========================
+12-04-05 managing defaults on MacOsX sciblog
+stripping title : --------------
+stripping title : 
+stripping title : transition from movie15.sty to media9.sty
+stripping title : =========================================
+No old file 12-04-17-transition-from-movie15.sty-to-media9.sty.rst
+12-04-17 transition from movie15.sty to media9.sty latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Converting FLAC to AAC (or MP3 to OGG etc...)
+stripping title : =============================================
+No old file 12-04-22-Converting-FLAC-to-AAC-(or-MP3-to-OGG-etc...).rst
+12-04-22 Converting FLAC to AAC (or MP3 to OGG etc...) sciblog
+stripping title : --------------
+stripping title : 
+stripping title : rotating a video using ffmpeg
+stripping title : =============================
+12-04-30 rotating a video using ffmpeg sciblog
+stripping title : --------------
+stripping title : 
+stripping title : racourci pour accéder à une page INIST
+stripping title : ======================================
+No old file 12-06-12-racourci-pour-accéder-à-une-page-INIST.rst
+12-06-12 racourci pour accéder à une page INIST int, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : using and re-using metadata in LaTeX
+stripping title : ====================================
+12-07-10 using and re-using metadata in LaTeX latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Make PDF files searchable and copyable
+stripping title : ======================================
+12-07-24 Make PDF files searchable and copyable latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : István Orosz
+stripping title : ============
+No old file 12-08-19-István-Orosz.rst
+12-08-19 István Orosz sciblog
+stripping title : --------------
+stripping title : 
+stripping title : installing Dovecot on QNAP
+stripping title : ==========================
+12-08-27 installing Dovecot on QNAP using, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : connecting a linux client to a QNAP's LDAP server
+stripping title : =================================================
+No old file 12-09-04-connecting-a-linux-client-to-a-QNAP's-LDAP-server.rst
+12-09-04 connecting a linux client to a QNAP's LDAP server info, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : installing linux on imac hardware
+stripping title : =================================
+12-09-09 installing linux on imac hardware sciblog
+stripping title : |/!\\| **not public**
+stripping title : 
+stripping title : --------------
+stripping title : 
+stripping title : discover ports on MacOSX
+stripping title : ========================
+12-09-30 discover ports on MacOSX macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : craac 2012
+stripping title : ==========
+12-11-07 craac 2012 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : setting the umask to define default permissions for created files
+stripping title : =================================================================
+12-11-28 setting the umask to define default permissions for created files int, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : WP4 report : NeuroTools support for the synthesis of random textured dynamical stimuli
+stripping title : ======================================================================================
+13-01-16 WP4 report : NeuroTools support for the synthesis of random textured dynamical stimuli sciblog, brainscales
+stripping title : --------------
+stripping title : 
+stripping title : (re)moving lots of file containing a similar pattern
+stripping title : ====================================================
+13-01-31 (re)moving lots of file containing a similar pattern sciblog
+stripping title : --------------
+stripping title : 
+stripping title : How To Change Your Time Machine Backup Interval
+stripping title : ===============================================
+13-02-02 How To Change Your Time Machine Backup Interval macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : WP5 Year 2 report: contribution of CNRS-INT (Institut de Neurosciences de la Timone)
+stripping title : ====================================================================================
+13-02-04 WP5 Year 2 report: contribution of CNRS-INT (Institut de Neurosciences de la Timone) sciblog, brainscales
+stripping title : --------------
+stripping title : 
+stripping title : setting some conventions common in Bibdesk (to work with bibtex, citeUlike)
+stripping title : ===========================================================================
+13-03-06 setting some conventions common in Bibdesk (to work with bibtex, citeUlike) sciblog
+stripping title : --------------
+stripping title : 
+stripping title : shortcut to put the display to sleep
+stripping title : ====================================
+13-03-13 shortcut to put the display to sleep macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : upgrading owncloud to 5.0.0
+stripping title : ===========================
+No old file 13-03-23-upgrading-owncloud-to-5.0.0.rst
+13-03-23 upgrading owncloud to 5.0.0 sciblog
+stripping title : --------------
+stripping title : 
+stripping title : using tabs in vim
+stripping title : =================
+13-03-25 using tabs in vim info, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : dropping owncloud
+stripping title : =================
+13-05-14 dropping owncloud sciblog
+stripping title : --------------
+stripping title : 
+stripping title : updating to mactex (texlive for mac), version 2013
+stripping title : ==================================================
+13-06-12 updating to mactex (texlive for mac), version 2013 latex, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Useful numbers
+stripping title : ==============
+13-07-08 Useful numbers sciblog
+stripping title : --------------
+stripping title : 
+stripping title : Meshnet
+stripping title : =======
+13-10-26 Meshnet sciblog
+stripping title : --------------
+stripping title : 
+stripping title : !SparkleShare on a QNAP
+stripping title : =======================
+13-11-04 !SparkleShare on a QNAP using, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : homebrew cask (level 0): contributing a new cask
+stripping title : ================================================
+Warning     `mistyped &lt;https://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__ something...
+13-11-08 homebrew cask (level 0): contributing a new cask macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : homebrew cask (level 1): correcting a pull request
+stripping title : ==================================================
+Warning  -  I mistyped `my contribution &lt;https://invibe.net/LaurentPerrinet/SciBlog/2013-11-08&gt;`__,
+13-11-09 homebrew cask (level 1): correcting a pull request macos, sciblog
+stripping title : --------------
+stripping title : 
+stripping title : How Airplanes Fly: A Physical Description of Lift
+stripping title : =================================================
+14-01-01 How Airplanes Fly: A Physical Description of Lift sciblog
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [104]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">todo_page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">SciBlog/2012-12-19</span>
+<span class="s2">SciBlog/2012-12-12</span>
+<span class="s2">SciBlog/2011-07-18</span>
+<span class="s2">SciBlog/2011-07-12</span>
+<span class="s2">SciBlog/2012-10-02</span>
+<span class="s2">"""</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>clean-up of failed pages</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [122]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="c1">#print os.getcwd()</span>
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">todo_page_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="n">DATE</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'SciBlog/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">DATE</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="s1">'rm -fr </span><span class="si">%s</span><span class="s1">*'</span> <span class="o">%</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="nb">print</span> <span class="n">cmd</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>rm -fr 12-12-19*
+rm -fr 12-12-12*
+rm -fr 11-07-18*
+rm -fr 11-07-12*
+rm -fr 12-10-02*
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Done!">Done!<a class="anchor-link" href="2014-02-15-converting-moinmoin-pages-to-nikola.html#Done!">¶</a>
+</h4>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/ipython.html" rel="tag">ipython</a></li>
+            <li><a class="tag p-category" href="../categories/moinmoin.html" rel="tag">moinmoin</a></li>
+            <li><a class="tag p-category" href="../categories/nikola.html" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" rel="prev" title="Converting MoinMoin pages to Nikola">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2014-02-28-batch-removing-files-on-a-ftp-server.html" rel="next" title="Batch removing files on a FTP server">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer">
+            Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about experiment)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/experiment.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 20 Jun 2022 11:08:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>IRM clouds</title><link>https://laurentperrinet.github.io/sciblog/posts/2016-04-06_irm-clouds.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A feature of MotionClouds is the ability to precisely tune the precision of information  following the principal axes. One which is particularly relevant for the primary visual cortical area of primates (area V1) is to tune the otirentation mean and bandwidth.&lt;/p&gt;
+&lt;h3 id="Studying-the-role-of-contrast-in-V1-using-MotionClouds"&gt;Studying the role of contrast in V1 using MotionClouds&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2016-04-06_irm-clouds.html#Studying-the-role-of-contrast-in-V1-using-MotionClouds"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2016-04-06_irm-clouds.html"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motionclouds</category><category>orientation</category><category>psychophysics</category><guid>https://laurentperrinet.github.io/sciblog/posts/2016-04-06_irm-clouds.html</guid><pubDate>Wed, 06 Apr 2016 13:52:01 GMT</pubDate></item><item><title>Recruiting different population ratios in V1 using orientation components: defining a protocol</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-12-10_orientation_protocol.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A feature of MotionClouds is the ability to precisely tune the precision of information  following the principal axes. One which is particularly relevant for the primary visual cortical area of primates (area V1) is to tune the otirentation mean and bandwidth.&lt;/p&gt;
+&lt;p&gt;This is part of a larger study to tune &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation.html"&gt;orientation bandwidth&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="summary-of-the-electro-physiology-protocol"&gt;summary of the electro-physiology protocol&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-12-10_orientation_protocol.html#summary-of-the-electro-physiology-protocol"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-12-10_orientation_protocol.html"&gt;Read more…&lt;/a&gt; (42 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motionclouds</category><category>OBV1</category><category>orientation</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-12-10_orientation_protocol.html</guid><pubDate>Wed, 10 Dec 2014 09:56:20 GMT</pubDate></item><item><title>Recruiting different population ratios in V1 using orientation components</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A feature of MotionClouds is the ability to precisely tune the precision of information  following the principal axes. One which is particularly relevant for the primary visual cortical area of primates (area V1) is to tune the orientation mean and bandwidth.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation.html"&gt;Read more…&lt;/a&gt; (11 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motionclouds</category><category>OBV1</category><category>orientation</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation.html</guid><pubDate>Mon, 10 Nov 2014 09:56:20 GMT</pubDate></item><item><title>Recruiting different population ratios in V1 using orientation components: a biphoton study</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation_biphoton.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A feature of MotionClouds is the ability to precisely tune the precision of information  following the principal axes. One which is particularly relevant for the primary visual cortical area of primates (area V1) is to tune the otirentation mean and bandwidth.&lt;/p&gt;
+&lt;p&gt;To install the necessary libraries, check out &lt;a href="https://github.com/NeuralEnsemble/MotionClouds/blob/master/README.md"&gt;the documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="summary-of-the-biphoton-protocol"&gt;summary of the biphoton protocol&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation_biphoton.html#summary-of-the-biphoton-protocol"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For the biphoton experiment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The refresh rate of the screen is 70Hz and stimulation for 5 times 1s, which makes 350 images.&lt;/li&gt;
+&lt;li&gt;for the spatial frequency 0.125 cyc/deg is optimal (between 0.01 and 0.16).&lt;/li&gt;
+&lt;li&gt;for the temporal frequency 2 cyc/sec is optimal (between 0.8 and 4 sic/sec), we manipulate $B_V$ to get a qualitative estimate.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation_biphoton.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motionclouds</category><category>OBV1</category><category>orientation</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-11-10_orientation_biphoton.html</guid><pubDate>Mon, 10 Nov 2014 09:56:20 GMT</pubDate></item><item><title>A bit of fun with gravity waves</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-10-24_a-bit-of-fun-with-gravity-waves.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="A-bit-of-fun-with-gravity-waves"&gt;A bit of fun with gravity waves&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-10-24_a-bit-of-fun-with-gravity-waves.html#A-bit-of-fun-with-gravity-waves"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://neuralensemble.github.io/MotionClouds"&gt;Motion Clouds&lt;/a&gt; were defined in the origin to provide a simple parameterization for 
+textures. Thus we used a simple unimodal, normal distribution (on the log-radial frequency space to be more precise). But the larger set of Random Phase Textures may provide some interesting examples, some of them can even be fun! This is the case of this simulation of the waves you may observe on the surface on the ocean.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTML&lt;/span&gt;
+&lt;span class="n"&gt;HTML&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;center&amp;gt;&amp;lt;video controls autoplay loop src="../files/2014-10-24_waves/waves.mp4" width=61.8%/&amp;gt;&amp;lt;/center&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2014-10-24_waves/waves.mp4" width="61.8%/"&gt;&lt;/video&gt;&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Main features of gravitational waves are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;longer waves travel faster (tsunami are fast and global, ripples are slow and local) - speed is &lt;em&gt;linearly proportional&lt;/em&gt; to wavelength&lt;/li&gt;
+&lt;li&gt;phase speed (following a wave's crest) is &lt;strong&gt;twice&lt;/strong&gt; as fast as group speed (following a group of waves).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;More info about deep water waves : &lt;a href="http://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node122.html"&gt;http://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node122.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-24_a-bit-of-fun-with-gravity-waves.html"&gt;Read more…&lt;/a&gt; (18 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motion-detection</category><category>motionclouds</category><category>psychophysics</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-10-24_a-bit-of-fun-with-gravity-waves.html</guid><pubDate>Fri, 24 Oct 2014 14:32:19 GMT</pubDate></item><item><title>Aperture Problem</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="SlippingClouds:-MotionClouds-for-exploring-the-aperture-problem"&gt;SlippingClouds: MotionClouds for exploring the aperture problem&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html#SlippingClouds:-MotionClouds-for-exploring-the-aperture-problem"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html"&gt;Read more…&lt;/a&gt; (21 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>area-V1</category><category>experiment</category><category>motion-detection</category><category>motionclouds</category><category>psychophysics</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html</guid><pubDate>Mon, 20 Oct 2014 15:19:25 GMT</pubDate></item></channel></rss>

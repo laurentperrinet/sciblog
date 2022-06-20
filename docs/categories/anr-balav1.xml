@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about ANR BalaV1)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/anr-balav1.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 20 Jun 2022 11:06:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[Stage M1] Chloé Pasturel : week 6</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Nous allons simuler un ring avec en entrée une courbe représentant des stimuli "naturels"&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;simulations center-surround&lt;/li&gt;
+&lt;li&gt;synthèse &lt;/li&gt;
+&lt;li&gt;écriture poster en latex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html</guid><pubDate>Wed, 18 Jun 2014 10:58:58 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : week 5</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Loi-de-Von-mises-:"&gt;Loi de Von mises :&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html#Loi-de-Von-mises-:"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La densité est définie sur $[0, 2\pi[$ par
+$ f(x) = \frac {e^{\kappa cos(\theta - m)}}{2 \pi I_{0}(\kappa)} ~$&lt;br&gt;
+avec  $~ \kappa = \frac {1}{\sigma^{2}} $&lt;/p&gt;
+&lt;p&gt;L'orientation est définie sur $[0, \pi[$ par un remplaçant de la variable $~ (\theta_d - m) ~$ par $~ 2(\theta_o - m)$&lt;/p&gt;
+&lt;p&gt;nous obtenons alors la densité pour $\theta_o$:
+$ f(x) = \frac{1}{2 \pi I_{0}(\kappa)} \cdot {e^{\frac{cos(2(\theta - m))}{\sigma^{2}}}}$
+et 
+$~ p = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- 2 \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$&lt;/p&gt;
+&lt;p&gt;car avec le changement de variable :
+$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_{1}))^{2}} {2\sigma_{1}^{2}}} $
+et
+$\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_2))^{2}} {2\sigma_{2}^{2}}} $&lt;/p&gt;
+&lt;p&gt;donc $\varepsilon(x) \cdot \gamma(x) = \frac {1}{2\pi \sigma_{1} \sigma_{2}} \cdot e^{-2(\frac {(x-m_{1})^{2}}{\sigma_{1}^{2}} + \frac{(x-m_{2})^{2}}{\sigma_{2}^{2}})} = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- 2 \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-5.html</guid><pubDate>Wed, 18 Jun 2014 09:20:52 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : week 4</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;ul&gt;
+&lt;li&gt;simulations avec différents MCs&lt;/li&gt;
+&lt;li&gt;ring avec représentation de la vitesse angulaire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html"&gt;Read more…&lt;/a&gt; (23 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html</guid><pubDate>Wed, 18 Jun 2014 09:20:50 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : week 3</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Travail sur les Motion Clouds et observation des différents changement de paramètre particulièrement B_sf&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;introduction aux motions clouds: installation et display dans un notebook&lt;/li&gt;
+&lt;li&gt;synthèse de clouds avec différents theta &lt;/li&gt;
+&lt;li&gt;synthèse avec différents B_theta  (V=0)&lt;/li&gt;
+&lt;li&gt;utilisation du trick dans &lt;a href="https://laurentperrinet.github.io/sciblog/posts/2015-07-02_smooth-transition-between-mcs.html"&gt;https://laurentperrinet.github.io/sciblog/posts/2015-07-02_smooth-transition-between-mcs.html&lt;/a&gt; pour créer un stimulus pour lequel l'orientation tourne de 0 à 2*pi&lt;/li&gt;
+&lt;li&gt;proposer une façon simple de passer de ce signal à une entré pour le ring (un peu de maths? un MC est une texture définie en fourier, une cellule simple fait une convolution dans l'espace, donc une multiplication dans Fourier: on pourrait avoir la sortie linéaire du neurone de V1 directement ...)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://neuralensemble.github.io/MotionClouds/"&gt;http://neuralensemble.github.io/MotionClouds/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://neuralensemble.github.io/MotionClouds"&gt;https://neuralensemble.github.io/MotionClouds&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-3.html</guid><pubDate>Wed, 18 Jun 2014 09:20:47 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : week 2</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Simulation d'un ring model grâce au programme brian et observation des conséquences du changement de différents paramêtres&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;simulation d'un ring par l'intermédiaire de brian &lt;a href="http://briansimulator.org/"&gt;http://briansimulator.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;courbe de sélectivité en fonction des parametres&lt;/li&gt;
+&lt;li&gt;courbe de sélectivité à différents contrastes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-2.html</guid><pubDate>Wed, 18 Jun 2014 09:20:45 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : plan du stage</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Modele-d'une-entr%C3%A9e-naturelle-%C3%A0-un-mod%C3%A8le-de-selectivit%C3%A9-%C3%A0-l'orientation"&gt;Modele d'une entrée naturelle à un modèle de selectivité à l'orientation&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html#Modele-d'une-entr%C3%A9e-naturelle-%C3%A0-un-mod%C3%A8le-de-selectivit%C3%A9-%C3%A0-l'orientation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Stage M1 de Chloé Pasturel, encadrée par Laurent Perrinet (INT, CNRS)&lt;/p&gt;
+&lt;h3 id="Contexte-du-stage"&gt;Contexte du stage&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html#Contexte-du-stage"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;(importé depuis &lt;a href="https://laurentperrinet.github.io/grant/anr-bala-v1/"&gt;https://laurentperrinet.github.io/grant/anr-bala-v1/&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-plan-du-stage.html</guid><pubDate>Wed, 18 Jun 2014 09:10:30 GMT</pubDate></item><item><title>[Stage M1] Chloé Pasturel : week 1</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;ul&gt;
+&lt;li&gt;définition du sujet - lecture Hansel&lt;/li&gt;
+&lt;li&gt;mise en place du python notebook&lt;/li&gt;
+&lt;li&gt;demos de brian&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="installation-des-outils"&gt;installation des outils&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html#installation-des-outils"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;virtual box&lt;/li&gt;
+&lt;li&gt;VM ubuntu&lt;/li&gt;
+&lt;li&gt;&amp;lt;&amp;lt;&amp;lt; guest additions + clone &lt;/li&gt;
+&lt;li&gt;neurodebian&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;    wget -O- http://neuro.debian.net/lists/trusty.de-md.full | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
+    sudo apt-key adv --recv-keys --keyserver pgp.mit.edu 2649A5A9
+    sudo apt-get update&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;install on ubuntu&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install aptitude
+sudo aptitude install ipython-notebook
+sudo aptitude install python-matplotlib
+sudo aptitude install python-brian 
+sudo aptitude install texlive-full
+
+
+sudo aptitude install python-pynn 
+pip install --user neurotools&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html"&gt;Read more…&lt;/a&gt; (11 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ANR BalaV1</category><category>LogGabor</category><category>motionclouds</category><category>python</category><category>ring-model</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-1.html</guid><pubDate>Wed, 18 Jun 2014 09:10:05 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperture Problem | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2014-10-20-animation-in-a-notebook-using-holoviews.html" title="Animation in a notebook using holoviews" type="text/html">
+<link rel="next" href="2014-10-20_motion-plaid.html" title="Motion Plaid" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Aperture Problem">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_aperture-problem.html">
+<meta property="og:description" content="SlippingClouds: MotionClouds for exploring the aperture problem¶
+
+
+
+
+
+In [1]:
+
+    
+import numpy as np
+import MotionClouds as mc
+
+fx, fy, ft = mc.get_grids(mc.N_X, mc.N_Y, mc.N_frame)
+name = 'Slipping">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-10-20T17:19:25+02:00">
+<meta property="article:tag" content="area-V1">
+<meta property="article:tag" content="experiment">
+<meta property="article:tag" content="motion-detection">
+<meta property="article:tag" content="motionclouds">
+<meta property="article:tag" content="psychophysics">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+<!-- Custom search -->
+<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2014-10-20_aperture-problem.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../index.html" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Aperture Problem</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2014-10-20T17:19:25+02:00" itemprop="datePublished" title="2014-10-20 17:19">2014-10-20 17:19</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2014-10-20_aperture-problem.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SlippingClouds:-MotionClouds-for-exploring-the-aperture-problem">SlippingClouds: MotionClouds for exploring the aperture problem<a class="anchor-link" href="2014-10-20_aperture-problem.html#SlippingClouds:-MotionClouds-for-exploring-the-aperture-problem">¶</a>
+</h2>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'SlippingClouds'</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2014-10-20_Aperture-Problem'</span>
+<span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+
+<span class="n">B_sf</span> <span class="o">=</span> <span class="mf">.3</span>
+<span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">diag</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_iso'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/site-packages/vispy/visuals/isocurve.py:22: UserWarning: VisPy is not yet compatible with matplotlib 2.2+
+  warnings.warn("VisPy is not yet compatible with matplotlib 2.2+")
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_iso.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_iso.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_iso_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span>
+<span class="n">diag</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_diag'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_diag.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_diag.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_diag_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">diag</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+<span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_contra'</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_contra.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_contra.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_contra_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This figure shows how one can create MotionCloud stimuli that have specific direction and orientation which are not necessarily perpendicular, components "slipping" relative to the motion.
+<br> We generate MotionClouds components with a strong selectivity toward one orientation. We show in different lines of this table respectively: Top) orientation perpendicular to orientation as in the standard case with a line, Middle) a 45° difference between both,  Bottom) orientation and direction are parallel.
+<br> We created the aperture problem without any aperture! This can be shown by looking at envelopes in the Fourier space. To best infer motion, you would look fro the best speed plane that would go through each envelope. If these envelopes are rather tight, there are many different speed planes that can go through this envelope: motion is ambiguous.
+<br> Columns represent isometric projections of a cube. The left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum. The middle column shows an isometric view of the  faces of the movie cube.
+<br> The first frame of the movie lies on the x-y plane, the x-t plane lies on the top face and motion direction is seen as diagonal lines on this face (vertical motion is similarly see in the y-t face). The third column displays the actual movie as an animation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="exploring-different-slipping-angles">exploring different slipping angles<a class="anchor-link" href="2014-10-20_aperture-problem.html#exploring-different-slipping-angles">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="c1">#downscale= 2</span>
+<span class="c1">#fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/downscale, mc.N_frame)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">dtheta</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N_orient</span><span class="p">):</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_dtheta_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dtheta</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
+    <span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
+    <span class="n">diag</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="o">+</span><span class="n">dtheta</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_0.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_0_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_2243994752564138.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_2243994752564138.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_2243994752564138_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_4487989505128276.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_4487989505128276.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_4487989505128276_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_6731984257692414.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_6731984257692414.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_6731984257692414_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_8975979010256552.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_8975979010256552.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_0_8975979010256552_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_121997376282069.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_121997376282069.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_121997376282069_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_3463968515384828.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_3463968515384828.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_3463968515384828_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_5707963267948966.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_5707963267948966.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_dtheta_1_5707963267948966_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We display SlippingClouds with different angle between direction and orientation.
+<br> Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
+<br> Right column of the table displays the actual movie as an animation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="manipulating-different-ambiguities">manipulating different ambiguities<a class="anchor-link" href="2014-10-20_aperture-problem.html#manipulating-different-ambiguities">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_test</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="c1">#downscale= 2</span>
+<span class="c1">#fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/downscale, mc.N_frame)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dtheta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="k">for</span> <span class="n">B_theta_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N_test</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span><span class="c1">#np.linspace(0, np.pi/8, N_test)[1:]:</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_theta_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
+    <span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
+    <span class="n">diag</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="o">+</span><span class="n">dtheta</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_39269908169872414.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_39269908169872414.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_39269908169872414_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_19634954084936207.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_19634954084936207.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_19634954084936207_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_1308996938995747.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_1308996938995747.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_1308996938995747_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_09817477042468103.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_09817477042468103.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_09817477042468103_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_07853981633974483.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_07853981633974483.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_07853981633974483_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_06544984694978735.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_06544984694978735.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_06544984694978735_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_05609986881410345.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_05609986881410345.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_05609986881410345_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+                <center><table border="none" width="100%" height="100%">
+<tr>
+<td width="33%%"><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_04908738521234052.png" width="100%/"></center></td>
+                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_04908738521234052.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
+                </tr>
+<tr>
+<td><center><img src="../files/2014-10-20_Aperture-Problem/SlippingClouds_B_theta_0_04908738521234052_cube.png" width="100%/"></center></td>
+                </tr>
+</table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The ambiguity in !SlippingClouds can be manipualted by changing B_theta for a given B_V.
+<br> Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
+<br> Right column of the table displays the actual movie as an animation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2014-10-20_aperture-problem.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.7.1 64bit [Clang 10.0.0 (clang-1000.11.45.5)]</td>
+</tr>
+<tr>
+<td>IPython</td>
+<td>7.1.1</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Darwin 17.7.0 x86_64 i386 64bit</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td>1.15.4</td>
+</tr>
+<tr>
+<td>scipy</td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td>matplotlib</td>
+<td>3.0.1</td>
+</tr>
+<tr>
+<td>MotionClouds</td>
+<td>20180606</td>
+</tr>
+<tr><td colspan="2">Wed Nov 14 09:37:58 2018 CET</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/area-v1.html" rel="tag">area-V1</a></li>
+            <li><a class="tag p-category" href="../categories/experiment.html" rel="tag">experiment</a></li>
+            <li><a class="tag p-category" href="../categories/motion-detection.html" rel="tag">motion-detection</a></li>
+            <li><a class="tag p-category" href="../categories/motionclouds.html" rel="tag">motionclouds</a></li>
+            <li><a class="tag p-category" href="../categories/psychophysics.html" rel="tag">psychophysics</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2014-10-20-animation-in-a-notebook-using-holoviews.html" rel="prev" title="Animation in a notebook using holoviews">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2014-10-20_motion-plaid.html" rel="next" title="Motion Plaid">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer">
+            Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-140381649-1', {});
+
+
+  document.addEventListener('click', onClickCallback, false);
+</script>
+</body>
+</html>
