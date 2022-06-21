@@ -125,7 +125,8 @@ brew install off">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>My installation notes for mutt_+Homebrew_+gmail, based on this post by <a class="reference external" href="http://stevelosh.com/blog/2012/10/the-homely-mutt/">steve losh</a> and this <a class="reference external" href="http://blog.developwithpassion.com/2013/05/02/getting-up-and-running-with-a-sane-mutt-setup/">other post</a></p>
 <!-- TEASER_END -->
-<section id="offlineimap"><h2>offlineimap</h2>
+<div class="section" id="offlineimap">
+<h2>offlineimap</h2>
 <pre class="literal-block">brew search offlineimap
 brew info offlineimap
 brew home offlineimap
@@ -147,7 +148,9 @@ python
 offlineimap --info
 offlineimap --dry-run
 offlineimap</pre>
-</section><section id="mutt"><h2>mutt</h2>
+</div>
+<div class="section" id="mutt">
+<h2>mutt</h2>
 <pre class="literal-block">mv ~/Documents/Mail ~/pool/docs/
 mutt
 brew info mutt
@@ -172,15 +175,21 @@ mkdir .mutt/temp
 mvim .mutt/sig
 man mutt
 mutt</pre>
-</section><section id="sending-e-mail"><h2>sending e-mail</h2>
+</div>
+<div class="section" id="sending-e-mail">
+<h2>sending e-mail</h2>
 <pre class="literal-block">brew install msmtp
 msmtp --help
 vim .mutt/Equifax_Secure_CA.cert
 vim .msmtprc
 msmtp -a laurent.perrinet --serverinfo</pre>
-</section><section id="contacts"><h2>contacts</h2>
+</div>
+<div class="section" id="contacts">
+<h2>contacts</h2>
 <pre class="literal-block">brew install contacts</pre>
-</section><section id="all-in-one-script"><h2>all in one script</h2>
+</div>
+<div class="section" id="all-in-one-script">
+<h2>all in one script</h2>
 <pre class="literal-block"># brew install mutt
 # a nice command-line utility to read and send e-mails
 brew install offlineimap
@@ -203,7 +212,9 @@ mkdir -p ~/mail
 mkdir -p ~/mail/home
 mkdir -p ~/mail/work
 mkdir -p ~/mail/local</pre>
-</section><section id="key-bindings"><h2>key bindings</h2>
+</div>
+<div class="section" id="key-bindings">
+<h2>key bindings</h2>
 <p>We’re going to use j and k to move around, so we may as well support Vim keys like gg and G too. We’ll use R for reply all, since that comes in handy fairly often. Ctrl-R will mark all messages in the current folder as read.</p>
 <p>The tab key is going to “commit” changes we’ve made in Mutt (like deleting an email) to our local Maildir folder. Once those changes are in the Maildir folder offlineimap will sync them to the server the next time it runs. This is nice because it lets us recover if we accidentally do something stupid like deleting the wrong email.</p>
 <p>The space key will toggle collapsing of threads, which can be convenient when viewing mailing lists (or any conversations with many messages).</p>
@@ -218,8 +229,9 @@ Attachment List</p>
 <p>Other interesting key bindings:</p>
 <ul class="simple">
 <li><p>h to toggle hide / view headers in pager view.</p></li>
-</ul></section>
+</ul>
 </div>
+    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>
             <li><a class="tag p-category" href="../categories/vim.html" rel="tag">vim</a></li>

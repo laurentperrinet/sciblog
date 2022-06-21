@@ -191,7 +191,7 @@
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">.5</span> <span class="c1"># pas de temps</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">.5</span> <span class="c1"># pas de discrétisation du temps</span>
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 </pre></div>
 
@@ -386,7 +386,7 @@
 <p>Commençons avec cet équation du potentiel membranaire:</p>
 $$
 \tau \cdot \frac{dV}{dt} = -(V - V_{rest}) + R*I(t)
-$$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ pour $3 ms$.</p>
+$$<p>avec émission d'un "spike" si $V &gt; V_{threshold}$, et alors $V= V_{reset}$:</p>
 
 </div>
 </div>
@@ -424,7 +424,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>QUESTION: régler le paramètre $R$ pour obtenir une dizaine de potentiels d'action - quel est l'interprétation de ce paramètre et quelles est l'unité de mesure?</p>
+<p>QUESTION: régler le paramètre $R$ pour obtenir une dizaine de potentiels d'action - quelle est l'interprétation de ce paramètre et quelle est l'unité de mesure?</p>
 
 </div>
 </div>
@@ -1380,7 +1380,7 @@ $$<p>avec émission d'un "spike" si $V &gt; V_{rest}$, et alors $V= V_{rest}$ po
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bruit-gel%C3%A9">bruit gelé<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#bruit-gel%C3%A9">¶</a>
+<h3 id="Bruit-%22gel%C3%A9%22-?">Bruit "gelé" ?<a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#Bruit-%22gel%C3%A9%22-?">¶</a>
 </h3>
 </div>
 </div>
@@ -1675,7 +1675,7 @@ seed(...) method of numpy.random.mtrand.RandomState instance
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>REPONSE: avec une forte amplitude du bruit (<code>I_n=800, I_0=150</code>), on reproduit le paneau B: avec un bruit gelé, les traces des neurones sont reproductibles.</p>
+<p>REPONSE: avec une forte amplitude du bruit (<code>I_n=800, I_0=150</code>), on reproduit le panneau B: avec un bruit gelé, les traces des neurones sont reproductibles.</p>
 <p>Celà prouve aussi que l'on a "oublié" d'inclure un bruit intrinsèque à la dynamique du neurone:</p>
 
 </div>
@@ -2289,7 +2289,7 @@ number of spikes per trial : [16 17 17 18 17 17 17 17 17 17 17 17 17 17 17 17 17
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>QUESTION: reproduire le paneau A: quand le bruit est nul, les traces des neurones ne sont pas reproductibles:</p>
+<p>QUESTION: reproduire le panneau A: quand le bruit est nul, les traces des neurones ne sont pas reproductibles:</p>
 
 </div>
 </div>
@@ -2394,7 +2394,7 @@ number of spikes per trial : [16 17 17 18 17 17 17 17 17 17 17 17 17 17 17 17 17
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>On reproduit le paneau B: avec un bruit gelé, les traces des neurones sont reproductibles, même quand le neurone possède un bruit intrinsèque:</p>
+<p>On reproduit le panneau B: avec un bruit gelé, les traces des neurones sont reproductibles, même quand le neurone possède un bruit intrinsèque:</p>
 
 </div>
 </div>
