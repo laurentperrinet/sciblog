@@ -21,7 +21,7 @@ meta = dict(
     width= 1600,
     height= 1000,
     margin= 0.,#1618,
-    reveal_path = 'http://lab.hakim.se/reveal-js/', #/css/reveal.css file://' + home + '/pool/libs/numbers/ipython_slides/reveal.js/',
+    reveal_path = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/', #/css/reveal.css file://' + home + '/pool/libs/numbers/ipython_slides/reveal.js/',
     theme='night',
     author='Laurent U Perrinet, INT',
     author_link='<a href="https://laurentperrinet.github.io">Laurent U Perrinet, INT</a>',
