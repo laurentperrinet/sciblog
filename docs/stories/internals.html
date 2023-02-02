@@ -104,8 +104,7 @@ So, this is a short document ">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="section" id="nikola-internals">
-<h2>Nikola Internals</h2>
+    <section id="nikola-internals"><h2>Nikola Internals</h2>
 <p>Test</p>
 <p>When trying to guide someone into adding a feature in Nikola, it hit me that
 while the way it's structured makes sense <strong>to me</strong> it is far from obvious.</p>
@@ -138,8 +137,7 @@ class. They take options and arguments and do whatever you want, so go wild.</p>
 because it's the one that you use to build sites. So it deserves its own section.</p>
 </dd>
 </dl>
-<div class="section" id="the-build-command">
-<h3>The Build Command</h3>
+<section id="the-build-command"><h3>The Build Command</h3>
 <p>Nikola's goal is similar, deep at heart, to a Makefile. Take sources, compile them
 into something, in this case a website. Instead of a Makefile, Nikola uses
 <a class="reference external" href="http://pydoit.org">doit</a></p>
@@ -163,12 +161,10 @@ option changes, redo it, etc.</p>
 <p>Each task is identified by either a name or a basename:name pair.</p>
 </dd>
 </dl>
-<div class="sidebar">
-<p class="sidebar-title">More about tasks</p>
+<aside class="sidebar"><p class="sidebar-title">More about tasks</p>
 <p>If you ever want to do your own tasks, you really should read the doit
 <a class="reference external" href="http://pydoit.org/tasks.html">documentation on tasks</a></p>
-</div>
-<p>So, what Nikola does, when you use the build command, is to read the
+</aside><p>So, what Nikola does, when you use the build command, is to read the
 configuration <code class="docutils literal">conf.py</code> from the current folder, instantiate
 the <code class="docutils literal">Nikola</code> class, and have it generate a whole list of tasks for doit
 to process. Then doit will decide which tasks need doing, and do them, in
@@ -178,15 +174,11 @@ from all the plugins inheriting <code class="docutils literal">BaseTask</code>, 
 to doit.</p>
 <p>So, if you want things to happen on <code class="docutils literal">build</code> you want to create a Task plugin, or extend
 one of the existing ones.</p>
-<div class="sidebar">
-<p class="sidebar-title">Tests</p>
+<aside class="sidebar"><p class="sidebar-title">Tests</p>
 <p>While Nikola is not a hardcore TDD project, we like tests. So, please add them if you can.
 You can do doctests, you can do unit tests, you can do integration tests. There is support
 for all of them.</p>
-</div>
-</div>
-<div class="section" id="posts-and-stories">
-<h3>Posts and Stories</h3>
+</aside></section><section id="posts-and-stories"><h3>Posts and Stories</h3>
 <p>Nikola has a concept of posts and stories. Both are more or less the same thing, except
 posts are added into RSS feeds and stories are not. All of them are in a list called
 "the timeline" formed by objects of class <code class="docutils literal">Post</code></p>
@@ -194,14 +186,12 @@ posts are added into RSS feeds and stories are not. All of them are in a list ca
 the RSS creation plugin), your plugin should call <code class="docutils literal">self.site.scan_posts()</code> to ensure
 the timeline is created and available in <code class="docutils literal">self.site.timeline</code>. You should not modify
 the timeline, because it will cause consistency issues.</p>
-<div class="sidebar">
-<p class="sidebar-title">scan_posts</p>
+<aside class="sidebar"><p class="sidebar-title">scan_posts</p>
 <p>The scan_posts function is what reads your site and creates the timeline.</p>
 <p>I am considering moving scan_posts off the core and into its own plugin
 so it can be replaced (for example, by a version that reads a database
 instead of scanning a folder tree).</p>
-</div>
-<p>Your plugin can use the timeline to generate "stuff" (technical term). For example,
+</aside><p>Your plugin can use the timeline to generate "stuff" (technical term). For example,
 Nikola comes with plugins that use the timeline to create a website (surprised?).</p>
 <p>The workflow included with nikola is as follows (incomplete!):</p>
 <ol class="arabic simple">
@@ -236,13 +226,12 @@ you have to create a <code class="docutils literal">TemplateSystem</code> plugin
 </dd>
 </dl>
 <p>And of course, you can also replace or extend each of the existing plugins.</p>
+</section></section>
 </div>
-</div>
-    </div>
     
 
 </article><!--End of body content--><footer id="footer">
-            Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+            Contents © 2023 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
 Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
             

@@ -125,8 +125,7 @@ brew install off">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>My installation notes for mutt_+Homebrew_+gmail, based on this post by <a class="reference external" href="http://stevelosh.com/blog/2012/10/the-homely-mutt/">steve losh</a> and this <a class="reference external" href="http://blog.developwithpassion.com/2013/05/02/getting-up-and-running-with-a-sane-mutt-setup/">other post</a></p>
 <!-- TEASER_END -->
-<div class="section" id="offlineimap">
-<h2>offlineimap</h2>
+<section id="offlineimap"><h2>offlineimap</h2>
 <pre class="literal-block">brew search offlineimap
 brew info offlineimap
 brew home offlineimap
@@ -148,9 +147,7 @@ python
 offlineimap --info
 offlineimap --dry-run
 offlineimap</pre>
-</div>
-<div class="section" id="mutt">
-<h2>mutt</h2>
+</section><section id="mutt"><h2>mutt</h2>
 <pre class="literal-block">mv ~/Documents/Mail ~/pool/docs/
 mutt
 brew info mutt
@@ -175,21 +172,15 @@ mkdir .mutt/temp
 mvim .mutt/sig
 man mutt
 mutt</pre>
-</div>
-<div class="section" id="sending-e-mail">
-<h2>sending e-mail</h2>
+</section><section id="sending-e-mail"><h2>sending e-mail</h2>
 <pre class="literal-block">brew install msmtp
 msmtp --help
 vim .mutt/Equifax_Secure_CA.cert
 vim .msmtprc
 msmtp -a laurent.perrinet --serverinfo</pre>
-</div>
-<div class="section" id="contacts">
-<h2>contacts</h2>
+</section><section id="contacts"><h2>contacts</h2>
 <pre class="literal-block">brew install contacts</pre>
-</div>
-<div class="section" id="all-in-one-script">
-<h2>all in one script</h2>
+</section><section id="all-in-one-script"><h2>all in one script</h2>
 <pre class="literal-block"># brew install mutt
 # a nice command-line utility to read and send e-mails
 brew install offlineimap
@@ -212,9 +203,7 @@ mkdir -p ~/mail
 mkdir -p ~/mail/home
 mkdir -p ~/mail/work
 mkdir -p ~/mail/local</pre>
-</div>
-<div class="section" id="key-bindings">
-<h2>key bindings</h2>
+</section><section id="key-bindings"><h2>key bindings</h2>
 <p>We’re going to use j and k to move around, so we may as well support Vim keys like gg and G too. We’ll use R for reply all, since that comes in handy fairly often. Ctrl-R will mark all messages in the current folder as read.</p>
 <p>The tab key is going to “commit” changes we’ve made in Mutt (like deleting an email) to our local Maildir folder. Once those changes are in the Maildir folder offlineimap will sync them to the server the next time it runs. This is nice because it lets us recover if we accidentally do something stupid like deleting the wrong email.</p>
 <p>The space key will toggle collapsing of threads, which can be convenient when viewing mailing lists (or any conversations with many messages).</p>
@@ -229,9 +218,8 @@ Attachment List</p>
 <p>Other interesting key bindings:</p>
 <ul class="simple">
 <li><p>h to toggle hide / view headers in pager view.</p></li>
-</ul>
+</ul></section>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>
             <li><a class="tag p-category" href="../categories/vim.html" rel="tag">vim</a></li>
@@ -244,7 +232,7 @@ Attachment List</p>
                 <a href="2015-07-02_smooth-transition-between-mcs.html" rel="next" title="Smooth transition between MCs">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer">
-            Contents © 2022 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
+            Contents © 2023 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
 Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
             
