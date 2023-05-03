@@ -125,6 +125,7 @@ Here, I am reviewing some methods to read a KML file, includ">
 <p>It's easy to record tracks (for instance while running) using the "My tracks" app on android systems. What about being able to re-use them?</p>
 <p>Here, I am reviewing some methods to read a KML file, including fastkml, pykml, to finally opt for a custom method with the  xmltodict package.</p>
 <!-- TEASER_END -->
+
 </div>
 </div>
 </div>
@@ -747,7 +748,7 @@ Date d'enregistrement : 27/04/2013 14:33
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pyKML
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pyKML
 </pre></div>
 
     </div>
@@ -996,7 +997,7 @@ None
 
 
 <span class="k">class</span> <span class="nc">XmlDictConfig</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
-    <span class="sd">'''</span>
+<span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Example usage:</span>
 
 <span class="sd">    &gt;&gt;&gt; tree = ElementTree.parse('your_file.xml')</span>
@@ -1093,7 +1094,7 @@ None
 <span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span>
 
 <span class="k">class</span> <span class="nc">XmlDictObject</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Adds object like functionality to the standard dictionary.</span>
 <span class="sd">    """</span>
 
@@ -1116,7 +1117,7 @@ None
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">Wrap</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Static method to wrap a dictionary recursively as an XmlDictObject</span>
 <span class="sd">        """</span>
 
@@ -1137,7 +1138,7 @@ None
             <span class="k">return</span> <span class="n">x</span>
         
     <span class="k">def</span> <span class="nf">UnWrap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Recursively converts an XmlDictObject to a standard dictionary and returns the result.</span>
 <span class="sd">        """</span>
 
@@ -1164,7 +1165,7 @@ None
         <span class="n">parent</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dictitem</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">ConvertDictToXml</span><span class="p">(</span><span class="n">xmldict</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Converts a dictionary to an XML ElementTree Element </span>
 <span class="sd">    """</span>
 
@@ -1211,7 +1212,7 @@ None
     <span class="k">return</span> <span class="n">nodedict</span>
         
 <span class="k">def</span> <span class="nf">ConvertXmlToDict</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dictclass</span><span class="o">=</span><span class="n">XmlDictObject</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Converts an XML file or ElementTree Element to a dictionary</span>
 <span class="sd">    """</span>
 
@@ -3985,7 +3986,7 @@ I was @ time  2013-04-27T13:20:06.999Z  @ position  5.39451 43.261919 64.9714279
 <div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install xmltodict
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>xmltodict
 </pre></div>
 
     </div>

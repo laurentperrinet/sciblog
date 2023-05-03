@@ -131,7 +131,6 @@
 <p><a href="https://pytorch.org">PyTorch</a> is a great library for machine learning. You can in a few lines of codes retrieve a dataset, define your model, add a cost function and then train your model. It's quite magic to copy and paste code from the internet and get the <a href="https://github.com/pytorch/examples/tree/master/mnist">LeNet network</a> working in a few seconds to achieve more than 98% accuracy.</p>
 <p>However, it can be tedious sometimes to extend existing objects and here, I will manipulate some ways to define the right dataset for your application. In particular I will modify the call to a standard dataset (<a href="https://pytorch.org/docs/stable/torchvision/datasets.html#mnist">MNIST</a>) to place the characters at random places in a large image.</p>
 <!-- TEASER_END -->
-
 <p>Let's first initialize the notebook:</p>
 
 </div>
@@ -474,7 +473,7 @@ Args:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FakeData</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
-    <span class="sd">"""A fake dataset that returns randomly generated images and returns them as PIL images</span>
+<span class="w">    </span><span class="sd">"""A fake dataset that returns randomly generated images and returns them as PIL images</span>
 <span class="sd">    Args:</span>
 <span class="sd">        size (int, optional): Size of the dataset. Default: 1000 images</span>
 <span class="sd">        image_size(tuple, optional): Size if the returned images. Default: (3, 224, 224)</span>
@@ -497,7 +496,7 @@ Args:
         <span class="bp">self</span><span class="o">.</span><span class="n">random_offset</span> <span class="o">=</span> <span class="n">random_offset</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            index (int): Index</span>
 <span class="sd">        Returns:</span>
@@ -639,7 +638,7 @@ Args:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">z_score</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">'''</span>
+<span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Image per Image z-score normalization</span>
 
 <span class="sd">    Image = (Image-mean(Image))/std(Image)</span>
@@ -651,7 +650,7 @@ Args:
         <span class="k">return</span> <span class="n">img</span>
 
 <span class="k">class</span> <span class="nc">rock_and_roll</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">'''</span>
+<span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Image per Image z-score normalization</span>
 
 <span class="sd">    Image = (Image-mean(Image))/std(Image)</span>
@@ -799,8 +798,7 @@ interpreter: 64bit
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -830,8 +828,7 @@ interpreter: 64bit
 <td>1.0.1.post2</td>
 </tr>
 <tr><td colspan="2">Thu Mar 14 14:50:46 2019 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 

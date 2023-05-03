@@ -150,7 +150,6 @@ the backup is an archive to be put on an external hard drive and then in a close
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The solution is to use the beloved <code>rsync</code> tool:</p>
 <p>In its most simple form, you use this command in the termina:</p>
-
 <pre><code>rsync -av  $INPUT  $OUTPUT
 
 </code></pre>
@@ -168,7 +167,7 @@ the backup is an archive to be put on an external hard drive and then in a close
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-rsync -av  --progress --dry-run perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex /Volumes/3tera/backups/12_backups/
+rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--dry-run<span class="w"> </span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex<span class="w"> </span>/Volumes/3tera/backups/12_backups/
 </pre></div>
 
     </div>
@@ -230,7 +229,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync -av --dry-run  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+rsync<span class="w"> </span>-av<span class="w"> </span>--dry-run<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
 
     </div>
@@ -284,7 +283,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
 
     </div>
@@ -344,7 +343,7 @@ total size is 2,772,529,142  speedup is 1.00
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
 
     </div>
@@ -411,7 +410,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-wget https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
+wget<span class="w"> </span>https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
 </pre></div>
 
     </div>
@@ -492,7 +491,7 @@ Saving to: 'hardlink.py'
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/alex_new
-rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
+rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
 
     </div>
@@ -550,7 +549,7 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py
 </pre></div>
 
     </div>
@@ -609,7 +608,7 @@ Error: Must supply one or more directories
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py /Volumes/3tera/backups/12_backups/
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py<span class="w"> </span>/Volumes/3tera/backups/12_backups/
 </pre></div>
 
     </div>
@@ -746,7 +745,7 @@ Total run time        : 17.3441710472 seconds
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola build
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
 </pre></div>
 
     </div>
@@ -878,7 +877,7 @@ Total run time        : 17.3441710472 seconds
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola deploy
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
 </pre></div>
 
     </div>

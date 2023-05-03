@@ -125,6 +125,7 @@
 <p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
 <p>Ce post étudie la connection entre le raspberry π (qui fait tourner les simulations) et les arduino (qui commandent les moteurs).</p>
 <!-- TEASER_END -->
+
 </div>
 </div>
 </div>
@@ -151,12 +152,14 @@
 <ol>
 <li>sharing internet on the laocal machine</li>
 </ol>
-<pre><code>    ifconfig</code></pre>
-<ol>
+<pre><code>    ifconfig
+</code></pre>
+<ol start="2">
 <li>scanning the local network to find the raspberry π</li>
 </ol>
-<pre><code>    nmap -T4 -sP 192.168.2.0/24</code></pre>
-<ol>
+<pre><code>    nmap -T4 -sP 192.168.2.0/24
+</code></pre>
+<ol start="3">
 <li>what I used to clone the repository on the π</li>
 </ol>
 <pre><code>  686  pip install pyserial
@@ -170,9 +173,10 @@
   694  python scenario_line_contraint.py  serial
   695  pip install -e .
   696  pip install --user -e .
-  697  python scenario_line_contraint.py  serial</code></pre>
-<ol>
-<li>starting </li>
+  697  python scenario_line_contraint.py  serial
+</code></pre>
+<ol start="4">
+<li>starting</li>
 </ol>
 <pre><code>
 ⇒  ssh pi@192.168.2.3
@@ -184,7 +188,9 @@ pi@pielastic ~ $ cd elasticte/
 pi@pielastic ~/elasticte $ git pull # to update the code
 Already up-to-date.
 
-pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial</code></pre>
+pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
+
+</code></pre>
 
 </div>
 </div>
@@ -369,7 +375,7 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial</code></pre>
 </h4>
 <p>coordonnées moteur + engrenage:</p>
 <ul>
-<li>1.8 deg par pas (soit 200 pas par tour) x 32 divisions de pas = </li>
+<li>1.8 deg par pas (soit 200 pas par tour) x 32 divisions de pas =</li>
 <li>demultiplication : pignon1= 14 dents, pignon2 = 60 dents</li>
 </ul>
 </div>
@@ -519,7 +525,7 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial</code></pre>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git s
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>s
 <span class="c1">#!git add 2015-10-27\ élasticité\ r*</span>
 </pre></div>
 
@@ -552,7 +558,7 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial</code></pre>
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -am<span class="s1">' on connecte le π + coordonnées absolues'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="s1">' on connecte le π + coordonnées absolues'</span>
 </pre></div>
 
     </div>
@@ -584,7 +590,7 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial</code></pre>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> git push
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
 
     </div>

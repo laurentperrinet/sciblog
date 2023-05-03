@@ -15,7 +15,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2016-06-01-compiling-and-using-pynn-%2B-nest-%2B-python3.html" title="Compiling and using pyNN + NEST + python3" type="text/html">
-<link rel="next" href="2016-07-14_static-motion-clouds.html" title="Static motion clouds?" type="text/html">
+<link rel="next" href="2016-07-14_static-motion-clouds.html" title="Static Motion Clouds" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="compiling notebooks into a report">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2016-06-25-compiling-notebooks-into-a-report.html">
@@ -125,10 +125,9 @@
 <p>For a master's project in computational neuroscience, we adopted a quite novel workflow to go all the steps from the learning of the small steps to the wrtiting of the final thesis. Though we were flexible in our method during the 6 months of this work, a simple workflow emerged that I describe here.</p>
 <p><img src="../files/2016-06-26_thesis.png" alt="Compiling a set of notebook to a LaTeX document."></p>
 <!-- TEASER_END -->
-
 <p>The project involved the modelling of a rather complex system involving the modelling of spiking neurons, studying the emerging states when they interact in populations. Of particular interest was the possibility to obtain what is called a "balanced state" which is relevant to model the brain. Finally, we modeled some realistic representation of the coding of orientation in what is called a "ring model".</p>
 <ul>
-<li>As such, we had a hierarchy of problems to solve from the single neuron to the full network. The only solution was thus to take small steps and we were careful to create on a daily basis new notebooks reporting for these advances (pre-pended with the iso8601, for instance <code>2016-03-02_FeedForward_comparing_ExpVSAlpha</code>). </li>
+<li>As such, we had a hierarchy of problems to solve from the single neuron to the full network. The only solution was thus to take small steps and we were careful to create on a daily basis new notebooks reporting for these advances (pre-pended with the iso8601, for instance <code>2016-03-02_FeedForward_comparing_ExpVSAlpha</code>).</li>
 <li>To avoid the usual rush at the moment of handing over the thesis, another constraint that we adopted was that for every notebook, the first cell would describe what was done with possibly a visual figure. One huge advantage is that the student did not have to learn LaTeX, but only markdown.</li>
 <li>In the end we had a bunch of notebooks that could just be "compiled" to produce a nice looking PDF file.</li>
 </ul>
@@ -137,9 +136,10 @@
 <li>globing a set of relevant notebooks,</li>
 <li>striping out what is not important and keep the important stuff,</li>
 <li>concatenate all of these in one notebook,</li>
-<li>convert that to a PDF using a latex template
-This is summarized in this script:</li>
+<li>convert that to a PDF using a latex template</li>
 </ul>
+<p>This is summarized in this script:</p>
+
 </div>
 </div>
 </div>
@@ -162,7 +162,7 @@ This is summarized in this script:</li>
         <span class="n">nb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
         
 <span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Keeps only the cells :</span>
 <span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
 <span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
@@ -482,9 +482,9 @@ This is summarized in this script:</li>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp ../figs/troislogos.png /tmp/troislogos.png
-<span class="o">!</span>cp ../figs/ring_model.png /tmp/ring_model.png
-<span class="o">!</span>cp ../figs/future_model.png /tmp/future_model.png
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>../figs/troislogos.png<span class="w"> </span>/tmp/troislogos.png
+<span class="o">!</span>cp<span class="w"> </span>../figs/ring_model.png<span class="w"> </span>/tmp/ring_model.png
+<span class="o">!</span>cp<span class="w"> </span>../figs/future_model.png<span class="w"> </span>/tmp/future_model.png
 </pre></div>
 
     </div>
@@ -515,7 +515,6 @@ This is summarized in this script:</li>
 <h4 id="including-references">including references<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#including-references">¶</a>
 </h4>
 <p>Moreover, it is possible to include references and have that included using BibTeX. In MarkDown, it has to be fomatted like</p>
-
 <pre><code>&lt;cite data-cite="Brunel2000"&gt;(Brunel, 2000)&lt;/cite&gt;
 
 </code></pre>
@@ -1226,7 +1225,7 @@ fig.tight_layout()
     <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Keeps only the cells :</span>
 <span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
 <span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
@@ -1380,7 +1379,7 @@ fig.tight_layout()
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open thesis.pdf
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open<span class="w"> </span>thesis.pdf
 </pre></div>
 
     </div>
@@ -1399,7 +1398,7 @@ fig.tight_layout()
                 <a href="2016-06-01-compiling-and-using-pynn-%2B-nest-%2B-python3.html" rel="prev" title="Compiling and using pyNN + NEST + python3">Previous post</a>
             </li>
             <li class="next">
-                <a href="2016-07-14_static-motion-clouds.html" rel="next" title="Static motion clouds?">Next post</a>
+                <a href="2016-07-14_static-motion-clouds.html" rel="next" title="Static Motion Clouds">Next post</a>
             </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({

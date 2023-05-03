@@ -21,11 +21,8 @@
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2016-02-19-compiling-and-using-pynn-%2B-nest-%2B-python3.html">
 <meta property="og:description" content="PyNN is a neural simulation language which works well with the NEST simulator. Here I show my progress in using both with python 3 and how to show results in a notebook.
 
-
-
 First, install NEST:
-
-#git ">
+#git clo">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-02-19T14:21:50+01:00">
 <meta property="article:tag" content="ipython">
@@ -130,10 +127,7 @@ First, install NEST:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://github.com/NeuralEnsemble/PyNN">PyNN</a> is a neural simulation language which works well with the <a href="https://github.com/nest/nest-simulator">NEST</a> simulator. Here I show my progress in using both with python 3 and how to show results in a notebook.</p>
 <!-- TEASER_END -->
-
-
 <p>First, install NEST:</p>
-
 <pre><code>#git clone https://github.com/nest/nest-simulator.git
 #  cd nest-simulator
 git clone https://github.com/jougs/nest-simulator.git nest-simulator-jougs
@@ -147,7 +141,6 @@ make install
 </code></pre>
 <p>Note that the compiler switches to ``cmake are only necessary on OSX; under Linux, things should work without them.</p>
 <p>And now pyNN:</p>
-
 <pre><code>git clone https://github.com/NeuralEnsemble/PyNN
 cd pyNN
 pip3 install -e .
@@ -157,7 +150,6 @@ ipython3 run_all_examples.py NEST
 
 </code></pre>
 <p>I used this patch:</p>
-
 <pre><code>diff --git a/pyNN/nest/simulator.py b/pyNN/nest/simulator.py
 index 625c121..335f925 100644
 --- a/pyNN/nest/simulator.py
@@ -170,7 +162,8 @@ index 625c121..335f925 100644
 +        syn_delay = nest.GetDefaults('static_synapse')['delay']
          if syn_delay == numpy.inf or syn_delay &gt; 1e300:
              return kernel_delay
-         else:</code></pre>
+         else:
+</code></pre>
 
 </div>
 </div>

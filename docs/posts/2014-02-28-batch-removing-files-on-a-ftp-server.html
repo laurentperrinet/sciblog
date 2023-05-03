@@ -27,7 +27,8 @@ Pages that were succesfully converted:
 
 
 
-In [5]:">
+
+In [5]">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-02-28T09:33:36+02:00">
 <meta property="article:tag" content="info">
@@ -131,6 +132,7 @@ In [5]:">
 <p>In a previous post, I have shown how to convert MoinMoin pages to this blog (Nikola angine). Let's now tidy up the place and remove obsolete pages.</p>
 <p>Pages that were succesfully converted:</p>
 <!-- TEASER_END -->
+
 </div>
 </div>
 </div>
@@ -288,7 +290,7 @@ In [5]:">
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"</span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
 <span class="s2">open invibe;</span>
 <span class="s2">ls -l moin/data/pages/SciBlog(2f)2013(2d)11(2d)04</span>
 <span class="s2">"</span>
@@ -338,7 +340,7 @@ drwxrwx---    2 81424      users               5 Nov 12 10:20 revisions
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"open invibe; ls moin/data/pages/SciBlog(2f)2010(2d)12(2d)20 ;"</span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; ls moin/data/pages/SciBlog(2f)2010(2d)12(2d)20 ;"</span>
 </pre></div>
 
     </div>
@@ -545,7 +547,7 @@ rm -fr SciBlog(2f)2014(2d)01(2d)01
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"open invibe; cd moin/data/pages/ ; </span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; cd moin/data/pages/ ; </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)20 </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)30 </span>
 <span class="s2">rm -fr SciBlog(2f)2007(2d)10(2d)22 </span>

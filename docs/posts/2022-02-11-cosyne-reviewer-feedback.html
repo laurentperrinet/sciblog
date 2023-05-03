@@ -21,8 +21,11 @@
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2022-02-11-cosyne-reviewer-feedback.html">
 <meta property="og:description" content="tl;dr : Crowd-sourcing raw scores for your COSYNE reviewer feedback.
 Following that message:
+
 Dear community,
-COSYNE is a great conference which plays a pivotal role in our field. If you have submitted">
+
+
+COSYNE is a great conference which plays a pivotal role in our field. If you have submit">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2022-02-11T12:35:58+01:00">
 <meta property="article:tag" content="blog">
@@ -130,7 +133,11 @@ COSYNE is a great conference which plays a pivotal role in our field. If you hav
 <p>Following that message:</p>
 <blockquote>
 <p>Dear community,</p>
+</blockquote>
+<blockquote>
 <p>COSYNE is a great conference which plays a pivotal role in our field. If you have submitted an abstract (or several) you have recently received your scores. I am not affiliated to COSYNE - yet willing to contribute in some way: I would like to ask one minute of your time to report the raw scores from your reviewers. I will summarize in a few lines the results in one week time (11/02). The more numerous your feedbacks the better their precision!</p>
+</blockquote>
+<blockquote>
 <p>Thanks!</p>
 </blockquote>
 <p>As of 2022-02-20, I had received $N = 98$ answers from the <a href="https://forms.gle/hjzWVemM4Jy9cBbZ9">google form</a> (out of them, $95$ are valid) out of the $881$ submitted abstracts. In short, the result is that the total score $S$ is simply the linear sum of the scores $s_i$ given by each reviewer $i$ relatively weighted by the confidence levels $\pi_i$ (as stated in the email we received from the chairs):</p>
@@ -145,6 +152,7 @@ $$</p>
 <p>More details in the <a href="https://github.com/laurentperrinet/2022-02-11_COSYNE-scoresheet/blob/main/2022-02-11_COSYNE-scoresheet.ipynb">notebook</a> (or directly in this <a href="https://laurentperrinet.github.io/sciblog/posts/2022-02-11-cosyne-reviewer-feedback.html">post</a>) which can also be <a href="https://github.com/laurentperrinet/2022-02-11_COSYNE-scoresheet">forked here</a> and <a href="https://mybinder.org/v2/gh/laurentperrinet/2022-02-11_COSYNE-scoresheet/main?labpath=2022-02-11_COSYNE-scoresheet.ipynb">interactively modified on binder</a>.</p>
 <p>EDIT: On 2022-02-20, I have updated the notebook to account for new answers, I have now received $N = 98$ answers (out of them, $95$ are valid), yet nothing changed qualitatively. On 2022-02-11, I had received $N = 82$ answers from the <a href="https://forms.gle/hjzWVemM4Jy9cBbZ9">google form</a> (out of them, $79$ are valid) and the estimated threshold wass close to $6.05$.</p>
 <!-- TEASER_END -->
+
 </div>
 </div>
 </div>
@@ -155,8 +163,7 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Other resources I found:</p>
 <ul>
-<li>
-<a href="https://neuroecology.wordpress.com/2020/02/27/cosyne2020-by-the-numbers/">https://neuroecology.wordpress.com/2020/02/27/cosyne2020-by-the-numbers/</a> </li>
+<li><a href="https://neuroecology.wordpress.com/2020/02/27/cosyne2020-by-the-numbers/">https://neuroecology.wordpress.com/2020/02/27/cosyne2020-by-the-numbers/</a></li>
 <li>
 <a href="https://charlesfrye.github.io/stats/2019/03/06/cosyne19-gender-bias.html">https://charlesfrye.github.io/stats/2019/03/06/cosyne19-gender-bias.html</a> : on gender balance</li>
 <li>
@@ -203,8 +210,7 @@ $$</p>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -294,8 +300,7 @@ $$</p>
     </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 
 </div>
 
@@ -390,8 +395,7 @@ Name: Comments?, dtype: object</pre>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -475,8 +479,7 @@ Name: Comments?, dtype: object</pre>
     </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 
 </div>
 
@@ -628,8 +631,7 @@ Name: Comments?, dtype: object</pre>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -713,8 +715,7 @@ Name: Comments?, dtype: object</pre>
     </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 
 </div>
 
@@ -757,8 +758,7 @@ Name: Comments?, dtype: object</pre>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -842,8 +842,7 @@ Name: Comments?, dtype: object</pre>
     </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 
 </div>
 
@@ -1054,8 +1053,9 @@ Name: Comments?, dtype: object</pre>
 <h3 id="retrieving-the-razor-score">retrieving the razor score<a class="anchor-link" href="2022-02-11-cosyne-reviewer-feedback.html#retrieving-the-razor-score">¶</a>
 </h3>
 <p>The message mentions the method:</p>
+<pre><code>Each review comprised a short comment and a score between 1 and 10. Individual scores were weighed by a confidence factor and averaged for each submission.
 
-<pre><code>Each review comprised a short comment and a score between 1 and 10. Individual scores were weighed by a confidence factor and averaged for each submission.</code></pre>
+</code></pre>
 
 </div>
 </div>
@@ -1246,8 +1246,8 @@ Name: Comments?, dtype: object</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It was mentioned in the message that:</p>
-
-<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.</code></pre>
+<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.
+</code></pre>
 
 </div>
 </div>
@@ -1443,7 +1443,6 @@ Name: Comments?, dtype: object</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This result may be (certainly) due to an error in reporting the score in the google form or to the "additional constraining factors" mentioned in:</p>
-
 <pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.
 
 

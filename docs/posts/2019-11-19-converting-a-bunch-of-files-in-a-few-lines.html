@@ -122,16 +122,18 @@ I w">
 <!-- TEASER_END -->
 
 <h2>listing files</h2>
-<pre class="code literal-block">$ f flac
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac
+</pre></div>
+
 <h2>converting files</h2>
 <p>Encoding in 128kB/s :</p>
-<pre class="code literal-block">$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac<span class="w"> </span>-exec<span class="w">  </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</pre></div>
+
 <p>Note that this will work also while exploring the folder hierarchy (that is if you have a bunch of folders with those files).</p>
 <h2>deleting files</h2>
-<pre class="code literal-block">$ f flac -delete
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac<span class="w"> </span>-delete
+</pre></div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>

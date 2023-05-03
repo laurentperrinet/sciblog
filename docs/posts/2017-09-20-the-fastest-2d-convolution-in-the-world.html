@@ -130,7 +130,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Convolutions are essential components of any neural networks, image processing, computer vision ... but these are also a bottleneck in terms of computations... I will here benchmark different solutions using <code>numpy</code>, <code>scipy</code> or <code>pytorch</code>. This is work-in-progress, so that any suggestion is welcome, for instance on <a href="https://dsp.stackexchange.com/questions/43953/looking-for-fastest-2d-convolution-in-python-on-a-cpu">StackExchange</a> or in the comments below this post.</p>
 <!-- TEASER_END -->
-
 <p>Let's first initialize the notebook:</p>
 
 </div>
@@ -172,12 +171,11 @@
 <ul>
 <li>a first matrix $A$ is the input and is typically large ($N \times N$ where $N$ is typically larger than $2^{10}=1024$),</li>
 <li>a second matrix $B$ is the template and is typically smaller (say $M=128$),</li>
-<li>
-<p>the result of the convolution $C = A \ast B$ is padded such that it is of the same size as $A$.</p>
+<li>the result of the convolution $C = A \ast B$ is padded such that it is of the same size as $A$.</li>
+</ul>
 <p>Often, you need to do that with many images on many kernels. In addition, we will test for the effect of <a href="https://github.com/scikit-image/scikit-image/blob/76fe5a3aba599e7ead9dc1a08b242369c947757b/doc/source/user_guide/numpy_images.rst#notes-on-array-order">prefetching</a>.</p>
 <p>Let's write a small function for this:</p>
-</li>
-</ul>
+
 </div>
 </div>
 </div>
@@ -1785,9 +1783,14 @@ Checking size of A = (1024, 1024, 2)  of B= (16, 16, 3) , and of C= (1024, 1024,
 
 
 <div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?><!-- Created with matplotlib (https://matplotlib.org/) --><svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+<!--?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?-->
+
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt"><defs>
+  &lt;style type="text/css"&gt;
 *{stroke-linecap:butt;stroke-linejoin:round;}
-  </style></defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
+  &lt;/style&gt;
+ </defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
 L 502.578125 320.05625 
 L 502.578125 0 
 L 0 0 
@@ -1799,7 +1802,7 @@ L 45.478125 10.7
 z
 " style="fill:#ffffff;"></path></g><g id="matplotlib.axis_1"><g id="xtick_1"><g id="line2d_1"><defs><path d="M 0 0 
 L 0 3.5 
-" id="m6dace9deae" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="65.769034" xlink:href="#m6dace9deae" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{0}}$ --><defs><path d="M 12.40625 8.296875 
+" id="m6dace9deae" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="65.769034" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{0}}$ --><defs><path d="M 12.40625 8.296875 
 L 28.515625 8.296875 
 L 28.515625 63.921875 
 L 10.984375 60.40625 
@@ -1831,9 +1834,9 @@ Q 6.59375 17.96875 6.59375 36.375
 Q 6.59375 54.828125 13.0625 64.515625 
 Q 19.53125 74.21875 31.78125 74.21875 
 z
-" id="DejaVuSans-48"></path></defs><g transform="translate(56.969034 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-48"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><g><use style="stroke:#000000;stroke-width:0.8;" x="335.388798" xlink:href="#m6dace9deae" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(326.588798 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><defs><path d="M 0 0 
+" id="DejaVuSans-48"></path></defs><g transform="translate(56.969034 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><g><use style="stroke:#000000;stroke-width:0.8;" x="335.388798" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(326.588798 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><defs><path d="M 0 0 
 L 0 2 
-" id="m57414f96e2" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="53.43191" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="146.93267" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="194.410354" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="228.096307" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="254.225162" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="275.573991" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="293.624168" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="309.259943" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="323.051674" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="416.552434" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="464.030118" xlink:href="#m57414f96e2" y="282.5"></use></g></g></g><g id="text_3"><!-- n_N --><defs><path d="M 54.890625 33.015625 
+" id="m57414f96e2" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="53.43191" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="146.93267" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="194.410354" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="228.096307" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="254.225162" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="275.573991" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="293.624168" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="309.259943" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="323.051674" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="416.552434" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="464.030118" y="282.5"></use></g></g></g><g id="text_3"><!-- n_N --><defs><path d="M 54.890625 33.015625 
 L 54.890625 0 
 L 45.90625 0 
 L 45.90625 32.71875 
@@ -1867,9 +1870,9 @@ L 19.390625 60.984375
 L 19.390625 0 
 L 9.8125 0 
 z
-" id="DejaVuSans-78"></path></defs><g transform="translate(259.26875 310.498437)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-95"></use><use x="113.378906" xlink:href="#DejaVuSans-78"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
+" id="DejaVuSans-78"></path></defs><g transform="translate(259.26875 310.498437)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="113.378906"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
 L -3.5 0 
-" id="m47d4c17ec2" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m47d4c17ec2" y="227.92455"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 231.723769)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m47d4c17ec2" y="121.000599"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
+" id="m47d4c17ec2" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="227.92455"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 231.723769)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="121.000599"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
 L 53.609375 8.296875 
 L 53.609375 0 
 L 7.328125 0 
@@ -1892,7 +1895,7 @@ Q 49.859375 40.875 45.40625 35.40625
 Q 44.1875 33.984375 37.640625 27.21875 
 Q 31.109375 20.453125 19.1875 8.296875 
 z
-" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 124.799818)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m47d4c17ec2" y="14.076647"></use></g></g><g id="text_6"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
+" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 124.799818)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="14.076647"></use></g></g><g id="text_6"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
 Q 47.65625 37.796875 51.625 33 
 Q 55.609375 28.21875 55.609375 21.1875 
 Q 55.609375 10.40625 48.1875 4.484375 
@@ -1923,9 +1926,9 @@ Q 53.90625 64.015625 53.90625 55.328125
 Q 53.90625 49.265625 50.4375 45.09375 
 Q 46.96875 40.921875 40.578125 39.3125 
 z
-" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 17.875866)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-51"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
+" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 17.875866)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
 L -2 0 
-" id="m657ff28dd1" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="270.473868"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="260.111867"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="251.645495"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="244.48728"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="238.286552"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="232.817122"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="195.737234"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="176.90886"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="163.549917"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="153.187915"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="144.721544"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="137.563329"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="131.3626"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="125.893171"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="88.813282"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="69.984909"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="56.625966"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="46.263964"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="37.797592"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="30.639377"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="24.438649"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m657ff28dd1" y="18.969219"></use></g></g></g><g id="text_7"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
+" id="m657ff28dd1" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="270.473868"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="260.111867"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="251.645495"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="244.48728"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="238.286552"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="232.817122"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="195.737234"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="176.90886"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="163.549917"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="153.187915"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="144.721544"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="137.563329"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="131.3626"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="125.893171"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="88.813282"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="69.984909"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="56.625966"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="46.263964"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="37.797592"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="30.639377"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="24.438649"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="18.969219"></use></g></g></g><g id="text_7"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
 L 18.3125 54.6875 
 L 36.8125 54.6875 
 L 36.8125 47.703125 
@@ -2059,7 +2062,7 @@ Q 20.90625 20.125 20.90625 31.390625
 Q 20.90625 42.671875 17.703125 53.65625 
 Q 14.5 64.65625 8.015625 75.875 
 z
-" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-105"></use><use x="66.992188" xlink:href="#DejaVuSans-109"></use><use x="164.404297" xlink:href="#DejaVuSans-101"></use><use x="225.927734" xlink:href="#DejaVuSans-32"></use><use x="257.714844" xlink:href="#DejaVuSans-40"></use><use x="296.728516" xlink:href="#DejaVuSans-115"></use><use x="348.828125" xlink:href="#DejaVuSans-41"></use></g></g></g><g id="line2d_39"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 240.451707 
+" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="66.992188"></use><use x="164.404297"></use><use x="225.927734"></use><use x="257.714844"></use><use x="296.728516"></use><use x="348.828125"></use></g></g></g><g id="line2d_39"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 240.451707 
 L 146.93267 209.992772 
 L 228.096307 174.382051 
 L 309.259943 140.500438 
@@ -2095,31 +2098,31 @@ L 228.096307 176.98039
 L 309.259943 144.501985 
 L 390.42358 112.277962 
 L 471.587216 80.816579 
-" style="fill:none;stroke:#0000ff;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_45"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 184.027216 
+" style="fill:none;stroke:#0000ff;stroke-width:1.5;"></path></g><g id="line2d_45"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 184.027216 
 L 146.93267 151.15492 
 L 228.096307 116.869881 
 L 309.259943 86.79444 
 L 390.42358 57.431385 
 L 471.587216 23.054545 
-" style="fill:none;stroke:#008000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_46"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 212.511279 
+" style="fill:none;stroke:#008000;stroke-width:1.5;"></path></g><g id="line2d_46"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 212.511279 
 L 146.93267 185.958909 
 L 228.096307 167.368759 
 L 309.259943 146.803797 
 L 390.42358 122.305346 
 L 471.587216 93.741551 
-" style="fill:none;stroke:#00bfbf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_47"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 268.964865 
+" style="fill:none;stroke:#00bfbf;stroke-width:1.5;"></path></g><g id="line2d_47"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 268.964865 
 L 146.93267 238.615982 
 L 228.096307 201.480386 
 L 309.259943 171.701339 
 L 390.42358 139.787917 
 L 471.587216 108.308744 
-" style="fill:none;stroke:#ff0000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_48"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 251.95516 
+" style="fill:none;stroke:#ff0000;stroke-width:1.5;"></path></g><g id="line2d_48"><path clip-path="url(#p1cca33f56c)" d="M 65.769034 251.95516 
 L 146.93267 229.446273 
 L 228.096307 198.689539 
 L 309.259943 170.782851 
 L 390.42358 137.970282 
 L 471.587216 106.401539 
-" style="fill:none;stroke:#bf00bf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
+" style="fill:none;stroke:#bf00bf;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
 L 45.478125 10.7 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"></path></g><g id="patch_4"><path d="M 491.878125 282.5 
 L 491.878125 10.7 
@@ -2137,7 +2140,7 @@ Q 50.478125 15.7 50.478125 17.7
 L 50.478125 90.090625 
 Q 50.478125 92.090625 52.478125 92.090625 
 z
-" style="fill:#ffffff;opacity:0.8;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_49"><path d="M 54.478125 23.798438 
+" style="fill:#ffffff;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_49"><path d="M 54.478125 23.798438 
 L 74.478125 23.798438 
 " style="fill:none;stroke:#0000ff;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_50"></g><g id="text_8"><!-- skimage --><defs><path d="M 9.078125 75.984375 
 L 18.109375 75.984375 
@@ -2214,7 +2217,7 @@ Q 42.625 51.21875 45.40625 46.390625
 L 45.40625 54.6875 
 L 54.390625 54.6875 
 z
-" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-107"></use><use x="110.009766" xlink:href="#DejaVuSans-105"></use><use x="137.792969" xlink:href="#DejaVuSans-109"></use><use x="235.205078" xlink:href="#DejaVuSans-97"></use><use x="296.484375" xlink:href="#DejaVuSans-103"></use><use x="359.960938" xlink:href="#DejaVuSans-101"></use></g></g><g id="line2d_51"><path d="M 54.478125 38.476563 
+" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="110.009766"></use><use x="137.792969"></use><use x="235.205078"></use><use x="296.484375"></use><use x="359.960938"></use></g></g><g id="line2d_51"><path d="M 54.478125 38.476563 
 L 74.478125 38.476563 
 " style="fill:none;stroke:#00bfbf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_52"></g><g id="text_9"><!-- torch --><defs><path d="M 30.609375 48.390625 
 Q 23.390625 48.390625 19.1875 42.75 
@@ -2289,7 +2292,7 @@ Q 30.078125 56 35.796875 56
 Q 45.21875 56 50.046875 50.171875 
 Q 54.890625 44.34375 54.890625 33.015625 
 z
-" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-111"></use><use x="100.390625" xlink:href="#DejaVuSans-114"></use><use x="141.472656" xlink:href="#DejaVuSans-99"></use><use x="196.453125" xlink:href="#DejaVuSans-104"></use></g></g><g id="line2d_53"><path d="M 54.478125 53.154688 
+" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="100.390625"></use><use x="141.472656"></use><use x="196.453125"></use></g></g><g id="line2d_53"><path d="M 54.478125 53.154688 
 L 74.478125 53.154688 
 " style="fill:none;stroke:#008000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_54"></g><g id="text_10"><!-- numba --><defs><path d="M 8.5 21.578125 
 L 8.5 54.6875 
@@ -2335,7 +2338,7 @@ L 9.078125 0
 L 9.078125 75.984375 
 L 18.109375 75.984375 
 z
-" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-98"></use><use x="287.646484" xlink:href="#DejaVuSans-97"></use></g></g><g id="line2d_55"><path d="M 54.478125 67.832813 
+" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g><g id="line2d_55"><path d="M 54.478125 67.832813 
 L 74.478125 67.832813 
 " style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_56"></g><g id="text_11"><!-- scipy --><defs><path d="M 18.109375 8.203125 
 L 18.109375 -20.796875 
@@ -2377,9 +2380,9 @@ L 29.59375 11.921875
 L 46.6875 54.6875 
 L 56.203125 54.6875 
 z
-" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-99"></use><use x="107.080078" xlink:href="#DejaVuSans-105"></use><use x="134.863281" xlink:href="#DejaVuSans-112"></use><use x="198.339844" xlink:href="#DejaVuSans-121"></use></g></g><g id="line2d_57"><path d="M 54.478125 82.510938 
+" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="107.080078"></use><use x="134.863281"></use><use x="198.339844"></use></g></g><g id="line2d_57"><path d="M 54.478125 82.510938 
 L 74.478125 82.510938 
-" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_58"></g><g id="text_12"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-112"></use><use x="287.646484" xlink:href="#DejaVuSans-121"></use></g></g></g></g></g><defs><clippath id="p1cca33f56c"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
+" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_58"></g><g id="text_12"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g></g></g></g><defs><clippath id="p1cca33f56c"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
 </div>
 
 </div>
@@ -2454,9 +2457,14 @@ L 74.478125 82.510938
 
 
 <div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?><!-- Created with matplotlib (https://matplotlib.org/) --><svg height="320.05625pt" version="1.1" viewbox="0 0 508.478125 320.05625" width="508.478125pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+<!--?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?-->
+
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="320.05625pt" version="1.1" viewbox="0 0 508.478125 320.05625" width="508.478125pt"><defs>
+  &lt;style type="text/css"&gt;
 *{stroke-linecap:butt;stroke-linejoin:round;}
-  </style></defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
+  &lt;/style&gt;
+ </defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
 L 508.478125 320.05625 
 L 508.478125 0 
 L 0 0 
@@ -2468,7 +2476,7 @@ L 51.378125 10.7
 z
 " style="fill:#ffffff;"></path></g><g id="matplotlib.axis_1"><g id="xtick_1"><g id="line2d_1"><defs><path d="M 0 0 
 L 0 3.5 
-" id="mb2c1323d36" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="158.765217" xlink:href="#mb2c1323d36" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 12.40625 8.296875 
+" id="mb2c1323d36" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="158.765217" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 12.40625 8.296875 
 L 28.515625 8.296875 
 L 28.515625 63.921875 
 L 10.984375 60.40625 
@@ -2523,9 +2531,9 @@ Q 49.859375 40.875 45.40625 35.40625
 Q 44.1875 33.984375 37.640625 27.21875 
 Q 31.109375 20.453125 19.1875 8.296875 
 z
-" id="DejaVuSans-50"></path></defs><g transform="translate(149.965217 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><defs><path d="M 0 0 
+" id="DejaVuSans-50"></path></defs><g transform="translate(149.965217 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><defs><path d="M 0 0 
 L 0 2 
-" id="m7daba257db" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="59.073871" xlink:href="#m7daba257db" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{6\times10^{1}}$ --><defs><path d="M 33.015625 40.375 
+" id="m7daba257db" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="59.073871" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{6\times10^{1}}$ --><defs><path d="M 33.015625 40.375 
 Q 26.375 40.375 22.484375 35.828125 
 Q 18.609375 31.296875 18.609375 23.390625 
 Q 18.609375 15.53125 22.484375 10.953125 
@@ -2567,7 +2575,7 @@ L 19.484375 59.625
 L 41.890625 37.203125 
 L 64.3125 59.625 
 z
-" id="DejaVuSans-215"></path></defs><g transform="translate(40.973871 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-54"></use><use transform="translate(83.105469 0.684375)" xlink:href="#DejaVuSans-215"></use><use transform="translate(186.376953 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(250 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(314.580078 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><g><use style="stroke:#000000;stroke-width:0.6;" x="89.1575" xlink:href="#m7daba257db" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="115.217125" xlink:href="#m7daba257db" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="138.203344" xlink:href="#m7daba257db" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="294.037944" xlink:href="#m7daba257db" y="282.5"></use></g></g><g id="text_3"><!-- $\mathdefault{2\times10^{2}}$ --><g transform="translate(275.937944 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-50"></use><use transform="translate(83.105469 0.765625)" xlink:href="#DejaVuSans-215"></use><use transform="translate(186.376953 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(250 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(314.580078 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="373.167417" xlink:href="#m7daba257db" y="282.5"></use></g></g><g id="text_4"><!-- $\mathdefault{3\times10^{2}}$ --><defs><path d="M 40.578125 39.3125 
+" id="DejaVuSans-215"></path></defs><g transform="translate(40.973871 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(83.105469 0.684375)"></use><use transform="translate(186.376953 0.684375)"></use><use transform="translate(250 0.684375)"></use><use transform="translate(314.580078 38.965625)scale(0.7)"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><g><use style="stroke:#000000;stroke-width:0.6;" x="89.1575" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="115.217125" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="138.203344" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="294.037944" y="282.5"></use></g></g><g id="text_3"><!-- $\mathdefault{2\times10^{2}}$ --><g transform="translate(275.937944 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(83.105469 0.765625)"></use><use transform="translate(186.376953 0.765625)"></use><use transform="translate(250 0.765625)"></use><use transform="translate(314.580078 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="373.167417" y="282.5"></use></g></g><g id="text_4"><!-- $\mathdefault{3\times10^{2}}$ --><defs><path d="M 40.578125 39.3125 
 Q 47.65625 37.796875 51.625 33 
 Q 55.609375 28.21875 55.609375 21.1875 
 Q 55.609375 10.40625 48.1875 4.484375 
@@ -2598,7 +2606,7 @@ Q 53.90625 64.015625 53.90625 55.328125
 Q 53.90625 49.265625 50.4375 45.09375 
 Q 46.96875 40.921875 40.578125 39.3125 
 z
-" id="DejaVuSans-51"></path></defs><g transform="translate(355.067417 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-51"></use><use transform="translate(83.105469 0.765625)" xlink:href="#DejaVuSans-215"></use><use transform="translate(186.376953 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(250 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(314.580078 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="429.310671" xlink:href="#m7daba257db" y="282.5"></use></g></g><g id="text_5"><!-- $\mathdefault{4\times10^{2}}$ --><defs><path d="M 37.796875 64.3125 
+" id="DejaVuSans-51"></path></defs><g transform="translate(355.067417 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(83.105469 0.765625)"></use><use transform="translate(186.376953 0.765625)"></use><use transform="translate(250 0.765625)"></use><use transform="translate(314.580078 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="429.310671" y="282.5"></use></g></g><g id="text_5"><!-- $\mathdefault{4\times10^{2}}$ --><defs><path d="M 37.796875 64.3125 
 L 12.890625 25.390625 
 L 37.796875 25.390625 
 z
@@ -2614,7 +2622,7 @@ L 37.796875 17.1875
 L 4.890625 17.1875 
 L 4.890625 26.703125 
 z
-" id="DejaVuSans-52"></path></defs><g transform="translate(411.210671 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-52"></use><use transform="translate(83.105469 0.765625)" xlink:href="#DejaVuSans-215"></use><use transform="translate(186.376953 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(250 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(314.580078 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="472.858763" xlink:href="#m7daba257db" y="282.5"></use></g></g></g><g id="text_6"><!-- N --><defs><path d="M 9.8125 72.90625 
+" id="DejaVuSans-52"></path></defs><g transform="translate(411.210671 295.498437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(83.105469 0.765625)"></use><use transform="translate(186.376953 0.765625)"></use><use transform="translate(250 0.765625)"></use><use transform="translate(314.580078 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="472.858763" y="282.5"></use></g></g></g><g id="text_6"><!-- N --><defs><path d="M 9.8125 72.90625 
 L 23.09375 72.90625 
 L 55.421875 11.921875 
 L 55.421875 72.90625 
@@ -2625,16 +2633,16 @@ L 19.390625 60.984375
 L 19.390625 0 
 L 9.8125 0 
 z
-" id="DejaVuSans-78"></path></defs><g transform="translate(270.8375 310.776562)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-78"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_10"><defs><path d="M 0 0 
+" id="DejaVuSans-78"></path></defs><g transform="translate(270.8375 310.776562)scale(0.1 -0.1)"><use></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_10"><defs><path d="M 0 0 
 L -3.5 0 
-" id="mbe13f8dfcc" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="51.378125" xlink:href="#mbe13f8dfcc" y="210.855194"></use></g></g><g id="text_7"><!-- $\mathdefault{10^{-1}}$ --><defs><path d="M 10.59375 35.5 
+" id="mbe13f8dfcc" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="51.378125" y="210.855194"></use></g></g><g id="text_7"><!-- $\mathdefault{10^{-1}}$ --><defs><path d="M 10.59375 35.5 
 L 73.1875 35.5 
 L 73.1875 27.203125 
 L 10.59375 27.203125 
 z
-" id="DejaVuSans-8722"></path></defs><g transform="translate(20.878125 214.654413)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-8722"></use><use transform="translate(186.855469 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="ytick_2"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.8;" x="51.378125" xlink:href="#mbe13f8dfcc" y="110.304053"></use></g></g><g id="text_8"><!-- $\mathdefault{10^{0}}$ --><g transform="translate(26.778125 114.103272)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-48"></use></g></g></g><g id="ytick_3"><g id="line2d_12"><defs><path d="M 0 0 
+" id="DejaVuSans-8722"></path></defs><g transform="translate(20.878125 214.654413)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use><use transform="translate(186.855469 38.965625)scale(0.7)"></use></g></g></g><g id="ytick_2"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.8;" x="51.378125" y="110.304053"></use></g></g><g id="text_8"><!-- $\mathdefault{10^{0}}$ --><g transform="translate(26.778125 114.103272)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_3"><g id="line2d_12"><defs><path d="M 0 0 
 L -2 0 
-" id="m226f63c505" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="281.137425"></use></g></g></g><g id="ytick_4"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="263.431248"></use></g></g></g><g id="ytick_5"><g id="line2d_14"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="250.868516"></use></g></g></g><g id="ytick_6"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="241.124104"></use></g></g></g><g id="ytick_7"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="233.162339"></use></g></g></g><g id="ytick_8"><g id="line2d_17"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="226.430763"></use></g></g></g><g id="ytick_9"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="220.599606"></use></g></g></g><g id="ytick_10"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="215.456162"></use></g></g></g><g id="ytick_11"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="180.586284"></use></g></g></g><g id="ytick_12"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="162.880107"></use></g></g></g><g id="ytick_13"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="150.317375"></use></g></g></g><g id="ytick_14"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="140.572963"></use></g></g></g><g id="ytick_15"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="132.611198"></use></g></g></g><g id="ytick_16"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="125.879622"></use></g></g></g><g id="ytick_17"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="120.048465"></use></g></g></g><g id="ytick_18"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="114.905021"></use></g></g></g><g id="ytick_19"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="80.035143"></use></g></g></g><g id="ytick_20"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="62.328966"></use></g></g></g><g id="ytick_21"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="49.766234"></use></g></g></g><g id="ytick_22"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="40.021822"></use></g></g></g><g id="ytick_23"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="32.060057"></use></g></g></g><g id="ytick_24"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="25.328481"></use></g></g></g><g id="ytick_25"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="19.497324"></use></g></g></g><g id="ytick_26"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" xlink:href="#m226f63c505" y="14.35388"></use></g></g></g><g id="text_9"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
+" id="m226f63c505" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="281.137425"></use></g></g></g><g id="ytick_4"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="263.431248"></use></g></g></g><g id="ytick_5"><g id="line2d_14"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="250.868516"></use></g></g></g><g id="ytick_6"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="241.124104"></use></g></g></g><g id="ytick_7"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="233.162339"></use></g></g></g><g id="ytick_8"><g id="line2d_17"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="226.430763"></use></g></g></g><g id="ytick_9"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="220.599606"></use></g></g></g><g id="ytick_10"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="215.456162"></use></g></g></g><g id="ytick_11"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="180.586284"></use></g></g></g><g id="ytick_12"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="162.880107"></use></g></g></g><g id="ytick_13"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="150.317375"></use></g></g></g><g id="ytick_14"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="140.572963"></use></g></g></g><g id="ytick_15"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="132.611198"></use></g></g></g><g id="ytick_16"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="125.879622"></use></g></g></g><g id="ytick_17"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="120.048465"></use></g></g></g><g id="ytick_18"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="114.905021"></use></g></g></g><g id="ytick_19"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="80.035143"></use></g></g></g><g id="ytick_20"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="62.328966"></use></g></g></g><g id="ytick_21"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="49.766234"></use></g></g></g><g id="ytick_22"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="40.021822"></use></g></g></g><g id="ytick_23"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="32.060057"></use></g></g></g><g id="ytick_24"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="25.328481"></use></g></g></g><g id="ytick_25"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="19.497324"></use></g></g></g><g id="ytick_26"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="51.378125" y="14.35388"></use></g></g></g><g id="text_9"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
 L 18.3125 54.6875 
 L 36.8125 54.6875 
 L 36.8125 47.703125 
@@ -2768,7 +2776,7 @@ Q 20.90625 20.125 20.90625 31.390625
 Q 20.90625 42.671875 17.703125 53.65625 
 Q 14.5 64.65625 8.015625 75.875 
 z
-" id="DejaVuSans-41"></path></defs><g transform="translate(14.798437 165.991406)rotate(-90)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-105"></use><use x="66.992188" xlink:href="#DejaVuSans-109"></use><use x="164.404297" xlink:href="#DejaVuSans-101"></use><use x="225.927734" xlink:href="#DejaVuSans-32"></use><use x="257.714844" xlink:href="#DejaVuSans-40"></use><use x="296.728516" xlink:href="#DejaVuSans-115"></use><use x="348.828125" xlink:href="#DejaVuSans-41"></use></g></g></g><g id="line2d_36"><path clip-path="url(#p31277c94ca)" d="M 71.669034 200.301762 
+" id="DejaVuSans-41"></path></defs><g transform="translate(14.798437 165.991406)rotate(-90)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="66.992188"></use><use x="164.404297"></use><use x="225.927734"></use><use x="257.714844"></use><use x="296.728516"></use><use x="348.828125"></use></g></g></g><g id="line2d_36"><path clip-path="url(#p31277c94ca)" d="M 71.669034 200.301762 
 L 206.941761 167.382651 
 L 342.214489 123.736417 
 L 477.487216 64.035736 
@@ -2792,23 +2800,23 @@ L 477.487216 80.196712
 L 206.941761 205.644851 
 L 342.214489 149.099432 
 L 477.487216 92.440616 
-" style="fill:none;stroke:#ff0000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_42"><path clip-path="url(#p31277c94ca)" d="M 71.669034 198.889225 
+" style="fill:none;stroke:#ff0000;stroke-width:1.5;"></path></g><g id="line2d_42"><path clip-path="url(#p31277c94ca)" d="M 71.669034 198.889225 
 L 206.941761 168.425182 
 L 342.214489 123.767387 
 L 477.487216 66.919086 
-" style="fill:none;stroke:#0000ff;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_43"><path clip-path="url(#p31277c94ca)" d="M 71.669034 229.367109 
+" style="fill:none;stroke:#0000ff;stroke-width:1.5;"></path></g><g id="line2d_43"><path clip-path="url(#p31277c94ca)" d="M 71.669034 229.367109 
 L 206.941761 139.381063 
 L 342.214489 88.682332 
 L 477.487216 23.054545 
-" style="fill:none;stroke:#008000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_44"><path clip-path="url(#p31277c94ca)" d="M 71.669034 255.832238 
+" style="fill:none;stroke:#008000;stroke-width:1.5;"></path></g><g id="line2d_44"><path clip-path="url(#p31277c94ca)" d="M 71.669034 255.832238 
 L 206.941761 181.564892 
 L 342.214489 113.609514 
 L 477.487216 30.023309 
-" style="fill:none;stroke:#00bfbf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_45"><path clip-path="url(#p31277c94ca)" d="M 71.669034 269.215398 
+" style="fill:none;stroke:#00bfbf;stroke-width:1.5;"></path></g><g id="line2d_45"><path clip-path="url(#p31277c94ca)" d="M 71.669034 269.215398 
 L 206.941761 219.465367 
 L 342.214489 157.19774 
 L 477.487216 84.111638 
-" style="fill:none;stroke:#bf00bf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 51.378125 282.5 
+" style="fill:none;stroke:#bf00bf;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 51.378125 282.5 
 L 51.378125 10.7 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"></path></g><g id="patch_4"><path d="M 497.778125 282.5 
 L 497.778125 10.7 
@@ -2826,7 +2834,7 @@ Q 56.378125 15.7 56.378125 17.7
 L 56.378125 90.090625 
 Q 56.378125 92.090625 58.378125 92.090625 
 z
-" style="fill:#ffffff;opacity:0.8;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_46"><path d="M 60.378125 23.798438 
+" style="fill:#ffffff;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_46"><path d="M 60.378125 23.798438 
 L 80.378125 23.798438 
 " style="fill:none;stroke:#0000ff;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_47"></g><g id="text_10"><!-- skimage --><defs><path d="M 9.078125 75.984375 
 L 18.109375 75.984375 
@@ -2903,7 +2911,7 @@ Q 42.625 51.21875 45.40625 46.390625
 L 45.40625 54.6875 
 L 54.390625 54.6875 
 z
-" id="DejaVuSans-103"></path></defs><g transform="translate(88.378125 27.298438)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-107"></use><use x="110.009766" xlink:href="#DejaVuSans-105"></use><use x="137.792969" xlink:href="#DejaVuSans-109"></use><use x="235.205078" xlink:href="#DejaVuSans-97"></use><use x="296.484375" xlink:href="#DejaVuSans-103"></use><use x="359.960938" xlink:href="#DejaVuSans-101"></use></g></g><g id="line2d_48"><path d="M 60.378125 38.476563 
+" id="DejaVuSans-103"></path></defs><g transform="translate(88.378125 27.298438)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="110.009766"></use><use x="137.792969"></use><use x="235.205078"></use><use x="296.484375"></use><use x="359.960938"></use></g></g><g id="line2d_48"><path d="M 60.378125 38.476563 
 L 80.378125 38.476563 
 " style="fill:none;stroke:#008000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_49"></g><g id="text_11"><!-- numba --><defs><path d="M 54.890625 33.015625 
 L 54.890625 0 
@@ -2967,7 +2975,7 @@ L 9.078125 0
 L 9.078125 75.984375 
 L 18.109375 75.984375 
 z
-" id="DejaVuSans-98"></path></defs><g transform="translate(88.378125 41.976563)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-98"></use><use x="287.646484" xlink:href="#DejaVuSans-97"></use></g></g><g id="line2d_50"><path d="M 60.378125 53.154688 
+" id="DejaVuSans-98"></path></defs><g transform="translate(88.378125 41.976563)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g><g id="line2d_50"><path d="M 60.378125 53.154688 
 L 80.378125 53.154688 
 " style="fill:none;stroke:#00bfbf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_51"></g><g id="text_12"><!-- torch --><defs><path d="M 30.609375 48.390625 
 Q 23.390625 48.390625 19.1875 42.75 
@@ -3042,7 +3050,7 @@ Q 30.078125 56 35.796875 56
 Q 45.21875 56 50.046875 50.171875 
 Q 54.890625 44.34375 54.890625 33.015625 
 z
-" id="DejaVuSans-104"></path></defs><g transform="translate(88.378125 56.654688)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-111"></use><use x="100.390625" xlink:href="#DejaVuSans-114"></use><use x="141.472656" xlink:href="#DejaVuSans-99"></use><use x="196.453125" xlink:href="#DejaVuSans-104"></use></g></g><g id="line2d_52"><path d="M 60.378125 67.832813 
+" id="DejaVuSans-104"></path></defs><g transform="translate(88.378125 56.654688)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="100.390625"></use><use x="141.472656"></use><use x="196.453125"></use></g></g><g id="line2d_52"><path d="M 60.378125 67.832813 
 L 80.378125 67.832813 
 " style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_53"></g><g id="text_13"><!-- scipy --><defs><path d="M 18.109375 8.203125 
 L 18.109375 -20.796875 
@@ -3084,9 +3092,9 @@ L 29.59375 11.921875
 L 46.6875 54.6875 
 L 56.203125 54.6875 
 z
-" id="DejaVuSans-121"></path></defs><g transform="translate(88.378125 71.332813)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-99"></use><use x="107.080078" xlink:href="#DejaVuSans-105"></use><use x="134.863281" xlink:href="#DejaVuSans-112"></use><use x="198.339844" xlink:href="#DejaVuSans-121"></use></g></g><g id="line2d_54"><path d="M 60.378125 82.510938 
+" id="DejaVuSans-121"></path></defs><g transform="translate(88.378125 71.332813)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="107.080078"></use><use x="134.863281"></use><use x="198.339844"></use></g></g><g id="line2d_54"><path d="M 60.378125 82.510938 
 L 80.378125 82.510938 
-" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_55"></g><g id="text_14"><!-- numpy --><g transform="translate(88.378125 86.010938)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-112"></use><use x="287.646484" xlink:href="#DejaVuSans-121"></use></g></g></g></g></g><defs><clippath id="p31277c94ca"><rect height="271.8" width="446.4" x="51.378125" y="10.7"></rect></clippath></defs></svg>
+" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_55"></g><g id="text_14"><!-- numpy --><g transform="translate(88.378125 86.010938)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g></g></g></g><defs><clippath id="p31277c94ca"><rect height="271.8" width="446.4" x="51.378125" y="10.7"></rect></clippath></defs></svg>
 </div>
 
 </div>
@@ -3162,9 +3170,14 @@ L 80.378125 82.510938
 
 
 <div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?><!-- Created with matplotlib (https://matplotlib.org/) --><svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+<!--?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?-->
+
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt"><defs>
+  &lt;style type="text/css"&gt;
 *{stroke-linecap:butt;stroke-linejoin:round;}
-  </style></defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
+  &lt;/style&gt;
+ </defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
 L 502.578125 320.05625 
 L 502.578125 0 
 L 0 0 
@@ -3176,7 +3189,7 @@ L 45.478125 10.7
 z
 " style="fill:#ffffff;"></path></g><g id="matplotlib.axis_1"><g id="xtick_1"><g id="line2d_1"><defs><path d="M 0 0 
 L 0 3.5 
-" id="me4b09a1aaa" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="65.769034" xlink:href="#me4b09a1aaa" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{0}}$ --><defs><path d="M 12.40625 8.296875 
+" id="me4b09a1aaa" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="65.769034" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{0}}$ --><defs><path d="M 12.40625 8.296875 
 L 28.515625 8.296875 
 L 28.515625 63.921875 
 L 10.984375 60.40625 
@@ -3208,9 +3221,9 @@ Q 6.59375 17.96875 6.59375 36.375
 Q 6.59375 54.828125 13.0625 64.515625 
 Q 19.53125 74.21875 31.78125 74.21875 
 z
-" id="DejaVuSans-48"></path></defs><g transform="translate(56.969034 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-48"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><g><use style="stroke:#000000;stroke-width:0.8;" x="335.388798" xlink:href="#me4b09a1aaa" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(326.588798 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><defs><path d="M 0 0 
+" id="DejaVuSans-48"></path></defs><g transform="translate(56.969034 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><g><use style="stroke:#000000;stroke-width:0.8;" x="335.388798" y="282.5"></use></g></g><g id="text_2"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(326.588798 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><defs><path d="M 0 0 
 L 0 2 
-" id="m76ceb2b54c" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="53.43191" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="146.93267" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="194.410354" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="228.096307" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="254.225162" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="275.573991" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="293.624168" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="309.259943" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="323.051674" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="416.552434" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="464.030118" xlink:href="#m76ceb2b54c" y="282.5"></use></g></g></g><g id="text_3"><!-- n_M --><defs><path d="M 54.890625 33.015625 
+" id="m76ceb2b54c" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="53.43191" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="146.93267" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="194.410354" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="228.096307" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="254.225162" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="275.573991" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="293.624168" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="309.259943" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="323.051674" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="416.552434" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="464.030118" y="282.5"></use></g></g></g><g id="text_3"><!-- n_M --><defs><path d="M 54.890625 33.015625 
 L 54.890625 0 
 L 45.90625 0 
 L 45.90625 32.71875 
@@ -3247,9 +3260,9 @@ L 19.390625 64.015625
 L 19.390625 0 
 L 9.8125 0 
 z
-" id="DejaVuSans-77"></path></defs><g transform="translate(258.695312 310.498437)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-95"></use><use x="113.378906" xlink:href="#DejaVuSans-77"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
+" id="DejaVuSans-77"></path></defs><g transform="translate(258.695312 310.498437)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="113.378906"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
 L -3.5 0 
-" id="mc473ce2952" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc473ce2952" y="225.304941"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 229.10416)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc473ce2952" y="146.265771"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
+" id="mc473ce2952" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="225.304941"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 229.10416)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="146.265771"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
 L 53.609375 8.296875 
 L 53.609375 0 
 L 7.328125 0 
@@ -3272,7 +3285,7 @@ Q 49.859375 40.875 45.40625 35.40625
 Q 44.1875 33.984375 37.640625 27.21875 
 Q 31.109375 20.453125 19.1875 8.296875 
 z
-" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 150.06499)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc473ce2952" y="67.226602"></use></g></g><g id="text_6"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
+" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 150.06499)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="67.226602"></use></g></g><g id="text_6"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
 Q 47.65625 37.796875 51.625 33 
 Q 55.609375 28.21875 55.609375 21.1875 
 Q 55.609375 10.40625 48.1875 4.484375 
@@ -3303,9 +3316,9 @@ Q 53.90625 64.015625 53.90625 55.328125
 Q 53.90625 49.265625 50.4375 45.09375 
 Q 46.96875 40.921875 40.578125 39.3125 
 z
-" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 71.02582)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-51"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
+" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 71.02582)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
 L -2 0 
-" id="md35a261893" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="280.55095"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="266.632843"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="256.757789"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="249.098102"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="242.839682"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="237.548263"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="232.964628"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="228.921575"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="201.51178"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="187.593673"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="177.718619"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="170.058932"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="163.800512"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="158.509094"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="153.925458"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="149.882405"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="122.47261"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="108.554504"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="98.67945"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="91.019763"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="84.761343"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="79.469924"></use></g></g></g><g id="ytick_26"><g id="line2d_39"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="74.886289"></use></g></g></g><g id="ytick_27"><g id="line2d_40"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="70.843236"></use></g></g></g><g id="ytick_28"><g id="line2d_41"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="43.433441"></use></g></g></g><g id="ytick_29"><g id="line2d_42"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="29.515334"></use></g></g></g><g id="ytick_30"><g id="line2d_43"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="19.64028"></use></g></g></g><g id="ytick_31"><g id="line2d_44"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#md35a261893" y="11.980593"></use></g></g></g><g id="text_7"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
+" id="md35a261893" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="280.55095"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="266.632843"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="256.757789"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="249.098102"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="242.839682"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="237.548263"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="232.964628"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="228.921575"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="201.51178"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="187.593673"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="177.718619"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="170.058932"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="163.800512"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="158.509094"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="153.925458"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="149.882405"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="122.47261"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="108.554504"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="98.67945"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="91.019763"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="84.761343"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="79.469924"></use></g></g></g><g id="ytick_26"><g id="line2d_39"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="74.886289"></use></g></g></g><g id="ytick_27"><g id="line2d_40"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="70.843236"></use></g></g></g><g id="ytick_28"><g id="line2d_41"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="43.433441"></use></g></g></g><g id="ytick_29"><g id="line2d_42"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="29.515334"></use></g></g></g><g id="ytick_30"><g id="line2d_43"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="19.64028"></use></g></g></g><g id="ytick_31"><g id="line2d_44"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="11.980593"></use></g></g></g><g id="text_7"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
 L 18.3125 54.6875 
 L 36.8125 54.6875 
 L 36.8125 47.703125 
@@ -3439,7 +3452,7 @@ Q 20.90625 20.125 20.90625 31.390625
 Q 20.90625 42.671875 17.703125 53.65625 
 Q 14.5 64.65625 8.015625 75.875 
 z
-" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-105"></use><use x="66.992188" xlink:href="#DejaVuSans-109"></use><use x="164.404297" xlink:href="#DejaVuSans-101"></use><use x="225.927734" xlink:href="#DejaVuSans-32"></use><use x="257.714844" xlink:href="#DejaVuSans-40"></use><use x="296.728516" xlink:href="#DejaVuSans-115"></use><use x="348.828125" xlink:href="#DejaVuSans-41"></use></g></g></g><g id="line2d_45"><path clip-path="url(#pbbce592879)" d="M 65.769034 270.145455 
+" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="66.992188"></use><use x="164.404297"></use><use x="225.927734"></use><use x="257.714844"></use><use x="296.728516"></use><use x="348.828125"></use></g></g></g><g id="line2d_45"><path clip-path="url(#pbbce592879)" d="M 65.769034 270.145455 
 L 146.93267 241.540333 
 L 228.096307 217.492927 
 L 309.259943 193.56256 
@@ -3475,31 +3488,31 @@ L 228.096307 221.336083
 L 309.259943 197.394403 
 L 390.42358 173.246378 
 L 471.587216 149.902162 
-" style="fill:none;stroke:#ff0000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_51"><path clip-path="url(#pbbce592879)" d="M 65.769034 249.240645 
+" style="fill:none;stroke:#ff0000;stroke-width:1.5;"></path></g><g id="line2d_51"><path clip-path="url(#pbbce592879)" d="M 65.769034 249.240645 
 L 146.93267 224.057231 
 L 228.096307 201.918995 
 L 309.259943 178.026107 
 L 390.42358 154.156055 
 L 471.587216 130.43984 
-" style="fill:none;stroke:#0000ff;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_52"><path clip-path="url(#pbbce592879)" d="M 65.769034 198.724132 
+" style="fill:none;stroke:#0000ff;stroke-width:1.5;"></path></g><g id="line2d_52"><path clip-path="url(#pbbce592879)" d="M 65.769034 198.724132 
 L 146.93267 184.307855 
 L 228.096307 156.793028 
 L 309.259943 129.639279 
 L 390.42358 80.054125 
 L 471.587216 23.054545 
-" style="fill:none;stroke:#008000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_53"><path clip-path="url(#pbbce592879)" d="M 65.769034 224.78471 
+" style="fill:none;stroke:#008000;stroke-width:1.5;"></path></g><g id="line2d_53"><path clip-path="url(#pbbce592879)" d="M 65.769034 224.78471 
 L 146.93267 196.9122 
 L 228.096307 179.138148 
 L 309.259943 164.523421 
 L 390.42358 146.392177 
 L 471.587216 125.408251 
-" style="fill:none;stroke:#00bfbf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_54"><path clip-path="url(#pbbce592879)" d="M 65.769034 255.905194 
+" style="fill:none;stroke:#00bfbf;stroke-width:1.5;"></path></g><g id="line2d_54"><path clip-path="url(#pbbce592879)" d="M 65.769034 255.905194 
 L 146.93267 237.645881 
 L 228.096307 216.482609 
 L 309.259943 192.687318 
 L 390.42358 169.878726 
 L 471.587216 146.377699 
-" style="fill:none;stroke:#bf00bf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
+" style="fill:none;stroke:#bf00bf;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
 L 45.478125 10.7 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"></path></g><g id="patch_4"><path d="M 491.878125 282.5 
 L 491.878125 10.7 
@@ -3517,7 +3530,7 @@ Q 50.478125 15.7 50.478125 17.7
 L 50.478125 90.090625 
 Q 50.478125 92.090625 52.478125 92.090625 
 z
-" style="fill:#ffffff;opacity:0.8;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_55"><path d="M 54.478125 23.798438 
+" style="fill:#ffffff;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_55"><path d="M 54.478125 23.798438 
 L 74.478125 23.798438 
 " style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_56"></g><g id="text_8"><!-- scipy --><defs><path d="M 48.78125 52.59375 
 L 48.78125 44.1875 
@@ -3579,7 +3592,7 @@ L 29.59375 11.921875
 L 46.6875 54.6875 
 L 56.203125 54.6875 
 z
-" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-99"></use><use x="107.080078" xlink:href="#DejaVuSans-105"></use><use x="134.863281" xlink:href="#DejaVuSans-112"></use><use x="198.339844" xlink:href="#DejaVuSans-121"></use></g></g><g id="line2d_57"><path d="M 54.478125 38.476563 
+" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="107.080078"></use><use x="134.863281"></use><use x="198.339844"></use></g></g><g id="line2d_57"><path d="M 54.478125 38.476563 
 L 74.478125 38.476563 
 " style="fill:none;stroke:#0000ff;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_58"></g><g id="text_9"><!-- skimage --><defs><path d="M 9.078125 75.984375 
 L 18.109375 75.984375 
@@ -3656,7 +3669,7 @@ Q 42.625 51.21875 45.40625 46.390625
 L 45.40625 54.6875 
 L 54.390625 54.6875 
 z
-" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-107"></use><use x="110.009766" xlink:href="#DejaVuSans-105"></use><use x="137.792969" xlink:href="#DejaVuSans-109"></use><use x="235.205078" xlink:href="#DejaVuSans-97"></use><use x="296.484375" xlink:href="#DejaVuSans-103"></use><use x="359.960938" xlink:href="#DejaVuSans-101"></use></g></g><g id="line2d_59"><path d="M 54.478125 53.154688 
+" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="110.009766"></use><use x="137.792969"></use><use x="235.205078"></use><use x="296.484375"></use><use x="359.960938"></use></g></g><g id="line2d_59"><path d="M 54.478125 53.154688 
 L 74.478125 53.154688 
 " style="fill:none;stroke:#008000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_60"></g><g id="text_10"><!-- numba --><defs><path d="M 8.5 21.578125 
 L 8.5 54.6875 
@@ -3702,7 +3715,7 @@ L 9.078125 0
 L 9.078125 75.984375 
 L 18.109375 75.984375 
 z
-" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-98"></use><use x="287.646484" xlink:href="#DejaVuSans-97"></use></g></g><g id="line2d_61"><path d="M 54.478125 67.832813 
+" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g><g id="line2d_61"><path d="M 54.478125 67.832813 
 L 74.478125 67.832813 
 " style="fill:none;stroke:#00bfbf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_62"></g><g id="text_11"><!-- torch --><defs><path d="M 30.609375 48.390625 
 Q 23.390625 48.390625 19.1875 42.75 
@@ -3757,9 +3770,9 @@ Q 30.078125 56 35.796875 56
 Q 45.21875 56 50.046875 50.171875 
 Q 54.890625 44.34375 54.890625 33.015625 
 z
-" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-111"></use><use x="100.390625" xlink:href="#DejaVuSans-114"></use><use x="141.472656" xlink:href="#DejaVuSans-99"></use><use x="196.453125" xlink:href="#DejaVuSans-104"></use></g></g><g id="line2d_63"><path d="M 54.478125 82.510938 
+" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="100.390625"></use><use x="141.472656"></use><use x="196.453125"></use></g></g><g id="line2d_63"><path d="M 54.478125 82.510938 
 L 74.478125 82.510938 
-" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_64"></g><g id="text_12"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-112"></use><use x="287.646484" xlink:href="#DejaVuSans-121"></use></g></g></g></g></g><defs><clippath id="pbbce592879"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
+" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_64"></g><g id="text_12"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g></g></g></g><defs><clippath id="pbbce592879"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
 </div>
 
 </div>
@@ -3835,9 +3848,14 @@ L 74.478125 82.510938
 
 
 <div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?><!-- Created with matplotlib (https://matplotlib.org/) --><svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+<!--?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?-->
+
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="320.05625pt" version="1.1" viewbox="0 0 502.578125 320.05625" width="502.578125pt"><defs>
+  &lt;style type="text/css"&gt;
 *{stroke-linecap:butt;stroke-linejoin:round;}
-  </style></defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
+  &lt;/style&gt;
+ </defs><g id="figure_1"><g id="patch_1"><path d="M 0 320.05625 
 L 502.578125 320.05625 
 L 502.578125 0 
 L 0 0 
@@ -3849,7 +3867,7 @@ L 45.478125 10.7
 z
 " style="fill:#ffffff;"></path></g><g id="matplotlib.axis_1"><g id="xtick_1"><g id="line2d_1"><defs><path d="M 0 0 
 L 0 3.5 
-" id="m137590bf7e" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="199.884648" xlink:href="#m137590bf7e" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{1}}$ --><defs><path d="M 12.40625 8.296875 
+" id="m137590bf7e" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="199.884648" y="282.5"></use></g></g><g id="text_1"><!-- $\mathdefault{10^{1}}$ --><defs><path d="M 12.40625 8.296875 
 L 28.515625 8.296875 
 L 28.515625 63.921875 
 L 10.984375 60.40625 
@@ -3881,9 +3899,9 @@ Q 6.59375 17.96875 6.59375 36.375
 Q 6.59375 54.828125 13.0625 64.515625 
 Q 19.53125 74.21875 31.78125 74.21875 
 z
-" id="DejaVuSans-48"></path></defs><g transform="translate(191.084648 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><defs><path d="M 0 0 
+" id="DejaVuSans-48"></path></defs><g transform="translate(191.084648 297.098437)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="xtick_2"><g id="line2d_2"><defs><path d="M 0 0 
 L 0 2 
-" id="mf769efa9df" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="65.769034" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><g><use style="stroke:#000000;stroke-width:0.6;" x="98.430103" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="125.116139" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="147.678861" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="167.22358" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="184.463243" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="301.339194" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="360.686298" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="402.793739" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="435.454808" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="462.140844" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="484.703566" xlink:href="#mf769efa9df" y="282.5"></use></g></g></g><g id="text_2"><!-- M --><defs><path d="M 9.8125 72.90625 
+" id="mf769efa9df" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="65.769034" y="282.5"></use></g></g></g><g id="xtick_3"><g id="line2d_3"><g><use style="stroke:#000000;stroke-width:0.6;" x="98.430103" y="282.5"></use></g></g></g><g id="xtick_4"><g id="line2d_4"><g><use style="stroke:#000000;stroke-width:0.6;" x="125.116139" y="282.5"></use></g></g></g><g id="xtick_5"><g id="line2d_5"><g><use style="stroke:#000000;stroke-width:0.6;" x="147.678861" y="282.5"></use></g></g></g><g id="xtick_6"><g id="line2d_6"><g><use style="stroke:#000000;stroke-width:0.6;" x="167.22358" y="282.5"></use></g></g></g><g id="xtick_7"><g id="line2d_7"><g><use style="stroke:#000000;stroke-width:0.6;" x="184.463243" y="282.5"></use></g></g></g><g id="xtick_8"><g id="line2d_8"><g><use style="stroke:#000000;stroke-width:0.6;" x="301.339194" y="282.5"></use></g></g></g><g id="xtick_9"><g id="line2d_9"><g><use style="stroke:#000000;stroke-width:0.6;" x="360.686298" y="282.5"></use></g></g></g><g id="xtick_10"><g id="line2d_10"><g><use style="stroke:#000000;stroke-width:0.6;" x="402.793739" y="282.5"></use></g></g></g><g id="xtick_11"><g id="line2d_11"><g><use style="stroke:#000000;stroke-width:0.6;" x="435.454808" y="282.5"></use></g></g></g><g id="xtick_12"><g id="line2d_12"><g><use style="stroke:#000000;stroke-width:0.6;" x="462.140844" y="282.5"></use></g></g></g><g id="xtick_13"><g id="line2d_13"><g><use style="stroke:#000000;stroke-width:0.6;" x="484.703566" y="282.5"></use></g></g></g><g id="text_2"><!-- M --><defs><path d="M 9.8125 72.90625 
 L 24.515625 72.90625 
 L 43.109375 23.296875 
 L 61.8125 72.90625 
@@ -3897,9 +3915,9 @@ L 19.390625 64.015625
 L 19.390625 0 
 L 9.8125 0 
 z
-" id="DejaVuSans-77"></path></defs><g transform="translate(264.364063 310.776562)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-77"></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
+" id="DejaVuSans-77"></path></defs><g transform="translate(264.364063 310.776562)scale(0.1 -0.1)"><use></use></g></g></g><g id="matplotlib.axis_2"><g id="ytick_1"><g id="line2d_14"><defs><path d="M 0 0 
 L -3.5 0 
-" id="m50a59d86ef" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m50a59d86ef" y="199.178376"></use></g></g><g id="text_3"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 202.977595)scale(0.1 -0.1)"><use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m50a59d86ef" y="106.467881"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
+" id="m50a59d86ef" style="stroke:#000000;stroke-width:0.8;"></path></defs><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="199.178376"></use></g></g><g id="text_3"><!-- $\mathdefault{10^{1}}$ --><g transform="translate(20.878125 202.977595)scale(0.1 -0.1)"><use transform="translate(0 0.684375)"></use><use transform="translate(63.623047 0.684375)"></use><use transform="translate(128.203125 38.965625)scale(0.7)"></use></g></g></g><g id="ytick_2"><g id="line2d_15"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="106.467881"></use></g></g><g id="text_4"><!-- $\mathdefault{10^{2}}$ --><defs><path d="M 19.1875 8.296875 
 L 53.609375 8.296875 
 L 53.609375 0 
 L 7.328125 0 
@@ -3922,7 +3940,7 @@ Q 49.859375 40.875 45.40625 35.40625
 Q 44.1875 33.984375 37.640625 27.21875 
 Q 31.109375 20.453125 19.1875 8.296875 
 z
-" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 110.2671)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m50a59d86ef" y="13.757386"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
+" id="DejaVuSans-50"></path></defs><g transform="translate(20.878125 110.2671)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_3"><g id="line2d_16"><g><use style="stroke:#000000;stroke-width:0.8;" x="45.478125" y="13.757386"></use></g></g><g id="text_5"><!-- $\mathdefault{10^{3}}$ --><defs><path d="M 40.578125 39.3125 
 Q 47.65625 37.796875 51.625 33 
 Q 55.609375 28.21875 55.609375 21.1875 
 Q 55.609375 10.40625 48.1875 4.484375 
@@ -3953,9 +3971,9 @@ Q 53.90625 64.015625 53.90625 55.328125
 Q 53.90625 49.265625 50.4375 45.09375 
 Q 46.96875 40.921875 40.578125 39.3125 
 z
-" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 17.556604)scale(0.1 -0.1)"><use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"></use><use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"></use><use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-51"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
+" id="DejaVuSans-51"></path></defs><g transform="translate(20.878125 17.556604)scale(0.1 -0.1)"><use transform="translate(0 0.765625)"></use><use transform="translate(63.623047 0.765625)"></use><use transform="translate(128.203125 39.046875)scale(0.7)"></use></g></g></g><g id="ytick_4"><g id="line2d_17"><defs><path d="M 0 0 
 L -2 0 
-" id="mbab1727ed3" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="263.980231"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="247.654724"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="236.071591"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="227.087016"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="219.746084"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="213.539414"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="208.162951"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="203.420576"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="171.269736"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="154.944228"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="143.361096"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="134.376521"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="127.035588"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="120.828918"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="115.452456"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="110.71008"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="78.559241"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="62.233733"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="50.650601"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="41.666026"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="34.325093"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="28.118423"></use></g></g></g><g id="ytick_26"><g id="line2d_39"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="22.741961"></use></g></g></g><g id="ytick_27"><g id="line2d_40"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbab1727ed3" y="17.999585"></use></g></g></g><g id="text_6"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
+" id="mbab1727ed3" style="stroke:#000000;stroke-width:0.6;"></path></defs><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="263.980231"></use></g></g></g><g id="ytick_5"><g id="line2d_18"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="247.654724"></use></g></g></g><g id="ytick_6"><g id="line2d_19"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="236.071591"></use></g></g></g><g id="ytick_7"><g id="line2d_20"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="227.087016"></use></g></g></g><g id="ytick_8"><g id="line2d_21"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="219.746084"></use></g></g></g><g id="ytick_9"><g id="line2d_22"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="213.539414"></use></g></g></g><g id="ytick_10"><g id="line2d_23"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="208.162951"></use></g></g></g><g id="ytick_11"><g id="line2d_24"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="203.420576"></use></g></g></g><g id="ytick_12"><g id="line2d_25"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="171.269736"></use></g></g></g><g id="ytick_13"><g id="line2d_26"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="154.944228"></use></g></g></g><g id="ytick_14"><g id="line2d_27"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="143.361096"></use></g></g></g><g id="ytick_15"><g id="line2d_28"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="134.376521"></use></g></g></g><g id="ytick_16"><g id="line2d_29"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="127.035588"></use></g></g></g><g id="ytick_17"><g id="line2d_30"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="120.828918"></use></g></g></g><g id="ytick_18"><g id="line2d_31"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="115.452456"></use></g></g></g><g id="ytick_19"><g id="line2d_32"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="110.71008"></use></g></g></g><g id="ytick_20"><g id="line2d_33"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="78.559241"></use></g></g></g><g id="ytick_21"><g id="line2d_34"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="62.233733"></use></g></g></g><g id="ytick_22"><g id="line2d_35"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="50.650601"></use></g></g></g><g id="ytick_23"><g id="line2d_36"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="41.666026"></use></g></g></g><g id="ytick_24"><g id="line2d_37"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="34.325093"></use></g></g></g><g id="ytick_25"><g id="line2d_38"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="28.118423"></use></g></g></g><g id="ytick_26"><g id="line2d_39"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="22.741961"></use></g></g></g><g id="ytick_27"><g id="line2d_40"><g><use style="stroke:#000000;stroke-width:0.6;" x="45.478125" y="17.999585"></use></g></g></g><g id="text_6"><!-- time (s) --><defs><path d="M 18.3125 70.21875 
 L 18.3125 54.6875 
 L 36.8125 54.6875 
 L 36.8125 47.703125 
@@ -4089,7 +4107,7 @@ Q 20.90625 20.125 20.90625 31.390625
 Q 20.90625 42.671875 17.703125 53.65625 
 Q 14.5 64.65625 8.015625 75.875 
 z
-" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-105"></use><use x="66.992188" xlink:href="#DejaVuSans-109"></use><use x="164.404297" xlink:href="#DejaVuSans-101"></use><use x="225.927734" xlink:href="#DejaVuSans-32"></use><use x="257.714844" xlink:href="#DejaVuSans-40"></use><use x="296.728516" xlink:href="#DejaVuSans-115"></use><use x="348.828125" xlink:href="#DejaVuSans-41"></use></g></g></g><g id="line2d_41"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 201.7814 
+" id="DejaVuSans-41"></path></defs><g transform="translate(14.798438 165.991406)rotate(-90)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="66.992188"></use><use x="164.404297"></use><use x="225.927734"></use><use x="257.714844"></use><use x="296.728516"></use><use x="348.828125"></use></g></g></g><g id="line2d_41"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 201.7814 
 L 167.22358 202.456403 
 L 268.678125 204.016365 
 L 370.13267 202.740209 
@@ -4119,27 +4137,27 @@ L 167.22358 202.673556
 L 268.678125 202.903355 
 L 370.13267 204.970043 
 L 471.587216 201.025466 
-" style="fill:none;stroke:#ff0000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_47"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 180.43732 
+" style="fill:none;stroke:#ff0000;stroke-width:1.5;"></path></g><g id="line2d_47"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 180.43732 
 L 167.22358 179.296067 
 L 268.678125 179.432324 
 L 370.13267 178.028595 
 L 471.587216 171.139729 
-" style="fill:none;stroke:#0000ff;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_48"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 240.790805 
+" style="fill:none;stroke:#0000ff;stroke-width:1.5;"></path></g><g id="line2d_48"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 240.790805 
 L 167.22358 187.321543 
 L 268.678125 132.702837 
 L 370.13267 80.263218 
 L 471.587216 23.054545 
-" style="fill:none;stroke:#008000;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_49"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 211.346793 
+" style="fill:none;stroke:#008000;stroke-width:1.5;"></path></g><g id="line2d_49"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 211.346793 
 L 167.22358 188.12458 
 L 268.678125 163.076365 
 L 370.13267 140.648362 
 L 471.587216 119.30744 
-" style="fill:none;stroke:#00bfbf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="line2d_50"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 197.404153 
+" style="fill:none;stroke:#00bfbf;stroke-width:1.5;"></path></g><g id="line2d_50"><path clip-path="url(#p2dffb9c329)" d="M 65.769034 197.404153 
 L 167.22358 198.351123 
 L 268.678125 199.079705 
 L 370.13267 199.593662 
 L 471.587216 197.91676 
-" style="fill:none;stroke:#bf00bf;stroke-dasharray:5.55,2.4;stroke-dashoffset:0;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
+" style="fill:none;stroke:#bf00bf;stroke-width:1.5;"></path></g><g id="patch_3"><path d="M 45.478125 282.5 
 L 45.478125 10.7 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"></path></g><g id="patch_4"><path d="M 491.878125 282.5 
 L 491.878125 10.7 
@@ -4157,7 +4175,7 @@ Q 50.478125 15.7 50.478125 17.7
 L 50.478125 90.090625 
 Q 50.478125 92.090625 52.478125 92.090625 
 z
-" style="fill:#ffffff;opacity:0.8;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_51"><path d="M 54.478125 23.798438 
+" style="fill:#ffffff;stroke:#cccccc;stroke-linejoin:miter;"></path></g><g id="line2d_51"><path d="M 54.478125 23.798438 
 L 74.478125 23.798438 
 " style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_52"></g><g id="text_7"><!-- scipy --><defs><path d="M 48.78125 52.59375 
 L 48.78125 44.1875 
@@ -4219,7 +4237,7 @@ L 29.59375 11.921875
 L 46.6875 54.6875 
 L 56.203125 54.6875 
 z
-" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-99"></use><use x="107.080078" xlink:href="#DejaVuSans-105"></use><use x="134.863281" xlink:href="#DejaVuSans-112"></use><use x="198.339844" xlink:href="#DejaVuSans-121"></use></g></g><g id="line2d_53"><path d="M 54.478125 38.476563 
+" id="DejaVuSans-121"></path></defs><g transform="translate(82.478125 27.298438)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="107.080078"></use><use x="134.863281"></use><use x="198.339844"></use></g></g><g id="line2d_53"><path d="M 54.478125 38.476563 
 L 74.478125 38.476563 
 " style="fill:none;stroke:#0000ff;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_54"></g><g id="text_8"><!-- skimage --><defs><path d="M 9.078125 75.984375 
 L 18.109375 75.984375 
@@ -4296,7 +4314,7 @@ Q 42.625 51.21875 45.40625 46.390625
 L 45.40625 54.6875 
 L 54.390625 54.6875 
 z
-" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-115"></use><use x="52.099609" xlink:href="#DejaVuSans-107"></use><use x="110.009766" xlink:href="#DejaVuSans-105"></use><use x="137.792969" xlink:href="#DejaVuSans-109"></use><use x="235.205078" xlink:href="#DejaVuSans-97"></use><use x="296.484375" xlink:href="#DejaVuSans-103"></use><use x="359.960938" xlink:href="#DejaVuSans-101"></use></g></g><g id="line2d_55"><path d="M 54.478125 53.154688 
+" id="DejaVuSans-103"></path></defs><g transform="translate(82.478125 41.976563)scale(0.1 -0.1)"><use></use><use x="52.099609"></use><use x="110.009766"></use><use x="137.792969"></use><use x="235.205078"></use><use x="296.484375"></use><use x="359.960938"></use></g></g><g id="line2d_55"><path d="M 54.478125 53.154688 
 L 74.478125 53.154688 
 " style="fill:none;stroke:#008000;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_56"></g><g id="text_9"><!-- numba --><defs><path d="M 54.890625 33.015625 
 L 54.890625 0 
@@ -4360,7 +4378,7 @@ L 9.078125 0
 L 9.078125 75.984375 
 L 18.109375 75.984375 
 z
-" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-98"></use><use x="287.646484" xlink:href="#DejaVuSans-97"></use></g></g><g id="line2d_57"><path d="M 54.478125 67.832813 
+" id="DejaVuSans-98"></path></defs><g transform="translate(82.478125 56.654688)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g><g id="line2d_57"><path d="M 54.478125 67.832813 
 L 74.478125 67.832813 
 " style="fill:none;stroke:#00bfbf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_58"></g><g id="text_10"><!-- torch --><defs><path d="M 30.609375 48.390625 
 Q 23.390625 48.390625 19.1875 42.75 
@@ -4415,9 +4433,9 @@ Q 30.078125 56 35.796875 56
 Q 45.21875 56 50.046875 50.171875 
 Q 54.890625 44.34375 54.890625 33.015625 
 z
-" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-116"></use><use x="39.208984" xlink:href="#DejaVuSans-111"></use><use x="100.390625" xlink:href="#DejaVuSans-114"></use><use x="141.472656" xlink:href="#DejaVuSans-99"></use><use x="196.453125" xlink:href="#DejaVuSans-104"></use></g></g><g id="line2d_59"><path d="M 54.478125 82.510938 
+" id="DejaVuSans-104"></path></defs><g transform="translate(82.478125 71.332813)scale(0.1 -0.1)"><use></use><use x="39.208984"></use><use x="100.390625"></use><use x="141.472656"></use><use x="196.453125"></use></g></g><g id="line2d_59"><path d="M 54.478125 82.510938 
 L 74.478125 82.510938 
-" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_60"></g><g id="text_11"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use xlink:href="#DejaVuSans-110"></use><use x="63.378906" xlink:href="#DejaVuSans-117"></use><use x="126.757812" xlink:href="#DejaVuSans-109"></use><use x="224.169922" xlink:href="#DejaVuSans-112"></use><use x="287.646484" xlink:href="#DejaVuSans-121"></use></g></g></g></g></g><defs><clippath id="p2dffb9c329"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
+" style="fill:none;stroke:#bf00bf;stroke-linecap:square;stroke-width:1.5;"></path></g><g id="line2d_60"></g><g id="text_11"><!-- numpy --><g transform="translate(82.478125 86.010938)scale(0.1 -0.1)"><use></use><use x="63.378906"></use><use x="126.757812"></use><use x="224.169922"></use><use x="287.646484"></use></g></g></g></g></g><defs><clippath id="p2dffb9c329"><rect height="271.8" width="446.4" x="45.478125" y="10.7"></rect></clippath></defs></svg>
 </div>
 
 </div>
@@ -4472,8 +4490,7 @@ In the end, knowing the relative advantage of each library is crucial in the fin
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -4511,8 +4528,7 @@ In the end, knowing the relative advantage of each library is crucial in the fin
 <td>0.41.0</td>
 </tr>
 <tr><td colspan="2">Thu Dec 27 04:01:18 2018 CET</td></tr>
-</table>
-</div>
+</table></div>
 
 </div>
 

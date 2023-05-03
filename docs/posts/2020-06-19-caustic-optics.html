@@ -131,9 +131,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Caustics (<a href="https://en.wikipedia.org/wiki/Caustic_%28optics%29">wikipedia</a> are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is for instance the heart-shaped pattern in your cup of coffee which is formed as the rays of the sun are reflected on the cup's surface. It is also the wiggly pattern of light curves that you will see on the floor of a pool as the sun's light is <em>refracted</em> at the surface of the water. Here, we simulate that particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images.</p>
 <p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
-<p><br></p>
-<p></p>
-<center><img src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
+<br><center><img src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
 <br><p>This is joint work with artist <a href="https://laurentperrinet.github.io/authors/etienne-rey/">Etienne Rey</a>, in which I especially follow the ideas put forward in the series <a href="http://ondesparalleles.org/projets/turbulences/">Turbulence</a>.</p>
 <p><a href="https://zenodo.org/badge/latestdoi/273226625"><img src="https://zenodo.org/badge/273226625.svg" alt="DOI"></a></p>
 
@@ -146,7 +144,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- TEASER_END -->
-
 <p>Let's begin with an import of the libraries that we will need: <a href="https://numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a> (essentials!) but also <a href="https://github.com/NeuralEnsemble/MotionClouds">MotionClouds</a> to generate a simple waveform (more on this later in this post). These are all installable using <a href="https://pip.pypa.io/en/stable/">pip</a> (see the <a href="https://github.com/NaturalPatterns/2020_caustiques/blob/master/requirements.txt">requirements.txt</a> file).</p>
 
 </div>
@@ -356,27 +353,19 @@
 <h2 id="What-is-a-caustic?">What is a caustic?<a class="anchor-link" href="2020-06-19-caustic-optics.html#What-is-a-caustic?">¶</a>
 </h2>
 <p>A caustic usually refers to the image which is formed by the convergence or divergence of rays on a surface. Mathematically, this may be understood as the <em>enveloppe</em> of a set of rays, and intuitively, it is best understood by looking at the best known example: When the sun hits a glass or cup and you see heart-shaped pattern (actually more a kidney than a heart, hence the name "nephroid"):</p>
-<p><br></p>
-<p></p>
-<center><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="38.2%/"></center>
+<br><center><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="38.2%/"></center>
 <br><p>(image by <a href="https://commons.wikimedia.org/wiki/User:Paul_venter">User:Paul venter</a>).</p>
 <p>Their study is essential in optics, as these are the bases for lenses and therefore of central importance in our image-centered society :-)</p>
 <p>They are also of interest simply because they create mesmerizing patterns in nature, for instance the pattern of wiggly lines on swimming pool bottoms, or on the sea floor at shallow depths.</p>
 <p>The formation of that specific pattern is very well illustrated by this animation (credit <a href="https://twitter.com/j_bertolotti">Jacopo Bertolotti</a>, check-out that twitter <a href="https://twitter.com/j_bertolotti/status/1229743952594640897">thread</a>) where light comes from  the bottom, travels through air, hits the surface and gets deviated:</p>
-<p><br></p>
-<p></p>
-<center><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="61.8%/"></center>
+<br><center><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="61.8%/"></center>
 <br><p>What happens? Light travels fast (<em>very</em> fast) but it will travel slower in water than in the air. A consequence of this is that a ray changes slightly its direction as it hits the water: the light ray is <em>refracted</em>. That is why a pen which is half immerged looks "as if" it is broken. In fact, it's only its image that gets distorted:</p>
-<p><br></p>
-<p></p>
-<center><a title="Ulflund / CC0" href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg"><img width="512" alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg"></a></center>
+<br><center><a title="Ulflund / CC0" href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg"><img width="512" alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg"></a></center>
 <br><p>The laws governing this deviations are well known as <a href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell's law</a> and state that</p>
 $$
 \frac{\sin\theta_2}{\sin\theta_1} = \frac{n_1}{n_2}
 $$<p>Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indices of air and water, respectively. (Note that, as a consequence, the light in the water is always slightly closer to the normal of the surface.)</p>
-<p><br></p>
-<p></p>
-<center>
+<br><center>
 <a title="Cristan at English Wikipedia, Sawims at Dutch Wikipedia / Public domain" href="https://commons.wikimedia.org/wiki/File:Snells_law.svg"><img width="512" alt="Snells law" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/512px-Snells_law.svg.png"></a>        
 </center>
 <br><p>Going back to the swimming pool, considering that the sun is emitting an uniform pattern of parallel rays from an incident angle $\theta_I$, we may apply this law to all of these light rays. The important ingredient is that the surface of the water (given as the surface height $z(x, y)$) changes smoothly and will deviate the light rays non-uniformly, thus creating the patterns. Writing down the equation, the displacement resulting from the angle of refraction is given by:</p>
@@ -405,7 +394,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Image coordinates follow 'ij' indexing, that is,</span>
 <span class="sd">        * their origin at the top left,</span>
 <span class="sd">        * the X axis is vertical and goes "down",</span>
@@ -520,7 +509,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="k">return</span> <span class="n">intensity</span>
 
 <span class="k">def</span> <span class="nf">scattering</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.45</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    b is  proportionate  to  the  column  density  of  aerosols  </span>
 <span class="sd">    along  the  path  of  sunlight,  from  outside  the  atmosphere </span>
 <span class="sd">    to  the  point  of  observation</span>
@@ -536,11 +525,11 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="k">return</span> <span class="n">intensity</span>
 
 <span class="k">def</span> <span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
+<span class="w">    </span><span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
 
 <span class="k">class</span> <span class="nc">ColourSystem</span><span class="p">:</span>
-    <span class="sd">"""A class representing a colour system.</span>
+<span class="w">    </span><span class="sd">"""A class representing a colour system.</span>
 
 <span class="sd">    A colour system defined by the CIE x, y and z=1-x-y coordinates of</span>
 <span class="sd">    its three primary illuminants and its "white point".</span>
@@ -552,7 +541,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="c1"># CMF is the CIE colour matching function for 380 - 780 nm in 5 nm intervals</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">white</span><span class="p">):</span>
-        <span class="sd">"""Initialise the ColourSystem object.</span>
+<span class="w">        </span><span class="sd">"""Initialise the ColourSystem object.</span>
 
 <span class="sd">        Pass vectors (ie NumPy arrays of shape (3,)) for each of the</span>
 <span class="sd">        red, green, blue  chromaticities and the white illuminant</span>
@@ -665,7 +654,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 
 
     <span class="k">def</span> <span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">):</span>
-        <span class="sd">"""Transform from xyz to rgb representation of colour.</span>
+<span class="w">        </span><span class="sd">"""Transform from xyz to rgb representation of colour.</span>
 
 <span class="sd">        The output rgb components are normalized on their maximum</span>
 <span class="sd">        value. If xyz is out the rgb gamut, it is desaturated until it</span>
@@ -688,7 +677,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="k">return</span> <span class="n">rgb</span>
 
     <span class="k">def</span> <span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
-        <span class="sd">"""Convert a spectrum to an xyz point.</span>
+<span class="w">        </span><span class="sd">"""Convert a spectrum to an xyz point.</span>
 
 <span class="sd">        The spectrum must be on the same grid of points as the colour-matching</span>
 <span class="sd">        function, self.cmf: 380-780 nm in 5 nm steps.</span>
@@ -702,7 +691,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="k">return</span> <span class="n">XYZ</span> <span class="o">/</span> <span class="n">den</span>
 
     <span class="k">def</span> <span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">out_fmt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""Convert a spectrum to an rgb value."""</span>
+<span class="w">        </span><span class="sd">"""Convert a spectrum to an rgb value."""</span>
 
         <span class="n">xyz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_to_xyz</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xyz_to_rgb</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">out_fmt</span><span class="p">)</span>
@@ -753,7 +742,6 @@ Thinking about images as densities which we may discretize on a rectangular grid
 
 
 <div class="output_html rendered_html output_subarea ">
-
             <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2020-06-19_caustique/2020-06-19_caustique.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 
@@ -800,9 +788,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique.gif" width="1024"></div>
 
 </div>
 
@@ -889,9 +875,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.000.gif" width="1024"></div>
 
 </div>
 
@@ -912,9 +896,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.946.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.946.gif" width="1024"></div>
 
 </div>
 
@@ -935,9 +917,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_7.071.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_7.071.gif" width="1024"></div>
 
 </div>
 
@@ -958,9 +938,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_8.409.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_8.409.gif" width="1024"></div>
 
 </div>
 
@@ -981,9 +959,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_10.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_10.000.gif" width="1024"></div>
 
 </div>
 
@@ -1004,9 +980,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_11.892.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_11.892.gif" width="1024"></div>
 
 </div>
 
@@ -1027,9 +1001,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_14.142.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_14.142.gif" width="1024"></div>
 
 </div>
 
@@ -1050,9 +1022,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_16.818.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_16.818.gif" width="1024"></div>
 
 </div>
 
@@ -1073,9 +1043,7 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_20.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_20.000.gif" width="1024"></div>
 
 </div>
 
@@ -1149,9 +1117,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -1172,9 +1138,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -1195,9 +1159,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -1218,9 +1180,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -1241,9 +1201,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -1264,9 +1222,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -1287,9 +1243,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -1310,9 +1264,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -1333,9 +1285,7 @@ sf_0=sf_0(default)*0.500=2.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -1357,9 +1307,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -1380,9 +1328,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -1403,9 +1349,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -1426,9 +1370,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -1449,9 +1391,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -1472,9 +1412,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -1495,9 +1433,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -1518,9 +1454,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -1541,9 +1475,7 @@ B_sf=B_sf(default)*0.500=1.000E-03
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -1565,9 +1497,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -1588,9 +1518,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -1611,9 +1539,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -1634,9 +1560,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -1657,9 +1581,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -1680,9 +1602,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -1703,9 +1623,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -1726,9 +1644,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -1749,9 +1665,7 @@ theta=theta(default)*0.500=1.200E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -1773,9 +1687,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -1796,9 +1708,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -1819,9 +1729,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -1842,9 +1750,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -1865,9 +1771,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -1888,9 +1792,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -1911,9 +1813,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -1934,9 +1834,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -1957,9 +1855,7 @@ B_theta=B_theta(default)*0.500=1.963E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -1981,9 +1877,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -2004,9 +1898,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -2027,9 +1919,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -2050,9 +1940,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -2073,9 +1961,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -2096,9 +1982,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -2119,9 +2003,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -2142,9 +2024,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -2165,9 +2045,7 @@ V_X=V_X(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -2189,9 +2067,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -2212,9 +2088,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -2235,9 +2109,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -2258,9 +2130,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -2281,9 +2151,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -2304,9 +2172,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -2327,9 +2193,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -2350,9 +2214,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -2373,9 +2235,7 @@ V_Y=V_Y(default)*0.500=1.500E-01
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_2.000.gif" width="1024"></div>
 
 </div>
 
@@ -2397,9 +2257,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.500.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.500.gif" width="1024"></div>
 
 </div>
 
@@ -2420,9 +2278,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.595.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.595.gif" width="1024"></div>
 
 </div>
 
@@ -2443,9 +2299,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.707.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.707.gif" width="1024"></div>
 
 </div>
 
@@ -2466,9 +2320,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.841.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.841.gif" width="1024"></div>
 
 </div>
 
@@ -2489,9 +2341,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.000.gif" width="1024"></div>
 
 </div>
 
@@ -2512,9 +2362,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.189.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.189.gif" width="1024"></div>
 
 </div>
 
@@ -2535,9 +2383,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.414.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.414.gif" width="1024"></div>
 
 </div>
 
@@ -2558,9 +2404,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.682.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.682.gif" width="1024"></div>
 
 </div>
 
@@ -2581,9 +2425,7 @@ B_V=B_V(default)*0.500=2.000E+00
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_2.000.gif" width="1024">
-</div>
+<div class="output_html rendered_html output_subarea "><img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_2.000.gif" width="1024"></div>
 
 </div>
 

@@ -450,17 +450,17 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>sigma_theta_ff = 0.001 : <ul>
+<li>sigma_theta_ff = 0.001 :<ul>
 <li>connection feedforward pratiquement inexistante, pas de changement dans les connections reccurent</li>
 <li>pas de décharge neuronal</li>
 </ul>
 </li>
 </ul>
 <p>Quand sigma_theta_ff augmente :</p>
-
 <pre><code>* connection feedforward augmente
 * la décharge neuronale augmente, puis diminue dépasser une certaine valeur
-* Modifie la courbe de sélectivité</code></pre>
+* Modifie la courbe de sélectivité
+</code></pre>
 
 </div>
 </div>
@@ -585,17 +585,16 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>sigma_theta_lat = 0.001 : <ul>
+<li>sigma_theta_lat = 0.001 :<ul>
 <li>connection recurrent pratiquement inexistante, pas de changement dans les connections feedforward</li>
 <li>décharge neuronal, courbe de selectivité monte jusqu'à 100 spikes et est étroite</li>
 </ul>
 </li>
 </ul>
-<p>quand sigma_theta_lat augmente :</p>
-
-<pre><code>* connection recurrent augmente
-* décharge neuronale augmente (que l'avant dernier à diminuer)
-* Modifie la courbe de sélectivité</code></pre>
+<p>quand sigma_theta_lat augmente :
+    * connection recurrent augmente
+    * décharge neuronale augmente (que l'avant dernier à diminuer)
+    * Modifie la courbe de sélectivité</p>
 
 </div>
 </div>
@@ -726,9 +725,9 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 </li>
 </ul>
 <p>Quand input_rate augmente :</p>
-
 <pre><code>* décharge neuronale augmente
-* Modifie la courbe de sélectivité</code></pre>
+* Modifie la courbe de sélectivité
+</code></pre>
 
 </div>
 </div>
@@ -1147,7 +1146,7 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>input_width = 0*sim.Hz : <ul>
+<li>input_width = 0*sim.Hz :<ul>
 <li>connections feedforward et connections recurrent inchangées</li>
 <li>pas de décharge neuronal, courbe de selectivité plate</li>
 </ul>
@@ -1157,9 +1156,9 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <li>input_width = disparition de la courbe de selectivité</li>
 </ul>
 <p>quand input_width augmente :</p>
-
 <pre><code>* décharge neuronale augmente
-* Modifie la courbe de sélectivité</code></pre>
+* Modifie la courbe de sélectivité
+</code></pre>
 
 </div>
 </div>
@@ -1284,7 +1283,7 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>weight_ff = 0*sim.Hz : <ul>
+<li>weight_ff = 0*sim.Hz :<ul>
 <li>pas de connections feedforward, connections recurrent inchangées</li>
 <li>pas de décharge neuronal, courbe de selectivité plate</li>
 </ul>
@@ -1293,10 +1292,10 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <li>weight_ff = 3.1 : profil d'activité large</li>
 </ul>
 <p>quand weight_ff augmente :</p>
-
 <pre><code>* décharge neuronale augmente
 * augmente les connections feedforward
-* Modifie la courbe de sélectivité</code></pre>
+* Modifie la courbe de sélectivité
+</code></pre>
 
 </div>
 </div>
@@ -1349,17 +1348,16 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>weight_lat = 0*sim.Hz : <ul>
+<li>weight_lat = 0*sim.Hz :<ul>
 <li>pas de connections recurrent, connections feedforward inchangées</li>
 <li>décharge neuronal, courbe de selectivité monte jusqu'à 120 spikes</li>
 </ul>
 </li>
 <li>weight_lat = 0.22 : profil d'activité large (mais atypique)</li>
 </ul>
-<p>quand weight_ff augmente :</p>
-
-<pre><code>* décharge neuronale augmente
-* Modifie la courbe de sélectivité</code></pre>
+<p>quand weight_ff augmente :
+    * décharge neuronale augmente
+    * Modifie la courbe de sélectivité</p>
 
 </div>
 </div>

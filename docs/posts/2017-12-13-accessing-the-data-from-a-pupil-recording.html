@@ -152,9 +152,7 @@
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<center><video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width="61.8%/"></video></center>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><center><video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width="61.8%/"></video></center></div>
 
 </div>
 
@@ -170,7 +168,6 @@
 <p>This video shows the world view (cranio-centric, from a head-mounted camera fixed on the frame) with overlaid the position of the (right) eye while I am configuring a text box. You see the eye fixating on the screen then jumping somewhere else on the screen (saccades) or on the keyboard / hands. Note that the screen itself shows the world view, such that this generates an self-reccurrent pattern.</p>
 <p>For this, I could use the capture script and I will demonstrate here how to extract the raw data in a few lines of python code.</p>
 <!-- TEASER_END -->
-
 <p>In particular, we will use existing examples and rely on the <a href="https://docs.pupil-labs.com/#pupil-data-format">documentation</a> of the pupil's data format.
 Let's first access the data:</p>
 
@@ -209,7 +206,7 @@ Let's first access the data:</p>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls <span class="o">{</span>path<span class="o">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span><span class="o">{</span>path<span class="o">}</span>
 </pre></div>
 
     </div>
@@ -272,8 +269,7 @@ eye0.mp4             pupil_data           world_timestamps.npy
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -341,8 +337,7 @@ eye0.mp4             pupil_data           world_timestamps.npy
     </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 
 </div>
 
@@ -405,8 +400,7 @@ with open(os.path.join(path, 'pupil_data'), 'rb') as f:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There is certainly a way to use directly</p>
-<p><code>from file_methods import load_object
-l = load_object(os.path.join(path, 'pupil_data'))</code></p>
+<p><code>from file_methods import load_object l = load_object(os.path.join(path, 'pupil_data'))</code></p>
 <p>In the meanwhile, we have all of our data:</p>
 
 </div>

@@ -133,25 +133,24 @@
 <p><img src="https://github.com/laurentperrinet/TimeTeleScope/raw/main/videos/2021-02-17_TimeTeleScope.gif" alt=""></p>
 <p>(This was done over 10 days, with <em>almost</em> each day an <em>irregular</em> session the morning and one in the evening)</p>
 <!-- TEASER_END -->
-
 <p>The code (and more) is also available @ <a href="https://github.com/laurentperrinet/TimeTeleScope">https://github.com/laurentperrinet/TimeTeleScope</a></p>
 <h3 id="data-acquisition">data acquisition<a class="anchor-link" href="2021-02-21-time-lapsing-an-orchids-flower.html#data-acquisition">¶</a>
 </h3>
 <p>This is well documented on the web and consisted in simply:</p>
 <ul>
 <li>setting up the raspberry π to use the camera</li>
-<li>create a startup script <a href="https://github.com/laurentperrinet/TimeTeleScope/blob/main/startup.sh"><code>startup.sh</code></a> (or clone this repo in <code>/home/pi</code> using <code>git clone https://github.com/laurentperrinet/TimeTeleScope)</code> consisting of the commands which take 2 successive frames at different exposures :
+<li>create a startup script <a href="https://github.com/laurentperrinet/TimeTeleScope/blob/main/startup.sh"><code>startup.sh</code></a> (or clone this repo in <code>/home/pi</code> using <code>git clone https://github.com/laurentperrinet/TimeTeleScope)</code> consisting of the commands which take 2 successive frames at different exposures :</li>
+</ul>
 <pre><code>raspistill -rot 270 -ev -10 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-%m-%d.%H:%M:%S`.jpg
-raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-%m-%d.%H:%M:%S`.jpg</code></pre>
-</li>
-<li>
-<p>run that script regularly (every ten minute) by adding the following line to the cron table (using <code>sudo crontab -e</code>):</p>
-
-<pre><code>*/10 * * * * /home/pi/TimeTelescope/startup.sh</code></pre>
-</li>
-<li>
-<p>the π was placed next to the orchid flowers for more than one week.</p>
-</li>
+raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-%m-%d.%H:%M:%S`.jpg
+</code></pre>
+<ul>
+<li>run that script regularly (every ten minute) by adding the following line to the cron table (using <code>sudo crontab -e</code>):</li>
+</ul>
+<pre><code>*/10 * * * * /home/pi/TimeTelescope/startup.sh
+</code></pre>
+<ul>
+<li>the π was placed next to the orchid flowers for more than one week.</li>
 </ul>
 <p>The rest of this notebook transforms the sequence of frames into a movie.</p>
 
@@ -279,7 +278,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
     <span class="c1"># IMAGE</span>
     <span class="k">def</span> <span class="nf">glob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gex</span><span class="o">=</span><span class="s1">'*.jpg'</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Globs images in a folder.</span>
 
 <span class="sd">        Images should have a jpg extension and</span>
@@ -298,7 +297,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
     
     <span class="k">def</span> <span class="nf">glob_and_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gex</span><span class="o">=</span><span class="s1">'2021-02-14*.jpg'</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Globs images in a folder.</span>
 
 <span class="sd">        Images should have a jpg extension and</span>
@@ -313,7 +312,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
 
     <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Placeholder function for preprocessing images.</span>
 <span class="sd">        </span>
 <span class="sd">        It simply consists here in normalizing the 8-bits raw images to be in the [0, 1] range.</span>
@@ -324,7 +323,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
         <span class="k">return</span> <span class="n">img</span><span class="o">/</span><span class="mf">255.</span>
     
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Loads an image using openCV.</span>
 
 <span class="sd">        """</span>
@@ -440,7 +439,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 <span class="kn">from</span> <span class="nn">skimage.exposure</span> <span class="kn">import</span> <span class="n">match_histograms</span>
 
 <span class="k">def</span> <span class="nf">histMatch</span><span class="p">(</span><span class="n">sourceImage</span><span class="p">,</span> <span class="n">templateImage</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Matches the histogram of sourceImage to the templateImage in order to fix lightness/exposure</span>
 <span class="sd">    of the sourceImage.</span>
 <span class="sd">    """</span>

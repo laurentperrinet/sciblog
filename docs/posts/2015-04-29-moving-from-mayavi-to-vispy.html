@@ -125,7 +125,6 @@
 <p>A long standing dependency of <a href="https://neuralensemble.github.io/MotionClouds/">MotionClouds</a> is MayaVi. While powerful, it is tedious to compile and may discourage new users. We are trying here to show some attempts to do the same with the <a href="http://vispy.org">vispy</a> library.</p>
 <p>In <a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-08_moving-from-mayavi-to-matplotlib.html">another post</a>, we tried to use matplotlib, but this had some limitations. Let's now try <a href="http://vispy.org">vispy</a>, a scientific visualisation library in python using opengl.</p>
 <!-- TEASER_END -->
-
 <p>VisPy is a quite young library, with a mature mid-level object-otriented wrapper to openGL (that they called <code>gloo</code>, I guess it is GL object-oriented) and the early stages of a high-level wrapper quite similar to MayaVi in the functioanlity. As I do not need to mess with the GPU, I will use the latter. As for the time being, we need to install the latest version:</p>
 
 </div>
@@ -137,7 +136,7 @@
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!pip install vispy</span>
-<span class="o">!</span>pip install git+https://github.com/vispy/vispy.git
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/vispy/vispy.git
 </pre></div>
 
     </div>
@@ -364,7 +363,6 @@ Total time elapsed: 00:00:01
 
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
 <td width="33%%"><center><img src="../files/test.png" width="100%/"></center></td>
@@ -1745,7 +1743,6 @@ Total time elapsed: 00:00:01
 
 
 <div class="output_html rendered_html output_subarea ">
-
                 <center><table border="none" width="100%" height="100%">
 <tr>
 <td width="33%%"><center><img src="../files/test.png" width="100%/"></center></td>
