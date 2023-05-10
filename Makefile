@@ -1,3 +1,4 @@
+all: default
 default: deploy
 
 build:
