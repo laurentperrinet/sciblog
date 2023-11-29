@@ -146,7 +146,6 @@ year = {2016}
 
 </code></pre>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -154,8 +153,8 @@ year = {2016}
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -165,11 +164,9 @@ year = {2016}
 <span class="c1"># set some custom size:</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -187,7 +184,6 @@ year = {2016}
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The "vanilla" version of the Motion Cloud:</p>
-
 </div>
 </div>
 </div>
@@ -195,25 +191,18 @@ year = {2016}
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>2021-10-18 21:50:28.687 Python[45982:5325760] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/3p/m0g52j9j69z3gj8ktpgg1dm00000gn/T/org.python.python.savedState
 /usr/local/lib/python3.9/site-packages/vispy/gloo/texture.py:28: UserWarning: GPUs can't support floating point data with more than 32-bits, precision will be lost due to downcasting to 32-bit float.
@@ -223,12 +212,8 @@ year = {2016}
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -245,31 +230,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -277,7 +253,6 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To create a fog, the spatial frenquency should be less precise, so its sufficient to make the bandwidth large. The units are absolute (relative to the Nyquist frequency). So, a value of 1 is already big. Also, (except if it rains?) we can similarly assume a large bandwidth for the orientation.</p>
-
 </div>
 </div>
 </div>
@@ -285,25 +260,18 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver-fog'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'vancouver-fog'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -320,31 +288,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -352,7 +311,6 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is easy to save that file in another format like the matlab binary format (use <code>vext='.mat</code>) or using the more universal <a href="http://www.hdfgroup.org/HDF5/">HDF5</a> format  (use <code>vext='.h5'</code>):</p>
-
 </div>
 </div>
 </div>
@@ -360,17 +318,15 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span> <span class="c1"># makes an envelope in Fourier space</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span> <span class="c1"># makes an envelope in Fourier space</span>
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="c1"># transforms the envelope into a movie</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">vext</span><span class="o">=</span><span class="s1">'.mat'</span><span class="p">)</span> <span class="c1"># saves that movie into MATLAB format</span>
 <span class="c1">#mc.anim_save(mov, os.path.join(mc.figpath, name), vext='.h5') # saves that movie into HDF5 format</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -378,7 +334,6 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now you may directly download that file from <a href="../files/2015-03-26_the-vancouver-set/vancouver-fog.mat">this link</a>.</p>
-
 </div>
 </div>
 </div>
@@ -398,7 +353,6 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we got a good fog, we may want to try out different speeds:</p>
-
 </div>
 </div>
 </div>
@@ -406,26 +360,19 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">V_X</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]:</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">V_X</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]:</span>
     <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'-V_X-'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">V_X</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">figures_MC</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -442,33 +389,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--1_0_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -485,33 +421,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X--0_5_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -528,33 +453,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_0_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -571,33 +485,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_1_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -614,33 +517,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-0_5_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -657,33 +549,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-1_0_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 built with Apple clang version 12.0.5 (clang-1205.0.22.9)
@@ -700,31 +581,22 @@ libpostproc    55.  9.100 / 55.  9.100
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2015-03-26_the-vancouver-set/vancouver-fog-V_X-4_0_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -732,7 +604,6 @@ libpostproc    55.  9.100 / 55.  9.100
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Obviously, a speed of $4$ seems to introduce aliasing. That effect is expected and should be avoided.</p>
-
 </div>
 </div>
 </div>

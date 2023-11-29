@@ -127,7 +127,6 @@
 <p>A feature of MotionClouds is the ability to precisely tune the precision of information  following the principal axes. One which is particularly relevant for the primary visual cortical area of primates (area V1) is to tune the orientation mean and bandwidth.</p>
 <!-- TEASER_END -->
 <p>This is part of a larger study to tune <a href="https://laurentperrinet.github.io/sciblog/categories/orientation.html">orientation bandwidth</a>.</p>
-
 </div>
 </div>
 </div>
@@ -135,8 +134,8 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">downscale</span> <span class="o">=</span> <span class="mi">1</span>
@@ -146,18 +145,16 @@
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'../files'</span><span class="p">,</span> <span class="s1">'2014-11-10_balaV1-protocol'</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_X</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_X</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">width</span> <span class="o">=</span> <span class="mf">29.7</span><span class="o">*</span><span class="mi">256</span><span class="o">/</span><span class="mi">1050</span>
 <span class="n">sf_0</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="n">width</span><span class="o">/</span><span class="n">N_X</span>
 <span class="n">B_V</span> <span class="o">=</span> <span class="mf">2.5</span>     <span class="c1"># BW temporal frequency (speed plane thickness)</span>
@@ -176,72 +173,49 @@
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/usr/local/lib/python3.6/site-packages/vispy/visuals/isocurve.py:22: UserWarning: VisPy is not yet compatible with matplotlib 2.2+
   warnings.warn("VisPy is not yet compatible with matplotlib 2.2+")
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_1.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_1.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_1.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_1.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_1_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_1_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_2.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_2.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_2.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_2.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_2_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_2_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -251,7 +225,6 @@
 <p>This figure shows how one can create different MotionCloud stimuli that specifically target different population in V1. We show in the two lines of this table  motion cloud component with a (Top) narrow orientation bandwith  (Bottom) a wide bandwitdh: perceptually, there is no predominant position or speed, just different orientation contents.
 <br>Columns represent isometric projections of a cube. The left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
 <br>The middle column shows an isometric view of the  faces of the movie cube. The first frame of the movie lies on the x-y plane, the x-t plane lies on the top face and motion direction is seen as diagonal lines on this face (vertical motion is similarly see in the y-t face). The third column displays the actual movie as an animation.</p>
-
 </div>
 </div>
 </div>
@@ -261,7 +234,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note: an analysis of the response of a neural network to such stimulations as been explored by <a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html">Chloé Pasturel</a>.</p>
-
 </div>
 </div>
 </div>
@@ -279,173 +251,119 @@
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">B_theta_</span> <span class="ow">in</span> <span class="n">B_theta_high</span><span class="o">*</span><span class="mf">2.</span><span class="o">**-</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">B_theta_</span> <span class="ow">in</span> <span class="n">B_theta_high</span><span class="o">*</span><span class="mf">2.</span><span class="o">**-</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_theta_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B_theta_</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
     <span class="n">mc_i</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> 
                              <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc_i</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_6_283185307179586_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_3_141592653589793_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_1_5707963267948966_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_7853981633974483_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_39269908169872414_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_19634954084936207_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-11-10_balaV1-protocol/balaV1_B_theta_0_09817477042468103_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -454,7 +372,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we display MotionClouds as the orientation bandwidth increases from pi/32 to 2*pi. This should be equivalent in V1 to recruiting different ratios of neurons. 
 <br>Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum. Right column of the table displays the actual movie as an animation.</p>
-
 </div>
 </div>
 </div>
@@ -472,27 +389,18 @@
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[4]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -526,14 +434,10 @@
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Thu Nov 15 10:36:55 2018 CET</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

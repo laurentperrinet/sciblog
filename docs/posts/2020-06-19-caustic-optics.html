@@ -131,10 +131,9 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Caustics (<a href="https://en.wikipedia.org/wiki/Caustic_%28optics%29">wikipedia</a> are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is for instance the heart-shaped pattern in your cup of coffee which is formed as the rays of the sun are reflected on the cup's surface. It is also the wiggly pattern of light curves that you will see on the floor of a pool as the sun's light is <em>refracted</em> at the surface of the water. Here, we simulate that particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images.</p>
 <p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
-<br><center><img src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
+<br><center><img alt="No description has been provided for this image" src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
 <br><p>This is joint work with artist <a href="https://laurentperrinet.github.io/authors/etienne-rey/">Etienne Rey</a>, in which I especially follow the ideas put forward in the series <a href="http://ondesparalleles.org/projets/turbulences/">Turbulence</a>.</p>
-<p><a href="https://zenodo.org/badge/latestdoi/273226625"><img src="https://zenodo.org/badge/273226625.svg" alt="DOI"></a></p>
-
+<p><a href="https://zenodo.org/badge/latestdoi/273226625"><img alt="DOI" src="https://zenodo.org/badge/273226625.svg"></a></p>
 </div>
 </div>
 </div>
@@ -145,7 +144,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- TEASER_END -->
 <p>Let's begin with an import of the libraries that we will need: <a href="https://numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a> (essentials!) but also <a href="https://github.com/NeuralEnsemble/MotionClouds">MotionClouds</a> to generate a simple waveform (more on this later in this post). These are all installable using <a href="https://pip.pypa.io/en/stable/">pip</a> (see the <a href="https://github.com/NaturalPatterns/2020_caustiques/blob/master/requirements.txt">requirements.txt</a> file).</p>
-
 </div>
 </div>
 </div>
@@ -153,18 +151,16 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -172,7 +168,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's define an unique identifier</p>
-
 </div>
 </div>
 </div>
@@ -180,36 +175,27 @@
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="c1"># https://en.wikipedia.org/wiki/ISO_8601</span>
 <span class="n">tag</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">_caustique'</span>
 <span class="n">tag</span> <span class="o">=</span> <span class="s1">'2020-06-19_caustique'</span> <span class="c1"># overwriting tag</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Tagging our simulations with tag=</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tagging our simulations with tag=2020-06-19_caustique
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -217,7 +203,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And a <code>Namespace</code> object to store all parameters:</p>
-
 </div>
 </div>
 </div>
@@ -225,8 +210,8 @@
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">[],</span> <span class="n">ds</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">[],</span> <span class="n">ds</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">argparse</span>
 
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -259,44 +244,30 @@
 <span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
 <span class="n">opt</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">opt</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>Namespace(B_V=4.0, B_sf=0.002, B_theta=0.39269908169872414, H=10.0, V_X=0.3, V_Y=0.3, bin_dens=4, cache=False, figpath='../files/2020-06-19_caustique', fps=18, min_lum=0.2, nframe=128, nx=1280, ny=2048, seed=42, sf_0=0.004, tag='2020-06-19_caustique', theta=2.399988291783386, verbose=False)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -305,7 +276,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This object is always handy when we will try to explore some parameters.</p>
 <p>A last utility function is a way to convert the resulting numpy array to a set of images and then to an animated GIF using <a href="https://imageio.github.io/">imageio</a> and <a href="https://github.com/LucaCappelletti94/pygifsicle">pygifsicle</a>:</p>
-
 </div>
 </div>
 </div>
@@ -313,8 +283,8 @@
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_gif</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">fps</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_gif</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">fps</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">imageio</span>
 
     <span class="k">with</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">gifname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'I'</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
@@ -325,25 +295,21 @@
     <span class="n">optimize</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gifname</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">gifname</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 <span class="n">width</span> <span class="o">=</span> <span class="mi">1024</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -353,20 +319,20 @@
 <h2 id="What-is-a-caustic?">What is a caustic?<a class="anchor-link" href="2020-06-19-caustic-optics.html#What-is-a-caustic?">¶</a>
 </h2>
 <p>A caustic usually refers to the image which is formed by the convergence or divergence of rays on a surface. Mathematically, this may be understood as the <em>enveloppe</em> of a set of rays, and intuitively, it is best understood by looking at the best known example: When the sun hits a glass or cup and you see heart-shaped pattern (actually more a kidney than a heart, hence the name "nephroid"):</p>
-<br><center><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="38.2%/"></center>
+<br><center><img alt="No description has been provided for this image" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Brennlinie.GIF" width="38.2%/"></center>
 <br><p>(image by <a href="https://commons.wikimedia.org/wiki/User:Paul_venter">User:Paul venter</a>).</p>
 <p>Their study is essential in optics, as these are the bases for lenses and therefore of central importance in our image-centered society :-)</p>
 <p>They are also of interest simply because they create mesmerizing patterns in nature, for instance the pattern of wiggly lines on swimming pool bottoms, or on the sea floor at shallow depths.</p>
 <p>The formation of that specific pattern is very well illustrated by this animation (credit <a href="https://twitter.com/j_bertolotti">Jacopo Bertolotti</a>, check-out that twitter <a href="https://twitter.com/j_bertolotti/status/1229743952594640897">thread</a>) where light comes from  the bottom, travels through air, hits the surface and gets deviated:</p>
-<br><center><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="61.8%/"></center>
+<br><center><img alt="No description has been provided for this image" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Caustics.gif" width="61.8%/"></center>
 <br><p>What happens? Light travels fast (<em>very</em> fast) but it will travel slower in water than in the air. A consequence of this is that a ray changes slightly its direction as it hits the water: the light ray is <em>refracted</em>. That is why a pen which is half immerged looks "as if" it is broken. In fact, it's only its image that gets distorted:</p>
-<br><center><a title="Ulflund / CC0" href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg"><img width="512" alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg"></a></center>
+<br><center><a href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg" title="Ulflund / CC0"><img alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg" width="512"></a></center>
 <br><p>The laws governing this deviations are well known as <a href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell's law</a> and state that</p>
 $$
 \frac{\sin\theta_2}{\sin\theta_1} = \frac{n_1}{n_2}
 $$<p>Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indices of air and water, respectively. (Note that, as a consequence, the light in the water is always slightly closer to the normal of the surface.)</p>
 <br><center>
-<a title="Cristan at English Wikipedia, Sawims at Dutch Wikipedia / Public domain" href="https://commons.wikimedia.org/wiki/File:Snells_law.svg"><img width="512" alt="Snells law" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/512px-Snells_law.svg.png"></a>        
+<a href="https://commons.wikimedia.org/wiki/File:Snells_law.svg" title="Cristan at English Wikipedia, Sawims at Dutch Wikipedia / Public domain"><img alt="Snells law" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/512px-Snells_law.svg.png" width="512"></a>
 </center>
 <br><p>Going back to the swimming pool, considering that the sun is emitting an uniform pattern of parallel rays from an incident angle $\theta_I$, we may apply this law to all of these light rays. The important ingredient is that the surface of the water (given as the surface height $z(x, y)$) changes smoothly and will deviate the light rays non-uniformly, thus creating the patterns. Writing down the equation, the displacement resulting from the angle of refraction is given by:</p>
 $$
@@ -383,7 +349,6 @@ $$
 $$</p>
 <p>with $ H' = \frac{n-1}{n} H$. What is interesting here is that we will transform an incoming "image" (here the uniform light source from the sun) by a set of small and local deformations of the support of the image. The equations are ultra-simple, but the consequences will paradoxically look complex.
 Thinking about images as densities which we may discretize on a rectangular grid (in the <code>__init__</code> function), it is very easy to generate a wave pattern ass a smooth surface in space and time (in the <code>wave</code> function), simulate the transformation on that surface (in the <code>transform</code> function) and compute the resulting image as an histogram  (in the <code>plot</code> function):</p>
-
 </div>
 </div>
 </div>
@@ -391,8 +356,8 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Image coordinates follow 'ij' indexing, that is,</span>
@@ -696,11 +661,9 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="n">xyz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_to_xyz</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xyz_to_rgb</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">out_fmt</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -710,7 +673,6 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <h2 id="a-first-instance">a first instance<a class="anchor-link" href="2020-06-19-caustic-optics.html#a-first-instance">¶</a>
 </h2>
 <p>Let's generate a first instance of this caustic with the default parameters. Let's first have a look at the (simplistic) waveform we are using:</p>
-
 </div>
 </div>
 </div>
@@ -718,39 +680,27 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Doing'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">mc</span><span class="o">.</span><span class="n">vext</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Caustique</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2020-06-19_caustique/2020-06-19_caustique.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2020-06-19_caustique/2020-06-19_caustique.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -758,7 +708,6 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It has many desirable properties: it is smooth in time and space, it is stochastic and periodic (no border effect). As such we may apply our simple transform and as a result we get:</p>
-
 </div>
 </div>
 </div>
@@ -766,38 +715,25 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">gifname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">figpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s1">.gif'</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gifname</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Caustique</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">wave</span><span class="p">()</span>
     <span class="n">gifname</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique.gif" width="1024">
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique.gif" width="1024"></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -814,7 +750,6 @@ Thinking about images as densities which we may discretize on a rectangular grid
 </h3>
 <p>Is there more to see in our system?
 The first thing to do is to explore is the effect of the pool's depth:</p>
-
 </div>
 </div>
 </div>
@@ -822,22 +757,20 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_scan</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_scan</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">base</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
 <span class="n">opt</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">Caustique</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
@@ -852,225 +785,112 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
         <span class="n">url</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">gifname</span><span class="o">=</span><span class="n">gifname</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 5.000
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 5.946
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.946.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_5.946.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 7.071
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_7.071.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_7.071.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 8.409
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_8.409.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_8.409.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 10.000
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_10.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_10.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 11.892
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_11.892.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_11.892.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 14.142
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_14.142.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_14.142.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 16.818
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_16.818.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_16.818.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>H = 20.000
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_H_20.000.gif" width="1024">
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_H_20.000.gif" width="1024"></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1079,7 +899,6 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth where the curvature of the waveform concentrates light as a lens. Note that at great distortions some ripples appear which are due to our sampling of space.</p>
 <p>We may now explore the parameters of this waveform to see their effect on the resulting caustic:</p>
-
 </div>
 </div>
 </div>
@@ -1087,8 +906,8 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'sf_0'</span><span class="p">,</span> <span class="s1">'B_sf'</span><span class="p">,</span> <span class="s1">'theta'</span><span class="p">,</span> <span class="s1">'B_theta'</span><span class="p">,</span> <span class="s1">'V_X'</span><span class="p">,</span> <span class="s1">'V_Y'</span><span class="p">,</span> <span class="s1">'B_V'</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'======</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">======'</span><span class="p">)</span>
@@ -1111,1474 +930,713 @@ The first thing to do is to explore is the effect of the pool's depth:</p>
             <span class="n">url</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">gifname</span><span class="o">=</span><span class="n">gifname</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">gifname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======sf_0======
 sf_0=sf_0(default)*0.500=2.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*0.595=2.378E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*0.707=2.828E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*0.841=3.364E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*1.000=4.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*1.189=4.757E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*1.414=5.657E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*1.682=6.727E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>sf_0=sf_0(default)*2.000=8.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_sf_0_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======B_sf======
 B_sf=B_sf(default)*0.500=1.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*0.595=1.189E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*0.707=1.414E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*0.841=1.682E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*1.000=2.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*1.189=2.378E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*1.414=2.828E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*1.682=3.364E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_sf=B_sf(default)*2.000=4.000E-03
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_sf_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======theta======
 theta=theta(default)*0.500=1.200E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*0.595=1.427E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*0.707=1.697E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*0.841=2.018E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*1.000=2.400E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*1.189=2.854E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*1.414=3.394E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*1.682=4.036E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>theta=theta(default)*2.000=4.800E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_theta_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======B_theta======
 B_theta=B_theta(default)*0.500=1.963E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*0.595=2.335E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*0.707=2.777E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*0.841=3.302E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*1.000=3.927E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*1.189=4.670E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*1.414=5.554E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*1.682=6.604E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_theta=B_theta(default)*2.000=7.854E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_theta_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======V_X======
 V_X=V_X(default)*0.500=1.500E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*0.595=1.784E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*0.707=2.121E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*0.841=2.523E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*1.000=3.000E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*1.189=3.568E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*1.414=4.243E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*1.682=5.045E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_X=V_X(default)*2.000=6.000E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_X_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======V_Y======
 V_Y=V_Y(default)*0.500=1.500E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*0.595=1.784E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*0.707=2.121E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*0.841=2.523E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*1.000=3.000E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*1.189=3.568E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*1.414=4.243E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*1.682=5.045E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>V_Y=V_Y(default)*2.000=6.000E-01
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_2.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_V_Y_modul_2.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>======B_V======
 B_V=B_V(default)*0.500=2.000E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.500.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.500.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*0.595=2.378E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.595.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.595.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*0.707=2.828E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.707.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.707.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*0.841=3.364E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.841.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_0.841.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*1.000=4.000E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.000.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.000.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*1.189=4.757E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.189.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.189.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*1.414=5.657E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.414.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.414.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*1.682=6.727E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.682.gif" width="1024">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_1.682.gif" width="1024"></div>
 </div>
-
-</div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>B_V=B_V(default)*2.000=8.000E+00
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<img src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_2.000.gif" width="1024">
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea"><img alt="No description has been provided for this image" src="../files/2020-06-19_caustique/2020-06-19_caustique_B_V_modul_2.000.gif" width="1024"></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2595,7 +1653,6 @@ B_V=B_V(default)*0.500=2.000E+00
 </ul>
 <p>This development happens in <a href="https://github.com/NaturalPatterns/2020_caustiques">https://github.com/NaturalPatterns/2020_caustiques</a> - I am happy to welcome any people that would be interested in exploring this.</p>
 <p>This shows that for this waveform, there is an optimal depth to generate more concentrated caustics. This corresponds to the depth for which the curvature of the waveform concentrates light as a lens.</p>
-
 </div>
 </div>
 </div>

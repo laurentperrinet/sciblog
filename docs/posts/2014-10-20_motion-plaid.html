@@ -27,11 +27,11 @@
 
 In [1]:
 
-    
+
 import numpy as np
 import MotionClouds as mc
 downscale = 2
-fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/d">
+fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/downs">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-10-20T17:50:12+02:00">
 <meta property="article:tag" content="motion-detection">
@@ -143,8 +143,8 @@ fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/d">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">downscale</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">/</span><span class="n">downscale</span><span class="p">)</span>
@@ -154,11 +154,9 @@ fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/d">
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -168,7 +166,6 @@ fx, fy, ft = mc.get_grids(mc.N_X/downscale, mc.N_Y/d">
 <p>Plaids are usually created by adding two moving gratings (the components) to form a new simulus (the pattern). Such stimuli are crucial to understand how for instance information about motion is represented and processed and its neural mechanisms have been extensively studied notably by Anthony Movshon at the NYU.
 One shortcomming is the fact that these are created by components which created interference patterns when they are added (as in a Moiré pattern). The question remains to know if everything that we know about components vs pattern processing comes from these interference patterns or reaaly by the processing of the two componenents as a whole.
 As such, Motion Clouds are ideal candidates because they are generated with random phases: by construction, there should not be any localized interference between components. Let's verfy that:</p>
-
 </div>
 </div>
 </div>
@@ -178,7 +175,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Defintion of parameters:</p>
-
 </div>
 </div>
 </div>
@@ -186,14 +182,12 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">theta1</span><span class="p">,</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">B_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -201,7 +195,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This figure shows how one can create MotionCloud stimuli that specifically target component and pattern cell. We show in the different lines of this table respectively: Top) one motion cloud component (with a strong selectivity toward the orientation perpendicular to direction) heading in the upper diagonal Middle) a similar motion cloud component following the lower diagonal Bottom) the addition of both components: perceptually, the horizontal direction is predominant.</p>
-
 </div>
 </div>
 </div>
@@ -209,23 +202,16 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 
@@ -245,10 +231,8 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -256,7 +240,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Component one:</p>
-
 </div>
 </div>
 </div>
@@ -264,45 +247,33 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diag1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta1</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">diag1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta1</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
 <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_comp1'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp1_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -310,7 +281,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Component two:</p>
-
 </div>
 </div>
 </div>
@@ -318,45 +288,33 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diag2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">diag2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
 <span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_comp2'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_comp2_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -364,7 +322,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The pattern is the sum of the two components:</p>
-
 </div>
 </div>
 </div>
@@ -372,44 +329,32 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag1</span> <span class="o">+</span> <span class="n">diag2</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -419,7 +364,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <h3 id="A-grid-of-plaids-shows-switch-from-transparency-to-pattern-motion">A grid of plaids shows switch from transparency to pattern motion<a class="anchor-link" href="2014-10-20_motion-plaid.html#A-grid-of-plaids-shows-switch-from-transparency-to-pattern-motion">¶</a>
 </h3>
 <p>Script done in collaboration with Jean Spezia.</p>
-
 </div>
 </div>
 </div>
@@ -427,8 +371,8 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 
@@ -451,44 +395,30 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -498,7 +428,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <p>As in (Rust, 06) we show in this table the concatenation of a table of 9x9 MotionPlaids where the angle of the components vary on respectively the horizontal and vertical axes.
 <br>The diagonal from the bottom left to the top right corners show the addition of two component MotionClouds of similar direction: They are therefore also intance of the same Motion Clouds and thus consist in a single component.
 <br>As one gets further away from this diagonal, the angle between both component increases, as can be seen in the figure below. Note that first and last column are different instance of similar MotionClouds, just as first and last lines in in the table.</p>
-
 </div>
 </div>
 </div>
@@ -516,8 +445,8 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">downscale</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="mi">0</span>
@@ -528,186 +457,125 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
     <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">diag1</span> <span class="o">+</span> <span class="n">diag2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">12234565</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_0_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_2243994752564138_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_4487989505128276_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_6731984257692414_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_0_8975979010256552_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_121997376282069_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_3463968515384828_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2014-10-20_MotionPlaids/MotionPlaid_9x9dtheta_1_5707963267948966_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -717,7 +585,6 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <p>For clarity, we display MotionPlaids as the angle between both component increases from 0 to pi/2. 
 <br>Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
 <br>Right column of the table displays the actual movie as an animation.</p>
-
 </div>
 </div>
 </div>

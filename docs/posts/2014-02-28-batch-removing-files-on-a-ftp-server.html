@@ -27,8 +27,7 @@ Pages that were succesfully converted:
 
 
 
-
-In [5]">
+In [5]:">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-02-28T09:33:36+02:00">
 <meta property="article:tag" content="info">
@@ -132,7 +131,6 @@ In [5]">
 <p>In a previous post, I have shown how to convert MoinMoin pages to this blog (Nikola angine). Let's now tidy up the place and remove obsolete pages.</p>
 <p>Pages that were succesfully converted:</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -140,8 +138,8 @@ In [5]">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">done_page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">done_page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
 <span class="s2">SciBlog/2008-08-29</span>
 <span class="s2">"""</span>
 <span class="n">page_list</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
@@ -268,11 +266,9 @@ In [5]">
 <span class="s2">SciBlog/2013-11-09</span>
 <span class="s2">SciBlog/2014-01-01"""</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -280,7 +276,6 @@ In [5]">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>a bash script to remove one page:</p>
-
 </div>
 </div>
 </div>
@@ -288,27 +283,20 @@ In [5]">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
 <span class="s2">open invibe;</span>
 <span class="s2">ls -l moin/data/pages/SciBlog(2f)2013(2d)11(2d)04</span>
 <span class="s2">"</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>drwxrwx---    4 81424      users               6 Nov 12 10:20 .
 drwxr-xr-x  884 81424      users             884 Mar 18 09:16 ..
@@ -319,10 +307,8 @@ drwxrwx---    2 81424      users               5 Nov 12 10:20 revisions
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -330,7 +316,6 @@ drwxrwx---    2 81424      users               5 Nov 12 10:20 revisions
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>creating a simple function that will run a command given by a string:</p>
-
 </div>
 </div>
 </div>
@@ -338,24 +323,17 @@ drwxrwx---    2 81424      users               5 Nov 12 10:20 revisions
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; ls moin/data/pages/SciBlog(2f)2010(2d)12(2d)20 ;"</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>drwxr-xr-x    4 81424      users               6 Mar 13  2012 .
 drwxr-xr-x  884 81424      users             884 Mar 18 09:16 ..
@@ -366,37 +344,28 @@ drwxr-xr-x    2 81424      users               9 Mar 13  2012 revisions
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="s1">'lftp -c "open invibe; cd moin/data/pages/ ; </span><span class="se">\n</span><span class="s1">'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="s1">'lftp -c "open invibe; cd moin/data/pages/ ; </span><span class="se">\n</span><span class="s1">'</span>
 <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">page_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
     <span class="n">cmd</span> <span class="o">+=</span>  <span class="s2">"rm -fr "</span> <span class="o">+</span> <span class="n">page</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="s1">'(2d)'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'(2f)'</span><span class="p">)</span>
     <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">' </span><span class="se">\n</span><span class="s1">'</span>
 <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">"'</span>
 <span class="nb">print</span> <span class="n">cmd</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lftp -c "open invibe; cd moin/data/pages/ ; 
 rm -fr SciBlog(2f)2006(2d)11(2d)20 
@@ -526,10 +495,8 @@ rm -fr SciBlog(2f)2014(2d)01(2d)01
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -537,7 +504,6 @@ rm -fr SciBlog(2f)2014(2d)01(2d)01
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Actually doing it:</p>
-
 </div>
 </div>
 </div>
@@ -545,8 +511,8 @@ rm -fr SciBlog(2f)2014(2d)01(2d)01
 <div class="input">
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; cd moin/data/pages/ ; </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)20 </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)30 </span>
@@ -673,11 +639,9 @@ lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open inv
 
 <span class="s2">"</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

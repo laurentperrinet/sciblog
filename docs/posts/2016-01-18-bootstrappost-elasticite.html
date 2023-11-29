@@ -126,7 +126,6 @@
 <p>.. media:: <a href="http://vimeo.com/150813922">http://vimeo.com/150813922</a></p>
 <p>Ce meta-post gère la publication sur <a href="https://laurentperrinet.github.io/sciblog">https://laurentperrinet.github.io/sciblog</a>.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -144,28 +143,21 @@
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/posts/*ipynb
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/posts/*ipynb
 <span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/files/figures/elasticite/
 <span class="o">~/</span><span class="n">pool</span><span class="o">/</span><span class="n">libs</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">invibe</span><span class="o">/</span>
 <span class="o">%</span><span class="k">pwd</span>
 
 <span class="o">!</span>mkdir<span class="w"> </span>./files/2015-10-14_elasticite/
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>-rw-r--r--  1 laurentperrinet  staff  36129843 Jan 18 11:58 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2014-06-25-animation-in-a-notebook.ipynb
 -rw-r--r--  1 laurentperrinet  staff    807480 Jan 18 11:57 /Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/2014-06-25-grille-hexagonale.ipynb
@@ -190,31 +182,27 @@ mkdir: ./files/2015-10-14_elasticite/: File exists
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/files/2015-10-14_elasticite/*<span class="w"> </span>~/pool/libs/blog/invibe/files/2015-10-14_elasticite/
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/files/2015-10-14_elasticite/*<span class="w"> </span>~/pool/libs/blog/invibe/files/2015-10-14_elasticite/
 <span class="o">!</span>cp<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb<span class="w"> </span>~/pool/libs/blog/invibe/posts/
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
 <span class="kn">from</span> <span class="nn">nikola</span> <span class="kn">import</span> <span class="n">utils</span>
 
 <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"/Users/laurentperrinet/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb"</span><span class="p">):</span>
@@ -243,20 +231,13 @@ mkdir: ./files/2015-10-14_elasticite/: File exists
     <span class="nb">print</span><span class="p">(</span><span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">FILE</span><span class="p">,</span> <span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.ipynb'</span><span class="p">)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'posts/'</span> <span class="o">+</span> <span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.meta'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>posts/2014-06-25-animation-in-a-notebook.ipynb posts/2014-06-25-animation-in-a-notebook.ipynb
 posts/2014-06-25-grille-hexagonale.ipynb posts/2014-06-25-grille-hexagonale.ipynb
@@ -279,10 +260,8 @@ posts/2015-12-05 élasticité - scénario final montage.ipynb posts/2015-12-0
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -299,23 +278,16 @@ posts/2015-12-05 élasticité - scénario final montage.ipynb posts/2015-12-0
 <div class="input">
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -323,45 +295,34 @@ nothing to commit, working directory clean
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>!rm posts/__temp__.mp4!ls -R files
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span class="ansi-yellow-intense-fg ansi-bold">[2016-01-18T11:47:14Z] WARNING: ShimWarning: /usr/local/lib/python3.5/site-packages/IPython/nbconvert.py:13: The `IPython.nbconvert` package has been deprecated. You should import from ipython_nbconvert instead.</span>
 <span class="ansi-yellow-intense-fg ansi-bold">[2016-01-18T11:47:14Z] WARNING: ShimWarning: /usr/local/lib/python3.5/site-packages/IPython/nbformat.py:13: The `IPython.nbformat` package has been deprecated. You should import from nbformat instead.</span>
@@ -1254,32 +1215,23 @@ Transferring file `stories/upgrading-to-v6.txt'
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -1293,23 +1245,19 @@ no changes added to commit (use "git add" and/or "git commit -a")
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>open<span class="w"> </span>https://laurentperrinet.github.io/sciblog
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>open<span class="w"> </span>https://laurentperrinet.github.io/sciblog
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

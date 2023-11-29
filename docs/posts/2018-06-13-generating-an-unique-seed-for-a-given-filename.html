@@ -126,7 +126,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When creating large simulations, you may sometimes create unique identifiers for each of it. This is useful to cache intermediate results for instance. This is the main function of <a href="https://en.wikipedia.org/wiki/Hash_function">hashes</a>. We will here create a simple one-liner function to generate one.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -134,101 +133,74 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107001.jpg'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107001.jpg'</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">'filename='</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>filename= https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107001.jpg
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
 <span class="n">hash_str</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha224</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'hash_str='</span><span class="p">,</span> <span class="n">hash_str</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>hash_str= d9dee4e30946f8306a87b83b3a5723e9b9546e114e9f477025090ba2
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107002.jpg'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107002.jpg'</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">'filename='</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'hash_str='</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha224</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>filename= https://raw.githubusercontent.com/bicv/SLIP/master/database/serre07_targets/B_N107002.jpg
 hash_str= fd94b7e0e5e950996d548c0777ccf7f800205065d9c28c1f255a3e82
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -245,24 +217,17 @@ hash_str= fd94b7e0e5e950996d548c0777ccf7f800205065d9c28c1f255a3e82
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
 <span class="o">%</span><span class="k">watermark</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>2018-06-13T13:09:44+02:00
 
@@ -279,36 +244,25 @@ interpreter: 64bit
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, hashlib
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -334,14 +288,10 @@ interpreter: 64bit
 <td>The 'hashlib' distribution was not found and is required by the application</td>
 </tr>
 <tr><td colspan="2">Wed Jun 13 13:09:46 2018 CEST</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

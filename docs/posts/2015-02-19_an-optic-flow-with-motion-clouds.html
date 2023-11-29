@@ -33,15 +33,15 @@ Script done in collaboration with Jean Spezia.
 
 
 
-
 In [1]:
 
-    
+
 import os
 import numpy as np
 import MotionClouds as mc
 fx, fy, ft = mc.get_grids(mc.N_X, mc.N_Y, mc.N_frame)
-seed = 1">
+seed = 1234
+s">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-02-19T14:38:41+01:00">
 <meta property="article:tag" content="motion-detection">
@@ -155,7 +155,6 @@ seed = 1">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Script done in collaboration with Jean Spezia.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -163,8 +162,8 @@ seed = 1">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">)</span>
@@ -175,31 +174,27 @@ seed = 1">
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2015-02-19_horizon'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">hzn1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">N_orient</span><span class="p">)):</span>
     <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">x_j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">N_orient</span><span class="p">)):</span>
@@ -215,38 +210,26 @@ seed = 1">
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">hzn1</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_horizon/optic-flow.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_horizon/optic-flow.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">hzn2</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">))</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
@@ -279,101 +262,65 @@ seed = 1">
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">hzn1</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_horizon/Horizon.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_horizon/Horizon.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hzn</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">hzn</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">))</span>
 <span class="n">hzn</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">N_X</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">N_X</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">N_Y</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">N_Y</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 32, 128)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hzn</span> <span class="o">=</span> <span class="n">hzn1</span> <span class="o">+</span> <span class="n">hzn2</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">hzn</span> <span class="o">=</span> <span class="n">hzn1</span> <span class="o">+</span> <span class="n">hzn2</span>
 <span class="n">dest</span> <span class="o">=</span> <span class="s1">'flow'</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">hzn</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">dest</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_horizon/Horizon.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_horizon/Horizon.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -389,27 +336,18 @@ seed = 1">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -443,14 +381,10 @@ seed = 1">
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Wed Nov 14 11:15:24 2018 CET</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

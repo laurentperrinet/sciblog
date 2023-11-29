@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 14 May 2023 17:27:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelling wind ripples</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 29 Nov 2023 08:02:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelling wind ripples</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Here, I try to simulate the patterns obtained on a sandy terrain. This is what is observed when the wind blows on the dry surface of a land with sand or also on the surface of the sea in the presence of currents.&lt;/p&gt;
@@ -15,11 +15,11 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;blockquote&gt;
 &lt;p&gt;Ripples observed at Sea Rim State Park, along the coast of east Texas close to the border with Louisiana (courtesy by Zoltan Sylvester).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="http://www.coastalwiki.org/w/images/6/65/WaveRippleFormationFig0.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://www.coastalwiki.org/w/images/6/65/WaveRippleFormationFig0.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.coastalwiki.org/wiki/Wave_ripple_formation"&gt;Wave ripple formation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;An interesting aspect of that patterns is that they may occur at different scales, like taht example on the surface of the Mars planet:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Overview of large sand wave field and high-resolution difference map of two surveys approximately 21 hours apart illustrating both large-scale and small-scale sand wave migration and orientation. Migration is from right to left.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="https://www.researchgate.net/profile/Daniel-Hanes/publication/252161559/figure/fig1/AS:669991225552924@1536749764962/Overview-of-large-sand-wave-field-and-high-resolution-difference-map-of-two-surveys.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://www.researchgate.net/profile/Daniel-Hanes/publication/252161559/figure/fig1/AS:669991225552924@1536749764962/Overview-of-large-sand-wave-field-and-high-resolution-difference-map-of-two-surveys.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html"&gt;Read more…&lt;/a&gt; (24 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>nature</category><category>numpy</category><category>open-science</category><category>python</category><category>trames</category><guid>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</guid><pubDate>Sun, 16 Apr 2023 17:30:21 GMT</pubDate></item><item><title>Designing a A0 poster using matplotlib</title><link>https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html</link><dc:creator>Laurent Perrinet</dc:creator><description></description><category>art</category><category>elasticite</category><category>ipython</category><category>Matching Pursuit</category><category>open-science</category><category>outreach</category><category>python</category><category>trames</category><guid>https://laurentperrinet.github.io/sciblog/posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html</guid><pubDate>Wed, 25 Oct 2017 12:05:23 GMT</pubDate></item></channel></rss>

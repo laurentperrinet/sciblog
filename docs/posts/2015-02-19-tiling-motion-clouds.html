@@ -26,14 +26,11 @@
 
 
 
-
 In [1]:
 
-    
+
 import os
 
-
-    
 
 
 
@@ -42,11 +39,12 @@ import os
 
 In [2]:
 
-    
+
 import numpy as np
 import MotionClouds as mc
 size = 5
-mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
+mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**size, 2**size
+f">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-02-19T14:48:08+02:00">
 <meta property="article:tag" content="LogGabor">
@@ -151,7 +149,6 @@ mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Script done in collaboration with Jean Spezia.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -159,21 +156,19 @@ mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">size</span>
@@ -182,31 +177,27 @@ mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2015-02-19_MotionPlaid'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>!ls -lR
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>results
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>results
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#mask = 1 - np.abs(2*fx) - np.abs(2*fy)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#mask = 1 - np.abs(2*fx) - np.abs(2*fy)</span>
 <span class="c1">#mask = 1.*(mask&gt;0.)</span>
 <span class="c1">#mask *= mask&gt;0.</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">fx</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">fy</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -216,63 +207,45 @@ mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
 <span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="s1">'mask2'</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="s1">'mask2'</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.0 1.0 (32, 32, 32)
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_MotionPlaid/mask2.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_MotionPlaid/mask2.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span><span class="p">,</span> <span class="n">N_overlap</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span><span class="p">,</span> <span class="n">N_overlap</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span>
 <span class="n">B_theta</span> <span class="o">=</span> <span class="mf">1.</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
 <span class="n">mov_mask</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_overlap</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
     <span class="n">diag1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta1</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
@@ -292,210 +265,145 @@ mc.N_X, mc.N_Y, mc.N_frame = 2**size, 2**">
         <span class="c1">#print mov_mask_.max(), mov_mask_.min()</span>
         <span class="n">mov_mask</span> <span class="o">+=</span> <span class="n">mov_mask_</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">mov</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">mov</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">mov</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">mov</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.021823749347671922 -0.02810640379575316
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov_mask</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov_mask</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov</span><span class="o">/</span><span class="n">mov_mask</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mov_</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mov</span><span class="o">/</span><span class="n">mov_mask</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">.99</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-02-19_MotionPlaid/MotionPlaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">mov_mask</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">mov_mask</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">mov_mask</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">mov_mask</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>2.0 1.0
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Before Rectification of the frames
 Mean= 0.43978454786297305 , std= 0.2720926860968015 , Min= 0.01025970733568149 , Max= 0.9813959661071936  Abs(Max)= 0.9813959661071936
@@ -505,14 +413,8 @@ percentage pixels clipped= 0.0
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([[0.76293304, 0.49006422, 0.5631343 , 0.37241039, 0.12623763],
        [0.67414584, 0.42895541, 0.62363661, 0.10927369, 0.31543963],
@@ -520,36 +422,24 @@ percentage pixels clipped= 0.0
        [0.80148186, 0.98015382, 0.22723519, 0.60546607, 0.41806369],
        [0.51916894, 0.25848294, 0.69983334, 1.        , 0.80609542]])</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([[0.72459963, 0.42902188, 0.50817307, 0.30157657, 0.03491662],
        [0.6284233 , 0.36282742, 0.57371054, 0.01654088, 0.23986455],
@@ -557,33 +447,28 @@ percentage pixels clipped= 0.0
        [0.76635659, 0.95989813, 0.14431948, 0.5540278 , 0.35102927],
        [0.46054878, 0.17816775, 0.65624859, 0.98139597, 0.77135409]])</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span><span class="p">,</span> <span class="n">N_overlap</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_orient</span><span class="p">,</span> <span class="n">N_overlap</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">B_theta</span> <span class="o">=</span> <span class="mf">1.</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
 
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
 
@@ -599,36 +484,27 @@ percentage pixels clipped= 0.0
         <span class="n">mov_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">//</span><span class="n">N_overlap</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">mov</span> <span class="o">+=</span> <span class="n">mov_</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>39.6 s ± 3.11 s per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
 
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
 
@@ -645,36 +521,27 @@ percentage pixels clipped= 0.0
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_orient</span><span class="o">*</span><span class="n">N_overlap</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
         <span class="n">mov</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">mov_</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">//</span><span class="n">N_overlap</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>25.4 s ± 703 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
 
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
 <span class="n">mov1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="p">(</span><span class="n">N_orient</span><span class="o">*</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
@@ -692,62 +559,44 @@ percentage pixels clipped= 0.0
 
 <span class="n">mov</span> <span class="o">=</span> <span class="n">mov1</span> <span class="o">+</span> <span class="n">mov2</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>27.7 s ± 3.49 s per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it -n1
 
 <span class="n">diag1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9.49 ms ± 3.86 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -763,27 +612,18 @@ percentage pixels clipped= 0.0
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[20]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -817,14 +657,10 @@ percentage pixels clipped= 0.0
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Wed Nov 14 11:49:50 2018 CET</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

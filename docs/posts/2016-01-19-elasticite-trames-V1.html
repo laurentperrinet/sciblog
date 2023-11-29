@@ -125,7 +125,6 @@
 <p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
 <p>On va maintenant utiliser des forces elastiques pour coordonner la dynamique des lames dans la trame.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -133,22 +132,20 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_carre.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_carre.py
 <span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf8 -*-</span>
 
@@ -181,69 +178,48 @@
     <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">el</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'grille_carre'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2015-10-14_elasticite/scenario_grille_carre.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_carre.py notebook
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_carre.py notebook
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/grille_carre.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/grille_carre.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_contours.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_contours.py
 <span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf8 -*-</span>
 
@@ -287,69 +263,48 @@
     <span class="n">name</span> <span class="o">=</span> <span class="s1">'grille_v1_contours'</span>
     <span class="n">el</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2015-10-14_elasticite/scenario_grille_contours.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_contours.py notebook
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_contours.py notebook
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/grille_v1_contours.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/grille_v1_contours.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_triangles.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_triangles.py
 <span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf8 -*-</span>
 
@@ -389,106 +344,73 @@
     <span class="n">name</span> <span class="o">=</span> <span class="s1">'grille_v1_triangles'</span>
     <span class="n">el</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2015-10-14_elasticite/scenario_grille_triangles.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_triangles.py notebook
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_triangles.py notebook
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/grille_v1_triangles.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/grille_v1_triangles.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'notebook'</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1">#el.main(e)</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">'grille_v1'</span>
 <span class="n">el</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/grille_v1.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/grille_v1.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_v1_tore.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2015-10-14_elasticite/scenario_grille_v1_tore.py
 <span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf8 -*-</span>
 
@@ -528,62 +450,41 @@
     <span class="n">name</span> <span class="o">=</span> <span class="s1">'grille_v1_tore'</span>
     <span class="n">el</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2015-10-14_elasticite/scenario_grille_v1_tore.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_v1_tore.py notebook
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ../files/2015-10-14_elasticite/scenario_grille_v1_tore.py notebook
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/grille_v1_tore.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/grille_v1_tore.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

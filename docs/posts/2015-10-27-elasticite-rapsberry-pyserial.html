@@ -125,7 +125,6 @@
 <p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
 <p>Ce post étudie la connection entre le raspberry π (qui fait tourner les simulations) et les arduino (qui commandent les moteurs).</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -133,16 +132,14 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -191,7 +188,6 @@ Already up-to-date.
 pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 
 </code></pre>
-
 </div>
 </div>
 </div>
@@ -203,7 +199,6 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <h3 id="coordon%C3%A9es-absolues">coordonées absolues<a class="anchor-link" href="2015-10-27-elasticite-rapsberry-pyserial.html#coordon%C3%A9es-absolues">¶</a>
 </h3>
 <p>Prenons un cas  simple avec 12 pas possible et calculons en fonction de la position actuelle et de la position désirée la commande à envoyer aux moteurs</p>
-
 </div>
 </div>
 </div>
@@ -211,8 +206,8 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">position_present</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">position_desired</span> <span class="o">=</span> <span class="mi">4</span>
 
@@ -224,30 +219,21 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">position_present</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>-2
 4
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -255,7 +241,6 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>on vérifie que ça marche pour toute une série de positions désirées et qu'on évite le demi tour:</p>
-
 </div>
 </div>
 </div>
@@ -263,8 +248,8 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">position_present</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">position_desired</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nb_pas</span><span class="p">)</span>
 
@@ -276,30 +261,21 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">position_present</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[-2 -1  0  1  2  3  4  5 -6 -5 -4 -3]
 [ 0  1  2  3  4  5  6  7  8  9 10 11]
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -307,7 +283,6 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>on vérifie aussi que ça marche pour toute une série de positions initiales et qu'on évite le demi tour:</p>
-
 </div>
 </div>
 </div>
@@ -315,8 +290,8 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">position_present</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nb_pas</span><span class="p">)</span>
 <span class="n">position_desired</span> <span class="o">=</span> <span class="mi">8</span>
 
@@ -328,43 +303,32 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">position_present</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[-4 -5 -6  5  4  3  2  1  0 -1 -2 -3]
 [8 8 8 8 8 8 8 8 8 8 8 8]
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -385,33 +349,24 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_pas</span> <span class="o">=</span> <span class="mf">200.</span> <span class="o">*</span> <span class="mf">32.</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">14</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">n_pas</span> <span class="o">=</span> <span class="mf">200.</span> <span class="o">*</span> <span class="mf">32.</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">14</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n_pas</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>27428.571428571428
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -419,7 +374,6 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Donc, on a un nombre même pas entier mais c'est pas grave. C'est le nombre de pas à faire pour le moteur pour faire faire un tour à la lame. Dans un premier temps, on va considérer ce cercle comme des entiers entre 0 et n_pas. ça devrait pouvoir être envoyé sans probleme a chaque arduino comme un int16 (à vérifier - si on a de la marge, on peut faire un truc plus précis):</p>
-
 </div>
 </div>
 </div>
@@ -427,34 +381,22 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>65536</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -462,7 +404,6 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>L'algo sur le arduino doit donc avoir cette partie pour convertir une donnée absolue reçue en donnée relative à envoyer aux moteurs:</p>
-
 </div>
 </div>
 </div>
@@ -470,8 +411,8 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">27428</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">nb_pas</span> <span class="o">=</span> <span class="mi">27428</span>
 
 <span class="n">position_present</span> <span class="o">=</span> <span class="mi">27424</span>
 <span class="n">position_desired</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># recu avec la lecture sur le port série</span>
@@ -486,29 +427,20 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 
 <span class="nb">print</span><span class="p">(</span><span class="n">d_position</span><span class="p">,</span> <span class="n">position_present</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>8 4
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -524,88 +456,63 @@ pi@pielastic ~/elasticte $ python scenario_line_contraint.py serial
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>s
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>s
 <span class="c1">#!git add 2015-10-27\ élasticité\ r*</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span class="ansi-cyan-fg">??</span> __temp_ipython__.png
 <span class="ansi-cyan-fg">??</span> anim.gif
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="s1">' on connecte le π + coordonnées absolues'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="s1">' on connecte le π + coordonnées absolues'</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[master e968673]  on connecte le π + coordonnées absolues
  1 file changed, 12 insertions(+), 14 deletions(-)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Counting objects: 4, done.
 Delta compression using up to 4 threads.
@@ -617,10 +524,8 @@ To git@git.framasoft.org:laurentperrinet/elasticte.git
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

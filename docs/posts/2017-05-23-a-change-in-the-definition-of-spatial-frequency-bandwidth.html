@@ -137,7 +137,6 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <p>In fact, we are really using the correct formula, but to make it clearer, I just changed it to this new <a href="https://github.com/NeuralEnsemble/MotionClouds/blob/2b0a7a89c75987b40ce2b202bb96ba78d0e907af/MotionClouds/MotionClouds.py#L206">code</a> which reads:</p>
 <div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">f_radius</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">f_radius</span><span class="o">/</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sf_0</span><span class="o">+</span><span class="n">B_sf</span><span class="p">)</span><span class="o">/</span><span class="n">sf_0</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>

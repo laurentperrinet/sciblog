@@ -128,7 +128,6 @@ In particular, it is debatable to know which wei">
 <p>As we see a visual scene, there is contribution of the motion of each of the objects that constitute the visual scene into detecting its global motion.
 In particular, it is debatable to know which weight individual features, such as small objects in the foreground, have into this computation compared to a dense texture-like stimulus, as that of the background for instance.</p>
 <p>Here, we design a a stimulus where we control independently these two aspects of motions to titrate their relative contribution to the detection of motion.</p>
-
 </div>
 </div>
 </div>
@@ -137,8 +136,7 @@ In particular, it is debatable to know which weight individual features, such as
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<center><video controls autoplay loop src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" width="100%/"></video></center>
-
+<center><video autoplay="" controls="" loop="" src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" width="100%/"></video></center>
 </div>
 </div>
 </div>
@@ -151,7 +149,6 @@ In particular, it is debatable to know which weight individual features, such as
 <p>(For a more controlled test, imagine you fixate on the center of the movie.)</p>
 <!-- TEASER_END -->
 <p>Let's start with a texture-like stimulus (a <a href="https://neuralensemble.github.io/MotionClouds/">Motion Cloud</a>):</p>
-
 </div>
 </div>
 </div>
@@ -159,8 +156,8 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'trajectory'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'trajectory'</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -172,11 +169,9 @@ In particular, it is debatable to know which weight individual features, such as
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2018-11-29-feature-vs-global-motion'</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -184,7 +179,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some default parameters for the textons used here:</p>
-
 </div>
 </div>
 </div>
@@ -192,15 +186,13 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
 <span class="n">global_contrast</span> <span class="o">=</span> <span class="mf">.5</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -208,7 +200,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's first define a dense, stationary noise with a single motion:</p>
-
 </div>
 </div>
 </div>
@@ -216,38 +207,26 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_dense'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_dense'</span>
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span> <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_dense.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_dense.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -255,7 +234,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>One can overlay this with a similar motion in the upper right direction, such that one obtains a texture generalizing a <a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-20_motion-plaid.html">plaid stimulus</a>, that we place in a disk to make all directions iso-probable:</p>
-
 </div>
 </div>
 </div>
@@ -263,8 +241,8 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_plaid'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_plaid'</span>
    
 <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">movie1</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span>
@@ -275,31 +253,19 @@ In particular, it is debatable to know which weight individual features, such as
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_plaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_plaid.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -310,7 +276,6 @@ In particular, it is debatable to know which weight individual features, such as
 <h3 id="defining-features">defining features<a class="anchor-link" href="2018-11-29-feature-vs-global-motion.html#defining-features">¶</a>
 </h3>
 <p>It is also possible to define a texture where, instead of being dense, the number of "texton" used to generate the the texture is relatively sparse:</p>
-
 </div>
 </div>
 </div>
@@ -318,8 +283,8 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_features'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_features'</span>
 
 <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e-3</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="p">))</span>
@@ -332,31 +297,19 @@ In particular, it is debatable to know which weight individual features, such as
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie2</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -364,7 +317,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What if we now overlay these 2 components?</p>
-
 </div>
 </div>
 </div>
@@ -372,37 +324,25 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_features'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_overlay_features'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_overlay_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_overlay_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -410,7 +350,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We seem to perceive a motion which is mostly on the upper left: dense motion dominates - this seems quite logical as the energy of the features component is lower. Is there a way to weight down this component to obtain a "Point of Subjective Equality"</p>
-
 </div>
 </div>
 </div>
@@ -418,38 +357,26 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_contrast_PSE'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_contrast_PSE'</span>
 <span class="n">contrast</span> <span class="o">=</span> <span class="mf">.3</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">contrast</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_contrast_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_contrast_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -460,7 +387,6 @@ In particular, it is debatable to know which weight individual features, such as
 <h3 id="changing-the-properties-of-individual-features">changing the properties of individual features<a class="anchor-link" href="2018-11-29-feature-vs-global-motion.html#changing-the-properties-of-individual-features">¶</a>
 </h3>
 <p>It is now possible to do the same procedure to compare the relative weight of the properties of the textons in each components. In particular, can "longer" features ...</p>
-
 </div>
 </div>
 </div>
@@ -468,8 +394,8 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_features'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_features'</span>
 
 <span class="n">B_V2</span> <span class="o">=</span> <span class="mf">.3</span> <span class="o">*</span> <span class="n">opts</span><span class="p">[</span><span class="s1">'B_V'</span><span class="p">]</span>
 <span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -480,31 +406,19 @@ In particular, it is debatable to know which weight individual features, such as
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie2</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_features.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -512,7 +426,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>...have a higher weight on the global motion?</p>
-
 </div>
 </div>
 </div>
@@ -520,37 +433,25 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_PSE'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">'_B_V_PSE'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">):</span>
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">movie1</span><span class="o">+</span><span class="n">movie2</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -559,7 +460,6 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Similarly, it would be interesting to test the evolution of these parameters (contrast, sparseness, precision) to achieve the PSE.</p>
 <p>One key aspect of local features is that they are overlaid on top of the background. This is easy to implement:</p>
-
 </div>
 </div>
 </div>
@@ -567,8 +467,8 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">do_linear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">do_linear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">do_linear</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">rho</span><span class="o">*</span><span class="n">movie1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">*</span><span class="n">movie2</span>
     <span class="k">else</span><span class="p">:</span>
@@ -581,31 +481,19 @@ In particular, it is debatable to know which weight individual features, such as
     <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">overlay</span><span class="p">(</span><span class="n">movie1</span><span class="p">,</span> <span class="n">movie2</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">.7</span><span class="p">),</span> <span class="n">contrast</span><span class="o">=</span><span class="n">global_contrast</span><span class="p">)</span><span class="o">*</span><span class="n">disk</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">disk</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">))</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2018-11-29-feature-vs-global-motion/trajectory_B_V_PSE_NL.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -622,27 +510,18 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, matplotlib, MotionClouds
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -672,14 +551,10 @@ In particular, it is debatable to know which weight individual features, such as
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Thu Nov 22 15:48:49 2018 CET</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>!rm -fr {mc.figpath}/*_overlay_*!ls -l {mc.figpath}/*
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

@@ -129,7 +129,6 @@
 </h3>
 <!-- TEASER_END -->
 <p>This is part of a larger study to tune <a href="https://laurentperrinet.github.io/sciblog/categories/orientation.html">orientation bandwidth</a>.</p>
-
 </div>
 </div>
 </div>
@@ -137,8 +136,8 @@
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">downscale</span> <span class="o">=</span> <span class="mi">1</span>
@@ -147,18 +146,16 @@
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'../files/'</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_X</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_X</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">width</span> <span class="o">=</span> <span class="mf">29.7</span><span class="o">*</span><span class="mi">256</span><span class="o">/</span><span class="mi">1050</span>
 <span class="n">sf_0</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="n">width</span><span class="o">/</span><span class="n">N_X</span>
 <span class="n">B_V</span> <span class="o">=</span> <span class="mf">.5</span>     <span class="c1"># BW temporal frequency (speed plane thickness)</span>
@@ -176,72 +173,49 @@
 <span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">mc2</span><span class="p">,</span> <span class="n">name_</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/usr/local/lib/python3.7/site-packages/vispy/visuals/isocurve.py:22: UserWarning: VisPy is not yet compatible with matplotlib 2.2+
   warnings.warn("VisPy is not yet compatible with matplotlib 2.2+")
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_narrow_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-                <center><table border="none" width="100%" height="100%">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%">
 <tr>
-<td width="33%%"><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad.png" width="100%/"></center></td>
-                <td rowspan="2" colspan="2"><center><video src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad.mp4" loop="1" autoplay="1" controls type="video/mp4" width="100%/"></video></center></td>
-                </tr>
+<td width="33%%"><center><img alt="No description has been provided for this image" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad.png" width="100%/"></center></td>
+<td colspan="2" rowspan="2"><center><video autoplay="1" controls="" loop="1" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad.mp4" type="video/mp4" width="100%/"></video></center></td>
+</tr>
 <tr>
-<td><center><img src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad_cube.png" width="100%/"></center></td>
-                </tr>
+<td><center><img alt="No description has been provided for this image" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_broad_cube.png" width="100%/"></center></td>
+</tr>
 </table></center>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -251,7 +225,6 @@
 <p>This figure shows how one can create different MotionCloud stimuli that specifically target different population in V1. We show in the two lines of this table  motion cloud component with a (Top) narrow orientation bandwith  (Bottom) a wide bandwitdh: perceptually, there is no predominant position or speed, just different orientation contents.
 <br>Columns represent isometric projections of a cube. The left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
 <br>The middle column shows an isometric view of the  faces of the movie cube. The first frame of the movie lies on the x-y plane, the x-t plane lies on the top face and motion direction is seen as diagonal lines on this face (vertical motion is similarly see in the y-t face). The third column displays the actual movie as an animation.</p>
-
 </div>
 </div>
 </div>
@@ -261,7 +234,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note: an analysis of the response of a neural network to such stimulations as been explored by <a href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-6.html">Chloé Pasturel</a>.</p>
-
 </div>
 </div>
 </div>
@@ -279,8 +251,8 @@
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">def</span> <span class="nf">make_one_block</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">B_theta</span><span class="p">,</span> <span class="n">N_sub</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N_frame_sub</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">N_theta</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="n">fx</span><span class="o">.</span><span class="n">shape</span>
@@ -300,31 +272,19 @@
 <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name_</span><span class="p">),</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name_</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_block.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_block.mp4" type="video/mp4" width="100%\"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -333,7 +293,6 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we display MotionClouds as the orientation bandwidth increases from pi/32 to 2*pi. This should be equivalent in V1 to recruiting different ratios of neurons. 
 <br>Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum. Right column of the table displays the actual movie as an animation.</p>
-
 </div>
 </div>
 </div>
@@ -377,7 +336,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Grand total for one block is (12 orientations times 6 BWo + 1) * 2s :</p>
-
 </div>
 </div>
 </div>
@@ -385,26 +343,19 @@
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'One super-block='</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span> <span class="s1">' conditions'</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'One super-block='</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span> <span class="s1">' conditions'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'One super-block='</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">' seconds'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'16 repetitions of one super-block='</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">' conditions'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'16 repetitions of one super-block='</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">' seconds'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>One super-block= 21  conditions
 One super-block= 42  seconds
@@ -413,10 +364,8 @@ One super-block= 42  seconds
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -436,73 +385,55 @@ One super-block= 42  seconds
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">viewingDistance</span> <span class="o">=</span> <span class="mi">57</span> <span class="c1"># cm # TODO = me donner ces informations!</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">viewingDistance</span> <span class="o">=</span> <span class="mi">57</span> <span class="c1"># cm # TODO = me donner ces informations!</span>
 <span class="n">screen_width_cm</span> <span class="o">=</span> <span class="mi">33</span> <span class="c1"># cm # TODO = me donner ces informations!</span>
 <span class="c1">#un deg / cm</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'visual angle of the screen'</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">screen_width_cm</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">viewingDistance</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'degrees per centimeter'</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">screen_width_cm</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">viewingDistance</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">screen_width_cm</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>visual angle of the screen 32.28867756056697
 degrees per centimeter 0.9784447745626353
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">screen_width_px</span> <span class="o">=</span> <span class="mi">1024</span> <span class="c1"># pixels </span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">screen_width_px</span> <span class="o">=</span> <span class="mi">1024</span> <span class="c1"># pixels </span>
 <span class="n">screen_height_px</span> <span class="o">=</span> <span class="mi">768</span> <span class="c1"># pixels</span>
 
 <span class="c1">#un pixel = 33/800 deg</span>
 <span class="n">deg_per_px</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">screen_width_cm</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">viewingDistance</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">screen_width_px</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'degrees per pixel'</span><span class="p">,</span> <span class="n">deg_per_px</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>degrees per pixel 0.03153191168024118
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -510,7 +441,6 @@ degrees per centimeter 0.9784447745626353
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The central spatial frequency <code>sf_0</code> is defined as the frequency (number of cycles) <em>per pixel</em>, so that to get</p>
-
 </div>
 </div>
 </div>
@@ -518,8 +448,8 @@ degrees per centimeter 0.9784447745626353
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'width of these motion clouds ('</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="s1">', '</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="s1">')'</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'width of these motion clouds ('</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="p">,</span> <span class="s1">', '</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="p">,</span> <span class="s1">')'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'width of stimulus in degrees'</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_X</span> <span class="o">*</span> <span class="n">deg_per_px</span><span class="p">)</span>
 <span class="n">phi_sf_0</span> <span class="o">=</span> <span class="mf">2.</span> <span class="c1"># Optimal spatial frequency [cpd]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Optimal spatial frequency in cycles per degree'</span><span class="p">,</span> <span class="n">phi_sf_0</span><span class="p">)</span>
@@ -527,20 +457,13 @@ degrees per centimeter 0.9784447745626353
 <span class="n">sf_0</span> <span class="o">=</span> <span class="n">phi_sf_0</span> <span class="o">*</span> <span class="n">deg_per_px</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'cycles per pixel = '</span><span class="p">,</span> <span class="n">sf_0</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>width of these motion clouds ( 256 ,  256 )
 width of stimulus in degrees 8.072169390141742
@@ -550,10 +473,8 @@ cycles per pixel =  0.06306382336048236
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -561,7 +482,6 @@ cycles per pixel =  0.06306382336048236
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Similarly the spatial frequeny bandwidth as a function of the experimental parameters:</p>
-
 </div>
 </div>
 </div>
@@ -569,34 +489,30 @@ cycles per pixel =  0.06306382336048236
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phi_sf_0</span> <span class="o">=</span> <span class="mf">2.</span> <span class="c1"># Optimal spatial frequency [cpd]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">phi_sf_0</span> <span class="o">=</span> <span class="mf">2.</span> <span class="c1"># Optimal spatial frequency [cpd]</span>
 <span class="n">phi_B_sf</span> <span class="o">=</span> <span class="mf">2.</span> <span class="c1"># Optimal spatial frequency bandwidth [in octaves]</span>
 <span class="n">B_Sf</span> <span class="o">=</span> <span class="n">sf_0</span> <span class="c1"># good qualitative approximation</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phi_B_V</span> <span class="o">=</span> <span class="mf">5.</span> <span class="c1"># Optimal temporal frequency bandwidth [Hz]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">phi_B_V</span> <span class="o">=</span> <span class="mf">5.</span> <span class="c1"># Optimal temporal frequency bandwidth [Hz]</span>
 
 <span class="c1">#tf_opt = 1 # Hz</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mf">0.250</span>            <span class="c1"># Stimulus duration [s] </span>
 <span class="n">framerate</span> <span class="o">=</span> <span class="mf">100.</span>    <span class="c1"># Refreshing rate in [Hz]</span>
 <span class="n">Bv</span> <span class="o">=</span> <span class="n">phi_B_V</span> <span class="c1"># good qualitative approximation </span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -604,7 +520,6 @@ cycles per pixel =  0.06306382336048236
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In one script:</p>
-
 </div>
 </div>
 </div>
@@ -612,8 +527,8 @@ cycles per pixel =  0.06306382336048236
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.py
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -673,36 +588,27 @@ cycles per pixel =  0.06306382336048236
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">' MC '</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name_</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' skipped  (dry run)'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span>  ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.sh
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span>  ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.sh
 <span class="n">cd</span> <span class="o">../</span><span class="n">files</span><span class="o">/</span><span class="mi">2016</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span><span class="n">_IRM</span><span class="o">-</span><span class="n">protocol</span><span class="o">/</span>
 <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span><span class="n">_IRM</span><span class="o">-</span><span class="n">protocol</span><span class="o">.</span><span class="n">zip</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span><span class="n">_IRM</span><span class="o">-</span><span class="n">protocol</span>
 <span class="n">ipython3</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span><span class="n">_IRM</span><span class="o">-</span><span class="n">protocol</span><span class="o">.</span><span class="n">py</span>
@@ -710,51 +616,35 @@ cycles per pixel =  0.06306382336048236
 <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span><span class="n">_IRM</span><span class="o">-</span><span class="n">protocol</span>
 <span class="n">echo</span> <span class="s1">'done'</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting ../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.sh
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>sh<span class="w"> </span>../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.sh
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>sh<span class="w"> </span>../files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol.sh
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>]0;IPython: files/2016-04-06_IRM-protocol  adding: 2016-04-06_IRM-protocol/ (stored 0%)
   adding: 2016-04-06_IRM-protocol/2016-04-06_IRM-protocol_B_theta_15_seed_2016/ (stored 0%)
@@ -2455,10 +2345,8 @@ done
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2474,27 +2362,18 @@ done
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> version_information
 <span class="o">%</span><span class="k">version_information</span> numpy, scipy, matplotlib, MotionClouds
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table>
+<div class="prompt output_prompt">Out[13]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><table>
 <tr>
 <th>Software</th>
 <th>Version</th>
@@ -2528,14 +2407,10 @@ done
 <td>20180606</td>
 </tr>
 <tr><td colspan="2">Wed Nov 14 15:47:56 2018 CET</td></tr>
-</table>
-</div>
-
-</div>
-
+</table></div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

@@ -125,7 +125,6 @@
 <p>L'installation <a href="https://github.com/laurentperrinet/elasticite">Elasticité dynamique</a> agit comme un filtre et génère de nouveaux espaces démultipliés, comme un empilement quasi infini d'horizons. Par principe de réflexion, la pièce absorbe l'image de l'environnement et accumule les points de vue ; le mouvement permanent requalifie continuellement ce qui est regardé et entendu.</p>
 <p>On va maintenant utiliser des forces elastiques pour coordonner la dynamique des lames dans la trame.</p>
 <!-- TEASER_END -->
-
 </div>
 </div>
 </div>
@@ -133,39 +132,35 @@
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">elasticite</span> <span class="kn">import</span> <span class="n">EdgeGrid</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">elasticite</span> <span class="kn">import</span> <span class="n">EdgeGrid</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span> <span class="o">=</span> <span class="mi">72</span><span class="p">,</span> <span class="n">grid_type</span> <span class="o">=</span> <span class="s1">'hex'</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">fps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">loop</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">autoplay</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'test_grid2'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'test_grid2'</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span> <span class="o">=</span> <span class="mi">72</span><span class="p">,</span> <span class="n">grid_type</span> <span class="o">=</span> <span class="s1">'hex'</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -177,42 +172,27 @@
 <span class="n">e</span><span class="o">.</span><span class="n">make_anim</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">make_lames</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] &gt;&gt;&gt;&gt; Building video ../files/2015-10-14_elasticite/test_grid2.mp4
 [MoviePy] Writing video ../files/2015-10-14_elasticite/test_grid2.mp4
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>                                               </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: ../files/2015-10-14_elasticite/test_grid2.mp4 
@@ -220,41 +200,28 @@
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/test_grid2.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/test_grid2.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'parallel_force'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'parallel_force'</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1"># re-init</span>
 <span class="n">e</span><span class="o">.</span><span class="n">lames</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">N_lame</span><span class="p">)</span>
@@ -275,38 +242,26 @@
 <span class="n">e</span><span class="o">.</span><span class="n">make_anim</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">make_lames</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span> <span class="n">redo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/parallel_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/parallel_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'cocircular_force'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'cocircular_force'</span>
 <span class="c1"># re-init</span>
 <span class="n">e</span><span class="o">.</span><span class="n">lames</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">N_lame</span><span class="p">)</span>
 
@@ -328,42 +283,27 @@
 <span class="n">e</span><span class="o">.</span><span class="n">make_anim</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">make_lames</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span><span class="c1">#, redo=True)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] &gt;&gt;&gt;&gt; Building video ../files/2015-10-14_elasticite/cocircular_force.mp4
 [MoviePy] Writing video ../files/2015-10-14_elasticite/cocircular_force.mp4
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>                                                 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: ../files/2015-10-14_elasticite/cocircular_force.mp4 
@@ -371,41 +311,28 @@
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/cocircular_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/cocircular_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'cocircular_antiparallel_force'</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'cocircular_antiparallel_force'</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1"># re-init</span>
 <span class="n">e</span><span class="o">.</span><span class="n">lames</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">N_lame</span><span class="p">)</span>
@@ -429,42 +356,27 @@
 <span class="n">e</span><span class="o">.</span><span class="n">make_anim</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">make_lames</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span><span class="c1">#, redo=True)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">ipython_display</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] &gt;&gt;&gt;&gt; Building video ../files/2015-10-14_elasticite/cocircular_antiparallel_force.mp4
 [MoviePy] Writing video ../files/2015-10-14_elasticite/cocircular_antiparallel_force.mp4
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>                                                 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: ../files/2015-10-14_elasticite/cocircular_antiparallel_force.mp4 
@@ -472,34 +384,21 @@
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-            <center><table border="none" width="100%" height="100%"><tr><td width="100%"><center><video loop="1" autoplay="1" controls src="../files/2015-10-14_elasticite/cocircular_antiparallel_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
-</div>
-
-</div>
-
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="1" controls="" loop="1" src="../files/2015-10-14_elasticite/cocircular_antiparallel_force.mp4" type="video/webm" width="100%"></video></center></td></tr></table></center>
 </div>
 </div>
-
+</div>
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

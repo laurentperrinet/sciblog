@@ -157,7 +157,6 @@ the backup is an archive to be put on an external hard drive and then in a close
 <p>One huge advantage is that <code>$INPUT</code> or <code>$OUTPUT</code> can contain a remote server in the form of <code>myname@remoteserver:/path/to/my/folder</code>.</p>
 <p>An additional, useful option is <code>--dry-run</code> to try the command without moving the files. Also <code>--progress</code> gives a bit more info.</p>
 <p>Let's try it:</p>
-
 </div>
 </div>
 </div>
@@ -165,24 +164,17 @@ the backup is an archive to be put on an external hard drive and then in a close
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--dry-run<span class="w"> </span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex<span class="w"> </span>/Volumes/3tera/backups/12_backups/
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>receiving incremental file list
 alex/
@@ -206,10 +198,8 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -217,7 +207,6 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All good! We could connect to the server and the folder names were apparently correct. Let's use another option to exclude some files:</p>
-
 </div>
 </div>
 </div>
@@ -225,26 +214,19 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
 rsync<span class="w"> </span>-av<span class="w"> </span>--dry-run<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>receiving incremental file list
 alex/
@@ -260,10 +242,8 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -271,7 +251,6 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's now do it for real:</p>
-
 </div>
 </div>
 </div>
@@ -279,26 +258,19 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
 rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>receiving incremental file list
 alex/
@@ -320,10 +292,8 @@ total size is 2,772,529,142  speedup is 1.00
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -331,7 +301,6 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Everything went fine, with a file transfer speed of ~58Mb/s. The good sync with <code>rsync</code> is that if you do that once again (or if the transfer was interrupted) you only transfer the files you need and not the whole thing. So for instance, if we do the same command again, we get:</p>
-
 </div>
 </div>
 </div>
@@ -339,26 +308,19 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
 rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>receiving incremental file list
 
@@ -367,10 +329,8 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -378,7 +338,6 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>That is a speedup of more than $10^7$, but that does not make sense, it's just very quick :-)</p>
-
 </div>
 </div>
 </div>
@@ -400,7 +359,6 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 <p>And now, what about saving space? On a hard drive, files exist physically on the plates as streeams of bits --- zeros and ones--- but a curcial point is that they may be chunked in different pieces (imagine placing a big file on a disk which is fragmented may cause problems similar to when you have to re-order your desk...). A solution on most filesystems is that they contain a file allocation tables containing (1) all the filenames and the name of the folder in which they sit (2) a pointer to the chunks on the physical disk where the actual data is.</p>
 <p>So we can take advantage of that on a backup: a somewhat obscure habit is to take a folder <code>my_work</code>, copy it and then rename <code>my_work_new</code>. Strange habit, but let's stick with that and take advantage of the previous remark. Such technique is used in many backup mechanisms (such as the Time Machine used on Mac Os X) and allows to copy a whole folder with a different name but without taking more space on the disk (google <code>incremental backups</code> for more info on this).</p>
 <p>As a matter of fact, it is possible to have two files with different names but pointing to the same data chunks, it is a harlink. If a program would detect files that are exactly the same, for instance if we used the copy-and-paste procedure described above, this would greatly reduce the actual physical space. Many such programs exist and one easy piece of software is available on <a href="https://hardlinkpy.googlecode.com/">https://hardlinkpy.googlecode.com/</a>. It just consists of a python script, so the install is obvious:</p>
-
 </div>
 </div>
 </div>
@@ -408,24 +366,17 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 wget<span class="w"> </span>https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>--2014-07-07 11:47:55--  https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
 Resolving hardlinkpy.googlecode.com (hardlinkpy.googlecode.com)... 173.194.70.82, 2a00:1450:4001:c02::52
@@ -468,10 +419,8 @@ Saving to: 'hardlink.py'
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -479,7 +428,6 @@ Saving to: 'hardlink.py'
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now imagine we had copied the folder twice:</p>
-
 </div>
 </div>
 </div>
@@ -487,26 +435,19 @@ Saving to: 'hardlink.py'
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/alex_new
 rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>receiving incremental file list
 created directory /Volumes/3tera/backups/12_backups/alex_new
@@ -529,10 +470,8 @@ total size is 2,772,529,142  speedup is 1.00
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -540,7 +479,6 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The program is easy to use: just type <code>python hardlink.py</code> in the terminal to have basic usage:</p>
-
 </div>
 </div>
 </div>
@@ -548,23 +486,16 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Usage: hardlink.py [options] directory [ directory ... ]
 
@@ -588,10 +519,8 @@ Error: Must supply one or more directories
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -599,7 +528,6 @@ Error: Must supply one or more directories
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Such that in our case, we want to do this: <code>python hardlink.py /Volumes/3tera/backups/12_backups/</code> :</p>
-
 </div>
 </div>
 </div>
@@ -607,23 +535,16 @@ Error: Must supply one or more directories
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py<span class="w"> </span>/Volumes/3tera/backups/12_backups/
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py<span class="w"> </span>/Volumes/3tera/backups/12_backups/
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Comparing: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
@@ -677,10 +598,8 @@ Total run time        : 17.3441710472 seconds
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -688,7 +607,6 @@ Total run time        : 17.3441710472 seconds
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ok, we just saved over 2Go :-)</p>
-
 </div>
 </div>
 </div>
@@ -706,8 +624,8 @@ Total run time        : 17.3441710472 seconds
 <div class="input">
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> 14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.meta
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> 14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.meta
 <span class="o">..</span> <span class="n">title</span><span class="p">:</span> <span class="mi">14</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span> <span class="n">transferring</span> <span class="p">(</span><span class="n">lots</span> <span class="n">of</span><span class="p">)</span> <span class="n">files</span> <span class="n">to</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">server</span> <span class="o">+</span> <span class="n">saving</span> <span class="n">space</span>
 <span class="o">..</span> <span class="n">slug</span><span class="p">:</span> <span class="mi">14</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="n">transferring</span><span class="o">-</span><span class="n">lots</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">files</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">s</span>
 <span class="o">..</span> <span class="n">date</span><span class="p">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">07</span> <span class="mi">10</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">28</span> <span class="n">UTC</span><span class="o">+</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span>
@@ -716,51 +634,35 @@ Total run time        : 17.3441710472 seconds
 <span class="o">..</span> <span class="n">description</span><span class="p">:</span> 
 <span class="o">..</span> <span class="nb">type</span><span class="p">:</span> <span class="n">text</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting 14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.meta
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Scanning posts........done!
 .  render_posts:cache/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.html
@@ -867,32 +769,23 @@ Total run time        : 17.3441710472 seconds
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Scanning posts........done!
 <span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git add .
@@ -1048,10 +941,8 @@ Mirroring directory `stories'
 </span></pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
