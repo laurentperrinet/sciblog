@@ -261,7 +261,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
     <span class="c1"># IMAGE</span>
     <span class="k">def</span> <span class="nf">glob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gex</span><span class="o">=</span><span class="s1">'*.jpg'</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""</span>
+        <span class="sd">"""</span>
 <span class="sd">        Globs images in a folder.</span>
 
 <span class="sd">        Images should have a jpg extension and</span>
@@ -280,7 +280,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
     
     <span class="k">def</span> <span class="nf">glob_and_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gex</span><span class="o">=</span><span class="s1">'2021-02-14*.jpg'</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""</span>
+        <span class="sd">"""</span>
 <span class="sd">        Globs images in a folder.</span>
 
 <span class="sd">        Images should have a jpg extension and</span>
@@ -295,7 +295,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 
 
     <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""</span>
+        <span class="sd">"""</span>
 <span class="sd">        Placeholder function for preprocessing images.</span>
 <span class="sd">        </span>
 <span class="sd">        It simply consists here in normalizing the 8-bits raw images to be in the [0, 1] range.</span>
@@ -306,7 +306,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
         <span class="k">return</span> <span class="n">img</span><span class="o">/</span><span class="mf">255.</span>
     
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""</span>
+        <span class="sd">"""</span>
 <span class="sd">        Loads an image using openCV.</span>
 
 <span class="sd">        """</span>
@@ -405,7 +405,7 @@ raspistill -rot 270 -ev -8 --metering spot -o /home/pi/Desktop/orchid/`date +%Y-
 <span class="kn">from</span> <span class="nn">skimage.exposure</span> <span class="kn">import</span> <span class="n">match_histograms</span>
 
 <span class="k">def</span> <span class="nf">histMatch</span><span class="p">(</span><span class="n">sourceImage</span><span class="p">,</span> <span class="n">templateImage</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+    <span class="sd">"""</span>
 <span class="sd">    Matches the histogram of sourceImage to the templateImage in order to fix lightness/exposure</span>
 <span class="sd">    of the sourceImage.</span>
 <span class="sd">    """</span>

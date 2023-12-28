@@ -119,7 +119,7 @@ the backup is an archive to be put on an external hard drive and then in a close
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=24938074">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -133,7 +133,7 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=cb09e36b">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -143,16 +143,14 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e3b2a7af">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The solution is to use the beloved <code>rsync</code> tool:</p>
 <p>In its most simple form, you use this command in the termina:</p>
-<pre><code>rsync -av  $INPUT  $OUTPUT
-
-</code></pre>
+<pre><code>rsync -av  $INPUT  $OUTPUT</code></pre>
 <p>Where <code>-av</code>stands for "keep file attributes and be (not too) verbose", <code>$INPUT</code> is the folder containing the files to be backed up, <code>$OUTPUT</code> is the destination folder. Be careful to avoid a trailing slash in <code>$INPUT</code>, unless you want the files that reside within the folder to be transferred instead of the folder itself.</p>
 <p>One huge advantage is that <code>$INPUT</code> or <code>$OUTPUT</code> can contain a remote server in the form of <code>myname@remoteserver:/path/to/my/folder</code>.</p>
 <p>An additional, useful option is <code>--dry-run</code> to try the command without moving the files. Also <code>--progress</code> gives a bit more info.</p>
@@ -160,13 +158,13 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b89521da">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
-rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--dry-run<span class="w"> </span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex<span class="w"> </span>/Volumes/3tera/backups/12_backups/
+rsync -av  --progress --dry-run perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex /Volumes/3tera/backups/12_backups/
 </pre></div>
 </div>
 </div>
@@ -201,7 +199,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9a66679f">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -210,7 +208,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7565914f">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -218,7 +216,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync<span class="w"> </span>-av<span class="w"> </span>--dry-run<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
+rsync -av --dry-run  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
 </pre></div>
 </div>
 </div>
@@ -245,7 +243,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ac63a2da">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -254,7 +252,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=acd2c266">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
@@ -262,7 +260,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
 </pre></div>
 </div>
 </div>
@@ -295,7 +293,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=fbcf297d">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -304,7 +302,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2bef8cf9">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -312,7 +310,7 @@ total size is 2,772,529,142  speedup is 1.00
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/
-rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
 </pre></div>
 </div>
 </div>
@@ -332,7 +330,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=832d7384">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -341,7 +339,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b5c7f8c2">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -351,7 +349,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=91c2cc2d">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -362,13 +360,13 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=0cf28713">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
-wget<span class="w"> </span>https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
+wget https://hardlinkpy.googlecode.com/hg-history/1be1ba7ea38917e6b52c189ef625b05b4e7e4d52/hardlink.py
 </pre></div>
 </div>
 </div>
@@ -422,7 +420,7 @@ Saving to: 'hardlink.py'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e9fbaf30">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -431,7 +429,7 @@ Saving to: 'hardlink.py'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=90be6c7e">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -439,7 +437,7 @@ Saving to: 'hardlink.py'
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nv">INPUT</span><span class="o">=</span>perrinet.l@frioul.int.univ-amu.fr:/riou/work/invibe/ARCHIVES/backups_perrinet/12_backups/alex
 <span class="nv">OUTPUT</span><span class="o">=</span>/Volumes/3tera/backups/12_backups/alex_new
-rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="w"> </span>--exclude<span class="w"> </span>.AppleDouble<span class="w"> </span><span class="nv">$INPUT</span><span class="w"> </span><span class="nv">$OUTPUT</span>
+rsync -av  --progress --exclude .AppleDouble <span class="nv">$INPUT</span> <span class="nv">$OUTPUT</span>
 </pre></div>
 </div>
 </div>
@@ -473,7 +471,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9ae0f0fc">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -482,12 +480,12 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ddcf90a0">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py
 </pre></div>
 </div>
 </div>
@@ -522,7 +520,7 @@ Error: Must supply one or more directories
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a874163c">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -531,12 +529,12 @@ Error: Must supply one or more directories
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=8a7d950d">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hardlink.py<span class="w"> </span>/Volumes/3tera/backups/12_backups/
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hardlink.py /Volumes/3tera/backups/12_backups/
 </pre></div>
 </div>
 </div>
@@ -601,7 +599,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a6d14bd9">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -610,7 +608,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=37f6aa9a">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -620,7 +618,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e3b08d45">
 <div class="input">
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
@@ -649,12 +647,12 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=3ef7f5cf">
 <div class="input">
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola build
 </pre></div>
 </div>
 </div>
@@ -772,12 +770,12 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4d5be4e8">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola deploy
 </pre></div>
 </div>
 </div>

@@ -165,7 +165,7 @@ $ ipython --version
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>moviepy
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install moviepy
 </pre></div>
 </div>
 </div>
@@ -342,7 +342,7 @@ Successfully installed decorator-3.4.2 imageio-1.2 moviepy-0.2.2.11 tqdm-1.0
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">video</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">mimetype</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load the video in the file `fname`, with given mimetype, and display as HTML5 video.</span>
+    <span class="sd">"""Load the video in the file `fname`, with given mimetype, and display as HTML5 video.</span>
 <span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
     <span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>    
@@ -389,7 +389,7 @@ Your browser does not support the video tag.
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">video</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">mimetype</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load the video in the file `fname`, with given mimetype, and display as HTML5 video.</span>
+    <span class="sd">"""Load the video in the file `fname`, with given mimetype, and display as HTML5 video.</span>
 <span class="sd">    """</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
     <span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
@@ -438,46 +438,32 @@ Your browser does not support the video tag.
  lib='moviepy'
  project='moviepy3'
  git clone https://github.com/$github_user/$lib
- cd $lib
-
-
-</code></pre>
+ cd $lib</code></pre>
 </li>
 <li>
 <p>creating a new branch for his project</p>
 <pre><code>git branches
 git remote add $github_user https://github.com/$github_user/$lib
-git checkout -b $project
-
-</code></pre>
+git checkout -b $project</code></pre>
 </li>
 <li>
 <p>making the one line change to moviepy's code and test it with the minimum working example above:</p>
 <pre><code> vim moviepy/video/io/html_tools.py
- pip install -U .
-
-</code></pre>
+ pip install -U .</code></pre>
 </li>
 <li>
 <p>publishing results</p>
 <pre><code>git status
 git commit -am"fix to work with python3"
-git push $github_user $project
-
-
-</code></pre>
+git push $github_user $project</code></pre>
 </li>
 <li>
 <p>confirm the pull request</p>
-<pre><code>open https://github.com/$github_user/$lib
-
-</code></pre>
+<pre><code>open https://github.com/$github_user/$lib</code></pre>
 </li>
 <li>
 <p>come back to the <code>master</code> branch</p>
-<pre><code>git checkout master
-
-</code></pre>
+<pre><code>git checkout master</code></pre>
 </li>
 </ul>
 </div>

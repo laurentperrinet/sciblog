@@ -141,9 +141,10 @@ COSYNE is a great conference which plays a pivotal role in our field. If you hav
 <p>Thanks!</p>
 </blockquote>
 <p>As of 2022-02-20, I had received $N = 98$ answers from the <a href="https://forms.gle/hjzWVemM4Jy9cBbZ9">google form</a> (out of them, $95$ are valid) out of the $881$ submitted abstracts. In short, the result is that the total score $S$ is simply the linear sum of the scores $s_i$ given by each reviewer $i$ relatively weighted by the confidence levels $\pi_i$ (as stated in the email we received from the chairs):</p>
-$$
+<p>$$
 S = \frac{ \sum_i \pi_i\cdot s_i}{\sum_i \pi_i}
-$$<p>Or if you prefer
+$$</p>
+<p>Or if you prefer
 $$
 S = \sum_i  \frac{\pi_i}{\sum_j \pi_j} \cdot s_i
 $$</p>
@@ -933,9 +934,7 @@ Name: Comments?, dtype: object</pre>
 <h3 id="retrieving-the-razor-score">retrieving the razor score<a class="anchor-link" href="2022-02-11-cosyne-reviewer-feedback.html#retrieving-the-razor-score">¶</a>
 </h3>
 <p>The message mentions the method:</p>
-<pre><code>Each review comprised a short comment and a score between 1 and 10. Individual scores were weighed by a confidence factor and averaged for each submission.
-
-</code></pre>
+<pre><code>Each review comprised a short comment and a score between 1 and 10. Individual scores were weighed by a confidence factor and averaged for each submission.</code></pre>
 </div>
 </div>
 </div>
@@ -1082,8 +1081,7 @@ Name: Comments?, dtype: object</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It was mentioned in the message that:</p>
-<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.
-</code></pre>
+<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.</code></pre>
 </div>
 </div>
 </div>
@@ -1228,10 +1226,7 @@ Name: Comments?, dtype: object</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This result may be (certainly) due to an error in reporting the score in the google form or to the "additional constraining factors" mentioned in:</p>
-<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.
-
-
-</code></pre>
+<pre><code>After considering additional constraining factors, the top scoring 54 % of submissions were accepted.</code></pre>
 <h3 id="gray-zone">gray zone<a class="anchor-link" href="2022-02-11-cosyne-reviewer-feedback.html#gray-zone">¶</a>
 </h3>
 <p>It seems there is a "gray zone" for abstracts that were between the minimal score for accepted abstracts and the maximal score for rejected ones:</p>

@@ -19,13 +19,13 @@
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/stories/upgrading-to-v6.html">
 <meta property="og:description" content="Upgrading to v6
 
-Version
+Version:
 6.2.1
 
 
 Nikola tries fairly hard to be compatible between versions. However, there were
 a few areas which were getting clunky, and needed fxing. So, here's what you may
-need t">
+need ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-08-23T23:00:00+02:00">
 </head>
@@ -110,7 +110,8 @@ need t">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <section id="upgrading-to-v6"><h2>Upgrading to v6</h2>
 <dl class="field-list simple">
-<dt>Version</dt>
+<dt>Version<span class="colon">:</span>
+</dt>
 <dd>
 <p>6.2.1</p>
 </dd>
@@ -148,12 +149,12 @@ jinja-based theme, upgrading is probably a bad idea right now.</p>
 using a custom theme. Also, some templates have been tweaked, but nothing should
 break for you.</p>
 <p>Facebook comments support changed the HTML tag to:</p>
-<div class="code"><pre class="code mako"><a id="rest_code_39a5b10c90ec4f0e842df8101eea0623-1" name="rest_code_39a5b10c90ec4f0e842df8101eea0623-1" href="upgrading-to-v6.html#rest_code_39a5b10c90ec4f0e842df8101eea0623-1"></a><span class="x">&lt;html</span>
-<a id="rest_code_39a5b10c90ec4f0e842df8101eea0623-2" name="rest_code_39a5b10c90ec4f0e842df8101eea0623-2" href="upgrading-to-v6.html#rest_code_39a5b10c90ec4f0e842df8101eea0623-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span>
-<a id="rest_code_39a5b10c90ec4f0e842df8101eea0623-3" name="rest_code_39a5b10c90ec4f0e842df8101eea0623-3" href="upgrading-to-v6.html#rest_code_39a5b10c90ec4f0e842df8101eea0623-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
-<a id="rest_code_39a5b10c90ec4f0e842df8101eea0623-4" name="rest_code_39a5b10c90ec4f0e842df8101eea0623-4" href="upgrading-to-v6.html#rest_code_39a5b10c90ec4f0e842df8101eea0623-4"></a><span class="cp">%</span><span class="k">endif</span>
-<a id="rest_code_39a5b10c90ec4f0e842df8101eea0623-5" name="rest_code_39a5b10c90ec4f0e842df8101eea0623-5" href="upgrading-to-v6.html#rest_code_39a5b10c90ec4f0e842df8101eea0623-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
-</pre></div>
+<pre class="code mako"><a id="rest_code_3cff97423caf4561b5aa483526e35155-1" name="rest_code_3cff97423caf4561b5aa483526e35155-1" href="upgrading-to-v6.html#rest_code_3cff97423caf4561b5aa483526e35155-1"></a><span class="x">&lt;html</span>
+<a id="rest_code_3cff97423caf4561b5aa483526e35155-2" name="rest_code_3cff97423caf4561b5aa483526e35155-2" href="upgrading-to-v6.html#rest_code_3cff97423caf4561b5aa483526e35155-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span><span class="x"></span>
+<a id="rest_code_3cff97423caf4561b5aa483526e35155-3" name="rest_code_3cff97423caf4561b5aa483526e35155-3" href="upgrading-to-v6.html#rest_code_3cff97423caf4561b5aa483526e35155-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
+<a id="rest_code_3cff97423caf4561b5aa483526e35155-4" name="rest_code_3cff97423caf4561b5aa483526e35155-4" href="upgrading-to-v6.html#rest_code_3cff97423caf4561b5aa483526e35155-4"></a><span class="cp">%</span><span class="k">endif</span><span class="x"></span>
+<a id="rest_code_3cff97423caf4561b5aa483526e35155-5" name="rest_code_3cff97423caf4561b5aa483526e35155-5" href="upgrading-to-v6.html#rest_code_3cff97423caf4561b5aa483526e35155-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
+</pre>
 <p>If you do not want to use Facebook comments, you can leave the old <code class="docutils literal">&lt;html
 <span class="pre">lang="${lang}"&gt;</span></code> tag in and it will work just fine.</p>
 <section id="comments"><h4>Comments</h4>
@@ -172,23 +173,23 @@ should be <strong>exactly</strong> as before.</p>
 story short, anything that had a <code class="docutils literal">True</code> as the <code class="docutils literal">use_in_feeds</code>
 (last) value goes to <code class="docutils literal">POSTS</code> and anything with <code class="docutils literal">False</code> goes to
 <code class="docutils literal">PAGES</code>.  For example:</p>
-<div class="code"><pre class="code python"><a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-1" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-1" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-2" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-2" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-3" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-3" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-4" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-4" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-5" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-5" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-5"></a><span class="p">)</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-6" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-6" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-6"></a>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-7" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-7" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-7"></a><span class="c1">### becomes ###</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-8" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-8" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-8"></a>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-9" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-9" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-10" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-10" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-11" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-11" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-11"></a><span class="p">)</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-12" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-12" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-12"></a>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-13" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-13" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-14" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-14" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-15" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-15" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a id="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-16" name="rest_code_1e20ca1f7b4b4fa78df056f9e5115541-16" href="upgrading-to-v6.html#rest_code_1e20ca1f7b4b4fa78df056f9e5115541-16"></a><span class="p">)</span>
-</pre></div>
+<pre class="code python"><a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-1" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-1" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-2" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-2" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-3" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-3" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-4" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-4" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-5" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-5" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-5"></a><span class="p">)</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-6" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-6" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-6"></a>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-7" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-7" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-7"></a><span class="c1">### becomes ###</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-8" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-8" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-8"></a>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-9" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-9" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-10" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-10" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-11" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-11" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-11"></a><span class="p">)</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-12" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-12" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-12"></a>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-13" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-13" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-14" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-14" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-15" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-15" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a id="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-16" name="rest_code_ea0234a4f8964f619ff3d2df78ca5f82-16" href="upgrading-to-v6.html#rest_code_ea0234a4f8964f619ff3d2df78ca5f82-16"></a><span class="p">)</span>
+</pre>
 <p>Also, you will get warnings. That doesn't mean things broke. They are
 there to inform you of what's happening, and that you need to tweak your
 config.</p>

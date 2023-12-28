@@ -137,9 +137,10 @@
 <p>Building on the answers from @anders-sandberg and @ProfRob I think I get an answer for my own question. I am most certainly reinventing the wheel, but it has been fun. Please comment if you know any pointer on a similar derivation.</p>
 <p>As a (very) rough approximation, one may assume that in a given line of sight, there is locally a uniform, independent and identically distributed density of stars. This can be modeled for instance by a <a href="https://en.wikipedia.org/wiki/Poisson_distribution">3D Poisson distribution</a>. A 3D Poisson distribution consists in drawing random positions in space independently for the 3 axis and independently for the different points.</p>
 <p>As a consequence, there are stars in all directions, but they have different luminances due to their distance. It is easy to derive the probability distribution of the distance for such a model and by a change of variable, one can find that of luminance as :</p>
-$$
+<p>$$
 \text{Pr}(L) \propto \frac 1 {d^{\frac 5 2}}
-$$<p>This is what you get with a simple simulation by placing stars at random positions in the universe but also if you plot the distribution of the luminance for stars drawn from [a catalog of more than 100k stars][2] (left panel):</p>
+$$</p>
+<p>This is what you get with a simple simulation by placing stars at random positions in the universe but also if you plot the distribution of the luminance for stars drawn from [a catalog of more than 100k stars][2] (left panel):</p>
 <p><img alt="result" src="https://laurentperrinet.github.io/sciblog/files/2021-03-27_generative.png"></p>
 <p>But it is also a way to build a very simple model for generating images of the night sky (right panel).</p>
 <p>The full details of my musings are available in this <a href="https://laurentperrinet.github.io/sciblog/posts/2021-03-27-density-of-stars-on-the-surface-of-the-sky.html">blog post</a>.</p>
@@ -371,10 +372,11 @@ PS2: I had not talked about <a href="https://en.wikipedia.org/wiki/Olbers%27_par
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's use the dashed line defined above as the line of sight - giving the depth in our resulting image.
 Knowing the position of the observer (let's say $(x, y, z) = (0, 0 , 0)$) and that of stars relative to it, one can compute the azimuth $a$ and elevation $e$ as:</p>
-$$
+<p>$$
 a = \arctan \frac z x \\
 e = \arctan \frac y x
-$$<p>We will supose that we look at a fairly small area in the sky, such that the volume we look at looks in cross-section to:</p>
+$$</p>
+<p>We will supose that we look at a fairly small area in the sky, such that the volume we look at looks in cross-section to:</p>
 </div>
 </div>
 </div>
@@ -470,7 +472,7 @@ $$<p>We will supose that we look at a fairly small area in the sky, such that th
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'FOV = </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="mf">11.4</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> deg'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'FOV = </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="mf">11.4</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> deg'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -603,12 +605,14 @@ $$<p>We will supose that we look at a fairly small area in the sky, such that th
 <h3 id="distance">distance<a class="anchor-link" href="2021-03-27-density-of-stars-on-the-surface-of-the-sky.html#distance">¶</a>
 </h3>
 <p>Let's continue, as we also have a value for the distance:</p>
-$$
+<p>$$
 d = \sqrt{ x^2 + y^2 + z^2} 
-$$<p>From the conservation law for the luminous energy (which travels straight in an Euclidian space here), the luminance of a star falls off as inversely proportional to the square of the distance $d$:</p>
-$$
+$$</p>
+<p>From the conservation law for the luminous energy (which travels straight in an Euclidian space here), the luminance of a star falls off as inversely proportional to the square of the distance $d$:</p>
+<p>$$
 L \propto \frac 1 {d^2}
-$$<p>such that we might modulate the intensity of the star inversely proportionnally to its distance :</p>
+$$</p>
+<p>such that we might modulate the intensity of the star inversely proportionnally to its distance :</p>
 </div>
 </div>
 </div>
@@ -777,9 +781,10 @@ $$
 Pr(L) = \frac d {dL} g^{-1}(L) \cdot Pr(g^{-1}(L))
 $$
 with $g^{-1}(L)= \frac 1 {\sqrt{L}}$ and $ \frac d {dL} (g^{-1}(I)) = - \frac 1 2  L^{-\frac 3 2}$. Since $Pr(d) \propto d^2$ and $d^2 = \frac 1 L$, we finally have:</p>
-$$
+<p>$$
 Pr(I) \propto  L^{-\frac 5 2}
-$$<p>As a consequence, the probability density function for the intensity of a star follows a power-law with exponent $-\frac 5 2$. Let's verify this on the synthetic example:</p>
+$$</p>
+<p>As a consequence, the probability density function for the intensity of a star follows a power-law with exponent $-\frac 5 2$. Let's verify this on the synthetic example:</p>
 </div>
 </div>
 </div>
@@ -948,9 +953,9 @@ $$<p>As a consequence, the probability density function for the intensity of a s
 </li>
 <li>THE COLLINDER CATALOG OF OPEN STAR CLUSTERS : <a href="https://www.cloudynights.com/articles/cat/articles/the-collinder-catalog-updated-r2467">https://www.cloudynights.com/articles/cat/articles/the-collinder-catalog-updated-r2467</a>
 </li>
-<li>Obscure Globular Clusters of the Milky Way: <a href="https://www.astronomy-mall.com/Adventures.In.Deep.Space/obscure.htm">https://www.astronomy-mall.com/Adventures.In.Deep.Space/obscure.htm</a> -  Terzan 1 - True Color Image by Brad Walter:</li>
+<li>Obscure Globular Clusters of the Milky Way: <a href="https://www.astronomy-mall.com/Adventures.In.Deep.Space/obscure.htm">https://www.astronomy-mall.com/Adventures.In.Deep.Space/obscure.htm</a> -  Terzan 1 - True Color Image by Brad Walter:
+hygdata_v3.csv</li>
 </ul>
-<p>hygdata_v3.csv</p>
 <p><img alt=" Terzan 1 - True Color Image by Brad Walter" src="https://www.astronomy-mall.com/Adventures.In.Deep.Space/images/terzan1c.jpg"></p>
 </div>
 </div>
@@ -1735,7 +1740,7 @@ Name: lum, Length: 119614, dtype: float64</pre>
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">star</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">x_pos</span><span class="p">,</span> <span class="n">y_pos</span><span class="p">,</span> <span class="n">size_airy</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">size_airy_ecc</span><span class="p">,</span> <span class="n">intensity</span><span class="p">,</span>
                 <span class="n">gamma</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+    <span class="sd">"""</span>
 <span class="sd">    Define the image of a star as a kernel:</span>
 
 <span class="sd">    - x_pos, y_pos : position of the center of the blob</span>

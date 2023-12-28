@@ -138,7 +138,7 @@ I recently wished to make a small animation of a bar moving in the visual field 
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Zulko/gizeh.git
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3 -m pip install git+https://github.com/Zulko/gizeh.git
 </pre></div>
 </div>
 </div>
@@ -212,13 +212,9 @@ Successfully built gizeh
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looks easy, however, this took a little searching and tweaking. Finally found some documentation  @ <a href="http://docs.go-mono.com/index.aspx?link=T%3aCairo.RadialGradient">http://docs.go-mono.com/index.aspx?link=T%3aCairo.RadialGradient</a> about the <code>RadialGradient</code> class:</p>
-<pre><code>Extends Cairo.Gradient to create a new radial gradient between the two circles defined by (cx0, cxy0, radius0) and (cx1, cy1, radius1).
-
-</code></pre>
+<pre><code>Extends Cairo.Gradient to create a new radial gradient between the two circles defined by (cx0, cxy0, radius0) and (cx1, cy1, radius1).</code></pre>
 <p>such that we should have the following equivalence between Gizeh and Cairo</p>
-<pre><code>xy1, xy2, xy3 = (cx0, cy0), (cx1, cy1), (radius0, radius1)
-
-</code></pre>
+<pre><code>xy1, xy2, xy3 = (cx0, cy0), (cx1, cy1), (radius0, radius1)</code></pre>
 <p>a couple of MWE (AKA Mimimum Working Example) for each different parameter should be more helpful to see what happens:</p>
 </div>
 </div>

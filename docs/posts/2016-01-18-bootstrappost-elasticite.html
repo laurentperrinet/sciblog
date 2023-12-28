@@ -144,12 +144,12 @@
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/posts/*ipynb
-<span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/files/figures/elasticite/
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -l ~/cloud_nas/science/2016-01-13_elasticite_github/posts/*ipynb
+<span class="o">!</span>ls -l ~/cloud_nas/science/2016-01-13_elasticite_github/files/figures/elasticite/
 <span class="o">~/</span><span class="n">pool</span><span class="o">/</span><span class="n">libs</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">invibe</span><span class="o">/</span>
 <span class="o">%</span><span class="k">pwd</span>
 
-<span class="o">!</span>mkdir<span class="w"> </span>./files/2015-10-14_elasticite/
+<span class="o">!</span>mkdir ./files/2015-10-14_elasticite/
 </pre></div>
 </div>
 </div>
@@ -190,8 +190,8 @@ mkdir: ./files/2015-10-14_elasticite/: File exists
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/files/2015-10-14_elasticite/*<span class="w"> </span>~/pool/libs/blog/invibe/files/2015-10-14_elasticite/
-<span class="o">!</span>cp<span class="w"> </span>~/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb<span class="w"> </span>~/pool/libs/blog/invibe/posts/
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp ~/cloud_nas/science/2016-01-13_elasticite_github/files/2015-10-14_elasticite/* ~/pool/libs/blog/invibe/files/2015-10-14_elasticite/
+<span class="o">!</span>cp ~/cloud_nas/science/2016-01-13_elasticite_github/posts/*.ipynb ~/pool/libs/blog/invibe/posts/
 </pre></div>
 </div>
 </div>
@@ -220,11 +220,11 @@ mkdir: ./files/2015-10-14_elasticite/: File exists
     <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">'python'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'elasticite'</span><span class="p">,</span> <span class="s1">'notebook'</span><span class="p">])</span>
     <span class="n">TIME</span> <span class="o">=</span> <span class="s2">"14:03:08 UTC+02:00"</span>
     <span class="n">meta</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
-<span class="s2">.. slug: </span><span class="si">%s</span>
-<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
 <span class="s2">.. type: text</span>
-<span class="s2">.. tags: </span><span class="si">%s</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
 <span class="s2">    </span>
 <span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
          
@@ -279,7 +279,7 @@ posts/2015-12-05 élasticité - scénario final montage.ipynb posts/2015-12-0
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
 </pre></div>
 </div>
 </div>
@@ -303,7 +303,7 @@ nothing to commit, working directory clean
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>build
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola build
 </pre></div>
 </div>
 </div>
@@ -314,7 +314,7 @@ nothing to commit, working directory clean
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>deploy
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola deploy
 </pre></div>
 </div>
 </div>
@@ -1223,7 +1223,7 @@ Transferring file `stories/upgrading-to-v6.txt'
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>status
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
 </pre></div>
 </div>
 </div>
@@ -1253,7 +1253,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>open<span class="w"> </span>https://laurentperrinet.github.io/sciblog
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>open https://laurentperrinet.github.io/sciblog
 </pre></div>
 </div>
 </div>
