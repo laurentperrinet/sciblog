@@ -25,8 +25,8 @@
 
 
 
-Motion Clouds were defined in the origin to provide a simple parameterization for 
-textures. Thus we used a simple unimodal, normal distribution (on the log-radi">
+Motion Clouds were defined in the origin to provide a simple parameterization for
+textures. Thus we used a simple unimodal, normal distribution (on the log-radia">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-10-24T16:32:19+02:00">
 <meta property="article:tag" content="area-V1">
@@ -135,7 +135,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radi">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for 
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for
 textures. Thus we used a simple unimodal, normal distribution (on the log-radial frequency space to be more precise). But the larger set of Random Phase Textures may provide some interesting examples, some of them can even be fun! This is the case of this simulation of the waves you may observe on the surface on the ocean.</p>
 </div>
 </div>
@@ -222,7 +222,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">envelope_gravity</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_wave</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">.1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+    <span class="sd">"""</span>
 <span class="sd">     Gravitational envelope:</span>
 <span class="sd">     selects the plane corresponding to the speed (V_X, V_Y) with some thickness B_V</span>
 
@@ -235,7 +235,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <span class="k">def</span> <span class="nf">envelope_gabor_wave</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_wave</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">V_Y</span><span class="p">,</span>
                         <span class="n">B_V</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_v</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">loggabor</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">loggabor</span><span class="p">,</span>
                         <span class="n">theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">theta</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">B_theta</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">alpha</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+    <span class="sd">"""</span>
 <span class="sd">    Returns the Motion Cloud kernel</span>
 
 <span class="sd">    """</span>
@@ -337,7 +337,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This figure shows how one can create stimuli similar to MotionCloud stimuli that have a dstribution according to the laws of gravitational waves (that is with temporal frequency proportional to the square root of spatial frequency for deep water conditions -- in the shallow water conditions, normal MCs are a good approximation). Note that phase speed (following a maximum) is twice faster than group speed (following a dot). The two lines correspond to different bandwitdhs for the spread around the physical law (width of the manifold). 
+<p>This figure shows how one can create stimuli similar to MotionCloud stimuli that have a dstribution according to the laws of gravitational waves (that is with temporal frequency proportional to the square root of spatial frequency for deep water conditions -- in the shallow water conditions, normal MCs are a good approximation). Note that phase speed (following a maximum) is twice faster than group speed (following a dot). The two lines correspond to different bandwitdhs for the spread around the physical law (width of the manifold).
 <br>Columns represent isometric projections of a cube. The left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum. The middle column shows an isometric view of the faces of the movie cube. The first frame of the movie lies on the x-y plane, the x-t plane lies on the top face and motion direction is seen as diagonal lines on this face (vertical motion is similarly see in the y-t face). The third column displays the actual movie as an animation.</p>
 </div>
 </div>
@@ -567,7 +567,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, we display these modified MotionClouds as the orientation bandwidth increases from pi/32 to 2*pi. This should be equivalent in the ocean to different dispersion of the wind that generates the waves. 
+<p>Here, we display these modified MotionClouds as the orientation bandwidth increases from pi/32 to 2*pi. This should be equivalent in the ocean to different dispersion of the wind that generates the waves.
 <br>Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum. Right column of the table displays the actual movie as an animation.</p>
 </div>
 </div>

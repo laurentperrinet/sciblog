@@ -150,17 +150,11 @@ Here, we will need to install additions to the nikola publishing tool: a renderi
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we will need to install additions to the nikola publishing tool: a rendering machine + a theme. Using homebrew in mcosx, this looks like:</p>
 <pre><code>brew install npm
-npm install -g less
-
-</code></pre>
+npm install -g less</code></pre>
 <p>and</p>
-<pre><code>nikola install_theme zen-ipython
-
-</code></pre>
+<pre><code>nikola install_theme zen-ipython</code></pre>
 <p>Once this was done, one could tune <code>conf.py</code> and then issue:</p>
-<pre><code>nikola new_post -f ipynb
-
-</code></pre>
+<pre><code>nikola new_post -f ipynb</code></pre>
 <p>Finally, one needs to build (<code>nikola build</code>) and publish (<code>nikola deploy</code>)</p>
 </div>
 </div>

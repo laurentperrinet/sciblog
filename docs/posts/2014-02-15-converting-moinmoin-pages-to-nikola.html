@@ -162,11 +162,11 @@ def url2rst(URL):
     <span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
     <span class="n">SLUG</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
     <span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
-<span class="s2">.. slug: </span><span class="si">%s</span>
-<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
 <span class="s2">.. type: text</span>
-<span class="s2">.. tags: </span><span class="si">%s</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
 <span class="s2">    </span>
 <span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
     
@@ -645,11 +645,11 @@ using pdfLaTeX
         <span class="n">SLUG</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">translate</span><span class="p">[</span><span class="n">char</span><span class="p">],</span> <span class="n">SLUG</span><span class="p">)</span>
                     
     <span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
-<span class="s2">.. slug: </span><span class="si">%s</span>
-<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
 <span class="s2">.. type: text</span>
-<span class="s2">.. tags: </span><span class="si">%s</span>
+<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
 
 <span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">doit</span><span class="p">:</span>

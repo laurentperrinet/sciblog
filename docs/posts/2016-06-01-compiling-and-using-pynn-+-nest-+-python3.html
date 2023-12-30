@@ -123,25 +123,17 @@ First, let's install NEST. No">
 <pre><code>git clone https://github.com/nest/nest-simulator.git
 cd nest-simulator
 cmake -DCMAKE_C_COMPILER=gcc-6 -DCMAKE_CXX_COMPILER=g++-6  -DCMAKE_INSTALL_PREFIX:PATH=/usr/local/nest -DPYTHON_EXECUTABLE=/usr/local/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/local/Frameworks/Python.framework/Versions/3.5/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/Frameworks/Python.framework/Versions/3.5/lib/libpython3.5.dylib  .    make
-make install
-
-</code></pre>
+make install</code></pre>
 <p>Then, you have to update your shell using:</p>
 <pre><code># NEST
 export PATH=/usr/local/nest/bin:$PATH
-export PYTHONPATH=/usr/local/nest/lib/python1.4/site-packages
-
-
-</code></pre>
+export PYTHONPATH=/usr/local/nest/lib/python1.4/site-packages</code></pre>
 <p>and now pyNN:</p>
 <pre><code>git clone https://github.com/NeuralEnsemble/PyNN
 cd pyNN
 pip3 install -e .
 examples/tools
-ipython3 run_all_examples.py NEST
-
-
-</code></pre>
+ipython3 run_all_examples.py NEST</code></pre>
 <p>I (still) used this patch:</p>
 <pre><code>diff --git a/pyNN/nest/simulator.py b/pyNN/nest/simulator.py
 index 625c121..335f925 100644
@@ -155,8 +147,7 @@ index 625c121..335f925 100644
 +        syn_delay = nest.GetDefaults('static_synapse')['delay']
          if syn_delay == numpy.inf or syn_delay &gt; 1e300:
              return kernel_delay
-         else:
-</code></pre>
+         else:</code></pre>
 </div>
 </div>
 </div>

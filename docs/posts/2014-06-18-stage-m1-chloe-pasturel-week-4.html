@@ -1356,7 +1356,9 @@ fig_">
 <p>I = les stimili</p>
 <p>G = recepteur</p>
 <p>F est la fonction de fourier</p>
-$$ I = F^{-1}(\varepsilon \cdot e^{i \phi})$$$$ G = F^{-1}(\varepsilon^{,})$$<p>Réponse linéaire neuronale :
+<p>$$ I = F^{-1}(\varepsilon \cdot e^{i \phi})$$
+$$ G = F^{-1}(\varepsilon^{,})$$</p>
+<p>Réponse linéaire neuronale :
 $$ I \circ G = F^{-1}(F(I) \cdot F(G)) = F^{-1}(\varepsilon^{,} \cdot \varepsilon \cdot e^{i \phi}) $$</p>
 <p>d'après le théorème de Parseval :
 $$ (f)^{2} = (F(f))^{2} $$</p>
@@ -1370,10 +1372,15 @@ $$ (f)^{2} = (F(f))^{2} $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Multiplication de deux fonctions gaussiennes $\varepsilon$ et $\gamma$ donne une gaussienne :</p>
-$$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(x-m_{1})^{2}} {2\sigma_{1}^{2}}}
+<p>$$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(x-m_{1})^{2}} {2\sigma_{1}^{2}}}
 ~~et~~
-\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(x-m_2)^{2}} {2\sigma_{2}^{2}}} $$$$ (\varepsilon \cdot \gamma) (m) = \frac {G} {\sigma \sqrt{2\pi}} \cdot e^{\frac{-(m-m)^{2}} {2\sigma^{2}}} $$$$ \sigma^{-2} = \sigma_{1}^{-2} + \sigma_{2}^-{2} $$$$ m \sigma^{-2} = m_{1} \sigma_{1}^{-2} + m_{2} \sigma_{2}^{-2} $$<p>en particulier, la valeur à la moyenne $m$ donne:</p>
-$$ (\varepsilon \cdot \gamma) (m) = \varepsilon(m) \cdot \gamma(m) = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$$<p>donc $~\frac{G}{\sigma \sqrt{2\pi}} = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$ car $~e^{\frac{-(m-m)^{2}}{2\sigma^{2}}} = e^{0} = 1 $</p>
+\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(x-m_2)^{2}} {2\sigma_{2}^{2}}} $$</p>
+<p>$$ (\varepsilon \cdot \gamma) (m) = \frac {G} {\sigma \sqrt{2\pi}} \cdot e^{\frac{-(m-m)^{2}} {2\sigma^{2}}} $$</p>
+<p>$$ \sigma^{-2} = \sigma_{1}^{-2} + \sigma_{2}^-{2} $$
+$$ m \sigma^{-2} = m_{1} \sigma_{1}^{-2} + m_{2} \sigma_{2}^{-2} $$</p>
+<p>en particulier, la valeur à la moyenne $m$ donne:</p>
+<p>$$ (\varepsilon \cdot \gamma) (m) = \varepsilon(m) \cdot \gamma(m) = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$$</p>
+<p>donc $~\frac{G}{\sigma \sqrt{2\pi}} = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$ car $~e^{\frac{-(m-m)^{2}}{2\sigma^{2}}} = e^{0} = 1 $</p>
 <p>Le gain $~\frac{G}{\sigma \sqrt{2\pi}}$ est donc modulé par la différence entre les deux moyennes et leurs $\sigma$</p>
 </div>
 </div>
