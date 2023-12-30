@@ -66,9 +66,12 @@ Do not hesitate to comment!
 # ja        Japanese [NOT jp]
 # ko        Korean
 # lt        Lithuanian
+# mi        Maori
 # ml        Malayalam
+# mr        Marathi
 # nb        Norwegian (Bokmål)
 # nl        Dutch
+# oc        Occitan
 # pa        Punjabi
 # pl        Polish
 # pt        Portuguese
@@ -132,54 +135,53 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #         'Fruits'
 #     )
 #
+# WARNING: Support for submenus is theme-dependent.
+#          Only one level of submenus is supported.
+# WARNING: Some themes, including the default Bootstrap 4 theme,
+#          may present issues if the menu is too large.
+#          (in Bootstrap, the navbar can grow too large and cover contents.)
+# WARNING: If you link to directories, make sure to follow
+#          ``STRIP_INDEXES``.  If it’s set to ``True``, end your links
+#          with a ``/``, otherwise end them with ``/index.html`` — or
+#          else they won’t be highlighted when active.
+
+NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+                   ('/index.html', 'Home'),
+                   ('/archive.html', 'Archives'),
+                   ('/categories/', 'Tags'),
+                   ('/rss.xml', 'RSS'),
+                   ('http://laurentperrinet.github.io', 'About my research'),
+                   ('https://neuromatch.social/@laurentperrinet', 'Mastodon'),
+                   ('https://github.com/laurentperrinet', 'Github'),
+    ),
+}
+
+
+
+# Alternative navigation links. Works the same way NAVIGATION_LINKS does,
+# although themes may not always support them. (translatable)
+# (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
+NAVIGATION_ALT_LINKS = {
+    DEFAULT_LANG: ()
+}
+
 # Name of the theme to use.
-THEME = "zen-ipython"
-THEME = "cadair"
-THEME = "bootstrap3-jinja"
 THEME = "bootblog4"
 
-# Primary color of your theme. This will be used to customize your theme.
-# Must be a HEX value.
+# A theme color. In default themes, it might be displayed by some browsers as
+# the browser UI color (eg. Chrome on Android). Other themes might also use it
+# as an accent color (the default ones don’t). Must be a HEX value.
 THEME_COLOR = '#5670d4'
 
-if THEME == "zen-ipython":
-    # Links for the sidebar / navigation bar.
-    # You should provide a key-value pair for each used language.
-    # (the same way you would do with a (translatable) setting.)
-    # list of icons: http://fortawesome.github.io/Font-Awesome/cheatsheet/
-    NAVIGATION_LINKS = {
-        DEFAULT_LANG: (
-            ('/index.html', 'Home', 'icon-home'),
-            ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-            ('/categories/index.html', 'Tags', 'icon-tags'),
-            ('/rss.xml', 'RSS', 'icon-rss'),
-            ('https://laurentperrinet.github.io', 'About my research', 'icon-user'),
-            ('https://twitter.com/laurentperrinet', 'Twitter', 'icon-twitter'),
-            ('https://github.com/laurentperrinet', 'Github', 'icon-github'),
-        )
-    }
-else:
-    NAVIGATION_LINKS = {
-        DEFAULT_LANG: (
-            ('/index.html', 'Home'),#,, 'icon-home'),
-            ('/archive.html', 'Archives'),#,, 'icon-folder-open-alt'),
-            ('/categories/index.html', 'Tags'),#,, 'icon-tags'),
-            ('/rss.xml', 'RSS'),#, 'icon-rss'),
-            ('http://laurentperrinet.github.io', 'About my research'),#,,, 'icon-user'),
-            ('https://twitter.com/laurentperrinet', 'Twitter'),#,, 'icon-twitter'),
-            ('https://github.com/laurentperrinet', 'Github'),#,, 'icon-github'),
-        )
-    }
-
 # Theme configuration. Fully theme-dependent. (translatable)
-# Examples below are for bootblog4.
+# Samples for bootblog4 (enabled) and bootstrap4 (commented) follow.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
 #                     featured_large_image_on_mobile featured_strip_html sidebar
-
-#
-# https://getnikola.com/handbook.html#featured-posts
-#
 # bootstrap4 supports: navbar_light (defaults to False)
+#                      navbar_custom_bg (defaults to '')
+
+# Config for bootblog4:
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
@@ -197,6 +199,18 @@ THEME_CONFIG = {
         'sidebar': ''
     }
 }
+# Config for bootstrap4:
+# THEME_CONFIG = {
+#     DEFAULT_LANG: {
+#         # Use a light navbar with dark text. Defaults to False.
+#         'navbar_light': False,
+#         # Use a custom navbar color. If unset, 'navbar_light' sets text +
+#         # background color. If set, navbar_light controls only background
+#         # color. Supported values: bg-dark, bg-light, bg-primary, bg-secondary,
+#         # bg-success, bg-danger, bg-warning, bg-info, bg-white, bg-transparent.
+#         'navbar_custom_bg': '',
+#     }
+# }
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
@@ -232,29 +246,19 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
-# POSTS = (
-#          ("posts/*.ipynb", "posts", "post.tmpl"),
-#          ("posts/*.txt", "posts", "post.tmpl"),
-#          ("posts/*.md", "posts", "post.tmpl"),
-#          ("posts/*.rst", "posts", "post.tmpl"),
-#          ("posts/*.html", "posts", "post.tmpl"),
-#          )
-# HACK : remove compilation of RST files:
 POSTS = (
-         ("posts/*.ipynb", "posts", "post.tmpl"),
-         ("posts/*.txt", "posts", "post.tmpl"),
-         ("posts/*.md", "posts", "post.tmpl"),
-         ("posts/*.html", "posts", "post.tmpl"),
-         )
+    ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.html", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
+)
 PAGES = (
-         ("stories/*.ipynb", "stories", "story.tmpl"),
-         ("stories/*.txt", "stories", "story.tmpl"),
-         ("stories/*.txt", "stories", "story.tmpl"),
-         ("stories/*.md", "stories", "story.tmpl"),
-         ("stories/*.html", "stories", "story.tmpl"),
-         )
-
-WRITE_TAG_CLOUD = True
+    ("pages/*.rst", "pages", "page.tmpl"),
+    ("pages/*.md", "pages", "page.tmpl"),
+    ("pages/*.txt", "pages", "page.tmpl"),
+    ("pages/*.html", "pages", "page.tmpl"),
+)
 
 
 # Below this point, everything is optional
@@ -274,19 +278,22 @@ TIMEZONE = "Europe/Paris"
 # FORCE_ISO8601 = False
 
 # Date format used to display post dates. (translatable)
-# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
+# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time-1/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-# DATE_FORMAT = 'YYYY-MM-dd HH:mm'
+# DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 
 # Date format used to display post dates, if local dates are used. (translatable)
-# Used by moment.js: https://momentjs.com/docs/#/displaying/format/
-# JS_DATE_FORMAT = 'YYYY-MM-DD HH:mm'
+# Used by Luxon: https://moment.github.io/luxon/docs/manual/formatting
+# Example for presets: {'preset': True, 'format': 'DATE_FULL'}
+# LUXON_DATE_FORMAT = {
+#     DEFAULT_LANG: {'preset': False, 'format': 'yyyy-MM-dd HH:mm'},
+# }
 
 # Date fanciness.
 #
-# 0 = using DATE_FORMAT and TIMEZONE
-# 1 = using JS_DATE_FORMAT and local user time (via moment.js)
-# 2 = using a string like “2 days ago”
+# 0 = using DATE_FORMAT and TIMEZONE (without JS)
+# 1 = using LUXON_DATE_FORMAT and local user time (JS, using Luxon)
+# 2 = using a string like “2 days ago” (JS, using Luxon)
 #
 # Your theme must support it, Bootstrap already does.
 # DATE_FANCINESS = 0
@@ -317,27 +324,27 @@ LISTINGS_FOLDERS = {'listings': 'listings'}
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile',),
-    "txt2tags": ('.t2t',),
-    "bbcode": ('.bb',),
-    "wiki": ('.wiki',),
-    "ipynb": ('.ipynb',),
-    "html": ('.html', '.htm'),
+    "rest": ['.rst', '.txt'],
+    "markdown": ['.md', '.mdown', '.markdown'],
+    "textile": ['.textile'],
+    "txt2tags": ['.t2t'],
+    "bbcode": ['.bb'],
+    "wiki": ['.wiki'],
+    "ipynb": ['.ipynb'],
+    "html": ['.html', '.htm'],
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php',),
+    "php": ['.php'],
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
-    # "pandoc": ('.rst', '.md', '.txt'),
+    # "pandoc": ['.rst', '.md', '.txt'],
 }
 
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
-# config. See: http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
+# config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion-enabled
 # REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
@@ -371,8 +378,18 @@ COMPILERS = {
 # The URL may be relative to the site root.
 # LOGO_URL = ''
 
+# When linking posts to social media, Nikola provides Open Graph metadata
+# which is used to show a nice preview. This includes an image preview
+# taken from the post's previewimage metadata field.
+# This option lets you use an image to be used if the post doesn't have it.
+# The default is None, valid values are URLs or output paths like
+# "/images/foo.jpg"
+# DEFAULT_PREVIEW_IMAGE = None
+
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
+# Note: if your logo is a SVG image, and you set SHOW_BLOG_TITLE = False,
+# you should explicitly set a height for #logo in CSS.
 # SHOW_BLOG_TITLE = True
 
 # Paths for different autogenerated bits. These are combined with the
@@ -383,7 +400,7 @@ COMPILERS = {
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
 # (translatable)
-TAG_PATH = "categories"
+# TAG_PATH = "categories"
 
 # By default, the list of tags is stored in
 #     output / TRANSLATION[lang] / TAG_PATH / index.html
@@ -400,6 +417,7 @@ TAG_PATH = "categories"
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the tag list or index page’s title.
+# (translatable)
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -408,6 +426,7 @@ TAG_PATH = "categories"
 # }
 
 # Set special titles for tag pages. The default is "Posts about TAG".
+# (translatable)
 # TAG_TITLES = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-posts about blogging",
@@ -473,6 +492,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # Set descriptions for category pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the category list or index page’s title.
+# (translatable)
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -481,6 +501,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # }
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
+# (translatable)
 # CATEGORY_TITLES = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-posts about blogging",
@@ -561,9 +582,12 @@ HIDDEN_CATEGORIES = []
 
 
 # If you do not want to display an author publicly, you can mark it as hidden.
-# The author will not be displayed on the author list page and posts.
-# Tag pages will still be generated.
+# The author will not be displayed on the author list page.
+# Author pages and links to them will still be generated.
 HIDDEN_AUTHORS = ['Guest']
+
+# Allow multiple, comma-separated authors for a post? (Requires theme support, present in built-in themes)
+# MULTIPLE_AUTHORS_PER_POST = False
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
@@ -579,7 +603,7 @@ FRONT_INDEX_HEADER = {
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-CREATE_SINGLE_ARCHIVE = True
+# CREATE_SINGLE_ARCHIVE = False
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
@@ -650,7 +674,7 @@ REDIRECTIONS = []
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
-# "rsync -rav --delete output/ joe@my.site:/srv/www/site"
+# "rsync -rav --delete --delete-after output/ joe@my.site:/srv/www/site"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola plugin -i ping`).  Or run `nikola check -l`.
 # You may also want to use github_deploy (see below).
@@ -776,7 +800,16 @@ OUTPUT_FOLDER = 'docs'
 # MAX_IMAGE_SIZE = 1280
 # USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
-#
+
+# Use a thumbnail (defined by ".. previewimage:" in the gallery's index) in
+# list of galleries for each gallery
+GALLERIES_USE_THUMBNAIL = False
+
+# Image to use as thumbnail for those galleries that don't have one
+# None: show a grey square
+# '/url/to/file': show the image in that url
+GALLERIES_DEFAULT_THUMBNAIL = None
+
 # If set to False, it will sort by filename instead. Defaults to True
 # GALLERY_SORT_BY_DATE = True
 
@@ -838,6 +871,7 @@ OUTPUT_FOLDER = 'docs'
 # options, but will have to be referenced manually to be visible on the site
 # (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
+# Panoramas (aspect ratio over 3:1) get 4x larger thumbnails due to scaling issues.
 
 IMAGE_FOLDERS = {'images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
@@ -914,13 +948,13 @@ IMAGE_FOLDERS = {'images': 'images'}
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-FAVICONS = {
-     ("icon", "favicon.ico", "16x16"),
+# FAVICONS = (
+#     ("icon", "/favicon.ico", "16x16"),
 #     ("icon", "/icon_128x128.png", "128x128"),
-}
+# )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-INDEX_TEASERS = True
+# INDEX_TEASERS = False
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -960,9 +994,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = """Contents &copy; {date} <a href="mailto:{email}">{author}</a> -
-Powered by <a href="http://getnikola.com">Nikola</a>.<br>
-{license}"""
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -997,7 +1029,7 @@ RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
-#   disqus, facebook, intensedebate, isso, muut, commento
+#   disqus, facebook, intensedebate, isso, muut, commento, utterances
 # You can leave this option blank to disable comments.
 COMMENT_SYSTEM = ""
 # And you also need to add your COMMENT_SYSTEM_ID which
@@ -1052,12 +1084,12 @@ DEPLOY_FUTURE = True
 DEPLOY_DRAFTS = False
 
 # Allows scheduling of posts using the rule specified here (new_post -s)
-# Specify an iCal Recurrence Rule: http://www.kanzaki.com/docs/ical/rrule.html
+# Specify an iCal Recurrence Rule: https://www.kanzaki.com/docs/ical/rrule.html
 # SCHEDULE_RULE = ''
 # If True, use the scheduling rule to all posts (not pages!) by default
 # SCHEDULE_ALL = False
 
-# Do you want a add a Mathjax config file?
+# Do you want to add a Mathjax config file?
 # MATHJAX_CONFIG = ""
 
 # If you want support for the $.$ syntax (which may conflict with running
@@ -1070,46 +1102,9 @@ DEPLOY_DRAFTS = False
 #         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
 #         processEscapes: true
 #     },
-#     "HTML-CSS": { availableFonts: ["TeX"] }
-#   });
-# </script>
-# """
-MATHJAX_CONFIG = """
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ]
-    },
-    displayAlign: 'center', // Change this to 'center' to center equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script>
-"""
-# <script type="text/x-mathjax-config">
-# MathJax.Hub.Config({
-#   tex2jax: {
-#     inlineMath: [['$','$'], ['\\(','\\)']],
-#     displayMath: [['$$','$$'], ['\[','\]']],
-#     processEscapes: true,
-#     processEnvironments: true,
-#     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-#     TeX: { equationNumbers: { autoNumber: "AMS" },
-#          extensions: ["AMSmath.js", "AMSsymbols.js"] }
-#   }
-# });
-# </script>
-#
-# <script type="text/x-mathjax-config">
-#   MathJax.Hub.Queue(function() {
-#     // Fix <code> tags after MathJax finishes running. This is a
-#     // hack to overcome a shortcoming of Markdown. Discussion at
-#     // https://github.com/mojombo/jekyll/issues/199
-#     var all = MathJax.Hub.getAllJax(), i;
-#     for(i = 0; i < all.length; i += 1) {
-#         all[i].SourceElement().parentNode.className += ' has-jax';
+#     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+#     "HTML-CSS": {
+#         styles: {'.MathJax_Display': {"margin": 0}}
 #     }
 # });
 # </script>
@@ -1147,13 +1142,22 @@ MathJax.Hub.Config({
 MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
-# Default is {} (no config at all)
-# MARKDOWN_EXTENSION_CONFIGS = {}
+# Default is {DEFAULT_LANG: {}} (no config at all)
+# (translatable)
+# MARKDOWN_EXTENSION_CONFIGS = {DEFAULT_LANG: {}}
 
 
-# Extra options to pass to the pandoc command.
-# by default, it's empty, is a list of strings, for example
-# ['-F', 'pandoc-citeproc', '--bibliography=/Users/foo/references.bib']
+# Extra options to pass to the pandoc command, empty by default.
+# It can be a list of strings or a dict (keys are file extensions).
+# Example for a list of strings (used for all extensions):
+# PANDOC_OPTIONS = ['-F', 'pandoc-citeproc', '--bibliography=/Users/foo/references.bib']
+# Example for a dict, where the keys are the extensions in COMPILERS['pandoc']:
+# COMPILERS['pandoc'] = ['.rst', '.md', '.txt']
+# PANDOC_OPTIONS = {
+#     '.rst': ['-t', 'rst'],
+#     '.md': ['-t', 'markdown'],
+#     '.txt': ['-t', 'markdown-raw_html'],
+# }
 # Pandoc does not demote headers by default.  To enable this, you can use, for example
 # ['--base-header-level=2']
 # PANDOC_OPTIONS = []
@@ -1223,44 +1227,36 @@ INDEX_DISPLAY_POST_COUNT = 200
 #
 # This search form works for any site and looks good in the "site" theme where
 # it appears on the navigation bar:
-# SEARCH_FORM = """
-#         <!-- Google search box -->
-#         <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-#         <script type="text/javascript">
-#           google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
-#           google.setOnLoadCallback(function() {
-#             var customSearchControl = new google.search.CustomSearchControl('009211932381690986726:eoihg1rgssa');
-#             customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
-#             customSearchControl.draw('cse');
-#           }, true);
-#         </script>
-# """
 #
-SEARCH_FORM = """
-<!-- Custom search -->
-<form method="get" id="search" action="//duckduckgo.com/"
- class="navbar-form pull-left">
-<input type="hidden" name="sites" value="%s"/>
-<input type="hidden" name="k8" value="#444444"/>
-<input type="hidden" name="k9" value="#D51920"/>
-<input type="hidden" name="kt" value="h"/>
-<input type="text" name="q" maxlength="255"
- placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
-<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-</form>
-<!-- End of custom search -->
-""" % SITE_URL
-# SEARCH_FOR = ''
-#
-# If you prefer a google search form, here's an example that should just work:
 # SEARCH_FORM = """
-# <!-- Custom search with google-->
-# <form id="search" action="//www.google.com/search" method="get" class="navbar-form pull-left">
-# <input type="hidden" name="q" value="site:%s" />
-# <input type="text" name="q" maxlength="255" results="0" placeholder="Search"/>
+# <!-- DuckDuckGo custom search -->
+# <form method="get" id="search" action="https://duckduckgo.com/"
+#  class="navbar-form pull-left">
+# <input type="hidden" name="sites" value="%s">
+# <input type="hidden" name="k8" value="#444444">
+# <input type="hidden" name="k9" value="#D51920">
+# <input type="hidden" name="kt" value="h">
+# <input type="text" name="q" maxlength="255"
+#  placeholder="Search&hellip;" class="span2" style="margin-top: 4px;">
+# <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
 # </form>
 # <!-- End of custom search -->
-#""" % SITE_URL
+# """ % SITE_URL
+#
+# If you prefer a Google search form, here's an example that should just work:
+# SEARCH_FORM = """
+# <!-- Google custom search -->
+# <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+# <div class="form-group">
+# <input type="text" name="q" class="form-control" placeholder="Search">
+# </div>
+# <button type="submit" class="btn btn-primary">
+# 	<span class="glyphicon glyphicon-search"></span>
+# </button>
+# <input type="hidden" name="sitesearch" value="%s">
+# </form>
+# <!-- End of custom search -->
+# """ % SITE_URL
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
@@ -1283,44 +1279,7 @@ SEARCH_FORM = """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-BODY_END = """
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-140381649-1', {});
-
-
-  document.addEventListener('click', onClickCallback, false);
-</script>
-
-"""
+# BODY_END = ""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
@@ -1372,6 +1331,10 @@ USE_TAG_METADATA = False
 #         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
 #      }
 # }
+
+# Add any post types here that you want to be displayed without a title.
+# If your theme supports it, the titles will not be shown.
+# TYPES_TO_HIDE_TITLE = []
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
@@ -1460,6 +1423,7 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
 # Compiler to process LESS files.
 LESS_COMPILER = 'lessc'
 # A list of options to pass to the LESS compiler.

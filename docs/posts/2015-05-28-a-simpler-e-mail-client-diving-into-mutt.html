@@ -12,10 +12,9 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2015-05-28-a-simpler-e-mail-client-diving-into-mutt.html">
-<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html" title="A hitchhiker guide to Matching Pursuit" type="text/html">
-<link rel="next" href="2015-07-02_smooth-transition-between-mcs.html" title="Smooth transition between MCs" type="text/html">
+<link rel="next" href="2015-06-12-homebrew-cask-updating-mactex.html" title="homebrew cask : updating mactex" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="A simpler e-mail client: Diving into mutt">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2015-05-28-a-simpler-e-mail-client-diving-into-mutt.html">
@@ -44,12 +43,6 @@ brew install off">
             </button>
             <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
                 
-<!-- Custom search -->
-<form method="get" id="search" action="//duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="https://laurentperrinet.github.io/sciblog/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
-</form>
-<!-- End of custom search -->
-
             </div>
         </div>
           <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
@@ -87,7 +80,7 @@ brew install off">
 <a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
                 </li>
 <li class="nav-item">
-<a href="https://twitter.com/laurentperrinet" class="nav-link">Twitter</a>
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
                 </li>
 <li class="nav-item">
 <a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
@@ -229,11 +222,11 @@ Attachment List</p>
                 <a href="2015-05-22-a-hitchhiker-guide-to-matching-pursuit.html" rel="prev" title="A hitchhiker guide to Matching Pursuit">Previous post</a>
             </li>
             <li class="next">
-                <a href="2015-07-02_smooth-transition-between-mcs.html" rel="next" title="Smooth transition between MCs">Next post</a>
+                <a href="2015-06-12-homebrew-cask-updating-mactex.html" rel="next" title="homebrew cask : updating mactex">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer">
-            Contents © 2023 <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> -
-Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+            Contents © 2023         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
             
             
@@ -246,39 +239,6 @@ Powered by <a href="http://getnikola.com">Nikola</a>.<br><a rel="license" href="
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
-    </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-140381649-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-140381649-1', {});
-
-
-  document.addEventListener('click', onClickCallback, false);
-</script>
+    </script>
 </body>
 </html>
