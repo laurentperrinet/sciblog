@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2023-12-31T08:21:00Z</lastmod>
+  <lastmod>2023-12-31T08:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/2005/</loc>
@@ -87,7 +87,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -123,7 +123,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.html</loc>
@@ -163,7 +163,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/deep-learning.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/demo.html</loc>
@@ -247,7 +247,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/machine-learning.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.html</loc>
@@ -331,7 +331,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -387,15 +387,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.html</loc>
@@ -499,7 +499,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.html</loc>
-  <lastmod>2023-12-31T08:26:00Z</lastmod>
+  <lastmod>2023-12-31T08:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.html</loc>
@@ -1775,7 +1775,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</loc>

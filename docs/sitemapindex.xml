@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/brainscales.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/deep-learning.xml</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/demo.xml</loc>
@@ -159,7 +159,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/machine-learning.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/macos.xml</loc>
@@ -243,7 +243,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.xml</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.xml</loc>
@@ -299,15 +299,15 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2023-12-31T08:27:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.xml</loc>
@@ -407,7 +407,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.xml</loc>
@@ -439,10 +439,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2023-12-31T08:28:00Z</lastmod>
+  <lastmod>2023-12-31T08:53:00Z</lastmod>
  </sitemap>
 </sitemapindex>
