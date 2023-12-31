@@ -12,9 +12,10 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-02-28-batch-removing-files-on-a-ftp-server.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2014-02-15-converting-moinmoin-pages-to-nikola.html" title="Converting moinmoin pages to nikola" type="text/html">
-<link rel="next" href="2014-05-15-vim-moving-around.rst.html" title="Vim commands for moving around" type="text/html">
+<link rel="next" href="2014-06-18-stage-m1-chloe-pasturel-week-1.html" title="[Stage M1] Chloé Pasturel : week 1" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Batch removing files on a FTP server">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-02-28-batch-removing-files-on-a-ftp-server.html">
@@ -65,13 +66,13 @@ In [5]:">
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -278,7 +279,7 @@ In [5]:">
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"</span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
 <span class="s2">open invibe;</span>
 <span class="s2">ls -l moin/data/pages/SciBlog(2f)2013(2d)11(2d)04</span>
 <span class="s2">"</span>
@@ -318,7 +319,7 @@ drwxrwx---    2 81424      users               5 Nov 12 10:20 revisions
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"open invibe; ls moin/data/pages/SciBlog(2f)2010(2d)12(2d)20 ;"</span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; ls moin/data/pages/SciBlog(2f)2010(2d)12(2d)20 ;"</span>
 </pre></div>
 </div>
 </div>
@@ -506,7 +507,7 @@ rm -fr SciBlog(2f)2014(2d)01(2d)01
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span>%%bash
-lftp -c <span class="s2">"open invibe; cd moin/data/pages/ ; </span>
+lftp<span class="w"> </span>-c<span class="w"> </span><span class="s2">"open invibe; cd moin/data/pages/ ; </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)20 </span>
 <span class="s2">rm -fr SciBlog(2f)2006(2d)11(2d)30 </span>
 <span class="s2">rm -fr SciBlog(2f)2007(2d)10(2d)22 </span>
@@ -645,7 +646,7 @@ lftp -c <span class="s2">"open invibe; cd moin/data/pages/ ; </span>
                 <a href="2014-02-15-converting-moinmoin-pages-to-nikola.html" rel="prev" title="Converting moinmoin pages to nikola">Previous post</a>
             </li>
             <li class="next">
-                <a href="2014-05-15-vim-moving-around.rst.html" rel="next" title="Vim commands for moving around">Next post</a>
+                <a href="2014-06-18-stage-m1-chloe-pasturel-week-1.html" rel="next" title="[Stage M1] Chloé Pasturel : week 1">Next post</a>
             </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});

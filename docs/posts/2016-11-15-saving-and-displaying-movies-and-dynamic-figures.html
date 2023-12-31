@@ -12,8 +12,9 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2016-11-15-saving-and-displaying-movies-and-dynamic-figures.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
-<link rel="prev" href="2016-11-04-homebrew-cask-creating-a-cask.html" title="homebrew cask : creating a new cask" type="text/html">
+<link rel="prev" href="2016-10-01-a-p-pie-named-monte-carlo.html" title="A pi-pie named Monte Carlo" type="text/html">
 <link rel="next" href="2016-11-17-finding-extremal-values-in-a-nd-array.html" title="Finding extremal values in a nd-array" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Saving and displaying movies and dynamic figures">
@@ -71,13 +72,13 @@ HTML('&lt;center&gt;&lt;video controls autoplay loop src">
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -345,7 +346,7 @@ save(filename, writer=None, fps=None, dpi=None, codec=None, bitrate=None, extra_
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ffprobe ../files/2016-11-15_noise.mp4
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ffprobe<span class="w"> </span>../files/2016-11-15_noise.mp4
 </pre></div>
 </div>
 </div>
@@ -400,7 +401,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../files/2016-11-15_noise.mp4':
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip3 install -U numpngw
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>numpngw
 </pre></div>
 </div>
 </div>
@@ -492,7 +493,7 @@ Requirement already up-to-date: numpy&gt;=1.6.0 in /usr/local/lib/python3.5/site
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3 -m pip install noise
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>noise
 </pre></div>
 </div>
 </div>
@@ -522,7 +523,7 @@ Successfully installed noise-1.2.2
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3 -m pip install tqdm
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>tqdm
 </pre></div>
 </div>
 </div>
@@ -653,7 +654,7 @@ Successfully installed noise-1.2.2
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="2016-11-04-homebrew-cask-creating-a-cask.html" rel="prev" title="homebrew cask : creating a new cask">Previous post</a>
+                <a href="2016-10-01-a-p-pie-named-monte-carlo.html" rel="prev" title="A pi-pie named Monte Carlo">Previous post</a>
             </li>
             <li class="next">
                 <a href="2016-11-17-finding-extremal-values-in-a-nd-array.html" rel="next" title="Finding extremal values in a nd-array">Next post</a>

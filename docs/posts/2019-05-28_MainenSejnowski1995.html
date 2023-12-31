@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2019-05-28_MainenSejnowski1995.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2019-01-30__smooth-transition-between-mcs.html" title="Generating textures with different complexities" type="text/html">
 <link rel="next" href="2019-09-11_video-abstract-vision.html" title='Video abstract for "An Adaptive Homeostatic Algorithm for the Unsupervised Learning of Visual Features"' type="text/html">
@@ -60,13 +61,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -159,8 +160,8 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>QUESTION: écrire un résumé rapide du papier (max 5 lignes) et pourquoi ce résultat est <em>a priori</em> surprenant:</p>
-<p>REPONSE: Le but de l’étude était de déterminer directement la précision temporelle avec laquelle les neurones corticaux sont capables d'encoder un stimulus dans un train de pics. Lors d'un examen de la fiabilité de la génération de pics à l'aide d'enregistrements de neurones dans des tranches néocorticales de rats.
-Dans cet article les auteurs ont étudié la réponse d'un neurone de la couche 5 du cortex en fonction de deux types de stimuli. Le résultat principal semble <em>a priori</em> surprenant car on s'attendrait à obtenir une réponse reproductible pour un signal continu et une réponse non reproductible pour une sigal bruité, or, cet article semble démontrer l'inverse.</p>
+<p>REPONSE: Le but de l’étude était de déterminer directement la précision temporelle avec laquelle les neurones corticaux sont capables d'encoder un stimulus dans un train de pics. Lors d'un examen de la fiabilité de la génération de pics à l'aide d'enregistrements de neurones dans des tranches néocorticales de rats. 
+ Dans cet article les auteurs ont étudié la réponse d'un neurone de la couche 5 du cortex en fonction de deux types de stimuli. Le résultat principal semble <em>a priori</em> surprenant car on s'attendrait à obtenir une réponse reproductible pour un signal continu et une réponse non reproductible pour une sigal bruité, or, cet article semble démontrer l'inverse.</p>
 </div>
 </div>
 </div>
@@ -333,10 +334,9 @@ Dans cet article les auteurs ont étudié la réponse d'un neurone de la couche 
 <h3 id="un-mod%C3%A8le-simple-de-neurone-int%C3%A8gre-et-tire-leaky_IF">un modèle simple de neurone intègre-et-tire <code>leaky_IF</code><a class="anchor-link" href="2019-05-28_MainenSejnowski1995.html#un-mod%C3%A8le-simple-de-neurone-int%C3%A8gre-et-tire-leaky_IF">¶</a>
 </h3>
 <p>Commençons avec cet équation du potentiel membranaire:</p>
-<p>$$
+$$
 \tau \cdot \frac{dV}{dt} = -(V - V_{rest}) + R*I(t)
-$$</p>
-<p>avec émission d'un "spike" si $V &gt; V_{threshold}$, et alors $V= V_{reset}$:</p>
+$$<p>avec émission d'un "spike" si $V &gt; V_{threshold}$, et alors $V= V_{reset}$:</p>
 </div>
 </div>
 </div>

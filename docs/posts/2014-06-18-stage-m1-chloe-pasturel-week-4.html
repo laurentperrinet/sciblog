@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-06-18-stage-m1-chloe-pasturel-week-4.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2014-06-18-stage-m1-chloe-pasturel-week-3.html" title="[Stage M1] Chloé Pasturel : week 3" type="text/html">
 <link rel="next" href="2014-06-18-stage-m1-chloe-pasturel-week-5.html" title="[Stage M1] Chloé Pasturel : week 5" type="text/html">
@@ -79,13 +80,13 @@ fig_">
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -1356,9 +1357,7 @@ fig_">
 <p>I = les stimili</p>
 <p>G = recepteur</p>
 <p>F est la fonction de fourier</p>
-<p>$$ I = F^{-1}(\varepsilon \cdot e^{i \phi})$$
-$$ G = F^{-1}(\varepsilon^{,})$$</p>
-<p>Réponse linéaire neuronale :
+$$ I = F^{-1}(\varepsilon \cdot e^{i \phi})$$$$ G = F^{-1}(\varepsilon^{,})$$<p>Réponse linéaire neuronale :
 $$ I \circ G = F^{-1}(F(I) \cdot F(G)) = F^{-1}(\varepsilon^{,} \cdot \varepsilon \cdot e^{i \phi}) $$</p>
 <p>d'après le théorème de Parseval :
 $$ (f)^{2} = (F(f))^{2} $$</p>
@@ -1372,15 +1371,10 @@ $$ (f)^{2} = (F(f))^{2} $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Multiplication de deux fonctions gaussiennes $\varepsilon$ et $\gamma$ donne une gaussienne :</p>
-<p>$$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(x-m_{1})^{2}} {2\sigma_{1}^{2}}}
+$$ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(x-m_{1})^{2}} {2\sigma_{1}^{2}}}
 ~~et~~
-\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(x-m_2)^{2}} {2\sigma_{2}^{2}}} $$</p>
-<p>$$ (\varepsilon \cdot \gamma) (m) = \frac {G} {\sigma \sqrt{2\pi}} \cdot e^{\frac{-(m-m)^{2}} {2\sigma^{2}}} $$</p>
-<p>$$ \sigma^{-2} = \sigma_{1}^{-2} + \sigma_{2}^-{2} $$
-$$ m \sigma^{-2} = m_{1} \sigma_{1}^{-2} + m_{2} \sigma_{2}^{-2} $$</p>
-<p>en particulier, la valeur à la moyenne $m$ donne:</p>
-<p>$$ (\varepsilon \cdot \gamma) (m) = \varepsilon(m) \cdot \gamma(m) = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$$</p>
-<p>donc $~\frac{G}{\sigma \sqrt{2\pi}} = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$ car $~e^{\frac{-(m-m)^{2}}{2\sigma^{2}}} = e^{0} = 1 $</p>
+\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(x-m_2)^{2}} {2\sigma_{2}^{2}}} $$$$ (\varepsilon \cdot \gamma) (m) = \frac {G} {\sigma \sqrt{2\pi}} \cdot e^{\frac{-(m-m)^{2}} {2\sigma^{2}}} $$$$ \sigma^{-2} = \sigma_{1}^{-2} + \sigma_{2}^-{2} $$$$ m \sigma^{-2} = m_{1} \sigma_{1}^{-2} + m_{2} \sigma_{2}^{-2} $$<p>en particulier, la valeur à la moyenne $m$ donne:</p>
+$$ (\varepsilon \cdot \gamma) (m) = \varepsilon(m) \cdot \gamma(m) = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$$<p>donc $~\frac{G}{\sigma \sqrt{2\pi}} = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot e^{- \frac{1}{2} \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$ car $~e^{\frac{-(m-m)^{2}}{2\sigma^{2}}} = e^{0} = 1 $</p>
 <p>Le gain $~\frac{G}{\sigma \sqrt{2\pi}}$ est donc modulé par la différence entre les deux moyennes et leurs $\sigma$</p>
 </div>
 </div>

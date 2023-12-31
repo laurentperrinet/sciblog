@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2020-04-08-fitting-a-psychometric-curve-using-pytorch.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2020-01-08-changing-the-global-phase-of-a-motion-cloud.html" title="Changing the global phase of a Motion Cloud" type="text/html">
 <link rel="next" href="2020-04-16-creating-an-hexagonal-grid.html" title="Creating an hexagonal grid" type="text/html">
@@ -63,13 +64,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -816,10 +817,9 @@ Training sklearn loss = 0.424
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The units for these losses are <em>bits</em>. Indeed, they represent some value of information about the binary data "$d$" and the continuous psychometric curve "$p$". This information is equal to $\log_2(p)$ if $d=1$ and $\log_2(1-p)$ if $d=0$. Putting things together, we obtain the <a href="https://pytorch.org/docs/stable/nn.html#bceloss">Binary Cross Entropy</a> and if we index datapoints by $k$:</p>
-<p>$$
+$$
 \mathcal{L} = \sum_k d_k \cdot \log_2(p_k) + (1-d_k) \cdot \log_2(1-p_k)
-$$</p>
-<p>You can see that this measure is a form of <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross_entropy</a>, adapted to binary datapoints.</p>
+$$<p>You can see that this measure is a form of <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross_entropy</a>, adapted to binary datapoints.</p>
 </div>
 </div>
 </div>
@@ -855,7 +855,7 @@ $$</p>
     <span class="k">return</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing loss = </span><span class="si">{</span><span class="n">loss_torch</span><span class="p">(</span><span class="n">logistic_model</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing loss = </span><span class="si">{</span><span class="n">loss_torch</span><span class="p">(</span><span class="n">logistic_model</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -883,7 +883,7 @@ $$</p>
     <span class="k">return</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs_</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing sklearn loss = </span><span class="si">{</span><span class="n">loss_sklearn</span><span class="p">(</span><span class="n">logistic_model_sk</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing sklearn loss = </span><span class="si">{</span><span class="n">loss_sklearn</span><span class="p">(</span><span class="n">logistic_model_sk</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -920,7 +920,7 @@ $$</p>
     <span class="k">return</span> <span class="n">criterion</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing true loss = </span><span class="si">{</span><span class="n">loss_true</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing true loss = </span><span class="si">{</span><span class="n">loss_true</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -958,7 +958,7 @@ $$</p>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">"""Print the runtime of the decorated function"""</span>
+<span class="w">    </span><span class="sd">"""Print the runtime of the decorated function"""</span>
     <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">wrapper_timer</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>    <span class="c1"># 1</span>
@@ -1034,7 +1034,7 @@ $$</p>
             <span class="k">if</span> <span class="n">do_SKL</span><span class="p">:</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">i_var</span><span class="p">,</span> <span class="n">i_CV</span><span class="p">]</span> <span class="o">=</span> <span class="n">loss_SKL</span>
             <span class="n">results</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="n">i_var</span><span class="p">,</span> <span class="n">i_CV</span><span class="p">]</span> <span class="o">=</span> <span class="n">toc</span><span class="o">-</span><span class="n">tic</span>
             
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">var_</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i_var</span><span class="p">,</span> <span class="p">:])</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, loss_P: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i_var</span><span class="p">,</span> <span class="p">:])</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">var_</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i_var</span><span class="p">,</span><span class="w"> </span><span class="p">:])</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, loss_P: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i_var</span><span class="p">,</span><span class="w"> </span><span class="p">:])</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">results</span>
             

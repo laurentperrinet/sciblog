@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2016-06-25-compiling-notebooks-into-a-report.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2016-06-01-compiling-and-using-pynn-%2B-nest-%2B-python3.html" title="Compiling and using pyNN + NEST + python3" type="text/html">
 <link rel="next" href="2016-07-14_static-motion-clouds.html" title="Static Motion Clouds" type="text/html">
@@ -59,13 +60,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -129,9 +130,9 @@
 <li>globing a set of relevant notebooks,</li>
 <li>striping out what is not important and keep the important stuff,</li>
 <li>concatenate all of these in one notebook,</li>
-<li>convert that to a PDF using a latex template
-This is summarized in this script:</li>
+<li>convert that to a PDF using a latex template</li>
 </ul>
+<p>This is summarized in this script:</p>
 </div>
 </div>
 </div>
@@ -154,7 +155,7 @@ This is summarized in this script:</li>
         <span class="n">nb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
         
 <span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Keeps only the cells :</span>
 <span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
 <span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
@@ -445,9 +446,9 @@ This is summarized in this script:</li>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp ../figs/troislogos.png /tmp/troislogos.png
-<span class="o">!</span>cp ../figs/ring_model.png /tmp/ring_model.png
-<span class="o">!</span>cp ../figs/future_model.png /tmp/future_model.png
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>../figs/troislogos.png<span class="w"> </span>/tmp/troislogos.png
+<span class="o">!</span>cp<span class="w"> </span>../figs/ring_model.png<span class="w"> </span>/tmp/ring_model.png
+<span class="o">!</span>cp<span class="w"> </span>../figs/future_model.png<span class="w"> </span>/tmp/future_model.png
 </pre></div>
 </div>
 </div>
@@ -475,7 +476,9 @@ This is summarized in this script:</li>
 <h4 id="including-references">including references<a class="anchor-link" href="2016-06-25-compiling-notebooks-into-a-report.html#including-references">¶</a>
 </h4>
 <p>Moreover, it is possible to include references and have that included using BibTeX. In MarkDown, it has to be fomatted like</p>
-<pre><code>&lt;cite data-cite="Brunel2000"&gt;(Brunel, 2000)&lt;/cite&gt;</code></pre>
+<pre><code>&lt;cite data-cite="Brunel2000"&gt;(Brunel, 2000)&lt;/cite&gt;
+
+</code></pre>
 <p>To get somthing like <cite data-cite="Brunel2000">(Brunel, 2000)</cite>. This involves of course creating a bibliography file:</p>
 </div>
 </div>
@@ -1142,7 +1145,7 @@ fig.tight_layout()
     <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Keeps only the cells :</span>
 <span class="sd">    - starting with the first to begin with a section (that is with a ``#``)</span>
 <span class="sd">    - stoping with the next cell to begin with a section (that is with a ``#``)</span>
@@ -1278,7 +1281,7 @@ fig.tight_layout()
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>open thesis.pdf
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>open<span class="w"> </span>thesis.pdf
 </pre></div>
 </div>
 </div>

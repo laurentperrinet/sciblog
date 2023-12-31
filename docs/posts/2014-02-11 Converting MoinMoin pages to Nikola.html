@@ -12,8 +12,9 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
-<link rel="prev" href="2014-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html" title="SSH says 'Read from socket failed: Operation timed out'" type="text/html">
+<link rel="prev" href="2014-01-14-trying-out-ipython-blogging.html" title="Trying out ipython blogging" type="text/html">
 <link rel="next" href="2014-02-15-converting-moinmoin-pages-to-nikola.html" title="Converting moinmoin pages to nikola" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Converting MoinMoin pages to Nikola">
@@ -66,13 +67,13 @@ Following this post http">
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -117,7 +118,7 @@ Following this post http">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered" id="cell-id=f2053cb2">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -126,7 +127,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=f4d98f96">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -135,7 +136,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=159acded">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -146,7 +147,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=2b4d8d4c">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -156,7 +157,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=bdda6eb5">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -166,7 +167,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=98e43644">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -178,7 +179,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=1e22f03f">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
@@ -191,7 +192,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=036a86b6">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -213,7 +214,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a5deb557">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -223,7 +224,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=ae9c2c57">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -238,7 +239,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=dc66c596">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
@@ -265,12 +266,12 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=3f2b5ee6">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola new_post --title<span class="o">=</span><span class="s2">"05-10-29 craac"</span> --tag<span class="o">=</span><span class="s2">"cnrs, craac"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>new_post<span class="w"> </span>--title<span class="o">=</span><span class="s2">"05-10-29 craac"</span><span class="w"> </span>--tag<span class="o">=</span><span class="s2">"cnrs, craac"</span>
 </pre></div>
 </div>
 </div>
@@ -292,7 +293,7 @@ Scanning posts........done!
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=659c19b2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
@@ -312,7 +313,7 @@ Scanning posts........done!
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=5563fa56">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -326,12 +327,12 @@ Scanning posts........done!
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=33d68a24">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat <span class="s1">'05-10-29-craac.rst'</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat<span class="w"> </span><span class="s1">'05-10-29-craac.rst'</span>
 </pre></div>
 </div>
 </div>
@@ -515,7 +516,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=dbab8ba9">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -524,7 +525,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a5cd00ab">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -534,7 +535,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=4f65279e">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -546,7 +547,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=f86c748b">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -555,7 +556,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=6fff6ac9">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -573,7 +574,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=ebfe4a06">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
@@ -596,7 +597,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=d37214d0">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
@@ -620,17 +621,17 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=c3c78d5f">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
-<span class="s2">.. slug: </span><span class="si">%s</span><span class="s2"></span>
-<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. slug: </span><span class="si">%s</span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
 <span class="s2">.. type: text</span>
-<span class="s2">.. tags: </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">.. tags: </span><span class="si">%s</span>
 
 <span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span>
@@ -792,7 +793,7 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=31a857e1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
@@ -807,7 +808,7 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=2f1bda7d">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -816,13 +817,13 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=b91baa90">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span> ..
-<span class="o">!</span>nikola new_post -f ipynb --title<span class="o">=</span><span class="s2">"14-02-15-converting-moinmoin-pages-to-nikola"</span> --tags<span class="o">=</span><span class="s2">"ipython, nikola, moinmoin"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>..
+<span class="o">!</span>nikola<span class="w"> </span>new_post<span class="w"> </span>-f<span class="w"> </span>ipynb<span class="w"> </span>--title<span class="o">=</span><span class="s2">"14-02-15-converting-moinmoin-pages-to-nikola"</span><span class="w"> </span>--tags<span class="o">=</span><span class="s2">"ipython, nikola, moinmoin"</span>
 </pre></div>
 </div>
 </div>
@@ -853,7 +854,7 @@ Your post's metadata is at:  posts/14-02-15-converting-moinmoin-pages-to-nikola.
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="2014-02-10-ssh-says-read-from-socket-failed-operation-timed-out.html" rel="prev" title="SSH says 'Read from socket failed: Operation timed out'">Previous post</a>
+                <a href="2014-01-14-trying-out-ipython-blogging.html" rel="prev" title="Trying out ipython blogging">Previous post</a>
             </li>
             <li class="next">
                 <a href="2014-02-15-converting-moinmoin-pages-to-nikola.html" rel="next" title="Converting moinmoin pages to nikola">Next post</a>

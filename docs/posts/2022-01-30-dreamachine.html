@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2022-01-30-dreamachine.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2021-12-12-logistic-regression.html" title="Logistic regression" type="text/html">
 <link rel="next" href="2022-02-11-cosyne-reviewer-feedback.html" title="COSYNE reviewer feedback" type="text/html">
@@ -64,13 +65,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -180,10 +181,9 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A simple way to generate a flickering stimulus is to combine two sinusiods going in two opposite directions, following :</p>
-<p>$$
+$$
 \sin(\omega_x \cdot x + \omega_t \cdot v \cdot t) + \sin(\omega_x \cdot x - \omega_t \cdot v \cdot t) = 2\cdot \cos(\omega_x \cdot x) \cdot \cos(\omega_t \cdot v \cdot t)
-$$</p>
-<p>A first solution is to use an existing library for generating band-pass filtered noise, with a parameterization which fits well natural scenes:</p>
+$$<p>A first solution is to use an existing library for generating band-pass filtered noise, with a parameterization which fits well natural scenes:</p>
 </div>
 </div>
 </div>

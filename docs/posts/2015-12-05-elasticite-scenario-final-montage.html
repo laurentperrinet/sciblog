@@ -12,9 +12,10 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2015-12-05-elasticite-scenario-final-montage.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2015-11-29-elasticite-scenario-onde.html" title="élasticité - scénario onde" type="text/html">
-<link rel="next" href="2015-12-08-homebrew-cask-updating-a-cask.html" title="homebrew cask : updating an existing cask" type="text/html">
+<link rel="next" href="2015-12-11-reproducing-olshausens-classical-sparsenet-part-4.html" title="Reproducing Olshausen's classical SparseNet (part 4)" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="élasticité - scénario final montage">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2015-12-05-elasticite-scenario-final-montage.html">
@@ -59,13 +60,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -162,7 +163,7 @@
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -ltrh ../mat/*
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-ltrh<span class="w"> </span>../mat/*
 </pre></div>
 </div>
 </div>
@@ -319,7 +320,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ..
-<span class="o">!</span>rm mat/master.npy
+<span class="o">!</span>rm<span class="w"> </span>mat/master.npy
 <span class="o">%</span><span class="k">run</span>  scenario_line_master.py writer
 <span class="o">%</span><span class="k">cd</span> posts
 </pre></div>
@@ -715,9 +716,9 @@ finished importing scenarii
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span> git add ../mat/master_dimanche.npy ../scenario_line_master_dimanche.py
-<span class="o">!</span>git d *py
-<span class="o">!</span>git s
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>../mat/master_dimanche.npy<span class="w"> </span>../scenario_line_master_dimanche.py
+<span class="o">!</span>git<span class="w"> </span>d<span class="w"> </span>*py
+<span class="o">!</span>git<span class="w"> </span>s
 </pre></div>
 </div>
 </div>
@@ -742,7 +743,7 @@ finished importing scenarii
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -am<span class="s1">' scenario master HACK3R du dimanche '</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="s1">' scenario master HACK3R du dimanche '</span>
 </pre></div>
 </div>
 </div>
@@ -766,7 +767,7 @@ finished importing scenarii
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span> git push
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
@@ -821,7 +822,7 @@ To git@git.framasoft.org:laurentperrinet/elasticte.git
                 <a href="2015-11-29-elasticite-scenario-onde.html" rel="prev" title="élasticité - scénario onde">Previous post</a>
             </li>
             <li class="next">
-                <a href="2015-12-08-homebrew-cask-updating-a-cask.html" rel="next" title="homebrew cask : updating an existing cask">Next post</a>
+                <a href="2015-12-11-reproducing-olshausens-classical-sparsenet-part-4.html" rel="next" title="Reproducing Olshausen's classical SparseNet (part 4)">Next post</a>
             </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});

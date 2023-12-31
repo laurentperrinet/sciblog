@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2015-11-27-elasticite-geometrie.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2015-11-26-elasticite-scenario-vague.html" title="élasticité - scénario vague" type="text/html">
 <link rel="next" href="2015-11-29-elasticite-scenario-onde.html" title="élasticité - scénario onde" type="text/html">
@@ -59,13 +60,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -238,7 +239,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ..
-<span class="o">!</span>rm mat/line_geometry.npy
+<span class="o">!</span>rm<span class="w"> </span>mat/line_geometry.npy
 <span class="o">%</span><span class="k">run</span>  scenario_line_geometry.py writer
 <span class="o">%</span><span class="k">cd</span> posts
 </pre></div>
@@ -363,7 +364,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ..
-<span class="o">!</span>rm mat/line_geometry_45deg.npy
+<span class="o">!</span>rm<span class="w"> </span>mat/line_geometry_45deg.npy
 <span class="o">%</span><span class="k">run</span>  scenario_line_geometry_45deg.py writer
 <span class="o">%</span><span class="k">cd</span> posts
 </pre></div>
@@ -489,7 +490,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ..
-<span class="o">!</span>rm mat/line_geometry_90deg.npy
+<span class="o">!</span>rm<span class="w"> </span>mat/line_geometry_90deg.npy
 <span class="o">%</span><span class="k">run</span>  scenario_line_geometry_90deg.py writer
 <span class="o">%</span><span class="k">cd</span> posts
 </pre></div>
@@ -623,7 +624,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ..
-<span class="o">!</span>rm mat/line_geometry_structure.npy
+<span class="o">!</span>rm<span class="w"> </span>mat/line_geometry_structure.npy
 <span class="o">%</span><span class="k">run</span>  scenario_line_geometry_structure.py writer
 <span class="o">%</span><span class="k">cd</span> posts
 </pre></div>
@@ -687,9 +688,9 @@
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add  ../mat/line_geometry_90deg.npy  ../scenario_line_geometry_90deg.py
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>add<span class="w">  </span>../mat/line_geometry_90deg.npy<span class="w">  </span>../scenario_line_geometry_90deg.py
 
-<span class="o">!</span>git s
+<span class="o">!</span>git<span class="w"> </span>s
 </pre></div>
 </div>
 </div>
@@ -722,7 +723,7 @@
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -am<span class="s1">' scenario geometry  90deg '</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="s1">' scenario geometry  90deg '</span>
 </pre></div>
 </div>
 </div>
@@ -748,7 +749,7 @@
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span> git push
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>

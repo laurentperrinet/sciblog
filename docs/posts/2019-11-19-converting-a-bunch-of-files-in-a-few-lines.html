@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2019-11-19-converting-a-bunch-of-files-in-a-few-lines.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2019-10-07-neurostories-videos-of-my-talk.html" title="Neurostories: creating videos of the flash-lag effect" type="text/html">
 <link rel="next" href="2019-11-28-role-of-gamma-correction-in-sparse-coding.html" title="Role of gamma correction in Sparse coding" type="text/html">
@@ -59,13 +60,13 @@ I w">
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -115,16 +116,18 @@ I w">
 <!-- TEASER_END -->
 
 <h2>listing files</h2>
-<pre class="code literal-block">$ f flac
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac
+</pre></div>
+
 <h2>converting files</h2>
 <p>Encoding in 128kB/s :</p>
-<pre class="code literal-block">$ f flac -exec  sh -c <span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span> <span class="o">{}</span> <span class="se">\;</span>
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac<span class="w"> </span>-exec<span class="w">  </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'opusenc --bitrate 128 "$0" "${0%.flac}.opus"'</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</pre></div>
+
 <p>Note that this will work also while exploring the folder hierarchy (that is if you have a bunch of folders with those files).</p>
 <h2>deleting files</h2>
-<pre class="code literal-block">$ f flac -delete
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>f<span class="w"> </span>flac<span class="w"> </span>-delete
+</pre></div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>

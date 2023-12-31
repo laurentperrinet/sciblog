@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2020-06-19-caustic-optics.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2020-04-16-creating-an-hexagonal-grid.html" title="Creating an hexagonal grid" type="text/html">
 <link rel="next" href="2020-07-04-colors-of-the-sky.html" title="Colors of the sky" type="text/html">
@@ -66,13 +67,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -123,9 +124,8 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Caustics (<a href="https://en.wikipedia.org/wiki/Caustic_%28optics%29">wikipedia</a> are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is for instance the heart-shaped pattern in your cup of coffee which is formed as the rays of the sun are reflected on the cup's surface. It is also the wiggly pattern of light curves that you will see on the floor of a pool as the sun's light is <em>refracted</em> at the surface of the water. Here, we simulate that particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images.</p>
-<p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:
-<br></p>
-<center><img alt="No description has been provided for this image" src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
+<p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
+<br><center><img alt="No description has been provided for this image" src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
 <br><p>This is joint work with artist <a href="https://laurentperrinet.github.io/authors/etienne-rey/">Etienne Rey</a>, in which I especially follow the ideas put forward in the series <a href="http://ondesparalleles.org/projets/turbulences/">Turbulence</a>.</p>
 <p><a href="https://zenodo.org/badge/latestdoi/273226625"><img alt="DOI" src="https://zenodo.org/badge/273226625.svg"></a></p>
 </div>
@@ -322,18 +322,16 @@
 <br><p>What happens? Light travels fast (<em>very</em> fast) but it will travel slower in water than in the air. A consequence of this is that a ray changes slightly its direction as it hits the water: the light ray is <em>refracted</em>. That is why a pen which is half immerged looks "as if" it is broken. In fact, it's only its image that gets distorted:</p>
 <br><center><a href="https://commons.wikimedia.org/wiki/File:Pen_in_water.jpg" title="Ulflund / CC0"><img alt="Pen in water" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pen_in_water.jpg/512px-Pen_in_water.jpg" width="512"></a></center>
 <br><p>The laws governing this deviations are well known as <a href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell's law</a> and state that</p>
-<p>$$
-\frac{\sin\theta_2}{\sin\theta_1} = \frac{n_1}{n_2}
 $$
-Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indices of air and water, respectively. (Note that, as a consequence, the light in the water is always slightly closer to the normal of the surface.)</p>
+\frac{\sin\theta_2}{\sin\theta_1} = \frac{n_1}{n_2}
+$$<p>Where $n_1\approx 1$ and  $n_2\approx1.33$ are the refractive indices of air and water, respectively. (Note that, as a consequence, the light in the water is always slightly closer to the normal of the surface.)</p>
 <br><center>
 <a href="https://commons.wikimedia.org/wiki/File:Snells_law.svg" title="Cristan at English Wikipedia, Sawims at Dutch Wikipedia / Public domain"><img alt="Snells law" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/512px-Snells_law.svg.png" width="512"></a>
 </center>
 <br><p>Going back to the swimming pool, considering that the sun is emitting an uniform pattern of parallel rays from an incident angle $\theta_I$, we may apply this law to all of these light rays. The important ingredient is that the surface of the water (given as the surface height $z(x, y)$) changes smoothly and will deviate the light rays non-uniformly, thus creating the patterns. Writing down the equation, the displacement resulting from the angle of refraction is given by:</p>
-<p>$$
+$$
 \Delta x(x, y) = H \cdot \arcsin [ \frac 1 n \sin( \theta_I - \arctan(\frac{\partial}{\partial x} z(x, y)) + \arctan(\frac{\partial}{\partial x} z(x, y) ]
-$$</p>
-<p>Where $H$ is the pool's depth, $n$ is the refractive index of water (that of air being set to $1$) and $\theta_I$ the incident angle.
+$$<p>Where $H$ is the pool's depth, $n$ is the refractive index of water (that of air being set to $1$) and $\theta_I$ the incident angle.
 The same formula applies in the other spatial dimension $y$ by computing the angle of the surface along this dimension as $\arctan(\frac{\partial}{\partial y} z(x, y))$.</p>
 <p>In the limit of a zenithal light source (that is, the sun at the vertical of the pool) and in the limit of small angles, the equations simplifies to:
 $$
@@ -355,7 +353,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caustique</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Image coordinates follow 'ij' indexing, that is,</span>
 <span class="sd">        * their origin at the top left,</span>
 <span class="sd">        * the X axis is vertical and goes "down",</span>
@@ -470,7 +468,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="k">return</span> <span class="n">intensity</span>
 
 <span class="k">def</span> <span class="nf">scattering</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.45</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    b is  proportionate  to  the  column  density  of  aerosols  </span>
 <span class="sd">    along  the  path  of  sunlight,  from  outside  the  atmosphere </span>
 <span class="sd">    to  the  point  of  observation</span>
@@ -486,11 +484,11 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="k">return</span> <span class="n">intensity</span>
 
 <span class="k">def</span> <span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
+<span class="w">    </span><span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
 
 <span class="k">class</span> <span class="nc">ColourSystem</span><span class="p">:</span>
-    <span class="sd">"""A class representing a colour system.</span>
+<span class="w">    </span><span class="sd">"""A class representing a colour system.</span>
 
 <span class="sd">    A colour system defined by the CIE x, y and z=1-x-y coordinates of</span>
 <span class="sd">    its three primary illuminants and its "white point".</span>
@@ -502,7 +500,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
     <span class="c1"># CMF is the CIE colour matching function for 380 - 780 nm in 5 nm intervals</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">white</span><span class="p">):</span>
-        <span class="sd">"""Initialise the ColourSystem object.</span>
+<span class="w">        </span><span class="sd">"""Initialise the ColourSystem object.</span>
 
 <span class="sd">        Pass vectors (ie NumPy arrays of shape (3,)) for each of the</span>
 <span class="sd">        red, green, blue  chromaticities and the white illuminant</span>
@@ -615,7 +613,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
 
 
     <span class="k">def</span> <span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">):</span>
-        <span class="sd">"""Transform from xyz to rgb representation of colour.</span>
+<span class="w">        </span><span class="sd">"""Transform from xyz to rgb representation of colour.</span>
 
 <span class="sd">        The output rgb components are normalized on their maximum</span>
 <span class="sd">        value. If xyz is out the rgb gamut, it is desaturated until it</span>
@@ -638,7 +636,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="k">return</span> <span class="n">rgb</span>
 
     <span class="k">def</span> <span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
-        <span class="sd">"""Convert a spectrum to an xyz point.</span>
+<span class="w">        </span><span class="sd">"""Convert a spectrum to an xyz point.</span>
 
 <span class="sd">        The spectrum must be on the same grid of points as the colour-matching</span>
 <span class="sd">        function, self.cmf: 380-780 nm in 5 nm steps.</span>
@@ -652,7 +650,7 @@ Thinking about images as densities which we may discretize on a rectangular grid
         <span class="k">return</span> <span class="n">XYZ</span> <span class="o">/</span> <span class="n">den</span>
 
     <span class="k">def</span> <span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">out_fmt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">"""Convert a spectrum to an rgb value."""</span>
+<span class="w">        </span><span class="sd">"""Convert a spectrum to an rgb value."""</span>
 
         <span class="n">xyz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_to_xyz</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xyz_to_rgb</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">out_fmt</span><span class="p">)</span>

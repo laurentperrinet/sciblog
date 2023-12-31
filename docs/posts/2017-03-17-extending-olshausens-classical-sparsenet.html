@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2017-03-17-extending-olshausens-classical-sparsenet.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2017-03-16-reproducing-olshausens-classical-sparsenet-part-3.html" title="Reproducing Olshausen's classical SparseNet (part 3)" type="text/html">
 <link rel="next" href="2017-04-10-manipulating-speed-in-motion-clouds.html" title="Manipulating speed in motion clouds" type="text/html">
@@ -59,13 +60,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -123,18 +124,18 @@
 <p>In this notebook, we provide an extension to the SparseNet algorithm. We will study how homeostasis (cooperation) may be an essential ingredient to this algorithm working on a winner-take-all basis (competition). This extension has been published as Perrinet, Neural Computation (2010) (see  <a href="https://laurentperrinet.github.io/publication/perrinet-10-shl">https://laurentperrinet.github.io/publication/perrinet-10-shl</a> ):</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Perrinet10shl</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Role of homeostasis in learning sparse representations}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Perrinet, Laurent U.}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Neural Computation}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2010}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1162/neco.2010.05-08-795}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Keywords</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Neural population coding, Unsupervised learning, Statistics of natural images, Simple cell receptive fields, Sparse Hebbian Learning, Adaptive Matching Pursuit, Cooperative Homeostasis, Competition-Optimized Matching Pursuit}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{July}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{7}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://laurentperrinet.github.io/publication/perrinet-10-shl}</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="na">Volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{22}</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Perrinet10shl</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Role of homeostasis in learning sparse representations}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Perrinet, Laurent U.}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Neural Computation}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2010}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1162/neco.2010.05-08-795}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Keywords</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Neural population coding, Unsupervised learning, Statistics of natural images, Simple cell receptive fields, Sparse Hebbian Learning, Adaptive Matching Pursuit, Cooperative Homeostasis, Competition-Optimized Matching Pursuit}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{July}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{7}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://laurentperrinet.github.io/publication/perrinet-10-shl}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">Volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{22}</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 <p>This is joint work with <a href="https://laurentperrinet.github.io/authors/victor-boutin">Victor Boutin</a>.</p>
 <!-- TEASER_END -->

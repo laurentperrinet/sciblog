@@ -12,9 +12,10 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-01-14-trying-out-ipython-blogging.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
-<link rel="prev" href="2014-01-04-bootstrapping-nikola.html" title="Bootstrapping Nikola" type="text/html">
-<link rel="next" href="2014-01-15-vim-folding-commands.html" title="Vim folding commands" type="text/html">
+<link rel="prev" href="2013-11-12-craac.html" title="2013-11-12 craac" type="text/html">
+<link rel="next" href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" title="Converting MoinMoin pages to Nikola" type="text/html">
 <meta property="og:site_name" content="Scientific logbook">
 <meta property="og:title" content="Trying out ipython blogging">
 <meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-01-14-trying-out-ipython-blogging.html">
@@ -72,13 +73,13 @@ Here, we will need to install additions to the nikola publishing tool: a renderi
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -150,11 +151,17 @@ Here, we will need to install additions to the nikola publishing tool: a renderi
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we will need to install additions to the nikola publishing tool: a rendering machine + a theme. Using homebrew in mcosx, this looks like:</p>
 <pre><code>brew install npm
-npm install -g less</code></pre>
+npm install -g less
+
+</code></pre>
 <p>and</p>
-<pre><code>nikola install_theme zen-ipython</code></pre>
+<pre><code>nikola install_theme zen-ipython
+
+</code></pre>
 <p>Once this was done, one could tune <code>conf.py</code> and then issue:</p>
-<pre><code>nikola new_post -f ipynb</code></pre>
+<pre><code>nikola new_post -f ipynb
+
+</code></pre>
 <p>Finally, one needs to build (<code>nikola build</code>) and publish (<code>nikola deploy</code>)</p>
 </div>
 </div>
@@ -255,10 +262,10 @@ Namespaces are one honking great idea -- let's do more of those!
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="2014-01-04-bootstrapping-nikola.html" rel="prev" title="Bootstrapping Nikola">Previous post</a>
+                <a href="2013-11-12-craac.html" rel="prev" title="2013-11-12 craac">Previous post</a>
             </li>
             <li class="next">
-                <a href="2014-01-15-vim-folding-commands.html" rel="next" title="Vim folding commands">Next post</a>
+                <a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" rel="next" title="Converting MoinMoin pages to Nikola">Next post</a>
             </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});

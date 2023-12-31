@@ -12,6 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2018-09-07-extending-datasets-in-pytorch.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
 <link rel="prev" href="2018-06-13-generating-an-unique-seed-for-a-given-filename.html" title="Generating an unique seed for a given filename" type="text/html">
 <link rel="next" href="2018-11-05-statistics-of-the-natural-input-to-a-ring-model.html" title="Statistics of the natural input to a ring model" type="text/html">
@@ -65,13 +66,13 @@
 </header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
             <ul class="navbar-nav nav-fill d-flex w-100">
 <li class="nav-item">
-<a href="../index.html" class="nav-link">Home</a>
+<a href="../" class="nav-link">Home</a>
                 </li>
 <li class="nav-item">
 <a href="../archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="../categories/index.html" class="nav-link">Tags</a>
+<a href="../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
 <a href="../rss.xml" class="nav-link">RSS</a>
@@ -397,7 +398,7 @@ Args:
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FakeData</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
-    <span class="sd">"""A fake dataset that returns randomly generated images and returns them as PIL images</span>
+<span class="w">    </span><span class="sd">"""A fake dataset that returns randomly generated images and returns them as PIL images</span>
 <span class="sd">    Args:</span>
 <span class="sd">        size (int, optional): Size of the dataset. Default: 1000 images</span>
 <span class="sd">        image_size(tuple, optional): Size if the returned images. Default: (3, 224, 224)</span>
@@ -420,7 +421,7 @@ Args:
         <span class="bp">self</span><span class="o">.</span><span class="n">random_offset</span> <span class="o">=</span> <span class="n">random_offset</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="sd">"""</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            index (int): Index</span>
 <span class="sd">        Returns:</span>
@@ -535,7 +536,7 @@ Args:
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">z_score</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">'''</span>
+<span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Image per Image z-score normalization</span>
 
 <span class="sd">    Image = (Image-mean(Image))/std(Image)</span>
@@ -547,7 +548,7 @@ Args:
         <span class="k">return</span> <span class="n">img</span>
 
 <span class="k">class</span> <span class="nc">rock_and_roll</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">'''</span>
+<span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Image per Image z-score normalization</span>
 
 <span class="sd">    Image = (Image-mean(Image))/std(Image)</span>

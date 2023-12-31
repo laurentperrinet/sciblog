@@ -25,12 +25,7 @@ SITE_URL = "https://laurentperrinet.github.io/sciblog/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "laurent.perrinet@univ-amu.fr"
-BLOG_DESCRIPTION = """\n
-This is my scientific logbook.
-Experiments happen here in an apparently random order,
-most of the time with more questions than answers...
-Do not hesitate to comment!
-"""
+BLOG_DESCRIPTION = "This is my scientific logbook. Experiments happen here in an apparently random order, most of the time with more questions than answers... Do not hesitate to comment!"
 
 # Nikola is multilingual!
 #
@@ -147,17 +142,15 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-                   ('/index.html', 'Home'),
-                   ('/archive.html', 'Archives'),
-                   ('/categories/', 'Tags'),
-                   ('/rss.xml', 'RSS'),
-                   ('http://laurentperrinet.github.io', 'About my research'),
-                   ('https://neuromatch.social/@laurentperrinet', 'Mastodon'),
-                   ('https://github.com/laurentperrinet', 'Github'),
+        ("/", "Home"),
+        ('/archive.html', 'Archives'),
+        ('/categories/', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('http://laurentperrinet.github.io', 'About my research'),
+        ('https://neuromatch.social/@laurentperrinet', 'Mastodon'),
+        ('https://github.com/laurentperrinet', 'Github'),
     ),
 }
-
-
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
 # although themes may not always support them. (translatable)
@@ -167,6 +160,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
+THEME = "maupassant"
 THEME = "bootblog4"
 
 # A theme color. In default themes, it might be displayed by some browsers as
@@ -247,16 +241,16 @@ THEME_CONFIG = {
 #     )
 
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
+    # ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
+    # ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
     ("posts/*.ipynb", "posts", "post.tmpl"),
 )
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
+    # ("pages/*.rst", "pages", "page.tmpl"),
     ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
+    # ("pages/*.txt", "pages", "page.tmpl"),
     ("pages/*.html", "pages", "page.tmpl"),
 )
 
@@ -324,7 +318,8 @@ LISTINGS_FOLDERS = {'listings': 'listings'}
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ['.rst', '.txt'],
+    # "rest": ['.rst', '.txt'],
+    # 'rest_html5': ('.rst', '.txt'),    
     "markdown": ['.md', '.mdown', '.markdown'],
     "textile": ['.textile'],
     "txt2tags": ['.t2t'],
@@ -603,7 +598,7 @@ FRONT_INDEX_HEADER = {
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = True
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
@@ -948,13 +943,13 @@ IMAGE_FOLDERS = {'images': 'images'}
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
+FAVICONS = {
+     ("icon", "favicon.ico", "16x16"),
 #     ("icon", "/icon_128x128.png", "128x128"),
-# )
+}
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
