@@ -87,7 +87,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2024-01-02T07:47:00Z</lastmod>
+  <lastmod>2024-01-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
@@ -331,7 +331,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/open-science.html</loc>
-  <lastmod>2024-01-01T23:36:00Z</lastmod>
+  <lastmod>2024-01-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/openscience.html</loc>
@@ -415,7 +415,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shell.html</loc>
-  <lastmod>2024-01-01T20:41:00Z</lastmod>
+  <lastmod>2024-01-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shl_scripts.html</loc>
@@ -1783,7 +1783,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2023-11-29-ouchi-illusion.html</loc>
-  <lastmod>2024-01-01T20:42:00Z</lastmod>
+  <lastmod>2024-01-10T07:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2024-01-12-singularity-on-slurm.html</loc>
+  <lastmod>2024-01-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/stories/a-study-in-scarlet.html</loc>
