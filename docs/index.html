@@ -100,7 +100,28 @@ This is joint work with Hugo Ladret.</div>
                            <h3 class="mb-0">
                                <a class="text-dark" href="posts/2017-06-15-le-jeu-de-lurne.html">Le jeu de l'urne</a>
                            </h3>
-                               <div class="card-text mb-auto bootblog4-featured-text"></div>
+                               <div class="card-text mb-auto bootblog4-featured-text">Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena!), nous avons inventé ensemble un jeu: le jeu de l'urne. Le principe est simple: il faut deviner la couleur de la balle qu'on tire d'une urne contenant autant de balles rouges que noires - et ceci le plus tôt possible. Plus précisément, les règles sont:
+
+On a un ensemble de balles, la motié sont rouges, l'autre moitié noires (c'est donc un nombre pair de balles qu'on appelera $N$, disons $N=8$).
+Elles sont dans une urne opaque et donc on ne peut pas les voir à moins de les tirer une par une (sans remise dans l'urne). On peut tirer autant de balles qu'on veut pour les observer.
+Le but est de deviner la balle qu'on va tirer. Si on gagne (on a bien prédit la couleur), alors on gagne autant de points que le nombre de balles qui étaient dans l'urne au moment de la décision. Sinon on perd autant de points que l'on en aurait gagné!
+à long terme, la stratégie du jeu est de décider le meilleur moment où on est prêt à deviner la couleur de la balle qu'on va prendre et ainsi de gagner le plus de points possibles.
+
+Nous avons d'abord créé ce jeu grâce au language de programmation Scratch sur https://scratch.mit.edu/projects/165806365/:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ici, nous allons essayer de l'analyser plus finement.</div>
                                </div>
                                <img class="card-img-right flex-auto d-none d-lg-block" src="https://laurentperrinet.github.io/sciblog/files/2015-12-08_cours_neurocomp/figures/questions.png" alt="Le jeu de l'urne">
 </div>
@@ -217,9 +238,9 @@ this will be exposed in the following book chapter (see also https://laurentperr
 </blockquote>
 <p>A nice example is shown in <a href="http://www.coastalwiki.org/wiki/Wave_ripple_formation">http://www.coastalwiki.org/wiki/Wave_ripple_formation</a> showing</p>
 <blockquote>
-<p>Ripples observed at Sea Rim State Park, along the coast of east Texas close to the border with Louisiana (courtesy by Zoltan Sylvester).</p>
+<p>Ripples observed at Sea Rim State Park, along the coast of east Texas close to the border with Louisiana (courtesy by Zoltan Sylvester).
+<img alt="" src="http://www.coastalwiki.org/w/images/6/65/WaveRippleFormationFig0.jpg"></p>
 </blockquote>
-<p><img alt="" src="http://www.coastalwiki.org/w/images/6/65/WaveRippleFormationFig0.jpg"></p>
 <p><a href="http://www.coastalwiki.org/wiki/Wave_ripple_formation">Wave ripple formation</a></p>
 <p>An interesting aspect of that patterns is that they may occur at different scales, like taht example on the surface of the Mars planet:</p>
 <blockquote>
@@ -253,7 +274,7 @@ this will be exposed in the following book chapter (see also https://laurentperr
 <p>The use of <code>grid_sample</code> can b etedious and here, we show how to use it to create a log-polar transform of the image and create the following figure:</p>
 <p><img alt="Retinotopy" src="files/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.png"></p>
 <blockquote>
-<p>A picture (extract from the painting <a href="https://en.wikipedia.org/wiki/The_Ambassadors_(Holbein))">"The Ambassadors" by Hans Holbein the Younger</a> can be represented on a regular grid represented by vertical (red) and horizontal (blue) lines. Retinotopy transforms this grid, and in particular the area representing the fovea (shaded gray) is over-represented. Applied to the original image of the portrait, the image is strongly distorted and represents more finally the parts under the axis of sight (here the mouth).</p>
+<p>A picture (extract from the painting <a href="https://w.wiki/AckL">"The Ambassadors" by Hans Holbein the Younger</a> can be represented on a regular grid represented by vertical (red) and horizontal (blue) lines. Retinotopy transforms this grid, and in particular the area representing the fovea (shaded gray) is over-represented. Applied to the original image of the portrait, the image is strongly distorted and represents more finally the parts under the axis of sight (here the mouth).</p>
 </blockquote>
 <p class="more"><a href="posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html">Read more…</a></p>
 </div>
@@ -323,9 +344,10 @@ qui montre une nette séparation des groupes de vote.</p>
 <p>Thanks!</p>
 </blockquote>
 <p>As of 2022-02-20, I had received $N = 98$ answers from the <a href="https://forms.gle/hjzWVemM4Jy9cBbZ9">google form</a> (out of them, $95$ are valid) out of the $881$ submitted abstracts. In short, the result is that the total score $S$ is simply the linear sum of the scores $s_i$ given by each reviewer $i$ relatively weighted by the confidence levels $\pi_i$ (as stated in the email we received from the chairs):</p>
-$$
+<p>$$
 S = \frac{ \sum_i \pi_i\cdot s_i}{\sum_i \pi_i}
-$$<p>Or if you prefer
+$$</p>
+<p>Or if you prefer
 $$
 S = \sum_i  \frac{\pi_i}{\sum_j \pi_j} \cdot s_i
 $$</p>
@@ -603,7 +625,16 @@ $$</p>
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post I'll try to show how from a screenshot obtained from a software like Spotify you can programmatically extract the tracks of the songs as well as the artists, to finally download them from the Internet.</p>
+<p class="more"><a href="posts/2020-11-24-extracting-music-from-the-screenshots-of-a-spotify-playlist.html">Read more…</a></p>
+</div>
+</div>
+</div>
                 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2020-10-10-fitting-covid-data.html" class="u-url">Fitting COVID data</a></h1>
                 <div class="metadata">
@@ -668,7 +699,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://jupyter.org/">Jupyter notebooks</a> are a great way of sharing knowledge in science, art, programming. 
+<p><a href="https://jupyter.org/">Jupyter notebooks</a> are a great way of sharing knowledge in science, art, programming.
 For instance, in a recent musing, I tried to programmatically determine the <a href="https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html">color of the sky</a>. This renders as a web page, but is also a piece of <a href="https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.ipynb">runnable code</a>.</p>
 <p>As such, they are also great ways to store the knowledge that was acquired at a given time and that could be reusable. This may be considered as bad programming and may have downsides as described in that <a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0_1">slides</a> :</p>
 <p><a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0_1"><img alt="Joel Grus" src="https://revolution-computing.typepad.com/.a/6a010534b1db25970b022ad3b0836c200b-800wi"></a></p>
@@ -718,8 +749,9 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Caustics (<a href="https://en.wikipedia.org/wiki/Caustic_%28optics%29">wikipedia</a> are luminous patterns which are resulting from the superposition of smoothly deviated light rays. It is for instance the heart-shaped pattern in your cup of coffee which is formed as the rays of the sun are reflected on the cup's surface. It is also the wiggly pattern of light curves that you will see on the floor of a pool as the sun's light is <em>refracted</em> at the surface of the water. Here, we simulate that particular physical phenomenon. Simply because they are mesmerizingly beautiful, but also as it is of interest in visual neuroscience. Indeed, it speaks to how images are formed (more on this later), hence how the brain may understand images.</p>
-<p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:</p>
-<br><center><img alt="No description has been provided for this image" src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
+<p>In this post, I will develop a simple formalism to generate such patterns, with the paradoxical result that it is <em>very</em> simple to code yet generates patterns with great complexity, such as:
+<br></p>
+<center><img alt="No description has been provided for this image" src="https://laurentperrinet.github.io/sciblog/files/2020-06-19_caustique/2020-06-19_caustique.gif" width="61.8%/"></center>
 <br><p>This is joint work with artist <a href="https://laurentperrinet.github.io/authors/etienne-rey/">Etienne Rey</a>, in which I especially follow the ideas put forward in the series <a href="http://ondesparalleles.org/projets/turbulences/">Turbulence</a>.</p>
 <p><a href="https://zenodo.org/badge/latestdoi/273226625"><img alt="DOI" src="https://zenodo.org/badge/273226625.svg"></a></p>
 </div>
@@ -975,7 +1007,18 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This page recollects some variations on the flash-lag effect... and the way to easily and programmmatically generate those movies of the illusion.</p>
+<br><center>
+<a href="https://laurentperrinet.github.io/post/2019-10-07_neurostories"><video autoplay="" controls="" loop="" src="files/2019-09-30_clock.mp4" width="61.8%/"></video></a> </center>
+<br><p class="more"><a href="posts/2019-10-07-neurostories-videos-of-my-talk.html">Read more…</a></p>
+</div>
+</div>
+</div>
                 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-09-11_video-abstract-vision.html" class="u-url">Video abstract for "An Adaptive Homeostatic Algorithm for the Unsupervised Learning of Visual Features"</a></h1>
                 <div class="metadata">
@@ -1376,9 +1419,7 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[1]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<center><video autoplay="" controls="" loop="" src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width="61.8%/"></video></center>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><center><video autoplay="" controls="" loop="" src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width="61.8%/"></video></center></div>
 </div>
 </div>
 </div>
@@ -1469,7 +1510,19 @@ In particular, it is debatable to know which weight individual features, such as
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    
+                    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Poster-GDR-Vision">Poster GDR Vision<a class="anchor-link" href="posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html#Poster-GDR-Vision">¶</a>
+</h2>
+<p>This poster was presented in Lille at a vision workshop, check out <a href="https://laurentperrinet.github.io/publication/perrinet-17-gdr">https://laurentperrinet.github.io/publication/perrinet-17-gdr</a></p>
+<p>Apart the content (which is in French) which recaps some previous work inbetween art and science, this post demonstrates how to generate a A0 poster <em>programmatically</em>. In particular, we will use matplotlib and some quickly forged functions to ease up the formatting.</p>
+<p class="more"><a href="posts/2017-10-25-designing-a-a0-poster-using-matplotlib.html">Read more…</a></p>
+</div>
+</div>
+</div>
                 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017-10-06-improving-calls-to-the-loggabor-library.html" class="u-url">Improving calls to the LogGabor library</a></h1>
                 <div class="metadata">
@@ -1526,7 +1579,43 @@ In particular, it is debatable to know which weight individual features, such as
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    
+                    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena!), nous avons inventé ensemble un jeu: <em>le jeu de l'urne</em>. Le principe est simple: il faut deviner la couleur de la balle qu'on tire d'une urne contenant autant de balles rouges que noires - et ceci le plus tôt possible. Plus précisément, les règles sont:</p>
+<ul>
+<li>On a un ensemble de balles, la motié sont rouges, l'autre moitié noires (c'est donc un nombre pair de balles qu'on appelera $N$, disons $N=8$).</li>
+<li>Elles sont dans une urne opaque et donc on ne peut pas les voir à moins de les tirer une par une (sans remise dans l'urne). On peut tirer autant de balles qu'on veut pour les observer.</li>
+<li>Le but est de deviner la balle qu'on va tirer. Si on gagne (on a bien prédit la couleur), alors on gagne autant de points que le nombre de balles qui étaient dans l'urne au moment de la décision. Sinon on perd autant de points que l'on en aurait gagné!</li>
+<li>à long terme, la stratégie du jeu est de décider le meilleur moment où on est prêt à deviner la couleur de la balle qu'on va prendre et ainsi de gagner le plus de points possibles.</li>
+</ul>
+<p>Nous avons d'abord créé ce jeu grâce au language de programmation <a href="//scratch.mit.edu">Scratch</a> sur <a href="https://scratch.mit.edu/projects/165806365/">https://scratch.mit.edu/projects/165806365/</a>:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<iframe allowfullscreen="" allowtransparency="true" frameborder="0" height="402" src="//scratch.mit.edu/projects/embed/165806365/?autostart=false" width="485"></iframe>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ici, nous allons essayer de l'analyser plus finement.</p>
+<p class="more"><a href="posts/2017-06-15-le-jeu-de-lurne.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
                 </div>
             </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017-03-29-testing-comps-fastpcum_scripted.html" class="u-url">testing COMPs-fastPcum_scripted</a></h1>
                 <div class="metadata">
@@ -1617,15 +1706,17 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since the beginning, we have used a definition of bandwidth in the spatial frequency domain which was quite standard (see <a href="https://neuralensemble.github.io/MotionClouds/files/MotionClouds_Supplementary.pdf">supp material</a> for instance):</p>
-$$
+<p>$$
 \mathcal{E}(f; sf_0, B_{sf}) \propto \frac {1}{f} \cdot \exp \left( -.5 \frac {\log( \frac{f}{sf_0} ) ^2} {\log( 1 + \frac {B_sf}{sf_0} )^2 } \right)
-$$<p>This is implemented in the folowing <a href="https://github.com/NeuralEnsemble/MotionClouds/blob/79939f447c45c8a400d93735cca4fe498193be59/MotionClouds/MotionClouds.py#L206">code</a> which reads:</p>
+$$</p>
+<p>This is implemented in the folowing <a href="https://github.com/NeuralEnsemble/MotionClouds/blob/79939f447c45c8a400d93735cca4fe498193be59/MotionClouds/MotionClouds.py#L206">code</a> which reads:</p>
 <div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">f_radius</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">f_radius</span><span class="o">/</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sf_0</span><span class="o">+</span><span class="n">B_sf</span><span class="p">)</span><span class="o">/</span><span class="n">sf_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 <p>However the one implemented in the code looks different (thanks to <a href="https://laurentperrinet.github.io/authors/kiana-mansour-pour/">Kiana</a> for spotting this!), so that one can think that the code is using:</p>
-$$
+<p>$$
 \mathcal{E}(f; sf_0, B_{sf}) \propto \frac {1}{f} \cdot \exp \left( -.5 \frac {\log( \frac{f}{sf_0} ) ^2} {\log(( 1 + \frac {B_sf}{sf_0} )^2 ) } \right)
-$$<p>The difference is minimal, yet very important for a correct definition of the bandwidth!</p>
+$$</p>
+<p>The difference is minimal, yet very important for a correct definition of the bandwidth!</p>
 <p class="more"><a href="posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html">Read more…</a></p>
 </div>
 </div>
@@ -1826,7 +1917,7 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 </li>
 </ul>
 <pre><code>    pip install git+https://github.com/bicv/SHL_scripts
-
+    
 </code></pre>
 <ul>
 <li>following this failed <a href="https://github.com/scikit-learn/scikit-learn/pull/4693">PR to sklearn</a> that was argued in <a href="https://laurentperrinet.github.io/sciblog/posts/2015-05-05-reproducing-olshausens-classical-sparsenet.html">this post</a>  (and following) the goal of this notebooks is to illustrate the simpler code implemented in the <a href="https://github.com/bicv/SHL_scripts">SHL scripts</a>
@@ -1857,7 +1948,7 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <h2 id="basics-of-probability-theory">basics of probability theory<a class="anchor-link" href="posts/2017-03-09_probabilities.html#basics-of-probability-theory">¶</a>
 </h2>
 <p>In the context of a <a href="https://github.com/laurentperrinet/2018-03-26_cours-NeuroComp_FEP">course in Computational Neuroscience</a>, I am teaching a basic introduction in <a href="https://laurentperrinet.github.io/sciblog/files/2017-03-13_NeuroComp_FEP.html">Probabilities, Bayes and the Free-energy principle</a>.</p>
-<p>Let's learn to use probabilities in practice by generating some "synthetic data", that is by using the computer's number generator. 
+<p>Let's learn to use probabilities in practice by generating some "synthetic data", that is by using the computer's number generator.
 2017-03-13_NeuroComp_FEP</p>
 <p class="more"><a href="posts/2017-03-09_probabilities.html">Read more…</a></p>
 </div>
@@ -1905,7 +1996,7 @@ $$<p>The difference is minimal, yet very important for a correct definition of t
 <h2 id="generating-databases">generating databases<a class="anchor-link" href="posts/2016-11-29-resizing-a-bunch-of-files-using-the-command-line-interface.html#generating-databases">¶</a>
 </h2>
 <p>A set of bash code to resize images to a fixed size.</p>
-<p>Problem statement: we have a set of images with heterogeneous sizes and we want to homogenize the database to avoid problems when classifying them. 
+<p>Problem statement: we have a set of images with heterogeneous sizes and we want to homogenize the database to avoid problems when classifying them.
 Solution: ImageMagick.</p>
 <p>We first identify the size and type of images in the database. The database is a collection of folders containing each a collection of files. We thus do a nested recursive loop:</p>
 <p class="more"><a href="posts/2016-11-29-resizing-a-bunch-of-files-using-the-command-line-interface.html">Read more…</a></p>
@@ -2056,9 +2147,7 @@ index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[1]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<center><video autoplay="" controls="" loop="" src="files/2016-11-15_noise.mp4" width="61.8%/"></video></center>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><center><video autoplay="" controls="" loop="" src="files/2016-11-15_noise.mp4" width="61.8%/"></video></center></div>
 </div>
 </div>
 </div>
@@ -2239,7 +2328,7 @@ apprendre plus sur les mathématiques et la science dans une ambiance conviviale
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="More-fun-with-gravity-waves">More fun with gravity waves<a class="anchor-link" href="posts/2016-04-24_a-wave-going-backwards.html#More-fun-with-gravity-waves">¶</a>
 </h2>
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for 
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for
 textures. Thus we used a simple unimodal, normal distribution (on the log-radial frequency space to be more precise). But the larger set of Random Phase Textures may provide some interesting examples, some of them can even be fun! This is the case of this simulation of the waves you may observe on the surface on the ocean.</p>
 <p>Main features of gravitational waves are:</p>
 <ol>
@@ -3241,7 +3330,7 @@ year = {2016}
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=715c76bf">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3250,7 +3339,7 @@ year = {2016}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6a72345e">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -3276,7 +3365,7 @@ year = {2016}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=3c7a98af">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3324,7 +3413,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=1ee9baa5">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3346,7 +3435,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=0cc55de5">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3369,7 +3458,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=81b3f670">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3483,7 +3572,7 @@ year = {2016}
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for 
+<p><a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> were defined in the origin to provide a simple parameterization for
 textures. Thus we used a simple unimodal, normal distribution (on the log-radial frequency space to be more precise). But the larger set of Random Phase Textures may provide some interesting examples, some of them can even be fun! This is the case of this simulation of the waves you may observe on the surface on the ocean.</p>
 </div>
 </div>
@@ -3503,9 +3592,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[1]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<center><video autoplay="" controls="" loop="" src="files/2014-10-24_waves/waves.mp4" width="61.8%/"></video></center>
-</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><center><video autoplay="" controls="" loop="" src="files/2014-10-24_waves/waves.mp4" width="61.8%/"></video></center></div>
 </div>
 </div>
 </div>
@@ -4022,7 +4109,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For clarity, we display MotionPlaids as the angle between both component increases from 0 to pi/2. 
+<p>For clarity, we display MotionPlaids as the angle between both component increases from 0 to pi/2.
 <br>Left column displays iso-surfaces of the spectral envelope by displaying enclosing volumes at 5 different energy values with respect to the peak amplitude of the Fourier spectrum.
 <br>Right column of the table displays the actual movie as an animation.</p>
 </div>
@@ -4085,7 +4172,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=1784e92f">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4113,9 +4200,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Trying to answer the question in <a href="http://stackoverflow.com/questions/12233105/how-can-i-display-an-image-in-the-terminal/22537549?noredirect=1#comment41404352_22537549">http://stackoverflow.com/questions/12233105/how-can-i-display-an-image-in-the-terminal/22537549?noredirect=1#comment41404352_22537549</a> :</p>
-<pre><code>Is there any sort of utility I can use to convert an image to ASCII and then print it in my terminal? I looked for one but couldn't seem to find any.
-
-</code></pre>
+<pre><code>Is there any sort of utility I can use to convert an image to ASCII and then print it in my terminal? I looked for one but couldn't seem to find any.</code></pre>
 <p class="more"><a href="posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html">Read more…</a></p>
 </div>
 </div>
@@ -4133,7 +4218,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e51e9437">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4143,7 +4228,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=2649c8f7">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4223,7 +4308,7 @@ We are trying here to show some attempts to do the same with matplotlib or any o
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=6d024b75">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4355,7 +4440,7 @@ avec  $~ \kappa = \frac {1}{\sigma^{2}} $</p>
 <p>L'orientation est définie sur $[0, \pi[$ par un remplaçant de la variable $~ (\theta_d - m) ~$ par $~ 2(\theta_o - m)$</p>
 <p>nous obtenons alors la densité pour $\theta_o$:
 $ f(x) = \frac{1}{2 \pi I_{0}(\kappa)} \cdot {e^{\frac{cos(2(\theta - m))}{\sigma^{2}}}}$
-et 
+et
 $~ p = \frac {1} {2\pi \sigma_1 \sigma_2} \cdot e^{- 2 \frac{(m_2-m_1)^{2}}{\sigma_{1}^{2} + \sigma_{2}^{2}}}$</p>
 <p>car avec le changement de variable :
 $ \varepsilon(x) = \frac {1} {\sigma_{1} \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_{1}))^{2}} {2\sigma_{1}^{2}}} $
@@ -4462,7 +4547,7 @@ $\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_2))^{2}} 
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=8e536354">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4605,7 +4690,7 @@ pip install --user neurotools
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=3d6f1f17">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4614,7 +4699,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d48d6044">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4623,7 +4708,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4c3be2b9">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -4634,7 +4719,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=1bd46e01">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4685,17 +4770,11 @@ pip install --user neurotools
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we will need to install additions to the nikola publishing tool: a rendering machine + a theme. Using homebrew in mcosx, this looks like:</p>
 <pre><code>brew install npm
-npm install -g less
-
-</code></pre>
+npm install -g less</code></pre>
 <p>and</p>
-<pre><code>nikola install_theme zen-ipython
-
-</code></pre>
+<pre><code>nikola install_theme zen-ipython</code></pre>
 <p>Once this was done, one could tune <code>conf.py</code> and then issue:</p>
-<pre><code>nikola new_post -f ipynb
-
-</code></pre>
+<pre><code>nikola new_post -f ipynb</code></pre>
 <p>Finally, one needs to build (<code>nikola build</code>) and publish (<code>nikola deploy</code>)</p>
 </div>
 </div>

@@ -817,9 +817,10 @@ Training sklearn loss = 0.424
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The units for these losses are <em>bits</em>. Indeed, they represent some value of information about the binary data "$d$" and the continuous psychometric curve "$p$". This information is equal to $\log_2(p)$ if $d=1$ and $\log_2(1-p)$ if $d=0$. Putting things together, we obtain the <a href="https://pytorch.org/docs/stable/nn.html#bceloss">Binary Cross Entropy</a> and if we index datapoints by $k$:</p>
-$$
+<p>$$
 \mathcal{L} = \sum_k d_k \cdot \log_2(p_k) + (1-d_k) \cdot \log_2(1-p_k)
-$$<p>You can see that this measure is a form of <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross_entropy</a>, adapted to binary datapoints.</p>
+$$</p>
+<p>You can see that this measure is a form of <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross_entropy</a>, adapted to binary datapoints.</p>
 </div>
 </div>
 </div>

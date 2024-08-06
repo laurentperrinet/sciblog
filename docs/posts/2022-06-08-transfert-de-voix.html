@@ -171,9 +171,10 @@ qui montre une nette séparation des groupes de vote.</p>
 <p>Cette hypothèse est basée sur la modélisation d'une séquence de deux événements aléatoires comme dans un <a href="https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov">processus de Markov</a>. En particulier, nous allons formaliser cette hypothèse en faisant l'hypothèse de l'existence d'une matrice de transition $M$ qui permet de prédire la préférence $\hat{q}^k_j$ d'un individu au second tour à partir de ses préférences au premier tour. Mathématiquement, cette hypothèse peut être formulée comme un simple produit matriciel :</p>
 </li>
 </ul>
-$$
+<p>$$
 \hat{q}^k_j = \sum_i M_{i, j} \cdot p^k_i 
-$$<p>En termes plus simples, cette formule exprime que la préférence d'un individu au second tour et le mélange de ses préférences individuelles au premier tour avec des poids indiquant les affinités entre les différentes alternatives aux deux tours.</p>
+$$</p>
+<p>En termes plus simples, cette formule exprime que la préférence d'un individu au second tour et le mélange de ses préférences individuelles au premier tour avec des poids indiquant les affinités entre les différentes alternatives aux deux tours.</p>
 <ul>
 <li>Il est important de noter qu'il existe une contrainte  pour chaque colonne de cette matrice de transition, de sorte que la somme des différents éléments sur les différentes lignes de la matrice pour chaque colonne est égale à $1$ : $\forall j$, $ \sum_i M_{i, j} = 1$. Cette propriété découle des contraintes de représentation des préférences au premier et au deuxième tour que nous avons évoquées plus haut ($\sum_i p^k_i = 1$ et $\sum_j q^k_j = 1$).</li>
 </ul>
@@ -197,7 +198,7 @@ $$<p>En termes plus simples, cette formule exprime que la préférence d'un indi
 </ul>
 <h4 id="Collecte-des-donn%C3%A9es">Collecte des données<a class="anchor-link" href="2022-06-08-transfert-de-voix.html#Collecte-des-donn%C3%A9es">¶</a>
 </h4>
-<p>La première partie de ce travail consiste à collecter les données et elle est représentée d'une façon utile. On va utiliser les données disponibles sur <a href="https://www.data.gouv.fr">https://www.data.gouv.fr</a> en se concentrant sur les résultats définitifs par bureau de vote. 
+<p>La première partie de ce travail consiste à collecter les données et elle est représentée d'une façon utile. On va utiliser les données disponibles sur <a href="https://www.data.gouv.fr">https://www.data.gouv.fr</a> en se concentrant sur les résultats définitifs par bureau de vote.
 Commençons notre procédure avec le traitement des données du premier tour. Une fois que nous aurons décortiqué cette méthode, nous passerons au deuxième tour.</p>
 <h5 id="Donn%C3%A9es-du-premier-tour">Données du premier tour<a class="anchor-link" href="2022-06-08-transfert-de-voix.html#Donn%C3%A9es-du-premier-tour">¶</a>
 </h5>
@@ -279,8 +280,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -443,8 +443,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 </tbody>
 </table>
 <p>5 rows × 105 columns</p>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -511,8 +510,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -566,8 +564,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -586,8 +583,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[7]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -678,8 +674,7 @@ Commençons notre procédure avec le traitement des données du premier tour. Un
 </tbody>
 </table>
 <p>69682 rows × 3 columns</p>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -1239,8 +1234,7 @@ Name: POUTOU, Length: 69682, dtype: int64</pre>
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[22]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1403,8 +1397,7 @@ Name: POUTOU, Length: 69682, dtype: int64</pre>
 </tbody>
 </table>
 <p>5 rows × 35 columns</p>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -1583,8 +1576,7 @@ Name: 0, dtype: object</pre>
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[28]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1638,8 +1630,7 @@ Name: 0, dtype: object</pre>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -1714,8 +1705,7 @@ Name: 0, dtype: object</pre>
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[31]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1830,8 +1820,7 @@ Name: 0, dtype: object</pre>
 </tbody>
 </table>
 <p>69682 rows × 5 columns</p>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -2166,8 +2155,7 @@ memory usage: 1.6 MB
 <div class="output">
 <div class="output_area">
 <div class="prompt output_prompt">Out[45]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2293,8 +2281,7 @@ memory usage: 1.6 MB
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 </div>
 </div>
 </div>
@@ -3111,9 +3098,10 @@ $$
 \mathcal{L} =  KL(q, \hat{q})
 $$</p>
 <p>où la <a href="https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler">divergence de Kullback-Leibler</a> entre deux distributions $P$ et $Q$ de support non-nul $k \in \Omega$ est calculée comme</p>
-$$
+<p>$$
 KL(P, Q) = \sum_{k \in \Omega} P_k \cdot \log \frac {P_k}{Q_k}
-$$<p>Cette divergence est l'équivalent d'une distance dans les espaces de probabilité. Mathématiquement, c'est une semi-norme, car elle obéit à deux propriétés fondamentales : elle est toujours positive et est égale à zéro quand elle est appliquée à distributions identiques.</p>
+$$</p>
+<p>Cette divergence est l'équivalent d'une distance dans les espaces de probabilité. Mathématiquement, c'est une semi-norme, car elle obéit à deux propriétés fondamentales : elle est toujours positive et est égale à zéro quand elle est appliquée à distributions identiques.</p>
 <p>Pour généraliser cette méthode, nous allons aussi utiliser deux autres mesures et montrer ensuite que les résultats quantitatifs sont similaires :</p>
 <ul>
 <li>L1: la somme des valeurs absolues des différences entre les valeurs prédites et observées,</li>
@@ -3574,9 +3562,10 @@ Erreur ~ 1.7%
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Une particularité de cette matrice (prédite sur l'ensemble des bureaux de votes) est que l'on peut maintenant s'en servir pour prédire la préférence au second tour en fonction de celle au premier.</p>
 <p>En effet, si la préférence pour le choix d'un individu se pose au premier tour <em>entièrement</em> sur le choix $i^\ast$, on peut le formaliser comme $p_i = 0$ pour $i \neq i^\ast$ et $p_{i^\ast}=1$ et on obtient la prédiction:</p>
-$$
+<p>$$
 \hat{q}_j = M_{i^\ast j}
-$$<p>En language commun, la préférence d'une personne votant $i^\ast$ au premier tour est la $i^\ast$-ième ligne de la matrice de transition (de taille $15 \times 5$ dans notre cas).</p>
+$$</p>
+<p>En language commun, la préférence d'une personne votant $i^\ast$ au premier tour est la $i^\ast$-ième ligne de la matrice de transition (de taille $15 \times 5$ dans notre cas).</p>
 </div>
 </div>
 </div>
@@ -3981,9 +3970,10 @@ Total des voix au 1er tour= 48747860, dont Macron = 9783058 (soit une pourcentag
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>À noter qu'on pourrait aussi utiliser une procédure similaire pour prédire pour un électeur du second tour la distribution des préférences au premier tour. En effet, si la préférence pour le choix d'un individu se pose au second tour <em>entièrement</em> sur le choix $j^\ast$, on peut le formaliser comme $q_j = 0$ pour $j \neq j^\ast$ et $q_{j^\ast}=1$ et on obtient la prédiction:</p>
-$$
+<p>$$
 \hat{q}_j = M^{+}_{j^\ast i}
-$$<p>où $M^{+}$ est la pseudo-inverse de la matrice de transition.</p>
+$$</p>
+<p>où $M^{+}$ est la pseudo-inverse de la matrice de transition.</p>
 </div>
 </div>
 </div>

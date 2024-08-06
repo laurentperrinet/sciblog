@@ -113,7 +113,7 @@ the backup is an archive to be put on an external hard drive and then in a close
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=6d024b75">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -127,7 +127,7 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8f287d12">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -137,16 +137,14 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=c8fe4089">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The solution is to use the beloved <code>rsync</code> tool:</p>
 <p>In its most simple form, you use this command in the termina:</p>
-<pre><code>rsync -av  $INPUT  $OUTPUT
-
-</code></pre>
+<pre><code>rsync -av  $INPUT  $OUTPUT</code></pre>
 <p>Where <code>-av</code>stands for "keep file attributes and be (not too) verbose", <code>$INPUT</code> is the folder containing the files to be backed up, <code>$OUTPUT</code> is the destination folder. Be careful to avoid a trailing slash in <code>$INPUT</code>, unless you want the files that reside within the folder to be transferred instead of the folder itself.</p>
 <p>One huge advantage is that <code>$INPUT</code> or <code>$OUTPUT</code> can contain a remote server in the form of <code>myname@remoteserver:/path/to/my/folder</code>.</p>
 <p>An additional, useful option is <code>--dry-run</code> to try the command without moving the files. Also <code>--progress</code> gives a bit more info.</p>
@@ -154,7 +152,7 @@ the backup is an archive to be put on an external hard drive and then in a close
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a8401e03">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -195,7 +193,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=dcdfc0b3">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -204,7 +202,7 @@ total size is 2,772,534,329  speedup is 5,776,113.19 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e919b2a9">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -239,7 +237,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9e5261b6">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -248,7 +246,7 @@ total size is 2,772,529,142  speedup is 10,155,784.40 (DRY RUN)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=9a6f65b0">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
@@ -269,16 +267,72 @@ rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="
 <pre>receiving incremental file list
 alex/
 alex/bruitlolo_090319.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     51,642,368   5%   49.25MB/s    0:00:18  
+    124,387,328  12%   59.34MB/s    0:00:14  
+    180,551,680  18%   57.43MB/s    0:00:13  
+    242,057,216  24%   57.74MB/s    0:00:12  
+    314,900,480  31%   62.80MB/s    0:00:10  
+    380,928,000  38%   61.19MB/s    0:00:09  
+    454,590,464  46%   65.37MB/s    0:00:07  
+    510,066,688  51%   63.95MB/s    0:00:07  
+    578,224,128  58%   62.83MB/s    0:00:06  
+    649,527,296  65%   64.07MB/s    0:00:05  
+    718,143,488  72%   62.87MB/s    0:00:04  
+    788,725,760  79%   66.47MB/s    0:00:02  
+    857,112,576  86%   66.53MB/s    0:00:01  
+    925,990,912  93%   65.95MB/s    0:00:00  
     986,581,489 100%   63.21MB/s    0:00:14 (xfr#1, to-chk=5/7)
 alex/lolo.mat
+
+              0   0%    0.00kB/s    0:00:00  
         248,942 100%  248.83kB/s    0:00:00 (xfr#2, to-chk=4/7)
 alex/lolo2.mat
+
+              0   0%    0.00kB/s    0:00:00  
+        229,376   0%  209.54kB/s    0:41:32  
+     60,555,264  11%   27.91MB/s    0:00:16  
+    127,696,896  24%   39.69MB/s    0:00:09  
+    196,837,376  37%   46.16MB/s    0:00:06  
+    270,270,464  51%   64.42MB/s    0:00:03  
+    333,643,776  63%   61.99MB/s    0:00:02  
+    355,074,048  67%   51.62MB/s    0:00:03  
+    426,901,504  81%   52.23MB/s    0:00:01  
+    494,108,672  94%   50.63MB/s    0:00:00  
     522,599,574 100%   49.22MB/s    0:00:10 (xfr#3, to-chk=3/7)
 alex/lolocenter.mat
+
+              0   0%    0.00kB/s    0:00:00  
+        425,984  92%  407.84kB/s    0:00:00  
         458,267 100%  438.75kB/s    0:00:01 (xfr#4, to-chk=2/7)
 alex/lolofrozenpixel.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     41,189,376  63%   39.28MB/s    0:00:00  
      65,216,914 100%   47.08MB/s    0:00:01 (xfr#5, to-chk=1/7)
 alex/worloloofr.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     31,883,264   2%   30.41MB/s    0:00:37  
+    106,528,768   8%   50.82MB/s    0:00:20  
+    157,253,632  13%   33.39MB/s    0:00:30  
+    220,954,624  18%   38.38MB/s    0:00:24  
+    292,913,152  24%   45.34MB/s    0:00:19  
+    352,059,392  29%   42.64MB/s    0:00:19  
+    425,295,872  35%   63.95MB/s    0:00:11  
+    476,184,576  39%   55.04MB/s    0:00:12  
+    545,193,984  45%   54.41MB/s    0:00:11  
+    617,447,424  51%   57.24MB/s    0:00:09  
+    684,097,536  57%   55.81MB/s    0:00:08  
+    756,744,192  63%   66.94MB/s    0:00:06  
+    804,028,416  67%   61.76MB/s    0:00:06  
+    875,692,032  73%   61.62MB/s    0:00:05  
+    920,813,568  76%   55.45MB/s    0:00:04  
+    987,234,304  82%   53.99MB/s    0:00:03  
+  1,054,834,688  88%   58.75MB/s    0:00:02  
+  1,120,567,296  93%   57.35MB/s    0:00:01  
+  1,189,609,472  99%   64.12MB/s    0:00:00  
   1,197,423,956 100%   54.14MB/s    0:00:21 (xfr#6, to-chk=0/7)
 
 sent 147 bytes  received 2,772,868,036 bytes  58,376,172.27 bytes/sec
@@ -289,7 +343,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=73bea460">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -298,7 +352,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4e2ef0d2">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -326,7 +380,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=5fe329d3">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -335,7 +389,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d29a5f45">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -345,7 +399,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=76dff5a0">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -356,7 +410,7 @@ total size is 2,772,529,142  speedup is 12,002,290.66
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a6dd76e0">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
@@ -416,7 +470,7 @@ Saving to: 'hardlink.py'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9bb3e96a">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -425,7 +479,7 @@ Saving to: 'hardlink.py'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=80727936">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -447,16 +501,104 @@ rsync<span class="w"> </span>-av<span class="w">  </span>--progress<span class="
 created directory /Volumes/3tera/backups/12_backups/alex_new
 alex/
 alex/bruitlolo_090319.mat
+
+              0   0%    0.00kB/s    0:00:00  
+      3,112,960   0%    2.66MB/s    0:06:01  
+      6,684,672   0%    3.01MB/s    0:05:17  
+     12,025,856   1%    3.63MB/s    0:04:21  
+     19,628,032   1%    4.35MB/s    0:03:37  
+     27,230,208   2%    5.41MB/s    0:02:53  
+     32,997,376   3%    5.84MB/s    0:02:39  
+     37,715,968   3%    5.76MB/s    0:02:41  
+     42,696,704   4%    5.31MB/s    0:02:53  
+     48,726,016   4%    4.93MB/s    0:03:05  
+     53,444,608   5%    4.70MB/s    0:03:14  
+     57,376,768   5%    4.49MB/s    0:03:21  
+     62,324,736   6%    4.53MB/s    0:03:19  
+     74,153,984   7%    5.84MB/s    0:02:32  
+    102,465,536  10%   11.30MB/s    0:01:16  
+    133,136,384  13%   17.35MB/s    0:00:48  
+    170,885,120  17%   24.85MB/s    0:00:32  
+    211,419,136  21%   32.16MB/s    0:00:23  
+    244,547,584  24%   33.27MB/s    0:00:21  
+    297,074,688  30%   38.84MB/s    0:00:17  
+    330,792,960  33%   37.90MB/s    0:00:16  
+    372,473,856  37%   38.17MB/s    0:00:15  
+    397,115,392  40%   36.22MB/s    0:00:15  
+    403,668,992  40%   25.28MB/s    0:00:22  
+    410,484,736  41%   18.75MB/s    0:00:30  
+    423,329,792  42%   11.85MB/s    0:00:46  
+    443,252,736  44%   10.49MB/s    0:00:50  
+    457,932,800  46%   12.26MB/s    0:00:42  
+    469,991,424  47%   13.39MB/s    0:00:37  
+    490,438,656  49%   15.12MB/s    0:00:32  
+    498,302,976  50%   12.57MB/s    0:00:37  
+    510,361,600  51%   12.03MB/s    0:00:38  
+    535,461,888  54%   15.21MB/s    0:00:28  
+    566,493,184  57%   17.82MB/s    0:00:23  
+    589,955,072  59%   21.81MB/s    0:00:17  
+    614,170,624  62%   24.70MB/s    0:00:14  
+    627,802,112  63%   21.96MB/s    0:00:15  
+    645,890,048  65%   18.41MB/s    0:00:18  
+    684,949,504  69%   21.99MB/s    0:00:13  
+    700,153,856  70%   19.92MB/s    0:00:14  
+    723,877,888  73%   22.27MB/s    0:00:11  
+    772,145,152  78%   30.02MB/s    0:00:06  
+    814,153,728  82%   30.77MB/s    0:00:05  
+    851,935,232  86%   35.76MB/s    0:00:03  
+    861,372,416  87%   32.32MB/s    0:00:03  
+    901,382,144  91%   30.38MB/s    0:00:02  
+    940,474,368  95%   29.69MB/s    0:00:01  
+    984,055,808  99%   31.34MB/s    0:00:00  
     986,581,489 100%   19.40MB/s    0:00:48 (xfr#1, to-chk=5/7)
 alex/lolo.mat
+
+              0   0%    0.00kB/s    0:00:00  
         248,942 100%    1.70MB/s    0:00:00 (xfr#2, to-chk=4/7)
 alex/lolo2.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     37,453,824   7%   34.81MB/s    0:00:13  
+    100,368,384  19%   46.69MB/s    0:00:08  
+    146,505,728  28%   45.17MB/s    0:00:08  
+    173,768,704  33%   40.40MB/s    0:00:08  
+    244,580,352  46%   48.39MB/s    0:00:05  
+    300,122,112  57%   46.54MB/s    0:00:04  
+    372,310,016  71%   53.17MB/s    0:00:02  
+    440,107,008  84%   62.21MB/s    0:00:01  
+    493,387,776  94%   58.21MB/s    0:00:00  
     522,599,574 100%   52.06MB/s    0:00:09 (xfr#3, to-chk=3/7)
 alex/lolocenter.mat
+
+              0   0%    0.00kB/s    0:00:00  
         458,267 100%  962.42kB/s    0:00:00 (xfr#4, to-chk=2/7)
 alex/lolofrozenpixel.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     41,648,128  63%   39.72MB/s    0:00:00  
      65,216,914 100%   47.12MB/s    0:00:01 (xfr#5, to-chk=1/7)
 alex/worloloofr.mat
+
+              0   0%    0.00kB/s    0:00:00  
+     38,797,312   3%   37.00MB/s    0:00:30  
+     96,829,440   8%   46.19MB/s    0:00:23  
+    156,729,344  13%   49.71MB/s    0:00:20  
+    227,639,296  19%   54.18MB/s    0:00:17  
+    286,490,624  23%   58.95MB/s    0:00:15  
+    358,645,760  29%   62.31MB/s    0:00:13  
+    433,913,856  36%   66.12MB/s    0:00:11  
+    501,448,704  41%   65.33MB/s    0:00:10  
+    563,773,440  47%   65.13MB/s    0:00:09  
+    639,959,040  53%   66.08MB/s    0:00:08  
+    710,803,456  59%   65.06MB/s    0:00:07  
+    766,935,040  64%   62.38MB/s    0:00:06  
+    795,672,576  66%   55.33MB/s    0:00:07  
+    859,701,248  71%   52.43MB/s    0:00:06  
+    919,961,600  76%   49.90MB/s    0:00:05  
+    985,104,384  82%   52.04MB/s    0:00:03  
+  1,053,491,200  87%   61.50MB/s    0:00:02  
+  1,118,666,752  93%   61.79MB/s    0:00:01  
+  1,171,456,000  97%   60.01MB/s    0:00:00  
   1,197,423,956 100%   58.84MB/s    0:00:19 (xfr#6, to-chk=0/7)
 
 sent 147 bytes  received 2,772,868,036 bytes  34,878,845.07 bytes/sec
@@ -467,7 +609,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=0e752875">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -476,7 +618,7 @@ total size is 2,772,529,142  speedup is 1.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ac30bf06">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -516,7 +658,7 @@ Error: Must supply one or more directories
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ac4f336a">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -525,7 +667,7 @@ Error: Must supply one or more directories
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c531d512">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
@@ -542,7 +684,13 @@ Error: Must supply one or more directories
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Comparing: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
-Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/bruitlolo_090319.mat
      to: /Volumes/3tera/backups/12_backups/alex/bruitlolo_090319.mat, saved 986581489
 Comparing: /Volumes/3tera/backups/12_backups/alex/lolo.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolo.mat
@@ -550,7 +698,13 @@ Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo.mat
      to: /Volumes/3tera/backups/12_backups/alex/lolo.mat, saved 248942
 Comparing: /Volumes/3tera/backups/12_backups/alex/lolo2.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
-Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolo2.mat
      to: /Volumes/3tera/backups/12_backups/alex/lolo2.mat, saved 522599574
 Comparing: /Volumes/3tera/backups/12_backups/alex/lolocenter.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolocenter.mat
@@ -558,11 +712,23 @@ Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolocenter.mat
      to: /Volumes/3tera/backups/12_backups/alex/lolocenter.mat, saved 458267
 Comparing: /Volumes/3tera/backups/12_backups/alex/lolofrozenpixel.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
-Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/lolofrozenpixel.mat
      to: /Volumes/3tera/backups/12_backups/alex/lolofrozenpixel.mat, saved 65216914
 Comparing: /Volumes/3tera/backups/12_backups/alex/worloloofr.mat
      to  : /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
-Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Linked: /Volumes/3tera/backups/12_backups/alex_new/alex/worloloofr.mat
      to: /Volumes/3tera/backups/12_backups/alex/worloloofr.mat, saved 1197423956
 
 
@@ -595,7 +761,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ea7764ad">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -604,7 +770,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=c302b359">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -614,7 +780,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=64d853cd">
 <div class="input">
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
@@ -643,7 +809,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=78a69490">
 <div class="input">
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
@@ -658,19 +824,67 @@ Total run time        : 17.3441710472 seconds
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Scanning posts........done!
-.  render_posts:cache/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.html
-.  render_sources:output/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb
+<pre>Scanning posts.</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>..</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>....</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.done!
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_posts:cache/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-saving-space.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_sources:output/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb
 .  render_tags:output/categories/index.html
-.  render_tags:output/categories/int.html
-.  render_tags:output/categories/demo.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/int.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/demo.html
 .  render_tags:output/categories/oss.html
 .  render_tags:output/categories/vim.html
 .  render_tags:output/categories/macos.html
 .  render_tags:output/categories/elasticite.html
 .  render_tags:output/categories/ring-model.html
 .  render_tags:output/categories/computationalneuroscience.html
-.  render_tags:output/categories/moin.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/moin.html
 .  render_tags:output/categories/talks.html
 .  render_tags:output/categories/anr-balav1.html
 .  render_tags:output/categories/find.html
@@ -678,86 +892,320 @@ Total run time        : 17.3441710472 seconds
 .  render_tags:output/categories/year09.html
 .  render_tags:output/categories/year08.html
 .  render_tags:output/categories/year07.html
-.  render_tags:output/categories/blog.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/blog.html
 .  render_tags:output/categories/craac.html
 .  render_tags:output/categories/cnrs.html
 .  render_tags:output/categories/python.html
 .  render_tags:output/categories/rsync.html
-.  render_tags:output/categories/neuralensemble.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/neuralensemble.html
 .  render_tags:output/categories/hardlink.html
-.  render_tags:output/categories/ssh.html
-.  render_tags:output/categories/ubuntu.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/ssh.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/ubuntu.html
 .  render_tags:output/categories/moinmoin.html
 .  render_tags:output/categories/using.html
 .  render_tags:output/categories/info.html
 .  render_tags:output/categories/latex.html
 .  render_tags:output/categories/ipython.html
 .  render_tags:output/categories/motionclouds.html
-.  render_tags:output/categories/facets.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/facets.html
 .  render_tags:output/categories/year12.html
 .  render_tags:output/categories/year10.html
 .  render_tags:output/categories/notebook.html
 .  render_tags:output/categories/tropique.html
 .  render_tags:output/categories/sciblog.html
-.  render_tags:output/categories/bibcloud.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/bibcloud.html
 .  render_tags:output/categories/brainscales.html
 .  render_tags:output/categories/pynn.html
 .  render_tags:output/assets/js/tag_cloud_data.json
 .  render_indexes:output/index.html
-.  render_indexes:output/index-11.html
-.  render_indexes:output/index-9.html
-.  render_indexes:output/index-2.html
-.  render_indexes:output/index-13.html
-.  render_indexes:output/index-14.html
-.  render_indexes:output/index-3.html
-.  render_indexes:output/index-4.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-11.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-9.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-2.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-13.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-14.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-3.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-4.html
 .  render_indexes:output/index-8.html
-.  render_indexes:output/index-5.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-5.html
 .  render_indexes:output/index-6.html
-.  render_indexes:output/index-7.html
-.  render_indexes:output/index-12.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-7.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-12.html
 .  render_indexes:output/index-1.html
-.  render_indexes:output/index-10.html
-.  generate_rss:output/rss.xml
-.  render_tags:output/categories/oss.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_indexes:output/index-10.html
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  generate_rss:output/rss.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/oss.xml
 .  render_tags:output/categories/int.xml
-.  render_tags:output/categories/elasticite.xml
-.  render_tags:output/categories/rsync.xml
-.  render_tags:output/categories/notebook.xml
-.  render_tags:output/categories/vim.xml
-.  render_tags:output/categories/tropique.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/elasticite.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/rsync.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/notebook.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/vim.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/tropique.xml
 .  render_tags:output/categories/macos.xml
 .  render_tags:output/categories/sciblog.xml
-.  render_tags:output/categories/bibcloud.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/bibcloud.xml
 .  render_tags:output/categories/ring-model.xml
-.  render_tags:output/categories/brainscales.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/brainscales.xml
 .  render_tags:output/categories/computationalneuroscience.xml
 .  render_tags:output/categories/pynn.xml
-.  render_tags:output/categories/moin.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/moin.xml
 .  render_tags:output/categories/talks.xml
 .  render_tags:output/categories/anr-balav1.xml
-.  render_tags:output/categories/demo.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/demo.xml
 .  render_tags:output/categories/find.xml
 .  render_tags:output/categories/nikola.xml
-.  render_tags:output/categories/year09.xml
-.  render_tags:output/categories/year08.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/year09.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/year08.xml
 .  render_tags:output/categories/year07.xml
-.  render_tags:output/categories/blog.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/blog.xml
 .  render_tags:output/categories/craac.xml
-.  render_tags:output/categories/cnrs.xml
-.  render_tags:output/categories/python.xml
-.  render_tags:output/categories/neuralensemble.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/cnrs.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/python.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/neuralensemble.xml
 .  render_tags:output/categories/hardlink.xml
 .  render_tags:output/categories/ubuntu.xml
 .  render_tags:output/categories/ssh.xml
 .  render_tags:output/categories/moinmoin.xml
-.  render_tags:output/categories/using.xml
-.  render_tags:output/categories/info.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/using.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/info.xml
 .  render_pages:output/posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.html
-.  render_tags:output/categories/latex.xml
-.  render_tags:output/categories/ipython.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/latex.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/ipython.xml
 .  render_tags:output/categories/motionclouds.xml
-.  render_tags:output/categories/facets.xml
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.  render_tags:output/categories/facets.xml
 .  render_tags:output/categories/year12.xml
 .  render_tags:output/categories/year10.xml
 </pre>
@@ -766,7 +1214,7 @@ Total run time        : 17.3441710472 seconds
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=211292e4">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
@@ -781,157 +1229,1091 @@ Total run time        : 17.3441710472 seconds
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Scanning posts........done!
+<pre>Scanning posts...</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.....done!
 <span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git add .
-</span><span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git commit --dry-run -am 'Test' |grep -q -v 'nothing to commit' &amp;&amp; git commit -am 'Update'; git push
+</span></pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-white-fg">[2014-07-07T09:57:21Z] INFO: deploy: ==&gt; git commit --dry-run -am 'Test' |grep -q -v 'nothing to commit' &amp;&amp; git commit -am 'Update'; git push
 </span>[master 6f3001e] Update
  2 files changed, 126 insertions(+), 9 deletions(-)
-Counting objects: 5, done.
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Counting objects: 5, done.
 Delta compression using up to 8 threads.
+Compressing objects:  20% (1/5)   
+Compressing objects:  40% (2/5)   
+Compressing objects:  60% (3/5)   
+Compressing objects:  80% (4/5)   
+Compressing objects: 100% (5/5)   
 Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   
+Writing objects:  40% (2/5)   
+Writing objects:  60% (3/5)   
+Writing objects:  80% (4/5)   
+Writing objects: 100% (5/5)   
 Writing objects: 100% (5/5), 1.16 KiB | 0 bytes/s, done.
 Total 5 (delta 4), reused 0 (delta 0)
-To https://meduz@bitbucket.org/meduz/invibe.git
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>To https://meduz@bitbucket.org/meduz/invibe.git
    154ad20..6f3001e  master -&gt; master
 <span class="ansi-white-fg">[2014-07-07T09:57:24Z] INFO: deploy: ==&gt; ./deploy.sh
+</span></pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  
+mkdir `/nikola' [FEAT negotiation...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                       
 Removing old file `index-1.html'
 Transferring file `index-1.html'
+`index-1.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-10.html'
 Transferring file `index-10.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-10.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `index-11.html'
 Transferring file `index-11.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-11.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `index-12.html'
 Transferring file `index-12.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-12.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `index-13.html'
 Transferring file `index-13.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-13.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `index-14.html'
 Transferring file `index-14.html'
+`index-14.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `index-2.html'
 Transferring file `index-2.html'
+`index-2.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-3.html'
 Transferring file `index-3.html'
+`index-3.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-4.html'
 Transferring file `index-4.html'
+`index-4.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-5.html'
 Transferring file `index-5.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-5.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-6.html'
 Transferring file `index-6.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-6.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-7.html'
 Transferring file `index-7.html'
+`index-7.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-8.html'
 Transferring file `index-8.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`index-8.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index-9.html'
 Transferring file `index-9.html'
+`index-9.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `index.html'
 Transferring file `index.html'
+`index.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `rss.xml'
 Transferring file `rss.xml'
+`rss.xml' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                               
 Mirroring directory `2005'
+2005: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2006'
+2006: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2007'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2007: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2008'
+2008: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2009'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2009: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2010'
+2010: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2011'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2011: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2012'
+2012: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2013'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2013: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `2014'
+2014: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                
 Mirroring directory `assets'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>assets: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                  
 Mirroring directory `assets/css'
+assets/css: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                      
 Mirroring directory `assets/fonts'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>assets/fonts: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                        
 Mirroring directory `assets/images'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>assets/images: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                         
 Mirroring directory `assets/js'
+assets/js: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                     
 Removing old file `assets/js/tag_cloud_data.json'
 Transferring file `assets/js/tag_cloud_data.json'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`tag_cloud_data.json' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                           
 Mirroring directory `categories'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>categories: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>categories: Getting files information (68%) [Waiting for response...] 
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                       
 Removing old file `categories/anr-balav1.html'
 Transferring file `categories/anr-balav1.html'
+`anr-balav1.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                       
 Removing old file `categories/bibcloud.html'
 Transferring file `categories/bibcloud.html'
+`bibcloud.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `categories/blog.html'
 Transferring file `categories/blog.html'
+`blog.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/brainscales.html'
 Transferring file `categories/brainscales.html'
+`brainscales.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                        
 Removing old file `categories/cnrs.html'
 Transferring file `categories/cnrs.html'
+`cnrs.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/computationalneuroscience.html'
 Transferring file `categories/computationalneuroscience.html'
+`computationalneuroscience.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                      
 Removing old file `categories/craac.html'
 Transferring file `categories/craac.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`craac.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `categories/demo.html'
 Transferring file `categories/demo.html'
+`demo.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/elasticite.html'
 Transferring file `categories/elasticite.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`elasticite.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                       
 Removing old file `categories/facets.html'
 Transferring file `categories/facets.html'
+`facets.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/find.html'
 Transferring file `categories/find.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`find.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/info.html'
 Transferring file `categories/info.html'
+`info.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/int.html'
 Transferring file `categories/int.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`int.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                
 Removing old file `categories/int.xml'
 Transferring file `categories/int.xml'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`int.xml' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                               
 Removing old file `categories/ipython.html'
 Transferring file `categories/ipython.html'
+`ipython.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `categories/latex.html'
 Transferring file `categories/latex.html'
+`latex.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `categories/macos.html'
 Transferring file `categories/macos.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`macos.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `categories/moin.html'
 Transferring file `categories/moin.html'
+`moin.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/moinmoin.html'
 Transferring file `categories/moinmoin.html'
+`moinmoin.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `categories/motionclouds.html'
 Transferring file `categories/motionclouds.html'
+`motionclouds.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                         
 Removing old file `categories/neuralensemble.html'
 Transferring file `categories/neuralensemble.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`neuralensemble.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                           
 Removing old file `categories/nikola.html'
 Transferring file `categories/nikola.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`nikola.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/notebook.html'
 Transferring file `categories/notebook.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`notebook.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `categories/oss.html'
 Transferring file `categories/oss.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`oss.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                
 Removing old file `categories/pynn.html'
 Transferring file `categories/pynn.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`pynn.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                 
 Removing old file `categories/python.html'
 Transferring file `categories/python.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`python.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/ring-model.html'
 Transferring file `categories/ring-model.html'
+`ring-model.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                       
 Removing old file `categories/sciblog.html'
 Transferring file `categories/sciblog.html'
+`sciblog.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                    
 Removing old file `categories/ssh.html'
 Transferring file `categories/ssh.html'
+`ssh.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                
 Removing old file `categories/talks.html'
 Transferring file `categories/talks.html'
+`talks.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `categories/tropique.html'
 Transferring file `categories/tropique.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`tropique.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                     
 Removing old file `categories/ubuntu.html'
 Transferring file `categories/ubuntu.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`ubuntu.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/using.html'
 Transferring file `categories/using.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`using.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                  
 Removing old file `categories/vim.html'
 Transferring file `categories/vim.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`vim.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                
 Removing old file `categories/year07.html'
 Transferring file `categories/year07.html'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>`year07.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/year08.html'
 Transferring file `categories/year08.html'
+`year08.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/year09.html'
 Transferring file `categories/year09.html'
+`year09.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/year10.html'
 Transferring file `categories/year10.html'
+`year10.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Removing old file `categories/year12.html'
 Transferring file `categories/year12.html'
+`year12.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                   
 Mirroring directory `galleries'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>galleries: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                     
 Mirroring directory `galleries/demo'
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>galleries/demo: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                          
 Mirroring directory `listings'
+listings: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                    
 Mirroring directory `posts'
+posts: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>posts: Getting files information (16%) [Waiting for response...] 
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>posts: Getting files information (38%) [Waiting for response...]  
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>posts: Getting files information (58%) [Waiting for response...]  
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>posts: Getting files information (79%) [Waiting for response...]  
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                  
 Removing old file `posts/14-06-25-grille-hexagonale.html'
 Transferring file `posts/14-06-25-grille-hexagonale.html'
+`...6-25-grille-hexagonale.html' at 0 (0%) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                      
 Transferring file `posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.html'
+`...s-to-a-remote-server-s.html' at 0 (0%) [Making data connection...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                        
 Transferring file `posts/14-07-07-transferring-lots-of-files-to-a-remote-server-s.ipynb'
+`...-to-a-remote-server-s.ipynb' at 0 (0%) [Making data connection...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                        
 Mirroring directory `stories'
-</span><span class="ansi-white-fg">[2014-07-07T09:57:42Z] INFO: deploy: Successful deployment
+stories: Getting directory contents (0) [Waiting for response...]
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                                                   
+<span class="ansi-white-fg">[2014-07-07T09:57:42Z] INFO: deploy: Successful deployment
 </span></pre>
 </div>
 </div>
