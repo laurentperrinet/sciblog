@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converting MoinMoin pages to Nikola | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2014-01-14-trying-out-ipython-blogging.html" title="Trying out ipython blogging" type="text/html">
+<link rel="next" href="2014-02-15-converting-moinmoin-pages-to-nikola.html" title="Converting moinmoin pages to nikola" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Converting MoinMoin pages to Nikola">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html">
+<meta property="og:description" content="I have another wiki to take notes. These are written using the MoinMoin syntax, which is nice, but I found no converter from MoinMoin to anything compatible with Nikola.
+
+
+
+
+
+
+Following this post http">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-02-11T16:07:59+01:00">
+<meta property="article:tag" content="ipython">
+<meta property="article:tag" content="moinmoin">
+<meta property="article:tag" content="nikola">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" class="u-url">Converting MoinMoin pages to Nikola</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html" rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-11T16:07:59+01:00" itemprop="datePublished" title="2014-02-11 16:07">2014-02-11 16:07</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have another wiki to take notes. These are written using the MoinMoin syntax, which is nice, but I found no converter from MoinMoin to anything compatible with Nikola.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following this post <a href="http://carreau.github.io/posts/06-NBconvert-Doc-Draft.html">http://carreau.github.io/posts/06-NBconvert-Doc-Draft.html</a> , I thought I might give it a try using ipython within nikola:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://URL/cgi-bin/index.cgi/SciBlog/2005-10-29?action=print'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NOTE: this should not be tried with these URLS as they do not exist anymore...</p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="First-thoughts...">First thoughts...<a class="anchor-link" href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html#First-thoughts...">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#import requests</span>
+<span class="c1">#response = requests.get(URL)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">pagehtml</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">pagehtml</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>13569
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="...-using-pandoc">... using pandoc<a class="anchor-link" href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html#...-using-pandoc">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="k">def</span> <span class="nf">html2rst</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">'pandoc'</span><span class="p">,</span> <span class="s1">'--from=html'</span><span class="p">,</span> <span class="s1">'--to=rst'</span><span class="p">],</span>
+                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">html</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pagerst</span> <span class="o">=</span> <span class="n">html2rst</span><span class="p">(</span><span class="n">pagehtml</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">pagerst</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>| et/ScientificPython&gt;`__              |
+                                                                             
++--------------------------------------+--------------------------------------+
+
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>nikola<span class="w"> </span>new_post<span class="w"> </span>--title<span class="o">=</span><span class="s2">"05-10-29 craac"</span><span class="w"> </span>--tag<span class="o">=</span><span class="s2">"cnrs, craac"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Creating New Post
+-----------------
+
+Title: 05-10-29 craac
+Scanning posts...</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.....done!
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[2014-02-11T16:16:23Z] ERROR: new_post: The title already exists!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">.. title: 05-10-29 craac</span>
+<span class="s2">.. slug: 05-10-29-craac</span>
+<span class="s2">.. date: 2005-10-29 14:15:23</span>
+<span class="s2">.. description: importing from moinmoin to nikola</span>
+<span class="s2">.. type: text</span>
+<span class="s2">.. tags: cnrs, craac</span>
+
+<span class="s2">"""</span>
+<span class="n">pagerst</span> <span class="o">=</span> <span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">file</span><span class="p">(</span><span class="s1">'05-10-29-craac.rst'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pagerst</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat<span class="w"> </span><span class="s1">'05-10-29-craac.rst'</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.. title: 05-10-29 craac
+.. slug: 05-10-29-craac
+.. date: 2005-10-29 14:15:23
+.. description: importing from moinmoin to nikola
+.. type: text
+.. tags: cnrs, craac
+
+CRAAC 2005
+==========
+
+2005-10-24
+
+Récapitulatif de votre saisie : ce document sera soumis au visa de votre
+directeur
+
+Compte rendu annuel d'activité des chercheurs du CNRS Année 2004 - 2005
+
+Identité
+
+Nom (nom de jeune fille) PERRINET Prénom Laurent Date de naissance
+23/02/1973 Grade CR2 N° d'agent QAF195447 Téléphone 04 91 16 43 64
+Télécopie 04 91 16 43 64 Adresse électronique
+`laurent.perrinet@incm.cnrs-mrs.fr &lt;mailto:laurent.perrinet@incm.cnrs-mrs.fr&gt;`__
+Section(s) du Comité National 7 Département scientifique Sciences de la
+vie Délégation régionale Provence Affectation
+
+Intitulé de l'unité Institut de neurosciences cognitives de la
+méditerranée - INCM Code unité UMR6193 Directeur Driss BOUSSAOUD Adresse
+électronique du directeur
+`driss.boussaoud@incm.cnrs-mrs.fr &lt;mailto:driss.boussaoud@incm.cnrs-mrs.fr&gt;`__
+Adresse 31 Chemin Joseph Aiguier
+
+-  13402 MARSEILLE CEDEX 20
+
+Téléphone 04 91 16 43 18 Télécopie 04 91 77 49 69 Délégation Provence
+Site Web Distinction(s)
+
+Qualification
+
+Habilitation à diriger des recherches non Doctorat d'Etat non Doctorat
+oui Année d'obtention 2003 Qualification "Maître de conférences" non
+Qualification "Professeur" non Période d'inactivité
+
+Mobilité(s) antérieure(s)
+
+Activités de recherche développées
+
+Rattachement à(aux) activité(s) de recherche de l'unité UMR6193
+
+Intitulé d'activité Date fin du rattachement
+
+-  DYNAMIQUE DE LA PERCEPTION VISUELLE ET DE L'ACTION (DyVA)
+
+Mots clés des sections/CID du Comité national
+
+Section 1 : Équations aux dérivées partielles, optimisation, contrôle,
+théorie du signal Section 1 : Probabilités, processus et algorithmes
+stochastiques, statistique, analyses des données Section 7 :
+Intelligence artificielle : raisonnement, décision, apprentissage
+Section 7 : Modélisation, analyse, commande et supervision des systèmes
+dynamiques Section 27 : Neurosciences comportementales et cognitives
+normales et pathologiques, homme et modèles animaux, imagerie cérébrale
+fonctionnelle Section 27 : Modélisation des processus cognitifs et
+neurosciences computationnelles Publication(s), parue(s) ou sous presse,
+dans des revues à comité de lecture
+
+Référence FISCHER, S.; REDONDO, R.; PERRINET, L.; CRISTOBAL, G. (2005),
+«Sparse gabor wavelets by local operations.», Proceedings SPIE, volume
+5839 of Bioengineered and Bioinspired Systems, 75 86 PERRINET L. Feature
+detection using spikes : the greedy approach. Journal of Physiology,
+Paris (special issue) - Sous presse PERRINET L., SAMUELIDES S., THORPE
+S.,. Coding static natural images using spiking event times: do neuron
+cooperate?. IEEE Transactions on Neural Networks. . . . 15. . .
+1164-1175. . PERRINET L.,. Finding independent components using spikes:
+A natural result of hebbian learning in a spike coding scheme. Natural
+Computing . . . . 3. . . 159-175-. . PERRINET L.;. Emergence of filters
+from natural scenes in a sparse spike coding scheme. Neurocomputing. . .
+. 58-60. . . 821-826. . PERRINET, L; (2005), «Efficient source detection
+using integrate-and-fire neurons.», In W. Duch et al., editor, ICANN
+2005, Lecture Notes in Computer Science, volume 3696, pages 167-72
+Rafael Redondo, Sylvain Fischer, Laurent Perrinet, and Gabriel
+Cristobal. Simple cells modeling through a sparse overcomplete gabor
+wavelet representation based on local inhibition and facilitation. In
+Gustavo Linan-Cembrano Ricardo A. Carmona, editor, Perception, volume 34
+of Bioengineered and Bioinspired Systems II, page 238, August 2005.
+Publication(s), parue(s) ou sous presse, dans des revues sans comité de
+lecture
+
+Ouvrage(s) ou chapitre(s) d'ouvrage(s), paru(s) ou sous presse
+
+Participation à des manifestations scientifiques
+
+Manifestation Dynn - ACI Temps et Cerveau Type de manifestation (
+national ) Lieu Cannes ( FRANCE ) Durée 3 (jour(s))
+
+Manifestation ECVP Type de manifestation ( international ) Lieu La
+Corogne ( ESPAGNE ) Durée 5 (jour(s))
+
+Manifestation ICANN Type de manifestation ( international ) Lieu
+Varsovie ( POLOGNE ) Durée 5 (jour(s))
+
+Manifestation Maths et Cerveau Type de manifestation ( international )
+Lieu Paris ( FRANCE ) Durée 15 (jour(s))
+
+Manifestation Pre-FACETS Workshop on Simulation and Computation Type de
+manifestation ( international ) Lieu Graz ( AUTRICHE ) Durée 4 (jour(s))
+
+Activité éditoriale
+
+Rapporteur/Relecteur dans des revues Informations complémentaires
+Advanced Concepts for Intelligent Vision Systems (Sept 20-23, 2005,
+University of Antwerp, Antwerp, Belgium,
+`http://acivs.org/acivs2005/ &lt;http://acivs.org/acivs2005/&gt;`__)
+
+Rapporteur/Relecteur dans des revues Informations complémentaires Neural
+Information Processing
+
+Rapporteur/Relecteur dans des revues Informations complémentaires Neural
+Processing Letters
+
+Rapporteur/Relecteur dans des revues Informations complémentaires
+International Journal of Neural Systems (IJNS)
+
+Séjour(s) dans d'autres laboratoires
+
+Objet Visite et collaboration avec Bruno Olshausen Organisme Redwood
+Neuroscience Institute Pays ETATS UNIS Unité RNI Durée annuelle 30 (j)
+
+Objet Collaboration avec Sylvain Fischer et Gabriel Cristobal -
+co-publications Organisme CSIC Pays ESPAGNE Unité Instituto de Optica
+Durée annuelle 30 (j)
+
+Mission(s) sur le terrain
+
+Formation personnelle
+
+Collaborations
+
+Organisme partenaire CNRS Pays FRANCE ( Europe ) Unité partenaire UMR
+Mouvement et Perception Intitulé ANR RETINAE Cadre de la coopération
+Nature de l'activité
+
+Organisme partenaire INRIA Pays FRANCE ( Europe ) Unité partenaire
+Odyssee Intitulé FACETS Cadre de la coopération AUTRE - contrat europeen
+Nature de l'activité Participation à un réseau
+
+Organisme partenaire SUPAERO - CERT Pays FRANCE ( Europe ) Unité
+partenaire ONERA Intitulé Reseau Dynn - ACI Temps et Cerveau Cadre de la
+coopération Nature de l'activité Participation à un réseau
+
+Encadrement et animation scientifique
+
+Animation scientifique Participation et organisation dans la formation
+interne organisee par l'INCM. Enseignement
+
+Valorisation et partenariat
+
+Vulgarisation
+
+Type d'information Intitulé Type de participation Intervention en milieu
+scolaire Fete de la Science Participation ponctuelle Administration de
+la recherche
+
+--------------
+
+-- `LaurentPerrinet &lt;/LaurentPerrinet/LaurentPerrinet&gt;`__ 2005-10-29
+13:50:37
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and now ... deploy!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="another-page">another page<a class="anchor-link" href="2014-02-11%20Converting%20MoinMoin%20pages%20to%20Nikola.html#another-page">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span> <span class="o">=</span> <span class="s1">'2010-06-24'</span><span class="p">,</span> <span class="s1">'13:36:57'</span>
+<span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span> <span class="o">=</span> <span class="s1">'installing SUMATRA'</span><span class="p">,</span> <span class="s1">'python, sciblog'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What about doing that directly from the url:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="k">def</span> <span class="nf">url2rst</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">'pandoc'</span><span class="p">,</span> <span class="s1">'--from=html'</span><span class="p">,</span> <span class="s1">'--to=rst'</span><span class="p">],</span>
+                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">html</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">'https://URL.net/LaurentPerrinet/SciBlog/</span><span class="si">%s</span><span class="s1">?action=print'</span> <span class="o">%</span> <span class="n">DATE</span>
+<span class="n">pagerst</span> <span class="o">=</span> <span class="n">url2rst</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10-06-24 installing SUMATRA 10-06-24-installing-SUMATRA
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">TIMEDTITLE</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="n">TITLE</span>
+<span class="n">SLUG</span> <span class="o">=</span> <span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="n">TITLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">TIMEDTITLE</span><span class="p">,</span> <span class="n">SLUG</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10-06-24 installing SUMATRA 10-06-24-installing-SUMATRA
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tmplt</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
+<span class="s2">.. title: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. slug: </span><span class="si">%s</span>
+<span class="s2">.. date: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span>
+<span class="s2">.. type: text</span>
+<span class="s2">.. tags: </span><span class="si">%s</span>
+
+<span class="s2">"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">DATE</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">TITLE</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">TIME</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+.. title: 10-06-24 installing SUMATRA
+.. slug: 10-06-24-installing-SUMATRA
+.. date: 2010-06-24 13:36:57
+.. type: text
+.. tags: python, sciblog
+
+--------------
+
+installing SUMATRA
+==================
+
++-----------------------+
+| 2010-06-24 13:36:57   |
++-----------------------+
+
+-  notes from the
+   `CodeJamNr4 &lt;/LaurentPerrinet/FACETS%20CodeJam%20Workshop%20#A4&gt;`__
+-  this was using a fresh install of ETS 6.2
+
+dependencies
+------------
+
+-  pysvn :
+
+   -  had to uninstall stuff from MacPorts
+
+      ::
+
+          sudo port uninstall --follow-dependents subversion 
+
+   -  `get
+      pysvn &lt;http://pysvn.tigris.org/servlets/ProjectDocumentList?folderID=1762&amp;expandFolder=1762&amp;folderID=5842&gt;`__
+
+      -  make :
+
+         ::
+
+             cd Source
+             python setup.py backport
+             Create the Makefile using python setup.py configure
+             make
+
+   -  install
+
+      ::
+
+          sudo rsync -av pysvn /Library/Frameworks/Python.framework/Versions/6.2/lib/python2.6/site-packages/
+
+      -  pysvn 1.7.1 worked for me
+
+-  mercurial
+
+   ::
+
+       sudo easy_install mercurial
+
+-  django
+
+   ::
+
+       sudo easy_install django django_tagging
+
+with hg
+-------
+
+::
+
+      525  svn export ../sci/dyva/Motion/particles hg_particles
+      526  cd hg_particles/
+      527  hg init
+      528  hg add MotionParticles.py experiment_all.py 
+      529  hg commit
+      530  hg commit -m 'test'
+      531  echo $USER
+      532  vim .hgrc
+      533  vim ~/.hgrc
+      534  hg commit -m 'my first HG commit'
+      535  vim ~/.hgrc
+      536  ipython
+      537  ls
+      538  smt init sumatraTest_hg
+      539  smt info
+
+with svn
+--------
+
+::
+
+      501  cd sci/dyva/Motion/particles/
+      502  smt init -h
+      503  smt init sumatraTest
+      504  smt info
+     511  smt configure --simulator=python --main=experiment_all.py 
+      512  smt info
+      513  smtweb &amp;
+      514  ls -a
+      515  rm -fr .smt
+      516  smt init sumatraTest
+      517  smtweb &amp;
+      518  open experiment_all.py 
+      519  touch fake.param
+      520  smt run
+      521  smt run -s python -m experiment_dot.py fake.param 
+      522  smt info
+      523  smt configure -h
+      524  smt configure -c diff
+      525  smt info
+      526  smt run -s python -m experiment_dot.py fake.param 
+      529  smt run -s python -m experiment_dot.py fake.param 
+      534  rm mat/dot.npy 
+      535  python experiment_dot.py fake.param 
+      536  ls
+      537  smt help configure
+      538  smt configure -d ./figures/
+      539  smt info
+      540  smt configure -s python -m experiment_dot.py
+      541  smt run fake.param 
+      542  rm mat/dot.npy 
+      543  smt run fake.param 
+      544  ls figures/
+      545  rm figures/dot_*
+      546  smt run fake.param 
+      547  smt info
+      548  smt configure -d ./figures
+      549  smt info
+      550  rm figures/dot_*png
+      551  smt configure -d ./figures
+      552  smt run fake.param 
+      553  smt comment "apparently, it is worth NaN shekels."
+      554  smt tag codejam
+      558  rm figures/dot_*png
+      559  rm mat/dot.npy 
+      560  smt run --reason="test effect of a bigger dot" fake.param dot_size=0.1
+      561  ls
+      562  ls -al .smt/
+      563  less .smt/simulation_records 
+      564  sqlite3 .smt/simulation_records 
+
+--------------
+
+`TagSciBlog &lt;/LaurentPerrinet/TagSciBlog&gt;`__
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'nikola new_post --title="</span><span class="si">%s</span><span class="s1">" --tag="</span><span class="si">%s</span><span class="s1">"'</span> <span class="o">%</span> <span class="p">(</span><span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">file</span><span class="p">(</span><span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next steps: automatizing extraction of metadata: date and tags</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>..
+<span class="o">!</span>nikola<span class="w"> </span>new_post<span class="w"> </span>-f<span class="w"> </span>ipynb<span class="w"> </span>--title<span class="o">=</span><span class="s2">"14-02-15-converting-moinmoin-pages-to-nikola"</span><span class="w"> </span>--tags<span class="o">=</span><span class="s2">"ipython, nikola, moinmoin"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Creating New Post
+-----------------
+
+Title: 14-02-15-converting-moinmoin-pages-to-nikola
+Scanning posts.</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>..</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>..</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>..done!
+Your post's metadata is at:  posts/14-02-15-converting-moinmoin-pages-to-nikola.meta
+[2014-02-15T14:09:31Z] NOTICE: new_post: Your post's text is at: posts/14-02-15-converting-moinmoin-pages-to-nikola.ipynb
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/ipython.html" rel="tag">ipython</a></li>
+            <li><a class="tag p-category" href="../categories/moinmoin.html" rel="tag">moinmoin</a></li>
+            <li><a class="tag p-category" href="../categories/nikola.html" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2014-01-14-trying-out-ipython-blogging.html" rel="prev" title="Trying out ipython blogging">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2014-02-15-converting-moinmoin-pages-to-nikola.html" rel="next" title="Converting moinmoin pages to nikola">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

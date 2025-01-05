@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistics of time-varying images | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2014-10-21-statistics-of-time-varying-images.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2014-10-20_motion-plaid.html" title="Motion Plaids" type="text/html">
+<link rel="next" href="2014-10-24_a-bit-of-fun-with-gravity-waves.html" title="A bit of fun with gravity waves" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Statistics of time-varying images">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2014-10-21-statistics-of-time-varying-images.html">
+<meta property="og:description" content="In this notebook, we are interested in replicating the results from Dong and Attick (1995).
+TODO!
+
+
+
+
+
+
+In [1]:
+
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+figsize=(21, 13) # fib
+opts = {'fon">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-10-21T13:36:22+02:00">
+<meta property="article:tag" content="motionclouds">
+<meta property="article:tag" content="natural-scenes">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2014-10-21-statistics-of-time-varying-images.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Statistics of time-varying images</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2014-10-21T13:36:22+02:00" itemprop="datePublished" title="2014-10-21 13:36">2014-10-21 13:36</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2014-10-21-statistics-of-time-varying-images.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this notebook, we are interested in replicating the results from Dong and Attick (1995).</p>
+<p>TODO!</p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'fontsize'</span><span class="p">:</span><span class="mi">24</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Takes a MPEG movie and produces a numpy array:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="TODO:">TODO:<a class="anchor-link" href="2014-10-21-statistics-of-time-varying-images.html#TODO:">¶</a>
+</h3>
+<p>We here provide a large data set of eye movement data on high-resolution natural movies, Hollywood trailers, and static images. Our analysis of this data and details on data collection can be found in</p>
+<p>Michael Dorr, Thomas Martinetz, Karl Gegenfurtner, and Erhardt Barth. Variability of eye movements when viewing dynamic natural scenes. Journal of Vision, 10(10):1-17, 2010.</p>
+<p><a href="http://webmail.inb.uni-luebeck.de/inb-toolsdemos/FILES/movies-mpg.zip">http://webmail.inb.uni-luebeck.de/inb-toolsdemos/FILES/movies-mpg.zip</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span> 
+    <span class="n">movie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'/var/tmp/movie.npy'</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># Let's take whatever movie that is supported by ffmpeg</span>
+    <span class="n">MOVIE</span> <span class="o">=</span> <span class="s1">'/Volumes/archives/11-07-14_RTC/montypython.mpg'</span>
+    <span class="c1">#MOVIE = '/Users/lolo/Downloads/movies_mpg/beach.mpg'</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="mf">25.</span> <span class="c1"># framerate of the movie (in Hz)</span>
+
+    <span class="n">N_frame</span> <span class="o">=</span> <span class="mi">512</span> <span class="c1"># 8192 # 4096 # 16348 # 44197</span>
+    <span class="n">start_frame</span> <span class="o">=</span> <span class="mi">2000</span>
+    
+    <span class="n">start</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">start_frame</span> <span class="o">/</span> <span class="n">fs</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">/</span> <span class="n">fs</span>
+    
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">'/var/tmp/foo-001.png'</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'ffmpeg -i '</span> <span class="o">+</span> <span class="n">MOVIE</span> <span class="o">+</span> <span class="s1">' -ss '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' -t '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span> <span class="o">+</span><span class="s1">' -f image2 /var/tmp/foo-</span><span class="si">%03d</span><span class="s1">.png'</span><span class="p">)</span>
+
+    <span class="c1"># convert them to numpy</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">save</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">flipud</span>
+    <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">imread</span>
+    <span class="c1">#from scipy import</span>
+    <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">zoom</span>
+
+    <span class="n">border_x</span><span class="p">,</span> <span class="n">border_y</span><span class="p">,</span> <span class="n">actual_size</span><span class="p">,</span> <span class="n">expected_size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mf">128.</span>
+    <span class="n">zfactor</span> <span class="o">=</span> <span class="n">expected_size</span><span class="o">/</span><span class="n">actual_size</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">border_x</span><span class="p">,</span> <span class="n">border_x</span><span class="o">+</span><span class="n">actual_size</span> <span class="p">,</span> <span class="n">border_y</span><span class="p">,</span> <span class="n">border_y</span><span class="o">+</span><span class="n">actual_size</span>
+    <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">imread</span><span class="p">(</span><span class="s1">'/var/tmp/foo-001.png'</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="n">xmin</span><span class="p">:</span><span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">:</span><span class="n">ymax</span><span class="p">],</span> <span class="n">zfactor</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">movie</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">n_y</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i_frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_frame</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s1">'/var/tmp/foo-</span><span class="si">%03d</span><span class="s1">.png'</span> <span class="o">%</span> <span class="p">(</span><span class="n">i_frame</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">flipud</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">imread</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="n">xmin</span><span class="p">:</span><span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">:</span><span class="n">ymax</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">movie</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoom</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">zfactor</span><span class="p">)</span>
+
+    <span class="c1">#movie -= movie.mean()</span>
+    <span class="c1">##    print mov.shape</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'rm -f /var/tmp/foo-*.png'</span><span class="p">)</span>
+
+    <span class="n">save</span><span class="p">(</span><span class="s1">'/var/tmp/movie.npy'</span><span class="p">,</span> <span class="n">movie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-02422c48ca21&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>movie <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'/var/tmp/movie.npy'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.5/site-packages/numpy/lib/npyio.py</span> in <span class="ansi-cyan-fg">load</span><span class="ansi-blue-fg">(file, mmap_mode, allow_pickle, fix_imports, encoding)</span>
+<span class="ansi-green-intense-fg ansi-bold">    361</span>     <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>file<span class="ansi-blue-fg">,</span> basestring<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 362</span><span class="ansi-red-fg">         </span>fid <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span>file<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"rb"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    363</span>         own_fid <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: '/var/tmp/movie.npy'
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-02422c48ca21&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     25</span>     zfactor <span class="ansi-blue-fg">=</span> expected_size<span class="ansi-blue-fg">/</span>actual_size
+<span class="ansi-green-intense-fg ansi-bold">     26</span>     xmin<span class="ansi-blue-fg">,</span> xmax<span class="ansi-blue-fg">,</span> ymin<span class="ansi-blue-fg">,</span> ymax <span class="ansi-blue-fg">=</span> border_x<span class="ansi-blue-fg">,</span> border_x<span class="ansi-blue-fg">+</span>actual_size <span class="ansi-blue-fg">,</span> border_y<span class="ansi-blue-fg">,</span> border_y<span class="ansi-blue-fg">+</span>actual_size
+<span class="ansi-green-fg">---&gt; 27</span><span class="ansi-red-fg">     </span>n_x<span class="ansi-blue-fg">,</span> n_y <span class="ansi-blue-fg">=</span> zoom<span class="ansi-blue-fg">(</span>mean<span class="ansi-blue-fg">(</span>imread<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'/var/tmp/foo-001.png'</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> axis<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span>xmin<span class="ansi-blue-fg">:</span>xmax<span class="ansi-blue-fg">,</span> ymin<span class="ansi-blue-fg">:</span>ymax<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> zfactor<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>shape
+<span class="ansi-green-intense-fg ansi-bold">     28</span> 
+<span class="ansi-green-intense-fg ansi-bold">     29</span>     movie <span class="ansi-blue-fg">=</span> zeros<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span>n_y<span class="ansi-blue-fg">,</span> n_x<span class="ansi-blue-fg">,</span> N_frame<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.5/site-packages/matplotlib/pyplot.py</span> in <span class="ansi-cyan-fg">imread</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2288</span> <span class="ansi-blue-fg">@</span>docstring<span class="ansi-blue-fg">.</span>copy_dedent<span class="ansi-blue-fg">(</span>_imread<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2289</span> <span class="ansi-green-fg">def</span> imread<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 2290</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _imread<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2291</span> 
+<span class="ansi-green-intense-fg ansi-bold">   2292</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.5/site-packages/matplotlib/image.py</span> in <span class="ansi-cyan-fg">imread</span><span class="ansi-blue-fg">(fname, format)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1321</span>             <span class="ansi-green-fg">return</span> handler<span class="ansi-blue-fg">(</span>fd<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1322</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1323</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>fname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'rb'</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> fd<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1324</span>                 <span class="ansi-green-fg">return</span> handler<span class="ansi-blue-fg">(</span>fd<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1325</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: '/var/tmp/foo-001.png'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span> <span class="s1">'The movie consists of '</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span> <span class="s1">' frames @ size ('</span><span class="p">,</span> <span class="n">N_X</span><span class="p">,</span> <span class="s1">' x '</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="s1">')'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">movie</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">movie</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">movie</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sample images:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">axs_</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs_</span><span class="p">:</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">movie</span><span class="p">[:,</span> <span class="p">:,</span> <span class="nb">int</span><span class="p">(</span><span class="n">N_frame</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">())]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">(),</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'lower'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We wish to compute the motion energy of this movie, first globally.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
+
+<span class="k">def</span> <span class="nf">show_spectrum</span><span class="p">(</span><span class="n">F_in</span><span class="p">):</span>
+    <span class="n">F_</span> <span class="o">=</span> <span class="n">F_in</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">HTML</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(),</span> <span class="s1">'spectrum'</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">F_</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>           <span class="c1"># Visualize the Fourier Spectrum</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="n">mc</span><span class="o">.</span><span class="n">ext</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s2">"""&lt;center&gt;&lt;table border=none width=100</span><span class="si">%%</span><span class="s2"> height=100</span><span class="si">%%</span><span class="s2">&gt;</span>
+<span class="s2">            &lt;tr&gt;&lt;td width=33</span><span class="si">%%</span><span class="s2">&gt;&lt;center&gt;&lt;img src="</span><span class="si">%s</span><span class="s2">" width=100</span><span class="si">%%</span><span class="s2">/&gt;&lt;/td&gt;        &lt;/tr&gt;</span>
+<span class="s2">            &lt;/table&gt;&lt;/center&gt;"""</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'data:image/png;base64,'</span> <span class="o">+</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's try first on a first chunk of 64 frames:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">chunk</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">chunk</span><span class="p">)</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">fx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">fy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#print fr.min(), fr.max(), F.shape[-1]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">movie</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">chunk</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">'F is maximum at :'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="s1">' (we expected ('</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">', '</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">', '</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">')'</span>
+<span class="n">show_spectrum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_f</span> <span class="o">=</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># making an histogram with N_f bins</span>
+<span class="n">f_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">N_f</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lmfit.models</span> <span class="kn">import</span> <span class="n">PowerLawModel</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">PowerLawModel</span><span class="p">()</span>
+<span class="n">pars</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">guess</span><span class="p">((</span><span class="n">F</span><span class="o">/</span><span class="n">fr</span><span class="o">**</span><span class="mi">2</span><span class="p">)[(</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">out</span>  <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">((</span><span class="n">F</span><span class="o">/</span><span class="n">fr</span><span class="o">**</span><span class="mi">2</span><span class="p">)[(</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">pars</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">fit_report</span><span class="p">(</span><span class="n">min_correl</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">show_spectrum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="o">*</span><span class="n">fr</span><span class="p">)</span><span class="c1">#*np.abs(ft)**.5)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Averaging over the movie:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i_frame</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span> <span class="n">chunk</span><span class="p">):</span>
+    <span class="n">F</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">movie</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i_frame</span><span class="p">:(</span><span class="n">i_frame</span><span class="o">+</span><span class="n">chunk</span><span class="p">)]))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">show_spectrum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">show_spectrum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="o">*</span><span class="n">fr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lmfit.models</span> <span class="kn">import</span> <span class="n">PowerLawModel</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">PowerLawModel</span><span class="p">()</span>
+<span class="n">pars</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">guess</span><span class="p">(</span><span class="n">F</span><span class="p">[(</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">out</span>  <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">F</span><span class="p">[(</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">pars</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">fit_report</span><span class="p">(</span><span class="n">min_correl</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s1">'F is maximum at :'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="s1">' (we expected '</span><span class="p">,</span> <span class="p">[</span><span class="n">f</span><span class="o">/</span><span class="mi">2</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">],</span> <span class="s1">')'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Averaging circularly</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_f</span> <span class="o">=</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># making an histogram with N_f bins</span>
+<span class="n">f_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">N_f</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">F_rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_f</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_f</span><span class="p">):</span>
+    <span class="n">f_slice</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_bins</span><span class="p">[</span><span class="n">i_bin</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">fr</span><span class="p">)</span> <span class="o">*</span>  <span class="p">(</span> <span class="n">fr</span> <span class="o">&lt;</span> <span class="n">f_bins</span><span class="p">[</span><span class="n">i_bin</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">F_rot</span><span class="p">[</span><span class="n">i_bin</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_slice</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1">#F_rot[i_bin, :] /= (f_bins[i_bin] + f_bins[i_bin+1])/2 # normalize by the integration area (theory)</span>
+    <span class="n">F_rot</span><span class="p">[</span><span class="n">i_bin</span><span class="p">,</span> <span class="p">:]</span> <span class="o">/=</span> <span class="n">f_slice</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># normalize by the integration area (numeric)</span>
+<span class="n">F_rot</span> <span class="o">/=</span> <span class="n">F_rot</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="n">chunk</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">F_rot</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hot</span><span class="p">())</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'radial frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'temporal frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's reproduce the results from Dong and Attick (1995, 2001). Basically, this spectrum is not separable (see page 342 of <a href="http://www.naturalimagestatistics.net/nis_preprintFeb2009.pdf">http://www.naturalimagestatistics.net/nis_preprintFeb2009.pdf</a>):</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">ft_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="n">chunk</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grad</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color_cycle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color_cycle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span> <span class="o">*</span> <span class="n">f_bins</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">ft_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">chunk</span><span class="p">):</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">F_rot</span><span class="p">[:,</span> <span class="n">ft_bin</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_f</span><span class="p">):</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">,</span> <span class="n">F_rot</span><span class="p">[</span><span class="n">f_bin</span><span class="p">,</span> <span class="p">:],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="mf">2.e-8</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**-</span><span class="mi">2</span><span class="o">*</span><span class="mf">5.e-5</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">[</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ft_bins</span><span class="p">[</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="mf">2.e-8</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">[</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ft_bins</span><span class="p">[</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**-</span><span class="mi">2</span><span class="o">*</span><span class="mf">5.e-5</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'spatial frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'temporal frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Power'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">'Fitting a power-law'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">lmfit.models</span> <span class="kn">import</span> <span class="n">PowerLawModel</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">PowerLawModel</span><span class="p">()</span>
+
+<span class="n">f_exp</span><span class="p">,</span> <span class="n">ft_exp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">chunk</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_f</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i_ft</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">chunk</span><span class="p">):</span>
+    <span class="n">pars</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">guess</span><span class="p">(</span><span class="n">F_rot</span><span class="p">[:,</span> <span class="n">i_ft</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">out</span>  <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">F_rot</span><span class="p">[:,</span> <span class="n">i_ft</span><span class="p">],</span> <span class="n">pars</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i_ft</span> <span class="o">==</span> <span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">fit_report</span><span class="p">(</span><span class="n">min_correl</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span>
+    <span class="n">f_exp</span><span class="p">[</span><span class="n">i_ft</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">out</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'exponent'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="k">for</span> <span class="n">i_f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_f</span><span class="p">):</span>
+    <span class="n">v_dyn</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span><span class="o">==</span><span class="n">chunk</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">pars</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">guess</span><span class="p">(</span><span class="n">F_rot</span><span class="p">[</span><span class="n">i_f</span><span class="p">,</span> <span class="n">v_dyn</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">[</span><span class="n">v_dyn</span><span class="p">]))</span>
+    <span class="n">out</span>  <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">F_rot</span><span class="p">[</span><span class="n">i_f</span><span class="p">,</span> <span class="n">v_dyn</span><span class="p">],</span> <span class="n">pars</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">[</span><span class="n">v_dyn</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">i_f</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">fit_report</span><span class="p">(</span><span class="n">min_correl</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span>
+    <span class="n">ft_exp</span><span class="p">[</span><span class="n">i_f</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">out</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'exponent'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    
+    
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ft_exp</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'spatial frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ft_bins</span><span class="p">,</span> <span class="n">f_exp</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'temporal frequency'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'exponent of the best-fit of a power-law'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>but will be if one looks at different slices corresponding to different speeds.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's first define a slice in the speed plane (as we handle real signals, it's fine to consider just one side of the plane):</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_f</span><span class="p">,</span> <span class="n">N_v</span><span class="p">,</span> <span class="n">N_dir</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span> <span class="c1"># making an histogram with N_v - 1 speeds</span>
+<span class="n">v_max</span> <span class="o">=</span> <span class="mf">3.</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">v_max</span><span class="p">,</span> <span class="n">N_v</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_dir</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">N_f</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N_f</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">v_bin</span><span class="p">,</span> <span class="n">dir_bin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span>
+<span class="c1">#v_slice = (speed[v_bin]*np.cos(direction[dir_bin])*fx + speed[v_bin]*np.sin(direction[dir_bin])*fy + ft &gt; 0. ) </span>
+<span class="c1">#v_slice *= (speed[v_bin+1]*np.cos(direction[dir_bin])*fx + speed[v_bin+1]*np.sin(direction[dir_bin])*fy + ft &lt; 0. ) # speed plane</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="mf">.8</span>
+<span class="c1">#fr[fr&lt;.001]=1.e6</span>
+<span class="n">v_slice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">speed</span><span class="p">[</span><span class="n">v_bin</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">direction</span><span class="p">[</span><span class="n">dir_bin</span><span class="p">])</span><span class="o">*</span><span class="n">fx</span> <span class="o">+</span> <span class="n">speed</span><span class="p">[</span><span class="n">v_bin</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">direction</span><span class="p">[</span><span class="n">dir_bin</span><span class="p">])</span><span class="o">*</span><span class="n">fy</span> <span class="o">+</span> <span class="n">ft</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">B_V</span><span class="o">*</span><span class="n">fr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">show_spectrum</span><span class="p">(</span><span class="n">v_slice</span><span class="o">*</span><span class="mf">1.</span><span class="p">)</span>
+<span class="c1">#print v_slice.min(), v_slice.max()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">F_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_f</span><span class="p">,</span> <span class="n">N_v</span><span class="p">,</span> <span class="n">N_dir</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">f_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_f</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">dir_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_v</span><span class="p">):</span>
+            <span class="c1">#v_slice = (speed[v_bin]*np.cos(direction[dir_bin])*fx + speed[v_bin]*np.sin(direction[dir_bin])*fy + ft &gt; 0. ) </span>
+            <span class="c1">#v_slice *= (speed[v_bin+1]*np.cos(direction[dir_bin])*fx + speed[v_bin+1]*np.sin(direction[dir_bin])*fy + ft &lt; 0. ) # speed plane</span>
+            <span class="n">v_slice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">speed</span><span class="p">[</span><span class="n">v_bin</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">direction</span><span class="p">[</span><span class="n">dir_bin</span><span class="p">])</span><span class="o">*</span><span class="n">fx</span> <span class="o">+</span> <span class="n">speed</span><span class="p">[</span><span class="n">v_bin</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">direction</span><span class="p">[</span><span class="n">dir_bin</span><span class="p">])</span><span class="o">*</span><span class="n">fy</span> <span class="o">+</span> <span class="n">ft</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">B_V</span><span class="o">*</span><span class="n">fr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+            <span class="n">f_slice</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">fr</span><span class="p">)</span> <span class="o">*</span>  <span class="p">(</span> <span class="n">fr</span> <span class="o">&lt;</span> <span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">F_v</span><span class="p">[</span><span class="n">f_bin</span><span class="p">,</span> <span class="n">v_bin</span><span class="p">,</span> <span class="n">dir_bin</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_slice</span> <span class="o">*</span> <span class="n">f_slice</span> <span class="o">*</span> <span class="n">F</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="c1">#print f_bin, v_bin, dir_bin, F_v[f_bin, v_bin, dir_bin], (v_slice * f_slice).sum(), ( f_slice).sum(), (v_slice ).sum()</span>
+            <span class="n">F_v</span><span class="p">[</span><span class="n">f_bin</span><span class="p">,</span> <span class="n">v_bin</span><span class="p">,</span> <span class="n">dir_bin</span><span class="p">]</span> <span class="o">/=</span> <span class="p">(</span><span class="n">v_slice</span> <span class="o">*</span> <span class="n">f_slice</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># (f_bins[i_bin] + f_bins[i_bin+1])/2 # normalize by the integration area</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">grad</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">N_v</span><span class="p">))</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_color_cycle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">v_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_v</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">axs</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">F_v</span><span class="p">[:,</span> <span class="n">v_bin</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+    <span class="n">axs</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">F_v</span><span class="p">[:,</span> <span class="n">v_bin</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="s1">'-'</span> <span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'radial frequency'</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Amplitude'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we multiply this spectrum by $f_r^\alpha$, with $\alpha$ being an appropriate scaling, we get:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_test</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">error</span><span class="p">,</span> <span class="n">alphas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_test</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="n">N_test</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alphas</span><span class="p">):</span>
+    <span class="n">spectrum</span> <span class="o">=</span> <span class="p">((</span><span class="n">f_bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_v</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">spectrum</span> <span class="o">/=</span> <span class="n">spectrum</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alphas</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'Error is minimal at $\alpha$='</span> <span class="o">+</span> <span class="s1">'</span><span class="si">%0.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">alphas</span><span class="p">[</span><span class="n">error</span><span class="o">.</span><span class="n">argmin</span><span class="p">()],</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Alpha'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'tight'</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Error'</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alphas</span><span class="p">[</span><span class="n">error</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span> <span class="c1"># 2.3 for Dong - 2.7 for Hyvarinen</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span> <span class="c1"># fib</span>
+<span class="n">grad</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">N_v</span><span class="p">))</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_color_cycle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">f_bin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N_f</span><span class="p">):</span>
+    <span class="n">axs</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">speed</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">((</span><span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_v</span><span class="p">[</span><span class="n">f_bin</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="s1">'o'</span><span class="p">)</span>
+    <span class="n">axs</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">speed</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(((</span><span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="p">]</span><span class="o">+</span><span class="n">f_bins</span><span class="p">[</span><span class="n">f_bin</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_v</span><span class="p">[</span><span class="n">f_bin</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">axis</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s1">'-'</span><span class="p">)</span>
+<span class="c1">#    axs.loglog(speed[:-1], F_v[f_bin, :, :])</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'velocity'</span><span class="p">)</span>
+<span class="c1">#axs.axis('tight')</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Amplitude'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/motionclouds.html" rel="tag">motionclouds</a></li>
+            <li><a class="tag p-category" href="../categories/natural-scenes.html" rel="tag">natural-scenes</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2014-10-20_motion-plaid.html" rel="prev" title="Motion Plaids">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2014-10-24_a-bit-of-fun-with-gravity-waves.html" rel="next" title="A bit of fun with gravity waves">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

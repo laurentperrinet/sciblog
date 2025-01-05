@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nesting jupyter runs | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2020-08-09-nesting-jupyter-runs.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2020-07-04-colors-of-the-sky.html" title="Colors of the sky" type="text/html">
+<link rel="next" href="2020-09-28-benchmarking-cnns.html" title="Benchmarking CNNs" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="nesting jupyter runs">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2020-08-09-nesting-jupyter-runs.html">
+<meta property="og:description" content="Jupyter notebooks are a great way of sharing knowledge in science, art, programming.
+For instance, in a recent musing, I tried to programmatically determine the color of the sky. This renders as a web">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-08-09T10:52:18+02:00">
+<meta property="article:tag" content="ipython">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="open-science">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2020-08-09-nesting-jupyter-runs.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">nesting jupyter runs</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2020-08-09T10:52:18+02:00" itemprop="datePublished" title="2020-08-09 10:52">2020-08-09 10:52</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2020-08-09-nesting-jupyter-runs.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://jupyter.org/">Jupyter notebooks</a> are a great way of sharing knowledge in science, art, programming.
+For instance, in a recent musing, I tried to programmatically determine the <a href="https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.html">color of the sky</a>. This renders as a web page, but is also a piece of <a href="https://laurentperrinet.github.io/sciblog/posts/2020-07-04-colors-of-the-sky.ipynb">runnable code</a>.</p>
+<p>As such, they are also great ways to store the knowledge that was acquired at a given time and that could be reusable. This may be considered as bad programming and may have downsides as described in that <a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0_1">slides</a> :</p>
+<p><a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0_1"><img alt="Joel Grus" src="https://revolution-computing.typepad.com/.a/6a010534b1db25970b022ad3b0836c200b-800wi"></a></p>
+<p>Recently, thanks to an answer to a <a href="https://stackoverflow.com/questions/48067529/ipython-run-magic-n-switch-not-working">stack overflow question</a>,  I found a way to overcome this by detecting if the caall to a notebook is made from the notebook itself or from a parent.</p>
+<!-- TEASER_END -->
+<p>It's as simple as this cell:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#verb =  (__name__ == "__main__")</span>
+<span class="k">def</span> <span class="nf">has_parent</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    https://stackoverflow.com/questions/48067529/ipython-run-magic-n-switch-not-working</span>
+<span class="sd">    </span>
+<span class="sd">    Return True if this notebook is being run by calling</span>
+<span class="sd">    %run in another notebook, False otherwise.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="vm">__file__</span>
+        <span class="c1"># __file__ has been defined, so this notebook is </span>
+        <span class="c1"># being run in a parent notebook</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+        <span class="c1"># __file__ has not been defined, so this notebook is </span>
+        <span class="c1"># not being run in a parent notebook</span>
+        <span class="k">return</span> <span class="kc">False</span>
+<span class="k">def</span> <span class="nf">do_verb</span><span class="p">():</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">has_parent</span><span class="p">()</span>
+
+<span class="n">verb</span> <span class="o">=</span> <span class="n">do_verb</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">verb</span> <span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'__name__='</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">Am I a running this notebook directly? '</span><span class="p">,</span> <span class="n">verb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>__name__= __main__ 
+Am I a running this notebook directly?  True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's see what we have in the memory:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">verb</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Variable     Type        Data/Info
+----------------------------------
+do_verb      function    &lt;function do_verb at 0x1066ac360&gt;
+has_parent   function    &lt;function has_parent at 0x1066ac040&gt;
+verb         bool        True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's run the above mentioned notebook by it from this URL:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">verb</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">run</span> -n 2020-07-04-colors-of-the-sky.ipynb
+    <span class="n">verb</span> <span class="o">=</span> <span class="n">do_verb</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And now:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">verb</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Variable         Type            Data/Info
+------------------------------------------
+CMF              ndarray         81x4: 324 elems, type `float64`, 2592 bytes
+CMF_str          str             380 0.0014 0.0000 0.0065\&lt;...&gt;n780 0.0000 0.0000 0.0000
+ColourSystem     type            &lt;class '__main__.ColourSystem'&gt;
+bluesky          ndarray         3: 3 elems, type `float64`, 24 bytes
+chappuis         function        &lt;function chappuis at 0x11e9b74c0&gt;
+cs_srgb          ColourSystem    &lt;__main__.ColourSystem object at 0x107344810&gt;
+do_verb          function        &lt;function do_verb at 0x1066ac040&gt;
+fig_width        int             15
+figsize          tuple           n=2
+fontsize         int             20
+has_parent       function        &lt;function has_parent at 0x106bdafc0&gt;
+i                int             80
+illuminant_D65   ndarray         3: 3 elems, type `float64`, 24 bytes
+intensity5800    ndarray         81: 81 elems, type `float64`, 648 bytes
+line             str             780 0.0000 0.0000 0.0000
+np               module          &lt;module 'numpy' from '/op&lt;...&gt;kages/numpy/__init__.py'&gt;
+os               module          &lt;module 'os' (frozen)&gt;
+phi              float64         1.618033988749895
+planck           function        &lt;function planck at 0x11e9b7060&gt;
+plt              module          &lt;module 'matplotlib.pyplo&lt;...&gt;es/matplotlib/pyplot.py'&gt;
+rcParams         RcParams        _internal.classic_mode: F&lt;...&gt;: 0.6\nytick.right: False
+scatter          ndarray         81: 81 elems, type `float64`, 648 bytes
+scattering       function        &lt;function scattering at 0x11e9b7240&gt;
+spectrum         ndarray         81: 81 elems, type `float64`, 648 bytes
+verb             bool            True
+wavelengths      ndarray         81: 81 elems, type `float64`, 648 bytes
+xyz_from_xy      function        &lt;function xyz_from_xy at 0x11e9b7600&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Meaning that I can access the functions and some data from this notebook, to be used in another one.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">verb</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'The color of the sky is equal to '</span><span class="p">,</span> <span class="n">bluesky</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The color of the sky is equal to  [0.488779 0.672615 1.      ]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2020-08-09-nesting-jupyter-runs.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">verb</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">load_ext</span> watermark
+    <span class="o">%</span><span class="k">watermark</span> -i -h -m -v -r -g -b
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Python implementation: CPython
+Python version       : 3.11.6
+IPython version      : 8.17.2
+
+Compiler    : Clang 15.0.0 (clang-1500.0.40.1)
+OS          : Darwin
+Release     : 23.1.0
+Machine     : arm64
+Processor   : arm
+CPU cores   : 10
+Architecture: 64bit
+
+Hostname: obiwan.local
+
+Git hash: 3f1c25c7a1ca749e735fb886b056f7f2e665d77c
+
+Git repo: https://github.com/laurentperrinet/sciblog.git
+
+Git branch: master
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/ipython.html" rel="tag">ipython</a></li>
+            <li><a class="tag p-category" href="../categories/jupyter.html" rel="tag">jupyter</a></li>
+            <li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2020-07-04-colors-of-the-sky.html" rel="prev" title="Colors of the sky">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2020-09-28-benchmarking-cnns.html" rel="next" title="Benchmarking CNNs">Next post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

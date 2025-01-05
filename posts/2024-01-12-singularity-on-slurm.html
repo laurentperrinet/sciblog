@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using singularity on slurm | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2024-01-12-singularity-on-slurm.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2023-11-29-ouchi-illusion.html" title="A textured Ouchi Illusion" type="text/html">
+<link rel="next" href="2024-12-09-normalizing-images-in-convolutional-neural-networks.html" title="2024-12-09 Normalizing images in Convolutional Neural Networks" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Using singularity on slurm">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2024-01-12-singularity-on-slurm.html">
+<meta property="og:description" content="In this post, I will disp)lay my configuration that I use to run Singularity on a SLURM cluster. 
+My use case is mostly using a recent version of pyTorch on GPUs.
+
+
+Initialization: creating the contai">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-01-12T14:40:39+01:00">
+<meta property="article:tag" content="open-science">
+<meta property="article:tag" content="shell">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2024-01-12-singularity-on-slurm.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Using singularity on slurm</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2024-01-12T14:40:39+01:00" itemprop="datePublished" title="2024-01-12 14:40">2024-01-12 14:40</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2024-01-12-singularity-on-slurm.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>In this post, I will disp)lay my configuration that I use to run <a href="https://sylabs.io/singularity/">Singularity</a> on a <a href="https://slurm.schedmd.com/">SLURM</a> cluster. </p>
+<p>My use case is mostly using a recent version of pyTorch on GPUs.</p>
+<!-- TEASER_END -->
+
+<h2>Initialization: creating the container</h2>
+<p>The initialization of the process consists in creating the image that will be used by singularity. This is done by creating a definition file (here <code>pytorch.def</code>) that will be used by singularity to create the image. The definition file <code>pytorch.def</code> is the following:</p>
+<div class="code"><pre class="code literal-block"><span class="nl">Bootstrap</span><span class="p">:</span><span class="n">docker</span>
+<span class="nl">From</span><span class="p">:</span><span class="n">continuumio</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">:</span><span class="mf">23.3.1</span><span class="mi">-0</span>
+
+<span class="nf">%environment</span>
+
+<span class="nf">%runscript</span>
+<span class="p">.</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
+<span class="n">conda</span><span class="w"> </span><span class="n">activate</span><span class="w"> </span><span class="n">pytorch</span>
+<span class="n">exec</span><span class="w"> </span><span class="n">make</span>
+
+<span class="nf">%post</span>
+<span class="cp"># Create some common mountpoints for systems without overlayfs</span>
+<span class="n">mkdir</span><span class="w"> </span><span class="o">/</span><span class="n">scratch</span>
+<span class="n">mkdir</span><span class="w"> </span><span class="o">/</span><span class="n">apps</span>
+
+<span class="p">.</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
+<span class="n">conda</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="o">--</span><span class="n">name</span><span class="w"> </span><span class="n">pytorch</span>
+<span class="n">conda</span><span class="w"> </span><span class="n">activate</span><span class="w"> </span><span class="n">pytorch</span>
+<span class="n">conda</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">pytorch</span><span class="o">==</span><span class="mf">1.13.1</span><span class="w"> </span><span class="n">torchvision</span><span class="o">==</span><span class="mf">0.14.1</span><span class="w"> </span><span class="n">torchaudio</span><span class="o">==</span><span class="mf">0.13.1</span><span class="w"> </span><span class="n">pytorch</span><span class="o">-</span><span class="n">cuda</span><span class="o">=</span><span class="mf">11.6</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">pytorch</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">nvidia</span>
+<span class="cp"># conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch</span>
+<span class="n">conda</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">matplotlib</span><span class="w"> </span><span class="n">numpy</span><span class="w"> </span><span class="n">pandas</span><span class="w"> </span><span class="n">jupyter</span><span class="w"> </span><span class="n">nbconvert</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">scipy</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">python3</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">MotionClouds</span>
+</pre></div>
+
+<p>The first line indicates that the image will be created from a docker image. The second line indicates the docker image that will be used. The <code>%environment</code> section is used to define the environment variables that will be used by the container. The <code>%runscript</code> section is used to define the command that will be executed when the container is run. The <code>%post</code> section is used to define the commands that will be executed when the container is created.</p>
+<p>The command to create the container is the following:</p>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>pytorch.sif<span class="w"> </span>pytorch.def
+</pre></div>
+
+<h2>Using the container</h2>
+<p>Once created, the container can be used by running a set of commands. </p>
+<ul>
+<li>
+<p>login to the head of the cluster,</p>
+</li>
+<li>
+<p>connect to one node of the cluster :</p>
+</li>
+</ul>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>srun<span class="w"> </span>-p<span class="w"> </span>volta<span class="w">  </span>-t<span class="w"> </span><span class="m">6</span>-12<span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">12</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
+</pre></div>
+
+<ul>
+<li>run the container created above by connecting the <code>/scratch</code> folder:</li>
+</ul>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>singularity<span class="w"> </span>shell<span class="w"> </span>--bind<span class="w"> </span>/scratch:/scratch<span class="w"> </span>--nv<span class="w"> </span>pytorch.sif
+</pre></div>
+
+<ul>
+<li>apply the profile :</li>
+</ul>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>Apptainer&gt;<span class="w"> </span>.<span class="w"> </span>/etc/profile
+</pre></div>
+
+<ul>
+<li>activate conda :</li>
+</ul>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pytorch
+</pre></div>
+
+<ul>
+<li>you are good to go :</li>
+</ul>
+<div class="code"><pre class="code literal-block"><span class="err">$</span><span class="w"> </span><span class="n">ipython</span>
+
+<span class="n">Python</span><span class="w"> </span><span class="mf">3.10.11</span><span class="w"> </span><span class="p">(</span><span class="n">main</span><span class="p">,</span><span class="w"> </span><span class="n">Apr</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="mi">2023</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">41</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">GCC</span><span class="w"> </span><span class="mf">11.2.0</span><span class="p">]</span>
+<span class="n">Type</span><span class="w"> </span><span class="s1">'copyright'</span><span class="p">,</span><span class="w"> </span><span class="s1">'credits'</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'license'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">information</span>
+<span class="n">IPython</span><span class="w"> </span><span class="mf">8.14.0</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">An</span><span class="w"> </span><span class="n">enhanced</span><span class="w"> </span><span class="n">Interactive</span><span class="w"> </span><span class="n">Python</span><span class="o">.</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="s1">'?'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="o">.</span>
+
+<span class="n">In</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="n">In</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span><span class="w"> </span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span><span class="w"> </span><span class="kc">True</span>
+</pre></div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/open-science.html" rel="tag">open-science</a></li>
+            <li><a class="tag p-category" href="../categories/shell.html" rel="tag">shell</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2023-11-29-ouchi-illusion.html" rel="prev" title="A textured Ouchi Illusion">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="2024-12-09-normalizing-images-in-convolutional-neural-networks.html" rel="next" title="2024-12-09 Normalizing images in Convolutional Neural Networks">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
