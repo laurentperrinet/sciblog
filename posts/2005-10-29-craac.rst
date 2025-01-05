@@ -1,0 +1,165 @@
+
+.. title: craac
+.. slug: 2005-10-29-craac
+.. date: 2005-10-29 14:15:23
+.. description: importing from moinmoin to nikola
+.. type: text
+.. tags: cnrs, craac
+
+CRAAC 2005
+==========
+
+2005-10-24
+
+Récapitulatif de votre saisie : ce document sera soumis au visa de votre
+directeur
+
+Compte rendu annuel d'activité des chercheurs du CNRS Année 2004 - 2005
+
+.. TEASER_END
+
+Identité
+
+Nom (nom de jeune fille) PERRINET Prénom Laurent Date de naissance
+23/02/1973 Grade CR2 N° d'agent QAF195447 Téléphone 04 91 16 43 64
+Télécopie 04 91 16 43 64 Adresse électronique
+`laurent.perrinet@incm.cnrs-mrs.fr <mailto:laurent.perrinet@incm.cnrs-mrs.fr>`__
+Section(s) du Comité National 7 Département scientifique Sciences de la
+vie Délégation régionale Provence Affectation
+
+Intitulé de l'unité Institut de neurosciences cognitives de la
+méditerranée - INCM Code unité UMR6193 Directeur Driss BOUSSAOUD Adresse
+électronique du directeur
+`driss.boussaoud@incm.cnrs-mrs.fr <mailto:driss.boussaoud@incm.cnrs-mrs.fr>`__
+Adresse 31 Chemin Joseph Aiguier
+
+-  13402 MARSEILLE CEDEX 20
+
+Téléphone 04 91 16 43 18 Télécopie 04 91 77 49 69 Délégation Provence
+Site Web Distinction(s)
+
+Qualification
+
+Habilitation à diriger des recherches non Doctorat d'Etat non Doctorat
+oui Année d'obtention 2003 Qualification "Maître de conférences" non
+Qualification "Professeur" non Période d'inactivité
+
+Mobilité(s) antérieure(s)
+
+Activités de recherche développées
+
+Rattachement à(aux) activité(s) de recherche de l'unité UMR6193
+
+Intitulé d'activité Date fin du rattachement
+
+-  DYNAMIQUE DE LA PERCEPTION VISUELLE ET DE L'ACTION (DyVA)
+
+Mots clés des sections/CID du Comité national
+
+Section 1 : Équations aux dérivées partielles, optimisation, contrôle,
+théorie du signal Section 1 : Probabilités, processus et algorithmes
+stochastiques, statistique, analyses des données Section 7 :
+Intelligence artificielle : raisonnement, décision, apprentissage
+Section 7 : Modélisation, analyse, commande et supervision des systèmes
+dynamiques Section 27 : Neurosciences comportementales et cognitives
+normales et pathologiques, homme et modèles animaux, imagerie cérébrale
+fonctionnelle Section 27 : Modélisation des processus cognitifs et
+neurosciences computationnelles Publication(s), parue(s) ou sous presse,
+dans des revues à comité de lecture
+
+Référence FISCHER, S.; REDONDO, R.; PERRINET, L.; CRISTOBAL, G. (2005),
+«Sparse gabor wavelets by local operations.», Proceedings SPIE, volume
+5839 of Bioengineered and Bioinspired Systems, 75 86 PERRINET L. Feature
+detection using spikes : the greedy approach. Journal of Physiology,
+Paris (special issue) - Sous presse PERRINET L., SAMUELIDES S., THORPE
+S.,. Coding static natural images using spiking event times: do neuron
+cooperate?. IEEE Transactions on Neural Networks. . . . 15. . .
+1164-1175. . PERRINET L.,. Finding independent components using spikes:
+A natural result of hebbian learning in a spike coding scheme. Natural
+Computing . . . . 3. . . 159-175-. . PERRINET L.;. Emergence of filters
+from natural scenes in a sparse spike coding scheme. Neurocomputing. . .
+. 58-60. . . 821-826. . PERRINET, L; (2005), «Efficient source detection
+using integrate-and-fire neurons.», In W. Duch et al., editor, ICANN
+2005, Lecture Notes in Computer Science, volume 3696, pages 167-72
+Rafael Redondo, Sylvain Fischer, Laurent Perrinet, and Gabriel
+Cristobal. Simple cells modeling through a sparse overcomplete gabor
+wavelet representation based on local inhibition and facilitation. In
+Gustavo Linan-Cembrano Ricardo A. Carmona, editor, Perception, volume 34
+of Bioengineered and Bioinspired Systems II, page 238, August 2005.
+Publication(s), parue(s) ou sous presse, dans des revues sans comité de
+lecture
+
+Ouvrage(s) ou chapitre(s) d'ouvrage(s), paru(s) ou sous presse
+
+Participation à des manifestations scientifiques
+
+Manifestation Dynn - ACI Temps et Cerveau Type de manifestation (
+national ) Lieu Cannes ( FRANCE ) Durée 3 (jour(s))
+
+Manifestation ECVP Type de manifestation ( international ) Lieu La
+Corogne ( ESPAGNE ) Durée 5 (jour(s))
+
+Manifestation ICANN Type de manifestation ( international ) Lieu
+Varsovie ( POLOGNE ) Durée 5 (jour(s))
+
+Manifestation Maths et Cerveau Type de manifestation ( international )
+Lieu Paris ( FRANCE ) Durée 15 (jour(s))
+
+Manifestation Pre-FACETS Workshop on Simulation and Computation Type de
+manifestation ( international ) Lieu Graz ( AUTRICHE ) Durée 4 (jour(s))
+
+Activité éditoriale
+
+Rapporteur/Relecteur dans des revues Informations complémentaires
+Advanced Concepts for Intelligent Vision Systems (Sept 20-23, 2005,
+University of Antwerp, Antwerp, Belgium,
+`http://acivs.org/acivs2005/ <http://acivs.org/acivs2005/>`__)
+
+Rapporteur/Relecteur dans des revues Informations complémentaires Neural
+Information Processing
+
+Rapporteur/Relecteur dans des revues Informations complémentaires Neural
+Processing Letters
+
+Rapporteur/Relecteur dans des revues Informations complémentaires
+International Journal of Neural Systems (IJNS)
+
+Séjour(s) dans d'autres laboratoires
+
+Objet Visite et collaboration avec Bruno Olshausen Organisme Redwood
+Neuroscience Institute Pays ETATS UNIS Unité RNI Durée annuelle 30 (j)
+
+Objet Collaboration avec Sylvain Fischer et Gabriel Cristobal -
+co-publications Organisme CSIC Pays ESPAGNE Unité Instituto de Optica
+Durée annuelle 30 (j)
+
+Mission(s) sur le terrain
+
+Formation personnelle
+
+Collaborations
+
+Organisme partenaire CNRS Pays FRANCE ( Europe ) Unité partenaire UMR
+Mouvement et Perception Intitulé ANR RETINAE Cadre de la coopération
+Nature de l'activité
+
+Organisme partenaire INRIA Pays FRANCE ( Europe ) Unité partenaire
+Odyssee Intitulé FACETS Cadre de la coopération AUTRE - contrat europeen
+Nature de l'activité Participation à un réseau
+
+Organisme partenaire SUPAERO - CERT Pays FRANCE ( Europe ) Unité
+partenaire ONERA Intitulé Reseau Dynn - ACI Temps et Cerveau Cadre de la
+coopération Nature de l'activité Participation à un réseau
+
+Encadrement et animation scientifique
+
+Animation scientifique Participation et organisation dans la formation
+interne organisee par l'INCM. Enseignement
+
+Valorisation et partenariat
+
+Vulgarisation
+
+Type d'information Intitulé Type de participation Intervention en milieu
+scolaire Fete de la Science Participation ponctuelle Administration de
+la recherche
