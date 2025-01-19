@@ -1,5 +1,5 @@
 all: default
-default: deploy
+default: github_deploy
 
 build:
 	nikola build
