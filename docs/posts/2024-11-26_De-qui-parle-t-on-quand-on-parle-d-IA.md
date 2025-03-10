@@ -1,6 +1,7 @@
-# De qui parle-t-on quand on parle d'IA ?
-
 L'intelligence artificielle (IA) fait les gros titres des media depuis qu'elle a envahi notre quotidien. Si elle nous aide à rédiger un document ou à choisir la prochaine musique que nous allons entendre, elle peut aussi contribuer à la création de nouveaux médicaments. Plus généralement, elle est à l'origine d'une révolution dans divers domaines tels que les transports, l'industrie, le commerce et les services. Elle est si omniprésente qu'elle tient aujourd'hui une place à part, à tel point qu'on a pris l'habitude de la nommer par ce nom propre : « l'IA ».
+
+<!-- TEASER_END -->
+
 
 ## « Who am AI ? »
 
