@@ -11,11 +11,11 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2025-01-19T08:29:00Z</lastmod>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2025-01-10T15:09:00Z</lastmod>
+  <lastmod>2025-03-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2025-01-19T08:28:00Z</lastmod>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/cnrs.html</loc>
@@ -91,7 +91,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/grand-public.html</loc>
-  <lastmod>2025-01-19T08:28:00Z</lastmod>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/hardlink.html</loc>
@@ -194,6 +194,10 @@
   <lastmod>2025-01-05T21:19:00Z</lastmod>
  </url>
  <url>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/neuroai.html</loc>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/nikola.html</loc>
   <lastmod>2025-01-05T21:19:00Z</lastmod>
  </url>
@@ -219,7 +223,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/outreach.html</loc>
-  <lastmod>2025-01-19T08:28:00Z</lastmod>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.html</loc>
@@ -276,6 +280,10 @@
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/saccades.html</loc>
   <lastmod>2025-01-05T21:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.html</loc>
+  <lastmod>2025-03-10T07:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shell.html</loc>
@@ -1027,11 +1035,15 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2024-01-12-singularity-on-slurm.html</loc>
-  <lastmod>2025-01-05T21:20:00Z</lastmod>
+  <lastmod>2025-03-10T07:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2024-11-26_De-qui-parle-t-on-quand-on-parle-d-IA.html</loc>
+  <lastmod>2025-03-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2024-12-09-normalizing-images-in-convolutional-neural-networks.html</loc>
-  <lastmod>2025-01-18T14:18:00Z</lastmod>
+  <lastmod>2025-03-10T07:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2025-01-18_la-vibration-des-apparences.html</loc>
