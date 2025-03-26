@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2025-03-26 Using Subsets in PyTorch | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2025-03-26-using-subsets-in-pytorch.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2025-01-18_la-vibration-des-apparences.html" title="La vibration des apparences" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="2025-03-26 Using Subsets in PyTorch">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2025-03-26-using-subsets-in-pytorch.html">
+<meta property="og:description" content="Summary : This notebook demonstrates how to create and use subsets of datasets in PyTorch. Subsets are particularly useful for working with specific portions of your data (e.g., validation sets or sma">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-03-26T11:48:27+01:00">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="deep-learning">
+<meta property="article:tag" content="machine-learning">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="pytorch">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2025-03-26-using-subsets-in-pytorch.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">2025-03-26 Using Subsets in PyTorch</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-26T11:48:27+01:00" itemprop="datePublished" title="2025-03-26 11:48">2025-03-26 11:48</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2025-03-26-using-subsets-in-pytorch.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary : This notebook demonstrates how to create and use subsets of datasets in PyTorch. Subsets are particularly useful for working with specific portions of your data (e.g., validation sets or smaller batches for experimentation). We will use the MNIST dataset as an example.</p>
+<p>Using subsets in PyTorch allows you to work with specific portions of your dataset efficiently. This is particularly useful for tasks like validation, testing, or when working with large datasets where loading the entire dataset into memory is impractical.</p>
+<p>Key Points:</p>
+<ul>
+<li>Efficiency: Using Subset avoids creating copies of your data, which saves memory and processing time.</li>
+<li>Flexibility: You can create multiple subsets from the same dataset for different tasks (e.g., validation, testing).</li>
+<li>Integration: Subsets work seamlessly with PyTorch’s DataLoader, making it easy to integrate into training loops.</li>
+</ul>
+<p>By leveraging subsets in PyTorch, you can efficiently manage and experiment with portions of your data without compromising on performance or memory usage.</p>
+<!-- TEASER_END -->
+<p>Let's first initialize the notebook:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="c1"># https://pytorch.org/docs/stable/nn.html</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">transforms</span>
+
+<span class="c1"># Set random seed for reproducibility (good practice)</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-1:-Load-the-Full-Dataset">Step 1: Load the Full Dataset<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-1:-Load-the-Full-Dataset">¶</a>
+</h3>
+<p>We start by loading the full MNIST dataset. The <code>MNIST</code> class from <code>torchvision.datasets</code> handles downloading and preprocessing the data.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define the dataset parameters</span>
+<span class="n">root</span> <span class="o">=</span> <span class="s1">'/tmp/data'</span>  <span class="c1"># Root directory where data will be stored</span>
+<span class="n">train</span> <span class="o">=</span> <span class="kc">True</span>      <span class="c1"># Use training data (set to False for test data)</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()</span>  <span class="c1"># Convert images to tensors</span>
+
+<span class="c1"># Load the full dataset</span>
+<span class="n">full_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print basic information about the dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Full dataset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Full dataset size: 60000 samples
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-2:-Create-a-Subset-of-the-Dataset">Step 2: Create a Subset of the Dataset<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-2:-Create-a-Subset-of-the-Dataset">¶</a>
+</h3>
+<p>Use the <code>Subset</code> class to create smaller portions of your dataset. Here, we create a subset containing the first 100 samples.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Subset</span>
+
+<span class="c1"># Define the indices for the subset (first 100 samples)</span>
+<span class="n">subset_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>  <span class="c1"># You can modify this range as needed</span>
+
+<span class="c1"># Create the subset dataset</span>
+<span class="n">subset_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">,</span> <span class="n">subset_indices</span><span class="p">)</span>
+
+<span class="c1"># Print information about the subset</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Subset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subset_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Subset size: 100 samples
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-3:-Load-the-Subset-Using-DataLoader">Step 3: Load the Subset Using DataLoader<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-3:-Load-the-Subset-Using-DataLoader">¶</a>
+</h3>
+<p>Load the subset into batches using a <code>DataLoader</code>. This is useful for training loops or data processing.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define parameters for loading the data</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">shuffle</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Shuffle the data in each epoch</span>
+
+<span class="c1"># Create the DataLoader for the subset</span>
+<span class="n">subset_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">subset_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="n">shuffle</span><span class="p">)</span>
+
+<span class="c1"># Print information about the DataLoader</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Subset DataLoader: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subset_loader</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches per epoch"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Subset DataLoader: 4 batches per epoch
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-4:-Iterate-Over-the-Subset">Step 4: Iterate Over the Subset<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-4:-Iterate-Over-the-Subset">¶</a>
+</h3>
+<p>Use a simple loop to iterate over the subset and retrieve batches of data.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize a model (example: simple linear classifier)</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">28</span>  <span class="c1"># MNIST images are 28x28</span>
+<span class="n">output_size</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># There are 10 classes in MNIST</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+
+<span class="c1"># Define loss function and optimizer</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># Training loop (example: one epoch)</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subset_loader</span><span class="p">):</span>
+        <span class="c1"># Flatten the images</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+        
+        <span class="c1"># Forward pass</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+        
+        <span class="c1"># Backward pass and optimize</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Batch </span><span class="si">{</span><span class="n">batch_idx</span><span class="si">}</span><span class="s1">: Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Training complete!"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Epoch 1
+Batch 0: Loss: 2.2630
+
+Epoch 2
+Batch 0: Loss: 2.2093
+
+Epoch 3
+Batch 0: Loss: 2.2010
+
+Epoch 4
+Batch 0: Loss: 2.0449
+
+Epoch 5
+Batch 0: Loss: 2.0448
+
+Training complete!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-5:-Optional---Create-Multiple-Subsets-for-Different-Purposes">Step 5: Optional - Create Multiple Subsets for Different Purposes<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-5:-Optional---Create-Multiple-Subsets-for-Different-Purposes">¶</a>
+</h3>
+<p>You can create multiple subsets for different purposes (e.g., training, validation).</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: Creating a validation subset</span>
+<span class="n">val_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>  <span class="c1"># Next 100 samples as validation set</span>
+<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">,</span> <span class="n">val_indices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Validation subset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Validation subset size: 100 samples
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-6:-Conclusion">Step 6: Conclusion<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#Step-6:-Conclusion">¶</a>
+</h3>
+<p>You’ve now seen how to create and use subsets of a PyTorch dataset. Subsets are super handy for:</p>
+<ul>
+<li>Playing around with smaller chunks of data.</li>
+<li>Setting up validation sets or custom splits.</li>
+<li>Keeping things light on memory when dealing with big datasets.</li>
+</ul>
+<h3 id="An-alternative:-random_split">An alternative: <code>random_split</code><a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#An-alternative:-random_split">¶</a>
+</h3>
+<p>For cross-validation, one may also simply use:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">.8</span>
+<span class="n">len_dataset</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">)</span>
+<span class="n">len_train</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">len_dataset</span><span class="p">)</span>
+
+<span class="n">train_dataset</span><span class="p">,</span> <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">len_dataset</span><span class="p">),</span>
+                                                           <span class="p">[</span><span class="n">len_train</span><span class="p">,</span> <span class="n">len_dataset</span><span class="o">-</span><span class="n">len_train</span><span class="p">],</span> 
+                                                           <span class="n">generator</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">()</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span>
+                                                           <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>More things to explore</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">generator</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">()</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">sampler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">RandomSampler</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">,</span> <span class="n">replacement</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">generator</span><span class="p">)</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">full_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> 
+                                           <span class="n">sampler</span><span class="o">=</span><span class="n">sampler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2025-03-26-using-subsets-in-pytorch.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span> -i -h -m -v -p torch,torchvision  -r -g -b
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Python implementation: CPython
+Python version       : 3.13.2
+IPython version      : 8.30.0
+
+torch      : 2.6.0
+torchvision: 0.21.0
+
+Compiler    : Clang 16.0.0 (clang-1600.0.26.6)
+OS          : Darwin
+Release     : 24.3.0
+Machine     : arm64
+Processor   : arm
+CPU cores   : 10
+Architecture: 64bit
+
+Hostname: obiwan.local
+
+Git hash: 83fd93189577c8e6ac256a705efe435477eebe18
+
+Git repo: https://github.com/laurentperrinet/sciblog
+
+Git branch: master
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/blog.html" rel="tag">blog</a></li>
+            <li><a class="tag p-category" href="../categories/deep-learning.html" rel="tag">deep-learning</a></li>
+            <li><a class="tag p-category" href="../categories/machine-learning.html" rel="tag">machine-learning</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/pytorch.html" rel="tag">pytorch</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2025-01-18_la-vibration-des-apparences.html" rel="prev" title="La vibration des apparences">Previous post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
