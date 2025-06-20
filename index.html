@@ -14,7 +14,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
 <link rel="canonical" href="https://laurentperrinet.github.io/sciblog/">
 <link rel="icon" href="favicon.svg" sizes="16x16">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2025-04-24-orienting-yourself-in-the-visual-flow.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2025-06-09-extending-the-high-phi-illusion.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -171,7 +171,87 @@ this will be exposed in the following book chapter (see also https://laurentperr
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2025-04-24-orienting-yourself-in-the-visual-flow.html" class="u-url">Orienting yourself in the visual flow</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2025-06-09-extending-the-high-phi-illusion.html" class="u-url">Extending the high-phi illusion</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Laurent Perrinet
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2025-06-09-extending-the-high-phi-illusion.html" rel="bookmark">
+            <time class="published dt-published" datetime="2025-06-09T09:16:40+02:00" itemprop="datePublished" title="2025-06-09 09:16">2025-06-09 09:16</time></a>
+            </p>
+                </div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the <a href="http://lab-perception.org/demo/highphi/">min author's webpage</a> and the effect is described in this excellent paper :
+Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default perception of high-speed motion. PNAS, 110, 7080-7085. <a href="http://wexler.free.fr/papers/highphi.pdf">http://wexler.free.fr/papers/highphi.pdf</a></p>
+<p>In this notebook, we will generate an extension of this illusion to answer to the question of knowing if it limited to the one-dimensional motion along the ring or if this can extended to arbitrary, 2D, planar motions. This will help decipher some of the factors leading to this "illusion".</p>
+<p>TL;DR : one can reproduce the illusion on a planar motion (not a rotation), but it seems important that the motion is either limited to a band-like shape or to limited orientations:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
+
+<span class="n">prefix</span> <span class="o">=</span> <span class="s1">'2025-06-09_extending-the-high-phi-illusion'</span>
+<span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[28]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><video autoplay="True" controls="True" loop="True" src="files/2025-06-09_extending-the-high-phi-illusion/high-phi.mp4">
+      Your browser does not support the <code>video</code> element.
+    </video></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi-oriented-inducer-noband.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[29]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><video autoplay="True" controls="True" loop="True" src="files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-noband.mp4">
+      Your browser does not support the <code>video</code> element.
+    </video></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="posts/2025-06-09-extending-the-high-phi-illusion.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2025-04-24-orienting-yourself-in-the-visual-flow.html" class="u-url">Orienting yourself in the visual flow</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet

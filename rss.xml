@@ -3,7 +3,65 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 21 May 2025 06:48:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Orienting yourself in the visual flow</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 20 Jun 2025 14:48:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Extending the high-phi illusion</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the &lt;a href="http://lab-perception.org/demo/highphi/"&gt;min author's webpage&lt;/a&gt; and the effect is described in this excellent paper :
+Wexler M, Glennerster A, Cavanagh P, Ito H &amp;amp; Seno T (2013). Default perception of high-speed motion. PNAS, 110, 7080-7085. &lt;a href="http://wexler.free.fr/papers/highphi.pdf"&gt;http://wexler.free.fr/papers/highphi.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this notebook, we will generate an extension of this illusion to answer to the question of knowing if it limited to the one-dimensional motion along the ring or if this can extended to arbitrary, 2D, planar motions. This will help decipher some of the factors leading to this "illusion".&lt;/p&gt;
+&lt;p&gt;TL;DR : one can reproduce the illusion on a planar motion (not a rotation), but it seems important that the motion is either limited to a band-like shape or to limited orientations:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [28]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Video&lt;/span&gt;
+
+&lt;span class="n"&gt;prefix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'2025-06-09_extending-the-high-phi-illusion'&lt;/span&gt;
+&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'../files/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;/high-phi.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-06-09_extending-the-high-phi-illusion/high-phi.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [29]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'../files/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;/high-phi-oriented-inducer-noband.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[29]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-noband.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html"&gt;Read more…&lt;/a&gt; (11 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>blog</category><category>motion</category><category>motionclouds</category><category>psychophysics</category><category>python</category><category>retina</category><category>saccades</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</guid><pubDate>Mon, 09 Jun 2025 07:16:40 GMT</pubDate></item><item><title>Orienting yourself in the visual flow</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Moving through the world depends on our ability to perceive and interpret visual information, with optic flow playing a crucial role. Optic flow provides essential cues for self-motion and navigation, helping us to determine our direction, speed and the structure of our environment. In particular, the radial pattern of motion we see as we move allows to atune our gaze with respect to our self motion. By targeting the focal point of expansion within this flow, we can accurately orient ourselves and adjust our trajectory. This will not only deepen our understanding of visual perception, but also highlight the practical importance of optic flow in everyday navigation, from avoiding obstacles to maintaining stability.&lt;/p&gt;
@@ -136,21 +194,4 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;blockquote&gt;
 &lt;p&gt;A picture (extract from the painting &lt;a href="https://w.wiki/AckL"&gt;"The Ambassadors" by Hans Holbein the Younger&lt;/a&gt; can be represented on a regular grid represented by vertical (red) and horizontal (blue) lines. Retinotopy transforms this grid, and in particular the area representing the fovea (shaded gray) is over-represented. Applied to the original image of the portrait, the image is strongly distorted and represents more finally the parts under the axis of sight (here the mouth).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>deep-learning</category><category>machine-learning</category><category>open-science</category><category>python</category><category>pytorch</category><category>retina</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html</guid><pubDate>Thu, 02 Feb 2023 07:59:14 GMT</pubDate></item><item><title>Elections présidentielles 2022: estimation du transfert de voix</title><link>https://laurentperrinet.github.io/sciblog/posts/2022-06-08-transfert-de-voix.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;tl;dr : &lt;em&gt;On essaie ici de deviner le transfert des voix entre les choix effectués entre deux scrutins d'un vote (ici les élections présidentielles 2022 en France) par une méthode d'&lt;a href="https://fr.wikipedia.org/wiki/Apprentissage_automatique"&gt;apprentissage automatique&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://zenodo.org/badge/latestdoi/488514016"&gt;&lt;img alt="DOI" src="https://zenodo.org/badge/488514016.svg"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Afin d'analyser les résultats des élections, par exemple les dernières élections présidentielles de 2022 en France, et de mieux comprendre la dynamique des choix de vote entre les différents groupes de population, il peut être utile d'utiliser des outils d'&lt;a href="https://fr.wikipedia.org/wiki/Apprentissage_automatique"&gt;apprentissage automatique&lt;/a&gt; pour inférer des structures à première vue cachées dans la masse des données. En particulier, inspiré par cet &lt;a href="https://www.lemonde.fr/les-decodeurs/article/2022/05/04/election-presidentielle-2022-quels-reports-de-voix-entre-les-deux-tours_6124672_4355770.html"&gt;article du Monde&lt;/a&gt;, on peut se poser la question de savoir &lt;em&gt;si on peut extraire depuis les données brutes des élections une estimation du report de voix entre les choix de vote au premier tour et ceux qui sont effectués au deuxième tour&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Pour cela, parmi les outils mathématiques de l'apprentissage automatique, nous allons utiliser des probabilités. Cette théorie va nous permettre d'exprimer le fait que les résultats tels qu'ils sont obtenus peuvent présenter une variabilité mais que celle-ci réelle résulte de préférences de chaque individu dans la population votante. En particulier, on peut considérer que chaque individu va avoir une préférence, graduée entre $0=0\%$ et $1=100\%$ pour chacun des choix (candidats, nul, blanc, abstention) au premier et second tour. Ainsi, les votes effectués vont correspondre à la réalisation de ces préférences.&lt;/p&gt;
-&lt;p&gt;Bien sûr, le vote reste secret et on n'a pas accès au vote de chaque individu et encore moins à ses préférences. Mais comme chaque bureau de vote présente des variabilités liées au contexte local et qui fait que cette population locale a une préférence pour certains choix plutôt que d'autres, on peut considérer chaque bureau de vote comme une population individuelle pour lequel nous allons essayer de prédire les résultats du vote au deuxième tour. &lt;strong&gt;En exploitant les irrégularités locales, bureau de vote par bureau de vote, nous allons pouvoir prédire (le mieux possible) le report des votes individuel (de chaque individu tel qu'il passe d'un vote à un autre, par exemple de "Hidalgo" à "Macron").&lt;/strong&gt; Nous allons en particulier montrer une prédiction très correcte des données du second tour à partir de ceux du premier, montrant la plausibilité d'une telle hypothèse :&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Prédiction du transfert des voix" src="https://raw.githubusercontent.com/laurentperrinet/2022-05-04_transfert-des-voix/main/2022-06-08_prediction_transfert-des-voix_bce.png" title="Prédiction du transfert des voix"&gt;&lt;/p&gt;
-&lt;p&gt;C'est à ma connaissance une contribution originale (jusqu'à ce qu'une bonne âme veuille bien me donner un lien vers une méthode existante similaire qui me permette de correctement la citer...) que nous allons exploiter ici. Cette prédiction, si elle est efficace (et on va montrer qu'elle est en moyenne correctement prédite avec moins de 2 points de pourcentages d'erreur près), peut donner une idée du transfert de vote entre les deux tours qui a lieu en fonction des préférences des votes de chaque individu.&lt;/p&gt;
-&lt;p&gt;Nous allons dans la suite montrer comment on peut estimer le pourcentage de chances d'exprimer une voix pour un candidat ou pour l'autre en fonction du choix qu'on a exprimé au premier tour:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Transfert des voix" src="https://raw.githubusercontent.com/laurentperrinet/2022-05-04_transfert-des-voix/main/2022-06-06_transfert-des-voix.png" title="Transfert des voix"&gt;&lt;/p&gt;
-&lt;p&gt;Comme on le verra plus bas, ce tableau montre des tendances claires, par exemple que si on a voté "Macron", "Jadot", "Hidalgo" ou "Pécresse" au premier tour, alors on va certainement voter "Macron" au deuxième tour. Ces électeurs se montrent particulièrement consensuel et suivent le « pacte républicain » mise en place pour faire un "barrage" au Front National (en suivant le terme consacré). Il montre aussi que si on a voté "Le Pen" ou "Dupont-Aignan" au premier tour alors on va voter Le Pen au deuxième, un clair vote de suivi.&lt;/p&gt;
-&lt;p&gt;Connaissant les couleurs politiques d'autres candidats du premier tour, on peut être surpris que les électeurs de "Arthaud", "Roussel", "Lassalle" ou "Poutou" ont majoritairement choisi "Le Pen" au deuxième tour, signifiant alors un rejet du candidat Macron. Les électeurs de Zemmour sont aussi partagés, signifiant un rejet des deux alternatives. &lt;strong&gt;Ce résultat est à prendre avec des pincettes car ces derniers candidats ont obtenu moins de votes et donc que le processus d'inférence est forcément moins précis car il y a moins de données disponibles.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;En résumé, cette analyse donne des tendances en fonction des choix exprimés au premier tour:
-&lt;img alt="Transfert des voix" src="https://raw.githubusercontent.com/laurentperrinet/2022-05-04_transfert-des-voix/main/2022-06-08_transfert-des-voix_tendances.png" title="Tendances présidentielle 2022"&gt;
-qui montre une nette séparation des groupes de vote.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2022-06-08-transfert-de-voix.html"&gt;Read more…&lt;/a&gt; (47 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>deep-learning</category><category>grand-public</category><category>machine-learning</category><category>open-science</category><category>pandas</category><category>python</category><category>pytorch</category><guid>https://laurentperrinet.github.io/sciblog/posts/2022-06-08-transfert-de-voix.html</guid><pubDate>Wed, 08 Jun 2022 19:27:40 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>deep-learning</category><category>machine-learning</category><category>open-science</category><category>python</category><category>pytorch</category><category>retina</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html</guid><pubDate>Thu, 02 Feb 2023 07:59:14 GMT</pubDate></item></channel></rss>
