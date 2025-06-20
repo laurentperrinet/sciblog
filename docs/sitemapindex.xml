@@ -23,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/behavior.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/bicv.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/cnrs.xml</loc>
@@ -155,11 +155,11 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motion.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/motionclouds.xml</loc>
-  <lastmod>2025-05-21T06:48:00Z</lastmod>
+  <lastmod>2025-06-20T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/moviepy.xml</loc>
@@ -235,7 +235,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/psychophysics.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pupil.xml</loc>
@@ -247,7 +247,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -255,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/retina.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/ring-model.xml</loc>
@@ -267,7 +267,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/saccades.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.xml</loc>
@@ -335,7 +335,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vision.xml</loc>
-  <lastmod>2025-05-02T10:21:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/vispy.xml</loc>
@@ -343,10 +343,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2025-05-21T06:48:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2025-05-21T06:48:00Z</lastmod>
+  <lastmod>2025-06-20T14:48:00Z</lastmod>
  </sitemap>
 </sitemapindex>

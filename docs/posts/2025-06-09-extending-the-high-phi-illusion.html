@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extending the high-phi illusion | Scientific logbook</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html">
+<link rel="icon" href="favicon.svg" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Laurent Perrinet">
+<link rel="prev" href="2025-04-24-orienting-yourself-in-the-visual-flow.html" title="Orienting yourself in the visual flow" type="text/html">
+<meta property="og:site_name" content="Scientific logbook">
+<meta property="og:title" content="Extending the high-phi illusion">
+<meta property="og:url" content="https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html">
+<meta property="og:description" content="The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the min author's webpage and the effect is describe">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-06-09T09:16:40+02:00">
+<meta property="article:tag" content="behavior">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="motion">
+<meta property="article:tag" content="motionclouds">
+<meta property="article:tag" content="psychophysics">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="retina">
+<meta property="article:tag" content="saccades">
+<meta property="article:tag" content="vision">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">Scientific logbook</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="2025-06-09-extending-the-high-phi-illusion.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../" class="nav-link">Home</a>
+                </li>
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS</a>
+                </li>
+<li class="nav-item">
+<a href="http://laurentperrinet.github.io" class="nav-link">About my research</a>
+                </li>
+<li class="nav-item">
+<a href="https://neuromatch.social/@laurentperrinet" class="nav-link">Mastodon</a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/laurentperrinet" class="nav-link">Github</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Extending the high-phi illusion</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Laurent Perrinet
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2025-06-09T09:16:40+02:00" itemprop="datePublished" title="2025-06-09 09:16">2025-06-09 09:16</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="2025-06-09-extending-the-high-phi-illusion.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the <a href="http://lab-perception.org/demo/highphi/">min author's webpage</a> and the effect is described in this excellent paper :
+Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default perception of high-speed motion. PNAS, 110, 7080-7085. <a href="http://wexler.free.fr/papers/highphi.pdf">http://wexler.free.fr/papers/highphi.pdf</a></p>
+<p>In this notebook, we will generate an extension of this illusion to answer to the question of knowing if it limited to the one-dimensional motion along the ring or if this can extended to arbitrary, 2D, planar motions. This will help decipher some of the factors leading to this "illusion".</p>
+<p>TL;DR : one can reproduce the illusion on a planar motion (not a rotation), but it seems important that the motion is either limited to a band-like shape or to limited orientations:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
+
+<span class="n">prefix</span> <span class="o">=</span> <span class="s1">'2025-06-09_extending-the-high-phi-illusion'</span>
+<span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[28]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><video autoplay="True" controls="True" loop="True" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi.mp4">
+      Your browser does not support the <code>video</code> element.
+    </video></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi-oriented-inducer-noband.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[29]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><video autoplay="True" controls="True" loop="True" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-noband.mp4">
+      Your browser does not support the <code>video</code> element.
+    </video></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+<p>Let's first initialize the notebook:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="creating-a-textured-motion">creating a textured motion<a class="anchor-link" href="2025-06-09-extending-the-high-phi-illusion.html#creating-a-textured-motion">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a generic visual texture, let's synthetize a <a href="https://neuralensemble.github.io/MotionClouds">Motion Clouds</a> for the inducer:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># %pip install MotionClouds</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'../files/'</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">80</span>
+<span class="n">do_mask</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">N_frame_inducer</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="mf">4.</span>
+<span class="n">B_theta_shuffle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">B_theta_inducer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">fps</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'inducer'</span>
+
+<span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_inducer</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">do_figs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before Rectification of the frames
+Mean= -2.791230366480235e-09 , std= 3.780516432905623e-05 , Min= -0.00024022903127231458 , Max= 0.0002218101417629138  Abs(Max)= 0.00024022903127231458
+After Rectification of the frames
+Mean= 0.5 , std= 0.07868658378546557 , Min= 0.0 , Max= 0.9616750712881064
+percentage pixels clipped= 0.0
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/inducer.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This can be accessed as a <code>numpy</code> array:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">movie_inducer</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'movie_inducer shape = </span><span class="si">{</span><span class="n">movie_inducer</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>movie_inducer shape = (400, 400, 60)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On the first two axis, the spatial axis of pixels ($x$ and $y$), on the third the temporal axis $t$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="shuffled-movie">shuffled movie<a class="anchor-link" href="2025-06-09-extending-the-high-phi-illusion.html#shuffled-movie">¶</a>
+</h4>
+<p>This corresponds in Fourier space to a white noise in time and can be parameterized by an infinite bandwidth on the temporal frequency axis:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'shuffle'</span>
+<span class="n">N_frame_shuffle</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">B_V</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">*</span><span class="n">V</span>
+<span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_shuffle</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">figures</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">do_figs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/shuffle.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, we get a movie:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">movie_shuffle</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'movie_shuffle shape = </span><span class="si">{</span><span class="n">movie_shuffle</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>movie_shuffle shape = (400, 400, 5)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>we can now use these arrays and concatenate them:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'high-phi-concatenated'</span>
+
+<span class="n">N_frame_blank</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">movie_blank</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+<span class="n">movie_inducer_east</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+<span class="n">movie_inducer_west</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=-</span><span class="n">V</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+<span class="n">movie_inducer_north</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+<span class="n">movie_inducer_south</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=-</span><span class="n">V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+
+<span class="n">movie_highphi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">movie_inducer_east</span><span class="p">,</span> <span class="n">movie_shuffle</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> <span class="n">movie_inducer_north</span><span class="p">,</span> <span class="n">movie_shuffle</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> 
+                                <span class="n">movie_inducer_west</span><span class="p">,</span> <span class="n">movie_shuffle</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> <span class="n">movie_inducer_south</span><span class="p">,</span> <span class="n">movie_shuffle</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie_highphi</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-concatenated.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Surprisingly, the effect is not as striking as the 1D motion produced in the initial illusion. So let's add a mask to check if the form of the moving texture is one important factor:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">do_band_inducer</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">do_band_shuffle</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">band_radius</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+
+<span class="n">name</span> <span class="o">=</span> <span class="s1">'high-phi-band-shuffle'</span>
+
+<span class="n">movie_band</span> <span class="o">=</span>  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fy</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">band_radius</span><span class="p">)</span>
+<span class="n">movie_highphi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">movie_inducer_east</span><span class="p">,</span> <span class="p">(</span><span class="n">movie_shuffle</span><span class="o">-</span><span class="mf">.5</span><span class="p">)</span><span class="o">*</span><span class="n">movie_band</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span><span class="o">+</span><span class="mf">.5</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie_highphi</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-band-shuffle.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'high-phi-band'</span>
+
+<span class="n">movie_highphi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span> <span class="p">((</span><span class="n">movie_inducer_east</span><span class="o">-</span><span class="mf">.5</span><span class="p">)</span><span class="o">*</span><span class="n">movie_band</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span><span class="o">+</span><span class="mf">.5</span><span class="p">),</span> <span class="p">(</span><span class="n">movie_shuffle</span><span class="o">-</span><span class="mf">.5</span><span class="p">)</span><span class="o">*</span><span class="n">movie_band</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span><span class="o">+</span><span class="mf">.5</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie_highphi</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-band.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="wrapping-up-and-make-a-movie">wrapping up and make a movie<a class="anchor-link" href="2025-06-09-extending-the-high-phi-illusion.html#wrapping-up-and-make-a-movie">¶</a>
+</h4>
+<p>Now that we have all elements, let's wrap them up in a single function and export the result as a</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
+               <span class="n">N_frame_inducer</span><span class="o">=</span><span class="n">N_frame_inducer</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="n">N_frame_shuffle</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="n">N_frame_blank</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> 
+               <span class="n">image_size_az</span><span class="o">=</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="o">=</span><span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span><span class="o">=</span><span class="n">N_frame</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">,</span> 
+               <span class="n">do_band_inducer</span><span class="o">=</span><span class="n">do_band_inducer</span><span class="p">,</span> <span class="n">do_band_shuffle</span><span class="o">=</span><span class="n">do_band_shuffle</span><span class="p">,</span> <span class="n">band_radius</span><span class="o">=</span><span class="n">band_radius</span><span class="p">,</span>
+               <span class="n">sf_0</span><span class="o">=</span><span class="n">opts</span><span class="p">[</span><span class="s1">'sf_0'</span><span class="p">],</span> <span class="n">B_theta_shuffle</span><span class="o">=</span><span class="n">B_theta_shuffle</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="n">B_theta_inducer</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">opts</span><span class="p">[</span><span class="s1">'B_sf'</span><span class="p">],</span>
+               <span class="n">fps</span> <span class="o">=</span> <span class="n">fps</span> <span class="c1"># frames per second</span>
+    <span class="p">):</span>
+
+
+    <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
+
+    <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_shuffle</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">)</span>
+
+    <span class="n">movie_shuffle_h</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span>
+    <span class="n">movie_shuffle_v</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">do_band_shuffle</span><span class="p">:</span>
+        <span class="n">movie_band</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fy</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">band_radius</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span>
+        <span class="n">movie_shuffle_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_shuffle_h</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+
+        <span class="n">movie_band</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">band_radius</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_shuffle</span><span class="p">]</span>
+        <span class="n">movie_shuffle_v</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_shuffle_v</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+
+    <span class="n">movie_blank</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+    <span class="n">opts</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta_inducer</span><span class="p">)</span>
+    <span class="n">movie_inducer_east</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>  <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+    <span class="n">movie_inducer_west</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=-</span><span class="n">V</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+    <span class="n">movie_inducer_north</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+    <span class="n">movie_inducer_south</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=-</span><span class="n">V</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">),</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">do_band_inducer</span><span class="p">:</span>
+        <span class="n">movie_band</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fy</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">band_radius</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+        <span class="n">movie_inducer_east</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_inducer_east</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">movie_inducer_west</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_inducer_west</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">movie_band</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">band_radius</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">N_frame_inducer</span><span class="p">]</span>
+        <span class="n">movie_inducer_south</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_inducer_south</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">movie_inducer_north</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_inducer_north</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">movie_band</span> <span class="o">+</span> <span class="mf">0.5</span>
+
+    <span class="n">movie_highphi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">movie_inducer_east</span><span class="p">,</span> <span class="n">movie_shuffle_h</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> <span class="n">movie_inducer_north</span><span class="p">,</span> <span class="n">movie_shuffle_v</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> 
+                                    <span class="n">movie_inducer_west</span><span class="p">,</span> <span class="n">movie_shuffle_h</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">,</span> <span class="n">movie_inducer_south</span><span class="p">,</span> <span class="n">movie_shuffle_v</span><span class="p">,</span> <span class="n">movie_blank</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">figname</span><span class="p">)</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">anim_save</span><span class="p">(</span><span class="n">movie_highphi</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fname</span> <span class="o">+</span> <span class="n">mc</span><span class="o">.</span><span class="n">vext</span> <span class="c1"># returns filename</span>
+
+
+<span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function allows us to test different configurations.</p>
+<p>What if the inducer is short in time ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-short-inducer'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">N_frame_inducer</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-short-inducer.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if the inducer's speed is slower ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-slow'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-slow.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if the inducer is long in time but the shuffle is long ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-short-shuffle'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">N_frame_inducer</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-short-shuffle.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if both are short in time ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-short'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">N_frame_inducer</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-short.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if both are long in time ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-long'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">N_frame_inducer</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-long.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if the inducer contains oriented textures ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-oriented-inducer'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-oriented-inducer-shuffle'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_theta_shuffle</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-shuffle.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-oriented-inducer-noband'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_theta_shuffle</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">do_band_inducer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">do_band_shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-noband.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and that these orientation is tilted at 45° ?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-diagonal'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">B_theta_shuffle</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-diagonal.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-diagonal-inducer'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-diagonal-inducer.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">figname</span> <span class="o">=</span> <span class="s1">'high-phi-diagonal-both'</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">B_theta_shuffle</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">B_theta_inducer</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">in_show_video</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea">
+<center><table border="none" height="100%" width="100%"><tr><td width="100%"><center><video autoplay="" controls="" loop="" playsinline="" src="../files/2025-06-09_extending-the-high-phi-illusion/high-phi-diagonal-both.mp4" type="video/mp4" width="100%"></video></center></td></tr></table></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="some-book-keeping-for-the-notebook">some book keeping for the notebook<a class="anchor-link" href="2025-06-09-extending-the-high-phi-illusion.html#some-book-keeping-for-the-notebook">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span> -i -h -m -v -p numpy,matplotlib,imageio  -r -g -b
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Python implementation: CPython
+Python version       : 3.13.5
+IPython version      : 9.3.0
+
+numpy     : 2.3.0
+matplotlib: 3.10.3
+imageio   : 2.37.0
+
+Compiler    : Clang 17.0.0 (clang-1700.0.13.3)
+OS          : Darwin
+Release     : 24.5.0
+Machine     : x86_64
+Processor   : i386
+CPU cores   : 36
+Architecture: 64bit
+
+Hostname: Ahsoka
+
+Git hash: b97d7a23e35afe9d4ccf3f22e96d5aa986946004
+
+Git repo: https://github.com/laurentperrinet/sciblog
+
+Git branch: master
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HACK</span>
+<span class="c1"># %rm -f ../files/{prefix}/*mp4 </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/behavior.html" rel="tag">behavior</a></li>
+            <li><a class="tag p-category" href="../categories/blog.html" rel="tag">blog</a></li>
+            <li><a class="tag p-category" href="../categories/motion.html" rel="tag">motion</a></li>
+            <li><a class="tag p-category" href="../categories/motionclouds.html" rel="tag">motionclouds</a></li>
+            <li><a class="tag p-category" href="../categories/psychophysics.html" rel="tag">psychophysics</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/retina.html" rel="tag">retina</a></li>
+            <li><a class="tag p-category" href="../categories/saccades.html" rel="tag">saccades</a></li>
+            <li><a class="tag p-category" href="../categories/vision.html" rel="tag">vision</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="2025-04-24-orienting-yourself-in-the-visual-flow.html" rel="prev" title="Orienting yourself in the visual flow">Previous post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
