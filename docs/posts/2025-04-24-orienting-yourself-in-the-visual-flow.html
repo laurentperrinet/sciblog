@@ -132,7 +132,7 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
 
 <span class="n">Video</span><span class="p">(</span><span class="s1">'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'</span><span class="p">,</span> 
       <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
@@ -197,14 +197,14 @@
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">sci_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -336,7 +336,7 @@
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s1">'../files/2025-04-24-orienting-yourself-in-the-visual-flow.png'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -407,7 +407,7 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On the first axis, the relative angle $\theta$ of the pixel is such that $ \theta = \arctan\frac v u$.</p>
-<p>For the second axis, we need to estimate the depth of each pixel on the surface of the cylinder. Knowing its radius $R$, the deviation $\phi$ of the pixel with respect to the axis is such that $\tan \phi = \frac R Z$.</p>
+<p>For the second axis, we need to estimate the depth of each pixel on the surface of the cylinder. Knowing its radius $R$, the deviation $\phi$ of the pixel with respect to the axis is such that $\tan \phi = \frac R Z$. This is different but similar in principle to the modulation of spatial frequency with eccentricity of Kelly's "Retinal Inhomogeneity. III. Circular-Retina Theory" (1985).</p>
 <p>In all generality that angle is defined as the Great-circle distance to transform the azimuth and elevation into a deviation angle from the gaze axis:</p>
 </div>
 </div>
@@ -418,7 +418,7 @@
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># see https://github.com/NaturalPatterns/2013_Tropique/blob/master/modele_dynamique.py#L20</span>
-<span class="k">def</span> <span class="nf">arcdistance</span><span class="p">(</span><span class="n">rae1</span><span class="p">,</span> <span class="n">rae2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arcdistance</span><span class="p">(</span><span class="n">rae1</span><span class="p">,</span> <span class="n">rae2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Returns the angle on the great circle (in radians)</span>
 
@@ -894,7 +894,7 @@ $\phi = \sqrt{u^2 + v^2}$. Such that the depth corresponding to that pixel is gi
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">rectif</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)))</span>
 <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
@@ -1154,8 +1154,8 @@ $\phi = \sqrt{u^2 + v^2}$. Such that the depth corresponding to that pixel is gi
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># %pip install imageio[ffmpeg]</span>
 
-<span class="kn">import</span> <span class="nn">imageio</span>
-<span class="k">def</span> <span class="nf">make_mp4</span><span class="p">(</span><span class="n">moviename</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">fps</span><span class="p">):</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_mp4</span><span class="p">(</span><span class="n">moviename</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">fps</span><span class="p">):</span>
     <span class="c1"># Create a video writer object</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">moviename</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span>  <span class="c1"># Adjust the fps as needed</span>
 
@@ -1177,12 +1177,12 @@ $\phi = \sqrt{u^2 + v^2}$. Such that the depth corresponding to that pixel is gi
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 
 <span class="n">UPSCALE</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span> <span class="o">=</span> <span class="mi">368</span><span class="o">*</span><span class="n">UPSCALE</span><span class="p">,</span> <span class="mi">368</span><span class="o">*</span><span class="n">UPSCALE</span>
 
-<span class="k">def</span> <span class="nf">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
                <span class="n">image_size_az</span><span class="o">=</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="o">=</span><span class="n">image_size_el</span><span class="p">,</span> 
                <span class="n">VA</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
                <span class="n">P</span> <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span> <span class="c1"># period for the mapped image</span>
@@ -1282,7 +1282,7 @@ $\phi = \sqrt{u^2 + v^2}$. Such that the depth corresponding to that pixel is gi
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_shots_perturb</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_shots_perturb</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
                <span class="n">image_size_az</span><span class="o">=</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="o">=</span><span class="n">image_size_el</span><span class="p">,</span> 
                <span class="n">VA</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
                <span class="n">P</span> <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span> <span class="c1"># period for the mapped image</span>
@@ -1388,7 +1388,7 @@ $\phi = \sqrt{u^2 + v^2}$. Such that the depth corresponding to that pixel is gi
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_shots_hering</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_shots_hering</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
                <span class="n">image_size_az</span><span class="o">=</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="o">=</span><span class="n">image_size_el</span><span class="p">,</span> 
                <span class="n">VA</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
                <span class="n">P</span> <span class="o">=</span> <span class="mf">40.</span><span class="p">,</span> <span class="c1"># period for the mapped image</span>
