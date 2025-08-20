@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 20 Aug 2025 15:11:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Extending the high-phi illusion</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 20 Aug 2025 17:01:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Extending the high-phi illusion</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the &lt;a href="http://lab-perception.org/demo/highphi/"&gt;min author's webpage&lt;/a&gt; and the effect is described in this excellent paper :
@@ -75,9 +75,8 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp;amp; Seno T (2013). Default perc
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Video&lt;/span&gt;
-
-&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-      &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;html_attributes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;
+&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -105,8 +104,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp;amp; Seno T (2013). Default perc
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow-perturb.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-      &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow-perturb.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -138,44 +136,18 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp;amp; Seno T (2013). Default perc
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Requirement already satisfied: pip in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (25.0.1)
-Collecting pip
-  Using cached pip-25.2-py3-none-any.whl.metadata (4.7 kB)
-Using cached pip-25.2-py3-none-any.whl (1.8 MB)
-Installing collected packages: pip
-  Attempting uninstall: pip
-    Found existing installation: pip 25.0.1
-    Uninstalling pip-25.0.1:
-      Successfully uninstalled pip-25.0.1
-Successfully installed pip-25.2
+&lt;pre&gt;Requirement already satisfied: pip in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (25.2)
 Note: you may need to restart the kernel to use updated packages.
-Collecting torch==2.7.0
-  Using cached torch-2.7.0-cp313-none-macosx_11_0_arm64.whl.metadata (29 kB)
+Requirement already satisfied: torch==2.7.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (2.7.0)
 Requirement already satisfied: filelock in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.18.0)
 Requirement already satisfied: typing-extensions&amp;gt;=4.10.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (4.13.0)
 Requirement already satisfied: setuptools in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (75.6.0)
-Collecting sympy&amp;gt;=1.13.3 (from torch==2.7.0)
-  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: sympy&amp;gt;=1.13.3 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (1.14.0)
 Requirement already satisfied: networkx in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.4.2)
 Requirement already satisfied: jinja2 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.1.4)
 Requirement already satisfied: fsspec in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (2025.3.0)
 Requirement already satisfied: mpmath&amp;lt;1.4,&amp;gt;=1.1.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from sympy&amp;gt;=1.13.3-&amp;gt;torch==2.7.0) (1.3.0)
 Requirement already satisfied: MarkupSafe&amp;gt;=2.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from jinja2-&amp;gt;torch==2.7.0) (3.0.2)
-Using cached torch-2.7.0-cp313-none-macosx_11_0_arm64.whl (68.6 MB)
-Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
-Installing collected packages: sympy, torch
-  Attempting uninstall: sympy
-    Found existing installation: sympy 1.13.1
-    Uninstalling sympy-1.13.1:
-      Successfully uninstalled sympy-1.13.1━━━━━ &lt;span class="ansi-green-fg"&gt;0/2&lt;/span&gt; [sympy]
-  Attempting uninstall: torch━━━━━━━━━━━━━━━━━━━ &lt;span class="ansi-green-fg"&gt;0/2&lt;/span&gt; [sympy]
-    Found existing installation: torch 2.6.0 &lt;span class="ansi-green-fg"&gt;0/2&lt;/span&gt; [sympy]
-    Uninstalling torch-2.6.0:[0m&lt;span class="ansi-black-intense-fg"&gt;╺&lt;/span&gt;&lt;span class="ansi-black-intense-fg"&gt;━━━━━━━━━━━━━━━━━━━&lt;/span&gt; &lt;span class="ansi-green-fg"&gt;1/2&lt;/span&gt; [torch]
-      Successfully uninstalled torch-2.6.0&lt;span class="ansi-black-intense-fg"&gt;━━━━━━━━━━━━━━━━━━━&lt;/span&gt; &lt;span class="ansi-green-fg"&gt;1/2&lt;/span&gt; [torch]
-   &lt;span class="ansi-black-intense-fg"&gt;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&lt;/span&gt; &lt;span class="ansi-green-fg"&gt;2/2&lt;/span&gt; [torch]32m1/2 [torch]
-&lt;span class="ansi-red-fg"&gt;ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-torchvision 0.21.0 requires torch==2.6.0, but you have torch 2.7.0 which is incompatible.&lt;/span&gt;&lt;span class="ansi-red-fg"&gt;
-&lt;/span&gt;Successfully installed sympy-1.14.0 torch-2.7.0
 Note: you may need to restart the kernel to use updated packages.
 &lt;/pre&gt;
 &lt;/div&gt;
@@ -186,7 +158,7 @@ Note: you may need to restart the kernel to use updated packages.
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html"&gt;Read more…&lt;/a&gt; (18 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>blog</category><category>motion</category><category>motionclouds</category><category>psychophysics</category><category>python</category><category>retina</category><category>saccades</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</guid><pubDate>Thu, 24 Apr 2025 04:15:52 GMT</pubDate></item><item><title>Implementing a retinotopic transform using `grid_sample` from pyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>blog</category><category>motion</category><category>motionclouds</category><category>psychophysics</category><category>python</category><category>retina</category><category>saccades</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</guid><pubDate>Thu, 24 Apr 2025 04:15:52 GMT</pubDate></item><item><title>Implementing a retinotopic transform using `grid_sample` from pyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Implementing-a-retinotopic-transform-using-grid_sample-from-pyTorch"&gt;Implementing a retinotopic transform using &lt;code&gt;grid_sample&lt;/code&gt; from &lt;code&gt;pyTorch&lt;/code&gt;&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2023-02-02-implementing-a-retinotopic-transform-using-grid_sample-from-pytorch.html#Implementing-a-retinotopic-transform-using-grid_sample-from-pyTorch"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;a href="https://pytorch.org/docs/stable/generated/torch.nn.functional.grid_sample.html"&gt;grid_sample&lt;/a&gt; transform is a powerful function which allows to transform any input image into a new topology. It is notably used in &lt;a href="https://arxiv.org/abs/1506.02025"&gt;Spatial Transformer Networks&lt;/a&gt; for instance to learn CNN to be invariant to affine transforms. We used it recently in a publication &lt;a href="https://laurentperrinet.github.io/publication/dabane-22/"&gt;What You See Is What You Transform: Foveated Spatial Transformers as a Bio-Inspired Attention Mechanism&lt;/a&gt; by Ghassan Dabane &lt;em&gt;et al&lt;/em&gt;.&lt;/p&gt;
