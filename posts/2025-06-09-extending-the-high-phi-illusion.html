@@ -133,7 +133,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
 
 <span class="n">prefix</span> <span class="o">=</span> <span class="s1">'2025-06-09_extending-the-high-phi-illusion'</span>
 <span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
@@ -188,9 +188,9 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -231,7 +231,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'../files/'</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -525,7 +525,7 @@ percentage pixels clipped= 0.0
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_shots</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> 
                <span class="n">N_frame_inducer</span><span class="o">=</span><span class="n">N_frame_inducer</span><span class="p">,</span> <span class="n">N_frame_shuffle</span><span class="o">=</span><span class="n">N_frame_shuffle</span><span class="p">,</span> <span class="n">N_frame_blank</span><span class="o">=</span><span class="n">N_frame_blank</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> 
                <span class="n">image_size_az</span><span class="o">=</span><span class="n">image_size_az</span><span class="p">,</span> <span class="n">image_size_el</span><span class="o">=</span><span class="n">image_size_el</span><span class="p">,</span> <span class="n">N_frame</span><span class="o">=</span><span class="n">N_frame</span><span class="p">,</span> <span class="n">do_mask</span><span class="o">=</span><span class="n">do_mask</span><span class="p">,</span> 
                <span class="n">do_band_inducer</span><span class="o">=</span><span class="n">do_band_inducer</span><span class="p">,</span> <span class="n">do_band_shuffle</span><span class="o">=</span><span class="n">do_band_shuffle</span><span class="p">,</span> <span class="n">band_radius</span><span class="o">=</span><span class="n">band_radius</span><span class="p">,</span>
