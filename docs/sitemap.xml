@@ -7,15 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/</loc>
-  <lastmod>2025-08-20T15:13:00Z</lastmod>
+  <lastmod>2025-08-20T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/archive.html</loc>
-  <lastmod>2025-08-20T17:01:00Z</lastmod>
+  <lastmod>2025-08-31T09:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/</loc>
-  <lastmod>2025-08-19T17:17:00Z</lastmod>
+  <lastmod>2025-08-20T17:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/anr-balav1.html</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.html</loc>
-  <lastmod>2025-08-20T17:00:00Z</lastmod>
+  <lastmod>2025-08-31T09:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/cnrs.html</loc>
@@ -283,7 +283,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sciblog.html</loc>
-  <lastmod>2025-06-20T14:39:00Z</lastmod>
+  <lastmod>2025-08-31T09:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/categories/shell.html</loc>
@@ -459,7 +459,7 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/</loc>
-  <lastmod>2025-06-20T14:39:00Z</lastmod>
+  <lastmod>2025-04-29T07:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/listings/import_moinmoinpages.py.html</loc>
@@ -1059,6 +1059,10 @@
  </url>
  <url>
   <loc>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</loc>
-  <lastmod>2025-08-20T15:11:00Z</lastmod>
+  <lastmod>2025-08-31T09:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://laurentperrinet.github.io/sciblog/posts/2025-09-03_Perrinet-CNRS-rapport-activit%C3%A9..meta.html</loc>
+  <lastmod>2025-08-31T09:18:00Z</lastmod>
  </url>
 </urlset>
