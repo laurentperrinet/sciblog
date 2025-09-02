@@ -113,7 +113,7 @@ Je présente ici 5 productions scientifiques représentatives de l'interdiscipli
 
 1. Le mystère de la Joconde éclairé par les neurosciences Laurent U Perrinet , Hugo Ladret *Cerveau & psycho.* 2024, N° 168 (8), pp.30-36. <https://hal.science/hal-04842606v1>
 
-> *Cet article de vulgarisation expose les travaux ci-dessus pour un large public et a pu ouvrir ces recherches à un large public, ce qui a donné lieu à d'autres retombées (articles, séminaires,&#x20;*[podcast](https://ici.radio-canada.ca/ohdio/premiere/emissions/penelope/segments/rattrapage/1910587/sonia-lupien-neurones-joconde)*).*
+> *Cet article de vulgarisation expose les travaux ci-dessus pour un large public et a pu ouvrir ces recherches à un large public, ce qui a donné lieu à d'autres retombées (articles, séminaires, [podcast](https://ici.radio-canada.ca/ohdio/premiere/emissions/penelope/segments/rattrapage/1910587/sonia-lupien-neurones-joconde)).*
 
 1. Frédéric Chavane, Laurent U Perrinet, James Rankin (2022). Revisiting Horizontal Connectivity Rules in V1: From like-to-like towards like-to-All. *Brain Structure and Function*. [https://hal.science/hal-03572602](https://hal.science/hal-03572602v1)
 
@@ -161,7 +161,7 @@ Je présente ici 5 productions scientifiques représentatives de l'interdiscipli
 
 J'enseigne auprès des étudiants de Master ou au niveau doctoral notamment à travers la "NeuroSchool" à Marseille ou l'institut NeuroMod:
 
-* 2023-04-03, 2024-05-13, 2025-05-26: Master M4NC de l’institut NeuroMod, cours Prospective Innovation and Research à [Neuromod](https://neuromod.univ-cotedazur.eu/) *Artificial neural networks and machine learning applied to the understanding of biological vision&#x20;*<https://laurentperrinet.github.io/talk/artificial-neural-networks-and-machine-learning-applied-to-the-understanding-of-biological-vision/>
+* 2023-04-03, 2024-05-13, 2025-05-26: Master M4NC de l’institut NeuroMod, cours Prospective Innovation and Research à [Neuromod](https://neuromod.univ-cotedazur.eu/) *Artificial neural networks and machine learning applied to the understanding of biological vision <https://laurentperrinet.github.io/talk/artificial-neural-networks-and-machine-learning-applied-to-the-understanding-of-biological-vision/>
 
 * 2023-03-29, 2024-04-10 : Master 1 Neurosciences et Sciences Cognitives <https://laurentperrinet.github.io/talk/2023-04-05-ue-neurosciences-computationnelles/>
 
@@ -203,7 +203,7 @@ J'enseigne auprès des étudiants de Master ou au niveau doctoral notamment à t
 
 * Responsabilités dans l’animation de programme:
 
-  * J'anime en tant que porteur de projet l'ANR *AgileNeuRobot* (ANR-20-CE23-0021) *Robots aériens agiles bio-mimetiques pour le vol en conditions réelles&#x20;*&#x70;our le CES : CE23 - Intelligence Artificielle et en collaboration avec Stéphane Viollet (BioRobotique, Inst Sciences Mouvement), Ryad Benosman (Inst de la Vision ) pour un total de 435k€ <https://laurentperrinet.github.io/grant/anr-anr/>
+  * J'anime en tant que porteur de projet l'ANR *AgileNeuRobot* (ANR-20-CE23-0021) *Robots aériens agiles bio-mimetiques pour le vol en conditions réelles pour le CES : CE23 - Intelligence Artificielle et en collaboration avec Stéphane Viollet (BioRobotique, Inst Sciences Mouvement), Ryad Benosman (Inst de la Vision ) pour un total de 435k€ <https://laurentperrinet.github.io/grant/anr-anr/>
 
   * Je suis porteur du projet *Polychronies* qui a bénéficié d’une aide de 100k€ du gouvernement français au titre de France 2030, dans le cadre de l’Initiative d’Excellence d’Aix-Marseille Université – A*MIDEX, projet numero AMX-21-RID-025 " <https://laurentperrinet.github.io/grant/polychronies/>
 
