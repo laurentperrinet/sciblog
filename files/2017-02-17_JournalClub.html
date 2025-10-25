@@ -1188,17 +1188,17 @@
         </div>
     </div>
 
-    <script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/math/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/js/reveal.js"></script>
 
-        
+
 	<script>
 
             // Full list of configuration options available at:
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
 
-        
+
                 // The "normal" size of the presentation, aspect ratio will be preserved
                 // when the presentation is scaled to fit different resolutions. Can be
                 // specified using percentage units.
@@ -1207,7 +1207,7 @@
 
                 // Factor of the display size that should remain empty around the content
                 margin: 0.1618,
-        
+
                 // Display a presentation progress bar
                 progress: true,
                 slideNumber: 'c/t',
@@ -1216,14 +1216,14 @@
                 //history: false,
 
                 // Vertical centering of slides
-                center: true,
+                center: false,
 
                 // Enables touch navigation on devices with touch input
                 touch: true,
 
                 // Bounds for smallest/largest possible scale to apply to content
-                // minScale: 0.2,
-                // maxScale: 1.5,
+                minScale: 0.2,
+                maxScale: 2.5,
 
                 // Display controls in the bottom right corner
                 controls: false,
@@ -1267,22 +1267,30 @@
                 fragments: true,
 
                 // Theme
-                theme: 'black', // available themes are in /css/theme
+                theme: 'simple', // available themes are in /css/theme
 
-        
+
+                math: {
+            		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
+
                 // Optional reveal.js plugins
                 dependencies: [
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true },
-                        { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/math/math.js', async: true }
-        
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/zoom-js/zoom.js', async: true },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/notes/notes.js', async: true },
+                        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/math/math.js', async: true },
+                        
+
                 ]
         });
         </script>
+
+
+
     </body>
 </html>
-        
