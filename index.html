@@ -100,14 +100,22 @@ This is joint work with Hugo Ladret.</div>
                            <h3 class="mb-0">
                                <a class="text-dark" href="posts/2017-06-15-le-jeu-de-lurne.html">Le jeu de l'urne</a>
                            </h3>
-                               <div class="card-text mb-auto bootblog4-featured-text">Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena!), nous avons inventé ensemble un jeu: le jeu de l'urne. Le principe est simple: il faut deviner la couleur de la balle qu'on tire d'une urne contenant autant de balles rouges que noires - et ceci le plus tôt possible. Plus précisément, les règles sont:
+                               <div class="card-text mb-auto bootblog4-featured-text">Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena !), nous avons inventé ensemble un petit jeu aux apparences simples mais aux implications surprenantes : le jeu de l'urne.
+L'idée de départ : peut-on mesurer l'impulsivité d'une personne rien qu'en observant ses choix ? C'est le pari de ce jeu.
+Le principe¶Imaginez une urne opaque contenant autant de balles rouges que noires — disons 8 balles au total, 4 rouges, 4 noires. À chaque tour, vous avez deux options :
 
-On a un ensemble de balles, la motié sont rouges, l'autre moitié noires (c'est donc un nombre pair de balles qu'on appelera $N$, disons $N=8$).
-Elles sont dans une urne opaque et donc on ne peut pas les voir à moins de les tirer une par une (sans remise dans l'urne). On peut tirer autant de balles qu'on veut pour les observer.
-Le but est de deviner la balle qu'on va tirer. Si on gagne (on a bien prédit la couleur), alors on gagne autant de points que le nombre de balles qui étaient dans l'urne au moment de la décision. Sinon on perd autant de points que l'on en aurait gagné!
-à long terme, la stratégie du jeu est de décider le meilleur moment où on est prêt à deviner la couleur de la balle qu'on va prendre et ainsi de gagner le plus de points possibles.
+Passer : vous tirez une balle, observez sa couleur, et la mettez de côté. Vous en savez un peu plus sur ce qu'il reste dans l'urne.
+Deviner : vous pariez sur la couleur de la prochaine balle avant de la tirer. Si vous avez raison, vous gagnez autant de points qu'il reste de balles dans l'urne. Si vous avez tort... vous perdez ces mêmes points.
 
-Nous avons d'abord créé ce jeu grâce au language de programmation Scratch sur https://scratch.mit.edu/projects/165806365/:
+Le dilemme¶Là où ça devient intéressant : plus vous laissez passer de balles, plus vous avez d'informations et plus votre prédiction devient fiable. Mais les balles restantes sont aussi de moins en moins nombreuses — et donc les points à gagner, de moins en moins élevés.
+Il faut donc trouver le bon moment pour se lancer. Trop tôt, c'est risqué. Trop tard, c'est peu rentable. Ce compromis entre exploration (observer pour mieux savoir) et exploitation (agir pour gagner) est précisément ce qui révèle votre niveau d'impulsivité.
+Les règles formelles¶
+$N$ balles au total ($N$ pair, ex. $N = 8$), moitié rouges, moitié noires.
+On tire les balles une à une, sans remise. On peut en observer autant qu'on veut avant de décider.
+Quand on choisit de deviner : bonne prédiction → $+k$ points (où $k$ = nombre de balles restantes) ; mauvaise prédiction → $-k$ points.
+L'objectif à long terme : trouver la stratégie qui maximise son score.
+
+La première version¶Nous avons d'abord donné vie à ce jeu grâce au langage de programmation Scratch, visible ici : scratch.mit.edu/projects/165806365.
 
 
 
@@ -295,7 +303,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
 <span class="n">html_attributes</span> <span class="o">=</span> <span class="s2">"loop=True autoplay=True  controls=True"</span>
 <span class="n">Video</span><span class="p">(</span><span class="s1">'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="n">html_attributes</span><span class="p">)</span>
 </pre></div>
@@ -1903,14 +1911,32 @@ In particular, it is debatable to know which weight individual features, such as
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena!), nous avons inventé ensemble un jeu: <em>le jeu de l'urne</em>. Le principe est simple: il faut deviner la couleur de la balle qu'on tire d'une urne contenant autant de balles rouges que noires - et ceci le plus tôt possible. Plus précisément, les règles sont:</p>
+<p>Lors de la visite au laboratoire d'une brillante élève de seconde (salut Lena !), nous avons inventé ensemble un petit jeu aux apparences simples mais aux implications surprenantes : <em>le jeu de l'urne</em>.</p>
+<p><strong>L'idée de départ</strong> : peut-on mesurer l'impulsivité d'une personne rien qu'en observant ses choix ? C'est le pari de ce jeu.</p>
+<h3 id="Le-principe">Le principe<a class="anchor-link" href="posts/2017-06-15-le-jeu-de-lurne.html#Le-principe">¶</a>
+</h3>
+<p>Imaginez une urne opaque contenant autant de balles rouges que noires — disons 8 balles au total, 4 rouges, 4 noires. À chaque tour, vous avez deux options :</p>
 <ul>
-<li>On a un ensemble de balles, la motié sont rouges, l'autre moitié noires (c'est donc un nombre pair de balles qu'on appelera $N$, disons $N=8$).</li>
-<li>Elles sont dans une urne opaque et donc on ne peut pas les voir à moins de les tirer une par une (sans remise dans l'urne). On peut tirer autant de balles qu'on veut pour les observer.</li>
-<li>Le but est de deviner la balle qu'on va tirer. Si on gagne (on a bien prédit la couleur), alors on gagne autant de points que le nombre de balles qui étaient dans l'urne au moment de la décision. Sinon on perd autant de points que l'on en aurait gagné!</li>
-<li>à long terme, la stratégie du jeu est de décider le meilleur moment où on est prêt à deviner la couleur de la balle qu'on va prendre et ainsi de gagner le plus de points possibles.</li>
+<li>
+<strong>Passer</strong> : vous tirez une balle, observez sa couleur, et la mettez de côté. Vous en savez un peu plus sur ce qu'il reste dans l'urne.</li>
+<li>
+<strong>Deviner</strong> : vous pariez sur la couleur de la prochaine balle avant de la tirer. Si vous avez raison, vous gagnez autant de points qu'il reste de balles dans l'urne. Si vous avez tort... vous perdez ces mêmes points.</li>
 </ul>
-<p>Nous avons d'abord créé ce jeu grâce au language de programmation <a href="//scratch.mit.edu">Scratch</a> sur <a href="https://scratch.mit.edu/projects/165806365/">https://scratch.mit.edu/projects/165806365/</a>:</p>
+<h3 id="Le-dilemme">Le dilemme<a class="anchor-link" href="posts/2017-06-15-le-jeu-de-lurne.html#Le-dilemme">¶</a>
+</h3>
+<p>Là où ça devient intéressant : plus vous laissez passer de balles, plus vous avez d'informations et plus votre prédiction devient fiable. Mais les balles restantes sont aussi de moins en moins nombreuses — et donc les points à gagner, de moins en moins élevés.</p>
+<p>Il faut donc trouver le bon moment pour se lancer. Trop tôt, c'est risqué. Trop tard, c'est peu rentable. Ce compromis entre <strong>exploration</strong> (observer pour mieux savoir) et <strong>exploitation</strong> (agir pour gagner) est précisément ce qui révèle votre niveau d'impulsivité.</p>
+<h3 id="Les-r%C3%A8gles-formelles">Les règles formelles<a class="anchor-link" href="posts/2017-06-15-le-jeu-de-lurne.html#Les-r%C3%A8gles-formelles">¶</a>
+</h3>
+<ul>
+<li>$N$ balles au total ($N$ pair, ex. $N = 8$), moitié rouges, moitié noires.</li>
+<li>On tire les balles une à une, sans remise. On peut en observer autant qu'on veut avant de décider.</li>
+<li>Quand on choisit de deviner : bonne prédiction → $+k$ points (où $k$ = nombre de balles restantes) ; mauvaise prédiction → $-k$ points.</li>
+<li>L'objectif à long terme : trouver la stratégie qui maximise son score.</li>
+</ul>
+<h3 id="La-premi%C3%A8re-version">La première version<a class="anchor-link" href="posts/2017-06-15-le-jeu-de-lurne.html#La-premi%C3%A8re-version">¶</a>
+</h3>
+<p>Nous avons d'abord donné vie à ce jeu grâce au langage de programmation <a href="https://scratch.mit.edu">Scratch</a>, visible ici : <a href="https://scratch.mit.edu/projects/165806365/">scratch.mit.edu/projects/165806365</a>.</p>
 </div>
 </div>
 </div>
@@ -5198,7 +5224,7 @@ MathJax.Hub.Config({
     }
 });
 </script><!--End of body content--><footer id="footer">
-            Contents © 2025         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2026         <a href="mailto:laurent.perrinet@univ-amu.fr">Laurent Perrinet</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>
             
