@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/art.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/behavior.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/blog.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/cnrs.xml</loc>
@@ -79,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/grand-public.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/hardlink.xml</loc>
@@ -135,7 +135,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/math.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/matlab.xml</loc>
@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/outreach.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pandas.xml</loc>
@@ -247,7 +247,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/python.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/pytorch.xml</loc>
@@ -287,7 +287,7 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/space.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/categories/sparse-coding.xml</loc>
@@ -343,10 +343,10 @@
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/rss.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://laurentperrinet.github.io/sciblog/sitemap.xml</loc>
-  <lastmod>2026-03-21T09:40:00Z</lastmod>
+  <lastmod>2026-03-22T16:58:00Z</lastmod>
  </sitemap>
 </sitemapindex>
