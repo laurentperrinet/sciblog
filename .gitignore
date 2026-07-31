@@ -50,3 +50,4 @@ nosetests.xml
 .pydevproject
 .doit.db.db
 themes/bootstrap3-jinja/
+.vscode/settings.json
