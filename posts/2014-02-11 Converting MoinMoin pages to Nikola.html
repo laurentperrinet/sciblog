@@ -118,7 +118,7 @@ Following this post http">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered" id="cell-id=061819f1">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=7d0ff1e6">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -127,7 +127,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=7c39baba">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=39cfee58">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -136,7 +136,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=b869d203">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=41505c76">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -147,7 +147,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=56b06789">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=19e47cd0">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -157,7 +157,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=815baa66">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=2f7b0b61">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -167,7 +167,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=8a6461fd">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=07c14ad7">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -179,12 +179,12 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=11909fb0">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e0f3c579">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
 <span class="n">pagehtml</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
@@ -192,7 +192,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=f546a40f">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=3e94372e">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -214,7 +214,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=0d5b7be2">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=44946324">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -224,13 +224,13 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=773ddd28">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=aaa956c5">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="k">def</span> <span class="nf">html2rst</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">html2rst</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">'pandoc'</span><span class="p">,</span> <span class="s1">'--from=html'</span><span class="p">,</span> <span class="s1">'--to=rst'</span><span class="p">],</span>
                          <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">html</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -239,7 +239,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=33945c0f">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=fbddeb47">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
@@ -266,7 +266,7 @@ Following this post http">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=e5ded901">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2776da36">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
@@ -305,7 +305,7 @@ Scanning posts...</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=8628ba6c">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=55e3a855">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
@@ -325,7 +325,7 @@ Scanning posts...</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=f83da304">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b930c12c">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -339,7 +339,7 @@ Scanning posts...</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=fba05b0e">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c37c6b8a">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
@@ -528,7 +528,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=8d7094ad">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ef45bc85">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -537,7 +537,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=885b3613">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=47ffcb98">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -547,7 +547,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=48f89888">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=47bba84f">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -559,7 +559,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=20018fa5">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=3dce9833">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -568,14 +568,14 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=54bb52eb">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5a1d24d9">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="k">def</span> <span class="nf">url2rst</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">url2rst</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
     <span class="n">html</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">'pandoc'</span><span class="p">,</span> <span class="s1">'--from=html'</span><span class="p">,</span> <span class="s1">'--to=rst'</span><span class="p">],</span>
@@ -586,7 +586,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=78bcda00">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=aa90cee6">
 <div class="input">
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
@@ -609,7 +609,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=25faeab3">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=6691233f">
 <div class="input">
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
@@ -633,7 +633,7 @@ la recherche
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=7f43c6dc">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=d354fe08">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
@@ -805,12 +805,12 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=b8881e5e">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a879e3f5">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'nikola new_post --title="</span><span class="si">%s</span><span class="s1">" --tag="</span><span class="si">%s</span><span class="s1">"'</span> <span class="o">%</span> <span class="p">(</span><span class="n">TITLE</span><span class="p">,</span> <span class="n">TAGS</span><span class="p">))</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">file</span><span class="p">(</span><span class="n">SLUG</span> <span class="o">+</span> <span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmplt</span> <span class="o">+</span> <span class="n">pagerst</span><span class="p">)</span>
@@ -820,7 +820,7 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=479e9e98">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=644436df">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -829,7 +829,7 @@ with svn
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=746ac5ca">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=ea25b971">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">

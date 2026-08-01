@@ -111,7 +111,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered" id="cell-id=69bb5438">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=a2c86bfc">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -122,20 +122,20 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=2e1e10ec">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5e2ed252">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=208254ee">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8f537827">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -145,7 +145,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=4e4e0daa">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f875c1e7">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -154,15 +154,15 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=d71c5731">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=40ac0bb0">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KmlReader</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-        <span class="kn">import</span> <span class="nn">xmltodict</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">KmlReader</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">xmltodict</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">kml_dict</span> <span class="o">=</span> <span class="n">xmltodict</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
         <span class="n">doc</span> <span class="o">=</span> <span class="n">kml_dict</span><span class="p">[</span><span class="s1">'kml'</span><span class="p">][</span><span class="s1">'Document'</span><span class="p">]</span>
@@ -186,7 +186,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=6f8d6670">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=16bc867f">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -195,12 +195,12 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=7c3f7187">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=275279c6">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">whens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">whens</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">whens</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">whens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
 </pre></div>
@@ -219,7 +219,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=08ab15bc">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=075739fa">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -230,7 +230,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=74a5a6c0">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5f5e4865">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
@@ -689,7 +689,7 @@ In :doc:2014-11-22-reading-kml-my-tracks-files-in-ipython we">
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=73a38c0a">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=f2bc5357">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
@@ -719,7 +719,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=0382c10e">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=c2bdb4bd">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -728,7 +728,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=ebb34f47">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=e80d7881">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
@@ -749,7 +749,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a5a270a0">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=332f9e81">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -758,7 +758,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=232861a0">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=14a03fea">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
@@ -779,7 +779,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=ca0b5e38">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=0dea5f92">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
@@ -807,7 +807,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=23db1c8c">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2fa6f1b1">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
@@ -829,7 +829,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=9781cdc2">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=35cf875a">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
@@ -850,7 +850,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=4f2a442e">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7d2063f5">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
@@ -877,7 +877,7 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=45c27b6a">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8472fdce">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -887,13 +887,13 @@ memory usage: 94.8 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=0f35e086">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=bdef0706">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.core.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
 
 <span class="c1"># Google Maps URL template for an iframe</span>
 <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">zoom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">14</span>
@@ -918,7 +918,7 @@ memory usage: 94.8 KB
 </div>!pip install foliumimport folium
 map_osm = folium.Map(location=[45.5236, -122.6750])
 map_osm.create_map(path='/tmp/osm.html')display(IFrame('file://tmp/osm.html', '425px', '350px'))
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=1c3a5233">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=bc08bac8">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -941,12 +941,12 @@ Cleaning up...
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=9c8ddfa8">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=2b9334c5">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">smopy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">smopy</span>
 <span class="nb">print</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="nb">map</span> <span class="o">=</span> <span class="n">smopy</span><span class="o">.</span><span class="n">Map</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="n">z</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
 <span class="nb">map</span><span class="o">.</span><span class="n">show_ipython</span><span class="p">()</span>
@@ -972,7 +972,7 @@ Cleaning up...
 </div>
 </div>
 </div>smopy.Map?
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=a818ba45">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a3fbcfd5">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -1048,7 +1048,7 @@ Cleaning up...
 </div>
 </div>map.show_mpl?map.show_ipython?%load_ext pep8_magic
 http://nbviewer.ipython.org/github/rossant/smopy/blob/master/examples/example1.ipynb
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=24daeff1">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=cc995c05">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
@@ -1059,7 +1059,7 @@ http://nbviewer.ipython.org/github/rossant/smopy/blob/master/examples/example1.i
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=e6df2926">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=288c9495">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1068,7 +1068,7 @@ http://nbviewer.ipython.org/github/rossant/smopy/blob/master/examples/example1.i
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=dec4a97b">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=60af08b6">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">

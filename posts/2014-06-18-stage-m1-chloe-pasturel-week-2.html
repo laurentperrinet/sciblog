@@ -137,8 +137,8 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">fig_width_pt</span> <span class="o">=</span> <span class="mf">646.79</span>  <span class="c1"># Get this from LaTeX using \showthe\columnwidth</span>
 <span class="n">inches_per_pt</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">72.27</span>               <span class="c1"># Convert pt to inches</span>
 <span class="n">fig_width</span> <span class="o">=</span> <span class="n">fig_width_pt</span><span class="o">*</span><span class="n">inches_per_pt</span>  <span class="c1"># width in inches</span>
@@ -152,7 +152,7 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">brian</span> <span class="k">as</span> <span class="nn">sim</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brian</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sim</span>
 </pre></div>
 </div>
 </div>
@@ -194,7 +194,7 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ring</span><span class="p">(</span><span class="n">N_theta</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="c1"># nombre de neurones d'entrée = nombre neurones du ring</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ring</span><span class="p">(</span><span class="n">N_theta</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="c1"># nombre de neurones d'entrée = nombre neurones du ring</span>
          <span class="n">tau</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">sim</span><span class="o">.</span><span class="n">ms</span><span class="p">,</span> 
          <span class="n">tau_e</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sim</span><span class="o">.</span><span class="n">ms</span><span class="p">,</span> 
          <span class="n">sigma_theta_ff</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="c1"># bandwidth de connections feed-forward</span>
@@ -1068,7 +1068,7 @@ simulation d'un ring par l'intermédiaire de brian http://briansimulator.org/">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ring</span><span class="p">(</span><span class="n">N_theta</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ring</span><span class="p">(</span><span class="n">N_theta</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> 
          <span class="n">tau</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">sim</span><span class="o">.</span><span class="n">ms</span><span class="p">,</span>
          <span class="n">tau_e</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sim</span><span class="o">.</span><span class="n">ms</span><span class="p">,</span>
          <span class="n">sigma_theta_ff</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
