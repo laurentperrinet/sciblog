@@ -11,4 +11,4 @@ github_deploy: build
 	nikola github_deploy
 
 update:
-	conda install -c asmeurer nikola
+	pip install -U -r requirements.txt
