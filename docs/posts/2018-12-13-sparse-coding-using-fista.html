@@ -132,14 +132,14 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1">#%config InlineBackend.figure_format='retina'</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'svg'
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">/</span><span class="n">phi</span><span class="p">)</span>
@@ -370,7 +370,7 @@ $$</p>
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">)</span>
 <span class="n">envelope</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
@@ -518,7 +518,7 @@ $$</p>
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">MC_env</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">do_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">MC_env</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">V_X</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">do_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">envelope</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
     <span class="n">envelope</span> <span class="o">/=</span> <span class="n">envelope</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -547,7 +547,7 @@ $$</p>
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">envelope</span> <span class="o">=</span> <span class="n">MC_env</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -570,7 +570,7 @@ $$</p>
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">random_cloud</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">random_cloud</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">):</span>
     <span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">)</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span>
     <span class="c1">#fx, fy, ft = mc.get_grids(N_X, N_Y, N_frame)    </span>
     <span class="n">F_events</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
@@ -592,7 +592,7 @@ $$</p>
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">random_cloud</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events_thr</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -615,7 +615,7 @@ $$</p>
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'envelope.shape = '</span><span class="p">,</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'events.shape = '</span><span class="p">,</span> <span class="n">events</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span>
@@ -647,7 +647,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events_thr</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -679,7 +679,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'envelope.shape = '</span><span class="p">,</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'events.shape = '</span><span class="p">,</span> <span class="n">events</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span>
@@ -714,7 +714,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events_thr</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -737,7 +737,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generative_model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">y_lambda</span><span class="o">=</span><span class="n">y_lambda</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generative_model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">y_lambda</span><span class="o">=</span><span class="n">y_lambda</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span>
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'N_X, N_Y = '</span><span class="p">,</span> <span class="n">envelope</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
@@ -807,7 +807,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">events</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">generative_model</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -852,7 +852,7 @@ x.shape= (512, 512)
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">eps</span> <span class="o">=</span> <span class="mf">2.e-6</span>
 <span class="n">thr</span> <span class="o">=</span> <span class="mf">5.e-2</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">deconv</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">,</span> <span class="n">do_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">deconv</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">,</span> <span class="n">do_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="c1"># mask = 1 / ( 1 + np.exp( -(envelope/envelope.max() - thr) / eps ) )# coefficients near zero</span>
     <span class="n">fr</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">frequency_radius</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
     <span class="n">mask</span> <span class="o">=</span>  <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="p">(</span><span class="n">fr</span> <span class="o">-</span> <span class="mf">.45</span><span class="p">)</span> <span class="o">/</span> <span class="mf">.025</span> <span class="p">)</span> <span class="p">)</span> <span class="c1"># high frequency</span>
@@ -969,7 +969,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">invert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">invert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">):</span>
     <span class="n">Fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">F_deconv</span> <span class="o">=</span> <span class="n">deconv</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">)</span>
     <span class="c1"># applying the filter</span>
@@ -1109,10 +1109,10 @@ x.shape= (512, 512)
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#print('enveloppe energy=', np.sqrt(((envelope)**2).mean()) )</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">SE_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">SE_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">((</span><span class="n">events</span><span class="o">-</span><span class="n">events_pred</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">events</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'relative Squared error on coefficients: SE_y='</span><span class="p">,</span> <span class="n">SE_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">))</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">L1_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">L1_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">events</span><span class="o">-</span><span class="n">events_pred</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">events</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'relative L1 error='</span><span class="p">,</span> <span class="n">L1_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">))</span>
 <span class="c1">#print('energy rec=', ((events_pred)**2).sum())</span>
@@ -1141,7 +1141,7 @@ relative L1 error= 5.898850045732038
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">SE_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">SE_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'relative Squared image error='</span><span class="p">,</span> <span class="n">SE_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">))</span>
 </pre></div>
@@ -1188,7 +1188,7 @@ relative L1 error= 5.898850045732038
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">events_pred</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1312,7 +1312,7 @@ relative L1 error= 5.898850045732038
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">invert_r</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">invert_r</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">):</span>
     <span class="n">Fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">F_deconv</span> <span class="o">=</span> <span class="n">deconv</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">thr</span><span class="o">=</span><span class="n">thr</span><span class="p">)</span>
     <span class="n">F_deconv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">F_deconv</span><span class="p">)[:,</span> <span class="p">:(</span><span class="n">envelope</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):]</span>
@@ -1406,7 +1406,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%timeit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 <span class="n">events_pred</span> <span class="o">=</span> <span class="n">invert_r</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">envelope</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1465,7 +1465,7 @@ x.shape= (512, 512)
 <div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_noise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">do_white</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_noise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">do_white</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">do_white</span><span class="p">:</span>
         <span class="n">im_noise</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1821,7 +1821,7 @@ relative Squared image error (thr)= 0.01693486843514906
 <div class="prompt input_prompt">In [62]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">L0_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">L0_y</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">events_pred</span><span class="p">):</span>
     <span class="n">error</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span> <span class="p">(</span><span class="n">events</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span>  <span class="o">*</span> <span class="p">(</span><span class="n">events_pred</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Type I error : false positive</span>
     <span class="n">error</span> <span class="o">+=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span> <span class="p">(</span><span class="n">events_pred</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span>  <span class="o">*</span> <span class="p">(</span><span class="n">events</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Type II error : false negative</span>
     <span class="k">return</span> <span class="n">error</span> <span class="o">/</span> <span class="n">N_X</span> <span class="o">/</span> <span class="n">N_Y</span> <span class="c1">#/ (1- (events==0)).sum()</span>
@@ -2667,7 +2667,7 @@ Squared ratio energy= 9.529505644024931e-06
 <span class="n">x_noise</span> <span class="o">=</span> <span class="n">add_noise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">cg</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> 
+<span class="k">def</span> <span class="nf">cg</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> 
        <span class="n">N_iter</span><span class="o">=</span><span class="n">N_iter</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">,</span> <span class="n">start_iter</span><span class="o">=</span><span class="n">start_iter</span><span class="p">,</span> <span class="n">rho_est</span><span class="o">=</span><span class="n">rho_est</span><span class="p">,</span> 
        <span class="n">y_lambda_est</span><span class="o">=</span><span class="n">y_lambda_est</span><span class="p">):</span>  
     
@@ -3040,7 +3040,8 @@ variable y_lambda_est = 10.0000  - default = 1.0000
 </h2>
 <p>Some nice pointers about ISTA:</p>
 <ul>
-<li><a href="http://people.rennes.inria.fr/Cedric.Herzet/Cedric.Herzet/Sparse_Seminar/Entrees/2012/11/12_A_Fast_Iterative_Shrinkage-Thresholding_Algorithmfor_Linear_Inverse_Problems_(A._Beck,_M._Teboulle)_files/Breck_2009.pdf">the FISTA paper</a></li>
+<li>
+<a href="http://people.rennes.inria.fr/Cedric.Herzet/Cedric.Herzet/Sparse_Seminar/Entrees/2012/11/12_A_Fast_Iterative_Shrinkage-Thresholding_Algorithmfor_Linear_Inverse_Problems_(A._Beck,_M._Teboulle">the FISTA paper</a>_files/Breck_2009.pdf)</li>
 <li>lectures on FISTA <a href="http://stat.cmu.edu/~ryantibs/convexopt/lectures/prox-grad.pdf">http://stat.cmu.edu/~ryantibs/convexopt/lectures/prox-grad.pdf</a> <a href="http://www.seas.ucla.edu/~vandenbe/236C/lectures/fista.pdf">http://www.seas.ucla.edu/~vandenbe/236C/lectures/fista.pdf</a>
 </li>
 <li><a href="https://blogs.princeton.edu/imabandit/2013/04/11/orf523-ista-and-fista/">https://blogs.princeton.edu/imabandit/2013/04/11/orf523-ista-and-fista/</a></li>
@@ -3099,7 +3100,7 @@ relative Squared error (full)= 1.2919741704512568
 <div class="prompt input_prompt">In [102]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">shrinkage</span><span class="p">(</span><span class="n">events_pred</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">shrinkage</span><span class="p">(</span><span class="n">events_pred</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">stype</span><span class="o">==</span><span class="s1">'hard'</span><span class="p">:</span>
         <span class="n">events_pred_thr</span> <span class="o">=</span> <span class="n">events_pred</span>  <span class="o">*</span> <span class="p">((</span><span class="n">events_pred</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">threshold</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">events_pred</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -3284,7 +3285,7 @@ relative Squared error (full)= 1.2919741704512568
 <div class="prompt input_prompt">In [108]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ISTA</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">,</span> <span class="n">start_iter</span><span class="o">=</span><span class="n">start_iter</span><span class="p">,</span> <span class="n">y_lambda_est</span><span class="o">=</span><span class="n">y_lambda_est</span><span class="p">,</span> <span class="n">rho_est</span><span class="o">=</span><span class="n">rho_est</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="n">N_iter</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ISTA</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">,</span> <span class="n">start_iter</span><span class="o">=</span><span class="n">start_iter</span><span class="p">,</span> <span class="n">y_lambda_est</span><span class="o">=</span><span class="n">y_lambda_est</span><span class="p">,</span> <span class="n">rho_est</span><span class="o">=</span><span class="n">rho_est</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="n">N_iter</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
     <span class="c1"># intialization</span>
     <span class="n">events_pred</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">)</span>
     <span class="n">AT_x_noise</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">envelope</span><span class="p">,</span> <span class="n">x_noise</span><span class="p">)</span>
@@ -3554,7 +3555,7 @@ variable start_iter = 20.000  - default = 2.000
 <div class="prompt input_prompt">In [113]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">FISTA</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">rho_est</span><span class="o">=</span><span class="n">rho_est</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="n">N_iter</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">FISTA</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">,</span> <span class="n">rho_est</span><span class="o">=</span><span class="n">rho_est</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="n">N_iter</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="s1">'soft'</span><span class="p">):</span>
     <span class="c1"># intialization</span>
     <span class="n">events_pred</span> <span class="o">=</span> <span class="n">events_pred_thr</span> <span class="o">=</span> <span class="n">events_pred_thr_</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">x_noise</span><span class="p">,</span> <span class="n">envelope</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span>
