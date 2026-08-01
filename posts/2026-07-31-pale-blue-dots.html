@@ -147,9 +147,9 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </pre></div>
 </div>
 </div>
@@ -216,10 +216,10 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cairo</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cairo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
 
 <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1400</span><span class="o">/</span><span class="mf">1.618</span><span class="p">),</span> <span class="mi">1400</span>
 <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span>
@@ -254,7 +254,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">disp</span><span class="p">(</span><span class="n">draw_func</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">disp</span><span class="p">(</span><span class="n">draw_func</span><span class="p">):</span>
     <span class="n">surface</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">ImageSurface</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">FORMAT_ARGB32</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
     <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>
@@ -262,23 +262,23 @@ Note: you may need to restart the kernel to use updated packages.
         <span class="n">surface</span><span class="o">.</span><span class="n">write_to_png</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">fileobj</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(),</span> <span class="n">width</span><span class="o">=</span><span class="n">N_width</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">render_pdf</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_pdf</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">cairo</span><span class="o">.</span><span class="n">PDFSurface</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">.pdf"</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span> <span class="k">as</span> <span class="n">surface</span><span class="p">:</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
         <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>        
 
-<span class="k">def</span> <span class="nf">render_svg</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_svg</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">cairo</span><span class="o">.</span><span class="n">SVGSurface</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">.svg"</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span> <span class="k">as</span> <span class="n">surface</span><span class="p">:</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
         <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>        
 
 <span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files'</span>
 <span class="o">%</span><span class="k">mkdir</span> -p {figpath}
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ipython</span>
 <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
 <span class="c1"># print(ip.user_ns)</span>
 <span class="n">study_name</span> <span class="o">=</span> <span class="kc">None</span>
@@ -288,7 +288,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="k">elif</span> <span class="s1">'__file__'</span> <span class="ow">in</span> <span class="n">ip</span><span class="o">.</span><span class="n">user_ns</span><span class="p">:</span>
     <span class="n">study_name</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s1">'__file__'</span><span class="p">]</span><span class="c1">#.replace('.ipynb', '')</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">ipynbname</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">ipynbname</span>
     <span class="n">study_name</span> <span class="o">=</span> <span class="n">ipynbname</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
 
 <span class="n">savepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">study_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
@@ -335,37 +335,38 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hue_to_rgba</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">sat</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">chroma_max</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert a hue value to an isoluminant RGB color.</span>
-<span class="sd">    The hue value should be in degrees [0, 360).</span>
-<span class="sd">    sat in [0, 1] controls chroma while keeping luminance constant.</span>
-<span class="sd">    """</span>
-    <span class="n">hue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="mf">360.</span><span class="p">)</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">hue</span><span class="p">)</span>
-    <span class="n">sat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">sat</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">REMOTE</span> <span class="n">CELL</span> <span class="n">DELETED</span> <span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+<span class="c1"># def hue_to_rgba(hue, sat=1., alpha=1., chroma_max = 0.2):</span>
+<span class="c1">#     """</span>
+<span class="c1">#     Convert a hue value to an isoluminant RGB color.</span>
+<span class="c1">#     The hue value should be in degrees [0, 360).</span>
+<span class="c1">#     sat in [0, 1] controls chroma while keeping luminance constant.</span>
+<span class="c1">#     """</span>
+<span class="c1">#     hue = np.mod(hue, 360.)</span>
+<span class="c1">#     theta = np.deg2rad(hue)</span>
+<span class="c1">#     sat = float(np.clip(sat, 0.0, 1.0))</span>
 
-    <span class="c1"># Linear-RGB luminance weights.</span>
-    <span class="n">luma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2126</span><span class="p">,</span> <span class="mf">0.7152</span><span class="p">,</span> <span class="mf">0.0722</span><span class="p">])</span>
+<span class="c1">#     # Linear-RGB luminance weights.</span>
+<span class="c1">#     luma = np.array([0.2126, 0.7152, 0.0722])</span>
 
-    <span class="c1"># Two orthonormal directions in the plane orthogonal to luminance.</span>
-    <span class="n">basis_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">luma</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">luma</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">])</span>
-    <span class="n">basis_u</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">basis_u</span><span class="p">)</span>
-    <span class="n">basis_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">luma</span><span class="p">,</span> <span class="n">basis_u</span><span class="p">)</span>
-    <span class="n">basis_v</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">basis_v</span><span class="p">)</span>
+<span class="c1">#     # Two orthonormal directions in the plane orthogonal to luminance.</span>
+<span class="c1">#     basis_u = np.array([luma[1], -luma[0], 0.0])</span>
+<span class="c1">#     basis_u /= np.linalg.norm(basis_u)</span>
+<span class="c1">#     basis_v = np.cross(luma, basis_u)</span>
+<span class="c1">#     basis_v /= np.linalg.norm(basis_v)</span>
 
-    <span class="c1"># Constant luminance in linear RGB, with a safe chroma radius.</span>
-    <span class="n">base_luminance</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="mi">5</span>
-    <span class="n">rgb_linear</span> <span class="o">=</span> <span class="n">base_luminance</span> <span class="o">+</span> <span class="n">sat</span> <span class="o">*</span> <span class="n">chroma_max</span> <span class="o">*</span> <span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">basis_u</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">basis_v</span>
-    <span class="p">)</span>
-    <span class="n">rgb_linear</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">rgb_linear</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="c1">#     # Constant luminance in linear RGB, with a safe chroma radius.</span>
+<span class="c1">#     base_luminance = 0.5</span>
+<span class="c1">#     5</span>
+<span class="c1">#     rgb_linear = base_luminance + sat * chroma_max * (</span>
+<span class="c1">#         np.cos(theta) * basis_u + np.sin(theta) * basis_v</span>
+<span class="c1">#     )</span>
+<span class="c1">#     rgb_linear = np.clip(rgb_linear, 0.0, 1.0)</span>
 
-    <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">rgb_linear</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+<span class="c1">#     return (*rgb_linear, alpha)</span>
 </pre></div>
 </div>
 </div>
@@ -373,15 +374,15 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x_value</span><span class="p">,</span> <span class="n">y_value</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x_value</span> <span class="o">-</span> <span class="n">y_value</span><span class="p">))</span>
 
 
-<span class="k">class</span> <span class="nc">Lambda2color</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Lambda2color</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""A class representing a colour system.</span>
 
 <span class="sd">    A colour system defined by the CIE x, y and z=1-x-y coordinates of</span>
@@ -389,7 +390,7 @@ Note: you may need to restart the kernel to use updated packages.
 
 <span class="sd">    """</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">white</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Initialise the ColourSystem object.</span>
 
@@ -497,7 +498,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="n">cmf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cmf</span> <span class="o">=</span> <span class="n">cmf</span>
 
-    <span class="k">def</span> <span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Transform from xyz to rgb representation of colour.</span>
 
 <span class="sd">        The output rgb components are normalized on their maximum</span>
@@ -517,7 +518,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="n">rgb</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">rgb</span>
 
-    <span class="k">def</span> <span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Convert a spectrum to an xyz point.</span>
 
 <span class="sd">        The last dimension of the spectrum *must* be on the same grid of</span>
@@ -543,7 +544,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="k">return</span> <span class="n">xyz</span>
         <span class="k">return</span> <span class="n">xyz</span> <span class="o">/</span> <span class="n">den</span>
 
-    <span class="k">def</span> <span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Convert a spectrum to an rgb value.</span>
 
 <span class="sd">        The last dimension of the spectrum *must* be on the same grid of</span>
@@ -561,7 +562,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># a standard white:</span>
@@ -578,11 +579,22 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">wavelengths</span> <span class="o">=</span> <span class="n">cs_srgb</span><span class="o">.</span><span class="n">cmf</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span>
-<span class="n">N_wavelengths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">wavelengths</span> <span class="o">=</span> <span class="n">cs_srgb</span><span class="o">.</span><span class="n">cmf</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">wavelengths</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">N_wavelengths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">)</span>
 <span class="n">hues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_wavelengths</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i_wavelength</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_wavelengths</span><span class="p">):</span>
     <span class="n">spec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_wavelengths</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
@@ -596,9 +608,40 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[ ]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(80, 3)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=61dcb3f2">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red"><b>&lt;&lt;&lt;&lt;&lt;&lt;&lt; local</b></span></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">i_wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">-</span> <span class="mi">455</span><span class="p">))</span>
+<span class="n">i_wavelength</span><span class="p">,</span> <span class="n">wavelengths</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">],</span> <span class="n">hues</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[27]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(np.int64(14), np.float64(455.0), array([0.16, 0.  , 1.  ]))</pre>
 </div>
 </div>
 </div>
@@ -610,10 +653,109 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">spec</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">445</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">),</span> <span class="p">(</span><span class="mi">555</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">),</span> <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">)]:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' RGB for the </span><span class="si">{</span><span class="n">color</span><span class="si">=}</span><span class="s1"> '</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">cs_srgb</span><span class="o">.</span><span class="n">spec_to_rgb</span><span class="p">(</span><span class="n">spec</span><span class="p">))</span>
+  <span class="n">i_wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">-</span> <span class="n">spec</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' RGB for the </span><span class="si">{</span><span class="n">color</span><span class="si">=}</span><span class="s1"> at wavelength </span><span class="si">{</span><span class="n">wavelengths</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">]</span><span class="si">}</span><span class="s1"> nm: </span><span class="si">{</span><span class="n">hues</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">,</span><span class="w"> </span><span class="p">:]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> RGB for the color='blue' at wavelength 445.0 nm: [0.21 0.   1.  ]
+ RGB for the color='green' at wavelength 555.0 nm: [0.02 1.   0.  ]
+ RGB for the color='red' at wavelength 600.0 nm: [1.   0.15 0.  ]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f9b08bbd">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red"><b>=======</b></span></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">i_wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">-</span> <span class="mi">455</span><span class="p">))</span>
+<span class="n">i_wavelength</span><span class="p">,</span> <span class="n">wavelengths</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">],</span> <span class="n">hues</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(np.int64(14), np.float64(455.0), array([0.16, 0.  , 1.  ]))</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">spec</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">445</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">),</span> <span class="p">(</span><span class="mi">555</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">),</span> <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">)]:</span>
+  <span class="n">i_wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">-</span> <span class="n">spec</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' RGB for the </span><span class="si">{</span><span class="n">color</span><span class="si">=}</span><span class="s1"> at wavelength </span><span class="si">{</span><span class="n">wavelengths</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">]</span><span class="si">}</span><span class="s1"> nm: </span><span class="si">{</span><span class="n">hues</span><span class="p">[</span><span class="n">i_wavelength</span><span class="p">,</span><span class="w"> </span><span class="p">:]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> RGB for the color='blue' at wavelength 445.0 nm: [0.21 0.   1.  ]
+ RGB for the color='green' at wavelength 555.0 nm: [0.02 1.   0.  ]
+ RGB for the color='red' at wavelength 600.0 nm: [1.   0.15 0.  ]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_spec</span><span class="p">(</span><span class="n">c_mean</span><span class="p">,</span> <span class="n">c_std</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a spectrum corresponding to a Gaussian distribution of wavelengths.</span>
+
+<span class="sd">    The mean wavelength is c_mean and the standard deviation is c_std.</span>
+<span class="sd">    The output spectrum is normalized to have a maximum value of 1.</span>
+
+<span class="sd">    """</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">wavelengths</span> <span class="o">-</span> <span class="n">c_mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">c_std</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">spec</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">spec</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d22ab324">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red"><b>&gt;&gt;&gt;&gt;&gt;&gt;&gt; remote</b></span></p>
 </div>
 </div>
 </div>
@@ -630,10 +772,10 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">do_shape</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">shape_mode</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">n_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">angle0</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">do_shape</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">shape_mode</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">n_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">angle0</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Draw either a circle or a regular polygon centered at (x, y).</span>
 
@@ -683,16 +825,21 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">c_mean</span><span class="p">,</span> <span class="n">c_std</span><span class="p">,</span> <span class="n">s_mean</span><span class="p">,</span> <span class="n">s_std</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">local</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> <span class="n">c_mean</span><span class="p">,</span> <span class="n">c_std</span><span class="p">,</span> <span class="n">s_mean</span><span class="p">,</span> <span class="n">s_std</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">):</span>
+<span class="o">=======</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> <span class="n">c_mean</span><span class="p">,</span> <span class="n">c_std</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">remote</span>
 
     <span class="c1"># Paint an explicit opaque background rectangle first.</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">set_operator</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">OPERATOR_SOURCE</span><span class="p">)</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span>
-    <span class="n">cr</span><span class="o">.</span><span class="n">set_source_rgba</span><span class="p">(</span><span class="o">*</span><span class="n">hue_to_rgba</span><span class="p">(</span><span class="n">c_mean</span><span class="p">,</span> <span class="n">sat</span><span class="o">=</span><span class="n">s_mean</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">get_spec</span><span class="p">(</span><span class="n">c_ref</span><span class="p">,</span> <span class="n">c_std</span><span class="p">)</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">set_source_rgb</span><span class="p">(</span><span class="o">*</span><span class="n">cs_srgb</span><span class="o">.</span><span class="n">spec_to_rgb</span><span class="p">(</span><span class="n">spec</span><span class="p">))</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
 
@@ -712,12 +859,13 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="n">R</span> <span class="o">=</span> <span class="n">size_mag</span> <span class="o">*</span> <span class="n">N_height</span> <span class="o">/</span> <span class="n">N_H</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># constant radius</span>
     <span class="c1"># C = (c_mean + c_std) * np.ones_like(X)  # incremented hue values</span>
     <span class="n">C</span> <span class="o">=</span> <span class="n">c_mean</span> <span class="o">+</span> <span class="n">c_std</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>  <span class="c1"># incremented hue values</span>
-    <span class="n">S</span> <span class="o">=</span> <span class="n">s_mean</span> <span class="o">+</span> <span class="n">s_std</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># saturation values</span>
 
     <span class="c1"># draw</span>
     <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">R</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">C</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">S</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
         <span class="n">do_shape</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">shape_mode</span><span class="o">=</span><span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="o">=</span><span class="n">n_sides</span><span class="p">)</span>
-        <span class="n">cr</span><span class="o">.</span><span class="n">set_source_rgba</span><span class="p">(</span><span class="o">*</span><span class="n">hue_to_rgba</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">sat</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">))</span>
+
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">get_spec</span><span class="p">(</span><span class="n">c_ref</span><span class="p">,</span> <span class="n">c_std</span><span class="p">)</span>
+        <span class="n">cr</span><span class="o">.</span><span class="n">set_source_rgb</span><span class="p">(</span><span class="o">*</span><span class="n">cs_srgb</span><span class="o">.</span><span class="n">spec_to_rgb</span><span class="p">(</span><span class="n">spec</span><span class="p">))</span>
         <span class="n">cr</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">cr</span>
@@ -750,7 +898,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
@@ -762,6 +910,16 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">N_height</span><span class="o">/</span><span class="n">N_width</span><span class="p">),</span> <span class="n">N</span>
 <span class="n">N</span><span class="o">*</span><span class="n">N_height</span><span class="o">/</span><span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(12.357142857142858, 12, 20)</pre>
+</div>
 </div>
 </div>
 </div>
@@ -779,26 +937,90 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">c_ref</span> <span class="o">=</span> <span class="mi">240</span>
 <span class="n">c_std</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">s_ref</span> <span class="o">=</span> <span class="mf">.6</span>
-<span class="n">s_std</span> <span class="o">=</span> <span class="mf">.4</span>
 <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"N_height"</span><span class="p">:</span> <span class="n">N_height</span><span class="p">,</span> <span class="s2">"N_width"</span><span class="p">:</span> <span class="n">N_width</span><span class="p">,</span> <span class="c1"># image size</span>
         <span class="s2">"N_H"</span><span class="p">:</span> <span class="n">N_H</span><span class="p">,</span> <span class="s2">"N_W"</span><span class="p">:</span> <span class="n">N_W</span><span class="p">,</span> <span class="c1"># grid size</span>
         <span class="s2">"shape_mode"</span><span class="p">:</span> <span class="s1">'circular'</span><span class="p">,</span> <span class="s2">"n_sides"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="c1"># shapes</span>
         <span class="s2">"size_mag"</span><span class="p">:</span> <span class="mf">.1618</span><span class="p">,</span> <span class="c1"># size of the shapes</span>
-        <span class="s2">"alpha"</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="c1"># transparency</span>
-        <span class="s2">"c_mean"</span><span class="p">:</span> <span class="n">c_ref</span><span class="p">,</span> <span class="s2">"c_std"</span><span class="p">:</span> <span class="n">c_std</span><span class="p">,</span> <span class="c1"># HUE</span>
-        <span class="s2">"s_mean"</span><span class="p">:</span> <span class="n">s_ref</span><span class="p">,</span> <span class="s2">"s_std"</span><span class="p">:</span> <span class="n">s_std</span><span class="p">,</span> <span class="c1"># STAURATION</span>
+        <span class="s2">"c_mean"</span><span class="p">:</span> <span class="n">c_ref</span><span class="p">,</span> <span class="s2">"c_std"</span><span class="p">:</span> <span class="n">c_std</span><span class="p">,</span> <span class="c1"># mean and std of wavelengths</span>
         <span class="s2">"operator"</span><span class="p">:</span> <span class="n">cairo</span><span class="o">.</span><span class="n">OPERATOR_OVER</span><span class="p">,</span> <span class="c1"># blending mode</span>
         <span class="p">}</span>
 
 <span class="nd">@disp</span>
-<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[15], line 11</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> c_std <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">8</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> opts <span style="color: rgb(98,98,98)">=</span> {<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">N_height</span><span style="color: rgb(175,0,0)">"</span>: N_height, <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">N_width</span><span style="color: rgb(175,0,0)">"</span>: N_width, <span style="color: rgb(95,135,135)"># image size</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">N_H</span><span style="color: rgb(175,0,0)">"</span>: N_H, <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">N_W</span><span style="color: rgb(175,0,0)">"</span>: N_W, <span style="color: rgb(95,135,135)"># grid size</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">shape_mode</span><span style="color: rgb(175,0,0)">"</span>: <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">circular</span><span style="color: rgb(175,0,0)">'</span>, <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">n_sides</span><span style="color: rgb(175,0,0)">"</span>: <span style="color: rgb(98,98,98)">6</span>, <span style="color: rgb(95,135,135)"># shapes</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">operator</span><span style="color: rgb(175,0,0)">"</span>: cairo<span style="color: rgb(98,98,98)">.</span>OPERATOR_OVER, <span style="color: rgb(95,135,135)"># blending mode</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>         }
+<span class="ansi-green-fg">---&gt; 11</span> <span class="ansi-yellow-bg" style="color: rgb(175,0,255)">@disp</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span> <span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">def</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,0,255)">draw</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">N_height</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">N_height</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">N_width</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">N_width</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">:</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">cr</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">hexagonal_grid</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">opts</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[4], line 4</span>, in <span class="ansi-cyan-fg">disp</span><span class="ansi-blue-fg">(draw_func)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> surface <span style="color: rgb(98,98,98)">=</span> cairo<span style="color: rgb(98,98,98)">.</span>ImageSurface(cairo<span style="color: rgb(98,98,98)">.</span>FORMAT_ARGB32, N_width, N_height)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> ctx <span style="color: rgb(98,98,98)">=</span> cairo<span style="color: rgb(98,98,98)">.</span>Context(surface)
+<span class="ansi-green-fg">----&gt; 4</span> <span class="ansi-yellow-bg">draw_func</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">N_height</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">N_height</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">N_width</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">N_width</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> BytesIO() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> fileobj:
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     surface<span style="color: rgb(98,98,98)">.</span>write_to_png(fileobj)
+
+Cell <span class="ansi-green-fg">In[15], line 12</span>, in <span class="ansi-cyan-fg">draw</span><span class="ansi-blue-fg">(cr, N_height, N_width)</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> <span style="color: rgb(175,0,255)">@disp</span>
+<span class="ansi-green-fg">---&gt; 12</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">draw</span>(cr, N_height<span style="color: rgb(98,98,98)">=</span>N_height, N_width<span style="color: rgb(98,98,98)">=</span>N_width): cr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">hexagonal_grid</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">opts</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[13], line 8</span>, in <span class="ansi-cyan-fg">hexagonal_grid</span><span class="ansi-blue-fg">(cr, N_height, N_width, N_H, N_W, size_mag, c_mean, c_std, operator, shape_mode, n_sides)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> cr<span style="color: rgb(98,98,98)">.</span>rectangle(<span style="color: rgb(98,98,98)">0</span>, <span style="color: rgb(98,98,98)">0</span>, N_width, N_height)
+<span class="ansi-green-intense-fg ansi-bold">      7</span> spec <span style="color: rgb(98,98,98)">=</span> get_spec(c_ref, c_std)
+<span class="ansi-green-fg">----&gt; 8</span> cr<span style="color: rgb(98,98,98)">.</span>set_source_rgb(<span style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">cs_srgb</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">spec_to_rgb</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">spec</span><span class="ansi-yellow-bg">)</span>)
+<span class="ansi-green-intense-fg ansi-bold">      9</span> cr<span style="color: rgb(98,98,98)">.</span>fill()
+<span class="ansi-green-intense-fg ansi-bold">     10</span> cr<span style="color: rgb(98,98,98)">.</span>restore()
+
+Cell <span class="ansi-green-fg">In[5], line 177</span>, in <span class="ansi-cyan-fg">Lambda2color.spec_to_rgb</span><span class="ansi-blue-fg">(self, spec)</span>
+<span class="ansi-green-intense-fg ansi-bold">    168</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">spec_to_rgb</span>(<span style="color: rgb(0,135,0)">self</span>, spec) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> np<span style="color: rgb(98,98,98)">.</span>ndarray:
+<span class="ansi-green-intense-fg ansi-bold">    169</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Convert a spectrum to an rgb value.</span>
+<span class="ansi-green-intense-fg ansi-bold">    170</span> 
+<span class="ansi-green-intense-fg ansi-bold">    171</span> <span style="color: rgb(175,0,0)">    The last dimension of the spectrum *must* be on the same grid of</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    175</span> 
+<span class="ansi-green-intense-fg ansi-bold">    176</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 177</span>     xyz <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">spec_to_xyz</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">spec</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    178</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>xyz_to_rgb(xyz)
+
+Cell <span class="ansi-green-fg">In[5], line 162</span>, in <span class="ansi-cyan-fg">Lambda2color.spec_to_xyz</span><span class="ansi-blue-fg">(self, spec)</span>
+<span class="ansi-green-intense-fg ansi-bold">    159</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> np<span style="color: rgb(98,98,98)">.</span>zeros(<span style="color: rgb(98,98,98)">3</span>)
+<span class="ansi-green-intense-fg ansi-bold">    160</span>     spec <span style="color: rgb(98,98,98)">=</span> spec_array
+<span class="ansi-green-fg">--&gt; 162</span> xyz <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">np</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tensordot</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">spec</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">cmf</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">:</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">:</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axes</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    163</span> den <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>sum(xyz)
+<span class="ansi-green-intense-fg ansi-bold">    164</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> den <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">0.0</span>:
+
+File <span class="ansi-green-fg">~/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages/numpy/_core/numeric.py:1199</span>, in <span class="ansi-cyan-fg">tensordot</span><span class="ansi-blue-fg">(a, b, axes)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1197</span>             axes_b[k] <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> ndb
+<span class="ansi-green-intense-fg ansi-bold">   1198</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> equal:
+<span class="ansi-green-fg">-&gt; 1199</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">shape-mismatch for sum</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-intense-fg ansi-bold">   1201</span> <span style="color: rgb(95,135,135)"># Move the axes to sum over to the end of "a"</span>
+<span class="ansi-green-intense-fg ansi-bold">   1202</span> <span style="color: rgb(95,135,135)"># and to the front of "b"</span>
+<span class="ansi-green-intense-fg ansi-bold">   1203</span> notin <span style="color: rgb(98,98,98)">=</span> [k <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> k <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">range</span>(nda) <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> k <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> axes_a]
+
+<span class="ansi-red-fg">ValueError</span>: shape-mismatch for sum</pre>
+</div>
 </div>
 </div>
 </div>
@@ -819,7 +1041,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">render_pdf</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 <span class="n">render_svg</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 </pre></div>
@@ -854,43 +1076,6 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="alpha">alpha<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#alpha">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">alpha_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
-    <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha_</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">alpha_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-Alpha-(Opacity)">Scan Analysis: Alpha (Opacity)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Alpha-(Opacity)">¶</a>
-</h4>
-<p>First, this sweep changes only opacity, which directly scales the effective contrast of each dot against the background. Second, the code iterates over alpha values and displays one rendered frame per value so that visibility transitions can be read continuously. Third, low alpha usually suppresses segmentation everywhere, high alpha usually stabilizes structure everywhere, and an intermediate alpha often maximizes the fixation advantage expected from foveal cone precision relative to peripheral pooling.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="size_mag">size_mag<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#size_mag">¶</a>
 </h3>
 </div>
@@ -907,7 +1092,7 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">size_mag</span><span class="o">=</span><span class="n">size_mag_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">size_mag_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -940,11 +1125,11 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">c_mean_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">360.</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> 
+<span class="k">for</span> <span class="n">c_mean_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">400.</span><span class="p">,</span> <span class="mf">750.</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> 
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_mean</span><span class="o">=</span><span class="n">c_mean_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_mean_</span><span class="si">=:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -981,7 +1166,7 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_std</span><span class="o">=</span><span class="n">c_std_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_std_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -995,82 +1180,6 @@ Note: you may need to restart the kernel to use updated packages.
 <h4 id="Scan-Analysis:-c_std-(Hue-Spread)">Scan Analysis: c_std (Hue Spread)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-c_std-(Hue-Spread)">¶</a>
 </h4>
 <p>First, this sweep changes hue variability across dots, which controls chromatic heterogeneity without changing lattice geometry. Second, the code progressively increases hue spread and displays each output to reveal how local irregularity affects grouping. Third, low spread tends to flatten differences, high spread can raise salience everywhere, and moderate spread often best preserves a central parsing advantage over peripheral fusion.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="s_mean">s_mean<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#s_mean">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="c1"># for s_mean_ in np.linspace(s_std, 1., N_scan, endpoint=True): </span>
-<span class="k">for</span> <span class="n">s_mean_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">s_ref</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
-    <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">s_mean</span><span class="o">=</span><span class="n">s_mean_</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">s_mean_</span><span class="si">=:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-s_mean-(Mean-Saturation)">Scan Analysis: s_mean (Mean Saturation)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-s_mean-(Mean-Saturation)">¶</a>
-</h4>
-<p>First, this sweep changes the global saturation baseline, effectively scaling chromatic intensity. Second, the code scans saturation from muted to vivid and displays each image to expose where the field crosses from ambiguous to explicit. Third, weak saturation can erase chromatic boundaries while strong saturation can over-stabilize the entire lattice, and intermediate saturation often matches the physiological goal of strong central cone-driven segmentation with weaker peripheral color parsing.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="s_std">s_std<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#s_std">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">opts_</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="c1"># for s_std_ in np.linspace(0., s_ref, N_scan, endpoint=True): </span>
-<span class="k">for</span> <span class="n">s_std_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="o">-</span><span class="n">s_ref</span><span class="p">,</span> <span class="n">N_scan</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
-    <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">s_mean</span><span class="o">=</span><span class="n">s_ref</span><span class="p">,</span> <span class="n">s_std</span><span class="o">=</span><span class="n">s_std_</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">s_std_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-s_std-(Saturation-Spread)">Scan Analysis: s_std (Saturation Spread)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-s_std-(Saturation-Spread)">¶</a>
-</h4>
-<p>First, this sweep changes saturation variability among dots while preserving the mean reference. Second, the code increases dispersion and displays each output so that local contrast fluctuations can be judged visually. Third, low dispersion yields smoother appearance, high dispersion introduces strong local anchors, and moderate dispersion generally supports the intended illusion by keeping peripheral structure less stable than central structure.</p>
 </div>
 </div>
 </div>
@@ -1095,7 +1204,7 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">N_H</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">N_</span><span class="o">*</span><span class="n">N_height</span><span class="o">/</span><span class="n">N_width</span><span class="p">),</span> <span class="n">N_W</span><span class="o">=</span><span class="n">N_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">N_</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1255,7 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'shape_mode=</span><span class="si">{</span><span class="n">shape_mode_</span><span class="si">}</span><span class="s1">, n_sides=</span><span class="si">{</span><span class="n">n_sides_</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span>
         <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>

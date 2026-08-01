@@ -150,17 +150,17 @@ Apart the content (which is in French) which recaps s">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
 <span class="c1">#%config InlineBackend.figure_format = 'svg'</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span>
 <span class="c1">#</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="c1"># CONSTANTS</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># A0  (np.sqrt(5)+1)/2</span>
 <span class="n">inch_per_cm</span> <span class="o">=</span> <span class="mf">0.3937008</span>
@@ -255,14 +255,14 @@ méthodes utilisées et aussi les résultats apportés par une telle collaborati
         <span class="p">]</span>
 <span class="n">image_logo</span> <span class="o">=</span> <span class="s1">'https://laurentperrinet.github.io/sciblog/files/2016-07-07_EDP-proba/figures/troislogos.png'</span>
 
-<span class="k">def</span> <span class="nf">wrap</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    This function takes any wrapped or unwrapped text and then wraps it to a given width.</span>
 <span class="sd">    </span>
 <span class="sd">    We are careful to keep a carriage return (as a '\n\n') to separate paragraphs.</span>
 <span class="sd">    </span>
 <span class="sd">    """</span>
-    <span class="kn">import</span> <span class="nn">textwrap</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">textwrap</span>
     <span class="n">s_output</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">):</span>
         <span class="n">s_unwrap</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'  '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
@@ -343,10 +343,10 @@ collaboration.
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">inset_axes</span><span class="p">,</span> <span class="n">zoomed_inset_axes</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.axes_grid1.inset_locator</span><span class="w"> </span><span class="kn">import</span> <span class="n">inset_axes</span><span class="p">,</span> <span class="n">zoomed_inset_axes</span>
 <span class="c1">#help(inset_axes)</span>
 
-<span class="k">def</span> <span class="nf">color_axis</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">bg_color</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">color_axis</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">bg_color</span><span class="p">):</span>
     <span class="c1"># Start coloring</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(())</span>
@@ -476,7 +476,7 @@ collaboration.
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span>
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="n">image_tropique</span><span class="p">,</span> <span class="n">image_elasticité</span><span class="p">,</span> <span class="n">image_trame</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -805,7 +805,7 @@ Turing.
 
 <span class="n">color_axis</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">inset_axes</span><span class="p">,</span> <span class="n">zoomed_inset_axes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.axes_grid1.inset_locator</span><span class="w"> </span><span class="kn">import</span> <span class="n">inset_axes</span><span class="p">,</span> <span class="n">zoomed_inset_axes</span>
 <span class="n">axins</span> <span class="o">=</span> <span class="n">inset_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span>
                    <span class="c1">#bbox_to_anchor = [10, 10],</span>
                    <span class="n">width</span><span class="o">=</span><span class="s2">"50%"</span><span class="p">,</span>  <span class="c1"># width = 30% of parent_bbox</span>
