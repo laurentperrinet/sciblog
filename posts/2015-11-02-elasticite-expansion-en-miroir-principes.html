@@ -139,8 +139,8 @@
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">elasticite</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">el</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">get_default_args</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="o">.</span><span class="n">render</span><span class="p">)[</span><span class="s1">'duration'</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -164,9 +164,9 @@
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'..'</span><span class="p">)</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scenario_line_fresnel</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgeGrid</span>
+<span class="kn">from</span> <span class="nn">scenario_line_fresnel</span> <span class="kn">import</span> <span class="n">EdgeGrid</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -213,8 +213,8 @@
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
 <span class="c1">#%config InlineBackend.figure_format = 'svg'</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -471,7 +471,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">particles</span><span class="p">)</span>
 <span class="n">segment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">mirror</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="n">segment</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">mirror</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="n">segment</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
     <span class="n">mirror</span> <span class="o">=</span> <span class="n">particles</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">perp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">segment</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">segment</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="p">(</span><span class="n">segment</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">segment</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])])</span>
     <span class="c1"># distance to the line</span>
@@ -607,8 +607,8 @@
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">elasticite</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">el</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">sample_structure</span><span class="p">()</span>
