@@ -147,9 +147,9 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </pre></div>
 </div>
 </div>
@@ -216,10 +216,10 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cairo</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cairo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
 
 <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1400</span><span class="o">/</span><span class="mf">1.618</span><span class="p">),</span> <span class="mi">1400</span>
 <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span>
@@ -256,7 +256,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files'</span>
 <span class="o">%</span><span class="k">mkdir</span> -p {figpath}
-<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ipython</span>
 <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
 <span class="c1"># print(ip.user_ns)</span>
 <span class="n">study_name</span> <span class="o">=</span> <span class="kc">None</span>
@@ -266,7 +266,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="k">elif</span> <span class="s1">'__file__'</span> <span class="ow">in</span> <span class="n">ip</span><span class="o">.</span><span class="n">user_ns</span><span class="p">:</span>
     <span class="n">study_name</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s1">'__file__'</span><span class="p">]</span><span class="c1">#.replace('.ipynb', '')</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">ipynbname</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">ipynbname</span>
     <span class="n">study_name</span> <span class="o">=</span> <span class="n">ipynbname</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
 
 <span class="n">savepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">study_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
@@ -292,7 +292,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">disp</span><span class="p">(</span><span class="n">draw_func</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">disp</span><span class="p">(</span><span class="n">draw_func</span><span class="p">):</span>
     <span class="n">surface</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">ImageSurface</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">FORMAT_ARGB32</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
     <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>
@@ -300,12 +300,12 @@ Note: you may need to restart the kernel to use updated packages.
         <span class="n">surface</span><span class="o">.</span><span class="n">write_to_png</span><span class="p">(</span><span class="n">fileobj</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">fileobj</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(),</span> <span class="n">width</span><span class="o">=</span><span class="n">N_width</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">render_pdf</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_pdf</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">cairo</span><span class="o">.</span><span class="n">PDFSurface</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">.pdf"</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span> <span class="k">as</span> <span class="n">surface</span><span class="p">:</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
         <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>        
 
-<span class="k">def</span> <span class="nf">render_svg</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_svg</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">cairo</span><span class="o">.</span><span class="n">SVGSurface</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">.svg"</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span> <span class="k">as</span> <span class="n">surface</span><span class="p">:</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
         <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>        
@@ -343,12 +343,12 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">xyz_from_xy</span><span class="p">(</span><span class="n">x_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""Return the vector (x, y, 1-x-y)."""</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x_value</span><span class="p">,</span> <span class="n">y_value</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x_value</span> <span class="o">-</span> <span class="n">y_value</span><span class="p">))</span>
 
 
-<span class="k">class</span> <span class="nc">Lambda2color</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Lambda2color</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""A class representing a colour system.</span>
 
 <span class="sd">    A colour system defined by the CIE x, y and z=1-x-y coordinates of</span>
@@ -356,7 +356,7 @@ Note: you may need to restart the kernel to use updated packages.
 
 <span class="sd">    """</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">white</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Initialise the ColourSystem object.</span>
 
@@ -464,7 +464,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="n">cmf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cmf</span> <span class="o">=</span> <span class="n">cmf</span>
 
-    <span class="k">def</span> <span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">xyz_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Transform from xyz to rgb representation of colour.</span>
 
 <span class="sd">        The output rgb components are normalized on their maximum</span>
@@ -484,7 +484,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="n">rgb</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">rgb</span>
 
-    <span class="k">def</span> <span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spec_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Convert a spectrum to an xyz point.</span>
 
 <span class="sd">        The last dimension of the spectrum *must* be on the same grid of</span>
@@ -510,7 +510,7 @@ Note: you may need to restart the kernel to use updated packages.
             <span class="k">return</span> <span class="n">xyz</span>
         <span class="k">return</span> <span class="n">xyz</span> <span class="o">/</span> <span class="n">den</span>
 
-    <span class="k">def</span> <span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spec_to_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Convert a spectrum to an rgb value.</span>
 
 <span class="sd">        The last dimension of the spectrum *must* be on the same grid of</span>
@@ -735,7 +735,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_spec</span><span class="p">(</span><span class="n">c_dev</span><span class="p">,</span> <span class="n">c_std</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_spec</span><span class="p">(</span><span class="n">c_dev</span><span class="p">,</span> <span class="n">c_std</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Return a spectrum corresponding to a Gaussian distribution of wavelengths.</span>
 
 <span class="sd">    The mean wavelength is c_dev and the standard deviation is c_std.</span>
@@ -808,7 +808,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rgb_to_luminance</span><span class="p">(</span><span class="n">rgb</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rgb_to_luminance</span><span class="p">(</span><span class="n">rgb</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Convert RGB (0-1) to relative luminance (0-1) using WCAG formula.</span>
 
 <span class="sd">    Args:</span>
@@ -822,7 +822,7 @@ Note: you may need to restart the kernel to use updated packages.
     <span class="n">rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">/</span> <span class="mf">12.92</span><span class="p">,</span> <span class="p">((</span><span class="n">rgb</span> <span class="o">+</span> <span class="mf">0.055</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.055</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.4</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2126</span><span class="p">,</span> <span class="mf">0.7152</span><span class="p">,</span> <span class="mf">0.0722</span><span class="p">]))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">isoluminant_rgb</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">target_luminance</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">isoluminant_rgb</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">target_luminance</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Adjust RGB to match a target luminance while preserving hue/saturation.</span>
 
 <span class="sd">    Args:</span>
@@ -926,7 +926,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">do_shape</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">shape_mode</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">n_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">angle0</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">do_shape</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">shape_mode</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">n_sides</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">angle0</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Draw either a circle or a regular polygon centered at (x, y).</span>
 
@@ -979,7 +979,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> 
                    <span class="n">c_ref_mean</span><span class="p">,</span> <span class="n">c_ref_std</span><span class="p">,</span> <span class="n">c_dev</span><span class="p">,</span> <span class="n">c_std</span><span class="p">,</span> 
                    <span class="n">operator</span><span class="p">,</span> <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">,</span> <span class="n">target_luminance</span><span class="p">):</span>
 
@@ -1110,7 +1110,7 @@ Note: you may need to restart the kernel to use updated packages.
         <span class="p">}</span>
 
 <span class="nd">@disp</span>
-<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1149,7 +1149,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">render_pdf</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 <span class="n">render_svg</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 </pre></div>
@@ -1174,7 +1174,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">render_pdf</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1236,7 +1236,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">size_mag</span><span class="o">=</span><span class="n">size_mag_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">size_mag_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1394,7 +1394,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_ref_mean</span><span class="o">=</span><span class="n">c_ref_mean_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_ref_mean_</span><span class="si">=:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1551,7 +1551,7 @@ rgb_ref=array([0.79, 0.71, 0.27]), rgb=array([1.  , 0.78, 0.  ]), c_ref_mean=567
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_ref_std</span><span class="o">=</span><span class="n">c_ref_std_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_ref_std_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1708,7 +1708,7 @@ rgb_ref=array([0.24, 0.79, 0.82]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_dev</span><span class="o">=</span><span class="n">c_dev_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_dev_</span><span class="si">=:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1865,7 +1865,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.81, 0.63]), c_ref_mean=490
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c_std</span><span class="o">=</span><span class="n">c_std_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">c_std_</span><span class="si">=:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2023,7 +2023,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
     <span class="n">opts_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">N_H</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">N_</span><span class="o">*</span><span class="n">N_height</span><span class="o">/</span><span class="n">N_width</span><span class="p">),</span> <span class="n">N_W</span><span class="o">=</span><span class="n">N_</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">N_</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2194,7 +2194,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'shape_mode=</span><span class="si">{</span><span class="n">shape_mode_</span><span class="si">}</span><span class="s1">, n_sides=</span><span class="si">{</span><span class="n">n_sides_</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
     <span class="nd">@disp</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">):</span>
         <span class="n">cr</span> <span class="o">=</span> <span class="n">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="o">**</span><span class="n">opts_</span><span class="p">)</span>
 </pre></div>
 </div>

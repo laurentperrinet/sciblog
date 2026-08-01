@@ -143,15 +143,15 @@ In [1]">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1">#%config InlineBackend.figure_format='retina'</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'svg'
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">proglog</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">proglog</span>
 <span class="n">proglog</span><span class="o">.</span><span class="n">notebook</span><span class="p">()</span>
 <span class="c1">#%load_ext autoreload</span>
 <span class="c1">#%autoreload 2</span>
@@ -180,20 +180,20 @@ In [1]">
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'😎 Welcome to the script generating the movies 😎'</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">]</span>
 <span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/'</span>
-<span class="k">def</span> <span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span>
 <span class="n">fps</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="k">def</span> <span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
                  <span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="p">,</span>
                  <span class="n">start</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.2</span><span class="p">,</span>
                  <span class="n">stop</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.8</span><span class="p">,</span> <span class="n">do_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -204,7 +204,7 @@ In [1]">
                  <span class="n">fps</span> <span class="o">=</span> <span class="n">fps</span><span class="p">,</span>
                  <span class="n">W</span><span class="o">=</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">):</span>
     <span class="n">flash</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">lx</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="o">-</span><span class="n">r</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">flash_fill</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
         <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">t_flash</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">duration_flash</span><span class="p">:</span> <span class="n">flash</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">:</span>
@@ -391,20 +391,20 @@ Moviepy - video ready __temp__.mp4
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'😎 Welcome to the script generating the movies 😎'</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">]</span>
 <span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/'</span>
-<span class="k">def</span> <span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span>
 <span class="n">fps</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="k">def</span> <span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
                  <span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="p">,</span>
                  <span class="n">start</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.2</span><span class="p">,</span>
                  <span class="n">stop</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.8</span><span class="p">,</span> <span class="n">do_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -421,7 +421,7 @@ Moviepy - video ready __temp__.mp4
     <span class="n">Hs</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">n_flashes</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span> <span class="c1"># all intermediate positions</span>
     <span class="n">Hs</span> <span class="o">=</span> <span class="n">Hs</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># from the first one, take one from two = +|+|+|+</span>
 
-    <span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
         <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">t_flash</span><span class="p">,</span> <span class="n">flash_fill</span><span class="p">,</span> <span class="n">H_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">t_flashes</span><span class="p">,</span> <span class="n">color_flashes</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)):</span>
@@ -517,20 +517,20 @@ Moviepy - video ready __temp__.mp4
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'😎 Welcome to the script generating the movies 😎'</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">]</span>
 <span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/'</span>
-<span class="k">def</span> <span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">path2</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span>
 <span class="n">fps</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="k">def</span> <span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_movie</span><span class="p">(</span><span class="n">figname</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
                  <span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="p">,</span>
                  <span class="n">start</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.2</span><span class="p">,</span>
                  <span class="n">stop</span> <span class="o">=</span> <span class="n">duration</span><span class="o">*</span><span class="mf">.8</span><span class="p">,</span> <span class="n">do_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -546,7 +546,7 @@ Moviepy - video ready __temp__.mp4
     <span class="n">Hs</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">n_flashes</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span> <span class="c1"># all intermediate positions</span>
     <span class="n">Hs</span> <span class="o">=</span> <span class="n">Hs</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># from the first one, take one from two = +|+|+|+</span>
 
-    <span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
         <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">shift_flash</span><span class="p">,</span> <span class="n">flash_fill</span><span class="p">,</span> <span class="n">H_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">shifts_flash</span><span class="p">,</span> <span class="n">color_flashes</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)):</span>
@@ -700,7 +700,7 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span>
 <span class="n">r</span><span class="p">,</span> <span class="n">gray</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">1.</span>
 
@@ -749,9 +749,9 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mi">1</span>
@@ -761,7 +761,7 @@ Moviepy - video ready __temp__.mp4
 
 <span class="n">fix</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     
@@ -871,7 +871,7 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
@@ -977,7 +977,7 @@ Moviepy - video ready __temp__.mp4
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">lx</span> <span class="o">=</span> <span class="mf">.4</span><span class="o">*</span><span class="n">H</span>
@@ -1153,7 +1153,7 @@ Moviepy - video ready __temp__.mp4
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">lx</span> <span class="o">=</span> <span class="mf">.4</span><span class="o">*</span><span class="n">H</span>
@@ -1248,7 +1248,7 @@ Moviepy - video ready __temp__.mp4
 <span class="n">fix</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">red_fix</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">lh</span> <span class="o">=</span> <span class="mf">.1</span><span class="o">*</span><span class="n">H</span>
