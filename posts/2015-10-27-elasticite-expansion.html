@@ -151,8 +151,8 @@
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">elasticite</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">el</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">get_default_args</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="o">.</span><span class="n">render</span><span class="p">)[</span><span class="s1">'duration'</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -164,9 +164,9 @@
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'..'</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">scenario_line_fresnel</span> <span class="kn">import</span> <span class="n">EdgeGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scenario_line_fresnel</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgeGrid</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -282,8 +282,8 @@
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
 <span class="c1">#%config InlineBackend.figure_format = 'svg'</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -322,7 +322,7 @@
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionParticles</span> <span class="k">as</span> <span class="nn">mp</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionParticles</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
 </pre></div>
 </div>
 </div>
@@ -392,15 +392,15 @@
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">elasticite</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">el</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">duration</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">get_default_args</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="o">.</span><span class="n">render</span><span class="p">)[</span><span class="s1">'duration'</span><span class="p">]</span>
 <span class="n">location</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">get_default_args</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="o">.</span><span class="n">render</span><span class="p">)[</span><span class="s1">'location'</span><span class="p">]</span>
 
 
-<span class="k">class</span> <span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">champ</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">champ</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">:</span> <span class="n">N_lame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">N_lame</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">struct_N</span>
         <span class="k">else</span><span class="p">:</span> <span class="n">N_lame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">N_lame</span>
         <span class="n">tf</span> <span class="o">=</span> <span class="mf">2.</span> <span class="c1">#how many cycles in one period (duration)</span>
@@ -449,10 +449,10 @@
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">moviepy.video.io.bindings</span> <span class="kn">import</span> <span class="n">mplfig_to_npimage</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">moviepy.video.io.bindings</span><span class="w"> </span><span class="kn">import</span> <span class="n">mplfig_to_npimage</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="c1"># DRAW A FIGURE WITH MATPLOTLIB</span>
 
@@ -495,7 +495,7 @@
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fps</span> <span class="o">=</span> <span class="mf">25.</span>
 <span class="c1"># ANIMATE WITH MOVIEPY (UPDATE THE CURVE FOR EACH t). MAKE A GIF.</span>
-<span class="k">def</span> <span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span> <span class="n">zz</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">duration</span><span class="p">))</span>  <span class="c1"># &lt;= Update the curve</span>
     <span class="k">return</span> <span class="n">mplfig_to_npimage</span><span class="p">(</span><span class="n">fig_mpl</span><span class="p">)</span> <span class="c1"># RGB image of the figure</span>
 
@@ -557,7 +557,7 @@
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fps</span> <span class="o">=</span> <span class="mf">10.</span>
 <span class="n">e</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">fps</span>
 <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bone</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>    
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>    
     <span class="c1">#ax.clear()</span>
     <span class="n">e</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span> <span class="o">=</span> <span class="mf">.5</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> 
     <span class="n">scat</span>  <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">e</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">c</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
@@ -589,14 +589,14 @@
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">elasticite</span> <span class="k">as</span> <span class="nn">el</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">elasticite</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">el</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">class</span> <span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">update_particles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_particles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span> <span class="o">=</span>  <span class="mf">.5</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">N_particles</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_particles</span><span class="p">()</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">)</span>
@@ -630,7 +630,7 @@
 <div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>    
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_frame_mpl</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>    
     <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="n">e</span><span class="o">.</span><span class="n">total_width</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">total_width</span><span class="p">])</span>
@@ -676,11 +676,11 @@
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">update_particles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EdgeGrid</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">EdgeGrid</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_particles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">particles</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span> <span class="o">=</span>  <span class="mf">.5</span> <span class="o">+</span> <span class="mf">.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">N_particles</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_particles</span><span class="p">()</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">EdgeGrid</span><span class="p">(</span><span class="n">N_lame</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">)</span>

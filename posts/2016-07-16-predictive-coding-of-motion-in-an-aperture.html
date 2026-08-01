@@ -139,17 +139,17 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
 <span class="c1">#%config InlineBackend.figure_format = 'svg'</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="k">def</span> <span class="nf">show_video</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_video</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span> 
     <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">'&lt;video src="</span><span class="si">{}</span><span class="s1">" loop autoplay width="600" height="600"&gt;&lt;/video&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
 <span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
@@ -173,7 +173,7 @@
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">MotionParticles</span> <span class="k">as</span> <span class="nn">mp</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MotionParticles</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
 
 <span class="n">figpath</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2016-07-16-Heeger16JNeuro/'</span>
 <span class="n">matpath</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">matpath</span> <span class="o">=</span> <span class="s1">'/tmp/'</span>
@@ -192,7 +192,7 @@
 <span class="n">image</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">experiment</span> <span class="o">=</span> <span class="s1">'Heeger16JNeuro'</span>
 
-<span class="k">def</span> <span class="nf">generate_one</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_one</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span>
                 <span class="n">X_0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Y_0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stim_size</span><span class="o">=</span><span class="n">stim_size</span><span class="p">,</span>
                 <span class="n">stim_duration</span><span class="o">=</span><span class="n">stim_stop</span><span class="o">-</span><span class="n">stim_start</span><span class="p">,</span> <span class="n">stim_start</span><span class="o">=</span><span class="n">stim_start</span><span class="p">,</span>
                 <span class="n">width</span><span class="o">=</span><span class="n">mp</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">stim_noise</span><span class="o">=</span><span class="n">stim_noise</span><span class="p">,</span> <span class="n">im_contrast</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
@@ -211,7 +211,7 @@
     <span class="k">if</span> <span class="n">hard</span> <span class="p">:</span> <span class="n">tube</span> <span class="o">=</span> <span class="p">(</span><span class="n">tube</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.</span>
 
     <span class="k">if</span> <span class="n">texture</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">MotionClouds</span> <span class="kn">import</span> <span class="n">get_grids</span><span class="p">,</span> <span class="n">envelope_gabor</span><span class="p">,</span> <span class="n">random_cloud</span><span class="p">,</span> <span class="n">rectif</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_grids</span><span class="p">,</span> <span class="n">envelope_gabor</span><span class="p">,</span> <span class="n">random_cloud</span><span class="p">,</span> <span class="n">rectif</span>
         <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
         <span class="n">envelope</span> <span class="o">=</span> <span class="n">envelope_gabor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="n">V_X</span><span class="o">*</span><span class="n">N_Y</span><span class="o">/</span><span class="n">N_frame</span><span class="p">,</span> <span class="n">V_Y</span><span class="o">=</span><span class="n">V_Y</span><span class="o">*</span><span class="n">N_X</span><span class="o">/</span><span class="n">N_frame</span><span class="p">,</span> <span class="n">sf_0</span><span class="o">=</span><span class="n">sf_0</span><span class="p">,</span> <span class="n">B_V</span><span class="o">=</span><span class="n">B_V</span><span class="p">,</span> <span class="n">B_sf</span><span class="o">=</span><span class="n">B_sf</span><span class="p">,</span> <span class="n">B_theta</span><span class="o">=</span><span class="n">B_theta</span><span class="p">)</span>
         <span class="n">texture</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">rectif</span><span class="p">(</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">envelope</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span>
@@ -229,7 +229,7 @@
 
     <span class="c1"># now adding noise</span>
     <span class="k">if</span> <span class="n">pink_noise</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">MotionClouds</span> <span class="kn">import</span> <span class="n">get_grids</span><span class="p">,</span> <span class="n">envelope_color</span><span class="p">,</span> <span class="n">random_cloud</span><span class="p">,</span> <span class="n">rectif</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_grids</span><span class="p">,</span> <span class="n">envelope_color</span><span class="p">,</span> <span class="n">random_cloud</span><span class="p">,</span> <span class="n">rectif</span>
         <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">get_grids</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">)</span>
         <span class="n">envelope</span> <span class="o">=</span> <span class="n">envelope_color</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">noise_image</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">rectif</span><span class="p">(</span><span class="n">random_cloud</span><span class="p">(</span><span class="n">envelope</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span>
@@ -239,7 +239,7 @@
 
     <span class="k">return</span> <span class="n">tube</span>
 
-<span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">tube</span> <span class="o">=</span> <span class="n">generate_one</span><span class="p">(</span><span class="n">N_X</span><span class="o">=</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="o">=</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="o">=</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
     <span class="n">tube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">tube</span><span class="p">,</span> <span class="n">generate_one</span><span class="p">(</span><span class="n">N_X</span><span class="o">=</span><span class="n">N_X</span><span class="p">,</span> <span class="n">N_Y</span><span class="o">=</span><span class="n">N_Y</span><span class="p">,</span> <span class="n">N_frame</span><span class="o">=</span><span class="n">N_frame</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">V_X</span><span class="o">=-</span><span class="mf">.5</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">tube</span>

@@ -3,7 +3,7 @@
 &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Aug 2026 08:59:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Saving files in HoloViews</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-02-25-saving-files-in-holoviews.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Aug 2026 11:10:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Saving files in HoloViews</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-02-25-saving-files-in-holoviews.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Here, we show how to save files from figures generated with &lt;a href="https://github.com/ioam/holoviews/"&gt;HoloViews&lt;/a&gt;. This was thoroughly explained in this &lt;a href="https://ioam.github.io/holoviews/Tutorials/Exporting.html"&gt;page&lt;/a&gt;.&lt;/p&gt;
@@ -29,7 +29,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;vapory&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;vapory&lt;/span&gt;
 
 &lt;span class="n"&gt;camera&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vapory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Camera&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;'location'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'look_at'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;light&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vapory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LightSource&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'color'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
@@ -61,24 +61,24 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Here are more details...&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2015-01-16-rendering-3d-scenes-in-python.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>elasticite</category><category>interactive</category><category>ipython</category><category>plot</category><category>povray</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2015-01-16-rendering-3d-scenes-in-python.html</guid><pubDate>Fri, 16 Jan 2015 13:36:56 GMT</pubDate></item><item><title>The right imports in a notebook</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-01-07-the-right-imports-in-a-notebook.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=19c3d095"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2015-01-16-rendering-3d-scenes-in-python.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>elasticite</category><category>interactive</category><category>ipython</category><category>plot</category><category>povray</category><category>python</category><guid>https://laurentperrinet.github.io/sciblog/posts/2015-01-16-rendering-3d-scenes-in-python.html</guid><pubDate>Fri, 16 Jan 2015 13:36:56 GMT</pubDate></item><item><title>The right imports in a notebook</title><link>https://laurentperrinet.github.io/sciblog/posts/2015-01-07-the-right-imports-in-a-notebook.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=74c70703"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Following this post &lt;a href="http://carreau.github.io/posts/10-No-PyLab-Thanks.ipynb.html"&gt;http://carreau.github.io/posts/10-No-PyLab-Thanks.ipynb.html&lt;/a&gt;, here is ---all in one single cell--- the bits necessary to import most useful libraries in an ipython notebook:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=fec9c334"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=d305ce13"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# import numpy and set the printed precision to something humans can read&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;numpy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_printoptions&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precision&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;suppress&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;# set some prefs for matplotlib&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib&lt;/span&gt;
 &lt;span class="n"&gt;matplotlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;'text.usetex'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
 &lt;span class="n"&gt;fig_width_pt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;700.&lt;/span&gt;  &lt;span class="c1"&gt;# Get this from LaTeX using \showthe\columnwidth&lt;/span&gt;
 &lt;span class="n"&gt;inches_per_pt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;72.27&lt;/span&gt;               &lt;span class="c1"&gt;# Convert pt to inches&lt;/span&gt;
@@ -94,7 +94,7 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=2916459b"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=1a705c22"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Below, I detail some thoughts on why it is a perfect preamble for most ipython notebooks.&lt;/p&gt;
@@ -107,14 +107,14 @@ src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</co
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Trying to answer the question in &lt;a href="http://stackoverflow.com/questions/12233105/how-can-i-display-an-image-in-the-terminal/22537549?noredirect=1#comment41404352_22537549"&gt;http://stackoverflow.com/questions/12233105/how-can-i-display-an-image-in-the-terminal/22537549?noredirect=1#comment41404352_22537549&lt;/a&gt; :&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Is there any sort of utility I can use to convert an image to ASCII and then print it in my terminal? I looked for one but couldn't seem to find any.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>interactive</category><category>ipython</category><category>python</category><category>stackoverflow</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html</guid><pubDate>Thu, 16 Oct 2014 07:17:40 GMT</pubDate></item><item><title>Trying to include javascript in a notebook</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-10-15-trying-to-include-javascript-in-a-notebook.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=759857c8"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>interactive</category><category>ipython</category><category>python</category><category>stackoverflow</category><guid>https://laurentperrinet.github.io/sciblog/posts/2014-10-16-how-can-i-display-an-image-in-the-terminal.html</guid><pubDate>Thu, 16 Oct 2014 07:17:40 GMT</pubDate></item><item><title>Trying to include javascript in a notebook</title><link>https://laurentperrinet.github.io/sciblog/posts/2014-10-15-trying-to-include-javascript-in-a-notebook.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=dbac21f2"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Trying-to-include-javascript-in-a-notebook"&gt;Trying to include javascript in a notebook&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2014-10-15-trying-to-include-javascript-in-a-notebook.html#Trying-to-include-javascript-in-a-notebook"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=c691f80e"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=89fd3f9c"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Following &lt;a href="http://nbviewer.ipython.org/github/ipython/ipython/blob/1.x/examples/notebooks/Part%205%20-%20Rich%20Display%20System.ipynb"&gt;http://nbviewer.ipython.org/github/ipython/ipython/blob/1.x/examples/notebooks/Part%205%20-%20Rich%20Display%20System.ipynb&lt;/a&gt; and &lt;a href="http://nbviewer.ipython.org/gist/fonnesbeck/ad091b81bffda28fd657"&gt;http://nbviewer.ipython.org/gist/fonnesbeck/ad091b81bffda28fd657&lt;/a&gt; , let's try to integrate an interactive D3 plot within a notebook.&lt;/p&gt;
