@@ -165,7 +165,7 @@ Successfully built gizeh
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span>
 <span class="n">r</span><span class="p">,</span> <span class="n">gray</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">1.</span>
 
@@ -218,8 +218,8 @@ Successfully built gizeh
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span>
 <span class="n">r</span><span class="p">,</span> <span class="n">gray</span> <span class="o">=</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">.3</span>
@@ -365,9 +365,9 @@ Successfully built gizeh
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gizeh</span> <span class="k">as</span> <span class="nn">gz</span>
-<span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gizeh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">moviepy.editor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpy</span>
 
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
@@ -379,7 +379,7 @@ Successfully built gizeh
                             <span class="n">xy1</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy2</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">])</span>
 <span class="n">rf</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">gradient</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">rf</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
@@ -474,7 +474,7 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">rf</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
     <span class="n">rect</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">lx</span><span class="o">=</span><span class="mf">.3</span><span class="o">*</span><span class="n">H</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="mf">.02</span><span class="o">*</span><span class="n">H</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">duration</span><span class="p">,</span> <span class="n">H</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">angle</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
@@ -558,7 +558,7 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">rf</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
     <span class="n">modul</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">duration</span><span class="p">)</span>
@@ -642,7 +642,7 @@ Moviepy - video ready __temp__.mp4
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_frame</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">surface</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">rf</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
     <span class="n">modul</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">duration</span><span class="p">)</span>
