@@ -1,0 +1,15 @@
+.. title: Meshnet
+.. slug: 2013-10-26-Meshnet
+.. date: 2013-10-26 13:36:57
+.. type: text
+.. tags: sciblog
+
+
+-  New Scientist : Meshnet activists rebuilding the internet from
+   scratch.
+   `http://google.com/producer/s/CBIw8NukjwE <http://google.com/producer/s/CBIw8NukjwE>`__
+-  `https://projectmeshnet.org/‎ <https://projectmeshnet.org/‎>`__
+-  routing uses `http://cjdns.info/ <http://cjdns.info/>`__
+
+
+

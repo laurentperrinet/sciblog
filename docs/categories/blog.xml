@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scientific logbook (Posts about blog)</title><link>https://laurentperrinet.github.io/sciblog/</link><description></description><atom:link href="https://laurentperrinet.github.io/sciblog/categories/blog.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:laurent.perrinet@univ-amu.fr"&gt;Laurent Perrinet&lt;/a&gt; 
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 02 Aug 2026 16:05:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pale blue dots</title><link>https://laurentperrinet.github.io/sciblog/posts/2026-07-31-pale-blue-dots.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="An-Ambiguous-Arrangement-of-Dots"&gt;An Ambiguous Arrangement of Dots&lt;a class="anchor-link" href="https://laurentperrinet.github.io/sciblog/posts/2026-07-31-pale-blue-dots.html#An-Ambiguous-Arrangement-of-Dots"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This notebook develops a controlled visual stimulus designed to investigate the perceptual asymmetry between &lt;strong&gt;foveal (central)&lt;/strong&gt; and &lt;strong&gt;peripheral vision&lt;/strong&gt;. The goal is to generate an image containing a spatial pattern that appears clear, segmented, and structured at the point of gaze (fixation) and around the macula but becomes ambiguous or collapses into a blurred background when viewed in the periphery.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Teaser image" src="https://laurentperrinet.github.io/sciblog/files/2026-07-31-pale-blue-dots.svg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2026-07-31-pale-blue-dots.html"&gt;Read more…&lt;/a&gt; (56 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>grand-public</category><category>motionclouds</category><category>outreach</category><category>python</category><category>space</category><category>v1</category><guid>https://laurentperrinet.github.io/sciblog/posts/2026-07-31-pale-blue-dots.html</guid><pubDate>Fri, 31 Jul 2026 10:33:46 GMT</pubDate></item><item><title>CNRS rapport d'activité à mi-vague (période Décembre 2022 à Juin 2025)</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-09-03_Perrinet-CNRS-rapport-activite.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;h3&gt;CNRS rapport d'activité à mi-vague (période Décembre 2022 à Juin 2025)&lt;/h3&gt;
+&lt;p&gt;Ce document synthétise mon activité de chercheur CNRS au sein de l'&lt;a href="https://int.univ-amu.fr/"&gt;institut de Neurosciences de la Timone&lt;/a&gt; (UMR 7289) durant la période Décembre 2022 à Juin 2025. Ce rapport synthétise mes avancées en neurosciences computationnelles combinant expérimentation, modélisation et applications. Parmi les résultats clés : la découverte de neurones résilients à l'incertitude dans le cortex visuel (Nature Communications Biology, 2023), le développement d'algorithmes bio-inspirés pour des robots aériens (ANR AgileNeuRobot), et une théorie innovante du codage temporel neuronal (projet Polychronies). Ces travaux ont donné lieu dans cette période à 14 publications, 5 thèses encadrées, et des collaborations internationales, tout en s'inscrivant dans une démarche active de vulgarisation (The Conversation, Cerveau &amp;amp; Psycho). Il est écrit pour une évaluation à mi-vague par la section d’évaluation du CoNRS à l’automne 2025. À ce titre, il suit dans sa forme &lt;a href="https://intranet.cnrs.fr/Cnrs_pratique/recruter/carriere/chercheurs/Documents/Recommandations.pdf"&gt;les recommandations de rédaction&lt;/a&gt; données par le comité.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-09-03_Perrinet-CNRS-rapport-activite.html"&gt;Read more…&lt;/a&gt; (21 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-09-03_Perrinet-CNRS-rapport-activite.html</guid><pubDate>Wed, 03 Sep 2025 13:40:39 GMT</pubDate></item><item><title>Extending the high-phi illusion</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The  High Phi Motion illusion, is the illusory perception of a strong shift of motion induced by a slow inducing motion. A demo page is available on the &lt;a href="http://lab-perception.org/demo/highphi/"&gt;min author's webpage&lt;/a&gt; and the effect is described in this excellent paper :
+Wexler M, Glennerster A, Cavanagh P, Ito H &amp;amp; Seno T (2013). Default perception of high-speed motion. PNAS, 110, 7080-7085. &lt;a href="http://wexler.free.fr/papers/highphi.pdf"&gt;http://wexler.free.fr/papers/highphi.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this notebook, we will generate an extension of this illusion to answer to the question of knowing if it limited to the one-dimensional motion along the ring or if this can extended to arbitrary, 2D, planar motions. This will help decipher some of the factors leading to this "illusion".&lt;/p&gt;
+&lt;p&gt;TL;DR : one can reproduce the illusion on a planar motion (not a rotation), but it seems important that the motion is either limited to a band-like shape or to limited orientations:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [28]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Video&lt;/span&gt;
+
+&lt;span class="n"&gt;prefix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'2025-06-09_extending-the-high-phi-illusion'&lt;/span&gt;
+&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'../files/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;/high-phi.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-06-09_extending-the-high-phi-illusion/high-phi.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [29]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'../files/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;/high-phi-oriented-inducer-noband.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[29]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-06-09_extending-the-high-phi-illusion/high-phi-oriented-inducer-noband.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html"&gt;Read more…&lt;/a&gt; (11 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>blog</category><category>motion</category><category>motionclouds</category><category>psychophysics</category><category>python</category><category>retina</category><category>saccades</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-06-09-extending-the-high-phi-illusion.html</guid><pubDate>Mon, 09 Jun 2025 07:16:40 GMT</pubDate></item><item><title>Orienting yourself in the visual flow</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Moving through the world depends on our ability to perceive and interpret visual information, with optic flow playing a crucial role. Optic flow provides essential cues for self-motion and navigation, helping us to determine our direction, speed and the structure of our environment. In particular, the radial pattern of motion we see as we move allows to atune our gaze with respect to our self motion. By targeting the focal point of expansion within this flow, we can accurately orient ourselves and adjust our trajectory. This will not only deepen our understanding of visual perception, but also highlight the practical importance of optic flow in everyday navigation, from avoiding obstacles to maintaining stability.&lt;/p&gt;
+&lt;p&gt;In this notebook, we will generate a synthetic optic flow to challenge and examine how the visual system captures the focus of expansion. For this we will create a movie allowing to create an optic flow corresponding to moving inside a textured tunnel, potentially moving the center of the focus of expansion with respect to the center of gaze.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Video&lt;/span&gt;
+&lt;span class="n"&gt;html_attributes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"loop=True autoplay=True  controls=True"&lt;/span&gt;
+&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;And try out how to move that FoE with respect to the center of gaze:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Video&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../files/2025-04-24-orienting-yourself-in-the-visual-flow-perturb.mp4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;html_attributes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;video autoplay="True" controls="True" loop="True" src="https://laurentperrinet.github.io/sciblog/files/2025-04-24-orienting-yourself-in-the-visual-flow-perturb.mp4"&gt;
+      Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+    &lt;/video&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;pip&lt;/span&gt; install --upgrade pip
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;pip&lt;/span&gt;  install torch==2.7.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Requirement already satisfied: pip in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (25.2)
+Note: you may need to restart the kernel to use updated packages.
+Requirement already satisfied: torch==2.7.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (2.7.0)
+Requirement already satisfied: filelock in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.18.0)
+Requirement already satisfied: typing-extensions&amp;gt;=4.10.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (4.13.0)
+Requirement already satisfied: setuptools in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (75.6.0)
+Requirement already satisfied: sympy&amp;gt;=1.13.3 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (1.14.0)
+Requirement already satisfied: networkx in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.4.2)
+Requirement already satisfied: jinja2 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (3.1.4)
+Requirement already satisfied: fsspec in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from torch==2.7.0) (2025.3.0)
+Requirement already satisfied: mpmath&amp;lt;1.4,&amp;gt;=1.1.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from sympy&amp;gt;=1.13.3-&amp;gt;torch==2.7.0) (1.3.0)
+Requirement already satisfied: MarkupSafe&amp;gt;=2.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from jinja2-&amp;gt;torch==2.7.0) (3.0.2)
+Note: you may need to restart the kernel to use updated packages.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>behavior</category><category>blog</category><category>motion</category><category>motionclouds</category><category>psychophysics</category><category>python</category><category>retina</category><category>saccades</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-04-24-orienting-yourself-in-the-visual-flow.html</guid><pubDate>Thu, 24 Apr 2025 04:15:52 GMT</pubDate></item><item><title>Using Subsets in PyTorch</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-03-26-using-subsets-in-pytorch.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary : This notebook demonstrates how to create and use subsets of datasets in PyTorch. Subsets are particularly useful for working with specific portions of your data (e.g., validation sets or smaller batches for experimentation). We will use the MNIST dataset as an example.&lt;/p&gt;
+&lt;p&gt;Using subsets in PyTorch allows you to work with specific portions of your dataset efficiently. This is particularly useful for tasks like validation, testing, or when working with large datasets where loading the entire dataset into memory is impractical.&lt;/p&gt;
+&lt;p&gt;Key Points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiency: Using Subset avoids creating copies of your data, which saves memory and processing time.&lt;/li&gt;
+&lt;li&gt;Flexibility: You can create multiple subsets from the same dataset for different tasks (e.g., validation, testing).&lt;/li&gt;
+&lt;li&gt;Integration: Subsets work seamlessly with PyTorch’s DataLoader, making it easy to integrate into training loops.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By leveraging subsets in PyTorch, you can efficiently manage and experiment with portions of your data without compromising on performance or memory usage.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-03-26-using-subsets-in-pytorch.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>deep-learning</category><category>machine-learning</category><category>python</category><category>pytorch</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-03-26-using-subsets-in-pytorch.html</guid><pubDate>Wed, 26 Mar 2025 10:48:27 GMT</pubDate></item><item><title>La vibration des apparences</title><link>https://laurentperrinet.github.io/sciblog/posts/2025-01-18_la-vibration-des-apparences.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;À l’occasion de la Biennale d’Aix-en-Provence, dans le cadre de CHRONIQUES – Biennale des Imaginaires Numériques, l’association Arts Vivants présente au musée Granet, du 8 novembre 2024 au 19 janvier 2025, une exposition consacrée à l’artiste contemporain Étienne Rey et intitulée &lt;a href="https://laurentperrinet.github.io/post/2024-11-07_vibration-apparences/"&gt;La vibration des apparences&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Je décris ici le code utilisé pour générer une des oeuvres et qui a donné lieu à l'affiche.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2025-01-18_la-vibration-des-apparences.html"&gt;Read more…&lt;/a&gt; (32 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>grand-public</category><category>math</category><category>nature</category><category>numpy</category><category>open-science</category><category>outreach</category><category>python</category><category>trames</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2025-01-18_la-vibration-des-apparences.html</guid><pubDate>Sat, 18 Jan 2025 09:00:53 GMT</pubDate></item><item><title>Understanding Image Normalization in CNNs</title><link>https://laurentperrinet.github.io/sciblog/posts/2024-12-09-normalizing-images-in-convolutional-neural-networks.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Architectural innovations in deep learning occur at a breakneck pace, yet fragments of legacy code often persist, carrying assumptions and practices whose necessity remains unquestioned. Practitioners frequently accept these inherited elements as optimal by default, rarely stopping to reevaluate their continued relevance or efficiency.&lt;/p&gt;
+&lt;p&gt;Input normalization for convolutional neural networks, particularly in image processing, is a prime example of these unscrutinized practices. This is especially evident in the widespread use of pre-trained models like VGG or ResNet, where specific normalization values have become standard across the community. In particular, the standard values used for ImageNet training are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean: &lt;code&gt;[0.485, 0.456, 0.406]&lt;/code&gt; (for R,G,B channels respectively)&lt;/li&gt;
+&lt;li&gt;Std: &lt;code&gt;[0.229, 0.224, 0.225]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What is the origin of these values? Are they really important?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://doi.org/10.5281/zenodo.14602370"&gt;&lt;img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.14602370.svg"&gt;&lt;/a&gt;
+&lt;a href="https://github.com/laurentperrinet/2024-12-09-normalizing-images-in-convolutional-neural-networks"&gt;&lt;img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2024-12-09-normalizing-images-in-convolutional-neural-networks.html"&gt;Read more…&lt;/a&gt; (36 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>deep-learning</category><category>learning</category><category>machine-learning</category><category>numpy</category><category>open-science</category><category>python</category><category>pytorch</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2024-12-09-normalizing-images-in-convolutional-neural-networks.html</guid><pubDate>Mon, 09 Dec 2024 15:00:53 GMT</pubDate></item><item><title>De qui parle-t-on quand on parle d'IA ?</title><link>https://laurentperrinet.github.io/sciblog/posts/2024-11-26_De-qui-parle-t-on-quand-on-parle-d-IA.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div&gt;&lt;p&gt;L'intelligence artificielle (IA) fait les gros titres des media depuis qu'elle a envahi notre quotidien. Si elle nous aide à rédiger un document ou à choisir la prochaine musique que nous allons entendre, elle peut aussi contribuer à la création de nouveaux médicaments. Plus généralement, elle est à l'origine d'une révolution dans divers domaines tels que les transports, l'industrie, le commerce et les services. Elle est si omniprésente qu'elle tient aujourd'hui une place à part, à tel point qu'on a pris l'habitude de la nommer par ce nom propre : « l'IA ».&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2024-11-26_De-qui-parle-t-on-quand-on-parle-d-IA.html"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><category>grand-public</category><category>neuroai</category><category>outreach</category><category>sciblog</category><guid>https://laurentperrinet.github.io/sciblog/posts/2024-11-26_De-qui-parle-t-on-quand-on-parle-d-IA.html</guid><pubDate>Tue, 26 Nov 2024 13:40:39 GMT</pubDate></item><item><title>A textured Ouchi Illusion</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-11-29-ouchi-illusion.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The &lt;a href="https://mathworld.wolfram.com/OuchiIllusion.html"&gt;Ouchi illusion&lt;/a&gt; is a powerful demonstration that static images may produce an illusory movement. One striking aspect is that it makes you feel quite dizzy from trying to compensate for this illusory movement.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ouchi.jpg" src="https://mathworld.wolfram.com/images/gifs/ouchi.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;The illlusion is is generated by your own eye movements and is a consequence of the &lt;a href="https://en.wikipedia.org/wiki/Aperture_problem"&gt;aperture problem&lt;/a&gt;, which is a fundamental problem in vision science. The aperture problem is the fact that the visual system can only integrate information along the direction of motion, and not perpendicular to it. This is because the visual system is made of a set of filters that are oriented in different directions, and the integration is done by summing the responses of these filters. The aperture problem is a problem because it means that the visual system cannot recover the direction of motion of a contour from the responses of these filters.&lt;/p&gt;
+&lt;p&gt;Here, we explore variations of this illusion which xwould use textures instead of regular angles using the &lt;a href="https://github.com/NeuralEnsemble/MotionClouds"&gt;MotionClouds&lt;/a&gt; library. The idea is to use the same texture in the two parts of the image (center vs surround), but to rotate by 90° the texture in the center:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="my sweet ouchi" src="https://laurentperrinet.github.io/sciblog/files/2023-11-29-ouchi-illusion.png"&gt;&lt;/p&gt;
+&lt;p&gt;Optimizing the parameters of the texture would help tell us what matters to generate that illusion...&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2023-11-29-ouchi-illusion.html"&gt;Read more…&lt;/a&gt; (16 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>motionclouds</category><category>orientation</category><category>python</category><category>v1</category><category>vision</category><guid>https://laurentperrinet.github.io/sciblog/posts/2023-11-29-ouchi-illusion.html</guid><pubDate>Wed, 29 Nov 2023 10:54:45 GMT</pubDate></item><item><title>Modelling wind ripples</title><link>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</link><dc:creator>Laurent Perrinet</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Here, I try to simulate the patterns obtained on a sandy terrain. This is what is observed when the wind blows on the dry surface of a land with sand or also on the surface of the sea in the presence of currents.&lt;/p&gt;
+&lt;p&gt;As described in &lt;a href="https://en.wikipedia.org/wiki/Dune"&gt;https://en.wikipedia.org/wiki/Dune&lt;/a&gt;,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When a sandy seabed is subject to wave action and the wave orbital motion is strong enough to move sand grains, ripples often appear. The ripples induced by wave action are called “wave ripples”; their characteristics being different from those of the ripples generated by steady flows. The most striking difference between wave ripple fields and current ripple fields is the regularity of the former. Indeed, regular long-crested wave ripple fields are often observed on tidal beaches from which the sea has withdrawn at low water (see figure 1).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A nice example is shown in &lt;a href="http://www.coastalwiki.org/wiki/Wave_ripple_formation"&gt;http://www.coastalwiki.org/wiki/Wave_ripple_formation&lt;/a&gt; showing&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ripples observed at Sea Rim State Park, along the coast of east Texas close to the border with Louisiana (courtesy by Zoltan Sylvester).
+&lt;img alt="" src="http://www.coastalwiki.org/w/images/6/65/WaveRippleFormationFig0.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://www.coastalwiki.org/wiki/Wave_ripple_formation"&gt;Wave ripple formation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An interesting aspect of that patterns is that they may occur at different scales, like taht example on the surface of the Mars planet:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Overview of large sand wave field and high-resolution difference map of two surveys approximately 21 hours apart illustrating both large-scale and small-scale sand wave migration and orientation. Migration is from right to left.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://www.researchgate.net/profile/Daniel-Hanes/publication/252161559/figure/fig1/AS:669991225552924@1536749764962/Overview-of-large-sand-wave-field-and-high-resolution-difference-map-of-two-surveys.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html"&gt;Read more…&lt;/a&gt; (24 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>art</category><category>blog</category><category>nature</category><category>numpy</category><category>open-science</category><category>python</category><category>trames</category><guid>https://laurentperrinet.github.io/sciblog/posts/2023-04-16-modelling-wind-ripples.html</guid><pubDate>Sun, 16 Apr 2023 17:30:21 GMT</pubDate></item></channel></rss>

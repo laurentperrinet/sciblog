@@ -1,0 +1,142 @@
+My installation notes for mutt_+Homebrew_+gmail, based on this post by `steve losh`_ and this `other post`_
+
+
+.. TEASER_END
+
+offlineimap
+-----------
+
+::
+
+    brew search offlineimap
+    brew info offlineimap
+    brew home offlineimap
+    brew install offlineimap
+    mvim .offlineimaprc
+    brew install sqlite
+    cat  ~/.mutt/certificates
+    ls -l ~/pool/docs/Mail
+    offlineimap
+    ls /usr/local/Cellar/offline-imap/6.5.6/
+    brew info offlineimap
+    vim /usr/local/Cellar/offline-imap/6.5.6/bin/offlineimap
+    /usr/bin/env python
+    # dooh! works only in python2
+    pyenv global 2.7.9
+    python
+    pyenv rehash
+    python
+    offlineimap --info
+    offlineimap --dry-run
+    offlineimap
+
+mutt
+----
+
+::
+
+    mv ~/Documents/Mail ~/pool/docs/
+    mutt
+    brew info mutt
+    brew install mutt --sidebar-patch
+    brew remove mutt
+    brew tap mrtazz/misc
+    brew install mrtazz/misc/mutt --with-sidebar-patch
+    man mutt
+    o /usr/local/Cellar/mutt/1.5.23_2/share/doc/mutt/
+    o /usr/local/Cellar/mutt/1.5.23_2/share/doc/mutt/manual.html
+    vim .muttrc
+    git mv .muttrc .mutt/muttrc
+    vim .mutt/muttrc
+    ls -aR .mutt
+    vim .mutt/muttrc
+    grep pass .mutt/muttrc
+    vim .mutt/mailcap
+    vim .mutt/view_attachment.sh
+    chmod +x .mutt/view_attachment.sh
+    rmdir .mutt/certificates
+    mkdir .mutt/temp
+    mvim .mutt/sig
+    man mutt
+    mutt
+
+
+sending e-mail
+--------------
+
+::
+
+    brew install msmtp
+    msmtp --help
+    vim .mutt/Equifax_Secure_CA.cert
+    vim .msmtprc
+    msmtp -a laurent.perrinet --serverinfo
+
+contacts
+--------
+
+::
+
+    brew install contacts
+
+all in one script
+-----------------
+
+::
+
+    # brew install mutt
+    # a nice command-line utility to read and send e-mails
+    brew install offlineimap
+    brew install sqlite
+    #brew tap mrtazz/misc
+    #brew uninstall mrtazz/misc/mutt --with-sidebar-patch
+    #brew install mutt
+    brew tap kevwil/patches
+    brew install kevwil/patches/mutt --with-sidebar-patch --with-trash-patch
+
+    brew install msmtp
+    brew install contacts
+    brew install notmuch --without-python@2 --with-python3
+    brew install urlview
+
+    mkdir -p ~/.mutt/cache/bodies
+    mkdir -p ~/.mutt/cache/headers
+    # wget -O ~/.mutt/certificates http://www.geotrust.com/resources/extended-validation-ssl/certs/Equifax%20Secure%20Certificate%20Authority.crt
+    mkdir -p ~/mail
+    mkdir -p ~/mail/home
+    mkdir -p ~/mail/work
+    mkdir -p ~/mail/local
+
+
+
+key bindings
+------------
+
+We’re going to use j and k to move around, so we may as well support Vim keys like gg and G too. We’ll use R for reply all, since that comes in handy fairly often. Ctrl-R will mark all messages in the current folder as read.
+
+The tab key is going to “commit” changes we’ve made in Mutt (like deleting an email) to our local Maildir folder. Once those changes are in the Maildir folder offlineimap will sync them to the server the next time it runs. This is nice because it lets us recover if we accidentally do something stupid like deleting the wrong email.
+
+The space key will toggle collapsing of threads, which can be convenient when viewing mailing lists (or any conversations with many messages).
+
+The o and O keys will run offlineimap to sync mail. Like I said before, I prefer having to press a button to grab mail instead of it constantly grabbing and nagging me. o will sync only the inbox (fast), and O will sync everything (much slower).
+
+Finally we rebind C and M to perform the same operations they usually do, but in a more user-friendly manner.
+We’re binding the up and down arrow keys to switch between folders, and right to “enter” a folder. Give it a try.
+
+We don’t need the arrows because we can navigate with j and k, but if you prefer to rebind them to something else feel free.
+Press return in the index to open the selected email. This view is called the pager.
+
+When you’re in the pager view reading an email with attachments, you can press v to view a list of them
+Attachment List
+
+Scroll through the list with j and k and press return to view one. But first we need to tell Mutt how to view things that aren’t text!
+
+Other interesting key bindings:
+
+* h to toggle hide / view headers in pager view.
+
+
+.. _mutt: http://www.python.org
+.. _Homebrew: http://brew.sh/
+.. _`steve losh`: http://stevelosh.com/blog/2012/10/the-homely-mutt/
+.. _`other post`: http://blog.developwithpassion.com/2013/05/02/getting-up-and-running-with-a-sane-mutt-setup/
