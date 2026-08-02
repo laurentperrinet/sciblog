@@ -127,7 +127,7 @@
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -160,7 +160,7 @@ Let's first access the data:</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -217,7 +217,7 @@ eye0.mp4             pupil_data           world_timestamps.npy
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'info.csv'</span><span class="p">))</span>
 <span class="n">df</span>
 </pre></div>
@@ -317,7 +317,7 @@ with open(os.path.join(path, 'pupil_data'), 'rb') as f:
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">msgpack</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">msgpack</span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +479,7 @@ with open(os.path.join(path, 'pupil_data'), 'rb') as f:
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">gaze_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">one_gp</span><span class="p">[</span><span class="s1">'timestamp'</span><span class="p">],</span> <span class="n">one_gp</span><span class="p">[</span><span class="s1">'norm_pos'</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">one_gp</span><span class="p">[</span><span class="s1">'norm_pos'</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">one_gp</span><span class="p">[</span><span class="s1">'confidence'</span><span class="p">])</span> <span class="k">for</span> <span class="n">one_gp</span> <span class="ow">in</span> <span class="n">pupil_data</span><span class="p">[</span><span class="s1">'gaze_positions'</span><span class="p">]])</span>
 <span class="n">gaze_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">gaze_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
@@ -501,7 +501,7 @@ with open(os.path.join(path, 'pupil_data'), 'rb') as f:
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
