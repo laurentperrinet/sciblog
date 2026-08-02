@@ -213,9 +213,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-3:-Define-Canvas-Geometry">Method Step 3: Define Canvas Geometry<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-3:-Define-Canvas-Geometry">¶</a>
+<h4 id="Method-Step-4:-Define-Canvas-Geometry">Method Step 4: Define Canvas Geometry<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-4:-Define-Canvas-Geometry">¶</a>
 </h4>
-<p>This cell imports rendering modules and defines image dimensions. The selected aspect ratio and scale determine the lattice footprint and therefore the eccentricity range over which central and peripheral processing can be compared.</p>
+<p>We define the image dimensions to establish a fixed aspect ratio (approximately $1.618$, following the golden ratio). This choice determines the total spatial footprint of the lattice and allows us to consistently map pixels to visual angles, ensuring that the eccentricity range over which central and peripheral processing are compared is well-controlled.</p>
 </div>
 </div>
 </div>
@@ -251,9 +251,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-4:-Create-Display-and-Export-Utilities">Method Step 4: Create Display and Export Utilities<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-4:-Create-Display-and-Export-Utilities">¶</a>
+<h4 id="Method-Step-5:-Display-and-Export-Utilities">Method Step 5: Display and Export Utilities<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-5:-Display-and-Export-Utilities">¶</a>
 </h4>
-<p>This cell defines helper functions for on-screen visualization and file export. The goal is to keep stimulus generation and result inspection tightly coupled so that parameter changes can be interpreted immediately.</p>
+<p>To facilitate a rapid "tweak-and-verify" workflow, we implement helper functions for on-screen visualization and file export. By coupling stimulus generation with immediate rendering in PNG, PDF, and SVG formats, we can iteratively refine the parameters to find the exact regime where the center-periphery dissociation is most prominent.</p>
 </div>
 </div>
 </div>
@@ -327,22 +327,19 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-5:-Build-a-Controlled-Color-Mapping">Method Step 5: Build a Controlled Color Mapping<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-5:-Build-a-Controlled-Color-Mapping">¶</a>
+<h4 id="Method-Step-5:-Isoluminant-Color-Control">Method Step 5: Isoluminant Color Control<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-5:-Isoluminant-Color-Control">¶</a>
 </h4>
-<p>This cell defines how one can manipulate hue and saturation while controlling luminance. Isoluminant-like control is important because rods and cones differ in spectral and spatial behavior, and we want to manipulate chromatic cues without introducing large luminance confounds.</p>
+<p>A critical requirement for this stimulus is the ability to manipulate hue and saturation while keeping luminance constant. This is necessary because rod and cone photoreceptors respond differently to brightness vs color. To avoid introducing luminance confounds that would make the dots globally obvious, we implement an isoluminance control mechanism using the <code>Lambda2color</code> class and a target luminance value.</p>
 <p>The approximate peak sensitivity wavelengths for human cone types are:</p>
 <ul>
-<li>S cones (short - blueish): ~420 nm</li>
-<li>M cones (medium - greenish): ~530 nm</li>
-<li>L cones (long - reddish): ~560 nm</li>
+<li>
+<strong>S cones (short - blueish):</strong> $\approx 420\text{ nm}$</li>
+<li>
+<strong>M cones (medium - greenish):</strong> $\approx 530\text{ nm}$</li>
+<li>
+<strong>L cones (long - reddish):</strong> $\approx 560\text{ nm}$</li>
 </ul>
-<p>These peaks correspond to the absorption maxima of the photopsins in each cone type. The actual sensitivity curves overlap significantly, spanning roughly:</p>
-<ul>
-<li>S: 400–500 nm</li>
-<li>M: 450–630 nm</li>
-<li>L: 500–700 nm</li>
-</ul>
-<p><img alt="Human cone sensitivity curves" src="https://github.com/laurentperrinet/lambda2color/raw/main/cmf.png"></p>
+<p>By controlling these spectral properties, we can create "pale" colors that are just distinct enough for the fovea to resolve but easily pooled by the peripheral retina.</p>
 </div>
 </div>
 </div>
@@ -923,9 +920,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-6:-Define-Local-Shape-Primitives">Method Step 6: Define Local Shape Primitives<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-6:-Define-Local-Shape-Primitives">¶</a>
+<h4 id="Method-Step-6:-Local-Shape-Primitives">Method Step 6: Local Shape Primitives<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-6:-Local-Shape-Primitives">¶</a>
 </h4>
-<p>This cell defines the local geometric primitive drawn at each lattice location. By switching between circles, diagonals, and polygons, the stimulus can vary orientation and corner energy, which changes how contours are grouped by the visual system.</p>
+<p>We define the geometric primitive used at each lattice site. The choice of shape—ranging from smooth circles to angular polygons—modulates the amount of "corner energy" and orientation information present in the image. High-contrast edges and corners are strong anchors for foveal vision but may be processed differently in the periphery, affecting how the visual system groups these local elements into a global structure.</p>
 </div>
 </div>
 </div>
@@ -976,9 +973,19 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-7:-Generate-the-Hexagonal-Lattice-and-Render-the-Field">Method Step 7: Generate the Hexagonal Lattice and Render the Field<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-7:-Generate-the-Hexagonal-Lattice-and-Render-the-Field">¶</a>
+<h4 id="Method-Step-7:-Hexagonal-Lattice-Synthesis">Method Step 7: Hexagonal Lattice Synthesis<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-7:-Hexagonal-Lattice-Synthesis">¶</a>
 </h4>
-<p>This cell constructs the hexagonal arrangement by shifting alternating rows of a Cartesian mesh, computes dot attributes, paints the background, and draws all local shapes. This is the core of the stimulus synthesis pipeline and sets the spatial layout that interacts with eccentricity-dependent vision.</p>
+<p>The final stimulus is constructed by arranging the shape primitives on a hexagonal grid. A hexagonal arrangement is chosen because it provides a more uniform sampling of space compared to a square grid, reducing directional bias in peripheral pooling.</p>
+<p>The synthesis pipeline follows these steps:</p>
+<ol>
+<li>
+<strong>Background Rendering</strong>: An opaque background is painted using $\lambda_{ref\_mean}$ and $\lambda_{ref\_std}$.</li>
+<li>
+<strong>Grid Computation</strong>: A shifted mesh creates the hexagonal coordinates.</li>
+<li>
+<strong>Dot Application</strong>: Each dot is rendered with a color derived from the deviation $\lambda_{dev}$, ensuring it remains isoluminant with the background.</li>
+</ol>
+<p>This spatial layout interacts directly with the eccentricity-dependent resolution of the human eye, forming the basis for the ambiguity effect.</p>
 </div>
 </div>
 </div>
@@ -1039,9 +1046,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Results">Results<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Results">¶</a>
+<h3 id="Results-and-Analysis">Results and Analysis<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Results-and-Analysis">¶</a>
 </h3>
-<p>This section reports the baseline output and then explores one parameter at a time. For each sweep, the interpretation follows a three-part structure: first what is changed, second how the code produces and displays the sweep, and third how the observed visual trend can be explained by perceptual physiology.</p>
+<p>In this section, we evaluate the stimulus by performing systematic one-parameter sweeps. By isolating a single variable at a time (e.g., size or hue), we can determine exactly how each property contributes to the center-periphery dissociation. Each analysis follows a structured approach: identifying the manipulated variable, describing its implementation, and interpreting the resulting perceptual transition through the lens of visual physiology.</p>
 </div>
 </div>
 </div>
@@ -1050,9 +1057,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-8:-Set-Lattice-Density-Regime">Method Step 8: Set Lattice Density Regime<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-8:-Set-Lattice-Density-Regime">¶</a>
+<h4 id="Method-Step-8:-Establishing-Lattice-Density">Method Step 8: Establishing Lattice Density<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-8:-Establishing-Lattice-Density">¶</a>
 </h4>
-<p>This cell selects the effective lattice density by defining the relation between image size and grid counts. Density tuning is crucial because peripheral pooling is strongly scale-dependent, and the illusion emerges only in a limited spacing regime.</p>
+<p>We define the lattice density by setting the relationship between the image dimensions and the number of grid cells ($N_W$). Tuning this density is critical because peripheral pooling is highly scale-dependent. If the dots are too sparse, they will be visible everywhere; if they are too dense, they may fuse even in the center. The goal is to find a "sweet spot" where foveal vision resolves individual elements while peripheral vision perceives a unified texture.</p>
 </div>
 </div>
 </div>
@@ -1089,9 +1096,9 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Method-Step-9:-Define-a-Baseline-Parameter-Set">Method Step 9: Define a Baseline Parameter Set<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-9:-Define-a-Baseline-Parameter-Set">¶</a>
+<h4 id="Method-Step-9:-Define-Baseline-Parameters">Method Step 9: Define Baseline Parameters<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Method-Step-9:-Define-Baseline-Parameters">¶</a>
 </h4>
-<p>This cell sets a baseline for hue, saturation, opacity, shape, and size before systematic scans. A stable baseline is required so that each subsequent sweep can be interpreted as the effect of one controlled change.</p>
+<p>Before exploring parameter space, we establish a stable baseline configuration. We specify default values for wavelength means ($\lambda_{ref\_mean}$), spreads ($\lambda_{ref\_std}, \lambda_{std}$), dot size (<code>size_mag</code>), and luminance. This reference point allows us to quantify the effect of subsequent changes and ensures that our comparisons are consistent.</p>
 </div>
 </div>
 </div>
@@ -1128,7 +1135,8 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Baseline-Stimulus-Interpretation">Baseline Stimulus Interpretation<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Baseline-Stimulus-Interpretation">¶</a>
 </h4>
-<p>First, this stage defines the reference image that all later comparisons rely on, so no perceptual claim should be made without checking this baseline. Second, the associated code instantiates one fixed parameter vector and renders the corresponding field for inspection and export. Third, the expected visual pattern is a central region with clearer segmentation than the periphery, which is consistent with stronger cone-mediated color and fine-form sampling near the fovea and broader rod-dominated pooling at larger eccentricities.</p>
+<p>The baseline image serves as the control for all later experiments. When viewing this output, fixate on any single dot in the center of the field and then shift your attention to the edges without moving your eyes.</p>
+<p><strong>Expected Observation:</strong> You should perceive clear, distinct dots at the point of fixation, while the periphery appears more blended or texture-like. This confirms that the combination of current $\lambda$ settings and grid density is sufficient to evoke the intended center-periphery dissociation, consistent with foveal cone resolution versus peripheral rod pooling.</p>
 </div>
 </div>
 </div>
@@ -1187,7 +1195,7 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Parameter-Sweeps">Parameter Sweeps<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Parameter-Sweeps">¶</a>
 </h3>
-<p>Each sweep modifies a single control variable while keeping the others fixed. This strategy isolates causal effects and makes the resulting perceptual transitions easier to interpret.</p>
+<p>We now systematically vary one control variable while keeping all others fixed. This isolates the causal effect of each parameter on the ambiguity illusion and reveals the boundaries where the foveal/peripheral distinction is most pronounced.</p>
 </div>
 </div>
 </div>
@@ -1207,9 +1215,12 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-size_mag-(Dot-Size)">Scan Analysis: size_mag (Dot Size)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-size_mag-(Dot-Size)">¶</a>
+<h4 id="Scan-Analysis:-Dot-Size-(size_mag)">Scan Analysis: Dot Size (<code>size_mag</code>)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Dot-Size-(size_mag)">¶</a>
 </h4>
-<p>First, this sweep changes dot size while preserving lattice topology and color controls. Second, the code scans size on a geometric scale and displays each resulting image, which is necessary because perceived size effects are nonlinear. Third, very small dots can approach threshold globally, very large dots become robustly visible across the field, and intermediate sizes often produce the strongest center-periphery dissociation because foveal sampling resolves fine contours that peripheral integration smooths out.</p>
+<p><strong>Variable:</strong> We vary the relative size of the dots on a geometric scale.
+<strong>Implementation:</strong> The <code>size_mag</code> parameter is scaled across a range (e.g., $0.1$ to $0.4$), affecting the radius of every dot in the lattice.
+<strong>Perceptual Effect:</strong> Very small dots may fall below the visibility threshold globally, while very large dots become robustly visible even in the periphery due to their high local contrast.</p>
+<p><strong>Verification:</strong> The most effective "ambiguity" occurs at intermediate sizes where foveal sampling resolves the fine contours of a dot, but peripheral integration smooths them into a continuous texture. Look for the size where the center is clearly "dotted" but the edges feel "cloudy."</p>
 </div>
 </div>
 </div>
@@ -1365,9 +1376,12 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-c_ref_mean-(Mean-Hue)">Scan Analysis: c_ref_mean (Mean Hue)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-c_ref_mean-(Mean-Hue)">¶</a>
+<h4 id="Scan-Analysis:-Mean-Background-Hue-($%5Clambda_%7Bref%5C_mean%7D$)">Scan Analysis: Mean Background Hue ($\lambda_{ref\_mean}$)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Mean-Background-Hue-($%5Clambda_%7Bref%5C_mean%7D$)">¶</a>
 </h4>
-<p>First, this sweep changes the mean hue while keeping geometric structure fixed. Second, the code rotates hue around the full color circle and displays each frame so that chromatic alignment with the background can be assessed directly. Third, some hue sectors increase perceived separation and others reduce it, and this modulation is expected because cone-opponent pathways dominate central chromatic discrimination whereas peripheral vision shows weaker color-resolved segmentation.</p>
+<p><strong>Variable:</strong> We rotate the mean wavelength of the background across a range of the visible spectrum.
+<strong>Implementation:</strong> $\lambda_{ref\_mean}$ is varied linearly (e.g., $470\text{nm}$ to $580\text{nm}$), shifting the baseline color from blue-green towards yellow.
+<strong>Perceptual Effect:</strong> Certain hue sectors enhance the separation between dots and background, while others reduce it. This is due to the specific sensitivity of cone-opponent pathways, which dominate chromatic discrimination at fixation but are less effective in the periphery.</p>
+<p><strong>Verification:</strong> Note how some colors make the dot pattern "pop" more centrally, while other hues cause the entire image to feel flatter or more unified across the field.</p>
 </div>
 </div>
 </div>
@@ -1393,9 +1407,12 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-c_ref_std-(standard-deviation-of-wavelengths-for-reference-background)">Scan Analysis: c_ref_std (standard deviation of wavelengths for reference background)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-c_ref_std-(standard-deviation-of-wavelengths-for-reference-background)">¶</a>
+<h4 id="Scan-Analysis:-Background-Wavelength-Spread-($%5Clambda_%7Bref%5C_std%7D$)">Scan Analysis: Background Wavelength Spread ($\lambda_{ref\_std}$)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Background-Wavelength-Spread-($%5Clambda_%7Bref%5C_std%7D$)">¶</a>
 </h4>
-<p>First, this sweep changes hue variability across dots, which controls chromatic heterogeneity without changing lattice geometry. Second, the code progressively increases hue spread and displays each output to reveal how local irregularity affects grouping. Third, low spread tends to flatten differences, high spread can raise salience everywhere, and moderate spread often best preserves a central parsing advantage over peripheral fusion.</p>
+<p><strong>Variable:</strong> We vary the standard deviation of wavelengths used to generate the background color.
+<strong>Implementation:</strong> $\lambda_{ref\_std}$ is adjusted to control how "pure" or "broadband" the background spectrum is.
+<strong>Perceptual Effect:</strong> Low spread results in a highly saturated, pure hue that can create strong global contrast. High spread creates a more neutral, desaturated background. Moderate spread often preserves the central parsing advantage by preventing any single chromatic channel from dominating the peripheral pooling.</p>
+<p><strong>Verification:</strong> Observe if increasing the spread makes the periphery feel "smoother" or "noisier." The ideal setting prevents the background from appearing as a flat wall of color.</p>
 </div>
 </div>
 </div>
@@ -1420,9 +1437,12 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-c_dev-(Mean-deviation-from-Reference)">Scan Analysis: c_dev (Mean deviation from Reference)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-c_dev-(Mean-deviation-from-Reference)">¶</a>
+<h4 id="Scan-Analysis:-Mean-Chromatic-Deviation-($%5Clambda_%7Bdev%7D$)">Scan Analysis: Mean Chromatic Deviation ($\lambda_{dev}$)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Mean-Chromatic-Deviation-($%5Clambda_%7Bdev%7D$)">¶</a>
 </h4>
-<p>First, this sweep changes the mean hue while keeping geometric structure fixed. Second, the code rotates hue around the full color circle and displays each frame so that chromatic alignment with the background can be assessed directly. Third, some hue sectors increase perceived separation and others reduce it, and this modulation is expected because cone-opponent pathways dominate central chromatic discrimination whereas peripheral vision shows weaker color-resolved segmentation.</p>
+<p><strong>Variable:</strong> We adjust the average shift in wavelength between the dots and the background.
+<strong>Implementation:</strong> $\lambda_{dev}$ is varied to change how far the dot color "moves" away from the reference background hue on the spectrum.
+<strong>Perceptual Effect:</strong> This directly controls the chromatic contrast. A small deviation makes the dots blend into the background, while a large deviation creates high salience everywhere. The ambiguity effect is strongest when $\lambda_{dev}$ is just enough to be resolved by cones at fixation but falls within the pooling threshold of peripheral rods.</p>
+<p><strong>Verification:</strong> Look for the value where dots are clearly visible when looked at directly, but seem to "vanish" or merge into the background in the periphery.</p>
 </div>
 </div>
 </div>
@@ -1447,9 +1467,12 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-c_std-(standard-deviation-of-wavelengths-for-shapes)">Scan Analysis: c_std (standard deviation of wavelengths for shapes)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-c_std-(standard-deviation-of-wavelengths-for-shapes)">¶</a>
+<h4 id="Scan-Analysis:-Dot-Wavelength-Spread-($%5Clambda_%7Bstd%7D$)">Scan Analysis: Dot Wavelength Spread ($\lambda_{std}$)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Dot-Wavelength-Spread-($%5Clambda_%7Bstd%7D$)">¶</a>
 </h4>
-<p>First, this sweep changes hue variability across dots, which controls chromatic heterogeneity without changing lattice geometry. Second, the code progressively increases hue spread and displays each output to reveal how local irregularity affects grouping. Third, low spread tends to flatten differences, high spread can raise salience everywhere, and moderate spread often best preserves a central parsing advantage over peripheral fusion.</p>
+<p><strong>Variable:</strong> We vary the standard deviation of wavelengths for the dots themselves.
+<strong>Implementation:</strong> $\lambda_{std}$ is adjusted to control the chromatic heterogeneity across the dot array.
+<strong>Perceptual Effect:</strong> Low spread creates a uniform set of dots, while high spread introduces local color variations. High variability can raise global salience (making the pattern more "obvious" everywhere), whereas moderate spread can mimic natural textures and better preserve the central parsing advantage over peripheral fusion.</p>
+<p><strong>Verification:</strong> Note if increasing $\lambda_{std}$ makes the periphery feel "busier" or if it helps the dots blend more effectively into a coarse texture.</p>
 </div>
 </div>
 </div>
@@ -1474,9 +1497,19 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-N_H-and-N_W-(Grid-Density)">Scan Analysis: N_H and N_W (Grid Density)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-N_H-and-N_W-(Grid-Density)">¶</a>
+<h4 id="Scan-Analysis:-Lattice-Density-($N_W$)">Scan Analysis: Lattice Density ($N_W$)<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Lattice-Density-($N_W$)">¶</a>
 </h4>
-<p>First, this sweep changes lattice density, which is equivalent to changing the spatial frequency content of the pattern. Second, the code traverses density values and renders each configuration so that spacing-dependent perceptual transitions are explicit. Third, sparse spacing is usually readable everywhere, dense spacing can fuse in the periphery, and the most informative operating point is near the boundary where central segmentation remains available but peripheral parsing degrades through larger receptive-field pooling.</p>
+<p><strong>Variable:</strong> We vary the spatial frequency of the dot pattern.
+<strong>Implementation:</strong> The number of columns $N_W$ is changed across a logarithmic scale, effectively altering the spacing between dots relative to the image size.
+<strong>Perceptual Effect:</strong></p>
+<ul>
+<li>
+<strong>Sparse Spacing:</strong> Dots are far apart and typically resolve as distinct elements everywhere in the field.</li>
+<li>
+<strong>Dense Spacing:</strong> The pattern may fuse into a single mass even at fixation.
+The most informative regime is near the boundary where central segmentation remains available but peripheral parsing degrades due to larger receptive-field pooling.</li>
+</ul>
+<p><strong>Verification:</strong> Identify the density where you can still see individual dots in the center, but the periphery looks like a continuous shaded region rather than a collection of points.</p>
 </div>
 </div>
 </div>
@@ -1632,9 +1665,18 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scan-Analysis:-Shape-Family">Scan Analysis: Shape Family<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Shape-Family">¶</a>
+<h4 id="Scan-Analysis:-Local-Shape-Primitives">Scan Analysis: Local Shape Primitives<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Scan-Analysis:-Local-Shape-Primitives">¶</a>
 </h4>
-<p>First, this sweep changes local contour class by alternating circles, diagonals, and polygons with different side counts. Second, the code enumerates shape configurations and displays one frame per configuration, enabling direct comparison of orientation and corner cues. Third, smoother contours generally reduce explicit local anchors, whereas angular shapes increase corner energy and orientation evidence, which can improve fixation-locked parsing but may also reduce peripheral ambiguity if the cues become too strong.</p>
+<p><strong>Variable:</strong> We change the geometric class of the dots (Circles $\rightarrow$ Polygons $\rightarrow$ Diagonals).
+<strong>Implementation:</strong> The <code>shape_mode</code> and <code>n_sides</code> parameters are varied to introduce different contour types and corner energy.
+<strong>Perceptual Effect:</strong></p>
+<ul>
+<li>
+<strong>Circular Shapes:</strong> Provide smooth contours, which reduce explicit local anchors and often maximize the "texture" feel in the periphery.</li>
+<li>
+<strong>Angular/Polygonal Shapes:</strong> Increase corner energy and provide orientation cues. This can improve fixation-locked parsing but may also make the patterns more robust (less ambiguous) in the periphery if the angular features are too strong.</li>
+</ul>
+<p><strong>Verification:</strong> Compare how circles versus hexagons or triangles affect your ability to "lose" the pattern in the periphery. Do sharper corners make it easier or harder for the image to collapse into a texture?</p>
 </div>
 </div>
 </div>
@@ -1778,9 +1820,17 @@ rgb_ref=array([0.31, 0.77, 0.79]), rgb=array([0.  , 0.8 , 0.65]), c_ref_mean=490
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Discussion-and-Conclusion">Discussion and Conclusion<a class="anchor-link" href="2026-07-31-pale-blue-dots.html#Discussion-and-Conclusion">¶</a>
 </h3>
-<p>Across sweeps, the most effective stimuli are those that sit near a perceptual threshold where central segmentation is reliable and peripheral structure remains unstable. This operating regime is coherent with retinal physiology, because foveal and parafoveal cone-rich regions support fine chromatic and spatial discrimination, while rod-dominated peripheral regions rely on larger pooling and weaker color-resolved parsing.</p>
-<p>In practical terms, the illusion is strongest when opacity, size, chromatic spread, and density are jointly tuned so that dots do not become either globally invisible or globally obvious. The macular scale, roughly comparable to a thumb at arm length, offers a useful perceptual anchor for interpreting where detailed structure should remain stable in the image.</p>
-<p>The main methodological strength of this notebook is the one-factor-at-a-time sweep strategy combined with immediate visual output. The next experimental step is to quantify these observations with psychophysical measurements, for example by measuring detectability as a function of eccentricity and mapping the parameter region that maximizes fixation-dependent appearance changes.</p>
+<p>The results of these parameter sweeps demonstrate that the ambiguity illusion is most potent when the stimulus sits precisely at a perceptual threshold. By jointly tuning dot size, chromatic deviation ($\lambda_{dev}$), lattice density, and shape complexity, we can create an image where central segmentation is reliable while peripheral structure remains unstable.</p>
+<p>This behavior is entirely coherent with retinal physiology:</p>
+<ul>
+<li>
+<strong>Foveal/Parafoveal Processing:</strong> High cone density enables the fine spatial and chromatic discrimination required to resolve individual dots against the background.</li>
+<li>
+<strong>Peripheral Processing:</strong> Rod dominance and larger receptive field pooling lead to a "smoothing" effect, where the dot lattice is perceived as a coarse, continuous texture.</li>
+</ul>
+<p>In practical terms, the illusion's strength depends on preventing the dots from becoming either globally invisible (too small/low contrast) or globally obvious (too large/high contrast). The macular scale—roughly the apparent size of a thumb at arm's length—provides a reliable perceptual anchor for where this high-fidelity parsing should remain stable.</p>
+<p><strong>Future Directions:</strong>
+The next logical step is to move from qualitative observation to quantitative psychophysics. This would involve measuring dot detectability as a function of eccentricity and mapping the precise multi-dimensional parameter region that maximizes the delta between central and peripheral perception.</p>
 </div>
 </div>
 </div>
