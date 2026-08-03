@@ -1,0 +1,15 @@
+pip
+nikola
+jupyterlab
+ipykernel
+numpy
+scipy
+matplotlib
+pillow
+requests
+lxml
+mako
+markdown
+ghp-import
+doit
+watermark 
