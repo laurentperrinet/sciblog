@@ -250,7 +250,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
 
 <span class="n">prefix</span> <span class="o">=</span> <span class="s1">'2025-06-09_extending-the-high-phi-illusion'</span>
 <span class="n">Video</span><span class="p">(</span><span class="sa">f</span><span class="s1">'../files/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">/high-phi.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="s2">"loop=True autoplay=True  controls=True"</span><span class="p">)</span>
@@ -328,7 +328,7 @@ Wexler M, Glennerster A, Cavanagh P, Ito H &amp; Seno T (2013). Default percepti
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Video</span>
 <span class="n">html_attributes</span> <span class="o">=</span> <span class="s2">"loop=True autoplay=True  controls=True"</span>
 <span class="n">Video</span><span class="p">(</span><span class="s1">'../files/2025-04-24-orienting-yourself-in-the-visual-flow.mp4'</span><span class="p">,</span> <span class="n">html_attributes</span><span class="o">=</span><span class="n">html_attributes</span><span class="p">)</span>
 </pre></div>
@@ -1173,21 +1173,21 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
 
 <span class="n">torch</span><span class="o">.</span><span class="n">set_default_tensor_type</span><span class="p">(</span><span class="s2">"torch.DoubleTensor"</span><span class="p">)</span>
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s2">"sum"</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">LogisticRegressionModel</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">logit0</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log_wt</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">))):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LogisticRegressionModel</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">logit0</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log_wt</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">))):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">LogisticRegressionModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1">#self.linear = torch.nn.Linear(1, 1, bias=bias)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">theta0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">theta0</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logit0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">logit0</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log_wt</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">log_wt</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
         <span class="n">p0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logit0</span><span class="p">)</span>
         <span class="c1">#out = p0 / 2 + (1 - p0) * torch.sigmoid(self.linear(theta))</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">((</span><span class="n">theta</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">theta0</span> <span class="p">)</span><span class="o">/</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_wt</span><span class="p">))</span>
@@ -1201,7 +1201,7 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
 <span class="n">amsgrad</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># gives similar results</span>
 <span class="n">amsgrad</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># gives similar results</span>
 
-<span class="k">def</span> <span class="nf">fit_data</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fit_data</span><span class="p">(</span>
     <span class="n">theta</span><span class="p">,</span>
     <span class="n">y</span><span class="p">,</span>
     <span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
@@ -1418,13 +1418,13 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
 </div>
 </div>
                 </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-01-30__smooth-transition-between-mcs.html" class="u-url">Generating textures with different complexities</a></h1>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2019-01-30_smooth-transition-between-mcs.html" class="u-url">Generating textures with different complexities</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
                     </span></p>
             <p class="dateline">
-            <a href="posts/2019-01-30__smooth-transition-between-mcs.html" rel="bookmark">
+            <a href="posts/2019-01-30_smooth-transition-between-mcs.html" rel="bookmark">
             <time class="published dt-published" datetime="2019-01-30T10:06:52+02:00" itemprop="datePublished" title="2019-01-30 10:06">2019-01-30 10:06</time></a>
             </p>
                 </div>
@@ -1436,7 +1436,7 @@ For instance, in a recent musing, I tried to programmatically determine the <a h
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This video shows different <a href="https://neuralensemble.github.io/MotionClouds/">MotionClouds</a> with different complexities, from a crystal-like Grating to textures with an incresing span of spatial frequencies (resp "Mc Narrow" and "MC Broad"). This is to illustrate the different stimuli used in this <a href="https://laurentperrinet.github.io/publication/ravello-19">paper on the chracterization of speed-selectivity in the retina</a> available @ <a href="https://www.nature.com/articles/s41598-018-36861-8">https://www.nature.com/articles/s41598-018-36861-8</a> .</p>
 <br><center><video autoplay="" controls="" loop="" src="files/2019-01-30_Ravello19_text.mp4" width="61.8%/"></video></center>
-<br><p class="more"><a href="posts/2019-01-30__smooth-transition-between-mcs.html">Read more…</a></p>
+<br><p class="more"><a href="posts/2019-01-30_smooth-transition-between-mcs.html">Read more…</a></p>
 </div>
 </div>
 </div>
@@ -1531,14 +1531,14 @@ In particular, it is debatable to know which weight individual features, such as
 </div>
 </div>
                 </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2018-11-13-testing-more-complex-trajectories.html" class="u-url">Embedding a trajectory in noise</a></h1>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2018-11-13-testing-more-complex-trajectories.html" class="u-url">Testing more complex trajectories</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
                     </span></p>
             <p class="dateline">
             <a href="posts/2018-11-13-testing-more-complex-trajectories.html" rel="bookmark">
-            <time class="published dt-published" datetime="2018-11-13T11:43:46+02:00" itemprop="datePublished" title="2018-11-13 11:43">2018-11-13 11:43</time></a>
+            <time class="published dt-published" datetime="2018-11-13T00:00:00+01:00" itemprop="datePublished" title="2018-11-13 00:00">2018-11-13 00:00</time></a>
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
@@ -1760,7 +1760,7 @@ In particular, it is debatable to know which weight individual features, such as
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="https://laurentperrinet.github.io/sciblog/files/2017-12-13_pupil%20test_480.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2058,14 +2058,14 @@ In particular, it is debatable to know which weight individual features, such as
 </div>
 </div>
                 </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html" class="u-url">A change in the definition of spatial frequency bandwidth?</a></h1>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html" class="u-url">A change in the definition of spatial frequency bandwidth</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Laurent Perrinet
                     </span></p>
             <p class="dateline">
             <a href="posts/2017-05-23-a-change-in-the-definition-of-spatial-frequency-bandwidth.html" rel="bookmark">
-            <time class="published dt-published" datetime="2017-05-23T11:43:46+02:00" itemprop="datePublished" title="2017-05-23 11:43">2017-05-23 11:43</time></a>
+            <time class="published dt-published" datetime="2017-05-23T00:00:00+01:00" itemprop="datePublished" title="2017-05-23 00:00">2017-05-23 00:00</time></a>
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
@@ -2117,7 +2117,7 @@ $$</p>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s1">'http://www.rhsmpsychology.com/images/monocular_IV.jpg'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2431,7 +2431,7 @@ Solution: ImageMagick.</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">'input ndarray'</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -2506,7 +2506,7 @@ index of maximal value =  (3, 1, 0)  and we verify that  23 = 23
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="../files/2016-11-15_noise.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3647,7 +3647,7 @@ year = {2016}
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">vapory</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vapory</span>
 
 <span class="n">camera</span> <span class="o">=</span> <span class="n">vapory</span><span class="o">.</span><span class="n">Camera</span><span class="p">(</span> <span class="s1">'location'</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="s1">'look_at'</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">light</span> <span class="o">=</span> <span class="n">vapory</span><span class="o">.</span><span class="n">LightSource</span><span class="p">(</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="s1">'color'</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
@@ -3699,7 +3699,7 @@ year = {2016}
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=dffafaad">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8b6e20f6">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3708,17 +3708,17 @@ year = {2016}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=5bebfdb4">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=588649e9">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import numpy and set the printed precision to something humans can read</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># set some prefs for matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'text.usetex'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 <span class="n">fig_width_pt</span> <span class="o">=</span> <span class="mf">700.</span>  <span class="c1"># Get this from LaTeX using \showthe\columnwidth</span>
 <span class="n">inches_per_pt</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">72.27</span>               <span class="c1"># Convert pt to inches</span>
@@ -3734,7 +3734,7 @@ year = {2016}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=d4e49357">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=87b436d4">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3782,7 +3782,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=693ef44b">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=f1da5782">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3804,7 +3804,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=27c80224">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=e851774c">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3827,7 +3827,7 @@ year = {2016}
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=d05d5c96">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=19fe97ce">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3951,7 +3951,7 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;center&gt;&lt;video controls autoplay loop src="../files/2014-10-24_waves/waves.mp4" width=61.8%/&gt;&lt;/center&gt;'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4040,14 +4040,14 @@ textures. Thus we used a simple unimodal, normal distribution (on the log-radial
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
 <span class="n">downscale</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_grids</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">N_X</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_Y</span><span class="o">/</span><span class="n">downscale</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">N_frame</span><span class="o">/</span><span class="n">downscale</span><span class="p">)</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">'MotionPlaid'</span>
 
 <span class="n">mc</span><span class="o">.</span><span class="n">figpath</span> <span class="o">=</span> <span class="s1">'../files/2014-10-20_MotionPlaids'</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)):</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">figpath</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4268,9 +4268,9 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">MotionClouds</span> <span class="k">as</span> <span class="nn">mc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">MotionClouds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mc</span>
 
 <span class="n">name</span> <span class="o">=</span> <span class="s1">'MotionPlaid_9x9'</span>
 <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">check_if_anim_exist</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -4541,7 +4541,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=d9933892">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=0f82a3f3">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4587,7 +4587,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=9b1d8bb9">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=23cd8723">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4597,7 +4597,7 @@ As such, Motion Clouds are ideal candidates because they are generated with rand
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=843af5b7">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d7bfe16e">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4677,7 +4677,7 @@ We are trying here to show some attempts to do the same with matplotlib or any o
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=3525154d">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=148a6c7e">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4916,7 +4916,7 @@ $\gamma (x) = \frac {1} {\sigma_2 \sqrt{2\pi}} \cdot e^{\frac {-(2(x-m_2))^{2}} 
             </p>
                 </div>
             </header><div class="p-summary entry-summary">
-                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=3a6a8962">
+                    <div class="cell border-box-sizing text_cell rendered" id="cell-id=425d6120">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -5059,7 +5059,7 @@ pip install --user neurotools
                 </div>
             </header><div class="p-summary entry-summary">
                     <div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=bcf741fd">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=0a460714">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -5068,7 +5068,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a174febd">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f62f5500">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -5077,7 +5077,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=082df74d">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=f57679e8">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -5088,7 +5088,7 @@ pip install --user neurotools
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=215cbc8a">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=2cf0f350">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
