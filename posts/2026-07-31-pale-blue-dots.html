@@ -200,7 +200,10 @@
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: pycairo in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (1.29.0)
+<pre>Requirement already satisfied: pycairo in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (1.29.0)
+
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">26.2</span> -&gt; <span class="ansi-green-fg">26.2.1</span>
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip install --upgrade pip</span>
 Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
@@ -317,7 +320,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span class="k">def</span><span class="w"> </span><span class="nf">render_svg</span><span class="p">(</span><span class="n">draw_func</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">cairo</span><span class="o">.</span><span class="n">SVGSurface</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">.svg"</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_height</span><span class="p">)</span> <span class="k">as</span> <span class="n">surface</span><span class="p">:</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
-        <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>        
+        <span class="n">draw_func</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">N_height</span><span class="o">=</span><span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="o">=</span><span class="n">N_width</span><span class="p">)</span>   
 </pre></div>
 </div>
 </div>
@@ -365,8 +368,11 @@ It is based on the different sensitivities to a novel color space called the <a 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: lambda2color in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (0.8.2)
-Requirement already satisfied: numpy in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from lambda2color) (2.5.1)
+<pre>Requirement already satisfied: lambda2color in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (0.8.2)
+Requirement already satisfied: numpy in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (from lambda2color) (2.5.1)
+
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">26.2</span> -&gt; <span class="ansi-green-fg">26.2.1</span>
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip install --upgrade pip</span>
 Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
@@ -654,9 +660,12 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: colormath in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (3.0.0)
-Requirement already satisfied: numpy in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from colormath) (2.5.1)
-Requirement already satisfied: networkx&gt;=2.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.13/site-packages (from colormath) (3.4.2)
+<pre>Requirement already satisfied: colormath in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (3.0.0)
+Requirement already satisfied: numpy in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (from colormath) (2.5.1)
+Requirement already satisfied: networkx&gt;=2.0 in /Users/laurentperrinet/sdrive_cnrs/blog/laurentperrinet.github.io_sciblog/.venv/lib/python3.14/site-packages (from colormath) (3.6.1)
+
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">26.2</span> -&gt; <span class="ansi-green-fg">26.2.1</span>
+<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip install --upgrade pip</span>
 Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
@@ -871,7 +880,12 @@ To obtain the correct $L^*$ for a desired target luminance, we invert this relat
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hexagonal_grid</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">N_height</span><span class="p">,</span> <span class="n">N_width</span><span class="p">,</span> <span class="n">N_H</span><span class="p">,</span> <span class="n">N_W</span><span class="p">,</span> <span class="n">size_mag</span><span class="p">,</span> 
                    <span class="n">lambda_ref_mean</span><span class="p">,</span> <span class="n">lambda_ref_std</span><span class="p">,</span> <span class="n">lambda_dev</span><span class="p">,</span> <span class="n">lambda_std</span><span class="p">,</span> 
-                   <span class="n">operator</span><span class="p">,</span> <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">,</span> <span class="n">relative_luminance</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+                <span class="c1">#    operator, </span>
+                   <span class="n">shape_mode</span><span class="p">,</span> <span class="n">n_sides</span><span class="p">,</span> <span class="n">relative_luminance</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+
+    <span class="c1"># cr.set_operator(operator)</span>
+    <span class="c1"># cr.set_operator(cairo.OPERATOR_SOURCE)</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">set_operator</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">OPERATOR_OVER</span><span class="p">)</span>
 
     <span class="c1"># the two colors we use: the reference color and the color of the shapes</span>
     <span class="n">spec</span> <span class="o">=</span> <span class="n">get_spec</span><span class="p">(</span><span class="n">lambda_ref_mean</span><span class="p">,</span> <span class="n">lambda_ref_std</span><span class="p">)</span>
@@ -889,13 +903,11 @@ To obtain the correct $L^*$ for a desired target luminance, we invert this relat
     <span class="c1"># Paint an explicit opaque background rectangle first.</span>
     <span class="c1"># We expand it slightly beyond the boundaries to prevent any anti-aliasing transparency gaps at the edges.</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-    <span class="n">cr</span><span class="o">.</span><span class="n">set_operator</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">OPERATOR_SOURCE</span><span class="p">)</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">N_width</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">N_height</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">set_source_rgb</span><span class="p">(</span><span class="o">*</span><span class="n">rgb_ref</span><span class="p">)</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
     <span class="n">cr</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
 
-    <span class="n">cr</span><span class="o">.</span><span class="n">set_operator</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span>
 
     <span class="c1"># Compute the grid</span>
     <span class="c1"># https://laurentperrinet.github.io/sciblog/posts/2020-04-16-creating-an-hexagonal-grid.html</span>
@@ -999,7 +1011,7 @@ To obtain the correct $L^*$ for a desired target luminance, we invert this relat
         <span class="s2">"relative_luminance"</span><span class="p">:</span> <span class="mf">.55</span><span class="p">,</span> 
         <span class="s2">"lambda_ref_mean"</span><span class="p">:</span> <span class="n">lambda_ref_mean</span><span class="p">,</span> <span class="s2">"lambda_ref_std"</span><span class="p">:</span> <span class="n">lambda_ref_std</span><span class="p">,</span>
         <span class="s2">"lambda_dev"</span><span class="p">:</span> <span class="n">lambda_dev</span><span class="p">,</span> <span class="s2">"lambda_std"</span><span class="p">:</span> <span class="n">lambda_std</span><span class="p">,</span> <span class="c1"># deviation from reference and std of wavelengths</span>
-        <span class="s2">"operator"</span><span class="p">:</span> <span class="n">cairo</span><span class="o">.</span><span class="n">OPERATOR_OVER</span><span class="p">,</span> <span class="c1"># blending mode</span>
+        <span class="c1"># "operator": cairo.OPERATOR_OVER, # blending mode</span>
         <span class="p">}</span>
 
 <span class="nd">@disp</span>
@@ -2890,23 +2902,23 @@ The next logical step is to move from qualitative observation to quantitative ps
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Python implementation: CPython
-Python version       : 3.13.14
-IPython version      : 8.30.0
+Python version       : 3.14.7
+IPython version      : 9.16.0
 
 numpy: 2.5.1
 cairo: unknown
 
-Compiler    : Clang 21.0.0 (clang-2100.0.123.102)
+Compiler    : Clang 17.0.0 (clang-1700.6.4.2)
 OS          : Darwin
-Release     : 25.5.0
-Machine     : arm64
-Processor   : arm
-CPU cores   : 10
+Release     : 24.6.0
+Machine     : x86_64
+Processor   : i386
+CPU cores   : 36
 Architecture: 64bit
 
-Hostname: obiwan.local
+Hostname: Ahsoka
 
-Git hash: cea65bc840300224fddfbc38774d4c83c77b5522
+Git hash: c0b021b63755ac4582ae83432fd2167fac5b9292
 
 Git repo: https://github.com/laurentperrinet/sciblog
 
