@@ -1,7 +1,7 @@
 on: [push]
 
 concurrency:
-  group: deploy-github-pages
+  group: deploy-github-pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
