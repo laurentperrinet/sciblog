@@ -1,5 +1,9 @@
 on: [push]
 
+concurrency:
+  group: deploy-github-pages
+  cancel-in-progress: true
+
 jobs:
   nikola_build:
     runs-on: ubuntu-latest
