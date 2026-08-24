@@ -1,5 +1,7 @@
 # AGENTS.md — Scientific Blog (Nikola)
 
+When using opencode, limit the usage of agents only for language editing (improving the clarity, grammar, and phrasing of drafted text) and for limited technical assistance with code development. The tool should not be used for generating research ideas, formulating research questions or hypotheses, designing the methodology, conducting or interpreting data analysis, or performing mathematical derivations or calculations. All intellectual contributions, analytical work, and mathematical reasoning in this website are my own. I have reviewed all AI-assisted content and assume full responsibility for the accuracy and integrity of the entire work.
+
 ## Essential Commands
 
 ```bash
