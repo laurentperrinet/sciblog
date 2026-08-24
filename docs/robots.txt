@@ -1,4 +1,0 @@
-Sitemap: https://laurentperrinet.github.io/sciblog/sitemapindex.xml
-
-User-Agent: *
-Host: laurentperrinet.github.io

@@ -9,6 +9,7 @@ files/2016-04-06_IRM-protocol/2016-04-06_IRM-protocol
 .doit.db
 .doit.db.db
 cache
+docs
 output
 posts/.ipynb_checkpoints
 state_data.json
