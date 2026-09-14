@@ -1,5 +1,11 @@
 all: default
+
 default: build
+
+push:
+	# no need to build, github does the job for us
+	# so let's just commit and push the changes
+	llm-commit.sh
 
 build:
 	nikola build
