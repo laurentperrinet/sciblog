@@ -1,6 +1,6 @@
 all: default
 
-default: build
+default: push 
 
 push:
 	# no need to build, github does the job for us
