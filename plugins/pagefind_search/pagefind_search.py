@@ -175,26 +175,23 @@ class PagefindSearch(LateTask):
             self.logger.info("Pagefind search is disabled (PAGEFIND_ENABLED = False).")
             return
 
-        html_files = _html_files(output_folder, kw["glob"])
-        if not html_files:
-            self.logger.warning(
-                "Pagefind: no HTML found under %r with PAGEFIND_GLOB=%r; "
-                "search index skipped.", output_folder, kw["glob"],
-            )
-            return
-
+        # The HTML is *not* listed here: ``gen_tasks`` runs before any
+        # rendering, so on a clean build (``nikola clean`` then ``nikola
+        # build``, or CI) the output folder would look empty and the task would
+        # be dropped for good. Both the action and the freshness check
+        # therefore discover the files when they actually run.
         task = {
             "basename": self.name,
             "name": "index",
-            "targets": [entry_target],
-            "actions": [(self._build_index, (html_files, output_folder, index_dir, kw))],
+            "targets": _bundle_files(index_dir, entry_target),
+            "actions": [(self._build_index, (output_folder, index_dir, kw))],
             "clean": [(_clean_index, (index_dir,))],
             "task_dep": list(RENDER_TASKS),
             # doit calls a plain callable with *no* arguments unless its
             # parameters are literally named ``task``/``values``, so bind
             # everything up front rather than declaring positional ones.
             "uptodate": [functools.partial(
-                self._is_uptodate, html_files, entry_target, kw
+                self._is_uptodate, output_folder, entry_target, kw
             )],
             "file_dep": [],
         }
@@ -283,8 +280,17 @@ class PagefindSearch(LateTask):
 
     # -------------------------------------------------------------------- run
 
-    def _build_index(self, html_files, output_folder, index_dir, kw):
+    def _build_index(self, output_folder, index_dir, kw):
         """Run the Pagefind CLI over the rendered site."""
+        html_files = _html_files(output_folder, kw["glob"])
+        if not html_files:
+            return self._degraded(
+                index_dir,
+                "Pagefind: no HTML found under {0!r} with PAGEFIND_GLOB={1!r}".format(
+                    output_folder, kw["glob"]
+                ),
+            )
+
         binary = self._pagefind_binary(kw)
         if binary is None:
             return self._degraded(
@@ -316,12 +322,20 @@ class PagefindSearch(LateTask):
                 len(html_files), output_folder, kw["output_dir"]
             )
         )
+        # Pagefind writes content-hashed files but never clears the bundle, so
+        # every run would leave the previous generation behind -- 30 MB of dead
+        # fragments and index chunks after two builds. The old bundle is moved
+        # aside rather than deleted, so a failed run can put it back and the
+        # published site keeps a working (if one-build-stale) index.
+        aside = _stash_index(index_dir)
         try:
             proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
         except OSError as exc:
+            _restore_index(index_dir, aside)
             return self._degraded(index_dir, "could not run {0!r}: {1}".format(binary, exc))
         if proc.returncode != 0:
             detail = (proc.stderr or proc.stdout or "").strip().replace(os.linesep, " ")
+            _restore_index(index_dir, aside)
             return self._degraded(
                 index_dir, "Pagefind exited with {0}: {1}".format(proc.returncode, detail[:2000])
             )
@@ -329,6 +343,8 @@ class PagefindSearch(LateTask):
         stdout = (proc.stdout or "").strip().replace(os.linesep, " ")
         if stdout:
             self.logger.info("Pagefind: %s", stdout)
+        if aside:
+            shutil.rmtree(aside, ignore_errors=True)
         stale = _prune_stale_meta(index_dir)
         if stale:
             self.logger.info(
@@ -348,17 +364,40 @@ class PagefindSearch(LateTask):
 
     # -------------------------------------------------------------- freshness
 
-    def _is_uptodate(self, html_files, entry_target, kw):
+    def _is_uptodate(self, output_folder, entry_target, kw):
         """True when the index is present and nothing it depends on changed."""
+        if not _html_files(output_folder, kw["glob"]):
+            # Nothing rendered yet (a clean build renders later in the same
+            # run): never report the index as current in that case.
+            return False
         if not os.path.isfile(entry_target):
             return False
         if os.path.basename(entry_target) and _is_placeholder(entry_target):
             return False
         stored = _load_signature(self.site.config["CACHE_FOLDER"])
-        return stored == _signature(html_files, kw)
+        return stored == _signature(
+            _html_files(output_folder, kw["glob"]), kw
+        )
 
 
 # ------------------------------------------------------------------- helpers
+
+
+def _bundle_files(index_dir, entry_target):
+    """List the entry file plus every bundle file already on disk.
+
+    ``nikola github_deploy`` deletes each output file that is not the target
+    of a task, which would strip the hashed fragments and index chunks Pagefind
+    writes (only the entry file is known in advance). Declaring the files
+    present when the tasks are listed keeps them in the deployed site.
+    """
+    targets = [entry_target]
+    for root, _, names in os.walk(index_dir):
+        targets.extend(
+            os.path.join(root, name) for name in names
+            if os.path.join(root, name) != entry_target
+        )
+    return targets
 
 
 def _html_files(output_folder, pattern):
@@ -433,6 +472,43 @@ def _is_placeholder(entry_path):
         return True
 
 
+def _stash_index(index_dir):
+    """Move an existing bundle out of the way, returning its temporary path.
+
+    Returns:
+        The path the old bundle was moved to, or ``None`` when there was none
+        (first build) or when the move failed, in which case Pagefind simply
+        overwrites the files it can.
+    """
+    if not os.path.isdir(index_dir):
+        return None
+    aside = index_dir + ".stale"
+    # A leftover from an interrupted run takes precedence over nothing at all,
+    # but must not accumulate either.
+    if os.path.isdir(aside):
+        shutil.rmtree(aside, ignore_errors=True)
+    try:
+        os.renames(index_dir, aside)
+    except OSError:
+        return None
+    return aside
+
+
+def _restore_index(index_dir, aside):
+    """Put a stashed bundle back after a failed Pagefind run."""
+    if not aside or os.path.isdir(index_dir):
+        # A partial bundle from the failed run is worse than none: it would be
+        # served as if it were complete.
+        if aside and os.path.isdir(index_dir):
+            shutil.rmtree(index_dir, ignore_errors=True)
+    if aside and os.path.isdir(aside):
+        try:
+            os.renames(aside, index_dir)
+        except OSError:  # pragma: no cover - the degraded path covers this
+            pass
+    return True
+
+
 def _prune_stale_meta(index_dir):
     """Delete ``*.pf_meta`` bundles no longer referenced by the index.
 
@@ -469,8 +545,9 @@ def _prune_stale_meta(index_dir):
 
 def _clean_index(index_dir):
     """Remove the generated index bundle (``nikola clean``)."""
-    if os.path.isdir(index_dir):
-        shutil.rmtree(index_dir)
+    for path in (index_dir, index_dir + ".stale"):
+        if os.path.isdir(path):
+            shutil.rmtree(path)
     return True
 
 

@@ -1,0 +1,11 @@
+{
+  "name": "sciblog-search",
+  "private": true,
+  "description": "Client-side search index builder (Pagefind) for the Nikola site; the version is pinned to match PAGEFIND_VERSION in conf.py",
+  "scripts": {
+    "pagefind": "pagefind --site docs"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}
