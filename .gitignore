@@ -55,3 +55,6 @@ nosetests.xml
 themes/bootstrap3-jinja/
 .vscode/settings.json
 templates_trace.log
+
+# node/npm (Pagefind search index builder)
+node_modules/

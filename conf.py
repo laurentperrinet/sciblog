@@ -145,6 +145,7 @@ NAVIGATION_LINKS = {
         ("/", "Home"),
         ('/archive.html', 'Archives'),
         ('/categories/', 'Tags'),
+        ("/pages/search.html", "Search"),
         ('/rss.xml', 'RSS'),
         ('http://laurentperrinet.github.io', 'About my research'),
         ('https://neuromatch.social/@laurentperrinet', 'Mastodon'),
@@ -1276,6 +1277,81 @@ INDEX_DISPLAY_POST_COUNT = 200
 # </form>
 # <!-- End of custom search -->
 # """ % SITE_URL
+#
+# On-site full-text search with Pagefind
+# ---------------------------------------
+# These settings are read by the pagefind_index plugin in
+# plugins/pagefind_search/. Pagefind builds a static index out of the HTML in
+# OUTPUT_FOLDER and ships it to the browser, where the search runs entirely
+# client-side (WebAssembly): no server, no third-party query API, and results
+# that stay in step with the published posts.
+#
+# The plugin is a LateTask, so `nikola build` produces docs/pagefind/ as its
+# last step and pages/search.html (see NAVIGATION_LINKS above) is the search
+# page. Everything is fail-soft: if the Pagefind binary cannot be obtained the
+# build writes a placeholder index and the search page says so, so a deploy is
+# never broken by search.
+#
+# About CI: .github/workflows/main.yml runs getnikola/nikola-action, a Python
+# container without Node.js, so CI uses the downloadable binary below rather
+# than node_modules. Locally, `npm install` honours the version pinned in
+# package.json and is the preferred path.
+
+# Set to False to skip building the search index altogether.
+PAGEFIND_ENABLED = True
+
+# True turns "Pagefind is unavailable" into a build error. Keep it False for
+# GitHub Pages, where a failing build would leave the site unpublished.
+PAGEFIND_STRICT = False
+
+# Path to a pagefind executable. When None, the plugin looks, in this order, at
+# the PAGEFIND_BIN environment variable, node_modules/.bin/pagefind, then PATH.
+PAGEFIND_BINARY = None
+
+# Release used both by npm and by the fallback download. Keep the three in
+# sync: this value, DEFAULT_PAGEFIND_VERSION in the plugin, and the
+# devDependency in package.json.
+PAGEFIND_VERSION = "1.5.2"
+
+# Allow fetching the pinned release from the Pagefind GitHub releases when no
+# local binary is found. The archive is verified against its published SHA-256
+# checksum and cached in CACHE_FOLDER/pagefind/, so it is downloaded once per
+# version and per platform.
+PAGEFIND_DOWNLOAD = True
+
+# Folder of the search bundle, relative to OUTPUT_FOLDER. Deliberately without
+# a leading underscore: GitHub Pages runs Jekyll on the /docs folder and would
+# drop dotfiles and underscore-prefixed files.
+PAGEFIND_OUTPUT_DIR = "pagefind"
+
+# Base URL the search page loads the bundle from. When None, it is derived from
+# SITE_URL, which gives https://laurentperrinet.github.io/sciblog/pagefind/
+# here. Only needed when the bundle is served from somewhere else.
+PAGEFIND_BASE_URL = None
+
+# Which HTML files to index, relative to OUTPUT_FOLDER. Taxonomy pages, code
+# listings and the *.src.html sources are left out on purpose: they duplicate
+# the prose of the posts they render.
+PAGEFIND_GLOB = "{posts,pages}/*.html"
+
+# CSS selectors whose text is never indexed. Notebook outputs are large, full of
+# paths and reprs, and would swamp the ranking of the actual prose; the plugin
+# defaults also strip the theme chrome (navigation, headers, footers,
+# pagination) and the code blocks. Set to None for those defaults, or to a list
+# of selectors to override them completely.
+PAGEFIND_EXCLUDE_SELECTORS = None
+
+# Extra command-line arguments for the pagefind binary, for instance
+# ["--force-language", "en"] to index the whole (English) site as one language.
+PAGEFIND_EXTRA_ARGS = []
+
+# Verbosity of the Pagefind run inside the build: "info" (default), "verbose",
+# "debug", "quiet" or "silent".
+PAGEFIND_LOG_LEVEL = "info"
+
+# The DuckDuckGo and Google SEARCH_FORM examples above stay available as a
+# fallback: setting one of them merely adds a second search entry point in the
+# navbar, it does not disable Pagefind.
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
