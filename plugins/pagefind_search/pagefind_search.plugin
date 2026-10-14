@@ -1,0 +1,13 @@
+[Core]
+Name = pagefind_search
+Module = pagefind_search
+
+[Nikola]
+PluginCategory = LateTask
+MinVersion = 8.0.0
+
+[Documentation]
+Author = Laurent Perrinet
+Version = 0.1
+Website = https://pagefind.app/
+Description = Build a client-side search index with Pagefind after the site is rendered

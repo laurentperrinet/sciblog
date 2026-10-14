@@ -1,0 +1,76 @@
+<section class="pagefind-search">
+  <p>
+    Full-text search over the logbook. The index is built at build time by
+    <a href="https://pagefind.app/">Pagefind</a> and runs entirely in your
+    browser: no server is queried and no analytics are involved.
+  </p>
+  <p class="pagefind-search-note" id="pagefind-status" hidden>
+    The search index is missing from this build, so the box below stays empty.
+    Rebuild with Pagefind available (<code>npm install</code>, then
+    <code>nikola build</code>) to regenerate <code>pagefind/</code>. Meanwhile,
+    <a href="../categories/">the tags</a> and
+    <a href="../archive.html">the archive</a> still list every entry.
+  </p>
+
+  <div id="search" class="pagefind-search-box"></div>
+
+  <noscript>
+    <p>
+      Searching needs JavaScript. The whole site remains reachable without it
+      through <a href="../archive.html">the archive</a> and
+      <a href="../categories/">the tag index</a>.
+    </p>
+  </noscript>
+</section>
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  (function () {
+    "use strict";
+
+    // The bundle sits at the site root (docs/pagefind/) while this page is
+    // rendered into docs/pages/search.html -- hence the ".." references above.
+    // The browser resolves them against this page's URL, so one single markup
+    // works both under /sciblog/ on GitHub Pages and under nikola serve.
+    // Pagefind derives the prefix of its result URLs from the location of the
+    // bundle itself, which is why no baseUrl is hard-coded here.
+    var status = document.getElementById("pagefind-status");
+    function announceMissingIndex() {
+      if (status) { status.hidden = false; }
+    }
+
+    // <script> tags are fetched before the parser reaches this block, so an
+    // absent bundle simply leaves PagefindUI undefined: report it and keep the
+    // page readable instead of throwing.
+    if (typeof PagefindUI === "undefined") {
+      announceMissingIndex();
+      return;
+    }
+
+    var ui = new PagefindUI({
+      element: "#search",
+      showImages: false,
+      showSubResults: true
+    });
+
+    // Deep links: /sciblog/pages/search.html?q=saccades searches straight away.
+    var query = new URLSearchParams(window.location.search).get("q");
+    if (query) { ui.triggerSearch(query); }
+
+    // A degraded build leaves only the placeholder entry behind (see the
+    // pagefind_index plugin), which the UI cannot search in.
+    if (typeof fetch === "function") {
+      fetch("../pagefind/pagefind-entry.json", { cache: "no-store" })
+        .then(function (response) {
+          return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(function (entry) {
+          if (!entry || String(entry.version).indexOf("placeholder") >= 0) {
+            announceMissingIndex();
+          }
+        })
+        .catch(announceMissingIndex);
+    }
+  }());
+</script>
