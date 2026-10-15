@@ -12,6 +12,8 @@
     <a href="../archive.html">the archive</a> still list every entry.
   </p>
 
+  <div id="tag-cloud" class="pagefind-tag-cloud" hidden aria-label="Frequent topics"></div>
+
   <div id="search" class="pagefind-search-box"></div>
 
   <noscript>
@@ -58,6 +60,53 @@
     var query = new URLSearchParams(window.location.search).get("q");
     if (query) { ui.triggerSearch(query); }
 
+    // Tag cloud: the tag names come from the tag index; each one is searched
+    // in the local Pagefind index, and its font size follows the hit count.
+    function buildTagCloud() {
+      var cloud = document.getElementById("tag-cloud");
+      var maxTags = 40;
+      if (!cloud) { return; }
+      Promise.all([
+        fetch("../categories/index.html").then(function (r) { return r.text(); }),
+        import("../pagefind/pagefind.js")
+      ]).then(function (res) {
+        var doc = new DOMParser().parseFromString(res[0], "text/html");
+        var pf = res[1];
+        var names = Array.prototype.map.call(
+          doc.querySelectorAll("a.badge[href$='.html']"),
+          function (a) { return a.textContent.trim(); }
+        ).filter(function (n) { return n; });
+        return Promise.all(names.map(function (name) {
+          return pf.search(name).then(function (s) {
+            return { name: name, count: s.results.length };
+          });
+        }));
+      }).then(function (tags) {
+        tags = tags.filter(function (t) { return t.count > 1; })
+          .sort(function (a, b) { return b.count - a.count; })
+          .slice(0, maxTags);
+        if (!tags.length) { return; }
+        var max = tags[0].count, min = tags[tags.length - 1].count;
+        tags.sort(function (a, b) { return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1; });
+        tags.forEach(function (t) {
+          var weight = max === min ? 0.5 : (t.count - min) / (max - min);
+          var a = document.createElement("a");
+          a.href = "?q=" + encodeURIComponent(t.name);
+          a.textContent = t.name;
+          a.title = t.count + " results";
+          a.style.cssText = "display:inline-block;margin:0 .6em .3em 0;font-size:" +
+            (0.9 + weight * 1.3).toFixed(2) + "em";
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            ui.triggerSearch(t.name);
+            history.replaceState(null, "", a.getAttribute("href"));
+          });
+          cloud.appendChild(a);
+        });
+        cloud.hidden = false;
+      }).catch(function () {});
+    }
+
     // A degraded build leaves only the placeholder entry behind (see the
     // pagefind_index plugin), which the UI cannot search in.
     if (typeof fetch === "function") {
@@ -68,6 +117,8 @@
         .then(function (entry) {
           if (!entry || String(entry.version).indexOf("placeholder") >= 0) {
             announceMissingIndex();
+          } else {
+            buildTagCloud();
           }
         })
         .catch(announceMissingIndex);
