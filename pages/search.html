@@ -1,6 +1,6 @@
 <section class="pagefind-search">
   <p>
-    Full-text search over the logbook. The index is built at build time by
+    Full-text search over the  - click on one of the common words below for a quick access. The index is built at build time by
     <a href="https://pagefind.app/">Pagefind</a> and runs entirely in your
     browser: no server is queried and no analytics are involved.
   </p>
@@ -64,7 +64,7 @@
     // in the local Pagefind index, and its font size follows the hit count.
     function buildTagCloud() {
       var cloud = document.getElementById("tag-cloud");
-      var maxTags = 40;
+      var maxTags = 300;
       if (!cloud) { return; }
       Promise.all([
         fetch("../categories/index.html").then(function (r) { return r.text(); }),
